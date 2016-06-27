@@ -1,14 +1,14 @@
-# swagger_client.BillingApi
+# liveagent_api.BillingApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**la_api_v3_proxy_check_vat**](BillingApi.md#la_api_v3_proxy_check_vat) | **POST** /billing/_check_vat | Vat validity
+[**billing_check_vat_post**](BillingApi.md#billing_check_vat_post) | **POST** /billing/_check_vat | Vat validity
 
 
-# **la_api_v3_proxy_check_vat**
-> OkResponse la_api_v3_proxy_check_vat(vat_id)
+# **billing_check_vat_post**
+> OkResponse billing_check_vat_post(vat_id)
 
 Vat validity
 
@@ -17,20 +17,20 @@ Vat validity check
 ### Example 
 ```python
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import liveagent_api
+from liveagent_api.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.BillingApi()
+api_instance = liveagent_api.BillingApi()
 vat_id = 'vat_id_example' # str | 
 
 try: 
     # Vat validity
-    api_response = api_instance.la_api_v3_proxy_check_vat(vat_id)
+    api_response = api_instance.billing_check_vat_post(vat_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BillingApi->la_api_v3_proxy_check_vat: %s\n" % e
+    print "Exception when calling BillingApi->billing_check_vat_post: %s\n" % e
 ```
 
 ### Parameters

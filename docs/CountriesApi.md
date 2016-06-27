@@ -1,14 +1,14 @@
-# swagger_client.CountriesApi
+# liveagent_api.CountriesApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**la_api_v3_proxy_get_countries**](CountriesApi.md#la_api_v3_proxy_get_countries) | **GET** /countries/ | Country list
+[**countries_get**](CountriesApi.md#countries_get) | **GET** /countries/ | Country list
 
 
-# **la_api_v3_proxy_get_countries**
-> list[Country] la_api_v3_proxy_get_countries()
+# **countries_get**
+> list[Country] countries_get()
 
 Country list
 
@@ -17,19 +17,19 @@ List of available countries
 ### Example 
 ```python
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import liveagent_api
+from liveagent_api.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.CountriesApi()
+api_instance = liveagent_api.CountriesApi()
 
 try: 
     # Country list
-    api_response = api_instance.la_api_v3_proxy_get_countries()
+    api_response = api_instance.countries_get()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CountriesApi->la_api_v3_proxy_get_countries: %s\n" % e
+    print "Exception when calling CountriesApi->countries_get: %s\n" % e
 ```
 
 ### Parameters
