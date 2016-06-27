@@ -217,6 +217,13 @@ class Configuration(object):
         :return: The Auth Settings information dict.
         """
         return {
+            'apikey':
+                {
+                    'type': 'api_key',
+                    'in': 'header',
+                    'key': 'apikey',
+                    'value': self.get_api_key_with_prefix('apikey')
+                },
 
         }
 

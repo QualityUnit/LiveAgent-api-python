@@ -5,6 +5,10 @@ from .models.attribute_simple import AttributeSimple
 from .models.billing_info import BillingInfo
 from .models.billing_metric import BillingMetric
 from .models.billing_status import BillingStatus
+from .models.call import Call
+from .models.call_agent import CallAgent
+from .models.call_message import CallMessage
+from .models.call_status import CallStatus
 from .models.country import Country
 from .models.customer import Customer
 from .models.domain import Domain
@@ -25,6 +29,7 @@ from .models.variation_upgrades import VariationUpgrades
 
 # import apis into sdk package
 from .apis.billing_api import BillingApi
+from .apis.calls_api import CallsApi
 from .apis.countries_api import CountriesApi
 from .apis.invoices_api import InvoicesApi
 from .apis.subscriptions_api import SubscriptionsApi
