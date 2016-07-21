@@ -45,6 +45,163 @@ class SubscriptionsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def subscriptions_subscription_id_addons_get(self, subscription_id, **kwargs):
+        """
+        Addon list
+        Active subscription addons
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.subscriptions_subscription_id_addons_get(subscription_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str subscription_id:  (required)
+        :return: list[Addon]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['subscription_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method subscriptions_subscription_id_addons_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'subscription_id' is set
+        if ('subscription_id' not in params) or (params['subscription_id'] is None):
+            raise ValueError("Missing the required parameter `subscription_id` when calling `subscriptions_subscription_id_addons_get`")
+
+        resource_path = '/subscriptions/{subscriptionId}/addons/'.replace('{format}', 'json')
+        path_params = {}
+        if 'subscription_id' in params:
+            path_params['subscriptionId'] = params['subscription_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[Addon]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def subscriptions_subscription_id_addons_put(self, subscription_id, **kwargs):
+        """
+        Addon change
+        Change active subscription addons
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.subscriptions_subscription_id_addons_put(subscription_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str subscription_id:  (required)
+        :param AddonList body: 
+        :return: list[Addon]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['subscription_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method subscriptions_subscription_id_addons_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'subscription_id' is set
+        if ('subscription_id' not in params) or (params['subscription_id'] is None):
+            raise ValueError("Missing the required parameter `subscription_id` when calling `subscriptions_subscription_id_addons_put`")
+
+        resource_path = '/subscriptions/{subscriptionId}/addons/'.replace('{format}', 'json')
+        path_params = {}
+        if 'subscription_id' in params:
+            path_params['subscriptionId'] = params['subscription_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[Addon]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def subscriptions_subscription_id_attributes_get(self, subscription_id, **kwargs):
         """
         Subscription attribute list
@@ -1010,12 +1167,13 @@ class SubscriptionsApi(object):
             for asynchronous request. (optional)
         :param str subscription_id:  (required)
         :param str payment_type:  (required)
+        :param str country: 
         :return: PaymentProcessorType
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['subscription_id', 'payment_type']
+        all_params = ['subscription_id', 'payment_type', 'country']
         all_params.append('callback')
 
         params = locals()
@@ -1043,6 +1201,8 @@ class SubscriptionsApi(object):
         query_params = {}
         if 'payment_type' in params:
             query_params['paymentType'] = params['payment_type']
+        if 'country' in params:
+            query_params['country'] = params['country']
 
         header_params = {}
 
@@ -1326,12 +1486,14 @@ class SubscriptionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str subscription_id:  (required)
+        :param str country: 
+        :param str vat_id: 
         :return: VariationUpgrades
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['subscription_id']
+        all_params = ['subscription_id', 'country', 'vat_id']
         all_params.append('callback')
 
         params = locals()
@@ -1354,6 +1516,10 @@ class SubscriptionsApi(object):
             path_params['subscriptionId'] = params['subscription_id']
 
         query_params = {}
+        if 'country' in params:
+            query_params['country'] = params['country']
+        if 'vat_id' in params:
+            query_params['vatId'] = params['vat_id']
 
         header_params = {}
 
@@ -1456,6 +1622,86 @@ class SubscriptionsApi(object):
         auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def subscriptions_subscription_id_validate_billing_info_post(self, subscription_id, **kwargs):
+        """
+        Test Billing info
+        Checks if billing info can be updated without issues. Field 'force' in BillingInfo is ignored in this call.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.subscriptions_subscription_id_validate_billing_info_post(subscription_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str subscription_id:  (required)
+        :param BillingInfo body: 
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['subscription_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method subscriptions_subscription_id_validate_billing_info_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'subscription_id' is set
+        if ('subscription_id' not in params) or (params['subscription_id'] is None):
+            raise ValueError("Missing the required parameter `subscription_id` when calling `subscriptions_subscription_id_validate_billing_info_post`")
+
+        resource_path = '/subscriptions/{subscriptionId}/_validateBillingInfo'.replace('{format}', 'json')
+        path_params = {}
+        if 'subscription_id' in params:
+            path_params['subscriptionId'] = params['subscription_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
                                             query_params,
                                             header_params,

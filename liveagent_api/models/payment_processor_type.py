@@ -37,14 +37,17 @@ class PaymentProcessorType(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'processor_type': 'str'
+            'processor_type': 'str',
+            'token': 'str'
         }
 
         self.attribute_map = {
-            'processor_type': 'processor_type'
+            'processor_type': 'processor_type',
+            'token': 'token'
         }
 
         self._processor_type = None
+        self._token = None
 
     @property
     def processor_type(self):
@@ -73,6 +76,28 @@ class PaymentProcessorType(object):
                 .format(allowed_values)
             )
         self._processor_type = processor_type
+
+    @property
+    def token(self):
+        """
+        Gets the token of this PaymentProcessorType.
+
+
+        :return: The token of this PaymentProcessorType.
+        :rtype: str
+        """
+        return self._token
+
+    @token.setter
+    def token(self, token):
+        """
+        Sets the token of this PaymentProcessorType.
+
+
+        :param token: The token of this PaymentProcessorType.
+        :type: str
+        """
+        self._token = token
 
     def to_dict(self):
         """

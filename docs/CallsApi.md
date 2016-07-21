@@ -4,71 +4,17 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**calls_call_id_answer_post**](CallsApi.md#calls_call_id_answer_post) | **POST** /calls/{callId}/_answer | Set call as answered by agent
-[**calls_call_id_messages_post**](CallsApi.md#calls_call_id_messages_post) | **POST** /calls/{callId}/messages | Adds a message to the call
-[**calls_call_id_post**](CallsApi.md#calls_call_id_post) | **POST** /calls/{callId} | Create new call
-[**calls_call_id_reroute_post**](CallsApi.md#calls_call_id_reroute_post) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
-[**calls_call_id_ring_post**](CallsApi.md#calls_call_id_ring_post) | **POST** /calls/{callId}/_ring | Let the call ring
-[**calls_call_id_status_get**](CallsApi.md#calls_call_id_status_get) | **GET** /calls/{callId}/status | Return the status of call
-[**calls_call_id_stop_post**](CallsApi.md#calls_call_id_stop_post) | **POST** /calls/{callId}/_stop | Stops the call
+[**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call
+[**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
+[**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
+[**call_get_status**](CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
+[**call_reroute**](CallsApi.md#call_reroute) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
+[**call_ring**](CallsApi.md#call_ring) | **POST** /calls/{callId}/_ring | Let the call ring
+[**call_stop**](CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
 
 
-# **calls_call_id_answer_post**
-> OkResponse calls_call_id_answer_post(call_id, to_number)
-
-Set call as answered by agent
-
-### Example 
-```python
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
-
-# create an instance of the API class
-api_instance = liveagent_api.CallsApi()
-call_id = 'call_id_example' # str | 
-to_number = 'to_number_example' # str | callee number
-
-try: 
-    # Set call as answered by agent
-    api_response = api_instance.calls_call_id_answer_post(call_id, to_number)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling CallsApi->calls_call_id_answer_post: %s\n" % e
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **call_id** | **str**|  | 
- **to_number** | **str**| callee number | 
-
-### Return type
-
-[**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **calls_call_id_messages_post**
-> OkResponse calls_call_id_messages_post(call_id, body=body)
+# **call_add_message**
+> OkResponse call_add_message(call_id, body=body)
 
 Adds a message to the call
 
@@ -93,10 +39,10 @@ body = liveagent_api.CallMessage() # CallMessage |  (optional)
 
 try: 
     # Adds a message to the call
-    api_response = api_instance.calls_call_id_messages_post(call_id, body=body)
+    api_response = api_instance.call_add_message(call_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CallsApi->calls_call_id_messages_post: %s\n" % e
+    print "Exception when calling CallsApi->call_add_message: %s\n" % e
 ```
 
 ### Parameters
@@ -121,8 +67,62 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **calls_call_id_post**
-> Call calls_call_id_post(call_id, to_number, from_number, ticket_id=ticket_id, direction=direction)
+# **call_answer**
+> OkResponse call_answer(call_id, to_number)
+
+Set call as answered by agent
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+to_number = 'to_number_example' # str | callee number
+
+try: 
+    # Set call as answered by agent
+    api_response = api_instance.call_answer(call_id, to_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_answer: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **to_number** | **str**| callee number | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_create**
+> Call call_create(call_id, to_number, from_number, ticket_id=ticket_id, direction=direction)
 
 Create new call
 
@@ -152,10 +152,10 @@ direction = 'in' # str | incoming call ('in' - default) or outgoing call ('out')
 
 try: 
     # Create new call
-    api_response = api_instance.calls_call_id_post(call_id, to_number, from_number, ticket_id=ticket_id, direction=direction)
+    api_response = api_instance.call_create(call_id, to_number, from_number, ticket_id=ticket_id, direction=direction)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CallsApi->calls_call_id_post: %s\n" % e
+    print "Exception when calling CallsApi->call_create: %s\n" % e
 ```
 
 ### Parameters
@@ -183,8 +183,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **calls_call_id_reroute_post**
-> CallStatus calls_call_id_reroute_post(call_id)
+# **call_get_status**
+> CallStatus call_get_status(call_id)
+
+Return the status of call
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+
+try: 
+    # Return the status of call
+    api_response = api_instance.call_get_status(call_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_get_status: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+
+### Return type
+
+[**CallStatus**](CallStatus.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_reroute**
+> CallStatus call_reroute(call_id)
 
 Let the call ring to another agent
 
@@ -210,10 +262,10 @@ call_id = 'call_id_example' # str |
 
 try: 
     # Let the call ring to another agent
-    api_response = api_instance.calls_call_id_reroute_post(call_id)
+    api_response = api_instance.call_reroute(call_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CallsApi->calls_call_id_reroute_post: %s\n" % e
+    print "Exception when calling CallsApi->call_reroute: %s\n" % e
 ```
 
 ### Parameters
@@ -237,8 +289,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **calls_call_id_ring_post**
-> CallStatus calls_call_id_ring_post(call_id)
+# **call_ring**
+> CallStatus call_ring(call_id)
 
 Let the call ring
 
@@ -264,10 +316,10 @@ call_id = 'call_id_example' # str |
 
 try: 
     # Let the call ring
-    api_response = api_instance.calls_call_id_ring_post(call_id)
+    api_response = api_instance.call_ring(call_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CallsApi->calls_call_id_ring_post: %s\n" % e
+    print "Exception when calling CallsApi->call_ring: %s\n" % e
 ```
 
 ### Parameters
@@ -291,60 +343,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **calls_call_id_status_get**
-> CallStatus calls_call_id_status_get(call_id)
-
-Return the status of call
-
-### Example 
-```python
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
-
-# create an instance of the API class
-api_instance = liveagent_api.CallsApi()
-call_id = 'call_id_example' # str | 
-
-try: 
-    # Return the status of call
-    api_response = api_instance.calls_call_id_status_get(call_id)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling CallsApi->calls_call_id_status_get: %s\n" % e
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **call_id** | **str**|  | 
-
-### Return type
-
-[**CallStatus**](CallStatus.md)
-
-### Authorization
-
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **calls_call_id_stop_post**
-> OkResponse calls_call_id_stop_post(call_id)
+# **call_stop**
+> OkResponse call_stop(call_id)
 
 Stops the call
 
@@ -368,10 +368,10 @@ call_id = 'call_id_example' # str |
 
 try: 
     # Stops the call
-    api_response = api_instance.calls_call_id_stop_post(call_id)
+    api_response = api_instance.call_stop(call_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CallsApi->calls_call_id_stop_post: %s\n" % e
+    print "Exception when calling CallsApi->call_stop: %s\n" % e
 ```
 
 ### Parameters

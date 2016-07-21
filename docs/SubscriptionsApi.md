@@ -4,6 +4,8 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**subscriptions_subscription_id_addons_get**](SubscriptionsApi.md#subscriptions_subscription_id_addons_get) | **GET** /subscriptions/{subscriptionId}/addons/ | Addon list
+[**subscriptions_subscription_id_addons_put**](SubscriptionsApi.md#subscriptions_subscription_id_addons_put) | **PUT** /subscriptions/{subscriptionId}/addons/ | Addon change
 [**subscriptions_subscription_id_attributes_get**](SubscriptionsApi.md#subscriptions_subscription_id_attributes_get) | **GET** /subscriptions/{subscriptionId}/attributes/ | Subscription attribute list
 [**subscriptions_subscription_id_billing_info_get**](SubscriptionsApi.md#subscriptions_subscription_id_billing_info_get) | **GET** /subscriptions/{subscriptionId}/billingInfo | Billing info
 [**subscriptions_subscription_id_billing_info_put**](SubscriptionsApi.md#subscriptions_subscription_id_billing_info_put) | **PUT** /subscriptions/{subscriptionId}/billingInfo | Billing info
@@ -22,7 +24,110 @@ Method | HTTP request | Description
 [**subscriptions_subscription_id_upgrade_post**](SubscriptionsApi.md#subscriptions_subscription_id_upgrade_post) | **POST** /subscriptions/{subscriptionId}/_upgrade | Change plan
 [**subscriptions_subscription_id_upgrade_variations_get**](SubscriptionsApi.md#subscriptions_subscription_id_upgrade_variations_get) | **GET** /subscriptions/{subscriptionId}/upgradeVariations | Upgrade variation list
 [**subscriptions_subscription_id_usage_put**](SubscriptionsApi.md#subscriptions_subscription_id_usage_put) | **PUT** /subscriptions/{subscriptionId}/usage | Subscription usage
+[**subscriptions_subscription_id_validate_billing_info_post**](SubscriptionsApi.md#subscriptions_subscription_id_validate_billing_info_post) | **POST** /subscriptions/{subscriptionId}/_validateBillingInfo | Test Billing info
 
+
+# **subscriptions_subscription_id_addons_get**
+> list[Addon] subscriptions_subscription_id_addons_get(subscription_id)
+
+Addon list
+
+Active subscription addons
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.SubscriptionsApi()
+subscription_id = 'subscription_id_example' # str | 
+
+try: 
+    # Addon list
+    api_response = api_instance.subscriptions_subscription_id_addons_get(subscription_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SubscriptionsApi->subscriptions_subscription_id_addons_get: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **str**|  | 
+
+### Return type
+
+[**list[Addon]**](Addon.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **subscriptions_subscription_id_addons_put**
+> list[Addon] subscriptions_subscription_id_addons_put(subscription_id, body=body)
+
+Addon change
+
+Change active subscription addons
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.SubscriptionsApi()
+subscription_id = 'subscription_id_example' # str | 
+body = liveagent_api.AddonList() # AddonList |  (optional)
+
+try: 
+    # Addon change
+    api_response = api_instance.subscriptions_subscription_id_addons_put(subscription_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SubscriptionsApi->subscriptions_subscription_id_addons_put: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **str**|  | 
+ **body** | [**AddonList**](AddonList.md)|  | [optional] 
+
+### Return type
+
+[**list[Addon]**](Addon.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **subscriptions_subscription_id_attributes_get**
 > list[AttributeSimple] subscriptions_subscription_id_attributes_get(subscription_id)
@@ -689,7 +794,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **subscriptions_subscription_id_payment_processor_get**
-> PaymentProcessorType subscriptions_subscription_id_payment_processor_get(subscription_id, payment_type)
+> PaymentProcessorType subscriptions_subscription_id_payment_processor_get(subscription_id, payment_type, country=country)
 
 Payment processor
 
@@ -713,10 +818,11 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 payment_type = 'payment_type_example' # str | 
+country = 'country_example' # str |  (optional)
 
 try: 
     # Payment processor
-    api_response = api_instance.subscriptions_subscription_id_payment_processor_get(subscription_id, payment_type)
+    api_response = api_instance.subscriptions_subscription_id_payment_processor_get(subscription_id, payment_type, country=country)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SubscriptionsApi->subscriptions_subscription_id_payment_processor_get: %s\n" % e
@@ -728,6 +834,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**|  | 
  **payment_type** | **str**|  | 
+ **country** | **str**|  | [optional] 
 
 ### Return type
 
@@ -909,7 +1016,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **subscriptions_subscription_id_upgrade_variations_get**
-> VariationUpgrades subscriptions_subscription_id_upgrade_variations_get(subscription_id)
+> VariationUpgrades subscriptions_subscription_id_upgrade_variations_get(subscription_id, country=country, vat_id=vat_id)
 
 Upgrade variation list
 
@@ -932,10 +1039,12 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
+country = 'country_example' # str |  (optional)
+vat_id = 'vat_id_example' # str |  (optional)
 
 try: 
     # Upgrade variation list
-    api_response = api_instance.subscriptions_subscription_id_upgrade_variations_get(subscription_id)
+    api_response = api_instance.subscriptions_subscription_id_upgrade_variations_get(subscription_id, country=country, vat_id=vat_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SubscriptionsApi->subscriptions_subscription_id_upgrade_variations_get: %s\n" % e
@@ -946,6 +1055,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**|  | 
+ **country** | **str**|  | [optional] 
+ **vat_id** | **str**|  | [optional] 
 
 ### Return type
 
@@ -1010,6 +1121,58 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **subscriptions_subscription_id_validate_billing_info_post**
+> OkResponse subscriptions_subscription_id_validate_billing_info_post(subscription_id, body=body)
+
+Test Billing info
+
+Checks if billing info can be updated without issues. Field 'force' in BillingInfo is ignored in this call.
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.SubscriptionsApi()
+subscription_id = 'subscription_id_example' # str | 
+body = liveagent_api.BillingInfo() # BillingInfo |  (optional)
+
+try: 
+    # Test Billing info
+    api_response = api_instance.subscriptions_subscription_id_validate_billing_info_post(subscription_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SubscriptionsApi->subscriptions_subscription_id_validate_billing_info_post: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **str**|  | 
+ **body** | [**BillingInfo**](BillingInfo.md)|  | [optional] 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 

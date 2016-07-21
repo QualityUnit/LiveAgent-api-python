@@ -1,6 +1,9 @@
 from __future__ import absolute_import
 
 # import models into model package
+from .addon import Addon
+from .addon_list import AddonList
+from .agent import Agent
 from .attribute_simple import AttributeSimple
 from .billing_info import BillingInfo
 from .billing_metric import BillingMetric
@@ -9,10 +12,12 @@ from .call import Call
 from .call_agent import CallAgent
 from .call_message import CallMessage
 from .call_status import CallStatus
+from .contact import Contact
 from .country import Country
 from .customer import Customer
 from .domain import Domain
 from .error_response import ErrorResponse
+from .hosting_info import HostingInfo
 from .invoice import Invoice
 from .invoice_item import InvoiceItem
 from .ok_response import OkResponse
@@ -22,7 +27,7 @@ from .payment_processor_type import PaymentProcessorType
 from .subscription import Subscription
 from .upgrade import Upgrade
 from .usage_data import UsageData
+from .user import User
 from .variation import Variation
-from .variation_addon import VariationAddon
 from .variation_upgrade import VariationUpgrade
 from .variation_upgrades import VariationUpgrades
