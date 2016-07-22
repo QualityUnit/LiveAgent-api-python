@@ -39,18 +39,24 @@ class CallStatus(object):
         self.swagger_types = {
             'status': 'str',
             'agent': 'CallAgent',
-            'queue_position': 'float'
+            'queue_position': 'float',
+            'queue_message': 'str',
+            'offline_message': 'str'
         }
 
         self.attribute_map = {
             'status': 'status',
             'agent': 'agent',
-            'queue_position': 'queue_position'
+            'queue_position': 'queue_position',
+            'queue_message': 'queue_message',
+            'offline_message': 'offline_message'
         }
 
         self._status = None
         self._agent = None
         self._queue_position = None
+        self._queue_message = None
+        self._offline_message = None
 
     @property
     def status(self):
@@ -123,6 +129,50 @@ class CallStatus(object):
         :type: float
         """
         self._queue_position = queue_position
+
+    @property
+    def queue_message(self):
+        """
+        Gets the queue_message of this CallStatus.
+        URL to the queue message and music file
+
+        :return: The queue_message of this CallStatus.
+        :rtype: str
+        """
+        return self._queue_message
+
+    @queue_message.setter
+    def queue_message(self, queue_message):
+        """
+        Sets the queue_message of this CallStatus.
+        URL to the queue message and music file
+
+        :param queue_message: The queue_message of this CallStatus.
+        :type: str
+        """
+        self._queue_message = queue_message
+
+    @property
+    def offline_message(self):
+        """
+        Gets the offline_message of this CallStatus.
+        URL to the offline message
+
+        :return: The offline_message of this CallStatus.
+        :rtype: str
+        """
+        return self._offline_message
+
+    @offline_message.setter
+    def offline_message(self, offline_message):
+        """
+        Sets the offline_message of this CallStatus.
+        URL to the offline message
+
+        :param offline_message: The offline_message of this CallStatus.
+        :type: str
+        """
+        self._offline_message = offline_message
 
     def to_dict(self):
         """
