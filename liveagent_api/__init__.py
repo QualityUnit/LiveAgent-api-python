@@ -10,6 +10,8 @@ from .models.billing_metric import BillingMetric
 from .models.billing_status import BillingStatus
 from .models.call import Call
 from .models.call_agent import CallAgent
+from .models.call_choice import CallChoice
+from .models.call_command import CallCommand
 from .models.call_message import CallMessage
 from .models.call_status import CallStatus
 from .models.contact import Contact

@@ -38,16 +38,28 @@ class Call(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'ticket_id': 'str'
+            'ticket_id': 'str',
+            'online_status': 'str',
+            'online_settings': 'list[CallCommand]',
+            'offline_settings': 'list[CallCommand]',
+            'queue_settings': 'list[CallCommand]'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'ticket_id': 'ticket_id'
+            'ticket_id': 'ticket_id',
+            'online_status': 'online_status',
+            'online_settings': 'online_settings',
+            'offline_settings': 'offline_settings',
+            'queue_settings': 'queue_settings'
         }
 
         self._id = None
         self._ticket_id = None
+        self._online_status = None
+        self._online_settings = None
+        self._offline_settings = None
+        self._queue_settings = None
 
     @property
     def id(self):
@@ -92,6 +104,100 @@ class Call(object):
         :type: str
         """
         self._ticket_id = ticket_id
+
+    @property
+    def online_status(self):
+        """
+        Gets the online_status of this Call.
+        O - online, F - offline
+
+        :return: The online_status of this Call.
+        :rtype: str
+        """
+        return self._online_status
+
+    @online_status.setter
+    def online_status(self, online_status):
+        """
+        Sets the online_status of this Call.
+        O - online, F - offline
+
+        :param online_status: The online_status of this Call.
+        :type: str
+        """
+        allowed_values = ["O", "F"]
+        if online_status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `online_status`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._online_status = online_status
+
+    @property
+    def online_settings(self):
+        """
+        Gets the online_settings of this Call.
+
+
+        :return: The online_settings of this Call.
+        :rtype: list[CallCommand]
+        """
+        return self._online_settings
+
+    @online_settings.setter
+    def online_settings(self, online_settings):
+        """
+        Sets the online_settings of this Call.
+
+
+        :param online_settings: The online_settings of this Call.
+        :type: list[CallCommand]
+        """
+        self._online_settings = online_settings
+
+    @property
+    def offline_settings(self):
+        """
+        Gets the offline_settings of this Call.
+
+
+        :return: The offline_settings of this Call.
+        :rtype: list[CallCommand]
+        """
+        return self._offline_settings
+
+    @offline_settings.setter
+    def offline_settings(self, offline_settings):
+        """
+        Sets the offline_settings of this Call.
+
+
+        :param offline_settings: The offline_settings of this Call.
+        :type: list[CallCommand]
+        """
+        self._offline_settings = offline_settings
+
+    @property
+    def queue_settings(self):
+        """
+        Gets the queue_settings of this Call.
+
+
+        :return: The queue_settings of this Call.
+        :rtype: list[CallCommand]
+        """
+        return self._queue_settings
+
+    @queue_settings.setter
+    def queue_settings(self, queue_settings):
+        """
+        Sets the queue_settings of this Call.
+
+
+        :param queue_settings: The queue_settings of this Call.
+        :type: list[CallCommand]
+        """
+        self._queue_settings = queue_settings
 
     def to_dict(self):
         """
