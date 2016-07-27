@@ -40,26 +40,32 @@ class Call(object):
             'id': 'str',
             'ticket_id': 'str',
             'online_status': 'str',
-            'online_settings': 'list[CallCommand]',
-            'offline_settings': 'list[CallCommand]',
-            'queue_settings': 'list[CallCommand]'
+            'ivrs': 'list[Ivr]',
+            'record_call': 'bool',
+            'online_ivr': 'str',
+            'offline_ivr': 'str',
+            'queue_ivr': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'ticket_id': 'ticket_id',
             'online_status': 'online_status',
-            'online_settings': 'online_settings',
-            'offline_settings': 'offline_settings',
-            'queue_settings': 'queue_settings'
+            'ivrs': 'ivrs',
+            'record_call': 'record_call',
+            'online_ivr': 'online_ivr',
+            'offline_ivr': 'offline_ivr',
+            'queue_ivr': 'queue_ivr'
         }
 
         self._id = None
         self._ticket_id = None
         self._online_status = None
-        self._online_settings = None
-        self._offline_settings = None
-        self._queue_settings = None
+        self._ivrs = None
+        self._record_call = False
+        self._online_ivr = None
+        self._offline_ivr = None
+        self._queue_ivr = None
 
     @property
     def id(self):
@@ -134,70 +140,114 @@ class Call(object):
         self._online_status = online_status
 
     @property
-    def online_settings(self):
+    def ivrs(self):
         """
-        Gets the online_settings of this Call.
+        Gets the ivrs of this Call.
 
 
-        :return: The online_settings of this Call.
-        :rtype: list[CallCommand]
+        :return: The ivrs of this Call.
+        :rtype: list[Ivr]
         """
-        return self._online_settings
+        return self._ivrs
 
-    @online_settings.setter
-    def online_settings(self, online_settings):
+    @ivrs.setter
+    def ivrs(self, ivrs):
         """
-        Sets the online_settings of this Call.
+        Sets the ivrs of this Call.
 
 
-        :param online_settings: The online_settings of this Call.
-        :type: list[CallCommand]
+        :param ivrs: The ivrs of this Call.
+        :type: list[Ivr]
         """
-        self._online_settings = online_settings
+        self._ivrs = ivrs
 
     @property
-    def offline_settings(self):
+    def record_call(self):
         """
-        Gets the offline_settings of this Call.
+        Gets the record_call of this Call.
 
 
-        :return: The offline_settings of this Call.
-        :rtype: list[CallCommand]
+        :return: The record_call of this Call.
+        :rtype: bool
         """
-        return self._offline_settings
+        return self._record_call
 
-    @offline_settings.setter
-    def offline_settings(self, offline_settings):
+    @record_call.setter
+    def record_call(self, record_call):
         """
-        Sets the offline_settings of this Call.
+        Sets the record_call of this Call.
 
 
-        :param offline_settings: The offline_settings of this Call.
-        :type: list[CallCommand]
+        :param record_call: The record_call of this Call.
+        :type: bool
         """
-        self._offline_settings = offline_settings
+        self._record_call = record_call
 
     @property
-    def queue_settings(self):
+    def online_ivr(self):
         """
-        Gets the queue_settings of this Call.
+        Gets the online_ivr of this Call.
+        Name of IVR in case the service is online. If empty, call starts ringing to agents
 
-
-        :return: The queue_settings of this Call.
-        :rtype: list[CallCommand]
+        :return: The online_ivr of this Call.
+        :rtype: str
         """
-        return self._queue_settings
+        return self._online_ivr
 
-    @queue_settings.setter
-    def queue_settings(self, queue_settings):
+    @online_ivr.setter
+    def online_ivr(self, online_ivr):
         """
-        Sets the queue_settings of this Call.
+        Sets the online_ivr of this Call.
+        Name of IVR in case the service is online. If empty, call starts ringing to agents
 
-
-        :param queue_settings: The queue_settings of this Call.
-        :type: list[CallCommand]
+        :param online_ivr: The online_ivr of this Call.
+        :type: str
         """
-        self._queue_settings = queue_settings
+        self._online_ivr = online_ivr
+
+    @property
+    def offline_ivr(self):
+        """
+        Gets the offline_ivr of this Call.
+        Name of IVR in case the service is offline. If empty, call hangs up with not available tone
+
+        :return: The offline_ivr of this Call.
+        :rtype: str
+        """
+        return self._offline_ivr
+
+    @offline_ivr.setter
+    def offline_ivr(self, offline_ivr):
+        """
+        Sets the offline_ivr of this Call.
+        Name of IVR in case the service is offline. If empty, call hangs up with not available tone
+
+        :param offline_ivr: The offline_ivr of this Call.
+        :type: str
+        """
+        self._offline_ivr = offline_ivr
+
+    @property
+    def queue_ivr(self):
+        """
+        Gets the queue_ivr of this Call.
+        Name of IVR while waiting in queue. If empty, default in queue music is played
+
+        :return: The queue_ivr of this Call.
+        :rtype: str
+        """
+        return self._queue_ivr
+
+    @queue_ivr.setter
+    def queue_ivr(self, queue_ivr):
+        """
+        Sets the queue_ivr of this Call.
+        Name of IVR while waiting in queue. If empty, default in queue music is played
+
+        :param queue_ivr: The queue_ivr of this Call.
+        :type: str
+        """
+        self._queue_ivr = queue_ivr
 
     def to_dict(self):
         """

@@ -10,8 +10,6 @@ from .models.billing_metric import BillingMetric
 from .models.billing_status import BillingStatus
 from .models.call import Call
 from .models.call_agent import CallAgent
-from .models.call_choice import CallChoice
-from .models.call_command import CallCommand
 from .models.call_message import CallMessage
 from .models.call_status import CallStatus
 from .models.contact import Contact
@@ -22,6 +20,9 @@ from .models.error_response import ErrorResponse
 from .models.hosting_info import HostingInfo
 from .models.invoice import Invoice
 from .models.invoice_item import InvoiceItem
+from .models.ivr import Ivr
+from .models.ivr_choice import IvrChoice
+from .models.ivr_step import IvrStep
 from .models.ok_response import OkResponse
 from .models.payment_info import PaymentInfo
 from .models.payment_method import PaymentMethod

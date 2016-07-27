@@ -10,8 +10,6 @@ from .billing_metric import BillingMetric
 from .billing_status import BillingStatus
 from .call import Call
 from .call_agent import CallAgent
-from .call_choice import CallChoice
-from .call_command import CallCommand
 from .call_message import CallMessage
 from .call_status import CallStatus
 from .contact import Contact
@@ -22,6 +20,9 @@ from .error_response import ErrorResponse
 from .hosting_info import HostingInfo
 from .invoice import Invoice
 from .invoice_item import InvoiceItem
+from .ivr import Ivr
+from .ivr_choice import IvrChoice
+from .ivr_step import IvrStep
 from .ok_response import OkResponse
 from .payment_info import PaymentInfo
 from .payment_method import PaymentMethod
