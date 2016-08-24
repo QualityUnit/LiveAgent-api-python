@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**countries_get**](CountriesApi.md#countries_get) | **GET** /countries/ | Country list
+[**get_countries**](CountriesApi.md#get_countries) | **GET** /countries/ | Country list
 
 
-# **countries_get**
-> list[Country] countries_get()
+# **get_countries**
+> list[Country] get_countries()
 
 Country list
 
@@ -26,10 +26,10 @@ api_instance = liveagent_api.CountriesApi()
 
 try: 
     # Country list
-    api_response = api_instance.countries_get()
+    api_response = api_instance.get_countries()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CountriesApi->countries_get: %s\n" % e
+    print "Exception when calling CountriesApi->get_countries: %s\n" % e
 ```
 
 ### Parameters

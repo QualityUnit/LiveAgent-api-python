@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**billing_check_vat_post**](BillingApi.md#billing_check_vat_post) | **POST** /billing/_check_vat | Vat validity
+[**check_vat**](BillingApi.md#check_vat) | **POST** /billing/_check_vat | Vat validity
 
 
-# **billing_check_vat_post**
-> OkResponse billing_check_vat_post(vat_id)
+# **check_vat**
+> OkResponse check_vat(vat_id)
 
 Vat validity
 
@@ -27,10 +27,10 @@ vat_id = 'vat_id_example' # str |
 
 try: 
     # Vat validity
-    api_response = api_instance.billing_check_vat_post(vat_id)
+    api_response = api_instance.check_vat(vat_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BillingApi->billing_check_vat_post: %s\n" % e
+    print "Exception when calling BillingApi->check_vat: %s\n" % e
 ```
 
 ### Parameters

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subscription_id** | **str** |  | [optional] 
-**number** | **int** |  | [optional] 
+**number** | **str** |  | [optional] 
 **created_date** | **datetime** | Invoice issued date | [optional] 
 **from_date** | **datetime** |  | [optional] 
 **to_date** | **datetime** |  | [optional] 
@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **price** | **float** |  | [optional] 
 **customer** | [**Customer**](Customer.md) |  | [optional] 
 **items** | [**list[InvoiceItem]**](InvoiceItem.md) |  | [optional] 
+**currency** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

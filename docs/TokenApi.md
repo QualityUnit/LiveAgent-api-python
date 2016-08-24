@@ -1,18 +1,18 @@
-# liveagent_api.VariationsApi
+# liveagent_api.TokenApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_variation**](VariationsApi.md#get_variation) | **GET** /variations/{variationId} | Variation
+[**get_access_token**](TokenApi.md#get_access_token) | **GET** /token | Access token
 
 
-# **get_variation**
-> Variation get_variation(variation_id)
+# **get_access_token**
+> Token get_access_token(username, password)
 
-Variation
+Access token
 
-Get variation
+Returns access token
 
 ### Example 
 ```python
@@ -25,26 +25,28 @@ from pprint import pprint
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.VariationsApi()
-variation_id = 'variation_id_example' # str | 
+api_instance = liveagent_api.TokenApi()
+username = 'username_example' # str | Username
+password = 'password_example' # str | Password
 
 try: 
-    # Variation
-    api_response = api_instance.get_variation(variation_id)
+    # Access token
+    api_response = api_instance.get_access_token(username, password)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VariationsApi->get_variation: %s\n" % e
+    print "Exception when calling TokenApi->get_access_token: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **variation_id** | **str**|  | 
+ **username** | **str**| Username | 
+ **password** | **str**| Password | 
 
 ### Return type
 
-[**Variation**](Variation.md)
+[**Token**](Token.md)
 
 ### Authorization
 

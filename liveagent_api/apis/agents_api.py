@@ -45,78 +45,7 @@ class AgentsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def agents_get(self, **kwargs):
-        """
-        Agent list
-        List of agents
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.agents_get(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :return: list[Agent]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method agents_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/agents/'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['privileges']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='list[Agent]',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def agents_post(self, **kwargs):
+    def create_agent(self, **kwargs):
         """
         Create agent
         Create new agent user
@@ -127,7 +56,7 @@ class AgentsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.agents_post(callback=callback_function)
+        >>> thread = api.create_agent(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -145,7 +74,7 @@ class AgentsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method agents_post" % key
+                    " to method create_agent" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -190,7 +119,7 @@ class AgentsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def agents_user_id_delete(self, user_id, **kwargs):
+    def delete_agent(self, user_id, **kwargs):
         """
         Agent
         Deletes an agent
@@ -201,7 +130,7 @@ class AgentsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.agents_user_id_delete(user_id, callback=callback_function)
+        >>> thread = api.delete_agent(user_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -219,14 +148,14 @@ class AgentsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method agents_user_id_delete" % key
+                    " to method delete_agent" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `agents_user_id_delete`")
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_agent`")
 
         resource_path = '/agents/{userId}'.replace('{format}', 'json')
         path_params = {}
@@ -267,7 +196,7 @@ class AgentsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def agents_user_id_get(self, user_id, **kwargs):
+    def get_agent(self, user_id, **kwargs):
         """
         Agent
         Retrieves an agent
@@ -278,7 +207,7 @@ class AgentsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.agents_user_id_get(user_id, callback=callback_function)
+        >>> thread = api.get_agent(user_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -296,14 +225,14 @@ class AgentsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method agents_user_id_get" % key
+                    " to method get_agent" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `agents_user_id_get`")
+            raise ValueError("Missing the required parameter `user_id` when calling `get_agent`")
 
         resource_path = '/agents/{userId}'.replace('{format}', 'json')
         path_params = {}
@@ -344,7 +273,78 @@ class AgentsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def agents_user_id_put(self, user_id, **kwargs):
+    def get_agents(self, **kwargs):
+        """
+        Agent list
+        List of agents
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_agents(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: list[Agent]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_agents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/agents/'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[Agent]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_agent(self, user_id, **kwargs):
         """
         Update agent
         Update an agent
@@ -355,7 +355,7 @@ class AgentsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.agents_user_id_put(user_id, callback=callback_function)
+        >>> thread = api.update_agent(user_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -374,14 +374,14 @@ class AgentsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method agents_user_id_put" % key
+                    " to method update_agent" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `agents_user_id_put`")
+            raise ValueError("Missing the required parameter `user_id` when calling `update_agent`")
 
         resource_path = '/agents/{userId}'.replace('{format}', 'json')
         path_params = {}

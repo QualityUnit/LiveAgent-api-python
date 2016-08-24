@@ -45,7 +45,7 @@ class BillingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def billing_check_vat_post(self, vat_id, **kwargs):
+    def check_vat(self, vat_id, **kwargs):
         """
         Vat validity
         Vat validity check
@@ -56,7 +56,7 @@ class BillingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.billing_check_vat_post(vat_id, callback=callback_function)
+        >>> thread = api.check_vat(vat_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -74,14 +74,14 @@ class BillingApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method billing_check_vat_post" % key
+                    " to method check_vat" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'vat_id' is set
         if ('vat_id' not in params) or (params['vat_id'] is None):
-            raise ValueError("Missing the required parameter `vat_id` when calling `billing_check_vat_post`")
+            raise ValueError("Missing the required parameter `vat_id` when calling `check_vat`")
 
         resource_path = '/billing/_check_vat'.replace('{format}', 'json')
         path_params = {}

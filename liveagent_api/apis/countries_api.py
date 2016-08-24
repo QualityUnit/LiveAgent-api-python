@@ -45,7 +45,7 @@ class CountriesApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def countries_get(self, **kwargs):
+    def get_countries(self, **kwargs):
         """
         Country list
         List of available countries
@@ -56,7 +56,7 @@ class CountriesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.countries_get(callback=callback_function)
+        >>> thread = api.get_countries(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -73,7 +73,7 @@ class CountriesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method countries_get" % key
+                    " to method get_countries" % key
                 )
             params[key] = val
         del params['kwargs']

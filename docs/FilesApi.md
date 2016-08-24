@@ -1,18 +1,16 @@
-# liveagent_api.VariationsApi
+# liveagent_api.FilesApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_variation**](VariationsApi.md#get_variation) | **GET** /variations/{variationId} | Variation
+[**upload_file**](FilesApi.md#upload_file) | **POST** /files | Upload new file to the system
 
 
-# **get_variation**
-> Variation get_variation(variation_id)
+# **upload_file**
+> StoredFile upload_file(file=file)
 
-Variation
-
-Get variation
+Upload new file to the system
 
 ### Example 
 ```python
@@ -25,26 +23,26 @@ from pprint import pprint
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.VariationsApi()
-variation_id = 'variation_id_example' # str | 
+api_instance = liveagent_api.FilesApi()
+file = '/path/to/file.txt' # file |  (optional)
 
 try: 
-    # Variation
-    api_response = api_instance.get_variation(variation_id)
+    # Upload new file to the system
+    api_response = api_instance.upload_file(file=file)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling VariationsApi->get_variation: %s\n" % e
+    print "Exception when calling FilesApi->upload_file: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **variation_id** | **str**|  | 
+ **file** | **file**|  | [optional] 
 
 ### Return type
 
-[**Variation**](Variation.md)
+[**StoredFile**](StoredFile.md)
 
 ### Authorization
 
@@ -52,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -4,7 +4,7 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call
+[**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponfing ticket
 [**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 [**call_get_status**](CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 # **call_add_message**
 > OkResponse call_add_message(call_id, body=body)
 
-Adds a message to the call
+Adds a message to the call group in corresponfing ticket
 
 ### Example 
 ```python
@@ -27,10 +27,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -38,7 +34,7 @@ call_id = 'call_id_example' # str |
 body = liveagent_api.CallMessage() # CallMessage |  (optional)
 
 try: 
-    # Adds a message to the call
+    # Adds a message to the call group in corresponfing ticket
     api_response = api_instance.call_add_message(call_id, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -58,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -81,10 +77,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -112,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -126,7 +118,7 @@ Name | Type | Description  | Notes
 
 Create new call
 
-Creates new call (ingoing / outcoming)
+Creates new call (ingoing / outcoming / internal)
 
 ### Example 
 ```python
@@ -137,10 +129,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -148,7 +136,7 @@ call_id = 'call_id_example' # str |
 to_number = 'to_number_example' # str | callee number
 from_number = 'from_number_example' # str | caller number
 ticket_id = 'ticket_id_example' # str | ticket id or code (optional)
-direction = 'in' # str | incoming call ('in' - default) or outgoing call ('out') (optional) (default to in)
+direction = 'in' # str | incoming call ('in' - default), outgoing call ('out') or internal call('int') (optional) (default to in)
 
 try: 
     # Create new call
@@ -166,7 +154,7 @@ Name | Type | Description  | Notes
  **to_number** | **str**| callee number | 
  **from_number** | **str**| caller number | 
  **ticket_id** | **str**| ticket id or code | [optional] 
- **direction** | **str**| incoming call (&#39;in&#39; - default) or outgoing call (&#39;out&#39;) | [optional] [default to in]
+ **direction** | **str**| incoming call (&#39;in&#39; - default), outgoing call (&#39;out&#39;) or internal call(&#39;int&#39;) | [optional] [default to in]
 
 ### Return type
 
@@ -174,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -197,10 +185,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -226,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -251,10 +235,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -280,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -305,10 +285,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -334,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -357,10 +333,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -386,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 

@@ -1,0 +1,165 @@
+# liveagent_api.PhonesApi
+
+All URIs are relative to *http://localhost/api/v3*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**get_phone**](PhonesApi.md#get_phone) | **GET** /phones/{phoneId} | Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
+[**get_phones_list**](PhonesApi.md#get_phones_list) | **GET** /phones | Gets list of available phone devices
+[**update_phone_params**](PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone paramas
+
+
+# **get_phone**
+> PhoneDevice get_phone(phone_id)
+
+Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.PhonesApi()
+phone_id = 'phone_id_example' # str | 
+
+try: 
+    # Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
+    api_response = api_instance.get_phone(phone_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PhonesApi->get_phone: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phone_id** | **str**|  | 
+
+### Return type
+
+[**PhoneDevice**](PhoneDevice.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_phones_list**
+> list[PhoneDevice] get_phones_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+
+Gets list of available phone devices
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.PhonesApi()
+page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
+per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
+sort_field = 'sort_field_example' # str | Sorting field (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+
+try: 
+    # Gets list of available phone devices
+    api_response = api_instance.get_phones_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PhonesApi->get_phones_list: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
+ **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
+ **sort_field** | **str**| Sorting field | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+
+### Return type
+
+[**list[PhoneDevice]**](PhoneDevice.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_phone_params**
+> OkResponse update_phone_params(phone_id, params)
+
+Update phone paramas
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.PhonesApi()
+phone_id = 'phone_id_example' # str | 
+params = 'params_example' # str | New params
+
+try: 
+    # Update phone paramas
+    api_response = api_instance.update_phone_params(phone_id, params)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PhonesApi->update_phone_params: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phone_id** | **str**|  | 
+ **params** | **str**| New params | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

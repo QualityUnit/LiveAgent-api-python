@@ -44,7 +44,11 @@ class Subscription(object):
             'customer_name': 'str',
             'company': 'str',
             'date_created': 'datetime',
+            'date_validity': 'datetime',
             'status': 'str',
+            'account_id': 'str',
+            'cluster_id': 'str',
+            'task_id': 'str',
             'version': 'str',
             'is_latest': 'bool',
             'product_id': 'str',
@@ -59,7 +63,11 @@ class Subscription(object):
             'customer_name': 'customer_name',
             'company': 'company',
             'date_created': 'date_created',
+            'date_validity': 'date_validity',
             'status': 'status',
+            'account_id': 'account_id',
+            'cluster_id': 'cluster_id',
+            'task_id': 'task_id',
             'version': 'version',
             'is_latest': 'is_latest',
             'product_id': 'product_id',
@@ -73,7 +81,11 @@ class Subscription(object):
         self._customer_name = None
         self._company = None
         self._date_created = None
+        self._date_validity = None
         self._status = None
+        self._account_id = None
+        self._cluster_id = None
+        self._task_id = None
         self._version = None
         self._is_latest = None
         self._product_id = None
@@ -234,6 +246,28 @@ class Subscription(object):
         self._date_created = date_created
 
     @property
+    def date_validity(self):
+        """
+        Gets the date_validity of this Subscription.
+
+
+        :return: The date_validity of this Subscription.
+        :rtype: datetime
+        """
+        return self._date_validity
+
+    @date_validity.setter
+    def date_validity(self, date_validity):
+        """
+        Sets the date_validity of this Subscription.
+
+
+        :param date_validity: The date_validity of this Subscription.
+        :type: datetime
+        """
+        self._date_validity = date_validity
+
+    @property
     def status(self):
         """
         Gets the status of this Subscription.
@@ -260,6 +294,72 @@ class Subscription(object):
                 .format(allowed_values)
             )
         self._status = status
+
+    @property
+    def account_id(self):
+        """
+        Gets the account_id of this Subscription.
+
+
+        :return: The account_id of this Subscription.
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """
+        Sets the account_id of this Subscription.
+
+
+        :param account_id: The account_id of this Subscription.
+        :type: str
+        """
+        self._account_id = account_id
+
+    @property
+    def cluster_id(self):
+        """
+        Gets the cluster_id of this Subscription.
+
+
+        :return: The cluster_id of this Subscription.
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """
+        Sets the cluster_id of this Subscription.
+
+
+        :param cluster_id: The cluster_id of this Subscription.
+        :type: str
+        """
+        self._cluster_id = cluster_id
+
+    @property
+    def task_id(self):
+        """
+        Gets the task_id of this Subscription.
+
+
+        :return: The task_id of this Subscription.
+        :rtype: str
+        """
+        return self._task_id
+
+    @task_id.setter
+    def task_id(self, task_id):
+        """
+        Sets the task_id of this Subscription.
+
+
+        :param task_id: The task_id of this Subscription.
+        :type: str
+        """
+        self._task_id = task_id
 
     @property
     def version(self):

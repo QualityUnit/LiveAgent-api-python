@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**hosting_info_get**](HostingApi.md#hosting_info_get) | **GET** /hosting/info | Used hosting system info
+[**get_info**](HostingApi.md#get_info) | **GET** /hosting/info | Used hosting system info
 
 
-# **hosting_info_get**
-> HostingInfo hosting_info_get()
+# **get_info**
+> HostingInfo get_info()
 
 Used hosting system info
 
@@ -26,10 +26,10 @@ api_instance = liveagent_api.HostingApi()
 
 try: 
     # Used hosting system info
-    api_response = api_instance.hosting_info_get()
+    api_response = api_instance.get_info()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling HostingApi->hosting_info_get: %s\n" % e
+    print "Exception when calling HostingApi->get_info: %s\n" % e
 ```
 
 ### Parameters

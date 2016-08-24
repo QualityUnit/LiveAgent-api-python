@@ -45,7 +45,7 @@ class HostingApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def hosting_info_get(self, **kwargs):
+    def get_info(self, **kwargs):
         """
         Used hosting system info
         Used hosting system info
@@ -56,7 +56,7 @@ class HostingApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.hosting_info_get(callback=callback_function)
+        >>> thread = api.get_info(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -73,7 +73,7 @@ class HostingApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method hosting_info_get" % key
+                    " to method get_info" % key
                 )
             params[key] = val
         del params['kwargs']

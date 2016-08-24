@@ -38,14 +38,15 @@ class Invoice(object):
         """
         self.swagger_types = {
             'subscription_id': 'str',
-            'number': 'int',
+            'number': 'str',
             'created_date': 'datetime',
             'from_date': 'datetime',
             'to_date': 'datetime',
             'paid_date': 'datetime',
             'price': 'float',
             'customer': 'Customer',
-            'items': 'list[InvoiceItem]'
+            'items': 'list[InvoiceItem]',
+            'currency': 'str'
         }
 
         self.attribute_map = {
@@ -57,7 +58,8 @@ class Invoice(object):
             'paid_date': 'paid_date',
             'price': 'price',
             'customer': 'customer',
-            'items': 'items'
+            'items': 'items',
+            'currency': 'currency'
         }
 
         self._subscription_id = None
@@ -69,6 +71,7 @@ class Invoice(object):
         self._price = None
         self._customer = None
         self._items = None
+        self._currency = None
 
     @property
     def subscription_id(self):
@@ -99,7 +102,7 @@ class Invoice(object):
 
 
         :return: The number of this Invoice.
-        :rtype: int
+        :rtype: str
         """
         return self._number
 
@@ -110,7 +113,7 @@ class Invoice(object):
 
 
         :param number: The number of this Invoice.
-        :type: int
+        :type: str
         """
         self._number = number
 
@@ -267,6 +270,34 @@ class Invoice(object):
         :type: list[InvoiceItem]
         """
         self._items = items
+
+    @property
+    def currency(self):
+        """
+        Gets the currency of this Invoice.
+
+
+        :return: The currency of this Invoice.
+        :rtype: str
+        """
+        return self._currency
+
+    @currency.setter
+    def currency(self, currency):
+        """
+        Sets the currency of this Invoice.
+
+
+        :param currency: The currency of this Invoice.
+        :type: str
+        """
+        allowed_values = ["USD", "EUR"]
+        if currency not in allowed_values:
+            raise ValueError(
+                "Invalid value for `currency`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._currency = currency
 
     def to_dict(self):
         """

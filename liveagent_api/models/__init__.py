@@ -27,7 +27,11 @@ from .ok_response import OkResponse
 from .payment_info import PaymentInfo
 from .payment_method import PaymentMethod
 from .payment_processor_type import PaymentProcessorType
+from .phone_device import PhoneDevice
+from .phone_number import PhoneNumber
+from .stored_file import StoredFile
 from .subscription import Subscription
+from .token import Token
 from .upgrade import Upgrade
 from .usage_data import UsageData
 from .user import User

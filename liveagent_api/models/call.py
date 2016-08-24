@@ -39,7 +39,7 @@ class Call(object):
         self.swagger_types = {
             'id': 'str',
             'ticket_id': 'str',
-            'online_status': 'str',
+            'callee_status': 'str',
             'ivrs': 'list[Ivr]',
             'record_call': 'bool',
             'online_ivr': 'str',
@@ -50,7 +50,7 @@ class Call(object):
         self.attribute_map = {
             'id': 'id',
             'ticket_id': 'ticket_id',
-            'online_status': 'online_status',
+            'callee_status': 'callee_status',
             'ivrs': 'ivrs',
             'record_call': 'record_call',
             'online_ivr': 'online_ivr',
@@ -60,7 +60,7 @@ class Call(object):
 
         self._id = None
         self._ticket_id = None
-        self._online_status = None
+        self._callee_status = None
         self._ivrs = None
         self._record_call = False
         self._online_ivr = None
@@ -112,32 +112,32 @@ class Call(object):
         self._ticket_id = ticket_id
 
     @property
-    def online_status(self):
+    def callee_status(self):
         """
-        Gets the online_status of this Call.
+        Gets the callee_status of this Call.
         O - online, F - offline
 
-        :return: The online_status of this Call.
+        :return: The callee_status of this Call.
         :rtype: str
         """
-        return self._online_status
+        return self._callee_status
 
-    @online_status.setter
-    def online_status(self, online_status):
+    @callee_status.setter
+    def callee_status(self, callee_status):
         """
-        Sets the online_status of this Call.
+        Sets the callee_status of this Call.
         O - online, F - offline
 
-        :param online_status: The online_status of this Call.
+        :param callee_status: The callee_status of this Call.
         :type: str
         """
         allowed_values = ["O", "F"]
-        if online_status not in allowed_values:
+        if callee_status not in allowed_values:
             raise ValueError(
-                "Invalid value for `online_status`, must be one of {0}"
+                "Invalid value for `callee_status`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._online_status = online_status
+        self._callee_status = callee_status
 
     @property
     def ivrs(self):

@@ -47,7 +47,7 @@ class CallsApi(object):
 
     def call_add_message(self, call_id, **kwargs):
         """
-        Adds a message to the call
+        Adds a message to the call group in corresponfing ticket
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -111,7 +111,7 @@ class CallsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges', 'apikey']
+        auth_settings = ['privileges']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -194,7 +194,7 @@ class CallsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges', 'apikey']
+        auth_settings = ['privileges']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -211,7 +211,7 @@ class CallsApi(object):
     def call_create(self, call_id, to_number, from_number, **kwargs):
         """
         Create new call
-        Creates new call (ingoing / outcoming)
+        Creates new call (ingoing / outcoming / internal)
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -227,7 +227,7 @@ class CallsApi(object):
         :param str to_number: callee number (required)
         :param str from_number: caller number (required)
         :param str ticket_id: ticket id or code
-        :param str direction: incoming call ('in' - default) or outgoing call ('out')
+        :param str direction: incoming call ('in' - default), outgoing call ('out') or internal call('int')
         :return: Call
                  If the method is called asynchronously,
                  returns the request thread.
@@ -289,7 +289,7 @@ class CallsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges', 'apikey']
+        auth_settings = ['privileges']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -366,7 +366,7 @@ class CallsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges', 'apikey']
+        auth_settings = ['privileges']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -443,7 +443,7 @@ class CallsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges', 'apikey']
+        auth_settings = ['privileges']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -520,7 +520,7 @@ class CallsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges', 'apikey']
+        auth_settings = ['privileges']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -597,7 +597,7 @@ class CallsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges', 'apikey']
+        auth_settings = ['privileges']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
