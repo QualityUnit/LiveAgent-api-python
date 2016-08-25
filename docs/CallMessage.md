@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | T (text), H (html), A (audio - link to audio file) | 
+**type** | **str** | T (text), H (html), A (audio - url to audio file or fileId) | 
 **message** | **str** |  | 
 **from_number** | **str** |  | [optional] 
 

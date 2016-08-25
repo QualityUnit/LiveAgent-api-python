@@ -38,16 +38,16 @@ class CallAgent(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'number': 'str'
+            'device': 'PhoneDevice'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'number': 'number'
+            'device': 'device'
         }
 
         self._id = None
-        self._number = None
+        self._device = None
 
     @property
     def id(self):
@@ -72,26 +72,26 @@ class CallAgent(object):
         self._id = id
 
     @property
-    def number(self):
+    def device(self):
         """
-        Gets the number of this CallAgent.
+        Gets the device of this CallAgent.
 
 
-        :return: The number of this CallAgent.
-        :rtype: str
+        :return: The device of this CallAgent.
+        :rtype: PhoneDevice
         """
-        return self._number
+        return self._device
 
-    @number.setter
-    def number(self, number):
+    @device.setter
+    def device(self, device):
         """
-        Sets the number of this CallAgent.
+        Sets the device of this CallAgent.
 
 
-        :param number: The number of this CallAgent.
-        :type: str
+        :param device: The device of this CallAgent.
+        :type: PhoneDevice
         """
-        self._number = number
+        self._device = device
 
     def to_dict(self):
         """

@@ -56,7 +56,7 @@ class CallMessage(object):
     def type(self):
         """
         Gets the type of this CallMessage.
-        T (text), H (html), A (audio - link to audio file)
+        T (text), H (html), A (audio - url to audio file or fileId)
 
         :return: The type of this CallMessage.
         :rtype: str
@@ -67,7 +67,7 @@ class CallMessage(object):
     def type(self, type):
         """
         Sets the type of this CallMessage.
-        T (text), H (html), A (audio - link to audio file)
+        T (text), H (html), A (audio - url to audio file or fileId)
 
         :param type: The type of this CallMessage.
         :type: str
