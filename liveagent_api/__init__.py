@@ -40,11 +40,13 @@ from .models.variation_upgrade import VariationUpgrade
 from .models.variation_upgrades import VariationUpgrades
 
 # import apis into sdk package
+from .apis.agentphone_api import AgentphoneApi
 from .apis.agents_api import AgentsApi
 from .apis.billing_api import BillingApi
 from .apis.calls_api import CallsApi
 from .apis.contacts_api import ContactsApi
 from .apis.countries_api import CountriesApi
+from .apis.default_api import DefaultApi
 from .apis.files_api import FilesApi
 from .apis.hosting_api import HostingApi
 from .apis.invoices_api import InvoicesApi

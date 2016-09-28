@@ -115,7 +115,7 @@ class Call(object):
     def callee_status(self):
         """
         Gets the callee_status of this Call.
-        O - online, F - offline
+        O - online, F - offline, U - unknown
 
         :return: The callee_status of this Call.
         :rtype: str
@@ -126,12 +126,12 @@ class Call(object):
     def callee_status(self, callee_status):
         """
         Sets the callee_status of this Call.
-        O - online, F - offline
+        O - online, F - offline, U - unknown
 
         :param callee_status: The callee_status of this Call.
         :type: str
         """
-        allowed_values = ["O", "F"]
+        allowed_values = ["O", "F", "U"]
         if callee_status not in allowed_values:
             raise ValueError(
                 "Invalid value for `callee_status`, must be one of {0}"

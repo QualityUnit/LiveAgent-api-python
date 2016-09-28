@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
 **ticket_id** | **str** |  | 
-**callee_status** | **str** | O - online, F - offline | [optional] 
+**callee_status** | **str** | O - online, F - offline, U - unknown | [optional] 
 **ivrs** | [**list[Ivr]**](Ivr.md) |  | [optional] 
 **record_call** | **bool** |  | [optional] [default to False]
 **online_ivr** | **str** | Name of IVR in case the service is online. If empty, call starts ringing to agents | [optional] 
