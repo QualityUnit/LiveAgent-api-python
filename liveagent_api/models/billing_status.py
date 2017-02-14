@@ -39,18 +39,27 @@ class BillingStatus(object):
         self.swagger_types = {
             'status': 'str',
             'valid_to_date': 'datetime',
-            'next_billing_date': 'datetime'
+            'next_billing_date': 'datetime',
+            'errors': 'int',
+            'last_error_date': 'datetime',
+            'payment_compatible': 'bool'
         }
 
         self.attribute_map = {
             'status': 'status',
             'valid_to_date': 'valid_to_date',
-            'next_billing_date': 'next_billing_date'
+            'next_billing_date': 'next_billing_date',
+            'errors': 'errors',
+            'last_error_date': 'last_error_date',
+            'payment_compatible': 'payment_compatible'
         }
 
         self._status = None
         self._valid_to_date = None
         self._next_billing_date = None
+        self._errors = None
+        self._last_error_date = None
+        self._payment_compatible = None
 
     @property
     def status(self):
@@ -123,6 +132,72 @@ class BillingStatus(object):
         :type: datetime
         """
         self._next_billing_date = next_billing_date
+
+    @property
+    def errors(self):
+        """
+        Gets the errors of this BillingStatus.
+        Number of charge errors since last successful billing or account unsuspend.
+
+        :return: The errors of this BillingStatus.
+        :rtype: int
+        """
+        return self._errors
+
+    @errors.setter
+    def errors(self, errors):
+        """
+        Sets the errors of this BillingStatus.
+        Number of charge errors since last successful billing or account unsuspend.
+
+        :param errors: The errors of this BillingStatus.
+        :type: int
+        """
+        self._errors = errors
+
+    @property
+    def last_error_date(self):
+        """
+        Gets the last_error_date of this BillingStatus.
+        Time an date of the last failed charge attempt. Only present if number or errors is greater than 0.
+
+        :return: The last_error_date of this BillingStatus.
+        :rtype: datetime
+        """
+        return self._last_error_date
+
+    @last_error_date.setter
+    def last_error_date(self, last_error_date):
+        """
+        Sets the last_error_date of this BillingStatus.
+        Time an date of the last failed charge attempt. Only present if number or errors is greater than 0.
+
+        :param last_error_date: The last_error_date of this BillingStatus.
+        :type: datetime
+        """
+        self._last_error_date = last_error_date
+
+    @property
+    def payment_compatible(self):
+        """
+        Gets the payment_compatible of this BillingStatus.
+        True if used payment method is fully compatible with selected country, false otherwise. False when either payment method or country is not set.
+
+        :return: The payment_compatible of this BillingStatus.
+        :rtype: bool
+        """
+        return self._payment_compatible
+
+    @payment_compatible.setter
+    def payment_compatible(self, payment_compatible):
+        """
+        Sets the payment_compatible of this BillingStatus.
+        True if used payment method is fully compatible with selected country, false otherwise. False when either payment method or country is not set.
+
+        :param payment_compatible: The payment_compatible of this BillingStatus.
+        :type: bool
+        """
+        self._payment_compatible = payment_compatible
 
     def to_dict(self):
         """

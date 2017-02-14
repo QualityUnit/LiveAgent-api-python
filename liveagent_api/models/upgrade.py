@@ -39,18 +39,21 @@ class Upgrade(object):
         self.swagger_types = {
             'variation_id': 'str',
             'addons': 'list[str]',
-            'billing_period': 'str'
+            'billing_period': 'str',
+            'coupon': 'str'
         }
 
         self.attribute_map = {
             'variation_id': 'variation_id',
             'addons': 'addons',
-            'billing_period': 'billing_period'
+            'billing_period': 'billing_period',
+            'coupon': 'coupon'
         }
 
         self._variation_id = None
         self._addons = None
         self._billing_period = '1m'
+        self._coupon = None
 
     @property
     def variation_id(self):
@@ -123,6 +126,28 @@ class Upgrade(object):
                 .format(allowed_values)
             )
         self._billing_period = billing_period
+
+    @property
+    def coupon(self):
+        """
+        Gets the coupon of this Upgrade.
+
+
+        :return: The coupon of this Upgrade.
+        :rtype: str
+        """
+        return self._coupon
+
+    @coupon.setter
+    def coupon(self, coupon):
+        """
+        Sets the coupon of this Upgrade.
+
+
+        :param coupon: The coupon of this Upgrade.
+        :type: str
+        """
+        self._coupon = coupon
 
     def to_dict(self):
         """

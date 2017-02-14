@@ -38,25 +38,40 @@ class PhoneNumber(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'type': 'str',
+            'dial_out_preffix': 'str',
             'number': 'str',
             'name': 'str',
             'departmentid': 'str',
-            'dial_out_preffix': 'str'
+            'host': 'str',
+            'port': 'str',
+            'user': 'str',
+            'password': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'type': 'type',
+            'dial_out_preffix': 'dial_out_preffix',
             'number': 'number',
             'name': 'name',
             'departmentid': 'departmentid',
-            'dial_out_preffix': 'dial_out_preffix'
+            'host': 'host',
+            'port': 'port',
+            'user': 'user',
+            'password': 'password'
         }
 
         self._id = None
+        self._type = None
+        self._dial_out_preffix = None
         self._number = None
         self._name = None
         self._departmentid = None
-        self._dial_out_preffix = None
+        self._host = None
+        self._port = None
+        self._user = None
+        self._password = None
 
     @property
     def id(self):
@@ -79,6 +94,56 @@ class PhoneNumber(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def type(self):
+        """
+        Gets the type of this PhoneNumber.
+        A - API controlled number, T - Twilio number, TO - Twilio outgoing number, D - Digitale, S - Asterisk
+
+        :return: The type of this PhoneNumber.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this PhoneNumber.
+        A - API controlled number, T - Twilio number, TO - Twilio outgoing number, D - Digitale, S - Asterisk
+
+        :param type: The type of this PhoneNumber.
+        :type: str
+        """
+        allowed_values = ["A", "C", "T", "TO", "D", "S"]
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._type = type
+
+    @property
+    def dial_out_preffix(self):
+        """
+        Gets the dial_out_preffix of this PhoneNumber.
+        Preffix needed to orifinate call using this number
+
+        :return: The dial_out_preffix of this PhoneNumber.
+        :rtype: str
+        """
+        return self._dial_out_preffix
+
+    @dial_out_preffix.setter
+    def dial_out_preffix(self, dial_out_preffix):
+        """
+        Sets the dial_out_preffix of this PhoneNumber.
+        Preffix needed to orifinate call using this number
+
+        :param dial_out_preffix: The dial_out_preffix of this PhoneNumber.
+        :type: str
+        """
+        self._dial_out_preffix = dial_out_preffix
 
     @property
     def number(self):
@@ -147,26 +212,92 @@ class PhoneNumber(object):
         self._departmentid = departmentid
 
     @property
-    def dial_out_preffix(self):
+    def host(self):
         """
-        Gets the dial_out_preffix of this PhoneNumber.
-        Preffix needed to orifinate call using this number
+        Gets the host of this PhoneNumber.
 
-        :return: The dial_out_preffix of this PhoneNumber.
+
+        :return: The host of this PhoneNumber.
         :rtype: str
         """
-        return self._dial_out_preffix
+        return self._host
 
-    @dial_out_preffix.setter
-    def dial_out_preffix(self, dial_out_preffix):
+    @host.setter
+    def host(self, host):
         """
-        Sets the dial_out_preffix of this PhoneNumber.
-        Preffix needed to orifinate call using this number
+        Sets the host of this PhoneNumber.
 
-        :param dial_out_preffix: The dial_out_preffix of this PhoneNumber.
+
+        :param host: The host of this PhoneNumber.
         :type: str
         """
-        self._dial_out_preffix = dial_out_preffix
+        self._host = host
+
+    @property
+    def port(self):
+        """
+        Gets the port of this PhoneNumber.
+
+
+        :return: The port of this PhoneNumber.
+        :rtype: str
+        """
+        return self._port
+
+    @port.setter
+    def port(self, port):
+        """
+        Sets the port of this PhoneNumber.
+
+
+        :param port: The port of this PhoneNumber.
+        :type: str
+        """
+        self._port = port
+
+    @property
+    def user(self):
+        """
+        Gets the user of this PhoneNumber.
+
+
+        :return: The user of this PhoneNumber.
+        :rtype: str
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user):
+        """
+        Sets the user of this PhoneNumber.
+
+
+        :param user: The user of this PhoneNumber.
+        :type: str
+        """
+        self._user = user
+
+    @property
+    def password(self):
+        """
+        Gets the password of this PhoneNumber.
+
+
+        :return: The password of this PhoneNumber.
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """
+        Sets the password of this PhoneNumber.
+
+
+        :param password: The password of this PhoneNumber.
+        :type: str
+        """
+        self._password = password
 
     def to_dict(self):
         """

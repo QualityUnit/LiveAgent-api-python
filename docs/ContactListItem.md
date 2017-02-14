@@ -1,4 +1,4 @@
-# Contact
+# ContactListItem
 
 ## Properties
 Name | Type | Description | Notes
@@ -18,17 +18,6 @@ Name | Type | Description | Notes
 **emails** | **list[str]** |  | [optional] 
 **phones** | **list[str]** |  | [optional] 
 **groups** | **list[str]** |  | [optional] 
-**company_id** | **str** |  | [optional] 
-**job_position** | **str** |  | [optional] 
-**system_name** | **str** |  | [optional] 
-**note** | **str** |  | [optional] 
-**ip** | **str** |  | [optional] 
-**useragent** | **str** |  | [optional] 
-**screen** | **str** |  | [optional] 
-**time_offset** | **float** |  | [optional] 
-**latitude** | **float** |  | [optional] 
-**longitude** | **float** |  | [optional] 
-**custom_fields** | **dict(str, str)** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

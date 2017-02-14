@@ -10,7 +10,12 @@ Method | HTTP request | Description
 [**call_get_status**](CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
 [**call_reroute**](CallsApi.md#call_reroute) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
 [**call_ring**](CallsApi.md#call_ring) | **POST** /calls/{callId}/_ring | Let the call ring
+[**call_start**](CallsApi.md#call_start) | **POST** /call/_start | Starts new outcoming / internal call
 [**call_stop**](CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
+[**call_transfer**](CallsApi.md#call_transfer) | **POST** /calls/{callId}/_transfer | Transfer call to other agent
+[**call_transfer_answer**](CallsApi.md#call_transfer_answer) | **POST** /calls/{callId}/_transferAnswer | Set call transfer as answered by agent
+[**call_transfer_complete**](CallsApi.md#call_transfer_complete) | **POST** /calls/{callId}/_transferComplete | Set call transfer complete
+[**confirm_ring**](CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
 
 
 # **call_add_message**
@@ -114,11 +119,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_create**
-> Call call_create(call_id, to_number, from_number, ticket_id=ticket_id, direction=direction)
+> Call call_create(call_id, to_number, from_number, channel_id=channel_id, ticket_id=ticket_id, direction=direction)
 
 Create new call
 
-Creates new call (ingoing / outcoming / internal)
+Creates new call (ingoing / outcoming / internal). Does not initiate the outgoing call
 
 ### Example 
 ```python
@@ -135,12 +140,13 @@ api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 to_number = 'to_number_example' # str | callee number
 from_number = 'from_number_example' # str | caller number
+channel_id = 'channel_id_example' # str | Channel ID (optional)
 ticket_id = 'ticket_id_example' # str | ticket id or code (optional)
 direction = 'in' # str | incoming call ('in' - default), outgoing call ('out') or internal call('int') (optional) (default to in)
 
 try: 
     # Create new call
-    api_response = api_instance.call_create(call_id, to_number, from_number, ticket_id=ticket_id, direction=direction)
+    api_response = api_instance.call_create(call_id, to_number, from_number, channel_id=channel_id, ticket_id=ticket_id, direction=direction)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_create: %s\n" % e
@@ -153,6 +159,7 @@ Name | Type | Description  | Notes
  **call_id** | **str**|  | 
  **to_number** | **str**| callee number | 
  **from_number** | **str**| caller number | 
+ **channel_id** | **str**| Channel ID | [optional] 
  **ticket_id** | **str**| ticket id or code | [optional] 
  **direction** | **str**| incoming call (&#39;in&#39; - default), outgoing call (&#39;out&#39;) or internal call(&#39;int&#39;) | [optional] [default to in]
 
@@ -319,6 +326,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **call_start**
+> OkResponse call_start(to_number, from_number, ticket_id=ticket_id)
+
+Starts new outcoming / internal call
+
+Starts new call by ringing agent device and the dialing customer after agent has picked up his phone\n
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+to_number = 'to_number_example' # str | callee number
+from_number = 'from_number_example' # str | caller number
+ticket_id = 'ticket_id_example' # str | ticket id or code (optional)
+
+try: 
+    # Starts new outcoming / internal call
+    api_response = api_instance.call_start(to_number, from_number, ticket_id=ticket_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_start: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **to_number** | **str**| callee number | 
+ **from_number** | **str**| caller number | 
+ **ticket_id** | **str**| ticket id or code | [optional] 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **call_stop**
 > OkResponse call_stop(call_id)
 
@@ -351,6 +412,210 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_transfer**
+> OkResponse call_transfer(call_id, to_number)
+
+Transfer call to other agent
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+to_number = 'to_number_example' # str | callee number
+
+try: 
+    # Transfer call to other agent
+    api_response = api_instance.call_transfer(call_id, to_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_transfer: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **to_number** | **str**| callee number | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_transfer_answer**
+> OkResponse call_transfer_answer(call_id, to_number)
+
+Set call transfer as answered by agent
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+to_number = 'to_number_example' # str | callee number
+
+try: 
+    # Set call transfer as answered by agent
+    api_response = api_instance.call_transfer_answer(call_id, to_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_transfer_answer: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **to_number** | **str**| callee number | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_transfer_complete**
+> OkResponse call_transfer_complete(call_id, to_number)
+
+Set call transfer complete
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+to_number = 'to_number_example' # str | callee number
+
+try: 
+    # Set call transfer complete
+    api_response = api_instance.call_transfer_complete(call_id, to_number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_transfer_complete: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **to_number** | **str**| callee number | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **confirm_ring**
+> OkResponse confirm_ring(call_id, agent_id=agent_id, channel_id=channel_id)
+
+Confirm that call is ringing
+
+Confirms that the call is ringing to an agent
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+agent_id = 'agent_id_example' # str | Agent ID (optional)
+channel_id = 'channel_id_example' # str | Channel ID (optional)
+
+try: 
+    # Confirm that call is ringing
+    api_response = api_instance.confirm_ring(call_id, agent_id=agent_id, channel_id=channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->confirm_ring: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **agent_id** | **str**| Agent ID | [optional] 
+ **channel_id** | **str**| Channel ID | [optional] 
 
 ### Return type
 

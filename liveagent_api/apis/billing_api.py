@@ -121,3 +121,80 @@ class BillingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
+    def get_coupon(self, coupon_code, **kwargs):
+        """
+        Coupon
+        Get coupon
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_coupon(coupon_code, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str coupon_code:  (required)
+        :return: Coupon
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['coupon_code']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_coupon" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'coupon_code' is set
+        if ('coupon_code' not in params) or (params['coupon_code'] is None):
+            raise ValueError("Missing the required parameter `coupon_code` when calling `get_coupon`")
+
+        resource_path = '/coupons/{couponCode}'.replace('{format}', 'json')
+        path_params = {}
+        if 'coupon_code' in params:
+            path_params['couponCode'] = params['coupon_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Coupon',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response

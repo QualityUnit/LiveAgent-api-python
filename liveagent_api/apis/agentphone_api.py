@@ -170,13 +170,13 @@ class AgentphoneApi(object):
             path_params['agentId'] = params['agent_id']
 
         query_params = {}
+        if 'phone_id' in params:
+            query_params['phoneId'] = params['phone_id']
 
         header_params = {}
 
         form_params = []
         local_var_files = {}
-        if 'phone_id' in params:
-            form_params.append(('phoneId', params['phone_id']))
 
         body_params = None
 

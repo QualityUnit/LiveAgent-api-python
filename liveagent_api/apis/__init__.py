@@ -5,6 +5,7 @@ from .agentphone_api import AgentphoneApi
 from .agents_api import AgentsApi
 from .billing_api import BillingApi
 from .calls_api import CallsApi
+from .companies_api import CompaniesApi
 from .contacts_api import ContactsApi
 from .countries_api import CountriesApi
 from .default_api import DefaultApi

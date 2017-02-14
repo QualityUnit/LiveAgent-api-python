@@ -12,9 +12,14 @@ from .models.call import Call
 from .models.call_agent import CallAgent
 from .models.call_message import CallMessage
 from .models.call_status import CallStatus
+from .models.company import Company
+from .models.company_list_item import CompanyListItem
 from .models.contact import Contact
+from .models.contact_list_item import ContactListItem
 from .models.country import Country
+from .models.coupon import Coupon
 from .models.customer import Customer
+from .models.discount_value import DiscountValue
 from .models.domain import Domain
 from .models.error_response import ErrorResponse
 from .models.hosting_info import HostingInfo
@@ -34,7 +39,6 @@ from .models.subscription import Subscription
 from .models.token import Token
 from .models.upgrade import Upgrade
 from .models.usage_data import UsageData
-from .models.user import User
 from .models.variation import Variation
 from .models.variation_upgrade import VariationUpgrade
 from .models.variation_upgrades import VariationUpgrades
@@ -44,6 +48,7 @@ from .apis.agentphone_api import AgentphoneApi
 from .apis.agents_api import AgentsApi
 from .apis.billing_api import BillingApi
 from .apis.calls_api import CallsApi
+from .apis.companies_api import CompaniesApi
 from .apis.contacts_api import ContactsApi
 from .apis.countries_api import CountriesApi
 from .apis.default_api import DefaultApi

@@ -40,23 +40,20 @@ class Domain(object):
             'domain': 'str',
             'custom_domain': 'str',
             'ssl_key': 'str',
-            'ssl_crt': 'str',
-            'ssl_bundle': 'str'
+            'ssl_crt': 'str'
         }
 
         self.attribute_map = {
             'domain': 'domain',
             'custom_domain': 'custom_domain',
             'ssl_key': 'ssl_key',
-            'ssl_crt': 'ssl_crt',
-            'ssl_bundle': 'ssl_bundle'
+            'ssl_crt': 'ssl_crt'
         }
 
         self._domain = None
         self._custom_domain = None
         self._ssl_key = None
         self._ssl_crt = None
-        self._ssl_bundle = None
 
     @property
     def domain(self):
@@ -145,28 +142,6 @@ class Domain(object):
         :type: str
         """
         self._ssl_crt = ssl_crt
-
-    @property
-    def ssl_bundle(self):
-        """
-        Gets the ssl_bundle of this Domain.
-
-
-        :return: The ssl_bundle of this Domain.
-        :rtype: str
-        """
-        return self._ssl_bundle
-
-    @ssl_bundle.setter
-    def ssl_bundle(self, ssl_bundle):
-        """
-        Sets the ssl_bundle of this Domain.
-
-
-        :param ssl_bundle: The ssl_bundle of this Domain.
-        :type: str
-        """
-        self._ssl_bundle = ssl_bundle
 
     def to_dict(self):
         """

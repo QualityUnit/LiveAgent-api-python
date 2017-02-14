@@ -211,7 +211,7 @@ class CallsApi(object):
     def call_create(self, call_id, to_number, from_number, **kwargs):
         """
         Create new call
-        Creates new call (ingoing / outcoming / internal)
+        Creates new call (ingoing / outcoming / internal). Does not initiate the outgoing call
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -226,6 +226,7 @@ class CallsApi(object):
         :param str call_id:  (required)
         :param str to_number: callee number (required)
         :param str from_number: caller number (required)
+        :param str channel_id: Channel ID
         :param str ticket_id: ticket id or code
         :param str direction: incoming call ('in' - default), outgoing call ('out') or internal call('int')
         :return: Call
@@ -233,7 +234,7 @@ class CallsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'to_number', 'from_number', 'ticket_id', 'direction']
+        all_params = ['call_id', 'to_number', 'from_number', 'channel_id', 'ticket_id', 'direction']
         all_params.append('callback')
 
         params = locals()
@@ -262,6 +263,8 @@ class CallsApi(object):
             path_params['callId'] = params['call_id']
 
         query_params = {}
+        if 'channel_id' in params:
+            query_params['channelId'] = params['channel_id']
         if 'to_number' in params:
             query_params['to_number'] = params['to_number']
         if 'from_number' in params:
@@ -534,6 +537,92 @@ class CallsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def call_start(self, to_number, from_number, **kwargs):
+        """
+        Starts new outcoming / internal call
+        Starts new call by ringing agent device and the dialing customer after agent has picked up his phone\n
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.call_start(to_number, from_number, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str to_number: callee number (required)
+        :param str from_number: caller number (required)
+        :param str ticket_id: ticket id or code
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['to_number', 'from_number', 'ticket_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method call_start" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'to_number' is set
+        if ('to_number' not in params) or (params['to_number'] is None):
+            raise ValueError("Missing the required parameter `to_number` when calling `call_start`")
+        # verify the required parameter 'from_number' is set
+        if ('from_number' not in params) or (params['from_number'] is None):
+            raise ValueError("Missing the required parameter `from_number` when calling `call_start`")
+
+        resource_path = '/call/_start'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'to_number' in params:
+            query_params['to_number'] = params['to_number']
+        if 'from_number' in params:
+            query_params['from_number'] = params['from_number']
+        if 'ticket_id' in params:
+            query_params['ticketId'] = params['ticket_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/x-www-form-urlencoded'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def call_stop(self, call_id, **kwargs):
         """
         Stops the call
@@ -578,6 +667,338 @@ class CallsApi(object):
             path_params['callId'] = params['call_id']
 
         query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def call_transfer(self, call_id, to_number, **kwargs):
+        """
+        Transfer call to other agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.call_transfer(call_id, to_number, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str call_id:  (required)
+        :param str to_number: callee number (required)
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['call_id', 'to_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method call_transfer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'call_id' is set
+        if ('call_id' not in params) or (params['call_id'] is None):
+            raise ValueError("Missing the required parameter `call_id` when calling `call_transfer`")
+        # verify the required parameter 'to_number' is set
+        if ('to_number' not in params) or (params['to_number'] is None):
+            raise ValueError("Missing the required parameter `to_number` when calling `call_transfer`")
+
+        resource_path = '/calls/{callId}/_transfer'.replace('{format}', 'json')
+        path_params = {}
+        if 'call_id' in params:
+            path_params['callId'] = params['call_id']
+
+        query_params = {}
+        if 'to_number' in params:
+            query_params['to_number'] = params['to_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def call_transfer_answer(self, call_id, to_number, **kwargs):
+        """
+        Set call transfer as answered by agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.call_transfer_answer(call_id, to_number, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str call_id:  (required)
+        :param str to_number: callee number (required)
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['call_id', 'to_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method call_transfer_answer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'call_id' is set
+        if ('call_id' not in params) or (params['call_id'] is None):
+            raise ValueError("Missing the required parameter `call_id` when calling `call_transfer_answer`")
+        # verify the required parameter 'to_number' is set
+        if ('to_number' not in params) or (params['to_number'] is None):
+            raise ValueError("Missing the required parameter `to_number` when calling `call_transfer_answer`")
+
+        resource_path = '/calls/{callId}/_transferAnswer'.replace('{format}', 'json')
+        path_params = {}
+        if 'call_id' in params:
+            path_params['callId'] = params['call_id']
+
+        query_params = {}
+        if 'to_number' in params:
+            query_params['to_number'] = params['to_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def call_transfer_complete(self, call_id, to_number, **kwargs):
+        """
+        Set call transfer complete
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.call_transfer_complete(call_id, to_number, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str call_id:  (required)
+        :param str to_number: callee number (required)
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['call_id', 'to_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method call_transfer_complete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'call_id' is set
+        if ('call_id' not in params) or (params['call_id'] is None):
+            raise ValueError("Missing the required parameter `call_id` when calling `call_transfer_complete`")
+        # verify the required parameter 'to_number' is set
+        if ('to_number' not in params) or (params['to_number'] is None):
+            raise ValueError("Missing the required parameter `to_number` when calling `call_transfer_complete`")
+
+        resource_path = '/calls/{callId}/_transferComplete'.replace('{format}', 'json')
+        path_params = {}
+        if 'call_id' in params:
+            path_params['callId'] = params['call_id']
+
+        query_params = {}
+        if 'to_number' in params:
+            query_params['to_number'] = params['to_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def confirm_ring(self, call_id, **kwargs):
+        """
+        Confirm that call is ringing
+        Confirms that the call is ringing to an agent
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.confirm_ring(call_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str call_id:  (required)
+        :param str agent_id: Agent ID
+        :param str channel_id: Channel ID
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['call_id', 'agent_id', 'channel_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method confirm_ring" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'call_id' is set
+        if ('call_id' not in params) or (params['call_id'] is None):
+            raise ValueError("Missing the required parameter `call_id` when calling `confirm_ring`")
+
+        resource_path = '/calls/{callId}/_confirmRing'.replace('{format}', 'json')
+        path_params = {}
+        if 'call_id' in params:
+            path_params['callId'] = params['call_id']
+
+        query_params = {}
+        if 'agent_id' in params:
+            query_params['agentId'] = params['agent_id']
+        if 'channel_id' in params:
+            query_params['channelId'] = params['channel_id']
 
         header_params = {}
 

@@ -12,9 +12,14 @@ from .call import Call
 from .call_agent import CallAgent
 from .call_message import CallMessage
 from .call_status import CallStatus
+from .company import Company
+from .company_list_item import CompanyListItem
 from .contact import Contact
+from .contact_list_item import ContactListItem
 from .country import Country
+from .coupon import Coupon
 from .customer import Customer
+from .discount_value import DiscountValue
 from .domain import Domain
 from .error_response import ErrorResponse
 from .hosting_info import HostingInfo
@@ -34,7 +39,6 @@ from .subscription import Subscription
 from .token import Token
 from .upgrade import Upgrade
 from .usage_data import UsageData
-from .user import User
 from .variation import Variation
 from .variation_upgrade import VariationUpgrade
 from .variation_upgrades import VariationUpgrades

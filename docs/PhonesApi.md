@@ -4,10 +4,61 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_phone**](PhonesApi.md#create_phone) | **POST** /phones | Creates external phone
 [**get_phone**](PhonesApi.md#get_phone) | **GET** /phones/{phoneId} | Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
-[**get_phones_list**](PhonesApi.md#get_phones_list) | **GET** /phones | Gets list of available phone devices
+[**get_phones_list**](PhonesApi.md#get_phones_list) | **GET** /phones | Gets list of available phone devices.\nSpecial filters (userId - filter phones available for specified user only)\n
 [**update_phone_params**](PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone paramas
 
+
+# **create_phone**
+> PhoneDevice create_phone(number, type=type)
+
+Creates external phone
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.PhonesApi()
+number = 'number_example' # str | 
+type = 'S' # str | S - SIP phone, E - PSTN phone (optional) (default to S)
+
+try: 
+    # Creates external phone
+    api_response = api_instance.create_phone(number, type=type)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PhonesApi->create_phone: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **number** | **str**|  | 
+ **type** | **str**| S - SIP phone, E - PSTN phone | [optional] [default to S]
+
+### Return type
+
+[**PhoneDevice**](PhoneDevice.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_phone**
 > PhoneDevice get_phone(phone_id)
@@ -60,7 +111,7 @@ Name | Type | Description  | Notes
 # **get_phones_list**
 > list[PhoneDevice] get_phones_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
 
-Gets list of available phone devices
+Gets list of available phone devices.\nSpecial filters (userId - filter phones available for specified user only)\n
 
 ### Example 
 ```python
@@ -81,7 +132,7 @@ sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
 try: 
-    # Gets list of available phone devices
+    # Gets list of available phone devices.\nSpecial filters (userId - filter phones available for specified user only)\n
     api_response = api_instance.get_phones_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:

@@ -1,16 +1,13 @@
-# Contact
+# Company
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
-**firstname** | **str** |  | [optional] 
-**lastname** | **str** |  | [optional] 
-**systemname** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
-**type** | **str** | V - visitor, R - registered visitor, A - agent | [optional] [default to 'V']
-**gender** | **str** | M - Male, F - Female | [optional] 
+**type** | **str** | V - visitor, R - registered visitor | [optional] [default to 'V']
 **date_created** | **datetime** |  | [optional] 
 **language** | **str** |  | [optional] 
 **city** | **str** |  | [optional] 
@@ -18,8 +15,6 @@ Name | Type | Description | Notes
 **emails** | **list[str]** |  | [optional] 
 **phones** | **list[str]** |  | [optional] 
 **groups** | **list[str]** |  | [optional] 
-**company_id** | **str** |  | [optional] 
-**job_position** | **str** |  | [optional] 
 **system_name** | **str** |  | [optional] 
 **note** | **str** |  | [optional] 
 **ip** | **str** |  | [optional] 

@@ -39,29 +39,17 @@ class PaymentMethod(object):
         self.swagger_types = {
             'payment_type': 'str',
             'payment_token': 'str',
-            'card_name': 'str',
-            'card_holder': 'str',
-            'card_address': 'str',
-            'card_zip': 'str',
             'card_expire': 'str'
         }
 
         self.attribute_map = {
             'payment_type': 'payment_type',
             'payment_token': 'payment_token',
-            'card_name': 'card_name',
-            'card_holder': 'card_holder',
-            'card_address': 'card_address',
-            'card_zip': 'card_zip',
             'card_expire': 'card_expire'
         }
 
         self._payment_type = None
         self._payment_token = None
-        self._card_name = None
-        self._card_holder = None
-        self._card_address = None
-        self._card_zip = None
         self._card_expire = None
 
     @property
@@ -113,94 +101,6 @@ class PaymentMethod(object):
         :type: str
         """
         self._payment_token = payment_token
-
-    @property
-    def card_name(self):
-        """
-        Gets the card_name of this PaymentMethod.
-
-
-        :return: The card_name of this PaymentMethod.
-        :rtype: str
-        """
-        return self._card_name
-
-    @card_name.setter
-    def card_name(self, card_name):
-        """
-        Sets the card_name of this PaymentMethod.
-
-
-        :param card_name: The card_name of this PaymentMethod.
-        :type: str
-        """
-        self._card_name = card_name
-
-    @property
-    def card_holder(self):
-        """
-        Gets the card_holder of this PaymentMethod.
-
-
-        :return: The card_holder of this PaymentMethod.
-        :rtype: str
-        """
-        return self._card_holder
-
-    @card_holder.setter
-    def card_holder(self, card_holder):
-        """
-        Sets the card_holder of this PaymentMethod.
-
-
-        :param card_holder: The card_holder of this PaymentMethod.
-        :type: str
-        """
-        self._card_holder = card_holder
-
-    @property
-    def card_address(self):
-        """
-        Gets the card_address of this PaymentMethod.
-
-
-        :return: The card_address of this PaymentMethod.
-        :rtype: str
-        """
-        return self._card_address
-
-    @card_address.setter
-    def card_address(self, card_address):
-        """
-        Sets the card_address of this PaymentMethod.
-
-
-        :param card_address: The card_address of this PaymentMethod.
-        :type: str
-        """
-        self._card_address = card_address
-
-    @property
-    def card_zip(self):
-        """
-        Gets the card_zip of this PaymentMethod.
-
-
-        :return: The card_zip of this PaymentMethod.
-        :rtype: str
-        """
-        return self._card_zip
-
-    @card_zip.setter
-    def card_zip(self, card_zip):
-        """
-        Sets the card_zip of this PaymentMethod.
-
-
-        :param card_zip: The card_zip of this PaymentMethod.
-        :type: str
-        """
-        self._card_zip = card_zip
 
     @property
     def card_expire(self):

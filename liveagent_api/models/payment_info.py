@@ -38,27 +38,18 @@ class PaymentInfo(object):
         """
         self.swagger_types = {
             'payment_type': 'str',
-            'card_name': 'str',
-            'card_holder': 'str',
-            'card_address': 'str',
-            'card_zip': 'str',
+            'detail': 'str',
             'card_expire': 'str'
         }
 
         self.attribute_map = {
             'payment_type': 'payment_type',
-            'card_name': 'card_name',
-            'card_holder': 'card_holder',
-            'card_address': 'card_address',
-            'card_zip': 'card_zip',
+            'detail': 'detail',
             'card_expire': 'card_expire'
         }
 
         self._payment_type = None
-        self._card_name = None
-        self._card_holder = None
-        self._card_address = None
-        self._card_zip = None
+        self._detail = None
         self._card_expire = None
 
     @property
@@ -84,92 +75,26 @@ class PaymentInfo(object):
         self._payment_type = payment_type
 
     @property
-    def card_name(self):
+    def detail(self):
         """
-        Gets the card_name of this PaymentInfo.
+        Gets the detail of this PaymentInfo.
 
 
-        :return: The card_name of this PaymentInfo.
+        :return: The detail of this PaymentInfo.
         :rtype: str
         """
-        return self._card_name
+        return self._detail
 
-    @card_name.setter
-    def card_name(self, card_name):
+    @detail.setter
+    def detail(self, detail):
         """
-        Sets the card_name of this PaymentInfo.
+        Sets the detail of this PaymentInfo.
 
 
-        :param card_name: The card_name of this PaymentInfo.
+        :param detail: The detail of this PaymentInfo.
         :type: str
         """
-        self._card_name = card_name
-
-    @property
-    def card_holder(self):
-        """
-        Gets the card_holder of this PaymentInfo.
-
-
-        :return: The card_holder of this PaymentInfo.
-        :rtype: str
-        """
-        return self._card_holder
-
-    @card_holder.setter
-    def card_holder(self, card_holder):
-        """
-        Sets the card_holder of this PaymentInfo.
-
-
-        :param card_holder: The card_holder of this PaymentInfo.
-        :type: str
-        """
-        self._card_holder = card_holder
-
-    @property
-    def card_address(self):
-        """
-        Gets the card_address of this PaymentInfo.
-
-
-        :return: The card_address of this PaymentInfo.
-        :rtype: str
-        """
-        return self._card_address
-
-    @card_address.setter
-    def card_address(self, card_address):
-        """
-        Sets the card_address of this PaymentInfo.
-
-
-        :param card_address: The card_address of this PaymentInfo.
-        :type: str
-        """
-        self._card_address = card_address
-
-    @property
-    def card_zip(self):
-        """
-        Gets the card_zip of this PaymentInfo.
-
-
-        :return: The card_zip of this PaymentInfo.
-        :rtype: str
-        """
-        return self._card_zip
-
-    @card_zip.setter
-    def card_zip(self, card_zip):
-        """
-        Sets the card_zip of this PaymentInfo.
-
-
-        :param card_zip: The card_zip of this PaymentInfo.
-        :type: str
-        """
-        self._card_zip = card_zip
+        self._detail = detail
 
     @property
     def card_expire(self):

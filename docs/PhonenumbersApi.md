@@ -4,9 +4,58 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_number**](PhonenumbersApi.md#add_number) | **POST** /phone_numbers | Add new number
 [**get_phone_number**](PhonenumbersApi.md#get_phone_number) | **GET** /phone_numbers/{phoneNumberId} | Gets phone number
 [**get_phone_numbers_list**](PhonenumbersApi.md#get_phone_numbers_list) | **GET** /phone_numbers | Gets list of available phone numbers
 
+
+# **add_number**
+> PhoneNumber add_number(number=number)
+
+Add new number
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.PhonenumbersApi()
+number = liveagent_api.PhoneNumber() # PhoneNumber |  (optional)
+
+try: 
+    # Add new number
+    api_response = api_instance.add_number(number=number)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PhonenumbersApi->add_number: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **number** | [**PhoneNumber**](PhoneNumber.md)|  | [optional] 
+
+### Return type
+
+[**PhoneNumber**](PhoneNumber.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_phone_number**
 > PhoneNumber get_phone_number(phone_number_id)

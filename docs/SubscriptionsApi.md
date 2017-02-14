@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_payment_processor**](SubscriptionsApi.md#get_payment_processor) | **GET** /subscriptions/{subscriptionId}/paymentProcessor | Payment processor
 [**get_subscription**](SubscriptionsApi.md#get_subscription) | **GET** /subscriptions/{subscriptionId} | Subscription
 [**get_subscription_attributes**](SubscriptionsApi.md#get_subscription_attributes) | **GET** /subscriptions/{subscriptionId}/attributes/ | Subscription attribute list
+[**get_subscription_discounts**](SubscriptionsApi.md#get_subscription_discounts) | **GET** /subscriptions/{subscriptionId}/discounts | Subscription discounts
 [**get_subscription_invoices**](SubscriptionsApi.md#get_subscription_invoices) | **GET** /subscriptions/{subscriptionId}/invoices/ | Subscription invoice list
 [**get_upgrade_variations**](SubscriptionsApi.md#get_upgrade_variations) | **GET** /subscriptions/{subscriptionId}/upgradeVariations | Upgrade variation list
 [**resume_billing**](SubscriptionsApi.md#resume_billing) | **POST** /subscriptions/{subscriptionId}/_cancelStop | Restart billing
@@ -621,6 +622,56 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_subscription_discounts**
+> list[DiscountValue] get_subscription_discounts(subscription_id)
+
+Subscription discounts
+
+Returns all active discounts for specified subscription
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.SubscriptionsApi()
+subscription_id = 'subscription_id_example' # str | 
+
+try: 
+    # Subscription discounts
+    api_response = api_instance.get_subscription_discounts(subscription_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling SubscriptionsApi->get_subscription_discounts: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **str**|  | 
+
+### Return type
+
+[**list[DiscountValue]**](DiscountValue.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_subscription_invoices**
 > list[Invoice] get_subscription_invoices(subscription_id, page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
 
@@ -881,7 +932,7 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
-body = liveagent_api.Domain() # Domain |  (optional)
+body = liveagent_api.Domain() # Domain | Domain can be sent anytime. Custom domain can be sent by itself or along with both certificate and key. (optional)
 
 try: 
     # Custom domain
@@ -896,7 +947,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**|  | 
- **body** | [**Domain**](Domain.md)|  | [optional] 
+ **body** | [**Domain**](Domain.md)| Domain can be sent anytime. Custom domain can be sent by itself or along with both certificate and key. | [optional] 
 
 ### Return type
 
