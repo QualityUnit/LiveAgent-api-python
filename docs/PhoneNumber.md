@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
 **type** | **str** | A - API controlled number, T - Twilio number, TO - Twilio outgoing number, D - Digitale, S - Asterisk | [optional] 
-**dial_out_preffix** | **str** | Preffix needed to orifinate call using this number | [optional] 
+**dial_out_preffix** | **int** | Preffix needed to orifinate call using this number | [optional] 
 **number** | **str** |  | 
 **name** | **str** |  | [optional] 
 **departmentid** | **str** |  | [optional] 

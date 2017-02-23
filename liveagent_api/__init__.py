@@ -10,6 +10,7 @@ from .models.billing_metric import BillingMetric
 from .models.billing_status import BillingStatus
 from .models.call import Call
 from .models.call_agent import CallAgent
+from .models.call_channel import CallChannel
 from .models.call_message import CallMessage
 from .models.call_status import CallStatus
 from .models.company import Company

@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **groups** | **list[str]** |  | [optional] 
 **company_id** | **str** |  | [optional] 
 **job_position** | **str** |  | [optional] 
-**system_name** | **str** |  | [optional] 
 **note** | **str** |  | [optional] 
 **ip** | **str** |  | [optional] 
 **useragent** | **str** |  | [optional] 

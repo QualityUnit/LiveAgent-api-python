@@ -54,7 +54,6 @@ class Contact(object):
             'groups': 'list[str]',
             'company_id': 'str',
             'job_position': 'str',
-            'system_name': 'str',
             'note': 'str',
             'ip': 'str',
             'useragent': 'str',
@@ -83,7 +82,6 @@ class Contact(object):
             'groups': 'groups',
             'company_id': 'company_id',
             'job_position': 'job_position',
-            'system_name': 'system_name',
             'note': 'note',
             'ip': 'ip',
             'useragent': 'useragent',
@@ -111,7 +109,6 @@ class Contact(object):
         self._groups = None
         self._company_id = None
         self._job_position = None
-        self._system_name = None
         self._note = None
         self._ip = None
         self._useragent = None
@@ -500,28 +497,6 @@ class Contact(object):
         :type: str
         """
         self._job_position = job_position
-
-    @property
-    def system_name(self):
-        """
-        Gets the system_name of this Contact.
-
-
-        :return: The system_name of this Contact.
-        :rtype: str
-        """
-        return self._system_name
-
-    @system_name.setter
-    def system_name(self, system_name):
-        """
-        Sets the system_name of this Contact.
-
-
-        :param system_name: The system_name of this Contact.
-        :type: str
-        """
-        self._system_name = system_name
 
     @property
     def note(self):

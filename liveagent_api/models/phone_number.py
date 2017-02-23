@@ -39,7 +39,7 @@ class PhoneNumber(object):
         self.swagger_types = {
             'id': 'str',
             'type': 'str',
-            'dial_out_preffix': 'str',
+            'dial_out_preffix': 'int',
             'number': 'str',
             'name': 'str',
             'departmentid': 'str',
@@ -130,7 +130,7 @@ class PhoneNumber(object):
         Preffix needed to orifinate call using this number
 
         :return: The dial_out_preffix of this PhoneNumber.
-        :rtype: str
+        :rtype: int
         """
         return self._dial_out_preffix
 
@@ -141,7 +141,7 @@ class PhoneNumber(object):
         Preffix needed to orifinate call using this number
 
         :param dial_out_preffix: The dial_out_preffix of this PhoneNumber.
-        :type: str
+        :type: int
         """
         self._dial_out_preffix = dial_out_preffix
 
