@@ -111,7 +111,7 @@ class SubscriptionsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges']
+        auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'PUT',
                                             path_params,
@@ -268,7 +268,7 @@ class SubscriptionsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges']
+        auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -970,7 +970,7 @@ class SubscriptionsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges']
+        auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -1702,7 +1702,7 @@ class SubscriptionsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges']
+        auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -1782,7 +1782,7 @@ class SubscriptionsApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges']
+        auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,

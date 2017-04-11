@@ -49,7 +49,6 @@ class Company(object):
             'emails': 'list[str]',
             'phones': 'list[str]',
             'groups': 'list[str]',
-            'system_name': 'str',
             'note': 'str',
             'ip': 'str',
             'useragent': 'str',
@@ -57,7 +56,7 @@ class Company(object):
             'time_offset': 'float',
             'latitude': 'float',
             'longitude': 'float',
-            'custom_fields': 'dict(str, str)'
+            'custom_fields': 'list[CustomFields]'
         }
 
         self.attribute_map = {
@@ -73,7 +72,6 @@ class Company(object):
             'emails': 'emails',
             'phones': 'phones',
             'groups': 'groups',
-            'system_name': 'system_name',
             'note': 'note',
             'ip': 'ip',
             'useragent': 'useragent',
@@ -96,7 +94,6 @@ class Company(object):
         self._emails = None
         self._phones = None
         self._groups = None
-        self._system_name = None
         self._note = None
         self._ip = None
         self._useragent = None
@@ -377,28 +374,6 @@ class Company(object):
         self._groups = groups
 
     @property
-    def system_name(self):
-        """
-        Gets the system_name of this Company.
-
-
-        :return: The system_name of this Company.
-        :rtype: str
-        """
-        return self._system_name
-
-    @system_name.setter
-    def system_name(self, system_name):
-        """
-        Sets the system_name of this Company.
-
-
-        :param system_name: The system_name of this Company.
-        :type: str
-        """
-        self._system_name = system_name
-
-    @property
     def note(self):
         """
         Gets the note of this Company.
@@ -559,7 +534,7 @@ class Company(object):
 
 
         :return: The custom_fields of this Company.
-        :rtype: dict(str, str)
+        :rtype: list[CustomFields]
         """
         return self._custom_fields
 
@@ -570,7 +545,7 @@ class Company(object):
 
 
         :param custom_fields: The custom_fields of this Company.
-        :type: dict(str, str)
+        :type: list[CustomFields]
         """
         self._custom_fields = custom_fields
 

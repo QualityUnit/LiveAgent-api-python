@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **emails** | **list[str]** |  | [optional] 
 **phones** | **list[str]** |  | [optional] 
 **groups** | **list[str]** |  | [optional] 
-**system_name** | **str** |  | [optional] 
 **note** | **str** |  | [optional] 
 **ip** | **str** |  | [optional] 
 **useragent** | **str** |  | [optional] 
@@ -23,7 +22,7 @@ Name | Type | Description | Notes
 **time_offset** | **float** |  | [optional] 
 **latitude** | **float** |  | [optional] 
 **longitude** | **float** |  | [optional] 
-**custom_fields** | **dict(str, str)** |  | [optional] 
+**custom_fields** | [**list[CustomFields]**](CustomFields.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

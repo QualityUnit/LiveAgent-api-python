@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **firstname** | **str** |  | [optional] 
 **lastname** | **str** |  | [optional] 
-**systemname** | **str** |  | [optional] 
+**system_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **type** | **str** | V - visitor, R - registered visitor, A - agent | [optional] [default to 'V']
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **time_offset** | **float** |  | [optional] 
 **latitude** | **float** |  | [optional] 
 **longitude** | **float** |  | [optional] 
-**custom_fields** | **dict(str, str)** |  | [optional] 
+**custom_fields** | [**list[CustomFields]**](CustomFields.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

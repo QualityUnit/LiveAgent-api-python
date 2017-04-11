@@ -44,6 +44,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.SubscriptionsApi()
@@ -71,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -152,6 +156,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.SubscriptionsApi()
@@ -177,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -638,6 +646,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.SubscriptionsApi()
@@ -663,7 +675,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -1146,6 +1158,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.SubscriptionsApi()
@@ -1171,7 +1187,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -1196,6 +1212,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.SubscriptionsApi()
@@ -1223,7 +1243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **firstname** | **str** |  | [optional] 
 **lastname** | **str** |  | [optional] 
-**systemname** | **str** |  | [optional] 
+**system_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **type** | **str** | V - visitor, R - registered visitor, A - agent | [optional] [default to 'V']

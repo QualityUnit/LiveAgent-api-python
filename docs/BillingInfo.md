@@ -15,7 +15,8 @@ Name | Type | Description | Notes
 **country** | **str** |  | 
 **zip** | **str** |  | 
 **vat_id** | **str** |  | [optional] 
-**tax_id** | **str** |  | [optional] 
+**ico_sk** | **str** |  | [optional] 
+**dic_sk** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

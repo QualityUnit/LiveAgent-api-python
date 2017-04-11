@@ -40,7 +40,7 @@ class Contact(object):
             'id': 'str',
             'firstname': 'str',
             'lastname': 'str',
-            'systemname': 'str',
+            'system_name': 'str',
             'description': 'str',
             'avatar_url': 'str',
             'type': 'str',
@@ -61,14 +61,14 @@ class Contact(object):
             'time_offset': 'float',
             'latitude': 'float',
             'longitude': 'float',
-            'custom_fields': 'dict(str, str)'
+            'custom_fields': 'list[CustomFields]'
         }
 
         self.attribute_map = {
             'id': 'id',
             'firstname': 'firstname',
             'lastname': 'lastname',
-            'systemname': 'systemname',
+            'system_name': 'system_name',
             'description': 'description',
             'avatar_url': 'avatar_url',
             'type': 'type',
@@ -95,7 +95,7 @@ class Contact(object):
         self._id = None
         self._firstname = None
         self._lastname = None
-        self._systemname = None
+        self._system_name = None
         self._description = None
         self._avatar_url = None
         self._type = 'V'
@@ -185,26 +185,26 @@ class Contact(object):
         self._lastname = lastname
 
     @property
-    def systemname(self):
+    def system_name(self):
         """
-        Gets the systemname of this Contact.
+        Gets the system_name of this Contact.
 
 
-        :return: The systemname of this Contact.
+        :return: The system_name of this Contact.
         :rtype: str
         """
-        return self._systemname
+        return self._system_name
 
-    @systemname.setter
-    def systemname(self, systemname):
+    @system_name.setter
+    def system_name(self, system_name):
         """
-        Sets the systemname of this Contact.
+        Sets the system_name of this Contact.
 
 
-        :param systemname: The systemname of this Contact.
+        :param system_name: The system_name of this Contact.
         :type: str
         """
-        self._systemname = systemname
+        self._system_name = system_name
 
     @property
     def description(self):
@@ -659,7 +659,7 @@ class Contact(object):
 
 
         :return: The custom_fields of this Contact.
-        :rtype: dict(str, str)
+        :rtype: list[CustomFields]
         """
         return self._custom_fields
 
@@ -670,7 +670,7 @@ class Contact(object):
 
 
         :param custom_fields: The custom_fields of this Contact.
-        :type: dict(str, str)
+        :type: list[CustomFields]
         """
         self._custom_fields = custom_fields
 

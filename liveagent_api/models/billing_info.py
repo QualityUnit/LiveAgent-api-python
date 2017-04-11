@@ -49,7 +49,8 @@ class BillingInfo(object):
             'country': 'str',
             'zip': 'str',
             'vat_id': 'str',
-            'tax_id': 'str'
+            'ico_sk': 'str',
+            'dic_sk': 'str'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class BillingInfo(object):
             'country': 'country',
             'zip': 'zip',
             'vat_id': 'vat_id',
-            'tax_id': 'tax_id'
+            'ico_sk': 'ico_sk',
+            'dic_sk': 'dic_sk'
         }
 
         self._force = False
@@ -80,7 +82,8 @@ class BillingInfo(object):
         self._country = None
         self._zip = None
         self._vat_id = None
-        self._tax_id = None
+        self._ico_sk = None
+        self._dic_sk = None
 
     @property
     def force(self):
@@ -347,26 +350,48 @@ class BillingInfo(object):
         self._vat_id = vat_id
 
     @property
-    def tax_id(self):
+    def ico_sk(self):
         """
-        Gets the tax_id of this BillingInfo.
+        Gets the ico_sk of this BillingInfo.
 
 
-        :return: The tax_id of this BillingInfo.
+        :return: The ico_sk of this BillingInfo.
         :rtype: str
         """
-        return self._tax_id
+        return self._ico_sk
 
-    @tax_id.setter
-    def tax_id(self, tax_id):
+    @ico_sk.setter
+    def ico_sk(self, ico_sk):
         """
-        Sets the tax_id of this BillingInfo.
+        Sets the ico_sk of this BillingInfo.
 
 
-        :param tax_id: The tax_id of this BillingInfo.
+        :param ico_sk: The ico_sk of this BillingInfo.
         :type: str
         """
-        self._tax_id = tax_id
+        self._ico_sk = ico_sk
+
+    @property
+    def dic_sk(self):
+        """
+        Gets the dic_sk of this BillingInfo.
+
+
+        :return: The dic_sk of this BillingInfo.
+        :rtype: str
+        """
+        return self._dic_sk
+
+    @dic_sk.setter
+    def dic_sk(self, dic_sk):
+        """
+        Sets the dic_sk of this BillingInfo.
+
+
+        :param dic_sk: The dic_sk of this BillingInfo.
+        :type: str
+        """
+        self._dic_sk = dic_sk
 
     def to_dict(self):
         """

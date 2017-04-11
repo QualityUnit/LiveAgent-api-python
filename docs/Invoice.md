@@ -10,9 +10,11 @@ Name | Type | Description | Notes
 **to_date** | **datetime** |  | [optional] 
 **paid_date** | **datetime** |  | [optional] 
 **price** | **float** |  | [optional] 
+**price_billed** | **float** |  | [optional] 
+**vat_rate** | **float** |  | [optional] 
+**currency** | **str** |  | [optional] 
 **customer** | [**Customer**](Customer.md) |  | [optional] 
 **items** | [**list[InvoiceItem]**](InvoiceItem.md) |  | [optional] 
-**currency** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

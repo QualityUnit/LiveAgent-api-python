@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_phone**](PhonesApi.md#create_phone) | **POST** /phones | Creates external phone
 [**get_phone**](PhonesApi.md#get_phone) | **GET** /phones/{phoneId} | Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
 [**get_phones_list**](PhonesApi.md#get_phones_list) | **GET** /phones | Gets list of available phone devices.\nSpecial filters (userId - filter phones available for specified user only)\n
+[**remove_phone**](PhonesApi.md#remove_phone) | **DELETE** /phones/{phoneId} | Remove phone
 [**update_phone_params**](PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone paramas
 
 
@@ -74,6 +75,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.PhonesApi()
@@ -99,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -122,6 +127,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.PhonesApi()
@@ -155,7 +164,59 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **remove_phone**
+> OkResponse remove_phone(phone_id)
+
+Remove phone
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.PhonesApi()
+phone_id = 'phone_id_example' # str | 
+
+try: 
+    # Remove phone
+    api_response = api_instance.remove_phone(phone_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling PhonesApi->remove_phone: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phone_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -178,6 +239,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.PhonesApi()
@@ -205,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 

@@ -45,7 +45,7 @@ class PhonenumbersApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def add_number(self, **kwargs):
+    def add_number(self, type, number, status, **kwargs):
         """
         Add new number
         
@@ -56,17 +56,28 @@ class PhonenumbersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.add_number(callback=callback_function)
+        >>> thread = api.add_number(type, number, status, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param PhoneNumber number: 
+        :param str type: A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk (required)
+        :param str number:  (required)
+        :param str status: A - Active, I - Inactive (required)
+        :param int dial_out_prefix: Prefix needed to orifinate call using this number
+        :param str name: 
+        :param str departmentid: 
+        :param str host: 
+        :param str port: 
+        :param str user: 
+        :param str password: 
+        :param str providerid: 
+        :param str ivr: 
         :return: PhoneNumber
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['number']
+        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'name', 'departmentid', 'host', 'port', 'user', 'password', 'providerid', 'ivr']
         all_params.append('callback')
 
         params = locals()
@@ -79,6 +90,15 @@ class PhonenumbersApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'type' is set
+        if ('type' not in params) or (params['type'] is None):
+            raise ValueError("Missing the required parameter `type` when calling `add_number`")
+        # verify the required parameter 'number' is set
+        if ('number' not in params) or (params['number'] is None):
+            raise ValueError("Missing the required parameter `number` when calling `add_number`")
+        # verify the required parameter 'status' is set
+        if ('status' not in params) or (params['status'] is None):
+            raise ValueError("Missing the required parameter `status` when calling `add_number`")
 
         resource_path = '/phone_numbers'.replace('{format}', 'json')
         path_params = {}
@@ -89,10 +109,32 @@ class PhonenumbersApi(object):
 
         form_params = []
         local_var_files = {}
+        if 'type' in params:
+            form_params.append(('type', params['type']))
+        if 'dial_out_prefix' in params:
+            form_params.append(('dial_out_prefix', params['dial_out_prefix']))
+        if 'number' in params:
+            form_params.append(('number', params['number']))
+        if 'status' in params:
+            form_params.append(('status', params['status']))
+        if 'name' in params:
+            form_params.append(('name', params['name']))
+        if 'departmentid' in params:
+            form_params.append(('departmentid', params['departmentid']))
+        if 'host' in params:
+            form_params.append(('host', params['host']))
+        if 'port' in params:
+            form_params.append(('port', params['port']))
+        if 'user' in params:
+            form_params.append(('user', params['user']))
+        if 'password' in params:
+            form_params.append(('password', params['password']))
+        if 'providerid' in params:
+            form_params.append(('providerid', params['providerid']))
+        if 'ivr' in params:
+            form_params.append(('ivr', params['ivr']))
 
         body_params = None
-        if 'number' in params:
-            body_params = params['number']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -102,10 +144,10 @@ class PhonenumbersApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/x-www-form-urlencoded'])
 
         # Authentication setting
-        auth_settings = ['privileges']
+        auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
@@ -182,7 +224,7 @@ class PhonenumbersApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges']
+        auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -268,7 +310,7 @@ class PhonenumbersApi(object):
             select_header_content_type(['application/json'])
 
         # Authentication setting
-        auth_settings = ['privileges']
+        auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
@@ -278,6 +320,249 @@ class PhonenumbersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[PhoneNumber]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def remove_phone_number(self, phone_number_id, **kwargs):
+        """
+        Remove phone number
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.remove_phone_number(phone_number_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str phone_number_id:  (required)
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['phone_number_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_phone_number" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'phone_number_id' is set
+        if ('phone_number_id' not in params) or (params['phone_number_id'] is None):
+            raise ValueError("Missing the required parameter `phone_number_id` when calling `remove_phone_number`")
+
+        resource_path = '/phone_numbers/{phoneNumberId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'phone_number_id' in params:
+            path_params['phoneNumberId'] = params['phone_number_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_phone_number(self, phone_number_id, phone_number, **kwargs):
+        """
+        Update phone number
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_phone_number(phone_number_id, phone_number, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str phone_number_id:  (required)
+        :param PhoneNumber phone_number:  (required)
+        :return: PhoneNumber
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['phone_number_id', 'phone_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_phone_number" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'phone_number_id' is set
+        if ('phone_number_id' not in params) or (params['phone_number_id'] is None):
+            raise ValueError("Missing the required parameter `phone_number_id` when calling `update_phone_number`")
+        # verify the required parameter 'phone_number' is set
+        if ('phone_number' not in params) or (params['phone_number'] is None):
+            raise ValueError("Missing the required parameter `phone_number` when calling `update_phone_number`")
+
+        resource_path = '/phone_numbers/{phoneNumberId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'phone_number_id' in params:
+            path_params['phoneNumberId'] = params['phone_number_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'phone_number' in params:
+            body_params = params['phone_number']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges', 'apikey']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PhoneNumber',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def update_phone_number_status(self, phone_number_id, status, **kwargs):
+        """
+        Update phone number status
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_phone_number_status(phone_number_id, status, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str phone_number_id:  (required)
+        :param str status: A - Active, I - Inactive (required)
+        :return: PhoneNumber
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['phone_number_id', 'status']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_phone_number_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'phone_number_id' is set
+        if ('phone_number_id' not in params) or (params['phone_number_id'] is None):
+            raise ValueError("Missing the required parameter `phone_number_id` when calling `update_phone_number_status`")
+        # verify the required parameter 'status' is set
+        if ('status' not in params) or (params['status'] is None):
+            raise ValueError("Missing the required parameter `status` when calling `update_phone_number_status`")
+
+        resource_path = '/phone_numbers/{phoneNumberId}/status'.replace('{format}', 'json')
+        path_params = {}
+        if 'phone_number_id' in params:
+            path_params['phoneNumberId'] = params['phone_number_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'status' in params:
+            form_params.append(('status', params['status']))
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges', 'apikey']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PhoneNumber',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

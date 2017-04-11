@@ -1,22 +1,22 @@
-# liveagent_api.AgentsApi
+# liveagent_api.PredefinedanswersApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_agent**](AgentsApi.md#create_agent) | **POST** /agents/ | Create agent
-[**delete_agent**](AgentsApi.md#delete_agent) | **DELETE** /agents/{userId} | Agent
-[**get_agent**](AgentsApi.md#get_agent) | **GET** /agents/{userId} | Agent
-[**get_agents**](AgentsApi.md#get_agents) | **GET** /agents/ | Agent list
-[**update_agent**](AgentsApi.md#update_agent) | **PUT** /agents/{userId} | Update agent
+[**create_predefined_answer**](PredefinedanswersApi.md#create_predefined_answer) | **POST** /predefined_asnwers | Create predefined answer
+[**delete_predefined_answer**](PredefinedanswersApi.md#delete_predefined_answer) | **DELETE** /predefined_answers/{predefinedAnswerId} | Predefined answer
+[**get_predefined_answer**](PredefinedanswersApi.md#get_predefined_answer) | **GET** /predefined_answers/{predefinedAnswerId} | Gets canned message
+[**get_predefined_answers_list**](PredefinedanswersApi.md#get_predefined_answers_list) | **GET** /predefined_asnwers | Gets list of predefined answers
+[**update_predefined_answer**](PredefinedanswersApi.md#update_predefined_answer) | **PUT** /predefined_answers/{predefinedAnswerId} | Update predefined answer
 
 
-# **create_agent**
-> Agent create_agent(agent=agent)
+# **create_predefined_answer**
+> PredefinedAnswer create_predefined_answer(predefined_answer=predefined_answer)
 
-Create agent
+Create predefined answer
 
-Create new agent user
+Create new predefined answer
 
 ### Example 
 ```python
@@ -33,26 +33,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-agent = liveagent_api.Agent() # Agent |  (optional)
+api_instance = liveagent_api.PredefinedanswersApi()
+predefined_answer = liveagent_api.PredefinedAnswer() # PredefinedAnswer |  (optional)
 
 try: 
-    # Create agent
-    api_response = api_instance.create_agent(agent=agent)
+    # Create predefined answer
+    api_response = api_instance.create_predefined_answer(predefined_answer=predefined_answer)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->create_agent: %s\n" % e
+    print "Exception when calling PredefinedanswersApi->create_predefined_answer: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **agent** | [**Agent**](Agent.md)|  | [optional] 
+ **predefined_answer** | [**PredefinedAnswer**](PredefinedAnswer.md)|  | [optional] 
 
 ### Return type
 
-[**Agent**](Agent.md)
+[**PredefinedAnswer**](PredefinedAnswer.md)
 
 ### Authorization
 
@@ -65,12 +65,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_agent**
-> OkResponse delete_agent(user_id)
+# **delete_predefined_answer**
+> OkResponse delete_predefined_answer(predefined_answer_id)
 
-Agent
+Predefined answer
 
-Deletes an agent
+Deletes a predefined answer
 
 ### Example 
 ```python
@@ -87,22 +87,22 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-user_id = 'user_id_example' # str | 
+api_instance = liveagent_api.PredefinedanswersApi()
+predefined_answer_id = 'predefined_answer_id_example' # str | 
 
 try: 
-    # Agent
-    api_response = api_instance.delete_agent(user_id)
+    # Predefined answer
+    api_response = api_instance.delete_predefined_answer(predefined_answer_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->delete_agent: %s\n" % e
+    print "Exception when calling PredefinedanswersApi->delete_predefined_answer: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
+ **predefined_answer_id** | **str**|  | 
 
 ### Return type
 
@@ -119,12 +119,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_agent**
-> Agent get_agent(user_id)
+# **get_predefined_answer**
+> PredefinedAnswer get_predefined_answer(predefined_answer_id)
 
-Agent
-
-Retrieves an agent
+Gets canned message
 
 ### Example 
 ```python
@@ -141,26 +139,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-user_id = 'user_id_example' # str | 
+api_instance = liveagent_api.PredefinedanswersApi()
+predefined_answer_id = 'predefined_answer_id_example' # str | 
 
 try: 
-    # Agent
-    api_response = api_instance.get_agent(user_id)
+    # Gets canned message
+    api_response = api_instance.get_predefined_answer(predefined_answer_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->get_agent: %s\n" % e
+    print "Exception when calling PredefinedanswersApi->get_predefined_answer: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
+ **predefined_answer_id** | **str**|  | 
 
 ### Return type
 
-[**Agent**](Agent.md)
+[**PredefinedAnswer**](PredefinedAnswer.md)
 
 ### Authorization
 
@@ -173,12 +171,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_agents**
-> list[Agent] get_agents()
+# **get_predefined_answers_list**
+> list[PredefinedAnswer] get_predefined_answers_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
 
-Agent list
-
-List of agents
+Gets list of predefined answers
 
 ### Example 
 ```python
@@ -195,22 +191,34 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.PredefinedanswersApi()
+page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
+per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
+sort_field = 'sort_field_example' # str | Sorting field (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
 try: 
-    # Agent list
-    api_response = api_instance.get_agents()
+    # Gets list of predefined answers
+    api_response = api_instance.get_predefined_answers_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->get_agents: %s\n" % e
+    print "Exception when calling PredefinedanswersApi->get_predefined_answers_list: %s\n" % e
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
+ **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
+ **sort_field** | **str**| Sorting field | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
 
 ### Return type
 
-[**list[Agent]**](Agent.md)
+[**list[PredefinedAnswer]**](PredefinedAnswer.md)
 
 ### Authorization
 
@@ -223,12 +231,12 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_agent**
-> Agent update_agent(user_id, agent=agent)
+# **update_predefined_answer**
+> PredefinedAnswer update_predefined_answer(predefined_answer_id, canned_message=canned_message)
 
-Update agent
+Update predefined answer
 
-Update an agent
+Update a predefined answer
 
 ### Example 
 ```python
@@ -245,28 +253,28 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-user_id = 'user_id_example' # str | 
-agent = liveagent_api.Agent() # Agent |  (optional)
+api_instance = liveagent_api.PredefinedanswersApi()
+predefined_answer_id = 'predefined_answer_id_example' # str | 
+canned_message = liveagent_api.PredefinedAnswer() # PredefinedAnswer |  (optional)
 
 try: 
-    # Update agent
-    api_response = api_instance.update_agent(user_id, agent=agent)
+    # Update predefined answer
+    api_response = api_instance.update_predefined_answer(predefined_answer_id, canned_message=canned_message)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->update_agent: %s\n" % e
+    print "Exception when calling PredefinedanswersApi->update_predefined_answer: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
- **agent** | [**Agent**](Agent.md)|  | [optional] 
+ **predefined_answer_id** | **str**|  | 
+ **canned_message** | [**PredefinedAnswer**](PredefinedAnswer.md)|  | [optional] 
 
 ### Return type
 
-[**Agent**](Agent.md)
+[**PredefinedAnswer**](PredefinedAnswer.md)
 
 ### Authorization
 

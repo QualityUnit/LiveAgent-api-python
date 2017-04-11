@@ -1,22 +1,22 @@
-# liveagent_api.AgentsApi
+# liveagent_api.CannedmessagesApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_agent**](AgentsApi.md#create_agent) | **POST** /agents/ | Create agent
-[**delete_agent**](AgentsApi.md#delete_agent) | **DELETE** /agents/{userId} | Agent
-[**get_agent**](AgentsApi.md#get_agent) | **GET** /agents/{userId} | Agent
-[**get_agents**](AgentsApi.md#get_agents) | **GET** /agents/ | Agent list
-[**update_agent**](AgentsApi.md#update_agent) | **PUT** /agents/{userId} | Update agent
+[**create_canned_message**](CannedmessagesApi.md#create_canned_message) | **POST** /canned_messages | Create canned message
+[**delete_canned_message**](CannedmessagesApi.md#delete_canned_message) | **DELETE** /canned_messages/{cannedMessageId} | Canned message
+[**get_canned_message**](CannedmessagesApi.md#get_canned_message) | **GET** /canned_messages/{cannedMessageId} | Gets canned message
+[**get_canned_messages_list**](CannedmessagesApi.md#get_canned_messages_list) | **GET** /canned_messages | Gets list of canned messages
+[**update_canned_message**](CannedmessagesApi.md#update_canned_message) | **PUT** /canned_messages/{cannedMessageId} | Update canned message
 
 
-# **create_agent**
-> Agent create_agent(agent=agent)
+# **create_canned_message**
+> CannedMessage create_canned_message(canned_message=canned_message)
 
-Create agent
+Create canned message
 
-Create new agent user
+Create new canned message
 
 ### Example 
 ```python
@@ -33,26 +33,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-agent = liveagent_api.Agent() # Agent |  (optional)
+api_instance = liveagent_api.CannedmessagesApi()
+canned_message = liveagent_api.CannedMessage() # CannedMessage |  (optional)
 
 try: 
-    # Create agent
-    api_response = api_instance.create_agent(agent=agent)
+    # Create canned message
+    api_response = api_instance.create_canned_message(canned_message=canned_message)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->create_agent: %s\n" % e
+    print "Exception when calling CannedmessagesApi->create_canned_message: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **agent** | [**Agent**](Agent.md)|  | [optional] 
+ **canned_message** | [**CannedMessage**](CannedMessage.md)|  | [optional] 
 
 ### Return type
 
-[**Agent**](Agent.md)
+[**CannedMessage**](CannedMessage.md)
 
 ### Authorization
 
@@ -65,12 +65,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_agent**
-> OkResponse delete_agent(user_id)
+# **delete_canned_message**
+> OkResponse delete_canned_message(canned_message_id)
 
-Agent
+Canned message
 
-Deletes an agent
+Deletes a canned message
 
 ### Example 
 ```python
@@ -87,22 +87,22 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-user_id = 'user_id_example' # str | 
+api_instance = liveagent_api.CannedmessagesApi()
+canned_message_id = 'canned_message_id_example' # str | 
 
 try: 
-    # Agent
-    api_response = api_instance.delete_agent(user_id)
+    # Canned message
+    api_response = api_instance.delete_canned_message(canned_message_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->delete_agent: %s\n" % e
+    print "Exception when calling CannedmessagesApi->delete_canned_message: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
+ **canned_message_id** | **str**|  | 
 
 ### Return type
 
@@ -119,12 +119,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_agent**
-> Agent get_agent(user_id)
+# **get_canned_message**
+> CannedMessage get_canned_message(canned_message_id)
 
-Agent
-
-Retrieves an agent
+Gets canned message
 
 ### Example 
 ```python
@@ -141,26 +139,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-user_id = 'user_id_example' # str | 
+api_instance = liveagent_api.CannedmessagesApi()
+canned_message_id = 'canned_message_id_example' # str | 
 
 try: 
-    # Agent
-    api_response = api_instance.get_agent(user_id)
+    # Gets canned message
+    api_response = api_instance.get_canned_message(canned_message_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->get_agent: %s\n" % e
+    print "Exception when calling CannedmessagesApi->get_canned_message: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
+ **canned_message_id** | **str**|  | 
 
 ### Return type
 
-[**Agent**](Agent.md)
+[**CannedMessage**](CannedMessage.md)
 
 ### Authorization
 
@@ -173,12 +171,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_agents**
-> list[Agent] get_agents()
+# **get_canned_messages_list**
+> list[CannedMessage] get_canned_messages_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
 
-Agent list
-
-List of agents
+Gets list of canned messages
 
 ### Example 
 ```python
@@ -195,22 +191,34 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.CannedmessagesApi()
+page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
+per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
+sort_field = 'sort_field_example' # str | Sorting field (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
 try: 
-    # Agent list
-    api_response = api_instance.get_agents()
+    # Gets list of canned messages
+    api_response = api_instance.get_canned_messages_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->get_agents: %s\n" % e
+    print "Exception when calling CannedmessagesApi->get_canned_messages_list: %s\n" % e
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
+ **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
+ **sort_field** | **str**| Sorting field | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
 
 ### Return type
 
-[**list[Agent]**](Agent.md)
+[**list[CannedMessage]**](CannedMessage.md)
 
 ### Authorization
 
@@ -223,12 +231,12 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_agent**
-> Agent update_agent(user_id, agent=agent)
+# **update_canned_message**
+> CannedMessage update_canned_message(canned_message_id, canned_message=canned_message)
 
-Update agent
+Update canned message
 
-Update an agent
+Update a canned message
 
 ### Example 
 ```python
@@ -245,28 +253,28 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-user_id = 'user_id_example' # str | 
-agent = liveagent_api.Agent() # Agent |  (optional)
+api_instance = liveagent_api.CannedmessagesApi()
+canned_message_id = 'canned_message_id_example' # str | 
+canned_message = liveagent_api.CannedMessage() # CannedMessage |  (optional)
 
 try: 
-    # Update agent
-    api_response = api_instance.update_agent(user_id, agent=agent)
+    # Update canned message
+    api_response = api_instance.update_canned_message(canned_message_id, canned_message=canned_message)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->update_agent: %s\n" % e
+    print "Exception when calling CannedmessagesApi->update_canned_message: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
- **agent** | [**Agent**](Agent.md)|  | [optional] 
+ **canned_message_id** | **str**|  | 
+ **canned_message** | [**CannedMessage**](CannedMessage.md)|  | [optional] 
 
 ### Return type
 
-[**Agent**](Agent.md)
+[**CannedMessage**](CannedMessage.md)
 
 ### Authorization
 

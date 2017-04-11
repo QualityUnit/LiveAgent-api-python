@@ -40,7 +40,7 @@ class ContactListItem(object):
             'id': 'str',
             'firstname': 'str',
             'lastname': 'str',
-            'systemname': 'str',
+            'system_name': 'str',
             'description': 'str',
             'avatar_url': 'str',
             'type': 'str',
@@ -58,7 +58,7 @@ class ContactListItem(object):
             'id': 'id',
             'firstname': 'firstname',
             'lastname': 'lastname',
-            'systemname': 'systemname',
+            'system_name': 'system_name',
             'description': 'description',
             'avatar_url': 'avatar_url',
             'type': 'type',
@@ -75,7 +75,7 @@ class ContactListItem(object):
         self._id = None
         self._firstname = None
         self._lastname = None
-        self._systemname = None
+        self._system_name = None
         self._description = None
         self._avatar_url = None
         self._type = 'V'
@@ -155,26 +155,26 @@ class ContactListItem(object):
         self._lastname = lastname
 
     @property
-    def systemname(self):
+    def system_name(self):
         """
-        Gets the systemname of this ContactListItem.
+        Gets the system_name of this ContactListItem.
 
 
-        :return: The systemname of this ContactListItem.
+        :return: The system_name of this ContactListItem.
         :rtype: str
         """
-        return self._systemname
+        return self._system_name
 
-    @systemname.setter
-    def systemname(self, systemname):
+    @system_name.setter
+    def system_name(self, system_name):
         """
-        Sets the systemname of this ContactListItem.
+        Sets the system_name of this ContactListItem.
 
 
-        :param systemname: The systemname of this ContactListItem.
+        :param system_name: The system_name of this ContactListItem.
         :type: str
         """
-        self._systemname = systemname
+        self._system_name = system_name
 
     @property
     def description(self):

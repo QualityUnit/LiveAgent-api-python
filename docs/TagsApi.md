@@ -1,19 +1,22 @@
-# liveagent_api.ContactsApi
+# liveagent_api.TagsApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_contact**](ContactsApi.md#create_contact) | **POST** /contacts | Create new contact
-[**get_contacts_list**](ContactsApi.md#get_contacts_list) | **GET** /contacts | Gets list of contacts
-[**get_specific_contact**](ContactsApi.md#get_specific_contact) | **GET** /contacts/{contactId} | Get contact by specific id
-[**update_contact**](ContactsApi.md#update_contact) | **PUT** /contacts/{contactId} | Update contact
+[**create_tag**](TagsApi.md#create_tag) | **POST** /tags | Create tag
+[**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /tags/{tagId} | Delete tag
+[**get_tag_by_id**](TagsApi.md#get_tag_by_id) | **GET** /tags/{tagId} | Get tag by tag id
+[**get_tags_list**](TagsApi.md#get_tags_list) | **GET** /tags | Gets list of tags
+[**update_tag**](TagsApi.md#update_tag) | **PUT** /tags/{tagId} | Update tag
 
 
-# **create_contact**
-> list[Contact] create_contact(contact=contact)
+# **create_tag**
+> Tag create_tag(tag=tag)
 
-Create new contact
+Create tag
+
+Create new tag
 
 ### Example 
 ```python
@@ -30,26 +33,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.ContactsApi()
-contact = liveagent_api.Contact() # Contact |  (optional)
+api_instance = liveagent_api.TagsApi()
+tag = liveagent_api.Tag() # Tag |  (optional)
 
 try: 
-    # Create new contact
-    api_response = api_instance.create_contact(contact=contact)
+    # Create tag
+    api_response = api_instance.create_tag(tag=tag)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContactsApi->create_contact: %s\n" % e
+    print "Exception when calling TagsApi->create_tag: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contact** | [**Contact**](Contact.md)|  | [optional] 
+ **tag** | [**Tag**](Tag.md)|  | [optional] 
 
 ### Return type
 
-[**list[Contact]**](Contact.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -62,10 +65,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_contacts_list**
-> list[ContactListItem] get_contacts_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+# **delete_tag**
+> OkResponse delete_tag(tag_id)
 
-Gets list of contacts
+Delete tag
+
+Deletes a tag
 
 ### Example 
 ```python
@@ -82,19 +87,120 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.ContactsApi()
-page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
-per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
-sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+api_instance = liveagent_api.TagsApi()
+tag_id = 'tag_id_example' # str | 
 
 try: 
-    # Gets list of contacts
-    api_response = api_instance.get_contacts_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+    # Delete tag
+    api_response = api_instance.delete_tag(tag_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContactsApi->get_contacts_list: %s\n" % e
+    print "Exception when calling TagsApi->delete_tag: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tag_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_tag_by_id**
+> list[Tag] get_tag_by_id(tag_id)
+
+Get tag by tag id
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.TagsApi()
+tag_id = 'tag_id_example' # str | 
+
+try: 
+    # Get tag by tag id
+    api_response = api_instance.get_tag_by_id(tag_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TagsApi->get_tag_by_id: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tag_id** | **str**|  | 
+
+### Return type
+
+[**list[Tag]**](Tag.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_tags_list**
+> list[Tag] get_tags_list(page=page, per_page=per_page)
+
+Gets list of tags
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.TagsApi()
+page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
+per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+
+try: 
+    # Gets list of tags
+    api_response = api_instance.get_tags_list(page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TagsApi->get_tags_list: %s\n" % e
 ```
 
 ### Parameters
@@ -103,13 +209,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
  **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
- **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
 
 ### Return type
 
-[**list[ContactListItem]**](ContactListItem.md)
+[**list[Tag]**](Tag.md)
 
 ### Authorization
 
@@ -122,10 +225,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_specific_contact**
-> list[Contact] get_specific_contact(contact_id)
+# **update_tag**
+> list[Tag] update_tag(tag_id, tag=tag)
 
-Get contact by specific id
+Update tag
 
 ### Example 
 ```python
@@ -142,80 +245,28 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.ContactsApi()
-contact_id = 'contact_id_example' # str | 
+api_instance = liveagent_api.TagsApi()
+tag_id = 'tag_id_example' # str | 
+tag = liveagent_api.Tag() # Tag |  (optional)
 
 try: 
-    # Get contact by specific id
-    api_response = api_instance.get_specific_contact(contact_id)
+    # Update tag
+    api_response = api_instance.update_tag(tag_id, tag=tag)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling ContactsApi->get_specific_contact: %s\n" % e
+    print "Exception when calling TagsApi->update_tag: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contact_id** | **str**|  | 
+ **tag_id** | **str**|  | 
+ **tag** | [**Tag**](Tag.md)|  | [optional] 
 
 ### Return type
 
-[**list[Contact]**](Contact.md)
-
-### Authorization
-
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_contact**
-> list[Contact] update_contact(contact_id, contact=contact)
-
-Update contact
-
-### Example 
-```python
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
-
-# create an instance of the API class
-api_instance = liveagent_api.ContactsApi()
-contact_id = 'contact_id_example' # str | 
-contact = liveagent_api.Contact() # Contact |  (optional)
-
-try: 
-    # Update contact
-    api_response = api_instance.update_contact(contact_id, contact=contact)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling ContactsApi->update_contact: %s\n" % e
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contact_id** | **str**|  | 
- **contact** | [**Contact**](Contact.md)|  | [optional] 
-
-### Return type
-
-[**list[Contact]**](Contact.md)
+[**list[Tag]**](Tag.md)
 
 ### Authorization
 

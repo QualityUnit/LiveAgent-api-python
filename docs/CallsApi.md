@@ -4,68 +4,19 @@ All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**call_add_channel**](CallsApi.md#call_add_channel) | **POST** /calls/{callId}/channels | Adds channel to the call
 [**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponfing ticket
 [**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 [**call_get_status**](CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
+[**call_move_channel**](CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels | Moves existing channel to this call
 [**call_remove_channel**](CallsApi.md#call_remove_channel) | **DELETE** /calls/{callId}/channels/{channelId} | Removes channel from the call
 [**call_reroute**](CallsApi.md#call_reroute) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
 [**call_ring**](CallsApi.md#call_ring) | **POST** /calls/{callId}/_ring | Let the call ring
 [**call_start**](CallsApi.md#call_start) | **POST** /call/_start | Starts new outcoming / internal call
 [**call_stop**](CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
 [**confirm_ring**](CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
+[**merge**](CallsApi.md#merge) | **POST** /calls/{callId}/_merge | Merge two calls
 
-
-# **call_add_channel**
-> OkResponse call_add_channel(call_id, body=body)
-
-Adds channel to the call
-
-### Example 
-```python
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.CallsApi()
-call_id = 'call_id_example' # str | 
-body = liveagent_api.CallChannel() # CallChannel |  (optional)
-
-try: 
-    # Adds channel to the call
-    api_response = api_instance.call_add_channel(call_id, body=body)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling CallsApi->call_add_channel: %s\n" % e
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **call_id** | **str**|  | 
- **body** | [**CallChannel**](CallChannel.md)|  | [optional] 
-
-### Return type
-
-[**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_add_message**
 > OkResponse call_add_message(call_id, body=body)
@@ -81,6 +32,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -108,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -131,6 +86,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -158,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -183,6 +142,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -218,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -241,6 +204,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -263,6 +230,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CallStatus**](CallStatus.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_move_channel**
+> OkResponse call_move_channel(call_id, body=body)
+
+Moves existing channel to this call
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+body = liveagent_api.CallChannel() # CallChannel |  (optional)
+
+try: 
+    # Moves existing channel to this call
+    api_response = api_instance.call_move_channel(call_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_move_channel: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **body** | [**CallChannel**](CallChannel.md)|  | [optional] 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
 
 ### Authorization
 
@@ -341,6 +358,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -366,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -391,6 +412,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -416,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -493,6 +518,10 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
 liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
@@ -518,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -565,6 +594,60 @@ Name | Type | Description  | Notes
  **call_id** | **str**|  | 
  **agent_id** | **str**| Agent ID | [optional] 
  **channel_id** | **str**| Channel ID | [optional] 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **merge**
+> OkResponse merge(call_id, sec_call_id, agent_id=agent_id)
+
+Merge two calls
+
+Merge secondary call into main call
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+sec_call_id = 'sec_call_id_example' # str | Secondary call ID
+agent_id = 'agent_id_example' # str | Agent ID for removing from the call (optional)
+
+try: 
+    # Merge two calls
+    api_response = api_instance.merge(call_id, sec_call_id, agent_id=agent_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->merge: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **sec_call_id** | **str**| Secondary call ID | 
+ **agent_id** | **str**| Agent ID for removing from the call | [optional] 
 
 ### Return type
 

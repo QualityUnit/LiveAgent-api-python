@@ -105,7 +105,7 @@ class FilesApi(object):
             select_header_content_type(['multipart/form-data', 'application/x-www-form-urlencoded'])
 
         # Authentication setting
-        auth_settings = ['privileges']
+        auth_settings = ['privileges', 'apikey']
 
         response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,

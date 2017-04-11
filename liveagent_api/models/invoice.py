@@ -44,9 +44,11 @@ class Invoice(object):
             'to_date': 'datetime',
             'paid_date': 'datetime',
             'price': 'float',
+            'price_billed': 'float',
+            'vat_rate': 'float',
+            'currency': 'str',
             'customer': 'Customer',
-            'items': 'list[InvoiceItem]',
-            'currency': 'str'
+            'items': 'list[InvoiceItem]'
         }
 
         self.attribute_map = {
@@ -57,9 +59,11 @@ class Invoice(object):
             'to_date': 'to_date',
             'paid_date': 'paid_date',
             'price': 'price',
+            'price_billed': 'price_billed',
+            'vat_rate': 'vat_rate',
+            'currency': 'currency',
             'customer': 'customer',
-            'items': 'items',
-            'currency': 'currency'
+            'items': 'items'
         }
 
         self._subscription_id = None
@@ -69,9 +73,11 @@ class Invoice(object):
         self._to_date = None
         self._paid_date = None
         self._price = None
+        self._price_billed = None
+        self._vat_rate = None
+        self._currency = None
         self._customer = None
         self._items = None
-        self._currency = None
 
     @property
     def subscription_id(self):
@@ -228,6 +234,78 @@ class Invoice(object):
         self._price = price
 
     @property
+    def price_billed(self):
+        """
+        Gets the price_billed of this Invoice.
+
+
+        :return: The price_billed of this Invoice.
+        :rtype: float
+        """
+        return self._price_billed
+
+    @price_billed.setter
+    def price_billed(self, price_billed):
+        """
+        Sets the price_billed of this Invoice.
+
+
+        :param price_billed: The price_billed of this Invoice.
+        :type: float
+        """
+        self._price_billed = price_billed
+
+    @property
+    def vat_rate(self):
+        """
+        Gets the vat_rate of this Invoice.
+
+
+        :return: The vat_rate of this Invoice.
+        :rtype: float
+        """
+        return self._vat_rate
+
+    @vat_rate.setter
+    def vat_rate(self, vat_rate):
+        """
+        Sets the vat_rate of this Invoice.
+
+
+        :param vat_rate: The vat_rate of this Invoice.
+        :type: float
+        """
+        self._vat_rate = vat_rate
+
+    @property
+    def currency(self):
+        """
+        Gets the currency of this Invoice.
+
+
+        :return: The currency of this Invoice.
+        :rtype: str
+        """
+        return self._currency
+
+    @currency.setter
+    def currency(self, currency):
+        """
+        Sets the currency of this Invoice.
+
+
+        :param currency: The currency of this Invoice.
+        :type: str
+        """
+        allowed_values = ["USD", "EUR"]
+        if currency not in allowed_values:
+            raise ValueError(
+                "Invalid value for `currency`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._currency = currency
+
+    @property
     def customer(self):
         """
         Gets the customer of this Invoice.
@@ -270,34 +348,6 @@ class Invoice(object):
         :type: list[InvoiceItem]
         """
         self._items = items
-
-    @property
-    def currency(self):
-        """
-        Gets the currency of this Invoice.
-
-
-        :return: The currency of this Invoice.
-        :rtype: str
-        """
-        return self._currency
-
-    @currency.setter
-    def currency(self, currency):
-        """
-        Sets the currency of this Invoice.
-
-
-        :param currency: The currency of this Invoice.
-        :type: str
-        """
-        allowed_values = ["USD", "EUR"]
-        if currency not in allowed_values:
-            raise ValueError(
-                "Invalid value for `currency`, must be one of {0}"
-                .format(allowed_values)
-            )
-        self._currency = currency
 
     def to_dict(self):
         """

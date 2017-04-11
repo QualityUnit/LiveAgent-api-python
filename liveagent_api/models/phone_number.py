@@ -39,39 +39,48 @@ class PhoneNumber(object):
         self.swagger_types = {
             'id': 'str',
             'type': 'str',
-            'dial_out_preffix': 'int',
+            'dial_out_prefix': 'int',
             'number': 'str',
             'name': 'str',
             'departmentid': 'str',
+            'status': 'str',
             'host': 'str',
             'port': 'str',
             'user': 'str',
-            'password': 'str'
+            'password': 'str',
+            'providerid': 'str',
+            'ivr': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
-            'dial_out_preffix': 'dial_out_preffix',
+            'dial_out_prefix': 'dial_out_prefix',
             'number': 'number',
             'name': 'name',
             'departmentid': 'departmentid',
+            'status': 'status',
             'host': 'host',
             'port': 'port',
             'user': 'user',
-            'password': 'password'
+            'password': 'password',
+            'providerid': 'providerid',
+            'ivr': 'ivr'
         }
 
         self._id = None
         self._type = None
-        self._dial_out_preffix = None
+        self._dial_out_prefix = None
         self._number = None
         self._name = None
         self._departmentid = None
+        self._status = None
         self._host = None
         self._port = None
         self._user = None
         self._password = None
+        self._providerid = None
+        self._ivr = None
 
     @property
     def id(self):
@@ -99,7 +108,7 @@ class PhoneNumber(object):
     def type(self):
         """
         Gets the type of this PhoneNumber.
-        A - API controlled number, T - Twilio number, TO - Twilio outgoing number, D - Digitale, S - Asterisk
+        A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk
 
         :return: The type of this PhoneNumber.
         :rtype: str
@@ -110,12 +119,12 @@ class PhoneNumber(object):
     def type(self, type):
         """
         Sets the type of this PhoneNumber.
-        A - API controlled number, T - Twilio number, TO - Twilio outgoing number, D - Digitale, S - Asterisk
+        A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk
 
         :param type: The type of this PhoneNumber.
         :type: str
         """
-        allowed_values = ["A", "C", "T", "TO", "D", "S"]
+        allowed_values = ["A", "C", "T", "T-O", "D", "S"]
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type`, must be one of {0}"
@@ -124,26 +133,26 @@ class PhoneNumber(object):
         self._type = type
 
     @property
-    def dial_out_preffix(self):
+    def dial_out_prefix(self):
         """
-        Gets the dial_out_preffix of this PhoneNumber.
-        Preffix needed to orifinate call using this number
+        Gets the dial_out_prefix of this PhoneNumber.
+        Prefix needed to orifinate call using this number
 
-        :return: The dial_out_preffix of this PhoneNumber.
+        :return: The dial_out_prefix of this PhoneNumber.
         :rtype: int
         """
-        return self._dial_out_preffix
+        return self._dial_out_prefix
 
-    @dial_out_preffix.setter
-    def dial_out_preffix(self, dial_out_preffix):
+    @dial_out_prefix.setter
+    def dial_out_prefix(self, dial_out_prefix):
         """
-        Sets the dial_out_preffix of this PhoneNumber.
-        Preffix needed to orifinate call using this number
+        Sets the dial_out_prefix of this PhoneNumber.
+        Prefix needed to orifinate call using this number
 
-        :param dial_out_preffix: The dial_out_preffix of this PhoneNumber.
+        :param dial_out_prefix: The dial_out_prefix of this PhoneNumber.
         :type: int
         """
-        self._dial_out_preffix = dial_out_preffix
+        self._dial_out_prefix = dial_out_prefix
 
     @property
     def number(self):
@@ -210,6 +219,34 @@ class PhoneNumber(object):
         :type: str
         """
         self._departmentid = departmentid
+
+    @property
+    def status(self):
+        """
+        Gets the status of this PhoneNumber.
+        A - Active, I - Inactive
+
+        :return: The status of this PhoneNumber.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this PhoneNumber.
+        A - Active, I - Inactive
+
+        :param status: The status of this PhoneNumber.
+        :type: str
+        """
+        allowed_values = ["A", "I"]
+        if status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `status`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._status = status
 
     @property
     def host(self):
@@ -298,6 +335,50 @@ class PhoneNumber(object):
         :type: str
         """
         self._password = password
+
+    @property
+    def providerid(self):
+        """
+        Gets the providerid of this PhoneNumber.
+
+
+        :return: The providerid of this PhoneNumber.
+        :rtype: str
+        """
+        return self._providerid
+
+    @providerid.setter
+    def providerid(self, providerid):
+        """
+        Sets the providerid of this PhoneNumber.
+
+
+        :param providerid: The providerid of this PhoneNumber.
+        :type: str
+        """
+        self._providerid = providerid
+
+    @property
+    def ivr(self):
+        """
+        Gets the ivr of this PhoneNumber.
+
+
+        :return: The ivr of this PhoneNumber.
+        :rtype: str
+        """
+        return self._ivr
+
+    @ivr.setter
+    def ivr(self, ivr):
+        """
+        Sets the ivr of this PhoneNumber.
+
+
+        :param ivr: The ivr of this PhoneNumber.
+        :type: str
+        """
+        self._ivr = ivr
 
     def to_dict(self):
         """
