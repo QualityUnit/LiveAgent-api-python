@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 [**call_get_status**](CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
-[**call_move_channel**](CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels | Moves existing channel to this call
+[**call_move_channel**](CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels/{channelId}/_move | Moves existing channel to target call
 [**call_remove_channel**](CallsApi.md#call_remove_channel) | **DELETE** /calls/{callId}/channels/{channelId} | Removes channel from the call
 [**call_reroute**](CallsApi.md#call_reroute) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
 [**call_ring**](CallsApi.md#call_ring) | **POST** /calls/{callId}/_ring | Let the call ring
@@ -243,9 +243,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_move_channel**
-> OkResponse call_move_channel(call_id, body=body)
+> OkResponse call_move_channel(call_id, channel_id, to_call_id)
 
-Moves existing channel to this call
+Moves existing channel to target call
 
 ### Example 
 ```python
@@ -260,11 +260,12 @@ liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
-body = liveagent_api.CallChannel() # CallChannel |  (optional)
+channel_id = 'channel_id_example' # str | 
+to_call_id = 'to_call_id_example' # str | Target call
 
 try: 
-    # Moves existing channel to this call
-    api_response = api_instance.call_move_channel(call_id, body=body)
+    # Moves existing channel to target call
+    api_response = api_instance.call_move_channel(call_id, channel_id, to_call_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_move_channel: %s\n" % e
@@ -275,7 +276,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
- **body** | [**CallChannel**](CallChannel.md)|  | [optional] 
+ **channel_id** | **str**|  | 
+ **to_call_id** | **str**| Target call | 
 
 ### Return type
 

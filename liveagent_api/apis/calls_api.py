@@ -383,9 +383,9 @@ class CallsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def call_move_channel(self, call_id, **kwargs):
+    def call_move_channel(self, call_id, channel_id, to_call_id, **kwargs):
         """
-        Moves existing channel to this call
+        Moves existing channel to target call
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -394,18 +394,19 @@ class CallsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.call_move_channel(call_id, callback=callback_function)
+        >>> thread = api.call_move_channel(call_id, channel_id, to_call_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str call_id:  (required)
-        :param CallChannel body: 
+        :param str channel_id:  (required)
+        :param str to_call_id: Target call (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'body']
+        all_params = ['call_id', 'channel_id', 'to_call_id']
         all_params.append('callback')
 
         params = locals()
@@ -421,13 +422,23 @@ class CallsApi(object):
         # verify the required parameter 'call_id' is set
         if ('call_id' not in params) or (params['call_id'] is None):
             raise ValueError("Missing the required parameter `call_id` when calling `call_move_channel`")
+        # verify the required parameter 'channel_id' is set
+        if ('channel_id' not in params) or (params['channel_id'] is None):
+            raise ValueError("Missing the required parameter `channel_id` when calling `call_move_channel`")
+        # verify the required parameter 'to_call_id' is set
+        if ('to_call_id' not in params) or (params['to_call_id'] is None):
+            raise ValueError("Missing the required parameter `to_call_id` when calling `call_move_channel`")
 
-        resource_path = '/calls/{callId}/channels'.replace('{format}', 'json')
+        resource_path = '/calls/{callId}/channels/{channelId}/_move'.replace('{format}', 'json')
         path_params = {}
         if 'call_id' in params:
             path_params['callId'] = params['call_id']
+        if 'channel_id' in params:
+            path_params['channelId'] = params['channel_id']
 
         query_params = {}
+        if 'to_call_id' in params:
+            query_params['to_callId'] = params['to_call_id']
 
         header_params = {}
 
@@ -435,8 +446,6 @@ class CallsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
