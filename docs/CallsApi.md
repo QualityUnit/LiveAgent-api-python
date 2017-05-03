@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **confirm_ring**
-> OkResponse confirm_ring(call_id, agent_id=agent_id, channel_id=channel_id)
+> OkResponse confirm_ring(call_id, to_number=to_number, channel_id=channel_id)
 
 Confirm that call is ringing
 
@@ -578,12 +578,12 @@ liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
-agent_id = 'agent_id_example' # str | Agent ID (optional)
+to_number = 'to_number_example' # str | callee number (optional)
 channel_id = 'channel_id_example' # str | Channel ID (optional)
 
 try: 
     # Confirm that call is ringing
-    api_response = api_instance.confirm_ring(call_id, agent_id=agent_id, channel_id=channel_id)
+    api_response = api_instance.confirm_ring(call_id, to_number=to_number, channel_id=channel_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->confirm_ring: %s\n" % e
@@ -594,7 +594,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
- **agent_id** | **str**| Agent ID | [optional] 
+ **to_number** | **str**| callee number | [optional] 
  **channel_id** | **str**| Channel ID | [optional] 
 
 ### Return type

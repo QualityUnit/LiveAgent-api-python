@@ -90,7 +90,7 @@ class PhoneDevice(object):
     def type(self):
         """
         Gets the type of this PhoneDevice.
-        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone
+        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone
 
         :return: The type of this PhoneDevice.
         :rtype: str
@@ -101,12 +101,12 @@ class PhoneDevice(object):
     def type(self, type):
         """
         Sets the type of this PhoneDevice.
-        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone
+        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone
 
         :param type: The type of this PhoneDevice.
         :type: str
         """
-        allowed_values = ["A", "S", "E", "W"]
+        allowed_values = ["A", "S", "E", "W", "I"]
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type`, must be one of {0}"
