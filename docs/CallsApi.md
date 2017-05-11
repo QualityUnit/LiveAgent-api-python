@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_stop**
-> OkResponse call_stop(call_id)
+> OkResponse call_stop(call_id, from_number=from_number)
 
 Stops the call
 
@@ -528,10 +528,11 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
+from_number = 'from_number_example' # str | from number (optional)
 
 try: 
     # Stops the call
-    api_response = api_instance.call_stop(call_id)
+    api_response = api_instance.call_stop(call_id, from_number=from_number)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_stop: %s\n" % e
@@ -542,6 +543,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
+ **from_number** | **str**| from number | [optional] 
 
 ### Return type
 
