@@ -56,7 +56,7 @@ class CallMessage(object):
     def type(self):
         """
         Gets the type of this CallMessage.
-        T (text), H (html), A (audio - url to audio file or fileId), S (system), SP (system public)
+        T (text), H (html), A (audio - url to audio file or fileId), S (system), N (note), NF (note file)
 
         :return: The type of this CallMessage.
         :rtype: str
@@ -67,12 +67,12 @@ class CallMessage(object):
     def type(self, type):
         """
         Sets the type of this CallMessage.
-        T (text), H (html), A (audio - url to audio file or fileId), S (system), SP (system public)
+        T (text), H (html), A (audio - url to audio file or fileId), S (system), N (note), NF (note file)
 
         :param type: The type of this CallMessage.
         :type: str
         """
-        allowed_values = ["T", "H", "A", "S", "SP"]
+        allowed_values = ["T", "H", "A", "S", "N", "NF"]
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type`, must be one of {0}"

@@ -571,12 +571,13 @@ class CallsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str call_id:  (required)
+        :param str reason: T - timeout, D - decline
         :return: CallStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id']
+        all_params = ['call_id', 'reason']
         all_params.append('callback')
 
         params = locals()
@@ -599,6 +600,8 @@ class CallsApi(object):
             path_params['callId'] = params['call_id']
 
         query_params = {}
+        if 'reason' in params:
+            query_params['reason'] = params['reason']
 
         header_params = {}
 

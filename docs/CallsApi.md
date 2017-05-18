@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_reroute**
-> CallStatus call_reroute(call_id)
+> CallStatus call_reroute(call_id, reason=reason)
 
 Let the call ring to another agent
 
@@ -368,10 +368,11 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
+reason = 'reason_example' # str | T - timeout, D - decline (optional)
 
 try: 
     # Let the call ring to another agent
-    api_response = api_instance.call_reroute(call_id)
+    api_response = api_instance.call_reroute(call_id, reason=reason)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_reroute: %s\n" % e
@@ -382,6 +383,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
+ **reason** | **str**| T - timeout, D - decline | [optional] 
 
 ### Return type
 

@@ -43,6 +43,7 @@ class PhoneDevice(object):
             'connection_host': 'str',
             'connection_user': 'str',
             'connection_pass': 'str',
+            'agent_id': 'str',
             'params': 'str'
         }
 
@@ -53,6 +54,7 @@ class PhoneDevice(object):
             'connection_host': 'connection_host',
             'connection_user': 'connection_user',
             'connection_pass': 'connection_pass',
+            'agent_id': 'agent_id',
             'params': 'params'
         }
 
@@ -62,6 +64,7 @@ class PhoneDevice(object):
         self._connection_host = None
         self._connection_user = None
         self._connection_pass = None
+        self._agent_id = None
         self._params = None
 
     @property
@@ -201,6 +204,28 @@ class PhoneDevice(object):
         :type: str
         """
         self._connection_pass = connection_pass
+
+    @property
+    def agent_id(self):
+        """
+        Gets the agent_id of this PhoneDevice.
+
+
+        :return: The agent_id of this PhoneDevice.
+        :rtype: str
+        """
+        return self._agent_id
+
+    @agent_id.setter
+    def agent_id(self, agent_id):
+        """
+        Sets the agent_id of this PhoneDevice.
+
+
+        :param agent_id: The agent_id of this PhoneDevice.
+        :type: str
+        """
+        self._agent_id = agent_id
 
     @property
     def params(self):
