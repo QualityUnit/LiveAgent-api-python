@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **departmentid** | **str** |  | [optional] 
 **status** | **str** | A - Active, I - Inactive | [optional] 
 **host** | **str** |  | [optional] 
+**host_type** | **str** |  | [optional] 
 **port** | **str** |  | [optional] 
 **user** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 

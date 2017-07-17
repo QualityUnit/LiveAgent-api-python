@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**company_id** | **str** |  | [optional] 
 **firstname** | **str** |  | [optional] 
 **lastname** | **str** |  | [optional] 
 **system_name** | **str** |  | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **language** | **str** |  | [optional] 
 **city** | **str** |  | [optional] 
 **countrycode** | **str** |  | [optional] 
+**ip** | **str** |  | [optional] 
 **emails** | **list[str]** |  | [optional] 
 **phones** | **list[str]** |  | [optional] 
 **groups** | **list[str]** |  | [optional] 

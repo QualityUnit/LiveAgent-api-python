@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**system_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **type** | **str** | V - visitor, R - registered visitor | [optional] [default to 'V']
@@ -12,6 +13,7 @@ Name | Type | Description | Notes
 **language** | **str** |  | [optional] 
 **city** | **str** |  | [optional] 
 **countrycode** | **str** |  | [optional] 
+**ip** | **str** |  | [optional] 
 **emails** | **list[str]** |  | [optional] 
 **phones** | **list[str]** |  | [optional] 
 **groups** | **list[str]** |  | [optional] 

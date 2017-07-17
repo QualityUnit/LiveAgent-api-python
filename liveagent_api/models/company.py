@@ -39,6 +39,7 @@ class Company(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'system_name': 'str',
             'description': 'str',
             'avatar_url': 'str',
             'type': 'str',
@@ -46,11 +47,11 @@ class Company(object):
             'language': 'str',
             'city': 'str',
             'countrycode': 'str',
+            'ip': 'str',
             'emails': 'list[str]',
             'phones': 'list[str]',
             'groups': 'list[str]',
             'note': 'str',
-            'ip': 'str',
             'useragent': 'str',
             'screen': 'str',
             'time_offset': 'float',
@@ -62,6 +63,7 @@ class Company(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'system_name': 'system_name',
             'description': 'description',
             'avatar_url': 'avatar_url',
             'type': 'type',
@@ -69,11 +71,11 @@ class Company(object):
             'language': 'language',
             'city': 'city',
             'countrycode': 'countrycode',
+            'ip': 'ip',
             'emails': 'emails',
             'phones': 'phones',
             'groups': 'groups',
             'note': 'note',
-            'ip': 'ip',
             'useragent': 'useragent',
             'screen': 'screen',
             'time_offset': 'time_offset',
@@ -84,6 +86,7 @@ class Company(object):
 
         self._id = None
         self._name = None
+        self._system_name = None
         self._description = None
         self._avatar_url = None
         self._type = 'V'
@@ -91,11 +94,11 @@ class Company(object):
         self._language = None
         self._city = None
         self._countrycode = None
+        self._ip = None
         self._emails = None
         self._phones = None
         self._groups = None
         self._note = None
-        self._ip = None
         self._useragent = None
         self._screen = None
         self._time_offset = None
@@ -146,6 +149,28 @@ class Company(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def system_name(self):
+        """
+        Gets the system_name of this Company.
+
+
+        :return: The system_name of this Company.
+        :rtype: str
+        """
+        return self._system_name
+
+    @system_name.setter
+    def system_name(self, system_name):
+        """
+        Sets the system_name of this Company.
+
+
+        :param system_name: The system_name of this Company.
+        :type: str
+        """
+        self._system_name = system_name
 
     @property
     def description(self):
@@ -308,6 +333,28 @@ class Company(object):
         self._countrycode = countrycode
 
     @property
+    def ip(self):
+        """
+        Gets the ip of this Company.
+
+
+        :return: The ip of this Company.
+        :rtype: str
+        """
+        return self._ip
+
+    @ip.setter
+    def ip(self, ip):
+        """
+        Sets the ip of this Company.
+
+
+        :param ip: The ip of this Company.
+        :type: str
+        """
+        self._ip = ip
+
+    @property
     def emails(self):
         """
         Gets the emails of this Company.
@@ -394,28 +441,6 @@ class Company(object):
         :type: str
         """
         self._note = note
-
-    @property
-    def ip(self):
-        """
-        Gets the ip of this Company.
-
-
-        :return: The ip of this Company.
-        :rtype: str
-        """
-        return self._ip
-
-    @ip.setter
-    def ip(self, ip):
-        """
-        Sets the ip of this Company.
-
-
-        :param ip: The ip of this Company.
-        :type: str
-        """
-        self._ip = ip
 
     @property
     def useragent(self):

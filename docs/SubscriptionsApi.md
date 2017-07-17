@@ -1,6 +1,6 @@
 # liveagent_api.SubscriptionsApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *http://localhost/api/v3/index.php*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -714,7 +714,7 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
-to = 10 # int | Result set end. Used only if _from is used. (optional) (default to 10)
+to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
 try: 
     # Subscription invoice list
@@ -735,7 +735,7 @@ Name | Type | Description  | Notes
  **sort_field** | **str**| Sorting field | [optional] 
  **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
  **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
- **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 10]
+ **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
 
 ### Return type
 

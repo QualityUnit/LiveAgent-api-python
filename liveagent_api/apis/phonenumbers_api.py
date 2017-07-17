@@ -67,6 +67,7 @@ class PhonenumbersApi(object):
         :param str name: 
         :param str departmentid: 
         :param str host: 
+        :param str host_type: 
         :param str port: 
         :param str user: 
         :param str password: 
@@ -77,7 +78,7 @@ class PhonenumbersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'name', 'departmentid', 'host', 'port', 'user', 'password', 'providerid', 'ivr']
+        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'name', 'departmentid', 'host', 'host_type', 'port', 'user', 'password', 'providerid', 'ivr']
         all_params.append('callback')
 
         params = locals()
@@ -123,6 +124,8 @@ class PhonenumbersApi(object):
             form_params.append(('departmentid', params['departmentid']))
         if 'host' in params:
             form_params.append(('host', params['host']))
+        if 'host_type' in params:
+            form_params.append(('host_type', params['host_type']))
         if 'port' in params:
             form_params.append(('port', params['port']))
         if 'user' in params:
@@ -255,6 +258,8 @@ class PhonenumbersApi(object):
             for asynchronous request. (optional)
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
+        :param int _from: Result set start. Takes precedence over _page.
+        :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
         :param str filters: Filters (json object {column:value, ...})
@@ -263,7 +268,7 @@ class PhonenumbersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'per_page', 'sort_dir', 'sort_field', 'filters']
+        all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters']
         all_params.append('callback')
 
         params = locals()
@@ -285,6 +290,10 @@ class PhonenumbersApi(object):
             query_params['_page'] = params['page']
         if 'per_page' in params:
             query_params['_perPage'] = params['per_page']
+        if '_from' in params:
+            query_params['_from'] = params['_from']
+        if 'to' in params:
+            query_params['_to'] = params['to']
         if 'sort_dir' in params:
             query_params['_sortDir'] = params['sort_dir']
         if 'sort_field' in params:
@@ -550,7 +559,7 @@ class PhonenumbersApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/x-www-form-urlencoded'])
 
         # Authentication setting
         auth_settings = ['privileges', 'apikey']

@@ -61,12 +61,13 @@ class AgentphoneApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str agent_id:  (required)
+        :param str type: API (I - default), SIP (S)
         :return: PhoneDevice
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['agent_id']
+        all_params = ['agent_id', 'type']
         all_params.append('callback')
 
         params = locals()
@@ -89,6 +90,8 @@ class AgentphoneApi(object):
             path_params['agentId'] = params['agent_id']
 
         query_params = {}
+        if 'type' in params:
+            query_params['type'] = params['type']
 
         header_params = {}
 

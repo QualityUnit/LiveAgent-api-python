@@ -41,7 +41,8 @@ class Agent(object):
             'name': 'str',
             'email': 'str',
             'role': 'str',
-            'avatar_url': 'str'
+            'avatar_url': 'str',
+            'online_status': 'str'
         }
 
         self.attribute_map = {
@@ -49,7 +50,8 @@ class Agent(object):
             'name': 'name',
             'email': 'email',
             'role': 'role',
-            'avatar_url': 'avatar_url'
+            'avatar_url': 'avatar_url',
+            'online_status': 'online_status'
         }
 
         self._id = None
@@ -57,6 +59,7 @@ class Agent(object):
         self._email = None
         self._role = None
         self._avatar_url = None
+        self._online_status = None
 
     @property
     def id(self):
@@ -173,6 +176,28 @@ class Agent(object):
         :type: str
         """
         self._avatar_url = avatar_url
+
+    @property
+    def online_status(self):
+        """
+        Gets the online_status of this Agent.
+
+
+        :return: The online_status of this Agent.
+        :rtype: str
+        """
+        return self._online_status
+
+    @online_status.setter
+    def online_status(self, online_status):
+        """
+        Sets the online_status of this Agent.
+
+
+        :param online_status: The online_status of this Agent.
+        :type: str
+        """
+        self._online_status = online_status
 
     def to_dict(self):
         """

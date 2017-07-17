@@ -38,6 +38,7 @@ class Contact(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'company_id': 'str',
             'firstname': 'str',
             'lastname': 'str',
             'system_name': 'str',
@@ -49,13 +50,12 @@ class Contact(object):
             'language': 'str',
             'city': 'str',
             'countrycode': 'str',
+            'ip': 'str',
             'emails': 'list[str]',
             'phones': 'list[str]',
             'groups': 'list[str]',
-            'company_id': 'str',
             'job_position': 'str',
             'note': 'str',
-            'ip': 'str',
             'useragent': 'str',
             'screen': 'str',
             'time_offset': 'float',
@@ -66,6 +66,7 @@ class Contact(object):
 
         self.attribute_map = {
             'id': 'id',
+            'company_id': 'company_id',
             'firstname': 'firstname',
             'lastname': 'lastname',
             'system_name': 'system_name',
@@ -77,13 +78,12 @@ class Contact(object):
             'language': 'language',
             'city': 'city',
             'countrycode': 'countrycode',
+            'ip': 'ip',
             'emails': 'emails',
             'phones': 'phones',
             'groups': 'groups',
-            'company_id': 'company_id',
             'job_position': 'job_position',
             'note': 'note',
-            'ip': 'ip',
             'useragent': 'useragent',
             'screen': 'screen',
             'time_offset': 'time_offset',
@@ -93,6 +93,7 @@ class Contact(object):
         }
 
         self._id = None
+        self._company_id = None
         self._firstname = None
         self._lastname = None
         self._system_name = None
@@ -104,13 +105,12 @@ class Contact(object):
         self._language = None
         self._city = None
         self._countrycode = None
+        self._ip = None
         self._emails = None
         self._phones = None
         self._groups = None
-        self._company_id = None
         self._job_position = None
         self._note = None
-        self._ip = None
         self._useragent = None
         self._screen = None
         self._time_offset = None
@@ -139,6 +139,28 @@ class Contact(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def company_id(self):
+        """
+        Gets the company_id of this Contact.
+
+
+        :return: The company_id of this Contact.
+        :rtype: str
+        """
+        return self._company_id
+
+    @company_id.setter
+    def company_id(self, company_id):
+        """
+        Sets the company_id of this Contact.
+
+
+        :param company_id: The company_id of this Contact.
+        :type: str
+        """
+        self._company_id = company_id
 
     @property
     def firstname(self):
@@ -389,6 +411,28 @@ class Contact(object):
         self._countrycode = countrycode
 
     @property
+    def ip(self):
+        """
+        Gets the ip of this Contact.
+
+
+        :return: The ip of this Contact.
+        :rtype: str
+        """
+        return self._ip
+
+    @ip.setter
+    def ip(self, ip):
+        """
+        Sets the ip of this Contact.
+
+
+        :param ip: The ip of this Contact.
+        :type: str
+        """
+        self._ip = ip
+
+    @property
     def emails(self):
         """
         Gets the emails of this Contact.
@@ -455,28 +499,6 @@ class Contact(object):
         self._groups = groups
 
     @property
-    def company_id(self):
-        """
-        Gets the company_id of this Contact.
-
-
-        :return: The company_id of this Contact.
-        :rtype: str
-        """
-        return self._company_id
-
-    @company_id.setter
-    def company_id(self, company_id):
-        """
-        Sets the company_id of this Contact.
-
-
-        :param company_id: The company_id of this Contact.
-        :type: str
-        """
-        self._company_id = company_id
-
-    @property
     def job_position(self):
         """
         Gets the job_position of this Contact.
@@ -519,28 +541,6 @@ class Contact(object):
         :type: str
         """
         self._note = note
-
-    @property
-    def ip(self):
-        """
-        Gets the ip of this Contact.
-
-
-        :return: The ip of this Contact.
-        :rtype: str
-        """
-        return self._ip
-
-    @ip.setter
-    def ip(self, ip):
-        """
-        Sets the ip of this Contact.
-
-
-        :param ip: The ip of this Contact.
-        :type: str
-        """
-        self._ip = ip
 
     @property
     def useragent(self):

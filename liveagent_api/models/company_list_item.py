@@ -39,6 +39,7 @@ class CompanyListItem(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'system_name': 'str',
             'description': 'str',
             'avatar_url': 'str',
             'type': 'str',
@@ -46,6 +47,7 @@ class CompanyListItem(object):
             'language': 'str',
             'city': 'str',
             'countrycode': 'str',
+            'ip': 'str',
             'emails': 'list[str]',
             'phones': 'list[str]',
             'groups': 'list[str]'
@@ -54,6 +56,7 @@ class CompanyListItem(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'system_name': 'system_name',
             'description': 'description',
             'avatar_url': 'avatar_url',
             'type': 'type',
@@ -61,6 +64,7 @@ class CompanyListItem(object):
             'language': 'language',
             'city': 'city',
             'countrycode': 'countrycode',
+            'ip': 'ip',
             'emails': 'emails',
             'phones': 'phones',
             'groups': 'groups'
@@ -68,6 +72,7 @@ class CompanyListItem(object):
 
         self._id = None
         self._name = None
+        self._system_name = None
         self._description = None
         self._avatar_url = None
         self._type = 'V'
@@ -75,6 +80,7 @@ class CompanyListItem(object):
         self._language = None
         self._city = None
         self._countrycode = None
+        self._ip = None
         self._emails = None
         self._phones = None
         self._groups = None
@@ -122,6 +128,28 @@ class CompanyListItem(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def system_name(self):
+        """
+        Gets the system_name of this CompanyListItem.
+
+
+        :return: The system_name of this CompanyListItem.
+        :rtype: str
+        """
+        return self._system_name
+
+    @system_name.setter
+    def system_name(self, system_name):
+        """
+        Sets the system_name of this CompanyListItem.
+
+
+        :param system_name: The system_name of this CompanyListItem.
+        :type: str
+        """
+        self._system_name = system_name
 
     @property
     def description(self):
@@ -282,6 +310,28 @@ class CompanyListItem(object):
         :type: str
         """
         self._countrycode = countrycode
+
+    @property
+    def ip(self):
+        """
+        Gets the ip of this CompanyListItem.
+
+
+        :return: The ip of this CompanyListItem.
+        :rtype: str
+        """
+        return self._ip
+
+    @ip.setter
+    def ip(self, ip):
+        """
+        Sets the ip of this CompanyListItem.
+
+
+        :param ip: The ip of this CompanyListItem.
+        :type: str
+        """
+        self._ip = ip
 
     @property
     def emails(self):

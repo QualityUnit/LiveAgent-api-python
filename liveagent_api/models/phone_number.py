@@ -45,6 +45,7 @@ class PhoneNumber(object):
             'departmentid': 'str',
             'status': 'str',
             'host': 'str',
+            'host_type': 'str',
             'port': 'str',
             'user': 'str',
             'password': 'str',
@@ -61,6 +62,7 @@ class PhoneNumber(object):
             'departmentid': 'departmentid',
             'status': 'status',
             'host': 'host',
+            'host_type': 'host_type',
             'port': 'port',
             'user': 'user',
             'password': 'password',
@@ -76,6 +78,7 @@ class PhoneNumber(object):
         self._departmentid = None
         self._status = None
         self._host = None
+        self._host_type = None
         self._port = None
         self._user = None
         self._password = None
@@ -269,6 +272,28 @@ class PhoneNumber(object):
         :type: str
         """
         self._host = host
+
+    @property
+    def host_type(self):
+        """
+        Gets the host_type of this PhoneNumber.
+
+
+        :return: The host_type of this PhoneNumber.
+        :rtype: str
+        """
+        return self._host_type
+
+    @host_type.setter
+    def host_type(self, host_type):
+        """
+        Sets the host_type of this PhoneNumber.
+
+
+        :param host_type: The host_type of this PhoneNumber.
+        :type: str
+        """
+        self._host_type = host_type
 
     @property
     def port(self):

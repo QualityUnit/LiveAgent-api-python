@@ -38,6 +38,7 @@ class ContactListItem(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'company_id': 'str',
             'firstname': 'str',
             'lastname': 'str',
             'system_name': 'str',
@@ -49,6 +50,7 @@ class ContactListItem(object):
             'language': 'str',
             'city': 'str',
             'countrycode': 'str',
+            'ip': 'str',
             'emails': 'list[str]',
             'phones': 'list[str]',
             'groups': 'list[str]'
@@ -56,6 +58,7 @@ class ContactListItem(object):
 
         self.attribute_map = {
             'id': 'id',
+            'company_id': 'company_id',
             'firstname': 'firstname',
             'lastname': 'lastname',
             'system_name': 'system_name',
@@ -67,12 +70,14 @@ class ContactListItem(object):
             'language': 'language',
             'city': 'city',
             'countrycode': 'countrycode',
+            'ip': 'ip',
             'emails': 'emails',
             'phones': 'phones',
             'groups': 'groups'
         }
 
         self._id = None
+        self._company_id = None
         self._firstname = None
         self._lastname = None
         self._system_name = None
@@ -84,6 +89,7 @@ class ContactListItem(object):
         self._language = None
         self._city = None
         self._countrycode = None
+        self._ip = None
         self._emails = None
         self._phones = None
         self._groups = None
@@ -109,6 +115,28 @@ class ContactListItem(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def company_id(self):
+        """
+        Gets the company_id of this ContactListItem.
+
+
+        :return: The company_id of this ContactListItem.
+        :rtype: str
+        """
+        return self._company_id
+
+    @company_id.setter
+    def company_id(self, company_id):
+        """
+        Sets the company_id of this ContactListItem.
+
+
+        :param company_id: The company_id of this ContactListItem.
+        :type: str
+        """
+        self._company_id = company_id
 
     @property
     def firstname(self):
@@ -357,6 +385,28 @@ class ContactListItem(object):
         :type: str
         """
         self._countrycode = countrycode
+
+    @property
+    def ip(self):
+        """
+        Gets the ip of this ContactListItem.
+
+
+        :return: The ip of this ContactListItem.
+        :rtype: str
+        """
+        return self._ip
+
+    @ip.setter
+    def ip(self, ip):
+        """
+        Sets the ip of this ContactListItem.
+
+
+        :param ip: The ip of this ContactListItem.
+        :type: str
+        """
+        self._ip = ip
 
     @property
     def emails(self):

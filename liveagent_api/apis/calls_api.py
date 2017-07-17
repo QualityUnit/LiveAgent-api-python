@@ -208,6 +208,95 @@ class CallsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def call_change_channel_status(self, call_id, channel_id, status, **kwargs):
+        """
+        Change channel status
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.call_change_channel_status(call_id, channel_id, status, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str call_id:  (required)
+        :param str channel_id:  (required)
+        :param str status: run (\u2018R\u2019 - default), hold (\u2018H\u2019) (required)
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['call_id', 'channel_id', 'status']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method call_change_channel_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'call_id' is set
+        if ('call_id' not in params) or (params['call_id'] is None):
+            raise ValueError("Missing the required parameter `call_id` when calling `call_change_channel_status`")
+        # verify the required parameter 'channel_id' is set
+        if ('channel_id' not in params) or (params['channel_id'] is None):
+            raise ValueError("Missing the required parameter `channel_id` when calling `call_change_channel_status`")
+        # verify the required parameter 'status' is set
+        if ('status' not in params) or (params['status'] is None):
+            raise ValueError("Missing the required parameter `status` when calling `call_change_channel_status`")
+
+        resource_path = '/calls/{callId}/channels/{channelId}/_status'.replace('{format}', 'json')
+        path_params = {}
+        if 'call_id' in params:
+            path_params['callId'] = params['call_id']
+        if 'channel_id' in params:
+            path_params['channelId'] = params['channel_id']
+
+        query_params = {}
+        if 'status' in params:
+            query_params['status'] = params['status']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def call_create(self, call_id, to_number, from_number, **kwargs):
         """
         Create new call
@@ -651,12 +740,14 @@ class CallsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str call_id:  (required)
+        :param str department_id: Department ID
+        :param str to_number: callee number
         :return: CallStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id']
+        all_params = ['call_id', 'department_id', 'to_number']
         all_params.append('callback')
 
         params = locals()
@@ -679,6 +770,10 @@ class CallsApi(object):
             path_params['callId'] = params['call_id']
 
         query_params = {}
+        if 'department_id' in params:
+            query_params['departmentId'] = params['department_id']
+        if 'to_number' in params:
+            query_params['to_number'] = params['to_number']
 
         header_params = {}
 
@@ -1030,7 +1125,7 @@ class CallsApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_content_type(['application/x-www-form-urlencoded'])
 
         # Authentication setting
         auth_settings = ['privileges']

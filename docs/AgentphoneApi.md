@@ -1,6 +1,6 @@
 # liveagent_api.AgentphoneApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *http://localhost/api/v3/index.php*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_agent_phone**
-> PhoneDevice get_agent_phone(agent_id)
+> PhoneDevice get_agent_phone(agent_id, type=type)
 
 Gets phone currently used by agent (use me as agentId for self)
 
@@ -30,10 +30,11 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.AgentphoneApi()
 agent_id = 'agent_id_example' # str | 
+type = 'I' # str | API (I - default), SIP (S) (optional) (default to I)
 
 try: 
     # Gets phone currently used by agent (use me as agentId for self)
-    api_response = api_instance.get_agent_phone(agent_id)
+    api_response = api_instance.get_agent_phone(agent_id, type=type)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AgentphoneApi->get_agent_phone: %s\n" % e
@@ -44,6 +45,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agent_id** | **str**|  | 
+ **type** | **str**| API (I - default), SIP (S) | [optional] [default to I]
 
 ### Return type
 

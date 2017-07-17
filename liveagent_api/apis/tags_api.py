@@ -290,12 +290,14 @@ class TagsApi(object):
             for asynchronous request. (optional)
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
+        :param int _from: Result set start. Takes precedence over _page.
+        :param int to: Result set end. Used only if _from is used.
         :return: list[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'per_page']
+        all_params = ['page', 'per_page', '_from', 'to']
         all_params.append('callback')
 
         params = locals()
@@ -317,6 +319,10 @@ class TagsApi(object):
             query_params['_page'] = params['page']
         if 'per_page' in params:
             query_params['_perPage'] = params['per_page']
+        if '_from' in params:
+            query_params['_from'] = params['_from']
+        if 'to' in params:
+            query_params['_to'] = params['to']
 
         header_params = {}
 

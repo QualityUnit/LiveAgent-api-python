@@ -1,6 +1,6 @@
 # liveagent_api.TagsApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *http://localhost/api/v3/index.php*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tags_list**
-> list[Tag] get_tags_list(page=page, per_page=per_page)
+> list[Tag] get_tags_list(page=page, per_page=per_page, _from=_from, to=to)
 
 Gets list of tags
 
@@ -194,10 +194,12 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 api_instance = liveagent_api.TagsApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
+to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
 try: 
     # Gets list of tags
-    api_response = api_instance.get_tags_list(page=page, per_page=per_page)
+    api_response = api_instance.get_tags_list(page=page, per_page=per_page, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling TagsApi->get_tags_list: %s\n" % e
@@ -209,6 +211,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
  **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
+ **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
 
 ### Return type
 

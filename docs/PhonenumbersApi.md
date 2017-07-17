@@ -1,6 +1,6 @@
 # liveagent_api.PhonenumbersApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *http://localhost/api/v3/index.php*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **add_number**
-> PhoneNumber add_number(type, number, status, dial_out_prefix=dial_out_prefix, name=name, departmentid=departmentid, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
+> PhoneNumber add_number(type, number, status, dial_out_prefix=dial_out_prefix, name=name, departmentid=departmentid, host=host, host_type=host_type, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
 
 Add new number
 
@@ -40,6 +40,7 @@ dial_out_prefix = 56 # int | Prefix needed to orifinate call using this number (
 name = 'name_example' # str |  (optional)
 departmentid = 'departmentid_example' # str |  (optional)
 host = 'host_example' # str |  (optional)
+host_type = 'host_type_example' # str |  (optional)
 port = 'port_example' # str |  (optional)
 user = 'user_example' # str |  (optional)
 password = 'password_example' # str |  (optional)
@@ -48,7 +49,7 @@ ivr = 'ivr_example' # str |  (optional)
 
 try: 
     # Add new number
-    api_response = api_instance.add_number(type, number, status, dial_out_prefix=dial_out_prefix, name=name, departmentid=departmentid, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
+    api_response = api_instance.add_number(type, number, status, dial_out_prefix=dial_out_prefix, name=name, departmentid=departmentid, host=host, host_type=host_type, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PhonenumbersApi->add_number: %s\n" % e
@@ -65,6 +66,7 @@ Name | Type | Description  | Notes
  **name** | **str**|  | [optional] 
  **departmentid** | **str**|  | [optional] 
  **host** | **str**|  | [optional] 
+ **host_type** | **str**|  | [optional] 
  **port** | **str**|  | [optional] 
  **user** | **str**|  | [optional] 
  **password** | **str**|  | [optional] 
@@ -139,7 +141,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_phone_numbers_list**
-> list[PhoneNumber] get_phone_numbers_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+> list[PhoneNumber] get_phone_numbers_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
 
 Gets list of available phone numbers
 
@@ -161,13 +163,15 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 api_instance = liveagent_api.PhonenumbersApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
+to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
 try: 
     # Gets list of available phone numbers
-    api_response = api_instance.get_phone_numbers_list(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+    api_response = api_instance.get_phone_numbers_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PhonenumbersApi->get_phone_numbers_list: %s\n" % e
@@ -179,6 +183,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
  **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
+ **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
  **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
@@ -349,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/x-www-form-urlencoded
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -3,6 +3,7 @@ from __future__ import absolute_import
 # import apis into api package
 from .agentphone_api import AgentphoneApi
 from .agents_api import AgentsApi
+from .api_api import ApiApi
 from .billing_api import BillingApi
 from .calls_api import CallsApi
 from .cannedmessages_api import CannedmessagesApi
@@ -19,5 +20,6 @@ from .phones_api import PhonesApi
 from .predefinedanswers_api import PredefinedanswersApi
 from .subscriptions_api import SubscriptionsApi
 from .tags_api import TagsApi
+from .tickets_api import TicketsApi
 from .token_api import TokenApi
 from .variations_api import VariationsApi

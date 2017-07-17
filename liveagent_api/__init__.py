@@ -4,6 +4,12 @@ from __future__ import absolute_import
 from .models.addon import Addon
 from .models.addon_list import AddonList
 from .models.agent import Agent
+from .models.agent_status import AgentStatus
+from .models.agent_statuses import AgentStatuses
+from .models.api_info import ApiInfo
+from .models.api_key import ApiKey
+from .models.api_key_with_privileges import ApiKeyWithPrivileges
+from .models.api_privilege import ApiPrivilege
 from .models.attribute_simple import AttributeSimple
 from .models.billing_info import BillingInfo
 from .models.billing_metric import BillingMetric
@@ -41,6 +47,9 @@ from .models.predefined_answer import PredefinedAnswer
 from .models.stored_file import StoredFile
 from .models.subscription import Subscription
 from .models.tag import Tag
+from .models.ticket import Ticket
+from .models.ticket_attribute import TicketAttribute
+from .models.ticket_updatable import TicketUpdatable
 from .models.token import Token
 from .models.upgrade import Upgrade
 from .models.usage_data import UsageData
@@ -51,6 +60,7 @@ from .models.variation_upgrades import VariationUpgrades
 # import apis into sdk package
 from .apis.agentphone_api import AgentphoneApi
 from .apis.agents_api import AgentsApi
+from .apis.api_api import ApiApi
 from .apis.billing_api import BillingApi
 from .apis.calls_api import CallsApi
 from .apis.cannedmessages_api import CannedmessagesApi
@@ -67,6 +77,7 @@ from .apis.phones_api import PhonesApi
 from .apis.predefinedanswers_api import PredefinedanswersApi
 from .apis.subscriptions_api import SubscriptionsApi
 from .apis.tags_api import TagsApi
+from .apis.tickets_api import TicketsApi
 from .apis.token_api import TokenApi
 from .apis.variations_api import VariationsApi
 

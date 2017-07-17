@@ -1,11 +1,12 @@
 # liveagent_api.CallsApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *http://localhost/api/v3/index.php*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponfing ticket
 [**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
+[**call_change_channel_status**](CallsApi.md#call_change_channel_status) | **PUT** /calls/{callId}/channels/{channelId}/_status | Change channel status
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 [**call_get_status**](CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
 [**call_move_channel**](CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels/{channelId}/_move | Moves existing channel to target call
@@ -118,6 +119,58 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_change_channel_status**
+> OkResponse call_change_channel_status(call_id, channel_id, status)
+
+Change channel status
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+channel_id = 'channel_id_example' # str | 
+status = 'status_example' # str | run (\u2018R\u2019 - default), hold (\u2018H\u2019)
+
+try: 
+    # Change channel status
+    api_response = api_instance.call_change_channel_status(call_id, channel_id, status)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_change_channel_status: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **channel_id** | **str**|  | 
+ **status** | **str**| run (\u2018R\u2019 - default), hold (\u2018H\u2019) | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -401,7 +454,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_ring**
-> CallStatus call_ring(call_id)
+> CallStatus call_ring(call_id, department_id=department_id, to_number=to_number)
 
 Let the call ring
 
@@ -424,10 +477,12 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
+department_id = 'department_id_example' # str | Department ID (optional)
+to_number = 'to_number_example' # str | callee number (optional)
 
 try: 
     # Let the call ring
-    api_response = api_instance.call_ring(call_id)
+    api_response = api_instance.call_ring(call_id, department_id=department_id, to_number=to_number)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_ring: %s\n" % e
@@ -438,6 +493,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
+ **department_id** | **str**| Department ID | [optional] 
+ **to_number** | **str**| callee number | [optional] 
 
 ### Return type
 
@@ -665,7 +722,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/x-www-form-urlencoded
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

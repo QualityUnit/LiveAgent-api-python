@@ -4,6 +4,12 @@ from __future__ import absolute_import
 from .addon import Addon
 from .addon_list import AddonList
 from .agent import Agent
+from .agent_status import AgentStatus
+from .agent_statuses import AgentStatuses
+from .api_info import ApiInfo
+from .api_key import ApiKey
+from .api_key_with_privileges import ApiKeyWithPrivileges
+from .api_privilege import ApiPrivilege
 from .attribute_simple import AttributeSimple
 from .billing_info import BillingInfo
 from .billing_metric import BillingMetric
@@ -41,6 +47,9 @@ from .predefined_answer import PredefinedAnswer
 from .stored_file import StoredFile
 from .subscription import Subscription
 from .tag import Tag
+from .ticket import Ticket
+from .ticket_attribute import TicketAttribute
+from .ticket_updatable import TicketUpdatable
 from .token import Token
 from .upgrade import Upgrade
 from .usage_data import UsageData
