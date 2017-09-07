@@ -16,6 +16,7 @@ from .billing_metric import BillingMetric
 from .billing_status import BillingStatus
 from .call import Call
 from .call_agent import CallAgent
+from .call_list_item import CallListItem
 from .call_message import CallMessage
 from .call_status import CallStatus
 from .canned_message import CannedMessage
@@ -49,6 +50,7 @@ from .subscription import Subscription
 from .tag import Tag
 from .ticket import Ticket
 from .ticket_attribute import TicketAttribute
+from .ticket_sla import TicketSla
 from .ticket_updatable import TicketUpdatable
 from .token import Token
 from .upgrade import Upgrade

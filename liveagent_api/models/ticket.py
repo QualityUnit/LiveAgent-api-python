@@ -39,6 +39,8 @@ class Ticket(object):
         self.swagger_types = {
             'id': 'str',
             'owner_contactid': 'str',
+            'owner_email': 'str',
+            'owner_name': 'str',
             'departmentid': 'str',
             'agentid': 'str',
             'status': 'str',
@@ -57,6 +59,8 @@ class Ticket(object):
         self.attribute_map = {
             'id': 'id',
             'owner_contactid': 'owner_contactid',
+            'owner_email': 'owner_email',
+            'owner_name': 'owner_name',
             'departmentid': 'departmentid',
             'agentid': 'agentid',
             'status': 'status',
@@ -74,6 +78,8 @@ class Ticket(object):
 
         self._id = None
         self._owner_contactid = None
+        self._owner_email = None
+        self._owner_name = None
         self._departmentid = None
         self._agentid = None
         self._status = None
@@ -131,6 +137,50 @@ class Ticket(object):
         :type: str
         """
         self._owner_contactid = owner_contactid
+
+    @property
+    def owner_email(self):
+        """
+        Gets the owner_email of this Ticket.
+
+
+        :return: The owner_email of this Ticket.
+        :rtype: str
+        """
+        return self._owner_email
+
+    @owner_email.setter
+    def owner_email(self, owner_email):
+        """
+        Sets the owner_email of this Ticket.
+
+
+        :param owner_email: The owner_email of this Ticket.
+        :type: str
+        """
+        self._owner_email = owner_email
+
+    @property
+    def owner_name(self):
+        """
+        Gets the owner_name of this Ticket.
+
+
+        :return: The owner_name of this Ticket.
+        :rtype: str
+        """
+        return self._owner_name
+
+    @owner_name.setter
+    def owner_name(self, owner_name):
+        """
+        Sets the owner_name of this Ticket.
+
+
+        :param owner_name: The owner_name of this Ticket.
+        :type: str
+        """
+        self._owner_name = owner_name
 
     @property
     def departmentid(self):

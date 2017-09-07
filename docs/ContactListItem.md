@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **system_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
-**type** | **str** | V - visitor, R - registered visitor, A - agent | [optional] [default to 'V']
+**type** | **str** | V - visitor, R - registered visitor | [optional] [default to 'V']
 **gender** | **str** | M - Male, F - Female | [optional] 
 **date_created** | **datetime** |  | [optional] 
 **language** | **str** |  | [optional] 

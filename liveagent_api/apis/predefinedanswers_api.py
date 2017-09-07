@@ -80,7 +80,7 @@ class PredefinedanswersApi(object):
         del params['kwargs']
 
 
-        resource_path = '/predefined_asnwers'.replace('{format}', 'json')
+        resource_path = '/predefined_answers'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -314,7 +314,7 @@ class PredefinedanswersApi(object):
         del params['kwargs']
 
 
-        resource_path = '/predefined_asnwers'.replace('{format}', 'json')
+        resource_path = '/predefined_answers'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

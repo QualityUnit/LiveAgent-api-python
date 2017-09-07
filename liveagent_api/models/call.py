@@ -42,6 +42,7 @@ class Call(object):
             'callee_status': 'str',
             'ivrs': 'list[Ivr]',
             'record_call': 'bool',
+            'reroute_time': 'float',
             'online_ivr': 'str',
             'offline_ivr': 'str',
             'queue_ivr': 'str'
@@ -53,6 +54,7 @@ class Call(object):
             'callee_status': 'callee_status',
             'ivrs': 'ivrs',
             'record_call': 'record_call',
+            'reroute_time': 'reroute_time',
             'online_ivr': 'online_ivr',
             'offline_ivr': 'offline_ivr',
             'queue_ivr': 'queue_ivr'
@@ -63,6 +65,7 @@ class Call(object):
         self._callee_status = None
         self._ivrs = None
         self._record_call = False
+        self._reroute_time = None
         self._online_ivr = None
         self._offline_ivr = None
         self._queue_ivr = None
@@ -182,6 +185,28 @@ class Call(object):
         :type: bool
         """
         self._record_call = record_call
+
+    @property
+    def reroute_time(self):
+        """
+        Gets the reroute_time of this Call.
+
+
+        :return: The reroute_time of this Call.
+        :rtype: float
+        """
+        return self._reroute_time
+
+    @reroute_time.setter
+    def reroute_time(self, reroute_time):
+        """
+        Sets the reroute_time of this Call.
+
+
+        :param reroute_time: The reroute_time of this Call.
+        :type: float
+        """
+        self._reroute_time = reroute_time
 
     @property
     def online_ivr(self):

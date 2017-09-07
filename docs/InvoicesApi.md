@@ -1,6 +1,6 @@
 # liveagent_api.InvoicesApi
 
-All URIs are relative to *http://localhost/api/v3/index.php*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

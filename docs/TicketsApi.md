@@ -1,12 +1,13 @@
 # liveagent_api.TicketsApi
 
-All URIs are relative to *http://localhost/api/v3/index.php*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_ticket**](TicketsApi.md#delete_ticket) | **DELETE** /tickets/{ticketId} | Deletes ticket
 [**get_ticket**](TicketsApi.md#get_ticket) | **GET** /tickets/{ticketId} | Gets ticket
 [**get_ticket_attribute**](TicketsApi.md#get_ticket_attribute) | **GET** /tickets/{ticketId}/attributes/{attributeName} | Gets ticket attribute
+[**get_ticket_sla**](TicketsApi.md#get_ticket_sla) | **GET** /tickets/{ticketId}/sla | Gets ticket Sla
 [**get_tickets_list**](TicketsApi.md#get_tickets_list) | **GET** /tickets | Gets list of tickets
 [**set_ticket_attribute**](TicketsApi.md#set_ticket_attribute) | **PUT** /tickets/{ticketId}/attributes/{attributeName} | Sets ticket attribute
 [**update_ticket**](TicketsApi.md#update_ticket) | **PUT** /tickets/{ticketId} | Updates ticket
@@ -158,6 +159,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TicketAttribute**](TicketAttribute.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_ticket_sla**
+> TicketSla get_ticket_sla(ticket_id)
+
+Gets ticket Sla
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.TicketsApi()
+ticket_id = 'ticket_id_example' # str | 
+
+try: 
+    # Gets ticket Sla
+    api_response = api_instance.get_ticket_sla(ticket_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TicketsApi->get_ticket_sla: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticket_id** | **str**|  | 
+
+### Return type
+
+[**TicketSla**](TicketSla.md)
 
 ### Authorization
 

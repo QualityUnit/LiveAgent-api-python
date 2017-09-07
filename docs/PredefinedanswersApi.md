@@ -1,13 +1,13 @@
 # liveagent_api.PredefinedanswersApi
 
-All URIs are relative to *http://localhost/api/v3/index.php*
+All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_predefined_answer**](PredefinedanswersApi.md#create_predefined_answer) | **POST** /predefined_asnwers | Create predefined answer
+[**create_predefined_answer**](PredefinedanswersApi.md#create_predefined_answer) | **POST** /predefined_answers | Create predefined answer
 [**delete_predefined_answer**](PredefinedanswersApi.md#delete_predefined_answer) | **DELETE** /predefined_answers/{predefinedAnswerId} | Predefined answer
 [**get_predefined_answer**](PredefinedanswersApi.md#get_predefined_answer) | **GET** /predefined_answers/{predefinedAnswerId} | Gets canned message
-[**get_predefined_answers_list**](PredefinedanswersApi.md#get_predefined_answers_list) | **GET** /predefined_asnwers | Gets list of predefined answers
+[**get_predefined_answers_list**](PredefinedanswersApi.md#get_predefined_answers_list) | **GET** /predefined_answers | Gets list of predefined answers
 [**update_predefined_answer**](PredefinedanswersApi.md#update_predefined_answer) | **PUT** /predefined_answers/{predefinedAnswerId} | Update predefined answer
 
 

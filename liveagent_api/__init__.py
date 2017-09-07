@@ -16,6 +16,7 @@ from .models.billing_metric import BillingMetric
 from .models.billing_status import BillingStatus
 from .models.call import Call
 from .models.call_agent import CallAgent
+from .models.call_list_item import CallListItem
 from .models.call_message import CallMessage
 from .models.call_status import CallStatus
 from .models.canned_message import CannedMessage
@@ -49,6 +50,7 @@ from .models.subscription import Subscription
 from .models.tag import Tag
 from .models.ticket import Ticket
 from .models.ticket_attribute import TicketAttribute
+from .models.ticket_sla import TicketSla
 from .models.ticket_updatable import TicketUpdatable
 from .models.token import Token
 from .models.upgrade import Upgrade

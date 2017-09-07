@@ -276,7 +276,7 @@ class Contact(object):
     def type(self):
         """
         Gets the type of this Contact.
-        V - visitor, R - registered visitor, A - agent
+        V - visitor, R - registered visitor
 
         :return: The type of this Contact.
         :rtype: str
@@ -287,12 +287,12 @@ class Contact(object):
     def type(self, type):
         """
         Sets the type of this Contact.
-        V - visitor, R - registered visitor, A - agent
+        V - visitor, R - registered visitor
 
         :param type: The type of this Contact.
         :type: str
         """
-        allowed_values = ["V", "R", "A"]
+        allowed_values = ["V", "R"]
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type`, must be one of {0}"
