@@ -45,7 +45,8 @@ class Call(object):
             'reroute_time': 'float',
             'online_ivr': 'str',
             'offline_ivr': 'str',
-            'queue_ivr': 'str'
+            'queue_ivr': 'str',
+            'caller_name': 'str'
         }
 
         self.attribute_map = {
@@ -57,7 +58,8 @@ class Call(object):
             'reroute_time': 'reroute_time',
             'online_ivr': 'online_ivr',
             'offline_ivr': 'offline_ivr',
-            'queue_ivr': 'queue_ivr'
+            'queue_ivr': 'queue_ivr',
+            'caller_name': 'caller_name'
         }
 
         self._id = None
@@ -69,6 +71,7 @@ class Call(object):
         self._online_ivr = None
         self._offline_ivr = None
         self._queue_ivr = None
+        self._caller_name = None
 
     @property
     def id(self):
@@ -273,6 +276,28 @@ class Call(object):
         :type: str
         """
         self._queue_ivr = queue_ivr
+
+    @property
+    def caller_name(self):
+        """
+        Gets the caller_name of this Call.
+        Name of the caller in case it is known
+
+        :return: The caller_name of this Call.
+        :rtype: str
+        """
+        return self._caller_name
+
+    @caller_name.setter
+    def caller_name(self, caller_name):
+        """
+        Sets the caller_name of this Call.
+        Name of the caller in case it is known
+
+        :param caller_name: The caller_name of this Call.
+        :type: str
+        """
+        self._caller_name = caller_name
 
     def to_dict(self):
         """
