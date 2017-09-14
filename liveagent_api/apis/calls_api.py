@@ -316,6 +316,7 @@ class CallsApi(object):
         :param str to_number: callee number (required)
         :param str from_number: caller number (required)
         :param str channel_id: Channel ID
+        :param str via_number: trunk number via which call was made / received
         :param str ticket_id: ticket id or code
         :param str direction: incoming call ('in' - default), outgoing call ('out') or internal call('int')
         :return: Call
@@ -323,7 +324,7 @@ class CallsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'to_number', 'from_number', 'channel_id', 'ticket_id', 'direction']
+        all_params = ['call_id', 'to_number', 'from_number', 'channel_id', 'via_number', 'ticket_id', 'direction']
         all_params.append('callback')
 
         params = locals()
@@ -356,6 +357,8 @@ class CallsApi(object):
             query_params['channelId'] = params['channel_id']
         if 'to_number' in params:
             query_params['to_number'] = params['to_number']
+        if 'via_number' in params:
+            query_params['via_number'] = params['via_number']
         if 'from_number' in params:
             query_params['from_number'] = params['from_number']
         if 'ticket_id' in params:

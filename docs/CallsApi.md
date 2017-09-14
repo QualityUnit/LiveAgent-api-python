@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_create**
-> Call call_create(call_id, to_number, from_number, channel_id=channel_id, ticket_id=ticket_id, direction=direction)
+> Call call_create(call_id, to_number, from_number, channel_id=channel_id, via_number=via_number, ticket_id=ticket_id, direction=direction)
 
 Create new call
 
@@ -207,12 +207,13 @@ call_id = 'call_id_example' # str |
 to_number = 'to_number_example' # str | callee number
 from_number = 'from_number_example' # str | caller number
 channel_id = 'channel_id_example' # str | Channel ID (optional)
+via_number = 'via_number_example' # str | trunk number via which call was made / received (optional)
 ticket_id = 'ticket_id_example' # str | ticket id or code (optional)
 direction = 'in' # str | incoming call ('in' - default), outgoing call ('out') or internal call('int') (optional) (default to in)
 
 try: 
     # Create new call
-    api_response = api_instance.call_create(call_id, to_number, from_number, channel_id=channel_id, ticket_id=ticket_id, direction=direction)
+    api_response = api_instance.call_create(call_id, to_number, from_number, channel_id=channel_id, via_number=via_number, ticket_id=ticket_id, direction=direction)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_create: %s\n" % e
@@ -226,6 +227,7 @@ Name | Type | Description  | Notes
  **to_number** | **str**| callee number | 
  **from_number** | **str**| caller number | 
  **channel_id** | **str**| Channel ID | [optional] 
+ **via_number** | **str**| trunk number via which call was made / received | [optional] 
  **ticket_id** | **str**| ticket id or code | [optional] 
  **direction** | **str**| incoming call (&#39;in&#39; - default), outgoing call (&#39;out&#39;) or internal call(&#39;int&#39;) | [optional] [default to in]
 
