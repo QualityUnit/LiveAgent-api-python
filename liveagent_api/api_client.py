@@ -71,7 +71,7 @@ class ApiClient(object):
         """
         Constructor of the class.
         """
-        self.rest_client = RESTClientObject()
+        self.rest_client = RESTClientObject(pools_size=9999)
         self.default_headers = {}
         if header_name is not None:
             self.default_headers[header_name] = header_value
