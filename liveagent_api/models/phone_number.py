@@ -44,8 +44,9 @@ class PhoneNumber(object):
             'name': 'str',
             'departmentid': 'str',
             'status': 'str',
+            'status_message': 'str',
+            'host_settings': 'str',
             'host': 'str',
-            'host_type': 'str',
             'port': 'str',
             'user': 'str',
             'password': 'str',
@@ -61,8 +62,9 @@ class PhoneNumber(object):
             'name': 'name',
             'departmentid': 'departmentid',
             'status': 'status',
+            'status_message': 'status_message',
+            'host_settings': 'host_settings',
             'host': 'host',
-            'host_type': 'host_type',
             'port': 'port',
             'user': 'user',
             'password': 'password',
@@ -77,8 +79,9 @@ class PhoneNumber(object):
         self._name = None
         self._departmentid = None
         self._status = None
+        self._status_message = None
+        self._host_settings = None
         self._host = None
-        self._host_type = None
         self._port = None
         self._user = None
         self._password = None
@@ -252,6 +255,50 @@ class PhoneNumber(object):
         self._status = status
 
     @property
+    def status_message(self):
+        """
+        Gets the status_message of this PhoneNumber.
+
+
+        :return: The status_message of this PhoneNumber.
+        :rtype: str
+        """
+        return self._status_message
+
+    @status_message.setter
+    def status_message(self, status_message):
+        """
+        Sets the status_message of this PhoneNumber.
+
+
+        :param status_message: The status_message of this PhoneNumber.
+        :type: str
+        """
+        self._status_message = status_message
+
+    @property
+    def host_settings(self):
+        """
+        Gets the host_settings of this PhoneNumber.
+        json encoded host settings
+
+        :return: The host_settings of this PhoneNumber.
+        :rtype: str
+        """
+        return self._host_settings
+
+    @host_settings.setter
+    def host_settings(self, host_settings):
+        """
+        Sets the host_settings of this PhoneNumber.
+        json encoded host settings
+
+        :param host_settings: The host_settings of this PhoneNumber.
+        :type: str
+        """
+        self._host_settings = host_settings
+
+    @property
     def host(self):
         """
         Gets the host of this PhoneNumber.
@@ -272,28 +319,6 @@ class PhoneNumber(object):
         :type: str
         """
         self._host = host
-
-    @property
-    def host_type(self):
-        """
-        Gets the host_type of this PhoneNumber.
-
-
-        :return: The host_type of this PhoneNumber.
-        :rtype: str
-        """
-        return self._host_type
-
-    @host_type.setter
-    def host_type(self, host_type):
-        """
-        Sets the host_type of this PhoneNumber.
-
-
-        :param host_type: The host_type of this PhoneNumber.
-        :type: str
-        """
-        self._host_type = host_type
 
     @property
     def port(self):

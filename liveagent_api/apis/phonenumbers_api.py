@@ -66,8 +66,8 @@ class PhonenumbersApi(object):
         :param int dial_out_prefix: Prefix needed to orifinate call using this number
         :param str name: 
         :param str departmentid: 
+        :param str host_settings: json encoded host settings
         :param str host: 
-        :param str host_type: 
         :param str port: 
         :param str user: 
         :param str password: 
@@ -78,7 +78,7 @@ class PhonenumbersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'name', 'departmentid', 'host', 'host_type', 'port', 'user', 'password', 'providerid', 'ivr']
+        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'name', 'departmentid', 'host_settings', 'host', 'port', 'user', 'password', 'providerid', 'ivr']
         all_params.append('callback')
 
         params = locals()
@@ -122,10 +122,10 @@ class PhonenumbersApi(object):
             form_params.append(('name', params['name']))
         if 'departmentid' in params:
             form_params.append(('departmentid', params['departmentid']))
+        if 'host_settings' in params:
+            form_params.append(('host_settings', params['host_settings']))
         if 'host' in params:
             form_params.append(('host', params['host']))
-        if 'host_type' in params:
-            form_params.append(('host_type', params['host_type']))
         if 'port' in params:
             form_params.append(('port', params['port']))
         if 'user' in params:

@@ -38,6 +38,7 @@ class TicketSla(object):
         """
         self.swagger_types = {
             'conversationid': 'str',
+            'sla_level_id': 'str',
             'first_answer': 'datetime',
             'first_assign': 'datetime',
             'first_resolve': 'datetime',
@@ -46,6 +47,7 @@ class TicketSla(object):
 
         self.attribute_map = {
             'conversationid': 'conversationid',
+            'sla_level_id': 'sla_level_id',
             'first_answer': 'first_answer',
             'first_assign': 'first_assign',
             'first_resolve': 'first_resolve',
@@ -53,6 +55,7 @@ class TicketSla(object):
         }
 
         self._conversationid = None
+        self._sla_level_id = None
         self._first_answer = None
         self._first_assign = None
         self._first_resolve = None
@@ -79,6 +82,28 @@ class TicketSla(object):
         :type: str
         """
         self._conversationid = conversationid
+
+    @property
+    def sla_level_id(self):
+        """
+        Gets the sla_level_id of this TicketSla.
+
+
+        :return: The sla_level_id of this TicketSla.
+        :rtype: str
+        """
+        return self._sla_level_id
+
+    @sla_level_id.setter
+    def sla_level_id(self, sla_level_id):
+        """
+        Sets the sla_level_id of this TicketSla.
+
+
+        :param sla_level_id: The sla_level_id of this TicketSla.
+        :type: str
+        """
+        self._sla_level_id = sla_level_id
 
     @property
     def first_answer(self):

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_phone**
-> PhoneDevice create_phone(number, type=type)
+> PhoneDevice create_phone(number, type=type, name=name)
 
 Creates external phone
 
@@ -30,10 +30,11 @@ liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.PhonesApi()
 number = 'number_example' # str | 
 type = 'S' # str | S - SIP phone, E - PSTN phone (optional) (default to S)
+name = 'name_example' # str |  (optional)
 
 try: 
     # Creates external phone
-    api_response = api_instance.create_phone(number, type=type)
+    api_response = api_instance.create_phone(number, type=type, name=name)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PhonesApi->create_phone: %s\n" % e
@@ -45,6 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **number** | **str**|  | 
  **type** | **str**| S - SIP phone, E - PSTN phone | [optional] [default to S]
+ **name** | **str**|  | [optional] 
 
 ### Return type
 

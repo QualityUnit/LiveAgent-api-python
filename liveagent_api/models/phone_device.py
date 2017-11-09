@@ -40,6 +40,7 @@ class PhoneDevice(object):
             'id': 'str',
             'type': 'str',
             'number': 'str',
+            'name': 'str',
             'connection_host': 'str',
             'connection_user': 'str',
             'connection_pass': 'str',
@@ -51,6 +52,7 @@ class PhoneDevice(object):
             'id': 'id',
             'type': 'type',
             'number': 'number',
+            'name': 'name',
             'connection_host': 'connection_host',
             'connection_user': 'connection_user',
             'connection_pass': 'connection_pass',
@@ -61,6 +63,7 @@ class PhoneDevice(object):
         self._id = None
         self._type = None
         self._number = None
+        self._name = None
         self._connection_host = None
         self._connection_user = None
         self._connection_pass = None
@@ -138,6 +141,28 @@ class PhoneDevice(object):
         :type: str
         """
         self._number = number
+
+    @property
+    def name(self):
+        """
+        Gets the name of this PhoneDevice.
+
+
+        :return: The name of this PhoneDevice.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this PhoneDevice.
+
+
+        :param name: The name of this PhoneDevice.
+        :type: str
+        """
+        self._name = name
 
     @property
     def connection_host(self):

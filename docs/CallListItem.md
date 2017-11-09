@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **from_name** | **str** |  | [optional] 
 **to_number** | **str** |  | [optional] 
 **to_name** | **str** |  | [optional] 
+**via_number** | **str** |  | [optional] 
 **date_created** | **datetime** |  | [optional] 
 **date_answered** | **datetime** |  | [optional] 
 **date_finished** | **datetime** |  | [optional] 

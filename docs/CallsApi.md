@@ -424,7 +424,7 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
-reason = 'reason_example' # str | T - timeout, D - decline (optional)
+reason = 'reason_example' # str | T - timeout, D - decline, DNR - device not registered (optional)
 
 try: 
     # Let the call ring to another agent
@@ -439,7 +439,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
- **reason** | **str**| T - timeout, D - decline | [optional] 
+ **reason** | **str**| T - timeout, D - decline, DNR - device not registered | [optional] 
 
 ### Return type
 

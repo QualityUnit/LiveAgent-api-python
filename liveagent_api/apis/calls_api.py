@@ -663,7 +663,7 @@ class CallsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str call_id:  (required)
-        :param str reason: T - timeout, D - decline
+        :param str reason: T - timeout, D - decline, DNR - device not registered
         :return: CallStatus
                  If the method is called asynchronously,
                  returns the request thread.

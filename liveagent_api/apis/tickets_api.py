@@ -540,6 +540,86 @@ class TicketsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def set_ticket_postpone(self, ticket_id, **kwargs):
+        """
+        Sets postpone status to ticket
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.set_ticket_postpone(ticket_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str ticket_id:  (required)
+        :param TicketPostpone postpone_data: 
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['ticket_id', 'postpone_data']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_ticket_postpone" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'ticket_id' is set
+        if ('ticket_id' not in params) or (params['ticket_id'] is None):
+            raise ValueError("Missing the required parameter `ticket_id` when calling `set_ticket_postpone`")
+
+        resource_path = '/tickets/{ticketId}/postpone'.replace('{format}', 'json')
+        path_params = {}
+        if 'ticket_id' in params:
+            path_params['ticketId'] = params['ticket_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'postpone_data' in params:
+            body_params = params['postpone_data']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/x-www-form-urlencoded'])
+
+        # Authentication setting
+        auth_settings = ['privileges', 'apikey']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def update_ticket(self, ticket_id, **kwargs):
         """
         Updates ticket

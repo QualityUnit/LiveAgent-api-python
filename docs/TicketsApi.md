@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_ticket_sla**](TicketsApi.md#get_ticket_sla) | **GET** /tickets/{ticketId}/sla | Gets ticket Sla
 [**get_tickets_list**](TicketsApi.md#get_tickets_list) | **GET** /tickets | Gets list of tickets
 [**set_ticket_attribute**](TicketsApi.md#set_ticket_attribute) | **PUT** /tickets/{ticketId}/attributes/{attributeName} | Sets ticket attribute
+[**set_ticket_postpone**](TicketsApi.md#set_ticket_postpone) | **PUT** /tickets/{ticketId}/postpone | Sets postpone status to ticket
 [**update_ticket**](TicketsApi.md#update_ticket) | **PUT** /tickets/{ticketId} | Updates ticket
 
 
@@ -327,6 +328,60 @@ Name | Type | Description  | Notes
  **ticket_id** | **str**|  | 
  **attribute_name** | **str**|  | 
  **value** | **str**| New attribute value | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_ticket_postpone**
+> OkResponse set_ticket_postpone(ticket_id, postpone_data=postpone_data)
+
+Sets postpone status to ticket
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.TicketsApi()
+ticket_id = 'ticket_id_example' # str | 
+postpone_data = liveagent_api.TicketPostpone() # TicketPostpone |  (optional)
+
+try: 
+    # Sets postpone status to ticket
+    api_response = api_instance.set_ticket_postpone(ticket_id, postpone_data=postpone_data)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TicketsApi->set_ticket_postpone: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticket_id** | **str**|  | 
+ **postpone_data** | [**TicketPostpone**](TicketPostpone.md)|  | [optional] 
 
 ### Return type
 

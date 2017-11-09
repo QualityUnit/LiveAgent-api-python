@@ -44,6 +44,7 @@ class CallListItem(object):
             'from_name': 'str',
             'to_number': 'str',
             'to_name': 'str',
+            'via_number': 'str',
             'date_created': 'datetime',
             'date_answered': 'datetime',
             'date_finished': 'datetime'
@@ -57,6 +58,7 @@ class CallListItem(object):
             'from_name': 'fromName',
             'to_number': 'toNumber',
             'to_name': 'toName',
+            'via_number': 'viaNumber',
             'date_created': 'dateCreated',
             'date_answered': 'dateAnswered',
             'date_finished': 'dateFinished'
@@ -69,6 +71,7 @@ class CallListItem(object):
         self._from_name = None
         self._to_number = None
         self._to_name = None
+        self._via_number = None
         self._date_created = None
         self._date_answered = None
         self._date_finished = None
@@ -232,6 +235,28 @@ class CallListItem(object):
         :type: str
         """
         self._to_name = to_name
+
+    @property
+    def via_number(self):
+        """
+        Gets the via_number of this CallListItem.
+
+
+        :return: The via_number of this CallListItem.
+        :rtype: str
+        """
+        return self._via_number
+
+    @via_number.setter
+    def via_number(self, via_number):
+        """
+        Sets the via_number of this CallListItem.
+
+
+        :param via_number: The via_number of this CallListItem.
+        :type: str
+        """
+        self._via_number = via_number
 
     @property
     def date_created(self):

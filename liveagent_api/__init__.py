@@ -50,6 +50,7 @@ from .models.subscription import Subscription
 from .models.tag import Tag
 from .models.ticket import Ticket
 from .models.ticket_attribute import TicketAttribute
+from .models.ticket_postpone import TicketPostpone
 from .models.ticket_sla import TicketSla
 from .models.ticket_updatable import TicketUpdatable
 from .models.token import Token

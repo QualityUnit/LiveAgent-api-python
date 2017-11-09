@@ -50,6 +50,7 @@ from .subscription import Subscription
 from .tag import Tag
 from .ticket import Ticket
 from .ticket_attribute import TicketAttribute
+from .ticket_postpone import TicketPostpone
 from .ticket_sla import TicketSla
 from .ticket_updatable import TicketUpdatable
 from .token import Token

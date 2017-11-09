@@ -62,12 +62,13 @@ class PhonesApi(object):
             for asynchronous request. (optional)
         :param str number:  (required)
         :param str type: S - SIP phone, E - PSTN phone
+        :param str name: 
         :return: PhoneDevice
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['number', 'type']
+        all_params = ['number', 'type', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -92,6 +93,8 @@ class PhonesApi(object):
             query_params['number'] = params['number']
         if 'type' in params:
             query_params['type'] = params['type']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 
