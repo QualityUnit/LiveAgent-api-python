@@ -125,7 +125,7 @@ class CallsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def call_add_recording(self, **kwargs):
+    def call_add_recording(self, call_id, **kwargs):
         """
         Adds a recording to the call group in corresponfing ticket
         
@@ -136,17 +136,18 @@ class CallsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.call_add_recording(callback=callback_function)
+        >>> thread = api.call_add_recording(call_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str call_id:  (required)
         :param file file: 
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['file']
+        all_params = ['call_id', 'file']
         all_params.append('callback')
 
         params = locals()
@@ -159,9 +160,14 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'call_id' is set
+        if ('call_id' not in params) or (params['call_id'] is None):
+            raise ValueError("Missing the required parameter `call_id` when calling `call_add_recording`")
 
         resource_path = '/calls/{callId}/recordings'.replace('{format}', 'json')
         path_params = {}
+        if 'call_id' in params:
+            path_params['callId'] = params['call_id']
 
         query_params = {}
 

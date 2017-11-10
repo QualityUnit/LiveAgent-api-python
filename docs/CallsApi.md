@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_add_recording**
-> OkResponse call_add_recording(file=file)
+> OkResponse call_add_recording(call_id, file=file)
 
 Adds a recording to the call group in corresponfing ticket
 
@@ -96,11 +96,12 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
 file = '/path/to/file.txt' # file |  (optional)
 
 try: 
     # Adds a recording to the call group in corresponfing ticket
-    api_response = api_instance.call_add_recording(file=file)
+    api_response = api_instance.call_add_recording(call_id, file=file)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_add_recording: %s\n" % e
@@ -110,6 +111,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
  **file** | **file**|  | [optional] 
 
 ### Return type
