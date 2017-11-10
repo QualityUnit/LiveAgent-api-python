@@ -159,7 +159,7 @@ class RESTClientObject(object):
                 r = self.pool_manager.request(method, url,
                                               fields=query_params,
                                               headers=headers)
-        except urllib3.exceptions.SSLError as e:
+        except (urllib3.exceptions.SSLError, urllib3.exceptions.ProtocolError) as e:
             msg = "{0}\n{1}".format(type(e).__name__, str(e))
             raise ApiException(status=0, reason=msg)
 
