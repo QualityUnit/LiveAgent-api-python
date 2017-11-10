@@ -28,6 +28,7 @@ from .country import Country
 from .coupon import Coupon
 from .custom_fields import CustomFields
 from .customer import Customer
+from .day_interval import DayInterval
 from .discount_value import DiscountValue
 from .domain import Domain
 from .error_response import ErrorResponse
@@ -45,6 +46,9 @@ from .payment_processor_type import PaymentProcessorType
 from .phone_device import PhoneDevice
 from .phone_number import PhoneNumber
 from .predefined_answer import PredefinedAnswer
+from .sla import Sla
+from .sla_business_hours import SlaBusinessHours
+from .sla_values import SlaValues
 from .stored_file import StoredFile
 from .subscription import Subscription
 from .tag import Tag

@@ -18,6 +18,7 @@ from .invoices_api import InvoicesApi
 from .phonenumbers_api import PhonenumbersApi
 from .phones_api import PhonesApi
 from .predefinedanswers_api import PredefinedanswersApi
+from .slas_api import SlasApi
 from .subscriptions_api import SubscriptionsApi
 from .tags_api import TagsApi
 from .tickets_api import TicketsApi

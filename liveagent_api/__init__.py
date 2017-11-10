@@ -28,6 +28,7 @@ from .models.country import Country
 from .models.coupon import Coupon
 from .models.custom_fields import CustomFields
 from .models.customer import Customer
+from .models.day_interval import DayInterval
 from .models.discount_value import DiscountValue
 from .models.domain import Domain
 from .models.error_response import ErrorResponse
@@ -45,6 +46,9 @@ from .models.payment_processor_type import PaymentProcessorType
 from .models.phone_device import PhoneDevice
 from .models.phone_number import PhoneNumber
 from .models.predefined_answer import PredefinedAnswer
+from .models.sla import Sla
+from .models.sla_business_hours import SlaBusinessHours
+from .models.sla_values import SlaValues
 from .models.stored_file import StoredFile
 from .models.subscription import Subscription
 from .models.tag import Tag
@@ -78,6 +82,7 @@ from .apis.invoices_api import InvoicesApi
 from .apis.phonenumbers_api import PhonenumbersApi
 from .apis.phones_api import PhonesApi
 from .apis.predefinedanswers_api import PredefinedanswersApi
+from .apis.slas_api import SlasApi
 from .apis.subscriptions_api import SubscriptionsApi
 from .apis.tags_api import TagsApi
 from .apis.tickets_api import TicketsApi
