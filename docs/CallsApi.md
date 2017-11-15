@@ -264,7 +264,7 @@ from_number = 'from_number_example' # str | caller number
 channel_id = 'channel_id_example' # str | Channel ID (optional)
 via_number = 'via_number_example' # str | trunk number via which call was made / received (optional)
 ticket_id = 'ticket_id_example' # str | ticket id or code (optional)
-direction = 'in' # str | incoming call ('in' - default), outgoing call ('out') or internal call('int') (optional) (default to in)
+direction = 'in' # str | incoming call ('in' - default), outgoing call ('out'), internal call('int'), auto decide direction of call based on to_number ('auto') (optional) (default to in)
 
 try: 
     # Create new call
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
  **channel_id** | **str**| Channel ID | [optional] 
  **via_number** | **str**| trunk number via which call was made / received | [optional] 
  **ticket_id** | **str**| ticket id or code | [optional] 
- **direction** | **str**| incoming call (&#39;in&#39; - default), outgoing call (&#39;out&#39;) or internal call(&#39;int&#39;) | [optional] [default to in]
+ **direction** | **str**| incoming call (&#39;in&#39; - default), outgoing call (&#39;out&#39;), internal call(&#39;int&#39;), auto decide direction of call based on to_number (&#39;auto&#39;) | [optional] [default to in]
 
 ### Return type
 
