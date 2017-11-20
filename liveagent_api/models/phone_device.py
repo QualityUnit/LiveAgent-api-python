@@ -41,6 +41,7 @@ class PhoneDevice(object):
             'type': 'str',
             'number': 'str',
             'name': 'str',
+            'status_message': 'str',
             'connection_host': 'str',
             'connection_user': 'str',
             'connection_pass': 'str',
@@ -53,6 +54,7 @@ class PhoneDevice(object):
             'type': 'type',
             'number': 'number',
             'name': 'name',
+            'status_message': 'status_message',
             'connection_host': 'connection_host',
             'connection_user': 'connection_user',
             'connection_pass': 'connection_pass',
@@ -64,6 +66,7 @@ class PhoneDevice(object):
         self._type = None
         self._number = None
         self._name = None
+        self._status_message = None
         self._connection_host = None
         self._connection_user = None
         self._connection_pass = None
@@ -163,6 +166,28 @@ class PhoneDevice(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def status_message(self):
+        """
+        Gets the status_message of this PhoneDevice.
+
+
+        :return: The status_message of this PhoneDevice.
+        :rtype: str
+        """
+        return self._status_message
+
+    @status_message.setter
+    def status_message(self, status_message):
+        """
+        Sets the status_message of this PhoneDevice.
+
+
+        :param status_message: The status_message of this PhoneDevice.
+        :type: str
+        """
+        self._status_message = status_message
 
     @property
     def connection_host(self):

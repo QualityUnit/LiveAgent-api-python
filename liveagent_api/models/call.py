@@ -39,7 +39,6 @@ class Call(object):
         self.swagger_types = {
             'id': 'str',
             'ticket_id': 'str',
-            'direction': 'str',
             'callee_status': 'str',
             'ivrs': 'list[Ivr]',
             'record_call': 'bool',
@@ -47,16 +46,12 @@ class Call(object):
             'online_ivr': 'str',
             'offline_ivr': 'str',
             'queue_ivr': 'str',
-            'from_number': 'str',
-            'caller_name': 'str',
-            'to_number': 'str',
-            'via_number': 'str'
+            'caller_name': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'ticket_id': 'ticket_id',
-            'direction': 'direction',
             'callee_status': 'callee_status',
             'ivrs': 'ivrs',
             'record_call': 'record_call',
@@ -64,15 +59,11 @@ class Call(object):
             'online_ivr': 'online_ivr',
             'offline_ivr': 'offline_ivr',
             'queue_ivr': 'queue_ivr',
-            'from_number': 'from_number',
-            'caller_name': 'caller_name',
-            'to_number': 'to_number',
-            'via_number': 'via_number'
+            'caller_name': 'caller_name'
         }
 
         self._id = None
         self._ticket_id = None
-        self._direction = None
         self._callee_status = None
         self._ivrs = None
         self._record_call = False
@@ -80,10 +71,7 @@ class Call(object):
         self._online_ivr = None
         self._offline_ivr = None
         self._queue_ivr = None
-        self._from_number = None
         self._caller_name = None
-        self._to_number = None
-        self._via_number = None
 
     @property
     def id(self):
@@ -128,34 +116,6 @@ class Call(object):
         :type: str
         """
         self._ticket_id = ticket_id
-
-    @property
-    def direction(self):
-        """
-        Gets the direction of this Call.
-        incoming call ('in' - default), outgoing call ('out'), internal call('int')
-
-        :return: The direction of this Call.
-        :rtype: str
-        """
-        return self._direction
-
-    @direction.setter
-    def direction(self, direction):
-        """
-        Sets the direction of this Call.
-        incoming call ('in' - default), outgoing call ('out'), internal call('int')
-
-        :param direction: The direction of this Call.
-        :type: str
-        """
-        allowed_values = ["in", "out", "int"]
-        if direction not in allowed_values:
-            raise ValueError(
-                "Invalid value for `direction`, must be one of {0}"
-                .format(allowed_values)
-            )
-        self._direction = direction
 
     @property
     def callee_status(self):
@@ -318,28 +278,6 @@ class Call(object):
         self._queue_ivr = queue_ivr
 
     @property
-    def from_number(self):
-        """
-        Gets the from_number of this Call.
-        Caller number
-
-        :return: The from_number of this Call.
-        :rtype: str
-        """
-        return self._from_number
-
-    @from_number.setter
-    def from_number(self, from_number):
-        """
-        Sets the from_number of this Call.
-        Caller number
-
-        :param from_number: The from_number of this Call.
-        :type: str
-        """
-        self._from_number = from_number
-
-    @property
     def caller_name(self):
         """
         Gets the caller_name of this Call.
@@ -360,50 +298,6 @@ class Call(object):
         :type: str
         """
         self._caller_name = caller_name
-
-    @property
-    def to_number(self):
-        """
-        Gets the to_number of this Call.
-        Callee number
-
-        :return: The to_number of this Call.
-        :rtype: str
-        """
-        return self._to_number
-
-    @to_number.setter
-    def to_number(self, to_number):
-        """
-        Sets the to_number of this Call.
-        Callee number
-
-        :param to_number: The to_number of this Call.
-        :type: str
-        """
-        self._to_number = to_number
-
-    @property
-    def via_number(self):
-        """
-        Gets the via_number of this Call.
-        trunk number via which call was made / received (if applicable)
-
-        :return: The via_number of this Call.
-        :rtype: str
-        """
-        return self._via_number
-
-    @via_number.setter
-    def via_number(self, via_number):
-        """
-        Sets the via_number of this Call.
-        trunk number via which call was made / received (if applicable)
-
-        :param via_number: The via_number of this Call.
-        :type: str
-        """
-        self._via_number = via_number
 
     def to_dict(self):
         """

@@ -398,7 +398,7 @@ class CallsApi(object):
         :param str channel_id: Channel ID
         :param str via_number: trunk number via which call was made / received
         :param str ticket_id: ticket id or code
-        :param str direction: incoming call ('in' - default), outgoing call ('out'), internal call('int'), auto decide direction of call based on to_number ('auto')
+        :param str direction: incoming call ('in' - default), outgoing call ('out') or internal call('int')
         :return: Call
                  If the method is called asynchronously,
                  returns the request thread.

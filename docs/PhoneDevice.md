@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **type** | **str** | A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone | 
 **number** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**status_message** | **str** |  | [optional] 
 **connection_host** | **str** |  | [optional] 
 **connection_user** | **str** |  | [optional] 
 **connection_pass** | **str** |  | [optional] 

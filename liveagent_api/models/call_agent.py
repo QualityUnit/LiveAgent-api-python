@@ -38,16 +38,19 @@ class CallAgent(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'device': 'PhoneDevice'
+            'device': 'PhoneDevice',
+            'alternative_devices': 'list[PhoneDevice]'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'device': 'device'
+            'device': 'device',
+            'alternative_devices': 'alternative_devices'
         }
 
         self._id = None
         self._device = None
+        self._alternative_devices = None
 
     @property
     def id(self):
@@ -92,6 +95,28 @@ class CallAgent(object):
         :type: PhoneDevice
         """
         self._device = device
+
+    @property
+    def alternative_devices(self):
+        """
+        Gets the alternative_devices of this CallAgent.
+        Alternative devices for an agent
+
+        :return: The alternative_devices of this CallAgent.
+        :rtype: list[PhoneDevice]
+        """
+        return self._alternative_devices
+
+    @alternative_devices.setter
+    def alternative_devices(self, alternative_devices):
+        """
+        Sets the alternative_devices of this CallAgent.
+        Alternative devices for an agent
+
+        :param alternative_devices: The alternative_devices of this CallAgent.
+        :type: list[PhoneDevice]
+        """
+        self._alternative_devices = alternative_devices
 
     def to_dict(self):
         """
