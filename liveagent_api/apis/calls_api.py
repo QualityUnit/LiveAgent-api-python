@@ -222,12 +222,13 @@ class CallsApi(object):
             for asynchronous request. (optional)
         :param str call_id:  (required)
         :param str to_number: callee number (required)
+        :param str channel_id: Channel ID
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'to_number']
+        all_params = ['call_id', 'to_number', 'channel_id']
         all_params.append('callback')
 
         params = locals()
@@ -255,6 +256,8 @@ class CallsApi(object):
         query_params = {}
         if 'to_number' in params:
             query_params['to_number'] = params['to_number']
+        if 'channel_id' in params:
+            query_params['channelId'] = params['channel_id']
 
         header_params = {}
 
