@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**call_reroute**](CallsApi.md#call_reroute) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
 [**call_ring**](CallsApi.md#call_ring) | **POST** /calls/{callId}/_ring | Let the call ring
 [**call_start**](CallsApi.md#call_start) | **POST** /call/_start | Starts new outcoming / internal call
+[**call_start_failed**](CallsApi.md#call_start_failed) | **POST** /call/_startFailed | Callback that starting call failed
 [**call_stop**](CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
 [**confirm_ring**](CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
 [**get_calls_list**](CallsApi.md#get_calls_list) | **GET** /calls | Gets list of calls
@@ -609,6 +610,56 @@ Name | Type | Description  | Notes
  **to_number** | **str**| callee number | 
  **from_number** | **str**| caller number | 
  **ticket_id** | **str**| ticket id or code | [optional] 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_start_failed**
+> OkResponse call_start_failed(call_id)
+
+Callback that starting call failed
+
+Callback is delivered only of HW phones\n
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | Call ID.
+
+try: 
+    # Callback that starting call failed
+    api_response = api_instance.call_start_failed(call_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_start_failed: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**| Call ID. | 
 
 ### Return type
 
