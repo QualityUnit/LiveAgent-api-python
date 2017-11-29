@@ -29,6 +29,7 @@ from .models.coupon import Coupon
 from .models.custom_fields import CustomFields
 from .models.customer import Customer
 from .models.day_interval import DayInterval
+from .models.department import Department
 from .models.discount_value import DiscountValue
 from .models.domain import Domain
 from .models.error_response import ErrorResponse
@@ -48,6 +49,7 @@ from .models.phone_number import PhoneNumber
 from .models.predefined_answer import PredefinedAnswer
 from .models.sla import Sla
 from .models.sla_business_hours import SlaBusinessHours
+from .models.sla_history import SlaHistory
 from .models.sla_values import SlaValues
 from .models.stored_file import StoredFile
 from .models.subscription import Subscription
@@ -75,6 +77,7 @@ from .apis.companies_api import CompaniesApi
 from .apis.contacts_api import ContactsApi
 from .apis.countries_api import CountriesApi
 from .apis.default_api import DefaultApi
+from .apis.departments_api import DepartmentsApi
 from .apis.files_api import FilesApi
 from .apis.groups_api import GroupsApi
 from .apis.hosting_api import HostingApi

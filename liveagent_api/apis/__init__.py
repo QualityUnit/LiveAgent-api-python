@@ -11,6 +11,7 @@ from .companies_api import CompaniesApi
 from .contacts_api import ContactsApi
 from .countries_api import CountriesApi
 from .default_api import DefaultApi
+from .departments_api import DepartmentsApi
 from .files_api import FilesApi
 from .groups_api import GroupsApi
 from .hosting_api import HostingApi

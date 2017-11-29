@@ -1,12 +1,13 @@
-# IvrChoice
+# Department
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dtmf** | **str** | DTMF symbol of choice | 
-**play** | **str** | URL of the sound to play | [optional] 
-**name** | **str** | Readable name of choice | [optional] 
-**ivr** | **str** | Name of IVR to continue in | 
+**department_id** | **str** |  | [optional] 
+**agent_count** | **float** |  | [optional] 
+**name** | **str** |  | [optional] 
+**online_status** | **str** |  | [optional] 
+**agent_ids** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

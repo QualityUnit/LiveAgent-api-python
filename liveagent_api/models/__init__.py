@@ -29,6 +29,7 @@ from .coupon import Coupon
 from .custom_fields import CustomFields
 from .customer import Customer
 from .day_interval import DayInterval
+from .department import Department
 from .discount_value import DiscountValue
 from .domain import Domain
 from .error_response import ErrorResponse
@@ -48,6 +49,7 @@ from .phone_number import PhoneNumber
 from .predefined_answer import PredefinedAnswer
 from .sla import Sla
 from .sla_business_hours import SlaBusinessHours
+from .sla_history import SlaHistory
 from .sla_values import SlaValues
 from .stored_file import StoredFile
 from .subscription import Subscription
