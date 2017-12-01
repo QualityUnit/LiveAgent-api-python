@@ -1136,6 +1136,86 @@ class CallsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def call_transfer(self, call_id, **kwargs):
+        """
+        Transfers call to different department / agent
+        Transfer can be called on incoming calls before they start ringing to agents
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.call_transfer(call_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str call_id:  (required)
+        :param str to: Department ID or extension
+        :return: CallTransferResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['call_id', 'to']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method call_transfer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'call_id' is set
+        if ('call_id' not in params) or (params['call_id'] is None):
+            raise ValueError("Missing the required parameter `call_id` when calling `call_transfer`")
+
+        resource_path = '/calls/{callId}/_transfer'.replace('{format}', 'json')
+        path_params = {}
+        if 'call_id' in params:
+            path_params['callId'] = params['call_id']
+
+        query_params = {}
+        if 'to' in params:
+            query_params['to'] = params['to']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges', 'apikey']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CallTransferResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def confirm_ring(self, call_id, **kwargs):
         """
         Confirm that call is ringing

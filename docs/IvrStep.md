@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (message URL in params, choices) G - goto (IVR name in params) | 
+**type** | **str** | P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in params {\&quot;O\&quot;:\&quot;online\&quot;,\&quot;F\&quot;:\&quot;offline\&quot;,\&quot;Q\&quot;:\&quot;queue\&quot;}) | 
 **params** | **str** |  | [optional] 
 **choices** | [**list[IvrChoice]**](IvrChoice.md) |  | [optional] 
 

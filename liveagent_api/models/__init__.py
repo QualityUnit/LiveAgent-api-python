@@ -19,6 +19,7 @@ from .call_agent import CallAgent
 from .call_list_item import CallListItem
 from .call_message import CallMessage
 from .call_status import CallStatus
+from .call_transfer_result import CallTransferResult
 from .canned_message import CannedMessage
 from .company import Company
 from .company_list_item import CompanyListItem

@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**call_start**](CallsApi.md#call_start) | **POST** /call/_start | Starts new outcoming / internal call
 [**call_start_failed**](CallsApi.md#call_start_failed) | **POST** /call/_startFailed | Callback that starting call failed
 [**call_stop**](CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
+[**call_transfer**](CallsApi.md#call_transfer) | **POST** /calls/{callId}/_transfer | Transfers call to different department / agent
 [**confirm_ring**](CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
 [**get_calls_list**](CallsApi.md#get_calls_list) | **GET** /calls | Gets list of calls
 [**merge**](CallsApi.md#merge) | **POST** /calls/{callId}/_merge | Merge two calls
@@ -718,6 +719,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_transfer**
+> CallTransferResult call_transfer(call_id, to=to)
+
+Transfers call to different department / agent
+
+Transfer can be called on incoming calls before they start ringing to agents
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+to = 'to_example' # str | Department ID or extension (optional)
+
+try: 
+    # Transfers call to different department / agent
+    api_response = api_instance.call_transfer(call_id, to=to)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_transfer: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **to** | **str**| Department ID or extension | [optional] 
+
+### Return type
+
+[**CallTransferResult**](CallTransferResult.md)
 
 ### Authorization
 

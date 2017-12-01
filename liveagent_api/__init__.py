@@ -19,6 +19,7 @@ from .models.call_agent import CallAgent
 from .models.call_list_item import CallListItem
 from .models.call_message import CallMessage
 from .models.call_status import CallStatus
+from .models.call_transfer_result import CallTransferResult
 from .models.canned_message import CannedMessage
 from .models.company import Company
 from .models.company_list_item import CompanyListItem
