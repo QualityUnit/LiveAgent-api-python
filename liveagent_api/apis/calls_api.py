@@ -498,12 +498,13 @@ class CallsApi(object):
             for asynchronous request. (optional)
         :param str call_id:  (required)
         :param str url:  (required)
+        :param list[str] ivrs: List of globally known ivrs
         :return: list[Ivr]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'url']
+        all_params = ['call_id', 'url', 'ivrs']
         all_params.append('callback')
 
         params = locals()
@@ -531,6 +532,8 @@ class CallsApi(object):
         query_params = {}
         if 'url' in params:
             query_params['url'] = params['url']
+        if 'ivrs' in params:
+            query_params['ivrs'] = params['ivrs']
 
         header_params = {}
 

@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_fetch_ivr**
-> list[Ivr] call_fetch_ivr(call_id, url)
+> list[Ivr] call_fetch_ivr(call_id, url, ivrs=ivrs)
 
 Fetches IVR for the call from external URL
 
@@ -329,10 +329,11 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 url = 'url_example' # str | 
+ivrs = ['ivrs_example'] # list[str] | List of globally known ivrs (optional)
 
 try: 
     # Fetches IVR for the call from external URL
-    api_response = api_instance.call_fetch_ivr(call_id, url)
+    api_response = api_instance.call_fetch_ivr(call_id, url, ivrs=ivrs)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_fetch_ivr: %s\n" % e
@@ -344,6 +345,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
  **url** | **str**|  | 
+ **ivrs** | [**list[str]**](str.md)| List of globally known ivrs | [optional] 
 
 ### Return type
 
