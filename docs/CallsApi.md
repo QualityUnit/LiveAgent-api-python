@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_fetch_ivr**
-> list[Ivr] call_fetch_ivr(call_id, url, ivrs=ivrs)
+> list[Ivr] call_fetch_ivr(call_id, prefix, url, ivrs=ivrs)
 
 Fetches IVR for the call from external URL
 
@@ -328,12 +328,13 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
+prefix = 'prefix_example' # str | In order to avoid name clash, use unique fetch for each prefix
 url = 'url_example' # str | 
 ivrs = ['ivrs_example'] # list[str] | List of globally known ivrs (optional)
 
 try: 
     # Fetches IVR for the call from external URL
-    api_response = api_instance.call_fetch_ivr(call_id, url, ivrs=ivrs)
+    api_response = api_instance.call_fetch_ivr(call_id, prefix, url, ivrs=ivrs)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_fetch_ivr: %s\n" % e
@@ -344,6 +345,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
+ **prefix** | **str**| In order to avoid name clash, use unique fetch for each prefix | 
  **url** | **str**|  | 
  **ivrs** | [**list[str]**](str.md)| List of globally known ivrs | [optional] 
 
