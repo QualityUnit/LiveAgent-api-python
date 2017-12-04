@@ -534,17 +534,17 @@ class CallsApi(object):
             path_params['callId'] = params['call_id']
 
         query_params = {}
-        if 'prefix' in params:
-            query_params['prefix'] = params['prefix']
-        if 'url' in params:
-            query_params['url'] = params['url']
-        if 'ivrs' in params:
-            query_params['ivrs'] = params['ivrs']
 
         header_params = {}
 
         form_params = []
         local_var_files = {}
+        if 'prefix' in params:
+            form_params.append(('prefix', params['prefix']))
+        if 'url' in params:
+            form_params.append(('url', params['url']))
+        if 'ivrs' in params:
+            form_params.append(('ivrs', params['ivrs']))
 
         body_params = None
 
