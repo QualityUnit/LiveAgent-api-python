@@ -38,8 +38,11 @@ from .models.group import Group
 from .models.hosting_info import HostingInfo
 from .models.invoice import Invoice
 from .models.invoice_item import InvoiceItem
+from .models.invoice_list import InvoiceList
 from .models.ivr import Ivr
 from .models.ivr_choice import IvrChoice
+from .models.ivr_fetch import IvrFetch
+from .models.ivr_fetch_param import IvrFetchParam
 from .models.ivr_step import IvrStep
 from .models.ok_response import OkResponse
 from .models.payment_info import PaymentInfo
@@ -57,6 +60,8 @@ from .models.subscription import Subscription
 from .models.tag import Tag
 from .models.ticket import Ticket
 from .models.ticket_attribute import TicketAttribute
+from .models.ticket_information import TicketInformation
+from .models.ticket_list_item import TicketListItem
 from .models.ticket_postpone import TicketPostpone
 from .models.ticket_sla import TicketSla
 from .models.ticket_updatable import TicketUpdatable

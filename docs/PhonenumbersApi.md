@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **add_number**
-> PhoneNumber add_number(type, number, status, dial_out_prefix=dial_out_prefix, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
+> PhoneNumber add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_call=record_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
 
 Add new number
 
@@ -36,7 +36,8 @@ api_instance = liveagent_api.PhonenumbersApi()
 type = 'type_example' # str | A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk
 number = 'number_example' # str | 
 status = 'status_example' # str | A - Active, I - Inactive
-dial_out_prefix = 56 # int | Prefix needed to orifinate call using this number (optional)
+dial_out_prefix = 56 # int | Prefix needed to originate call using this number (optional)
+record_call = true # bool |  (optional)
 name = 'name_example' # str |  (optional)
 departmentid = 'departmentid_example' # str |  (optional)
 host_settings = 'host_settings_example' # str | json encoded host settings (optional)
@@ -49,7 +50,7 @@ ivr = 'ivr_example' # str |  (optional)
 
 try: 
     # Add new number
-    api_response = api_instance.add_number(type, number, status, dial_out_prefix=dial_out_prefix, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
+    api_response = api_instance.add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_call=record_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PhonenumbersApi->add_number: %s\n" % e
@@ -62,7 +63,8 @@ Name | Type | Description  | Notes
  **type** | **str**| A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk | 
  **number** | **str**|  | 
  **status** | **str**| A - Active, I - Inactive | 
- **dial_out_prefix** | **int**| Prefix needed to orifinate call using this number | [optional] 
+ **dial_out_prefix** | **int**| Prefix needed to originate call using this number | [optional] 
+ **record_call** | **bool**|  | [optional] 
  **name** | **str**|  | [optional] 
  **departmentid** | **str**|  | [optional] 
  **host_settings** | **str**| json encoded host settings | [optional] 

@@ -40,6 +40,7 @@ class PhoneNumber(object):
             'id': 'str',
             'type': 'str',
             'dial_out_prefix': 'int',
+            'record_call': 'bool',
             'number': 'str',
             'name': 'str',
             'departmentid': 'str',
@@ -58,6 +59,7 @@ class PhoneNumber(object):
             'id': 'id',
             'type': 'type',
             'dial_out_prefix': 'dial_out_prefix',
+            'record_call': 'record_call',
             'number': 'number',
             'name': 'name',
             'departmentid': 'departmentid',
@@ -75,6 +77,7 @@ class PhoneNumber(object):
         self._id = None
         self._type = None
         self._dial_out_prefix = None
+        self._record_call = None
         self._number = None
         self._name = None
         self._departmentid = None
@@ -159,6 +162,28 @@ class PhoneNumber(object):
         :type: int
         """
         self._dial_out_prefix = dial_out_prefix
+
+    @property
+    def record_call(self):
+        """
+        Gets the record_call of this PhoneNumber.
+
+
+        :return: The record_call of this PhoneNumber.
+        :rtype: bool
+        """
+        return self._record_call
+
+    @record_call.setter
+    def record_call(self, record_call):
+        """
+        Sets the record_call of this PhoneNumber.
+
+
+        :param record_call: The record_call of this PhoneNumber.
+        :type: bool
+        """
+        self._record_call = record_call
 
     @property
     def number(self):
