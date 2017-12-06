@@ -481,7 +481,7 @@ class CallsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def call_fetch_ivr(self, call_id, prefix, fetch, **kwargs):
+    def call_fetch_ivr(self, call_id, fetch, **kwargs):
         """
         Fetches IVR for the call from external URL
         
@@ -492,19 +492,18 @@ class CallsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.call_fetch_ivr(call_id, prefix, fetch, callback=callback_function)
+        >>> thread = api.call_fetch_ivr(call_id, fetch, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str call_id:  (required)
-        :param str prefix: In order to avoid name clash, use unique fetch for each prefix (required)
         :param IvrFetch fetch:  (required)
         :return: list[Ivr]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'prefix', 'fetch']
+        all_params = ['call_id', 'fetch']
         all_params.append('callback')
 
         params = locals()
@@ -520,9 +519,6 @@ class CallsApi(object):
         # verify the required parameter 'call_id' is set
         if ('call_id' not in params) or (params['call_id'] is None):
             raise ValueError("Missing the required parameter `call_id` when calling `call_fetch_ivr`")
-        # verify the required parameter 'prefix' is set
-        if ('prefix' not in params) or (params['prefix'] is None):
-            raise ValueError("Missing the required parameter `prefix` when calling `call_fetch_ivr`")
         # verify the required parameter 'fetch' is set
         if ('fetch' not in params) or (params['fetch'] is None):
             raise ValueError("Missing the required parameter `fetch` when calling `call_fetch_ivr`")
@@ -533,8 +529,6 @@ class CallsApi(object):
             path_params['callId'] = params['call_id']
 
         query_params = {}
-        if 'prefix' in params:
-            query_params['prefix'] = params['prefix']
 
         header_params = {}
 

@@ -38,16 +38,22 @@ class IvrFetch(object):
         """
         self.swagger_types = {
             'url': 'str',
-            'params': 'list[IvrFetchParam]'
+            'prefix': 'str',
+            'params': 'list[IvrFetchParam]',
+            'ivrs': 'list[str]'
         }
 
         self.attribute_map = {
             'url': 'url',
-            'params': 'params'
+            'prefix': 'prefix',
+            'params': 'params',
+            'ivrs': 'ivrs'
         }
 
         self._url = None
+        self._prefix = None
         self._params = None
+        self._ivrs = None
 
     @property
     def url(self):
@@ -72,6 +78,28 @@ class IvrFetch(object):
         self._url = url
 
     @property
+    def prefix(self):
+        """
+        Gets the prefix of this IvrFetch.
+
+
+        :return: The prefix of this IvrFetch.
+        :rtype: str
+        """
+        return self._prefix
+
+    @prefix.setter
+    def prefix(self, prefix):
+        """
+        Sets the prefix of this IvrFetch.
+
+
+        :param prefix: The prefix of this IvrFetch.
+        :type: str
+        """
+        self._prefix = prefix
+
+    @property
     def params(self):
         """
         Gets the params of this IvrFetch.
@@ -92,6 +120,28 @@ class IvrFetch(object):
         :type: list[IvrFetchParam]
         """
         self._params = params
+
+    @property
+    def ivrs(self):
+        """
+        Gets the ivrs of this IvrFetch.
+
+
+        :return: The ivrs of this IvrFetch.
+        :rtype: list[str]
+        """
+        return self._ivrs
+
+    @ivrs.setter
+    def ivrs(self, ivrs):
+        """
+        Sets the ivrs of this IvrFetch.
+
+
+        :param ivrs: The ivrs of this IvrFetch.
+        :type: list[str]
+        """
+        self._ivrs = ivrs
 
     def to_dict(self):
         """
