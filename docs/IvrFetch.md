@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **str** |  | 
 **prefix** | **str** |  | [optional] 
+**on_error** | **str** |  | [optional] 
 **params** | [**list[IvrFetchParam]**](IvrFetchParam.md) |  | [optional] 
 **ivrs** | **list[str]** |  | [optional] 
 

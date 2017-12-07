@@ -39,6 +39,7 @@ class IvrFetch(object):
         self.swagger_types = {
             'url': 'str',
             'prefix': 'str',
+            'on_error': 'str',
             'params': 'list[IvrFetchParam]',
             'ivrs': 'list[str]'
         }
@@ -46,12 +47,14 @@ class IvrFetch(object):
         self.attribute_map = {
             'url': 'url',
             'prefix': 'prefix',
+            'on_error': 'onError',
             'params': 'params',
             'ivrs': 'ivrs'
         }
 
         self._url = None
         self._prefix = None
+        self._on_error = None
         self._params = None
         self._ivrs = None
 
@@ -98,6 +101,28 @@ class IvrFetch(object):
         :type: str
         """
         self._prefix = prefix
+
+    @property
+    def on_error(self):
+        """
+        Gets the on_error of this IvrFetch.
+
+
+        :return: The on_error of this IvrFetch.
+        :rtype: str
+        """
+        return self._on_error
+
+    @on_error.setter
+    def on_error(self, on_error):
+        """
+        Sets the on_error of this IvrFetch.
+
+
+        :param on_error: The on_error of this IvrFetch.
+        :type: str
+        """
+        self._on_error = on_error
 
     @property
     def params(self):
