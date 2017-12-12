@@ -1007,7 +1007,7 @@ class SubscriptionsApi(object):
         :param str filters: Filters (json object {column:value, ...})
         :param int _from: Result set start. Takes precedence over _page.
         :param int to: Result set end. Used only if _from is used.
-        :return: list[Invoice]
+        :return: InvoiceList
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1077,7 +1077,7 @@ class SubscriptionsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[Invoice]',
+                                            response_type='InvoiceList',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

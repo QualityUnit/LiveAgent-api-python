@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**sla_level_id** | **str** |  | [optional] 
 **sla_type** | **str** |  | [optional] 
 **date_created** | **str** |  | [optional] 
 **date_due** | **str** |  | [optional] 

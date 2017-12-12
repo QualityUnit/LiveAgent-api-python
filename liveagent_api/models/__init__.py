@@ -37,6 +37,7 @@ from .group import Group
 from .hosting_info import HostingInfo
 from .invoice import Invoice
 from .invoice_item import InvoiceItem
+from .invoice_list import InvoiceList
 from .ivr import Ivr
 from .ivr_choice import IvrChoice
 from .ivr_step import IvrStep
@@ -56,6 +57,8 @@ from .subscription import Subscription
 from .tag import Tag
 from .ticket import Ticket
 from .ticket_attribute import TicketAttribute
+from .ticket_information import TicketInformation
+from .ticket_list_item import TicketListItem
 from .ticket_postpone import TicketPostpone
 from .ticket_sla import TicketSla
 from .ticket_updatable import TicketUpdatable

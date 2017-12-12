@@ -893,7 +893,7 @@ class CallsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def call_start(self, to_number, from_number, **kwargs):
+    def call_start(self, to_number, from_number, via_number, ticket_id, **kwargs):
         """
         Starts new outcoming / internal call
         Starts new call by ringing agent device and the dialing customer after agent has picked up his phone\n
@@ -904,19 +904,20 @@ class CallsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.call_start(to_number, from_number, callback=callback_function)
+        >>> thread = api.call_start(to_number, from_number, via_number, ticket_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str to_number: callee number (required)
         :param str from_number: caller number (required)
-        :param str ticket_id: ticket id or code
+        :param str via_number: trunk number via which call was made (required)
+        :param str ticket_id: ticket id or code (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['to_number', 'from_number', 'ticket_id']
+        all_params = ['to_number', 'from_number', 'via_number', 'ticket_id']
         all_params.append('callback')
 
         params = locals()
@@ -935,6 +936,12 @@ class CallsApi(object):
         # verify the required parameter 'from_number' is set
         if ('from_number' not in params) or (params['from_number'] is None):
             raise ValueError("Missing the required parameter `from_number` when calling `call_start`")
+        # verify the required parameter 'via_number' is set
+        if ('via_number' not in params) or (params['via_number'] is None):
+            raise ValueError("Missing the required parameter `via_number` when calling `call_start`")
+        # verify the required parameter 'ticket_id' is set
+        if ('ticket_id' not in params) or (params['ticket_id'] is None):
+            raise ValueError("Missing the required parameter `ticket_id` when calling `call_start`")
 
         resource_path = '/call/_start'.replace('{format}', 'json')
         path_params = {}
@@ -944,6 +951,8 @@ class CallsApi(object):
             query_params['to_number'] = params['to_number']
         if 'from_number' in params:
             query_params['from_number'] = params['from_number']
+        if 'via_number' in params:
+            query_params['via_number'] = params['via_number']
         if 'ticket_id' in params:
             query_params['ticketId'] = params['ticket_id']
 
@@ -979,10 +988,87 @@ class CallsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def call_start_canceled(self, call_id, **kwargs):
+        """
+        Callback that starting call canceled
+        Callback is delivered only of HW phones
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.call_start_canceled(call_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str call_id: Call ID (required)
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['call_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method call_start_canceled" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'call_id' is set
+        if ('call_id' not in params) or (params['call_id'] is None):
+            raise ValueError("Missing the required parameter `call_id` when calling `call_start_canceled`")
+
+        resource_path = '/call/_startCanceled'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'call_id' in params:
+            query_params['callId'] = params['call_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def call_start_failed(self, call_id, **kwargs):
         """
         Callback that starting call failed
-        Callback is delivered only of HW phones\n
+        Callback is delivered only of HW phones
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -994,7 +1080,7 @@ class CallsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str call_id: Call ID. (required)
+        :param str call_id: Call ID (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.

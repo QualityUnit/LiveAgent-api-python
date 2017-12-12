@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**call_reroute**](CallsApi.md#call_reroute) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
 [**call_ring**](CallsApi.md#call_ring) | **POST** /calls/{callId}/_ring | Let the call ring
 [**call_start**](CallsApi.md#call_start) | **POST** /call/_start | Starts new outcoming / internal call
+[**call_start_canceled**](CallsApi.md#call_start_canceled) | **POST** /call/_startCanceled | Callback that starting call canceled
 [**call_start_failed**](CallsApi.md#call_start_failed) | **POST** /call/_startFailed | Callback that starting call failed
 [**call_stop**](CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
 [**confirm_ring**](CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
@@ -573,7 +574,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_start**
-> OkResponse call_start(to_number, from_number, ticket_id=ticket_id)
+> OkResponse call_start(to_number, from_number, via_number, ticket_id)
 
 Starts new outcoming / internal call
 
@@ -593,11 +594,12 @@ liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.CallsApi()
 to_number = 'to_number_example' # str | callee number
 from_number = 'from_number_example' # str | caller number
-ticket_id = 'ticket_id_example' # str | ticket id or code (optional)
+via_number = 'via_number_example' # str | trunk number via which call was made
+ticket_id = 'ticket_id_example' # str | ticket id or code
 
 try: 
     # Starts new outcoming / internal call
-    api_response = api_instance.call_start(to_number, from_number, ticket_id=ticket_id)
+    api_response = api_instance.call_start(to_number, from_number, via_number, ticket_id)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_start: %s\n" % e
@@ -609,7 +611,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **to_number** | **str**| callee number | 
  **from_number** | **str**| caller number | 
- **ticket_id** | **str**| ticket id or code | [optional] 
+ **via_number** | **str**| trunk number via which call was made | 
+ **ticket_id** | **str**| ticket id or code | 
 
 ### Return type
 
@@ -626,12 +629,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **call_start_failed**
-> OkResponse call_start_failed(call_id)
+# **call_start_canceled**
+> OkResponse call_start_canceled(call_id)
 
-Callback that starting call failed
+Callback that starting call canceled
 
-Callback is delivered only of HW phones\n
+Callback is delivered only of HW phones
 
 ### Example 
 ```python
@@ -645,7 +648,57 @@ liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
-call_id = 'call_id_example' # str | Call ID.
+call_id = 'call_id_example' # str | Call ID
+
+try: 
+    # Callback that starting call canceled
+    api_response = api_instance.call_start_canceled(call_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_start_canceled: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**| Call ID | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_start_failed**
+> OkResponse call_start_failed(call_id)
+
+Callback that starting call failed
+
+Callback is delivered only of HW phones
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | Call ID
 
 try: 
     # Callback that starting call failed
@@ -659,7 +712,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **call_id** | **str**| Call ID. | 
+ **call_id** | **str**| Call ID | 
 
 ### Return type
 

@@ -38,6 +38,7 @@ class SlaHistory(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'sla_level_id': 'str',
             'sla_type': 'str',
             'date_created': 'str',
             'date_due': 'str',
@@ -48,6 +49,7 @@ class SlaHistory(object):
 
         self.attribute_map = {
             'id': 'id',
+            'sla_level_id': 'sla_level_id',
             'sla_type': 'sla_type',
             'date_created': 'date_created',
             'date_due': 'date_due',
@@ -57,6 +59,7 @@ class SlaHistory(object):
         }
 
         self._id = None
+        self._sla_level_id = None
         self._sla_type = None
         self._date_created = None
         self._date_due = None
@@ -85,6 +88,28 @@ class SlaHistory(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def sla_level_id(self):
+        """
+        Gets the sla_level_id of this SlaHistory.
+
+
+        :return: The sla_level_id of this SlaHistory.
+        :rtype: str
+        """
+        return self._sla_level_id
+
+    @sla_level_id.setter
+    def sla_level_id(self, sla_level_id):
+        """
+        Sets the sla_level_id of this SlaHistory.
+
+
+        :param sla_level_id: The sla_level_id of this SlaHistory.
+        :type: str
+        """
+        self._sla_level_id = sla_level_id
 
     @property
     def sla_type(self):

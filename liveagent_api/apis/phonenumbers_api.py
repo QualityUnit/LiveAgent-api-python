@@ -63,7 +63,8 @@ class PhonenumbersApi(object):
         :param str type: A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk (required)
         :param str number:  (required)
         :param str status: A - Active, I - Inactive (required)
-        :param int dial_out_prefix: Prefix needed to orifinate call using this number
+        :param int dial_out_prefix: Prefix needed to originate call using this number
+        :param bool record_call: 
         :param str name: 
         :param str departmentid: 
         :param str host_settings: json encoded host settings
@@ -78,7 +79,7 @@ class PhonenumbersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'name', 'departmentid', 'host_settings', 'host', 'port', 'user', 'password', 'providerid', 'ivr']
+        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'record_call', 'name', 'departmentid', 'host_settings', 'host', 'port', 'user', 'password', 'providerid', 'ivr']
         all_params.append('callback')
 
         params = locals()
@@ -114,6 +115,8 @@ class PhonenumbersApi(object):
             form_params.append(('type', params['type']))
         if 'dial_out_prefix' in params:
             form_params.append(('dial_out_prefix', params['dial_out_prefix']))
+        if 'record_call' in params:
+            form_params.append(('record_call', params['record_call']))
         if 'number' in params:
             form_params.append(('number', params['number']))
         if 'status' in params:
