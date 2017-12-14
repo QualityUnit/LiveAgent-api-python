@@ -41,7 +41,8 @@ class TicketUpdatable(object):
             'departmentid': 'str',
             'agentid': 'str',
             'status': 'str',
-            'tags': 'list[str]'
+            'tags': 'list[str]',
+            'custom_fields': 'list[CustomFields]'
         }
 
         self.attribute_map = {
@@ -49,7 +50,8 @@ class TicketUpdatable(object):
             'departmentid': 'departmentid',
             'agentid': 'agentid',
             'status': 'status',
-            'tags': 'tags'
+            'tags': 'tags',
+            'custom_fields': 'custom_fields'
         }
 
         self._owner_contactid = None
@@ -57,6 +59,7 @@ class TicketUpdatable(object):
         self._agentid = None
         self._status = None
         self._tags = None
+        self._custom_fields = None
 
     @property
     def owner_contactid(self):
@@ -173,6 +176,28 @@ class TicketUpdatable(object):
         :type: list[str]
         """
         self._tags = tags
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this TicketUpdatable.
+
+
+        :return: The custom_fields of this TicketUpdatable.
+        :rtype: list[CustomFields]
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this TicketUpdatable.
+
+
+        :param custom_fields: The custom_fields of this TicketUpdatable.
+        :type: list[CustomFields]
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

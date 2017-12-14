@@ -53,7 +53,8 @@ class Ticket(object):
             'date_due': 'str',
             'date_deleted': 'str',
             'public_access_urlcode': 'str',
-            'subject': 'str'
+            'subject': 'str',
+            'custom_fields': 'list[CustomFields]'
         }
 
         self.attribute_map = {
@@ -73,7 +74,8 @@ class Ticket(object):
             'date_due': 'date_due',
             'date_deleted': 'date_deleted',
             'public_access_urlcode': 'public_access_urlcode',
-            'subject': 'subject'
+            'subject': 'subject',
+            'custom_fields': 'custom_fields'
         }
 
         self._id = None
@@ -93,6 +95,7 @@ class Ticket(object):
         self._date_deleted = None
         self._public_access_urlcode = None
         self._subject = None
+        self._custom_fields = None
 
     @property
     def id(self):
@@ -473,6 +476,28 @@ class Ticket(object):
         :type: str
         """
         self._subject = subject
+
+    @property
+    def custom_fields(self):
+        """
+        Gets the custom_fields of this Ticket.
+
+
+        :return: The custom_fields of this Ticket.
+        :rtype: list[CustomFields]
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields):
+        """
+        Sets the custom_fields of this Ticket.
+
+
+        :param custom_fields: The custom_fields of this Ticket.
+        :type: list[CustomFields]
+        """
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """
