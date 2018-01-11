@@ -48,9 +48,7 @@ class Call(object):
             'offline_ivr': 'str',
             'queue_ivr': 'str',
             'from_number': 'str',
-            'caller_name': 'str',
-            'to_number': 'str',
-            'via_number': 'str'
+            'caller_name': 'str'
         }
 
         self.attribute_map = {
@@ -65,9 +63,7 @@ class Call(object):
             'offline_ivr': 'offline_ivr',
             'queue_ivr': 'queue_ivr',
             'from_number': 'from_number',
-            'caller_name': 'caller_name',
-            'to_number': 'to_number',
-            'via_number': 'via_number'
+            'caller_name': 'caller_name'
         }
 
         self._id = None
@@ -82,8 +78,6 @@ class Call(object):
         self._queue_ivr = None
         self._from_number = None
         self._caller_name = None
-        self._to_number = None
-        self._via_number = None
 
     @property
     def id(self):
@@ -360,50 +354,6 @@ class Call(object):
         :type: str
         """
         self._caller_name = caller_name
-
-    @property
-    def to_number(self):
-        """
-        Gets the to_number of this Call.
-        Callee number
-
-        :return: The to_number of this Call.
-        :rtype: str
-        """
-        return self._to_number
-
-    @to_number.setter
-    def to_number(self, to_number):
-        """
-        Sets the to_number of this Call.
-        Callee number
-
-        :param to_number: The to_number of this Call.
-        :type: str
-        """
-        self._to_number = to_number
-
-    @property
-    def via_number(self):
-        """
-        Gets the via_number of this Call.
-        trunk number via which call was made / received (if applicable)
-
-        :return: The via_number of this Call.
-        :rtype: str
-        """
-        return self._via_number
-
-    @via_number.setter
-    def via_number(self, via_number):
-        """
-        Sets the via_number of this Call.
-        trunk number via which call was made / received (if applicable)
-
-        :param via_number: The via_number of this Call.
-        :type: str
-        """
-        self._via_number = via_number
 
     def to_dict(self):
         """

@@ -15,8 +15,6 @@ Name | Type | Description | Notes
 **queue_ivr** | **str** | Name of IVR while waiting in queue. If empty, default in queue music is played | [optional] 
 **from_number** | **str** | Caller number | [optional] 
 **caller_name** | **str** | Name of the caller in case it is known | [optional] 
-**to_number** | **str** | Callee number | [optional] 
-**via_number** | **str** | trunk number via which call was made / received (if applicable) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

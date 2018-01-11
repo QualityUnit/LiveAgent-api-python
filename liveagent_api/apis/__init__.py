@@ -7,6 +7,7 @@ from .api_api import ApiApi
 from .billing_api import BillingApi
 from .calls_api import CallsApi
 from .cannedmessages_api import CannedmessagesApi
+from .chats_api import ChatsApi
 from .companies_api import CompaniesApi
 from .contacts_api import ContactsApi
 from .countries_api import CountriesApi

@@ -19,7 +19,9 @@ from .models.call_agent import CallAgent
 from .models.call_list_item import CallListItem
 from .models.call_message import CallMessage
 from .models.call_status import CallStatus
+from .models.call_transfer_result import CallTransferResult
 from .models.canned_message import CannedMessage
+from .models.chat_information import ChatInformation
 from .models.company import Company
 from .models.company_list_item import CompanyListItem
 from .models.contact import Contact
@@ -40,6 +42,8 @@ from .models.invoice_item import InvoiceItem
 from .models.invoice_list import InvoiceList
 from .models.ivr import Ivr
 from .models.ivr_choice import IvrChoice
+from .models.ivr_fetch import IvrFetch
+from .models.ivr_fetch_param import IvrFetchParam
 from .models.ivr_step import IvrStep
 from .models.ok_response import OkResponse
 from .models.payment_info import PaymentInfo
@@ -76,6 +80,7 @@ from .apis.api_api import ApiApi
 from .apis.billing_api import BillingApi
 from .apis.calls_api import CallsApi
 from .apis.cannedmessages_api import CannedmessagesApi
+from .apis.chats_api import ChatsApi
 from .apis.companies_api import CompaniesApi
 from .apis.contacts_api import ContactsApi
 from .apis.countries_api import CountriesApi
