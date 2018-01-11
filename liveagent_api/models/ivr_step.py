@@ -56,7 +56,7 @@ class IvrStep(object):
     def type(self):
         """
         Gets the type of this IvrStep.
-        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (message URL in params, choices) G - goto (IVR name in params)
+        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params
 
         :return: The type of this IvrStep.
         :rtype: str
@@ -67,12 +67,12 @@ class IvrStep(object):
     def type(self, type):
         """
         Sets the type of this IvrStep.
-        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (message URL in params, choices) G - goto (IVR name in params)
+        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params
 
         :param type: The type of this IvrStep.
         :type: str
         """
-        allowed_values = ["P", "R", "V", "D", "G"]
+        allowed_values = ["P", "R", "V", "D", "G", "T", "F"]
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type`, must be one of {0}"

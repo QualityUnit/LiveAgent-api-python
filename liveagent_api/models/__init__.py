@@ -19,7 +19,9 @@ from .call_agent import CallAgent
 from .call_list_item import CallListItem
 from .call_message import CallMessage
 from .call_status import CallStatus
+from .call_transfer_result import CallTransferResult
 from .canned_message import CannedMessage
+from .chat_information import ChatInformation
 from .company import Company
 from .company_list_item import CompanyListItem
 from .contact import Contact
@@ -33,6 +35,7 @@ from .department import Department
 from .discount_value import DiscountValue
 from .domain import Domain
 from .error_response import ErrorResponse
+from .extension import Extension
 from .group import Group
 from .hosting_info import HostingInfo
 from .invoice import Invoice
@@ -40,8 +43,11 @@ from .invoice_item import InvoiceItem
 from .invoice_list import InvoiceList
 from .ivr import Ivr
 from .ivr_choice import IvrChoice
+from .ivr_fetch import IvrFetch
+from .ivr_fetch_param import IvrFetchParam
 from .ivr_step import IvrStep
 from .ok_response import OkResponse
+from .outgoing_phone_number import OutgoingPhoneNumber
 from .payment_info import PaymentInfo
 from .payment_method import PaymentMethod
 from .payment_processor_type import PaymentProcessorType
