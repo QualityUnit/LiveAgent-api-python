@@ -44,6 +44,7 @@ class PhoneNumber(object):
             'number': 'str',
             'name': 'str',
             'departmentid': 'str',
+            'department': 'Department',
             'status': 'str',
             'status_message': 'str',
             'host_settings': 'str',
@@ -63,6 +64,7 @@ class PhoneNumber(object):
             'number': 'number',
             'name': 'name',
             'departmentid': 'departmentid',
+            'department': 'department',
             'status': 'status',
             'status_message': 'status_message',
             'host_settings': 'host_settings',
@@ -81,6 +83,7 @@ class PhoneNumber(object):
         self._number = None
         self._name = None
         self._departmentid = None
+        self._department = None
         self._status = None
         self._status_message = None
         self._host_settings = None
@@ -250,6 +253,28 @@ class PhoneNumber(object):
         :type: str
         """
         self._departmentid = departmentid
+
+    @property
+    def department(self):
+        """
+        Gets the department of this PhoneNumber.
+
+
+        :return: The department of this PhoneNumber.
+        :rtype: Department
+        """
+        return self._department
+
+    @department.setter
+    def department(self, department):
+        """
+        Sets the department of this PhoneNumber.
+
+
+        :param department: The department of this PhoneNumber.
+        :type: Department
+        """
+        self._department = department
 
     @property
     def status(self):

@@ -266,12 +266,13 @@ class PhonenumbersApi(object):
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
         :param str filters: Filters (json object {column:value, ...})
+        :param list[str] additional_objects: Additional objects
         :return: list[PhoneNumber]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters']
+        all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters', 'additional_objects']
         all_params.append('callback')
 
         params = locals()
@@ -303,6 +304,8 @@ class PhonenumbersApi(object):
             query_params['_sortField'] = params['sort_field']
         if 'filters' in params:
             query_params['_filters'] = params['filters']
+        if 'additional_objects' in params:
+            query_params['additionalObjects'] = params['additional_objects']
 
         header_params = {}
 

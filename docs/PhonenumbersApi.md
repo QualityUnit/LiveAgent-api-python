@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_phone_numbers_list**
-> list[PhoneNumber] get_phone_numbers_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+> list[PhoneNumber] get_phone_numbers_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters, additional_objects=additional_objects)
 
 Gets list of available phone numbers
 
@@ -170,10 +170,11 @@ to = 0 # int | Result set end. Used only if _from is used. (optional) (default t
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+additional_objects = ['additional_objects_example'] # list[str] | Additional objects (optional)
 
 try: 
     # Gets list of available phone numbers
-    api_response = api_instance.get_phone_numbers_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+    api_response = api_instance.get_phone_numbers_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters, additional_objects=additional_objects)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling PhonenumbersApi->get_phone_numbers_list: %s\n" % e
@@ -190,6 +191,7 @@ Name | Type | Description  | Notes
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
  **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+ **additional_objects** | [**list[str]**](str.md)| Additional objects | [optional] 
 
 ### Return type
 

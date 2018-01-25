@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
 [**call_change_channel_status**](CallsApi.md#call_change_channel_status) | **PUT** /calls/{callId}/channels/{channelId}/_status | Change channel status
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
+[**call_fetch_ivr**](CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL
 [**call_get_status**](CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
 [**call_move_channel**](CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels/{channelId}/_move | Moves existing channel to target call
 [**call_remove_channel**](CallsApi.md#call_remove_channel) | **DELETE** /calls/{callId}/channels/{channelId} | Removes channel from the call
@@ -18,6 +19,7 @@ Method | HTTP request | Description
 [**call_start_canceled**](CallsApi.md#call_start_canceled) | **POST** /call/_startCanceled | Callback that starting call canceled
 [**call_start_failed**](CallsApi.md#call_start_failed) | **POST** /call/_startFailed | Callback that starting call failed
 [**call_stop**](CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
+[**call_transfer**](CallsApi.md#call_transfer) | **POST** /calls/{callId}/_transfer | Transfers call to different department / agent
 [**confirm_ring**](CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
 [**get_calls_list**](CallsApi.md#get_calls_list) | **GET** /calls | Gets list of calls
 [**merge**](CallsApi.md#merge) | **POST** /calls/{callId}/_merge | Merge two calls
@@ -293,6 +295,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Call**](Call.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_fetch_ivr**
+> list[Ivr] call_fetch_ivr(call_id, fetch)
+
+Fetches IVR for the call from external URL
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+fetch = liveagent_api.IvrFetch() # IvrFetch | 
+
+try: 
+    # Fetches IVR for the call from external URL
+    api_response = api_instance.call_fetch_ivr(call_id, fetch)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_fetch_ivr: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **fetch** | [**IvrFetch**](IvrFetch.md)|  | 
+
+### Return type
+
+[**list[Ivr]**](Ivr.md)
 
 ### Authorization
 
@@ -771,6 +827,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_transfer**
+> CallTransferResult call_transfer(call_id, to=to)
+
+Transfers call to different department / agent
+
+Transfer can be called on incoming calls before they start ringing to agents
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+to = 'to_example' # str | Department ID or extension (optional)
+
+try: 
+    # Transfers call to different department / agent
+    api_response = api_instance.call_transfer(call_id, to=to)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->call_transfer: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **to** | **str**| Department ID or extension | [optional] 
+
+### Return type
+
+[**CallTransferResult**](CallTransferResult.md)
 
 ### Authorization
 

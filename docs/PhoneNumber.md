@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **number** | **str** |  | 
 **name** | **str** |  | [optional] 
 **departmentid** | **str** |  | [optional] 
+**department** | [**Department**](Department.md) |  | [optional] 
 **status** | **str** | A - Active, I - Inactive | [optional] 
 **status_message** | **str** |  | [optional] 
 **host_settings** | **str** | json encoded host settings | [optional] 
