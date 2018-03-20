@@ -42,6 +42,7 @@ class TicketListItem(object):
             'departmentid': 'str',
             'recipient': 'str',
             'message': 'str',
+            'date_created': 'str',
             'recipient_name': 'str',
             'carbon_copy': 'str',
             'status': 'str',
@@ -60,6 +61,7 @@ class TicketListItem(object):
             'departmentid': 'departmentid',
             'recipient': 'recipient',
             'message': 'message',
+            'date_created': 'date_created',
             'recipient_name': 'recipient_name',
             'carbon_copy': 'carbon_copy',
             'status': 'status',
@@ -77,6 +79,7 @@ class TicketListItem(object):
         self._departmentid = None
         self._recipient = None
         self._message = None
+        self._date_created = None
         self._recipient_name = None
         self._carbon_copy = None
         self._status = 'N'
@@ -197,6 +200,28 @@ class TicketListItem(object):
         :type: str
         """
         self._message = message
+
+    @property
+    def date_created(self):
+        """
+        Gets the date_created of this TicketListItem.
+         date and time with valid format: YYYY-MM-DD HH:MM:SS
+
+        :return: The date_created of this TicketListItem.
+        :rtype: str
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """
+        Sets the date_created of this TicketListItem.
+         date and time with valid format: YYYY-MM-DD HH:MM:SS
+
+        :param date_created: The date_created of this TicketListItem.
+        :type: str
+        """
+        self._date_created = date_created
 
     @property
     def recipient_name(self):

@@ -106,7 +106,7 @@ class Extension(object):
     def status(self):
         """
         Gets the status of this Extension.
-        E - Enabled<br> D - Disabled
+        A - Active (online)<br>E - Enabled (offline)<br> D - Disabled
 
         :return: The status of this Extension.
         :rtype: str
@@ -117,12 +117,12 @@ class Extension(object):
     def status(self, status):
         """
         Sets the status of this Extension.
-        E - Enabled<br> D - Disabled
+        A - Active (online)<br>E - Enabled (offline)<br> D - Disabled
 
         :param status: The status of this Extension.
         :type: str
         """
-        allowed_values = ["E", "D"]
+        allowed_values = ["A", "E", "D"]
         if status not in allowed_values:
             raise ValueError(
                 "Invalid value for `status`, must be one of {0}"

@@ -11,6 +11,8 @@ from .api_key import ApiKey
 from .api_key_with_privileges import ApiKeyWithPrivileges
 from .api_privilege import ApiPrivilege
 from .attribute_simple import AttributeSimple
+from .ban import Ban
+from .ban_list_item import BanListItem
 from .billing_info import BillingInfo
 from .billing_metric import BillingMetric
 from .billing_status import BillingStatus
@@ -26,6 +28,7 @@ from .company import Company
 from .company_list_item import CompanyListItem
 from .contact import Contact
 from .contact_list_item import ContactListItem
+from .contact_phone import ContactPhone
 from .country import Country
 from .coupon import Coupon
 from .custom_fields import CustomFields
@@ -47,7 +50,6 @@ from .ivr_fetch import IvrFetch
 from .ivr_fetch_param import IvrFetchParam
 from .ivr_step import IvrStep
 from .ok_response import OkResponse
-from .outgoing_phone_number import OutgoingPhoneNumber
 from .payment_info import PaymentInfo
 from .payment_method import PaymentMethod
 from .payment_processor_type import PaymentProcessorType

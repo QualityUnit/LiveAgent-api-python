@@ -11,6 +11,8 @@ from .models.api_key import ApiKey
 from .models.api_key_with_privileges import ApiKeyWithPrivileges
 from .models.api_privilege import ApiPrivilege
 from .models.attribute_simple import AttributeSimple
+from .models.ban import Ban
+from .models.ban_list_item import BanListItem
 from .models.billing_info import BillingInfo
 from .models.billing_metric import BillingMetric
 from .models.billing_status import BillingStatus
@@ -26,6 +28,7 @@ from .models.company import Company
 from .models.company_list_item import CompanyListItem
 from .models.contact import Contact
 from .models.contact_list_item import ContactListItem
+from .models.contact_phone import ContactPhone
 from .models.country import Country
 from .models.coupon import Coupon
 from .models.custom_fields import CustomFields
@@ -47,7 +50,6 @@ from .models.ivr_fetch import IvrFetch
 from .models.ivr_fetch_param import IvrFetchParam
 from .models.ivr_step import IvrStep
 from .models.ok_response import OkResponse
-from .models.outgoing_phone_number import OutgoingPhoneNumber
 from .models.payment_info import PaymentInfo
 from .models.payment_method import PaymentMethod
 from .models.payment_processor_type import PaymentProcessorType
@@ -79,11 +81,13 @@ from .models.variation_upgrades import VariationUpgrades
 from .apis.agentphone_api import AgentphoneApi
 from .apis.agents_api import AgentsApi
 from .apis.api_api import ApiApi
+from .apis.bans_api import BansApi
 from .apis.billing_api import BillingApi
 from .apis.calls_api import CallsApi
 from .apis.cannedmessages_api import CannedmessagesApi
 from .apis.chats_api import ChatsApi
 from .apis.companies_api import CompaniesApi
+from .apis.contactphones_api import ContactphonesApi
 from .apis.contacts_api import ContactsApi
 from .apis.countries_api import CountriesApi
 from .apis.default_api import DefaultApi
@@ -93,7 +97,6 @@ from .apis.files_api import FilesApi
 from .apis.groups_api import GroupsApi
 from .apis.hosting_api import HostingApi
 from .apis.invoices_api import InvoicesApi
-from .apis.outgoingphonenumber_api import OutgoingphonenumberApi
 from .apis.phonenumbers_api import PhonenumbersApi
 from .apis.phones_api import PhonesApi
 from .apis.predefinedanswers_api import PredefinedanswersApi

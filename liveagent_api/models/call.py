@@ -44,6 +44,8 @@ class Call(object):
             'ivrs': 'list[Ivr]',
             'record_call': 'bool',
             'reroute_time': 'float',
+            'max_queue_time': 'float',
+            'max_ring_time': 'float',
             'online_ivr': 'str',
             'offline_ivr': 'str',
             'queue_ivr': 'str',
@@ -61,6 +63,8 @@ class Call(object):
             'ivrs': 'ivrs',
             'record_call': 'record_call',
             'reroute_time': 'reroute_time',
+            'max_queue_time': 'max_queue_time',
+            'max_ring_time': 'max_ring_time',
             'online_ivr': 'online_ivr',
             'offline_ivr': 'offline_ivr',
             'queue_ivr': 'queue_ivr',
@@ -77,6 +81,8 @@ class Call(object):
         self._ivrs = None
         self._record_call = False
         self._reroute_time = None
+        self._max_queue_time = None
+        self._max_ring_time = None
         self._online_ivr = None
         self._offline_ivr = None
         self._queue_ivr = None
@@ -250,6 +256,50 @@ class Call(object):
         :type: float
         """
         self._reroute_time = reroute_time
+
+    @property
+    def max_queue_time(self):
+        """
+        Gets the max_queue_time of this Call.
+
+
+        :return: The max_queue_time of this Call.
+        :rtype: float
+        """
+        return self._max_queue_time
+
+    @max_queue_time.setter
+    def max_queue_time(self, max_queue_time):
+        """
+        Sets the max_queue_time of this Call.
+
+
+        :param max_queue_time: The max_queue_time of this Call.
+        :type: float
+        """
+        self._max_queue_time = max_queue_time
+
+    @property
+    def max_ring_time(self):
+        """
+        Gets the max_ring_time of this Call.
+
+
+        :return: The max_ring_time of this Call.
+        :rtype: float
+        """
+        return self._max_ring_time
+
+    @max_ring_time.setter
+    def max_ring_time(self, max_ring_time):
+        """
+        Sets the max_ring_time of this Call.
+
+
+        :param max_ring_time: The max_ring_time of this Call.
+        :type: float
+        """
+        self._max_ring_time = max_ring_time
 
     @property
     def online_ivr(self):

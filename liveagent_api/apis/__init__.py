@@ -4,11 +4,13 @@ from __future__ import absolute_import
 from .agentphone_api import AgentphoneApi
 from .agents_api import AgentsApi
 from .api_api import ApiApi
+from .bans_api import BansApi
 from .billing_api import BillingApi
 from .calls_api import CallsApi
 from .cannedmessages_api import CannedmessagesApi
 from .chats_api import ChatsApi
 from .companies_api import CompaniesApi
+from .contactphones_api import ContactphonesApi
 from .contacts_api import ContactsApi
 from .countries_api import CountriesApi
 from .default_api import DefaultApi
@@ -18,7 +20,6 @@ from .files_api import FilesApi
 from .groups_api import GroupsApi
 from .hosting_api import HostingApi
 from .invoices_api import InvoicesApi
-from .outgoingphonenumber_api import OutgoingphonenumberApi
 from .phonenumbers_api import PhonenumbersApi
 from .phones_api import PhonesApi
 from .predefinedanswers_api import PredefinedanswersApi

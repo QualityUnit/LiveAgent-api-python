@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **ivrs** | [**list[Ivr]**](Ivr.md) |  | [optional] 
 **record_call** | **bool** |  | [optional] [default to False]
 **reroute_time** | **float** |  | [optional] 
+**max_queue_time** | **float** |  | [optional] 
+**max_ring_time** | **float** |  | [optional] 
 **online_ivr** | **str** | Name of IVR in case the service is online. If empty, call starts ringing to agents | [optional] 
 **offline_ivr** | **str** | Name of IVR in case the service is offline. If empty, call hangs up with not available tone | [optional] 
 **queue_ivr** | **str** | Name of IVR while waiting in queue. If empty, default in queue music is played | [optional] 

@@ -976,7 +976,7 @@ class CallsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def call_start(self, to_number, from_number, via_number, ticket_id, **kwargs):
+    def call_start(self, to_number, from_number, ticket_id, **kwargs):
         """
         Starts new outcoming / internal call
         Starts new call by ringing agent device and the dialing customer after agent has picked up his phone\n
@@ -987,20 +987,20 @@ class CallsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.call_start(to_number, from_number, via_number, ticket_id, callback=callback_function)
+        >>> thread = api.call_start(to_number, from_number, ticket_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str to_number: callee number (required)
         :param str from_number: caller number (required)
-        :param str via_number: trunk number via which call was made (required)
         :param str ticket_id: ticket id or code (required)
+        :param str via_number: trunk number via which call was made
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['to_number', 'from_number', 'via_number', 'ticket_id']
+        all_params = ['to_number', 'from_number', 'ticket_id', 'via_number']
         all_params.append('callback')
 
         params = locals()
@@ -1019,9 +1019,6 @@ class CallsApi(object):
         # verify the required parameter 'from_number' is set
         if ('from_number' not in params) or (params['from_number'] is None):
             raise ValueError("Missing the required parameter `from_number` when calling `call_start`")
-        # verify the required parameter 'via_number' is set
-        if ('via_number' not in params) or (params['via_number'] is None):
-            raise ValueError("Missing the required parameter `via_number` when calling `call_start`")
         # verify the required parameter 'ticket_id' is set
         if ('ticket_id' not in params) or (params['ticket_id'] is None):
             raise ValueError("Missing the required parameter `ticket_id` when calling `call_start`")
