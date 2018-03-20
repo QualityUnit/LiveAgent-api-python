@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**confirm_ring**](CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
 [**get_calls_list**](CallsApi.md#get_calls_list) | **GET** /calls | Gets list of calls
 [**merge**](CallsApi.md#merge) | **POST** /calls/{callId}/_merge | Merge two calls
+[**stop_ring**](CallsApi.md#stop_ring) | **POST** /calls/{callId}/_stopRing | Stop ringing of call
 
 
 # **call_add_message**
@@ -1059,6 +1060,60 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stop_ring**
+> OkResponse stop_ring(call_id)
+
+Stop ringing of call
+
+Call goes to offline state after this
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+
+try: 
+    # Stop ringing of call
+    api_response = api_instance.stop_ring(call_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->stop_ring: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
