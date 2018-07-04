@@ -304,7 +304,7 @@ class Contact(object):
     def gender(self):
         """
         Gets the gender of this Contact.
-        M - Male, F - Female
+        M - Male, F - Female, X - Unspecified
 
         :return: The gender of this Contact.
         :rtype: str
@@ -315,7 +315,7 @@ class Contact(object):
     def gender(self, gender):
         """
         Sets the gender of this Contact.
-        M - Male, F - Female
+        M - Male, F - Female, X - Unspecified
 
         :param gender: The gender of this Contact.
         :type: str

@@ -1,22 +1,20 @@
-# liveagent_api.BansApi
+# liveagent_api.CustombuttonsApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ban**](BansApi.md#create_ban) | **POST** /bans/ | Create ban
-[**expire_ban**](BansApi.md#expire_ban) | **POST** /bans/{banId}/_expire | Expire ban
-[**get_ban**](BansApi.md#get_ban) | **GET** /bans/{banId} | Get ban item
-[**get_bans**](BansApi.md#get_bans) | **GET** /bans/ | Bans list
-[**update_ban**](BansApi.md#update_ban) | **PUT** /bans/{banId} | Update ban
+[**create_custom_button**](CustombuttonsApi.md#create_custom_button) | **POST** /custom_buttons | Create new custom button
+[**delete_custom_button**](CustombuttonsApi.md#delete_custom_button) | **DELETE** /custom_buttons/{customButtonId} | Delete custom button
+[**get_custom_button**](CustombuttonsApi.md#get_custom_button) | **GET** /custom_buttons/{customButtonId} | Get custom button by id
+[**get_custom_buttons_list**](CustombuttonsApi.md#get_custom_buttons_list) | **GET** /custom_buttons | Gets list of custom buttons
+[**update_custom_button**](CustombuttonsApi.md#update_custom_button) | **PUT** /custom_buttons/{customButtonId} | Update custom button
 
 
-# **create_ban**
-> Ban create_ban(ban=ban)
+# **create_custom_button**
+> CustomButton create_custom_button(custom_button=custom_button)
 
-Create ban
-
-Create new ban record
+Create new custom button
 
 ### Example 
 ```python
@@ -33,26 +31,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
-ban = liveagent_api.Ban() # Ban |  (optional)
+api_instance = liveagent_api.CustombuttonsApi()
+custom_button = liveagent_api.CustomButton() # CustomButton |  (optional)
 
 try: 
-    # Create ban
-    api_response = api_instance.create_ban(ban=ban)
+    # Create new custom button
+    api_response = api_instance.create_custom_button(custom_button=custom_button)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->create_ban: %s\n" % e
+    print "Exception when calling CustombuttonsApi->create_custom_button: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ban** | [**Ban**](Ban.md)|  | [optional] 
+ **custom_button** | [**CustomButton**](CustomButton.md)|  | [optional] 
 
 ### Return type
 
-[**Ban**](Ban.md)
+[**CustomButton**](CustomButton.md)
 
 ### Authorization
 
@@ -65,12 +63,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **expire_ban**
-> Ban expire_ban(ban_id)
+# **delete_custom_button**
+> OkResponse delete_custom_button(custom_button_id)
 
-Expire ban
-
-Expire ban
+Delete custom button
 
 ### Example 
 ```python
@@ -87,26 +83,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
-ban_id = 56 # int | 
+api_instance = liveagent_api.CustombuttonsApi()
+custom_button_id = 'custom_button_id_example' # str | 
 
 try: 
-    # Expire ban
-    api_response = api_instance.expire_ban(ban_id)
+    # Delete custom button
+    api_response = api_instance.delete_custom_button(custom_button_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->expire_ban: %s\n" % e
+    print "Exception when calling CustombuttonsApi->delete_custom_button: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ban_id** | **int**|  | 
+ **custom_button_id** | **str**|  | 
 
 ### Return type
 
-[**Ban**](Ban.md)
+[**OkResponse**](OkResponse.md)
 
 ### Authorization
 
@@ -119,12 +115,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ban**
-> Ban get_ban(ban_id)
+# **get_custom_button**
+> CustomButton get_custom_button(custom_button_id)
 
-Get ban item
-
-Ban item
+Get custom button by id
 
 ### Example 
 ```python
@@ -141,26 +135,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
-ban_id = 56 # int | 
+api_instance = liveagent_api.CustombuttonsApi()
+custom_button_id = 'custom_button_id_example' # str | 
 
 try: 
-    # Get ban item
-    api_response = api_instance.get_ban(ban_id)
+    # Get custom button by id
+    api_response = api_instance.get_custom_button(custom_button_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->get_ban: %s\n" % e
+    print "Exception when calling CustombuttonsApi->get_custom_button: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ban_id** | **int**|  | 
+ **custom_button_id** | **str**|  | 
 
 ### Return type
 
-[**Ban**](Ban.md)
+[**CustomButton**](CustomButton.md)
 
 ### Authorization
 
@@ -173,12 +167,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bans**
-> list[BanListItem] get_bans(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
+# **get_custom_buttons_list**
+> list[CustomButton] get_custom_buttons_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
 
-Bans list
-
-List of bans
+Gets list of custom buttons
 
 ### Example 
 ```python
@@ -195,21 +187,21 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
+api_instance = liveagent_api.CustombuttonsApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
+to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
-_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
-to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
 try: 
-    # Bans list
-    api_response = api_instance.get_bans(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
+    # Gets list of custom buttons
+    api_response = api_instance.get_custom_buttons_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->get_bans: %s\n" % e
+    print "Exception when calling CustombuttonsApi->get_custom_buttons_list: %s\n" % e
 ```
 
 ### Parameters
@@ -218,15 +210,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
  **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
+ **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
  **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
- **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
- **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
 
 ### Return type
 
-[**list[BanListItem]**](BanListItem.md)
+[**list[CustomButton]**](CustomButton.md)
 
 ### Authorization
 
@@ -239,12 +231,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_ban**
-> Ban update_ban(ban_id, ban=ban)
+# **update_custom_button**
+> CustomButton update_custom_button(custom_button_id, custom_button=custom_button)
 
-Update ban
-
-Update ban
+Update custom button
 
 ### Example 
 ```python
@@ -261,28 +251,28 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
-ban_id = 56 # int | 
-ban = liveagent_api.Ban() # Ban |  (optional)
+api_instance = liveagent_api.CustombuttonsApi()
+custom_button_id = 'custom_button_id_example' # str | 
+custom_button = liveagent_api.CustomButton() # CustomButton |  (optional)
 
 try: 
-    # Update ban
-    api_response = api_instance.update_ban(ban_id, ban=ban)
+    # Update custom button
+    api_response = api_instance.update_custom_button(custom_button_id, custom_button=custom_button)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->update_ban: %s\n" % e
+    print "Exception when calling CustombuttonsApi->update_custom_button: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ban_id** | **int**|  | 
- **ban** | [**Ban**](Ban.md)|  | [optional] 
+ **custom_button_id** | **str**|  | 
+ **custom_button** | [**CustomButton**](CustomButton.md)|  | [optional] 
 
 ### Return type
 
-[**Ban**](Ban.md)
+[**CustomButton**](CustomButton.md)
 
 ### Authorization
 

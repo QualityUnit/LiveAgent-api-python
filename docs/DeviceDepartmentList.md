@@ -1,13 +1,9 @@
-# User
+# DeviceDepartmentList
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**email** | **str** |  | [optional] 
-**role** | **str** |  | [optional] 
-**avatar_url** | **str** |  | [optional] 
+**device_departments** | [**list[DeviceDepartment]**](DeviceDepartment.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

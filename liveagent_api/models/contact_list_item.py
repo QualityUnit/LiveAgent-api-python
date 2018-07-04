@@ -280,7 +280,7 @@ class ContactListItem(object):
     def gender(self):
         """
         Gets the gender of this ContactListItem.
-        M - Male, F - Female
+        M - Male, F - Female, X - Unspecified
 
         :return: The gender of this ContactListItem.
         :rtype: str
@@ -291,7 +291,7 @@ class ContactListItem(object):
     def gender(self, gender):
         """
         Sets the gender of this ContactListItem.
-        M - Male, F - Female
+        M - Male, F - Female, X - Unspecified
 
         :param gender: The gender of this ContactListItem.
         :type: str

@@ -38,19 +38,25 @@ class User(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'contact': 'Contact',
-            'is_registered': 'bool'
+            'name': 'str',
+            'email': 'str',
+            'role': 'str',
+            'avatar_url': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'contact': 'contact',
-            'is_registered': 'isRegistered'
+            'name': 'name',
+            'email': 'email',
+            'role': 'role',
+            'avatar_url': 'avatar_url'
         }
 
         self._id = None
-        self._contact = None
-        self._is_registered = None
+        self._name = None
+        self._email = None
+        self._role = None
+        self._avatar_url = None
 
     @property
     def id(self):
@@ -75,48 +81,98 @@ class User(object):
         self._id = id
 
     @property
-    def contact(self):
+    def name(self):
         """
-        Gets the contact of this User.
+        Gets the name of this User.
 
 
-        :return: The contact of this User.
-        :rtype: Contact
+        :return: The name of this User.
+        :rtype: str
         """
-        return self._contact
+        return self._name
 
-    @contact.setter
-    def contact(self, contact):
+    @name.setter
+    def name(self, name):
         """
-        Sets the contact of this User.
+        Sets the name of this User.
 
 
-        :param contact: The contact of this User.
-        :type: Contact
+        :param name: The name of this User.
+        :type: str
         """
-        self._contact = contact
+        self._name = name
 
     @property
-    def is_registered(self):
+    def email(self):
         """
-        Gets the is_registered of this User.
+        Gets the email of this User.
 
 
-        :return: The is_registered of this User.
-        :rtype: bool
+        :return: The email of this User.
+        :rtype: str
         """
-        return self._is_registered
+        return self._email
 
-    @is_registered.setter
-    def is_registered(self, is_registered):
+    @email.setter
+    def email(self, email):
         """
-        Sets the is_registered of this User.
+        Sets the email of this User.
 
 
-        :param is_registered: The is_registered of this User.
-        :type: bool
+        :param email: The email of this User.
+        :type: str
         """
-        self._is_registered = is_registered
+        self._email = email
+
+    @property
+    def role(self):
+        """
+        Gets the role of this User.
+
+
+        :return: The role of this User.
+        :rtype: str
+        """
+        return self._role
+
+    @role.setter
+    def role(self, role):
+        """
+        Sets the role of this User.
+
+
+        :param role: The role of this User.
+        :type: str
+        """
+        allowed_values = ["owner", "admin", "agent", "visitor", "ext_admin", "reg_visitor"]
+        if role not in allowed_values:
+            raise ValueError(
+                "Invalid value for `role`, must be one of {0}"
+                .format(allowed_values)
+            )
+        self._role = role
+
+    @property
+    def avatar_url(self):
+        """
+        Gets the avatar_url of this User.
+
+
+        :return: The avatar_url of this User.
+        :rtype: str
+        """
+        return self._avatar_url
+
+    @avatar_url.setter
+    def avatar_url(self, avatar_url):
+        """
+        Sets the avatar_url of this User.
+
+
+        :param avatar_url: The avatar_url of this User.
+        :type: str
+        """
+        self._avatar_url = avatar_url
 
     def to_dict(self):
         """

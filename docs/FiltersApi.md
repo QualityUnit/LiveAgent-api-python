@@ -1,22 +1,22 @@
-# liveagent_api.BansApi
+# liveagent_api.FiltersApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ban**](BansApi.md#create_ban) | **POST** /bans/ | Create ban
-[**expire_ban**](BansApi.md#expire_ban) | **POST** /bans/{banId}/_expire | Expire ban
-[**get_ban**](BansApi.md#get_ban) | **GET** /bans/{banId} | Get ban item
-[**get_bans**](BansApi.md#get_bans) | **GET** /bans/ | Bans list
-[**update_ban**](BansApi.md#update_ban) | **PUT** /bans/{banId} | Update ban
+[**create_filter**](FiltersApi.md#create_filter) | **POST** /filters/ | Create filter
+[**delete_filter**](FiltersApi.md#delete_filter) | **DELETE** /filters/{filterId} | Delete filter
+[**get_filter**](FiltersApi.md#get_filter) | **GET** /filters/{filterId} | Get filter
+[**get_filters**](FiltersApi.md#get_filters) | **GET** /filters/ | Filters list
+[**update_filter**](FiltersApi.md#update_filter) | **PUT** /filters/{filterId} | Update filter
 
 
-# **create_ban**
-> Ban create_ban(ban=ban)
+# **create_filter**
+> Filter create_filter(filter=filter)
 
-Create ban
+Create filter
 
-Create new ban record
+Create new filter
 
 ### Example 
 ```python
@@ -33,26 +33,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
-ban = liveagent_api.Ban() # Ban |  (optional)
+api_instance = liveagent_api.FiltersApi()
+filter = liveagent_api.Filter() # Filter |  (optional)
 
 try: 
-    # Create ban
-    api_response = api_instance.create_ban(ban=ban)
+    # Create filter
+    api_response = api_instance.create_filter(filter=filter)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->create_ban: %s\n" % e
+    print "Exception when calling FiltersApi->create_filter: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ban** | [**Ban**](Ban.md)|  | [optional] 
+ **filter** | [**Filter**](Filter.md)|  | [optional] 
 
 ### Return type
 
-[**Ban**](Ban.md)
+[**Filter**](Filter.md)
 
 ### Authorization
 
@@ -65,12 +65,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **expire_ban**
-> Ban expire_ban(ban_id)
+# **delete_filter**
+> OkResponse delete_filter(filter_id)
 
-Expire ban
+Delete filter
 
-Expire ban
+Delete filter
 
 ### Example 
 ```python
@@ -87,26 +87,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
-ban_id = 56 # int | 
+api_instance = liveagent_api.FiltersApi()
+filter_id = 'filter_id_example' # str | 
 
 try: 
-    # Expire ban
-    api_response = api_instance.expire_ban(ban_id)
+    # Delete filter
+    api_response = api_instance.delete_filter(filter_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->expire_ban: %s\n" % e
+    print "Exception when calling FiltersApi->delete_filter: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ban_id** | **int**|  | 
+ **filter_id** | **str**|  | 
 
 ### Return type
 
-[**Ban**](Ban.md)
+[**OkResponse**](OkResponse.md)
 
 ### Authorization
 
@@ -119,12 +119,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ban**
-> Ban get_ban(ban_id)
+# **get_filter**
+> Filter get_filter(filter_id)
 
-Get ban item
+Get filter
 
-Ban item
+Filter
 
 ### Example 
 ```python
@@ -141,26 +141,26 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
-ban_id = 56 # int | 
+api_instance = liveagent_api.FiltersApi()
+filter_id = 'filter_id_example' # str | 
 
 try: 
-    # Get ban item
-    api_response = api_instance.get_ban(ban_id)
+    # Get filter
+    api_response = api_instance.get_filter(filter_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->get_ban: %s\n" % e
+    print "Exception when calling FiltersApi->get_filter: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ban_id** | **int**|  | 
+ **filter_id** | **str**|  | 
 
 ### Return type
 
-[**Ban**](Ban.md)
+[**Filter**](Filter.md)
 
 ### Authorization
 
@@ -173,12 +173,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bans**
-> list[BanListItem] get_bans(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
+# **get_filters**
+> list[Filter] get_filters(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
 
-Bans list
+Filters list
 
-List of bans
+List of filters
 
 ### Example 
 ```python
@@ -195,7 +195,7 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
+api_instance = liveagent_api.FiltersApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
@@ -205,11 +205,11 @@ _from = 0 # int | Result set start. Takes precedence over _page. (optional) (def
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
 try: 
-    # Bans list
-    api_response = api_instance.get_bans(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
+    # Filters list
+    api_response = api_instance.get_filters(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->get_bans: %s\n" % e
+    print "Exception when calling FiltersApi->get_filters: %s\n" % e
 ```
 
 ### Parameters
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[BanListItem]**](BanListItem.md)
+[**list[Filter]**](Filter.md)
 
 ### Authorization
 
@@ -239,12 +239,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_ban**
-> Ban update_ban(ban_id, ban=ban)
+# **update_filter**
+> Filter update_filter(filter_id, filter=filter)
 
-Update ban
+Update filter
 
-Update ban
+Update filter
 
 ### Example 
 ```python
@@ -261,28 +261,28 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.BansApi()
-ban_id = 56 # int | 
-ban = liveagent_api.Ban() # Ban |  (optional)
+api_instance = liveagent_api.FiltersApi()
+filter_id = 'filter_id_example' # str | 
+filter = liveagent_api.Filter() # Filter |  (optional)
 
 try: 
-    # Update ban
-    api_response = api_instance.update_ban(ban_id, ban=ban)
+    # Update filter
+    api_response = api_instance.update_filter(filter_id, filter=filter)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling BansApi->update_ban: %s\n" % e
+    print "Exception when calling FiltersApi->update_filter: %s\n" % e
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ban_id** | **int**|  | 
- **ban** | [**Ban**](Ban.md)|  | [optional] 
+ **filter_id** | **str**|  | 
+ **filter** | [**Filter**](Filter.md)|  | [optional] 
 
 ### Return type
 
-[**Ban**](Ban.md)
+[**Filter**](Filter.md)
 
 ### Authorization
 

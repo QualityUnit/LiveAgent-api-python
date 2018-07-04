@@ -21,9 +21,15 @@ Method | HTTP request | Description
 [**call_stop**](CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
 [**call_transfer**](CallsApi.md#call_transfer) | **POST** /calls/{callId}/_transfer | Transfers call to different department / agent
 [**confirm_ring**](CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
+[**dtmf_channel**](CallsApi.md#dtmf_channel) | **POST** /calls/{callId}/channels/{channelId}/_dtmf | Send provided DTMF to channel
+[**end_channel**](CallsApi.md#end_channel) | **POST** /calls/{callId}/channels/{channelId}/_end | End channel
 [**get_calls_list**](CallsApi.md#get_calls_list) | **GET** /calls | Gets list of calls
+[**hold_channel**](CallsApi.md#hold_channel) | **POST** /calls/{callId}/channels/{channelId}/_hold | Hold channel
 [**merge**](CallsApi.md#merge) | **POST** /calls/{callId}/_merge | Merge two calls
+[**mute_channel**](CallsApi.md#mute_channel) | **POST** /calls/{callId}/channels/{channelId}/_mute | Mute channel
 [**stop_ring**](CallsApi.md#stop_ring) | **POST** /calls/{callId}/_stopRing | Stop ringing of call
+[**unhol_channel**](CallsApi.md#unhol_channel) | **POST** /calls/{callId}/channels/{channelId}/_unhold | Unhold channel
+[**unmute_channel**](CallsApi.md#unmute_channel) | **POST** /calls/{callId}/channels/{channelId}/_unmute | Unmute channel
 
 
 # **call_add_message**
@@ -950,6 +956,108 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **dtmf_channel**
+> OkResponse dtmf_channel(call_id, channel_id, dtmf)
+
+Send provided DTMF to channel
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+channel_id = 'channel_id_example' # str | 
+dtmf = 'dtmf_example' # str | DTMF To send
+
+try: 
+    # Send provided DTMF to channel
+    api_response = api_instance.dtmf_channel(call_id, channel_id, dtmf)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->dtmf_channel: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **channel_id** | **str**|  | 
+ **dtmf** | **str**| DTMF To send | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **end_channel**
+> OkResponse end_channel(call_id, channel_id)
+
+End channel
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+channel_id = 'channel_id_example' # str | 
+
+try: 
+    # End channel
+    api_response = api_instance.end_channel(call_id, channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->end_channel: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **channel_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_calls_list**
 > list[CallListItem] get_calls_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
 
@@ -998,6 +1106,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[CallListItem]**](CallListItem.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **hold_channel**
+> OkResponse hold_channel(call_id, channel_id)
+
+Hold channel
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+channel_id = 'channel_id_example' # str | 
+
+try: 
+    # Hold channel
+    api_response = api_instance.hold_channel(call_id, channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->hold_channel: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **channel_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
 
 ### Authorization
 
@@ -1064,6 +1222,56 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **mute_channel**
+> OkResponse mute_channel(call_id, channel_id)
+
+Mute channel
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+channel_id = 'channel_id_example' # str | 
+
+try: 
+    # Mute channel
+    api_response = api_instance.mute_channel(call_id, channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->mute_channel: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **channel_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **stop_ring**
 > OkResponse stop_ring(call_id)
 
@@ -1110,6 +1318,106 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unhol_channel**
+> OkResponse unhol_channel(call_id, channel_id)
+
+Unhold channel
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+channel_id = 'channel_id_example' # str | 
+
+try: 
+    # Unhold channel
+    api_response = api_instance.unhol_channel(call_id, channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->unhol_channel: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **channel_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unmute_channel**
+> OkResponse unmute_channel(call_id, channel_id)
+
+Unmute channel
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi()
+call_id = 'call_id_example' # str | 
+channel_id = 'channel_id_example' # str | 
+
+try: 
+    # Unmute channel
+    api_response = api_instance.unmute_channel(call_id, channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling CallsApi->unmute_channel: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **channel_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
