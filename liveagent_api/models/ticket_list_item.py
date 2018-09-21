@@ -45,6 +45,7 @@ class TicketListItem(object):
             'date_created': 'str',
             'recipient_name': 'str',
             'carbon_copy': 'str',
+            'blind_carbon_copy': 'str',
             'status': 'str',
             'mail_message_id': 'str',
             'do_not_send_mail': 'str',
@@ -64,6 +65,7 @@ class TicketListItem(object):
             'date_created': 'date_created',
             'recipient_name': 'recipient_name',
             'carbon_copy': 'carbon_copy',
+            'blind_carbon_copy': 'blind_carbon_copy',
             'status': 'status',
             'mail_message_id': 'mail_message_id',
             'do_not_send_mail': 'do_not_send_mail',
@@ -82,6 +84,7 @@ class TicketListItem(object):
         self._date_created = None
         self._recipient_name = None
         self._carbon_copy = None
+        self._blind_carbon_copy = None
         self._status = 'N'
         self._mail_message_id = None
         self._do_not_send_mail = 'N'
@@ -266,6 +269,28 @@ class TicketListItem(object):
         :type: str
         """
         self._carbon_copy = carbon_copy
+
+    @property
+    def blind_carbon_copy(self):
+        """
+        Gets the blind_carbon_copy of this TicketListItem.
+
+
+        :return: The blind_carbon_copy of this TicketListItem.
+        :rtype: str
+        """
+        return self._blind_carbon_copy
+
+    @blind_carbon_copy.setter
+    def blind_carbon_copy(self, blind_carbon_copy):
+        """
+        Sets the blind_carbon_copy of this TicketListItem.
+
+
+        :param blind_carbon_copy: The blind_carbon_copy of this TicketListItem.
+        :type: str
+        """
+        self._blind_carbon_copy = blind_carbon_copy
 
     @property
     def status(self):

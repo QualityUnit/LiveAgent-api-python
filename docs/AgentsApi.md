@@ -5,11 +5,11 @@ All URIs are relative to *http://localhost/api/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**convert_registered_visitor**](AgentsApi.md#convert_registered_visitor) | **POST** /agents/convert | Convert registered visitor
-[**create_agent**](AgentsApi.md#create_agent) | **POST** /agents/ | Create agent
 [**delete_agent**](AgentsApi.md#delete_agent) | **DELETE** /agents/{userId} | Agent
 [**get_agent**](AgentsApi.md#get_agent) | **GET** /agents/{userId} | Agent
 [**get_agent_statuses**](AgentsApi.md#get_agent_statuses) | **GET** /agents/{userId}/status | Get agent statuses in departments
 [**get_agents**](AgentsApi.md#get_agents) | **GET** /agents/ | Agent list
+[**get_agents_activity**](AgentsApi.md#get_agents_activity) | **GET** /agents/activity | Agent Activity list
 [**login_agent**](AgentsApi.md#login_agent) | **POST** /agents/{userId}/_login | Login agent
 [**logout_agent**](AgentsApi.md#logout_agent) | **POST** /agents/{userId}/_logout | Logout agent
 [**pause_agent**](AgentsApi.md#pause_agent) | **POST** /agents/{userId}/_pause | Pause agent
@@ -49,60 +49,6 @@ try:
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling AgentsApi->convert_registered_visitor: %s\n" % e
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **agent** | [**Agent**](Agent.md)|  | [optional] 
-
-### Return type
-
-[**Agent**](Agent.md)
-
-### Authorization
-
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_agent**
-> Agent create_agent(agent=agent)
-
-Create agent
-
-Create new agent user
-
-### Example 
-```python
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
-
-# create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-agent = liveagent_api.Agent() # Agent |  (optional)
-
-try: 
-    # Create agent
-    api_response = api_instance.create_agent(agent=agent)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling AgentsApi->create_agent: %s\n" % e
 ```
 
 ### Parameters
@@ -342,6 +288,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[Agent]**](Agent.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_agents_activity**
+> list[AgentActivity] get_agents_activity(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
+
+Agent Activity list
+
+List of online agents with their activity status (A - Available, B - Busy) and open tickets.
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.AgentsApi()
+page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
+per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
+sort_field = 'sort_field_example' # str | Sorting field (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
+to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
+
+try: 
+    # Agent Activity list
+    api_response = api_instance.get_agents_activity(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling AgentsApi->get_agents_activity: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
+ **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
+ **sort_field** | **str**| Sorting field | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+ **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
+ **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
+
+### Return type
+
+[**list[AgentActivity]**](AgentActivity.md)
 
 ### Authorization
 

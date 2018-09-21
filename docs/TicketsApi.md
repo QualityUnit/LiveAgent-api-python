@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_ticket**](TicketsApi.md#delete_ticket) | **DELETE** /tickets/{ticketId} | Deletes ticket
 [**get_ticket**](TicketsApi.md#get_ticket) | **GET** /tickets/{ticketId} | Gets ticket
 [**get_ticket_attribute**](TicketsApi.md#get_ticket_attribute) | **GET** /tickets/{ticketId}/attributes/{attributeName} | Gets ticket attribute
+[**get_ticket_message_groups**](TicketsApi.md#get_ticket_message_groups) | **GET** /tickets/{ticketId}/messages | Gets ticket message groups and messages
 [**get_ticket_sla**](TicketsApi.md#get_ticket_sla) | **GET** /tickets/{ticketId}/sla | Gets ticket Sla
 [**get_tickets_list**](TicketsApi.md#get_tickets_list) | **GET** /tickets | Gets list of tickets
 [**set_ticket_attribute**](TicketsApi.md#set_ticket_attribute) | **PUT** /tickets/{ticketId}/attributes/{attributeName} | Sets ticket attribute
@@ -215,6 +216,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TicketAttribute**](TicketAttribute.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_ticket_message_groups**
+> list[MessageGroup] get_ticket_message_groups(ticket_id, include_quoted_messages=include_quoted_messages, page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
+
+Gets ticket message groups and messages
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.TicketsApi()
+ticket_id = 'ticket_id_example' # str | 
+include_quoted_messages = false # bool | If set, response will include quoted messages context, otherwise - only metadata. (optional) (default to false)
+page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
+per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
+sort_field = 'sort_field_example' # str | Sorting field (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
+to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
+
+try: 
+    # Gets ticket message groups and messages
+    api_response = api_instance.get_ticket_message_groups(ticket_id, include_quoted_messages=include_quoted_messages, page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling TicketsApi->get_ticket_message_groups: %s\n" % e
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ticket_id** | **str**|  | 
+ **include_quoted_messages** | **bool**| If set, response will include quoted messages context, otherwise - only metadata. | [optional] [default to false]
+ **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
+ **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
+ **sort_field** | **str**| Sorting field | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+ **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
+ **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
+
+### Return type
+
+[**list[MessageGroup]**](MessageGroup.md)
 
 ### Authorization
 

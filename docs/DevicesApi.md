@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**get_device_departments**](DevicesApi.md#get_device_departments) | **GET** /devices/{deviceId}/departments | Get device departments
 [**get_device_departments_by_department_id**](DevicesApi.md#get_device_departments_by_department_id) | **GET** /devices/departments/{departmentId} | Get device departments by department id
 [**get_devices_list**](DevicesApi.md#get_devices_list) | **GET** /devices | Gets list of devices
+[**get_my_mobile_devices_list**](DevicesApi.md#get_my_mobile_devices_list) | **GET** /devices/_app_/ | Gets list of current agent&#39;s mobile devices. Creates new one if there are no devices.
 [**update_device**](DevicesApi.md#update_device) | **PUT** /devices/{deviceId} | Update device
 [**update_device_department**](DevicesApi.md#update_device_department) | **PUT** /devices/{deviceId}/departments/{departmentId} | Update device department
 [**update_device_department_plan**](DevicesApi.md#update_device_department_plan) | **PUT** /devices/{deviceId}/departments/{departmentId}/plans | Update device department plan
@@ -678,6 +679,54 @@ Name | Type | Description  | Notes
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
  **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+
+### Return type
+
+[**list[Device]**](Device.md)
+
+### Authorization
+
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_my_mobile_devices_list**
+> list[Device] get_my_mobile_devices_list()
+
+Gets list of current agent's mobile devices. Creates new one if there are no devices.
+
+### Example 
+```python
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: privileges
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+
+# create an instance of the API class
+api_instance = liveagent_api.DevicesApi()
+
+try: 
+    # Gets list of current agent's mobile devices. Creates new one if there are no devices.
+    api_response = api_instance.get_my_mobile_devices_list()
+    pprint(api_response)
+except ApiException as e:
+    print "Exception when calling DevicesApi->get_my_mobile_devices_list: %s\n" % e
+```
+
+### Parameters
+This endpoint does not need any parameter.
 
 ### Return type
 

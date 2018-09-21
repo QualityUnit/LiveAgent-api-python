@@ -1,9 +1,11 @@
 from __future__ import absolute_import
 
 # import models into sdk package
+from .models.active_ticket import ActiveTicket
 from .models.addon import Addon
 from .models.addon_list import AddonList
 from .models.agent import Agent
+from .models.agent_activity import AgentActivity
 from .models.agent_status import AgentStatus
 from .models.agent_statuses import AgentStatuses
 from .models.api_info import ApiInfo
@@ -59,6 +61,8 @@ from .models.ivr_fetch import IvrFetch
 from .models.ivr_fetch_param import IvrFetchParam
 from .models.ivr_step import IvrStep
 from .models.mail_account import MailAccount
+from .models.message import Message
+from .models.message_group import MessageGroup
 from .models.ok_response import OkResponse
 from .models.page_visit import PageVisit
 from .models.payment_info import PaymentInfo
@@ -67,10 +71,12 @@ from .models.payment_processor_type import PaymentProcessorType
 from .models.phone_device import PhoneDevice
 from .models.phone_number import PhoneNumber
 from .models.predefined_answer import PredefinedAnswer
+from .models.setting import Setting
 from .models.sla import Sla
 from .models.sla_business_hours import SlaBusinessHours
 from .models.sla_history import SlaHistory
 from .models.sla_values import SlaValues
+from .models.stop_reason import StopReason
 from .models.stored_file import StoredFile
 from .models.subscription import Subscription
 from .models.tag import Tag
@@ -113,12 +119,14 @@ from .apis.groups_api import GroupsApi
 from .apis.hosting_api import HostingApi
 from .apis.invoices_api import InvoicesApi
 from .apis.mailaccount_api import MailaccountApi
+from .apis.messages_api import MessagesApi
 from .apis.pagevisits_api import PagevisitsApi
 from .apis.phonenumbers_api import PhonenumbersApi
 from .apis.phones_api import PhonesApi
 from .apis.plans_api import PlansApi
 from .apis.predefinedanswers_api import PredefinedanswersApi
 from .apis.queue_api import QueueApi
+from .apis.settings_api import SettingsApi
 from .apis.slas_api import SlasApi
 from .apis.subscriptions_api import SubscriptionsApi
 from .apis.tags_api import TagsApi

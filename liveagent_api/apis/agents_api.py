@@ -119,80 +119,6 @@ class AgentsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def create_agent(self, **kwargs):
-        """
-        Create agent
-        Create new agent user
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.create_agent(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param Agent agent: 
-        :return: Agent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['agent']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_agent" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-        resource_path = '/agents/'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'agent' in params:
-            body_params = params['agent']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['privileges', 'apikey']
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='Agent',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def delete_agent(self, user_id, **kwargs):
         """
         Agent
@@ -512,6 +438,98 @@ class AgentsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[Agent]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_agents_activity(self, **kwargs):
+        """
+        Agent Activity list
+        List of online agents with their activity status (A - Available, B - Busy) and open tickets.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_agents_activity(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page: Page to display. Not used if _from is defined.
+        :param int per_page: Results per page. Used only if _page is used.
+        :param str sort_dir: Sorting direction ASC or DESC
+        :param str sort_field: Sorting field
+        :param str filters: Filters (json object {column:value, ...})
+        :param int _from: Result set start. Takes precedence over _page.
+        :param int to: Result set end. Used only if _from is used.
+        :return: list[AgentActivity]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page', 'per_page', 'sort_dir', 'sort_field', 'filters', '_from', 'to']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_agents_activity" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        resource_path = '/agents/activity'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page' in params:
+            query_params['_page'] = params['page']
+        if 'per_page' in params:
+            query_params['_perPage'] = params['per_page']
+        if 'sort_dir' in params:
+            query_params['_sortDir'] = params['sort_dir']
+        if 'sort_field' in params:
+            query_params['_sortField'] = params['sort_field']
+        if 'filters' in params:
+            query_params['_filters'] = params['filters']
+        if '_from' in params:
+            query_params['_from'] = params['_from']
+        if 'to' in params:
+            query_params['_to'] = params['to']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['privileges', 'apikey']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[AgentActivity]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

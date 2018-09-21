@@ -24,12 +24,14 @@ from .groups_api import GroupsApi
 from .hosting_api import HostingApi
 from .invoices_api import InvoicesApi
 from .mailaccount_api import MailaccountApi
+from .messages_api import MessagesApi
 from .pagevisits_api import PagevisitsApi
 from .phonenumbers_api import PhonenumbersApi
 from .phones_api import PhonesApi
 from .plans_api import PlansApi
 from .predefinedanswers_api import PredefinedanswersApi
 from .queue_api import QueueApi
+from .settings_api import SettingsApi
 from .slas_api import SlasApi
 from .subscriptions_api import SubscriptionsApi
 from .tags_api import TagsApi

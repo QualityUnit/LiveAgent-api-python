@@ -1089,7 +1089,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **stop_billing**
-> OkResponse stop_billing(subscription_id)
+> OkResponse stop_billing(subscription_id, reason=reason)
 
 Stop billing
 
@@ -1112,10 +1112,11 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
+reason = liveagent_api.StopReason() # StopReason | Reason for stopping (optional)
 
 try: 
     # Stop billing
-    api_response = api_instance.stop_billing(subscription_id)
+    api_response = api_instance.stop_billing(subscription_id, reason=reason)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling SubscriptionsApi->stop_billing: %s\n" % e
@@ -1126,6 +1127,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**|  | 
+ **reason** | [**StopReason**](StopReason.md)| Reason for stopping | [optional] 
 
 ### Return type
 

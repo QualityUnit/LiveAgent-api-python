@@ -1,9 +1,11 @@
 from __future__ import absolute_import
 
 # import models into model package
+from .active_ticket import ActiveTicket
 from .addon import Addon
 from .addon_list import AddonList
 from .agent import Agent
+from .agent_activity import AgentActivity
 from .agent_status import AgentStatus
 from .agent_statuses import AgentStatuses
 from .api_info import ApiInfo
@@ -59,6 +61,8 @@ from .ivr_fetch import IvrFetch
 from .ivr_fetch_param import IvrFetchParam
 from .ivr_step import IvrStep
 from .mail_account import MailAccount
+from .message import Message
+from .message_group import MessageGroup
 from .ok_response import OkResponse
 from .page_visit import PageVisit
 from .payment_info import PaymentInfo
@@ -67,10 +71,12 @@ from .payment_processor_type import PaymentProcessorType
 from .phone_device import PhoneDevice
 from .phone_number import PhoneNumber
 from .predefined_answer import PredefinedAnswer
+from .setting import Setting
 from .sla import Sla
 from .sla_business_hours import SlaBusinessHours
 from .sla_history import SlaHistory
 from .sla_values import SlaValues
+from .stop_reason import StopReason
 from .stored_file import StoredFile
 from .subscription import Subscription
 from .tag import Tag

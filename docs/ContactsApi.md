@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_contact**
-> list[Contact] create_contact(contact=contact)
+> Contact create_contact(contact=contact)
 
 Create new contact
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Contact]**](Contact.md)
+[**Contact**](Contact.md)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_specific_contact**
-> list[Contact] get_specific_contact(contact_id)
+> Contact get_specific_contact(contact_id)
 
 Get contact by specific id
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Contact]**](Contact.md)
+[**Contact**](Contact.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_contact**
-> list[Contact] update_contact(contact_id, contact=contact)
+> Contact update_contact(contact_id, contact=contact)
 
 Update contact
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Contact]**](Contact.md)
+[**Contact**](Contact.md)
 
 ### Authorization
 

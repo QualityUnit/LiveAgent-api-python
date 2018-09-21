@@ -215,7 +215,7 @@ liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
-status = 'status_example' # str | run (\u2018R\u2019 - default), hold (\u2018H\u2019)
+status = 'status_example' # str | run (\"R\" - default), hold (\"H\")
 
 try: 
     # Change channel status
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
  **channel_id** | **str**|  | 
- **status** | **str**| run (\u2018R\u2019 - default), hold (\u2018H\u2019) | 
+ **status** | **str**| run (\&quot;R\&quot; - default), hold (\&quot;H\&quot;) | 
 
 ### Return type
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_get_status**
-> CallStatus call_get_status(call_id)
+> CallStatus call_get_status(call_id, unreachable_agents=unreachable_agents)
 
 Return the status of call
 
@@ -390,10 +390,11 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
+unreachable_agents = ['unreachable_agents_example'] # list[str] | Identifiers of unreachable agents that should be excluded from routing (optional)
 
 try: 
     # Return the status of call
-    api_response = api_instance.call_get_status(call_id)
+    api_response = api_instance.call_get_status(call_id, unreachable_agents=unreachable_agents)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_get_status: %s\n" % e
@@ -404,6 +405,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
+ **unreachable_agents** | [**list[str]**](str.md)| Identifiers of unreachable agents that should be excluded from routing | [optional] 
 
 ### Return type
 
@@ -523,7 +525,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_reroute**
-> CallStatus call_reroute(call_id, reason=reason)
+> CallStatus call_reroute(call_id, reason=reason, unreachable_agents=unreachable_agents)
 
 Let the call ring to another agent
 
@@ -547,10 +549,11 @@ liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
 api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 reason = 'reason_example' # str | T - timeout, D - decline, DNR - device not registered (optional)
+unreachable_agents = ['unreachable_agents_example'] # list[str] | Identifiers of unreachable agents that should be excluded from routing (optional)
 
 try: 
     # Let the call ring to another agent
-    api_response = api_instance.call_reroute(call_id, reason=reason)
+    api_response = api_instance.call_reroute(call_id, reason=reason, unreachable_agents=unreachable_agents)
     pprint(api_response)
 except ApiException as e:
     print "Exception when calling CallsApi->call_reroute: %s\n" % e
@@ -562,6 +565,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
  **reason** | **str**| T - timeout, D - decline, DNR - device not registered | [optional] 
+ **unreachable_agents** | [**list[str]**](str.md)| Identifiers of unreachable agents that should be excluded from routing | [optional] 
 
 ### Return type
 

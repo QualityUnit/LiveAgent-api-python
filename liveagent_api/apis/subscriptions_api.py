@@ -1578,12 +1578,13 @@ class SubscriptionsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str subscription_id:  (required)
+        :param StopReason reason: Reason for stopping
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['subscription_id']
+        all_params = ['subscription_id', 'reason']
         all_params.append('callback')
 
         params = locals()
@@ -1613,6 +1614,8 @@ class SubscriptionsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'reason' in params:
+            body_params = params['reason']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\

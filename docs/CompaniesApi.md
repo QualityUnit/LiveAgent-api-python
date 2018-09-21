@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_company**
-> list[Company] create_company(company=company)
+> Company create_company(company=company)
 
 Create new company
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Company]**](Company.md)
+[**Company**](Company.md)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_specific_company**
-> list[Company] get_specific_company(company_id)
+> Company get_specific_company(company_id)
 
 Get company by specific id
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Company]**](Company.md)
+[**Company**](Company.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_company**
-> list[Company] update_company(company_id, company=company)
+> Company update_company(company_id, company=company)
 
 Update company
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Company]**](Company.md)
+[**Company**](Company.md)
 
 ### Authorization
 

@@ -61,7 +61,7 @@ class CompaniesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Company company: 
-        :return: list[Company]
+        :return: Company
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -114,7 +114,7 @@ class CompaniesApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[Company]',
+                                            response_type='Company',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -310,7 +310,7 @@ class CompaniesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str company_id:  (required)
-        :return: list[Company]
+        :return: Company
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -366,7 +366,7 @@ class CompaniesApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[Company]',
+                                            response_type='Company',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -388,7 +388,7 @@ class CompaniesApi(object):
             for asynchronous request. (optional)
         :param str company_id:  (required)
         :param Company company: 
-        :return: list[Company]
+        :return: Company
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -446,7 +446,7 @@ class CompaniesApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[Company]',
+                                            response_type='Company',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -308,7 +308,7 @@ class CallsApi(object):
             for asynchronous request. (optional)
         :param str call_id:  (required)
         :param str channel_id:  (required)
-        :param str status: run (\u2018R\u2019 - default), hold (\u2018H\u2019) (required)
+        :param str status: run (\"R\" - default), hold (\"H\") (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -580,12 +580,13 @@ class CallsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str call_id:  (required)
+        :param list[str] unreachable_agents: Identifiers of unreachable agents that should be excluded from routing
         :return: CallStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id']
+        all_params = ['call_id', 'unreachable_agents']
         all_params.append('callback')
 
         params = locals()
@@ -608,6 +609,8 @@ class CallsApi(object):
             path_params['callId'] = params['call_id']
 
         query_params = {}
+        if 'unreachable_agents' in params:
+            query_params['unreachableAgents'] = params['unreachable_agents']
 
         header_params = {}
 
@@ -830,12 +833,13 @@ class CallsApi(object):
             for asynchronous request. (optional)
         :param str call_id:  (required)
         :param str reason: T - timeout, D - decline, DNR - device not registered
+        :param list[str] unreachable_agents: Identifiers of unreachable agents that should be excluded from routing
         :return: CallStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'reason']
+        all_params = ['call_id', 'reason', 'unreachable_agents']
         all_params.append('callback')
 
         params = locals()
@@ -860,6 +864,8 @@ class CallsApi(object):
         query_params = {}
         if 'reason' in params:
             query_params['reason'] = params['reason']
+        if 'unreachable_agents' in params:
+            query_params['unreachableAgents'] = params['unreachable_agents']
 
         header_params = {}
 
