@@ -85,7 +85,7 @@ class RESTClientObject(object):
         # https pool manager
         if configuration.proxy:
             self.pool_manager = urllib3.ProxyManager(
-                num_pools=9999,
+                num_pools=9999,                                                                              # MODIFIED
                 maxsize=maxsize,
                 cert_reqs=cert_reqs,
                 ca_certs=ca_certs,
@@ -96,7 +96,7 @@ class RESTClientObject(object):
             )
         else:
             self.pool_manager = urllib3.PoolManager(
-                num_pools=9999,
+                num_pools=9999,                                                                              # MODIFIED
                 maxsize=maxsize,
                 cert_reqs=cert_reqs,
                 ca_certs=ca_certs,
@@ -125,6 +125,7 @@ class RESTClientObject(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
+                                 Default is 30 sec.                                                          # MODIFIED
         """
         method = method.upper()
         assert method in ['GET', 'HEAD', 'DELETE', 'POST', 'PUT',
@@ -138,7 +139,7 @@ class RESTClientObject(object):
         post_params = post_params or {}
         headers = headers or {}
 
-        timeout = None
+        timeout = urllib3.Timeout(total=30)                                                                  # MODIFIED
         if _request_timeout:
             if isinstance(_request_timeout, (int, ) if six.PY3 else (int, long)):  # noqa: E501,F821
                 timeout = urllib3.Timeout(total=_request_timeout)
@@ -209,7 +210,7 @@ class RESTClientObject(object):
                                               preload_content=_preload_content,
                                               timeout=timeout,
                                               headers=headers)
-        except (urllib3.exceptions.SSLError, urllib3.exceptions.ProtocolError) as e:
+        except (urllib3.exceptions.SSLError, urllib3.exceptions.ProtocolError, urllib3.exceptions.TimeoutError) as e:  # MODIFIED
             msg = "{0}\n{1}".format(type(e).__name__, str(e))
             raise ApiException(status=0, reason=msg)
 
