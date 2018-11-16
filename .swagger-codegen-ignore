@@ -23,3 +23,4 @@
 #!docs/README.md
 
 liveagent_api/rest.py
+.gitignore
