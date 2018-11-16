@@ -1,0 +1,16 @@
+task cleanApi(type: Delete) {
+    delete 'liveagent_api', 'docs', 'test'
+}
+
+task generateApi(type: JavaExec) {
+    dependsOn(cleanApi)
+    classpath = sourceSets.main.runtimeClasspath
+    main = "io.swagger.codegen.SwaggerCodegen"
+    args = [
+            'generate',
+            '-l', 'python',
+            '-i', "../LiveAgent/codegen/descriptor/liveagent.yaml",
+            '-o', ".",
+            '-c', "./client.json"
+    ]
+}

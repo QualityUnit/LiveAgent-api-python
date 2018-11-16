@@ -12,31 +12,34 @@ Method | HTTP request | Description
 
 Get device department plan
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.PlansApi()
+api_instance = liveagent_api.PlansApi(liveagent_api.ApiClient(configuration))
 device_id = 56 # int | 
 department_id = 'department_id_example' # str | 
 
-try: 
+try:
     # Get device department plan
     api_response = api_instance.get_device_department_plan(device_id, department_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PlansApi->get_device_department_plan: %s\n" % e
+    print("Exception when calling PlansApi->get_device_department_plan: %s\n" % e)
 ```
 
 ### Parameters
@@ -52,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 

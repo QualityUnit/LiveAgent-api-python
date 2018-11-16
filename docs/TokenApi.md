@@ -14,27 +14,29 @@ Access token
 
 Returns access token
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.TokenApi()
+api_instance = liveagent_api.TokenApi(liveagent_api.ApiClient(configuration))
 username = 'username_example' # str | Username
 password = 'password_example' # str | Password
 
-try: 
+try:
     # Access token
     api_response = api_instance.get_access_token(username, password)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling TokenApi->get_access_token: %s\n" % e
+    print("Exception when calling TokenApi->get_access_token: %s\n" % e)
 ```
 
 ### Parameters

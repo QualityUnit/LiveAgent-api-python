@@ -1,15 +1,15 @@
-# liveagent_api.PhonenumbersApi
+# liveagent_api.PhoneNumbersApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_number**](PhonenumbersApi.md#add_number) | **POST** /phone_numbers | Add new number
-[**get_phone_number**](PhonenumbersApi.md#get_phone_number) | **GET** /phone_numbers/{phoneNumberId} | Gets phone number
-[**get_phone_numbers_list**](PhonenumbersApi.md#get_phone_numbers_list) | **GET** /phone_numbers | Gets list of available phone numbers
-[**remove_phone_number**](PhonenumbersApi.md#remove_phone_number) | **DELETE** /phone_numbers/{phoneNumberId} | Remove phone number
-[**update_phone_number**](PhonenumbersApi.md#update_phone_number) | **PUT** /phone_numbers/{phoneNumberId} | Update phone number
-[**update_phone_number_status**](PhonenumbersApi.md#update_phone_number_status) | **PUT** /phone_numbers/{phoneNumberId}/status | Update phone number status
+[**add_number**](PhoneNumbersApi.md#add_number) | **POST** /phone_numbers | Add new number
+[**get_phone_number**](PhoneNumbersApi.md#get_phone_number) | **GET** /phone_numbers/{phoneNumberId} | Gets phone number
+[**get_phone_numbers_list**](PhoneNumbersApi.md#get_phone_numbers_list) | **GET** /phone_numbers | Gets list of available phone numbers
+[**remove_phone_number**](PhoneNumbersApi.md#remove_phone_number) | **DELETE** /phone_numbers/{phoneNumberId} | Remove phone number
+[**update_phone_number**](PhoneNumbersApi.md#update_phone_number) | **PUT** /phone_numbers/{phoneNumberId} | Update phone number
+[**update_phone_number_status**](PhoneNumbersApi.md#update_phone_number_status) | **PUT** /phone_numbers/{phoneNumberId}/status | Update phone number status
 
 
 # **add_number**
@@ -17,26 +17,29 @@ Method | HTTP request | Description
 
 Add new number
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.PhonenumbersApi()
+api_instance = liveagent_api.PhoneNumbersApi(liveagent_api.ApiClient(configuration))
 type = 'type_example' # str | A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk
 number = 'number_example' # str | 
 status = 'status_example' # str | A - Active, I - Inactive
-dial_out_prefix = 56 # int | Prefix needed to originate call using this number (optional)
+dial_out_prefix = 'dial_out_prefix_example' # str | Prefix needed to originate call using this number (optional)
 record_call = true # bool |  (optional)
 name = 'name_example' # str |  (optional)
 departmentid = 'departmentid_example' # str |  (optional)
@@ -48,12 +51,12 @@ password = 'password_example' # str |  (optional)
 providerid = 'providerid_example' # str |  (optional)
 ivr = 'ivr_example' # str |  (optional)
 
-try: 
+try:
     # Add new number
     api_response = api_instance.add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_call=record_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PhonenumbersApi->add_number: %s\n" % e
+    print("Exception when calling PhoneNumbersApi->add_number: %s\n" % e)
 ```
 
 ### Parameters
@@ -63,7 +66,7 @@ Name | Type | Description  | Notes
  **type** | **str**| A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk | 
  **number** | **str**|  | 
  **status** | **str**| A - Active, I - Inactive | 
- **dial_out_prefix** | **int**| Prefix needed to originate call using this number | [optional] 
+ **dial_out_prefix** | **str**| Prefix needed to originate call using this number | [optional] 
  **record_call** | **bool**|  | [optional] 
  **name** | **str**|  | [optional] 
  **departmentid** | **str**|  | [optional] 
@@ -81,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -95,30 +98,33 @@ Name | Type | Description  | Notes
 
 Gets phone number
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.PhonenumbersApi()
+api_instance = liveagent_api.PhoneNumbersApi(liveagent_api.ApiClient(configuration))
 phone_number_id = 'phone_number_id_example' # str | 
 
-try: 
+try:
     # Gets phone number
     api_response = api_instance.get_phone_number(phone_number_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PhonenumbersApi->get_phone_number: %s\n" % e
+    print("Exception when calling PhoneNumbersApi->get_phone_number: %s\n" % e)
 ```
 
 ### Parameters
@@ -133,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -147,22 +153,25 @@ Name | Type | Description  | Notes
 
 Gets list of available phone numbers
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.PhonenumbersApi()
+api_instance = liveagent_api.PhoneNumbersApi(liveagent_api.ApiClient(configuration))
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
@@ -172,12 +181,12 @@ sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 additional_objects = ['additional_objects_example'] # list[str] | Additional objects (optional)
 
-try: 
+try:
     # Gets list of available phone numbers
     api_response = api_instance.get_phone_numbers_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters, additional_objects=additional_objects)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PhonenumbersApi->get_phone_numbers_list: %s\n" % e
+    print("Exception when calling PhoneNumbersApi->get_phone_numbers_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -199,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -213,26 +222,28 @@ Name | Type | Description  | Notes
 
 Remove phone number
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.PhonenumbersApi()
+api_instance = liveagent_api.PhoneNumbersApi(liveagent_api.ApiClient(configuration))
 phone_number_id = 'phone_number_id_example' # str | 
 
-try: 
+try:
     # Remove phone number
     api_response = api_instance.remove_phone_number(phone_number_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PhonenumbersApi->remove_phone_number: %s\n" % e
+    print("Exception when calling PhoneNumbersApi->remove_phone_number: %s\n" % e)
 ```
 
 ### Parameters
@@ -261,31 +272,34 @@ Name | Type | Description  | Notes
 
 Update phone number
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.PhonenumbersApi()
+api_instance = liveagent_api.PhoneNumbersApi(liveagent_api.ApiClient(configuration))
 phone_number_id = 'phone_number_id_example' # str | 
 phone_number = liveagent_api.PhoneNumber() # PhoneNumber | 
 
-try: 
+try:
     # Update phone number
     api_response = api_instance.update_phone_number(phone_number_id, phone_number)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PhonenumbersApi->update_phone_number: %s\n" % e
+    print("Exception when calling PhoneNumbersApi->update_phone_number: %s\n" % e)
 ```
 
 ### Parameters
@@ -301,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -315,31 +329,34 @@ Name | Type | Description  | Notes
 
 Update phone number status
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.PhonenumbersApi()
+api_instance = liveagent_api.PhoneNumbersApi(liveagent_api.ApiClient(configuration))
 phone_number_id = 'phone_number_id_example' # str | 
 status = 'status_example' # str | A - Active, I - Inactive
 
-try: 
+try:
     # Update phone number status
     api_response = api_instance.update_phone_number_status(phone_number_id, status)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling PhonenumbersApi->update_phone_number_status: %s\n" % e
+    print("Exception when calling PhoneNumbersApi->update_phone_number_status: %s\n" % e)
 ```
 
 ### Parameters
@@ -355,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
