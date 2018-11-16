@@ -1,5 +1,5 @@
 task cleanApi(type: Delete) {
-    delete 'liveagent_api', 'docs', 'test'
+    delete 'liveagent_api/api', 'liveagent_api/models', 'docs', 'test'
 }
 
 task generateApi(type: JavaExec) {
