@@ -85,7 +85,7 @@ class RESTClientObject(object):
         # https pool manager
         if configuration.proxy:
             self.pool_manager = urllib3.ProxyManager(
-                num_pools=pools_size,
+                num_pools=9999,
                 maxsize=maxsize,
                 cert_reqs=cert_reqs,
                 ca_certs=ca_certs,
@@ -96,7 +96,7 @@ class RESTClientObject(object):
             )
         else:
             self.pool_manager = urllib3.PoolManager(
-                num_pools=pools_size,
+                num_pools=9999,
                 maxsize=maxsize,
                 cert_reqs=cert_reqs,
                 ca_certs=ca_certs,
@@ -209,7 +209,7 @@ class RESTClientObject(object):
                                               preload_content=_preload_content,
                                               timeout=timeout,
                                               headers=headers)
-        except urllib3.exceptions.SSLError as e:
+        except (urllib3.exceptions.SSLError, urllib3.exceptions.ProtocolError) as e:
             msg = "{0}\n{1}".format(type(e).__name__, str(e))
             raise ApiException(status=0, reason=msg)
 
