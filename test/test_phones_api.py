@@ -57,6 +57,13 @@ class TestPhonesApi(unittest.TestCase):
         """
         pass
 
+    def test_update_phone(self):
+        """Test case for update_phone
+
+        Update phone  # noqa: E501
+        """
+        pass
+
     def test_update_phone_params(self):
         """Test case for update_phone_params
 

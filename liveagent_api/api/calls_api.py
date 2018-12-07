@@ -439,7 +439,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_status', 'PUT',
@@ -890,7 +890,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_move', 'POST',
@@ -995,7 +995,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}', 'DELETE',
@@ -1329,7 +1329,7 @@ class CallsApi(object):
             ['application/x-www-form-urlencoded'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/call/_start', 'POST',
@@ -1428,7 +1428,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/call/_startCanceled', 'POST',
@@ -1527,7 +1527,7 @@ class CallsApi(object):
             ['application/x-www-form-urlencoded'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/call/_startFailed', 'POST',
@@ -1838,7 +1838,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/_confirmRing', 'POST',
@@ -1951,7 +1951,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_dtmf', 'POST',
@@ -2056,7 +2056,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_end', 'POST',
@@ -2173,7 +2173,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls', 'GET',
@@ -2278,7 +2278,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_hold', 'POST',
@@ -2389,7 +2389,7 @@ class CallsApi(object):
             ['application/x-www-form-urlencoded'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/_merge', 'POST',
@@ -2494,7 +2494,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_mute', 'POST',
@@ -2698,7 +2698,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_unhold', 'POST',
@@ -2803,7 +2803,7 @@ class CallsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_unmute', 'POST',

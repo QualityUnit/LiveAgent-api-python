@@ -218,6 +218,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -250,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -455,6 +460,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -487,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -509,6 +519,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -539,7 +554,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -685,6 +700,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -719,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -743,6 +763,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -771,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -795,6 +820,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -823,7 +853,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -963,6 +993,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -995,7 +1030,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1017,6 +1052,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -1049,7 +1089,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1071,6 +1111,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -1101,7 +1146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1123,6 +1168,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -1163,7 +1213,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1185,6 +1235,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -1215,7 +1270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1239,6 +1294,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -1271,7 +1331,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1293,6 +1353,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -1323,7 +1388,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1402,6 +1467,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -1432,7 +1502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1454,6 +1524,11 @@ import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
 configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
@@ -1484,7 +1559,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 

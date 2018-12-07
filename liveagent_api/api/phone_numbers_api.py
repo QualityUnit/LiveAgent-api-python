@@ -488,7 +488,7 @@ class PhoneNumbersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['privileges']  # noqa: E501
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
             '/phone_numbers/{phoneNumberId}', 'DELETE',

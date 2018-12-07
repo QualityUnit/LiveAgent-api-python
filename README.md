@@ -209,6 +209,7 @@ Class | Method | HTTP request | Description
 *PhonesApi* | [**get_phone**](docs/PhonesApi.md#get_phone) | **GET** /phones/{phoneId} | Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
 *PhonesApi* | [**get_phones_list**](docs/PhonesApi.md#get_phones_list) | **GET** /phones | Gets list of available phone devices. Special filters (userId - filter phones available for specified user only) 
 *PhonesApi* | [**remove_phone**](docs/PhonesApi.md#remove_phone) | **DELETE** /phones/{phoneId} | Remove phone
+*PhonesApi* | [**update_phone**](docs/PhonesApi.md#update_phone) | **PUT** /phones/{phoneId} | Update phone
 *PhonesApi* | [**update_phone_params**](docs/PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone paramas
 *PlansApi* | [**get_device_department_plan**](docs/PlansApi.md#get_device_department_plan) | **GET** /devices/{deviceId}/departments/{departmentId}/plans | Get device department plan
 *PredefinedAnswersApi* | [**create_predefined_answer**](docs/PredefinedAnswersApi.md#create_predefined_answer) | **POST** /predefined_answers | Create predefined answer
