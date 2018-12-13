@@ -14,33 +14,30 @@ Retrieves the batch status and remaining items to process
 
 Retrieves the batch status and remaining items to process
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.QueueApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.QueueApi()
 batch_id = 'batch_id_example' # str | 
 
-try:
+try: 
     # Retrieves the batch status and remaining items to process
     api_response = api_instance.get_queue_batch(batch_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling QueueApi->get_queue_batch: %s\n" % e)
+    print "Exception when calling QueueApi->get_queue_batch: %s\n" % e
 ```
 
 ### Parameters
@@ -55,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 

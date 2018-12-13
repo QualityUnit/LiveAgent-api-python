@@ -28,33 +28,30 @@ Method | HTTP request | Description
 
 Create new device
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device = liveagent_api.Device() # Device |  (optional)
 
-try:
+try: 
     # Create new device
     api_response = api_instance.create_device(device=device)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->create_device: %s\n" % e)
+    print "Exception when calling DevicesApi->create_device: %s\n" % e
 ```
 
 ### Parameters
@@ -69,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -83,35 +80,32 @@ Name | Type | Description  | Notes
 
 Create device department plans
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 department_id = 'department_id_example' # str | 
 plan = liveagent_api.DeviceDepartmentPlanList() # DeviceDepartmentPlanList |  (optional)
 
-try:
+try: 
     # Create device department plans
     api_response = api_instance.create_device_department_plans(device_id, department_id, plan=plan)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->create_device_department_plans: %s\n" % e)
+    print "Exception when calling DevicesApi->create_device_department_plans: %s\n" % e
 ```
 
 ### Parameters
@@ -128,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -142,33 +136,30 @@ Name | Type | Description  | Notes
 
 Delete device
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 
-try:
+try: 
     # Delete device
     api_response = api_instance.delete_device(device_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->delete_device: %s\n" % e)
+    print "Exception when calling DevicesApi->delete_device: %s\n" % e
 ```
 
 ### Parameters
@@ -183,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -199,34 +190,31 @@ Delete device department
 
 Deletes a device department
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 department_id = 'department_id_example' # str | 
 
-try:
+try: 
     # Delete device department
     api_response = api_instance.delete_device_department(device_id, department_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->delete_device_department: %s\n" % e)
+    print "Exception when calling DevicesApi->delete_device_department: %s\n" % e
 ```
 
 ### Parameters
@@ -242,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -258,34 +246,31 @@ Delete device department plans
 
 Deletes a device department plans
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 department_id = 'department_id_example' # str | 
 
-try:
+try: 
     # Delete device department plans
     api_response = api_instance.delete_device_department_plans(device_id, department_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->delete_device_department_plans: %s\n" % e)
+    print "Exception when calling DevicesApi->delete_device_department_plans: %s\n" % e
 ```
 
 ### Parameters
@@ -301,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -317,34 +302,31 @@ Delete device departments
 
 Deletes a device departments
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 device = liveagent_api.DeviceDepartmentList() # DeviceDepartmentList |  (optional)
 
-try:
+try: 
     # Delete device departments
     api_response = api_instance.delete_device_departments(device_id, device=device)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->delete_device_departments: %s\n" % e)
+    print "Exception when calling DevicesApi->delete_device_departments: %s\n" % e
 ```
 
 ### Parameters
@@ -360,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -374,33 +356,30 @@ Name | Type | Description  | Notes
 
 Get device by id
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 
-try:
+try: 
     # Get device by id
     api_response = api_instance.get_device(device_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->get_device: %s\n" % e)
+    print "Exception when calling DevicesApi->get_device: %s\n" % e
 ```
 
 ### Parameters
@@ -415,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -429,34 +408,31 @@ Name | Type | Description  | Notes
 
 Get device department by id
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 department_id = 'department_id_example' # str | 
 
-try:
+try: 
     # Get device department by id
     api_response = api_instance.get_device_department(device_id, department_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->get_device_department: %s\n" % e)
+    print "Exception when calling DevicesApi->get_device_department: %s\n" % e
 ```
 
 ### Parameters
@@ -472,7 +448,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -486,34 +462,31 @@ Name | Type | Description  | Notes
 
 Get device department plan
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 department_id = 'department_id_example' # str | 
 
-try:
+try: 
     # Get device department plan
     api_response = api_instance.get_device_department_plan(device_id, department_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->get_device_department_plan: %s\n" % e)
+    print "Exception when calling DevicesApi->get_device_department_plan: %s\n" % e
 ```
 
 ### Parameters
@@ -529,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -543,25 +516,22 @@ Name | Type | Description  | Notes
 
 Get device departments
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
@@ -572,12 +542,12 @@ sort_field = 'sort_field_example' # str | Sorting field (optional)
 sort_fields = 'sort_fields_example' # str | 'Sort fields (json object {column:direction, ...}).'<br> Direction can be:<br> - \"ASC\" (ascending)<br> - \"DESC\" (descending) If _sortFields is defined, _sortField and _sortDir is ignored. (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
-try:
+try: 
     # Get device departments
     api_response = api_instance.get_device_departments(device_id, page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, sort_fields=sort_fields, filters=filters)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->get_device_departments: %s\n" % e)
+    print "Exception when calling DevicesApi->get_device_departments: %s\n" % e
 ```
 
 ### Parameters
@@ -600,7 +570,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -614,33 +584,30 @@ Name | Type | Description  | Notes
 
 Get device departments by department id
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 department_id = 'department_id_example' # str | 
 
-try:
+try: 
     # Get device departments by department id
     api_response = api_instance.get_device_departments_by_department_id(department_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->get_device_departments_by_department_id: %s\n" % e)
+    print "Exception when calling DevicesApi->get_device_departments_by_department_id: %s\n" % e
 ```
 
 ### Parameters
@@ -655,7 +622,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -669,25 +636,22 @@ Name | Type | Description  | Notes
 
 Gets list of devices
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
@@ -696,12 +660,12 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
-try:
+try: 
     # Gets list of devices
     api_response = api_instance.get_devices_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->get_devices_list: %s\n" % e)
+    print "Exception when calling DevicesApi->get_devices_list: %s\n" % e
 ```
 
 ### Parameters
@@ -722,7 +686,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -736,32 +700,29 @@ Name | Type | Description  | Notes
 
 Gets list of current agent's mobile devices. Creates new one if there are no devices.
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 
-try:
+try: 
     # Gets list of current agent's mobile devices. Creates new one if there are no devices.
     api_response = api_instance.get_my_mobile_devices_list()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->get_my_mobile_devices_list: %s\n" % e)
+    print "Exception when calling DevicesApi->get_my_mobile_devices_list: %s\n" % e
 ```
 
 ### Parameters
@@ -773,7 +734,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -787,34 +748,31 @@ This endpoint does not need any parameter.
 
 Update device
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 device = liveagent_api.Device() # Device |  (optional)
 
-try:
+try: 
     # Update device
     api_response = api_instance.update_device(device_id, device=device)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->update_device: %s\n" % e)
+    print "Exception when calling DevicesApi->update_device: %s\n" % e
 ```
 
 ### Parameters
@@ -830,7 +788,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -844,35 +802,32 @@ Name | Type | Description  | Notes
 
 Update device department
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 department_id = 'department_id_example' # str | 
 device_department = liveagent_api.DeviceDepartment() # DeviceDepartment |  (optional)
 
-try:
+try: 
     # Update device department
     api_response = api_instance.update_device_department(device_id, department_id, device_department=device_department)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->update_device_department: %s\n" % e)
+    print "Exception when calling DevicesApi->update_device_department: %s\n" % e
 ```
 
 ### Parameters
@@ -889,7 +844,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -903,35 +858,32 @@ Name | Type | Description  | Notes
 
 Update device department plan
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_id = 56 # int | 
 department_id = 'department_id_example' # str | 
 device_department_plan = liveagent_api.DeviceDepartmentPlan() # DeviceDepartmentPlan |  (optional)
 
-try:
+try: 
     # Update device department plan
     api_response = api_instance.update_device_department_plan(device_id, department_id, device_department_plan=device_department_plan)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->update_device_department_plan: %s\n" % e)
+    print "Exception when calling DevicesApi->update_device_department_plan: %s\n" % e
 ```
 
 ### Parameters
@@ -948,7 +900,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -962,33 +914,30 @@ Name | Type | Description  | Notes
 
 Update device departments
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.DevicesApi()
 device_departments = liveagent_api.DeviceDepartmentList() # DeviceDepartmentList |  (optional)
 
-try:
+try: 
     # Update device departments
     api_response = api_instance.update_device_departments(device_departments=device_departments)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->update_device_departments: %s\n" % e)
+    print "Exception when calling DevicesApi->update_device_departments: %s\n" % e
 ```
 
 ### Parameters
@@ -1003,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 

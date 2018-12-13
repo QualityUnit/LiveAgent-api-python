@@ -44,8 +44,6 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
-venv/
-.python-version
 
 # Translations
 *.mo
@@ -62,13 +60,3 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
-
-#Idea
-.idea/
-
-#Gradle
-build/
-.gradle/
-
-#Swagger
-.swagger-codegen/

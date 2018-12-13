@@ -1,10 +1,10 @@
-# liveagent_api.PageVisitsApi
+# liveagent_api.PagevisitsApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_page_visit_by_contact_id**](PageVisitsApi.md#get_page_visit_by_contact_id) | **GET** /page_visits/{contactId}/contact | Gets a page visits
+[**get_page_visit_by_contact_id**](PagevisitsApi.md#get_page_visit_by_contact_id) | **GET** /page_visits/{contactId}/contact | Gets a page visits
 
 
 # **get_page_visit_by_contact_id**
@@ -12,27 +12,24 @@ Method | HTTP request | Description
 
 Gets a page visits
 
-Gets a page visits for user contact id. If elastic search is enabled and it throws exception, error is logged and empty array is returned. 
+Gets a page visits for user contact id. If elastic search is enabled and it throws\nexception, error is logged and empty array is returned.\n
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.PageVisitsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.PagevisitsApi()
 contact_id = 'contact_id_example' # str | 
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
@@ -41,12 +38,12 @@ per_page = 10 # int | Results per page. Used only if _page is used. (optional) (
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
-try:
+try: 
     # Gets a page visits
     api_response = api_instance.get_page_visit_by_contact_id(contact_id, sort_dir=sort_dir, sort_field=sort_field, page=page, per_page=per_page, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PageVisitsApi->get_page_visit_by_contact_id: %s\n" % e)
+    print "Exception when calling PagevisitsApi->get_page_visit_by_contact_id: %s\n" % e
 ```
 
 ### Parameters
@@ -67,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 

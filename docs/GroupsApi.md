@@ -18,33 +18,30 @@ Create contact group
 
 Create new contact group
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.GroupsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.GroupsApi()
 group = liveagent_api.Group() # Group |  (optional)
 
-try:
+try: 
     # Create contact group
     api_response = api_instance.create_group(group=group)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling GroupsApi->create_group: %s\n" % e)
+    print "Exception when calling GroupsApi->create_group: %s\n" % e
 ```
 
 ### Parameters
@@ -59,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -75,33 +72,30 @@ Delete contact group
 
 Deletes a contact group
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.GroupsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.GroupsApi()
 group_id = 'group_id_example' # str | 
 
-try:
+try: 
     # Delete contact group
     api_response = api_instance.delete_group(group_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling GroupsApi->delete_group: %s\n" % e)
+    print "Exception when calling GroupsApi->delete_group: %s\n" % e
 ```
 
 ### Parameters
@@ -116,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -130,33 +124,30 @@ Name | Type | Description  | Notes
 
 Get contact group by group id
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.GroupsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.GroupsApi()
 group_id = 'group_id_example' # str | 
 
-try:
+try: 
     # Get contact group by group id
     api_response = api_instance.get_group_by_id(group_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling GroupsApi->get_group_by_id: %s\n" % e)
+    print "Exception when calling GroupsApi->get_group_by_id: %s\n" % e
 ```
 
 ### Parameters
@@ -171,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -185,36 +176,33 @@ Name | Type | Description  | Notes
 
 Gets list of contact groups
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.GroupsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.GroupsApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
-try:
+try: 
     # Gets list of contact groups
     api_response = api_instance.get_groups_list(page=page, per_page=per_page, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling GroupsApi->get_groups_list: %s\n" % e)
+    print "Exception when calling GroupsApi->get_groups_list: %s\n" % e
 ```
 
 ### Parameters
@@ -232,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -246,34 +234,31 @@ Name | Type | Description  | Notes
 
 Update contact group
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.GroupsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.GroupsApi()
 group_id = 'group_id_example' # str | 
 group = liveagent_api.Group() # Group |  (optional)
 
-try:
+try: 
     # Update contact group
     api_response = api_instance.update_group(group_id, group=group)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling GroupsApi->update_group: %s\n" % e)
+    print "Exception when calling GroupsApi->update_group: %s\n" % e
 ```
 
 ### Parameters
@@ -289,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 

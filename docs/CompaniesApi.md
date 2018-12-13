@@ -16,33 +16,30 @@ Method | HTTP request | Description
 
 Create new company
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CompaniesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CompaniesApi()
 company = liveagent_api.Company() # Company |  (optional)
 
-try:
+try: 
     # Create new company
     api_response = api_instance.create_company(company=company)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompaniesApi->create_company: %s\n" % e)
+    print "Exception when calling CompaniesApi->create_company: %s\n" % e
 ```
 
 ### Parameters
@@ -57,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -73,34 +70,31 @@ Delete company
 
 Deletes a company
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CompaniesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CompaniesApi()
 company_id = 'company_id_example' # str | 
 delete_tickets = true # bool | <u>true</u>: Delete company from all lists and also delete all its tickets.<br> <u>false</u>: Delete company from all lists but leave its tickets intact.
 
-try:
+try: 
     # Delete company
     api_response = api_instance.delete_company(company_id, delete_tickets)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompaniesApi->delete_company: %s\n" % e)
+    print "Exception when calling CompaniesApi->delete_company: %s\n" % e
 ```
 
 ### Parameters
@@ -116,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -130,25 +124,22 @@ Name | Type | Description  | Notes
 
 Gets list of companies
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CompaniesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CompaniesApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
@@ -157,12 +148,12 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
-try:
+try: 
     # Gets list of companies
     api_response = api_instance.get_companies_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompaniesApi->get_companies_list: %s\n" % e)
+    print "Exception when calling CompaniesApi->get_companies_list: %s\n" % e
 ```
 
 ### Parameters
@@ -183,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -197,33 +188,30 @@ Name | Type | Description  | Notes
 
 Get company by specific id
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CompaniesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CompaniesApi()
 company_id = 'company_id_example' # str | 
 
-try:
+try: 
     # Get company by specific id
     api_response = api_instance.get_specific_company(company_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompaniesApi->get_specific_company: %s\n" % e)
+    print "Exception when calling CompaniesApi->get_specific_company: %s\n" % e
 ```
 
 ### Parameters
@@ -238,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -252,34 +240,31 @@ Name | Type | Description  | Notes
 
 Update company
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CompaniesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CompaniesApi()
 company_id = 'company_id_example' # str | 
 company = liveagent_api.Company() # Company |  (optional)
 
-try:
+try: 
     # Update company
     api_response = api_instance.update_company(company_id, company=company)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CompaniesApi->update_company: %s\n" % e)
+    print "Exception when calling CompaniesApi->update_company: %s\n" % e
 ```
 
 ### Parameters
@@ -295,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
