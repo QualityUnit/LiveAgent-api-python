@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **api_phone_id** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **service_type** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**online_status** | **str** |  | [optional] 
+**preset_status** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

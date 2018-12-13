@@ -15,7 +15,6 @@ Method | HTTP request | Description
 [**pause_agent**](AgentsApi.md#pause_agent) | **POST** /agents/{userId}/_pause | Pause agent
 [**undelete_agent**](AgentsApi.md#undelete_agent) | **POST** /agents/undelete | Undelete agent
 [**update_agent**](AgentsApi.md#update_agent) | **PUT** /agents/{userId} | Update agent
-[**update_agent_statuses**](AgentsApi.md#update_agent_statuses) | **PUT** /agents/{userId}/status | Update agent statuses in departments
 
 
 # **convert_registered_visitor**
@@ -25,30 +24,33 @@ Convert registered visitor
 
 Convert registered visitor to agent
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 agent = liveagent_api.Agent() # Agent |  (optional)
 
-try: 
+try:
     # Convert registered visitor
     api_response = api_instance.convert_registered_visitor(agent=agent)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->convert_registered_visitor: %s\n" % e
+    print("Exception when calling AgentsApi->convert_registered_visitor: %s\n" % e)
 ```
 
 ### Parameters
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -79,30 +81,33 @@ Agent
 
 Deletes an agent
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 user_id = 'user_id_example' # str | 
 
-try: 
+try:
     # Agent
     api_response = api_instance.delete_agent(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->delete_agent: %s\n" % e
+    print("Exception when calling AgentsApi->delete_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -117,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -133,30 +138,33 @@ Agent
 
 Retrieves an agent
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 user_id = 'user_id_example' # str | 
 
-try: 
+try:
     # Agent
     api_response = api_instance.get_agent(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->get_agent: %s\n" % e
+    print("Exception when calling AgentsApi->get_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -171,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -187,30 +195,33 @@ Get agent statuses in departments
 
 Gets agent statuses in departments
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 user_id = 'user_id_example' # str | 
 
-try: 
+try:
     # Get agent statuses in departments
     api_response = api_instance.get_agent_statuses(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->get_agent_statuses: %s\n" % e
+    print("Exception when calling AgentsApi->get_agent_statuses: %s\n" % e)
 ```
 
 ### Parameters
@@ -225,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -241,22 +252,25 @@ Agent list
 
 List of agents
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
@@ -265,12 +279,12 @@ filters = 'filters_example' # str | Filters (json object {column:value, ...}) (o
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
-try: 
+try:
     # Agent list
     api_response = api_instance.get_agents(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->get_agents: %s\n" % e
+    print("Exception when calling AgentsApi->get_agents: %s\n" % e)
 ```
 
 ### Parameters
@@ -291,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -307,22 +321,25 @@ Agent Activity list
 
 List of online agents with their activity status (A - Available, B - Busy) and open tickets.
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
@@ -331,12 +348,12 @@ filters = 'filters_example' # str | Filters (json object {column:value, ...}) (o
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
-try: 
+try:
     # Agent Activity list
     api_response = api_instance.get_agents_activity(page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->get_agents_activity: %s\n" % e
+    print("Exception when calling AgentsApi->get_agents_activity: %s\n" % e)
 ```
 
 ### Parameters
@@ -357,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -373,30 +390,33 @@ Login agent
 
 Login agent
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 user_id = 'user_id_example' # str | 
 
-try: 
+try:
     # Login agent
     api_response = api_instance.login_agent(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->login_agent: %s\n" % e
+    print("Exception when calling AgentsApi->login_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -411,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -427,30 +447,33 @@ Logout agent
 
 Logout an agent
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 user_id = 'user_id_example' # str | 
 
-try: 
+try:
     # Logout agent
     api_response = api_instance.logout_agent(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->logout_agent: %s\n" % e
+    print("Exception when calling AgentsApi->logout_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -465,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -481,30 +504,33 @@ Pause agent
 
 Pauses an agent
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 user_id = 'user_id_example' # str | 
 
-try: 
+try:
     # Pause agent
     api_response = api_instance.pause_agent(user_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->pause_agent: %s\n" % e
+    print("Exception when calling AgentsApi->pause_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -519,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -535,30 +561,33 @@ Undelete agent
 
 Undelete deleted agent
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 agent = liveagent_api.Agent() # Agent |  (optional)
 
-try: 
+try:
     # Undelete agent
     api_response = api_instance.undelete_agent(agent=agent)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->undelete_agent: %s\n" % e
+    print("Exception when calling AgentsApi->undelete_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -573,7 +602,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -589,31 +618,34 @@ Update agent
 
 Update an agent
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
+api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
 user_id = 'user_id_example' # str | 
 agent = liveagent_api.Agent() # Agent |  (optional)
 
-try: 
+try:
     # Update agent
     api_response = api_instance.update_agent(user_id, agent=agent)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling AgentsApi->update_agent: %s\n" % e
+    print("Exception when calling AgentsApi->update_agent: %s\n" % e)
 ```
 
 ### Parameters
@@ -629,63 +661,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_agent_statuses**
-> list[AgentStatus] update_agent_statuses(user_id, agent_statuses=agent_statuses)
-
-Update agent statuses in departments
-
-Updates agent statuses in departments
-
-### Example 
-```python
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-# Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
-
-# create an instance of the API class
-api_instance = liveagent_api.AgentsApi()
-user_id = 'user_id_example' # str | 
-agent_statuses = liveagent_api.AgentStatuses() # AgentStatuses |  (optional)
-
-try: 
-    # Update agent statuses in departments
-    api_response = api_instance.update_agent_statuses(user_id, agent_statuses=agent_statuses)
-    pprint(api_response)
-except ApiException as e:
-    print "Exception when calling AgentsApi->update_agent_statuses: %s\n" % e
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
- **agent_statuses** | [**AgentStatuses**](AgentStatuses.md)|  | [optional] 
-
-### Return type
-
-[**list[AgentStatus]**](AgentStatus.md)
-
-### Authorization
-
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
