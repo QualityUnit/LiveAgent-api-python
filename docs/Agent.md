@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **email** | **str** |  | 
 **role** | **str** |  | [optional] [default to 'agent']
 **avatar_url** | **str** |  | [optional] 
-**online_status** | **str** | F - offline, N - online  | [optional] 
-**status** | **str** | A - active, X - deleted  | [optional] 
-**gender** | **str** | M - male, F - female, X - unspecified  | [optional] [default to 'X']
+**online_status** | **str** | F - offline, N - online\n | [optional] 
+**status** | **str** | A - active, X - deleted\n | [optional] 
+**gender** | **str** | M - male, F - female, X - unspecified\n | [optional] [default to 'X']
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

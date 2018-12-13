@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **str** | N - No billing A - Billing active S &#x3D; Billing stopped  | [optional] 
+**status** | **str** | N - No billing\nA - Billing active\nS &#x3D; Billing stopped\n | [optional] 
 **valid_to_date** | **datetime** |  | [optional] 
 **next_billing_date** | **datetime** |  | [optional] 
 **errors** | **int** | Number of charge errors since last successful billing or account unsuspend. | [optional] 

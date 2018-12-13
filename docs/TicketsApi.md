@@ -8,8 +8,6 @@ Method | HTTP request | Description
 [**delete_ticket**](TicketsApi.md#delete_ticket) | **DELETE** /tickets/{ticketId} | Deletes ticket
 [**get_ticket**](TicketsApi.md#get_ticket) | **GET** /tickets/{ticketId} | Gets ticket
 [**get_ticket_attribute**](TicketsApi.md#get_ticket_attribute) | **GET** /tickets/{ticketId}/attributes/{attributeName} | Gets ticket attribute
-[**get_ticket_history**](TicketsApi.md#get_ticket_history) | **GET** /tickets/history | Gets ticket
-[**get_ticket_history_0**](TicketsApi.md#get_ticket_history_0) | **GET** /tickets/{ticketId}/history | Gets ticket history
 [**get_ticket_message_groups**](TicketsApi.md#get_ticket_message_groups) | **GET** /tickets/{ticketId}/messages | Gets ticket message groups and messages
 [**get_ticket_sla**](TicketsApi.md#get_ticket_sla) | **GET** /tickets/{ticketId}/sla | Gets ticket Sla
 [**get_tickets_list**](TicketsApi.md#get_tickets_list) | **GET** /tickets | Gets list of tickets
@@ -25,33 +23,30 @@ Create ticket
 
 Create new ticket
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 ticket = liveagent_api.TicketListItem() # TicketListItem |  (optional)
 
-try:
+try: 
     # Create ticket
     api_response = api_instance.create_ticket(ticket=ticket)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->create_ticket: %s\n" % e)
+    print "Exception when calling TicketsApi->create_ticket: %s\n" % e
 ```
 
 ### Parameters
@@ -66,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -80,33 +75,30 @@ Name | Type | Description  | Notes
 
 Deletes ticket
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 ticket_id = 'ticket_id_example' # str | 
 
-try:
+try: 
     # Deletes ticket
     api_response = api_instance.delete_ticket(ticket_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->delete_ticket: %s\n" % e)
+    print "Exception when calling TicketsApi->delete_ticket: %s\n" % e
 ```
 
 ### Parameters
@@ -121,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -135,33 +127,30 @@ Name | Type | Description  | Notes
 
 Gets ticket
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 ticket_id = 'ticket_id_example' # str | 
 
-try:
+try: 
     # Gets ticket
     api_response = api_instance.get_ticket(ticket_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->get_ticket: %s\n" % e)
+    print "Exception when calling TicketsApi->get_ticket: %s\n" % e
 ```
 
 ### Parameters
@@ -176,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -190,34 +179,31 @@ Name | Type | Description  | Notes
 
 Gets ticket attribute
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 ticket_id = 'ticket_id_example' # str | 
 attribute_name = 'attribute_name_example' # str | 
 
-try:
+try: 
     # Gets ticket attribute
     api_response = api_instance.get_ticket_attribute(ticket_id, attribute_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->get_ticket_attribute: %s\n" % e)
+    print "Exception when calling TicketsApi->get_ticket_attribute: %s\n" % e
 ```
 
 ### Parameters
@@ -233,129 +219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_ticket_history**
-> list[TicketHistory] get_ticket_history(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
-
-Gets ticket
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
-page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
-per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
-_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
-to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
-sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
-
-try:
-    # Gets ticket
-    api_response = api_instance.get_ticket_history(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TicketsApi->get_ticket_history: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
- **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
- **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
- **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
- **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
-
-### Return type
-
-[**list[TicketHistory]**](TicketHistory.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json, text/csv
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_ticket_history_0**
-> list[TicketHistory] get_ticket_history_0(ticket_id)
-
-Gets ticket history
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
-ticket_id = 'ticket_id_example' # str | 
-
-try:
-    # Gets ticket history
-    api_response = api_instance.get_ticket_history_0(ticket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TicketsApi->get_ticket_history_0: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ticket_id** | **str**|  | 
-
-### Return type
-
-[**list[TicketHistory]**](TicketHistory.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -369,25 +233,22 @@ Name | Type | Description  | Notes
 
 Gets ticket message groups and messages
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 ticket_id = 'ticket_id_example' # str | 
 include_quoted_messages = false # bool | If set, response will include quoted messages context, otherwise - only metadata. (optional) (default to false)
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
@@ -398,12 +259,12 @@ filters = 'filters_example' # str | Filters (json object {column:value, ...}) (o
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
-try:
+try: 
     # Gets ticket message groups and messages
     api_response = api_instance.get_ticket_message_groups(ticket_id, include_quoted_messages=include_quoted_messages, page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->get_ticket_message_groups: %s\n" % e)
+    print "Exception when calling TicketsApi->get_ticket_message_groups: %s\n" % e
 ```
 
 ### Parameters
@@ -426,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -440,33 +301,30 @@ Name | Type | Description  | Notes
 
 Gets ticket Sla
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 ticket_id = 'ticket_id_example' # str | 
 
-try:
+try: 
     # Gets ticket Sla
     api_response = api_instance.get_ticket_sla(ticket_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->get_ticket_sla: %s\n" % e)
+    print "Exception when calling TicketsApi->get_ticket_sla: %s\n" % e
 ```
 
 ### Parameters
@@ -481,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -495,25 +353,22 @@ Name | Type | Description  | Notes
 
 Gets list of tickets
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
@@ -522,12 +377,12 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
-try:
+try: 
     # Gets list of tickets
     api_response = api_instance.get_tickets_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->get_tickets_list: %s\n" % e)
+    print "Exception when calling TicketsApi->get_tickets_list: %s\n" % e
 ```
 
 ### Parameters
@@ -548,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -562,35 +417,32 @@ Name | Type | Description  | Notes
 
 Sets ticket attribute
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 ticket_id = 'ticket_id_example' # str | 
 attribute_name = 'attribute_name_example' # str | 
 value = 'value_example' # str | New attribute value
 
-try:
+try: 
     # Sets ticket attribute
     api_response = api_instance.set_ticket_attribute(ticket_id, attribute_name, value)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->set_ticket_attribute: %s\n" % e)
+    print "Exception when calling TicketsApi->set_ticket_attribute: %s\n" % e
 ```
 
 ### Parameters
@@ -607,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -621,34 +473,31 @@ Name | Type | Description  | Notes
 
 Sets postpone status to ticket
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 ticket_id = 'ticket_id_example' # str | 
 postpone_data = liveagent_api.TicketPostpone() # TicketPostpone |  (optional)
 
-try:
+try: 
     # Sets postpone status to ticket
     api_response = api_instance.set_ticket_postpone(ticket_id, postpone_data=postpone_data)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->set_ticket_postpone: %s\n" % e)
+    print "Exception when calling TicketsApi->set_ticket_postpone: %s\n" % e
 ```
 
 ### Parameters
@@ -664,7 +513,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -678,34 +527,31 @@ Name | Type | Description  | Notes
 
 Updates ticket
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TicketsApi()
 ticket_id = 'ticket_id_example' # str | 
 ticket = liveagent_api.TicketUpdatable() # TicketUpdatable |  (optional)
 
-try:
+try: 
     # Updates ticket
     api_response = api_instance.update_ticket(ticket_id, ticket=ticket)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TicketsApi->update_ticket: %s\n" % e)
+    print "Exception when calling TicketsApi->update_ticket: %s\n" % e
 ```
 
 ### Parameters
@@ -721,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 

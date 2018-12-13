@@ -15,9 +15,8 @@ Vat validity
 
 Vat validity check
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
@@ -27,12 +26,12 @@ from pprint import pprint
 api_instance = liveagent_api.BillingApi()
 vat_id = 'vat_id_example' # str | 
 
-try:
+try: 
     # Vat validity
     api_response = api_instance.check_vat(vat_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BillingApi->check_vat: %s\n" % e)
+    print "Exception when calling BillingApi->check_vat: %s\n" % e
 ```
 
 ### Parameters
@@ -63,9 +62,8 @@ Coupon
 
 Get coupon
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
@@ -75,12 +73,12 @@ from pprint import pprint
 api_instance = liveagent_api.BillingApi()
 coupon_code = 'coupon_code_example' # str | 
 
-try:
+try: 
     # Coupon
     api_response = api_instance.get_coupon(coupon_code)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BillingApi->get_coupon: %s\n" % e)
+    print "Exception when calling BillingApi->get_coupon: %s\n" % e
 ```
 
 ### Parameters

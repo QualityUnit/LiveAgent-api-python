@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **company** | **str** |  | [optional] 
 **date_created** | **datetime** |  | [optional] 
 **date_validity** | **datetime** |  | [optional] 
-**status** | **str** | I - installing A - active S - suspended T - terminated D - deleted  | [optional] 
+**status** | **str** | I - installing\nA - active\nS - suspended\nT - terminated\nD - deleted\n | [optional] 
 **account_id** | **str** |  | [optional] 
 **cluster_id** | **str** |  | [optional] 
 **task_id** | **str** |  | [optional] 

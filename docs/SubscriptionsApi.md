@@ -35,34 +35,31 @@ Addon change
 
 Change active subscription addons
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 body = liveagent_api.AddonList() # AddonList |  (optional)
 
-try:
+try: 
     # Addon change
     api_response = api_instance.change_addons(subscription_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->change_addons: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->change_addons: %s\n" % e
 ```
 
 ### Parameters
@@ -78,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -94,34 +91,31 @@ Change plan
 
 Upgrade subscription to another variation. In case of upgrade from paid to paid, it's possible to change country without changing payment method. If change is between EU and not EU, different payment rules might apply.
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 body = liveagent_api.Upgrade() # Upgrade |  (optional)
 
-try:
+try: 
     # Change plan
     api_response = api_instance.change_plan(subscription_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->change_plan: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->change_plan: %s\n" % e
 ```
 
 ### Parameters
@@ -137,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -153,33 +147,30 @@ Addon list
 
 Active subscription addons
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Addon list
     api_response = api_instance.get_active_addons(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_active_addons: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_active_addons: %s\n" % e
 ```
 
 ### Parameters
@@ -194,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -210,33 +201,30 @@ Billing info
 
 Get billing info
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Billing info
     api_response = api_instance.get_billing_info(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_billing_info: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_billing_info: %s\n" % e
 ```
 
 ### Parameters
@@ -251,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -267,33 +255,30 @@ Billing metrics
 
 Get billing metrics
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Billing metrics
     api_response = api_instance.get_billing_metrics(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_billing_metrics: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_billing_metrics: %s\n" % e
 ```
 
 ### Parameters
@@ -308,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -324,33 +309,30 @@ Billing status
 
 Get billing status
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Billing status
     api_response = api_instance.get_billing_status(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_billing_status: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_billing_status: %s\n" % e
 ```
 
 ### Parameters
@@ -365,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -381,33 +363,30 @@ Domain info
 
 Get domain info
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Domain info
     api_response = api_instance.get_domain_info(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_domain_info: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_domain_info: %s\n" % e
 ```
 
 ### Parameters
@@ -422,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -438,33 +417,30 @@ Payment method
 
 Get payment method
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Payment method
     api_response = api_instance.get_payment_method(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_payment_method: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_payment_method: %s\n" % e
 ```
 
 ### Parameters
@@ -479,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -495,35 +471,32 @@ Payment processor
 
 Get payment processor to generate token for when updating payment method
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 payment_type = 'payment_type_example' # str | 
 country = 'country_example' # str |  (optional)
 
-try:
+try: 
     # Payment processor
     api_response = api_instance.get_payment_processor(subscription_id, payment_type, country=country)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_payment_processor: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_payment_processor: %s\n" % e
 ```
 
 ### Parameters
@@ -540,7 +513,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -556,33 +529,30 @@ Subscription
 
 Get subscription
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Subscription
     api_response = api_instance.get_subscription(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_subscription: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_subscription: %s\n" % e
 ```
 
 ### Parameters
@@ -597,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -613,33 +583,30 @@ Subscription attribute list
 
 Subscription attributes list
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Subscription attribute list
     api_response = api_instance.get_subscription_attributes(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_subscription_attributes: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_subscription_attributes: %s\n" % e
 ```
 
 ### Parameters
@@ -654,7 +621,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -670,33 +637,30 @@ Subscription discounts
 
 Returns all active discounts for specified subscription
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Subscription discounts
     api_response = api_instance.get_subscription_discounts(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_subscription_discounts: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_subscription_discounts: %s\n" % e
 ```
 
 ### Parameters
@@ -711,7 +675,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -727,25 +691,22 @@ Subscription invoice list
 
 Subscription invoices list
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
@@ -755,12 +716,12 @@ filters = 'filters_example' # str | Filters (json object {column:value, ...}) (o
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
-try:
+try: 
     # Subscription invoice list
     api_response = api_instance.get_subscription_invoices(subscription_id, page=page, per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_subscription_invoices: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_subscription_invoices: %s\n" % e
 ```
 
 ### Parameters
@@ -782,7 +743,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -798,35 +759,32 @@ Upgrade variation list
 
 List of variations user can upgrade to and their current variation.
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 country = 'country_example' # str |  (optional)
 vat_id = 'vat_id_example' # str |  (optional)
 
-try:
+try: 
     # Upgrade variation list
     api_response = api_instance.get_upgrade_variations(subscription_id, country=country, vat_id=vat_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_upgrade_variations: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->get_upgrade_variations: %s\n" % e
 ```
 
 ### Parameters
@@ -843,7 +801,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -859,33 +817,30 @@ Restart billing
 
 If account billing is stopped, restart it.
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Restart billing
     api_response = api_instance.resume_billing(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->resume_billing: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->resume_billing: %s\n" % e
 ```
 
 ### Parameters
@@ -900,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -916,34 +871,31 @@ Billing info
 
 Update billing info
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 body = liveagent_api.BillingInfo() # BillingInfo |  (optional)
 
-try:
+try: 
     # Billing info
     api_response = api_instance.set_billing_info(subscription_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->set_billing_info: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->set_billing_info: %s\n" % e
 ```
 
 ### Parameters
@@ -959,7 +911,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -975,34 +927,31 @@ Custom domain
 
 Park custom domain on an account
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 body = liveagent_api.Domain() # Domain | Domain can be sent anytime. Custom domain can be sent by itself or along with both certificate and key. (optional)
 
-try:
+try: 
     # Custom domain
     api_response = api_instance.set_custom_domain(subscription_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->set_custom_domain: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->set_custom_domain: %s\n" % e
 ```
 
 ### Parameters
@@ -1018,7 +967,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -1034,34 +983,31 @@ Payment method
 
 Update payment method
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 body = liveagent_api.PaymentMethod() # PaymentMethod |  (optional)
 
-try:
+try: 
     # Payment method
     api_response = api_instance.set_payment_method(subscription_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->set_payment_method: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->set_payment_method: %s\n" % e
 ```
 
 ### Parameters
@@ -1077,7 +1023,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -1093,34 +1039,31 @@ Subscription usage
 
 Get subscription invoices
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 body = liveagent_api.UsageData() # UsageData |  (optional)
 
-try:
+try: 
     # Subscription usage
     api_response = api_instance.set_subscription_usage(subscription_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->set_subscription_usage: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->set_subscription_usage: %s\n" % e
 ```
 
 ### Parameters
@@ -1136,7 +1079,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -1152,34 +1095,31 @@ Stop billing
 
 Stop account. Account won't be billed anymore and will continue to work till next billing date.
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 reason = liveagent_api.StopReason() # StopReason | Reason for stopping (optional)
 
-try:
+try: 
     # Stop billing
     api_response = api_instance.stop_billing(subscription_id, reason=reason)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->stop_billing: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->stop_billing: %s\n" % e
 ```
 
 ### Parameters
@@ -1195,7 +1135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -1211,33 +1151,30 @@ Update subscription
 
 Update subscription to latest version
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 
-try:
+try: 
     # Update subscription
     api_response = api_instance.update_application(subscription_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->update_application: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->update_application: %s\n" % e
 ```
 
 ### Parameters
@@ -1252,7 +1189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -1268,34 +1205,31 @@ Test Billing info
 
 Checks if billing info can be updated without issues. Field 'force' in BillingInfo is ignored in this call.
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.SubscriptionsApi()
 subscription_id = 'subscription_id_example' # str | 
 body = liveagent_api.BillingInfo() # BillingInfo |  (optional)
 
-try:
+try: 
     # Test Billing info
     api_response = api_instance.validate_billing_info(subscription_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SubscriptionsApi->validate_billing_info: %s\n" % e)
+    print "Exception when calling SubscriptionsApi->validate_billing_info: %s\n" % e
 ```
 
 ### Parameters
@@ -1311,7 +1245,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 

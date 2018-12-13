@@ -37,34 +37,31 @@ Method | HTTP request | Description
 
 Adds a message to the call group in corresponfing ticket
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 body = liveagent_api.CallMessage() # CallMessage |  (optional)
 
-try:
+try: 
     # Adds a message to the call group in corresponfing ticket
     api_response = api_instance.call_add_message(call_id, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_add_message: %s\n" % e)
+    print "Exception when calling CallsApi->call_add_message: %s\n" % e
 ```
 
 ### Parameters
@@ -80,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -94,34 +91,31 @@ Name | Type | Description  | Notes
 
 Adds a recording to the call group in corresponfing ticket
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 file = '/path/to/file.txt' # file |  (optional)
 
-try:
+try: 
     # Adds a recording to the call group in corresponfing ticket
     api_response = api_instance.call_add_recording(call_id, file=file)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_add_recording: %s\n" % e)
+    print "Exception when calling CallsApi->call_add_recording: %s\n" % e
 ```
 
 ### Parameters
@@ -137,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -151,35 +145,32 @@ Name | Type | Description  | Notes
 
 Set call as answered by agent
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 to_number = 'to_number_example' # str | callee number
 channel_id = 'channel_id_example' # str | Channel ID (optional)
 
-try:
+try: 
     # Set call as answered by agent
     api_response = api_instance.call_answer(call_id, to_number, channel_id=channel_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_answer: %s\n" % e)
+    print "Exception when calling CallsApi->call_answer: %s\n" % e
 ```
 
 ### Parameters
@@ -196,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -210,35 +201,28 @@ Name | Type | Description  | Notes
 
 Change channel status
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
 status = 'status_example' # str | run (\"R\" - default), hold (\"H\")
 
-try:
+try: 
     # Change channel status
     api_response = api_instance.call_change_channel_status(call_id, channel_id, status)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_change_channel_status: %s\n" % e)
+    print "Exception when calling CallsApi->call_change_channel_status: %s\n" % e
 ```
 
 ### Parameters
@@ -255,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -271,25 +255,22 @@ Create new call
 
 Creates new call (ingoing / outcoming / internal). Does not initiate the outgoing call
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 to_number = 'to_number_example' # str | callee number
 from_number = 'from_number_example' # str | caller number
@@ -298,12 +279,12 @@ via_number = 'via_number_example' # str | trunk number via which call was made /
 ticket_id = 'ticket_id_example' # str | ticket id or code (optional)
 direction = 'in' # str | incoming call ('in' - default), outgoing call ('out'), internal call('int'), auto decide direction of call based on to_number ('auto') (optional) (default to in)
 
-try:
+try: 
     # Create new call
     api_response = api_instance.call_create(call_id, to_number, from_number, channel_id=channel_id, via_number=via_number, ticket_id=ticket_id, direction=direction)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_create: %s\n" % e)
+    print "Exception when calling CallsApi->call_create: %s\n" % e
 ```
 
 ### Parameters
@@ -324,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -338,34 +319,31 @@ Name | Type | Description  | Notes
 
 Fetches IVR for the call from external URL
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 fetch = liveagent_api.IvrFetch() # IvrFetch | 
 
-try:
+try: 
     # Fetches IVR for the call from external URL
     api_response = api_instance.call_fetch_ivr(call_id, fetch)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_fetch_ivr: %s\n" % e)
+    print "Exception when calling CallsApi->call_fetch_ivr: %s\n" % e
 ```
 
 ### Parameters
@@ -381,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -395,34 +373,31 @@ Name | Type | Description  | Notes
 
 Return the status of call
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 unreachable_agents = ['unreachable_agents_example'] # list[str] | Identifiers of unreachable agents that should be excluded from routing (optional)
 
-try:
+try: 
     # Return the status of call
     api_response = api_instance.call_get_status(call_id, unreachable_agents=unreachable_agents)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_get_status: %s\n" % e)
+    print "Exception when calling CallsApi->call_get_status: %s\n" % e
 ```
 
 ### Parameters
@@ -438,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -452,35 +427,28 @@ Name | Type | Description  | Notes
 
 Moves existing channel to target call
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
 to_call_id = 'to_call_id_example' # str | Target call
 
-try:
+try: 
     # Moves existing channel to target call
     api_response = api_instance.call_move_channel(call_id, channel_id, to_call_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_move_channel: %s\n" % e)
+    print "Exception when calling CallsApi->call_move_channel: %s\n" % e
 ```
 
 ### Parameters
@@ -497,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -511,34 +479,27 @@ Name | Type | Description  | Notes
 
 Removes channel from the call
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
 
-try:
+try: 
     # Removes channel from the call
     api_response = api_instance.call_remove_channel(call_id, channel_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_remove_channel: %s\n" % e)
+    print "Exception when calling CallsApi->call_remove_channel: %s\n" % e
 ```
 
 ### Parameters
@@ -554,7 +515,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -570,35 +531,32 @@ Let the call ring to another agent
 
 Lets the call ring to an another agent if available
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 reason = 'reason_example' # str | T - timeout, D - decline, DNR - device not registered (optional)
 unreachable_agents = ['unreachable_agents_example'] # list[str] | Identifiers of unreachable agents that should be excluded from routing (optional)
 
-try:
+try: 
     # Let the call ring to another agent
     api_response = api_instance.call_reroute(call_id, reason=reason, unreachable_agents=unreachable_agents)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_reroute: %s\n" % e)
+    print "Exception when calling CallsApi->call_reroute: %s\n" % e
 ```
 
 ### Parameters
@@ -615,7 +573,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -631,35 +589,32 @@ Let the call ring
 
 Lets the call ring to an agent or adds it to queue if all agents are busy
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 department_id = 'department_id_example' # str | Department ID (optional)
 to_number = 'to_number_example' # str | callee number (optional)
 
-try:
+try: 
     # Let the call ring
     api_response = api_instance.call_ring(call_id, department_id=department_id, to_number=to_number)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_ring: %s\n" % e)
+    print "Exception when calling CallsApi->call_ring: %s\n" % e
 ```
 
 ### Parameters
@@ -676,7 +631,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -690,38 +645,31 @@ Name | Type | Description  | Notes
 
 Starts new outcoming / internal call
 
-Starts new call by ringing agent device and the dialing customer after agent has picked up his phone 
+Starts new call by ringing agent device and the dialing customer after agent has picked up his phone\n
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 to_number = 'to_number_example' # str | callee number
 from_number = 'from_number_example' # str | caller number
 ticket_id = 'ticket_id_example' # str | ticket id or code
 via_number = 'via_number_example' # str | trunk number via which call was made (optional)
 
-try:
+try: 
     # Starts new outcoming / internal call
     api_response = api_instance.call_start(to_number, from_number, ticket_id, via_number=via_number)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_start: %s\n" % e)
+    print "Exception when calling CallsApi->call_start: %s\n" % e
 ```
 
 ### Parameters
@@ -739,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -755,33 +703,26 @@ Callback that starting call canceled
 
 Callback is delivered only of HW phones
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | Call ID
 
-try:
+try: 
     # Callback that starting call canceled
     api_response = api_instance.call_start_canceled(call_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_start_canceled: %s\n" % e)
+    print "Exception when calling CallsApi->call_start_canceled: %s\n" % e
 ```
 
 ### Parameters
@@ -796,7 +737,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -812,33 +753,26 @@ Callback that starting call failed
 
 Callback is delivered only of HW phones
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | Call ID
 
-try:
+try: 
     # Callback that starting call failed
     api_response = api_instance.call_start_failed(call_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_start_failed: %s\n" % e)
+    print "Exception when calling CallsApi->call_start_failed: %s\n" % e
 ```
 
 ### Parameters
@@ -853,7 +787,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -867,34 +801,31 @@ Name | Type | Description  | Notes
 
 Stops the call
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 from_number = 'from_number_example' # str | from number (optional)
 
-try:
+try: 
     # Stops the call
     api_response = api_instance.call_stop(call_id, from_number=from_number)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_stop: %s\n" % e)
+    print "Exception when calling CallsApi->call_stop: %s\n" % e
 ```
 
 ### Parameters
@@ -910,7 +841,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -926,34 +857,31 @@ Transfers call to different department / agent
 
 Transfer can be called on incoming calls before they start ringing to agents
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 to = 'to_example' # str | Department ID or extension (optional)
 
-try:
+try: 
     # Transfers call to different department / agent
     api_response = api_instance.call_transfer(call_id, to=to)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->call_transfer: %s\n" % e)
+    print "Exception when calling CallsApi->call_transfer: %s\n" % e
 ```
 
 ### Parameters
@@ -969,7 +897,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -985,35 +913,28 @@ Confirm that call is ringing
 
 Confirms that the call is ringing to an agent
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 to_number = 'to_number_example' # str | callee number (optional)
 channel_id = 'channel_id_example' # str | Channel ID (optional)
 
-try:
+try: 
     # Confirm that call is ringing
     api_response = api_instance.confirm_ring(call_id, to_number=to_number, channel_id=channel_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->confirm_ring: %s\n" % e)
+    print "Exception when calling CallsApi->confirm_ring: %s\n" % e
 ```
 
 ### Parameters
@@ -1030,7 +951,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1044,35 +965,28 @@ Name | Type | Description  | Notes
 
 Send provided DTMF to channel
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
 dtmf = 'dtmf_example' # str | DTMF To send
 
-try:
+try: 
     # Send provided DTMF to channel
     api_response = api_instance.dtmf_channel(call_id, channel_id, dtmf)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->dtmf_channel: %s\n" % e)
+    print "Exception when calling CallsApi->dtmf_channel: %s\n" % e
 ```
 
 ### Parameters
@@ -1089,7 +1003,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1103,34 +1017,27 @@ Name | Type | Description  | Notes
 
 End channel
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
 
-try:
+try: 
     # End channel
     api_response = api_instance.end_channel(call_id, channel_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->end_channel: %s\n" % e)
+    print "Exception when calling CallsApi->end_channel: %s\n" % e
 ```
 
 ### Parameters
@@ -1146,7 +1053,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1160,25 +1067,18 @@ Name | Type | Description  | Notes
 
 Gets list of calls
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
@@ -1187,12 +1087,12 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
-try:
+try: 
     # Gets list of calls
     api_response = api_instance.get_calls_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->get_calls_list: %s\n" % e)
+    print "Exception when calling CallsApi->get_calls_list: %s\n" % e
 ```
 
 ### Parameters
@@ -1213,7 +1113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1227,34 +1127,27 @@ Name | Type | Description  | Notes
 
 Hold channel
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
 
-try:
+try: 
     # Hold channel
     api_response = api_instance.hold_channel(call_id, channel_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->hold_channel: %s\n" % e)
+    print "Exception when calling CallsApi->hold_channel: %s\n" % e
 ```
 
 ### Parameters
@@ -1270,7 +1163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1286,35 +1179,28 @@ Merge two calls
 
 Merge secondary call into main call
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 sec_call_id = 'sec_call_id_example' # str | Secondary call ID
 agent_id = 'agent_id_example' # str | Agent ID for removing from the call (optional)
 
-try:
+try: 
     # Merge two calls
     api_response = api_instance.merge(call_id, sec_call_id, agent_id=agent_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->merge: %s\n" % e)
+    print "Exception when calling CallsApi->merge: %s\n" % e
 ```
 
 ### Parameters
@@ -1331,7 +1217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1345,34 +1231,27 @@ Name | Type | Description  | Notes
 
 Mute channel
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
 
-try:
+try: 
     # Mute channel
     api_response = api_instance.mute_channel(call_id, channel_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->mute_channel: %s\n" % e)
+    print "Exception when calling CallsApi->mute_channel: %s\n" % e
 ```
 
 ### Parameters
@@ -1388,7 +1267,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1404,33 +1283,30 @@ Stop ringing of call
 
 Call goes to offline state after this
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 
-try:
+try: 
     # Stop ringing of call
     api_response = api_instance.stop_ring(call_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->stop_ring: %s\n" % e)
+    print "Exception when calling CallsApi->stop_ring: %s\n" % e
 ```
 
 ### Parameters
@@ -1445,7 +1321,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -1459,34 +1335,27 @@ Name | Type | Description  | Notes
 
 Unhold channel
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
 
-try:
+try: 
     # Unhold channel
     api_response = api_instance.unhol_channel(call_id, channel_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->unhol_channel: %s\n" % e)
+    print "Exception when calling CallsApi->unhol_channel: %s\n" % e
 ```
 
 ### Parameters
@@ -1502,7 +1371,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -1516,34 +1385,27 @@ Name | Type | Description  | Notes
 
 Unmute channel
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CallsApi()
 call_id = 'call_id_example' # str | 
 channel_id = 'channel_id_example' # str | 
 
-try:
+try: 
     # Unmute channel
     api_response = api_instance.unmute_channel(call_id, channel_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->unmute_channel: %s\n" % e)
+    print "Exception when calling CallsApi->unmute_channel: %s\n" % e
 ```
 
 ### Parameters
@@ -1559,7 +1421,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges)
 
 ### HTTP request headers
 

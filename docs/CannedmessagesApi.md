@@ -1,14 +1,14 @@
-# liveagent_api.CannedMessagesApi
+# liveagent_api.CannedmessagesApi
 
 All URIs are relative to *http://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_canned_message**](CannedMessagesApi.md#create_canned_message) | **POST** /canned_messages | Create canned message
-[**delete_canned_message**](CannedMessagesApi.md#delete_canned_message) | **DELETE** /canned_messages/{cannedMessageId} | Canned message
-[**get_canned_message**](CannedMessagesApi.md#get_canned_message) | **GET** /canned_messages/{cannedMessageId} | Gets canned message
-[**get_canned_messages_list**](CannedMessagesApi.md#get_canned_messages_list) | **GET** /canned_messages | Gets list of canned messages
-[**update_canned_message**](CannedMessagesApi.md#update_canned_message) | **PUT** /canned_messages/{cannedMessageId} | Update canned message
+[**create_canned_message**](CannedmessagesApi.md#create_canned_message) | **POST** /canned_messages | Create canned message
+[**delete_canned_message**](CannedmessagesApi.md#delete_canned_message) | **DELETE** /canned_messages/{cannedMessageId} | Canned message
+[**get_canned_message**](CannedmessagesApi.md#get_canned_message) | **GET** /canned_messages/{cannedMessageId} | Gets canned message
+[**get_canned_messages_list**](CannedmessagesApi.md#get_canned_messages_list) | **GET** /canned_messages | Gets list of canned messages
+[**update_canned_message**](CannedmessagesApi.md#update_canned_message) | **PUT** /canned_messages/{cannedMessageId} | Update canned message
 
 
 # **create_canned_message**
@@ -18,33 +18,30 @@ Create canned message
 
 Create new canned message
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CannedMessagesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CannedmessagesApi()
 canned_message = liveagent_api.CannedMessage() # CannedMessage |  (optional)
 
-try:
+try: 
     # Create canned message
     api_response = api_instance.create_canned_message(canned_message=canned_message)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CannedMessagesApi->create_canned_message: %s\n" % e)
+    print "Exception when calling CannedmessagesApi->create_canned_message: %s\n" % e
 ```
 
 ### Parameters
@@ -59,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -75,33 +72,30 @@ Canned message
 
 Deletes a canned message
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CannedMessagesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CannedmessagesApi()
 canned_message_id = 'canned_message_id_example' # str | 
 
-try:
+try: 
     # Canned message
     api_response = api_instance.delete_canned_message(canned_message_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CannedMessagesApi->delete_canned_message: %s\n" % e)
+    print "Exception when calling CannedmessagesApi->delete_canned_message: %s\n" % e
 ```
 
 ### Parameters
@@ -116,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -130,33 +124,30 @@ Name | Type | Description  | Notes
 
 Gets canned message
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CannedMessagesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CannedmessagesApi()
 canned_message_id = 'canned_message_id_example' # str | 
 
-try:
+try: 
     # Gets canned message
     api_response = api_instance.get_canned_message(canned_message_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CannedMessagesApi->get_canned_message: %s\n" % e)
+    print "Exception when calling CannedmessagesApi->get_canned_message: %s\n" % e
 ```
 
 ### Parameters
@@ -171,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -185,25 +176,22 @@ Name | Type | Description  | Notes
 
 Gets list of canned messages
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CannedMessagesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CannedmessagesApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
@@ -212,12 +200,12 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
 
-try:
+try: 
     # Gets list of canned messages
     api_response = api_instance.get_canned_messages_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CannedMessagesApi->get_canned_messages_list: %s\n" % e)
+    print "Exception when calling CannedmessagesApi->get_canned_messages_list: %s\n" % e
 ```
 
 ### Parameters
@@ -238,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -254,34 +242,31 @@ Update canned message
 
 Update a canned message
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.CannedMessagesApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.CannedmessagesApi()
 canned_message_id = 'canned_message_id_example' # str | 
 canned_message = liveagent_api.CannedMessage() # CannedMessage |  (optional)
 
-try:
+try: 
     # Update canned message
     api_response = api_instance.update_canned_message(canned_message_id, canned_message=canned_message)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CannedMessagesApi->update_canned_message: %s\n" % e)
+    print "Exception when calling CannedmessagesApi->update_canned_message: %s\n" % e
 ```
 
 ### Parameters
@@ -297,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 

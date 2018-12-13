@@ -9,9 +9,7 @@ Name | Type | Description | Notes
 **filter_type** | **str** |  | [optional] 
 **user_id** | **str** |  | [optional] 
 **rtype** | **str** | C - Custom, S - System, P - Preset | [optional] 
-**is_public** | **bool** |  | [optional] [default to False]
-**user_ids** | **list[str]** |  | [optional] 
-**department_ids** | **list[str]** |  | [optional] 
+**availability** | **str** |  | [optional] 
 **conditions** | [**list[FilterCondition]**](FilterCondition.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

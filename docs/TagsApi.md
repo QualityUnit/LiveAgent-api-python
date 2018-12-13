@@ -18,33 +18,30 @@ Create tag
 
 Create new tag
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TagsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TagsApi()
 tag = liveagent_api.Tag() # Tag |  (optional)
 
-try:
+try: 
     # Create tag
     api_response = api_instance.create_tag(tag=tag)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TagsApi->create_tag: %s\n" % e)
+    print "Exception when calling TagsApi->create_tag: %s\n" % e
 ```
 
 ### Parameters
@@ -59,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -75,33 +72,30 @@ Delete tag
 
 Deletes a tag
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TagsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TagsApi()
 tag_id = 'tag_id_example' # str | 
 
-try:
+try: 
     # Delete tag
     api_response = api_instance.delete_tag(tag_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TagsApi->delete_tag: %s\n" % e)
+    print "Exception when calling TagsApi->delete_tag: %s\n" % e
 ```
 
 ### Parameters
@@ -116,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -130,33 +124,30 @@ Name | Type | Description  | Notes
 
 Get tag by tag id
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TagsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TagsApi()
 tag_id = 'tag_id_example' # str | 
 
-try:
+try: 
     # Get tag by tag id
     api_response = api_instance.get_tag_by_id(tag_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TagsApi->get_tag_by_id: %s\n" % e)
+    print "Exception when calling TagsApi->get_tag_by_id: %s\n" % e
 ```
 
 ### Parameters
@@ -171,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -185,36 +176,33 @@ Name | Type | Description  | Notes
 
 Gets list of tags
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TagsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TagsApi()
 page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
-try:
+try: 
     # Gets list of tags
     api_response = api_instance.get_tags_list(page=page, per_page=per_page, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TagsApi->get_tags_list: %s\n" % e)
+    print "Exception when calling TagsApi->get_tags_list: %s\n" % e
 ```
 
 ### Parameters
@@ -232,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
@@ -246,34 +234,31 @@ Name | Type | Description  | Notes
 
 Update tag
 
-### Example
+### Example 
 ```python
-from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: apikey
+liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
+# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
 
 # create an instance of the API class
-api_instance = liveagent_api.TagsApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.TagsApi()
 tag_id = 'tag_id_example' # str | 
 tag = liveagent_api.Tag() # Tag |  (optional)
 
-try:
+try: 
     # Update tag
     api_response = api_instance.update_tag(tag_id, tag=tag)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TagsApi->update_tag: %s\n" % e)
+    print "Exception when calling TagsApi->update_tag: %s\n" % e
 ```
 
 ### Parameters
@@ -289,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[privileges](../README.md#privileges), [apikey](../README.md#apikey)
 
 ### HTTP request headers
 
