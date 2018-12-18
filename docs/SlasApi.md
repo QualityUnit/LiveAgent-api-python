@@ -16,30 +16,33 @@ Gets sla
 
 Gets sla
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.SlasApi()
+api_instance = liveagent_api.SlasApi(liveagent_api.ApiClient(configuration))
 level_id = 'level_id_example' # str | 
 
-try: 
+try:
     # Gets sla
     api_response = api_instance.get_sla(level_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SlasApi->get_sla: %s\n" % e
+    print("Exception when calling SlasApi->get_sla: %s\n" % e)
 ```
 
 ### Parameters
@@ -54,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -70,30 +73,33 @@ Gets ticket sla history
 
 Gets ticket sla history
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.SlasApi()
+api_instance = liveagent_api.SlasApi(liveagent_api.ApiClient(configuration))
 ticket_id = 'ticket_id_example' # str | 
 
-try: 
+try:
     # Gets ticket sla history
     api_response = api_instance.get_sla_ticket_history(ticket_id)
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SlasApi->get_sla_ticket_history: %s\n" % e
+    print("Exception when calling SlasApi->get_sla_ticket_history: %s\n" % e)
 ```
 
 ### Parameters
@@ -108,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 
@@ -124,29 +130,32 @@ Gets list of slas
 
 Gets list of slas
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
 from pprint import pprint
 
-# Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. BEARER) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'BEARER'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.SlasApi()
+api_instance = liveagent_api.SlasApi(liveagent_api.ApiClient(configuration))
 
-try: 
+try:
     # Gets list of slas
     api_response = api_instance.get_slas_list()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling SlasApi->get_slas_list: %s\n" % e
+    print("Exception when calling SlasApi->get_slas_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -158,7 +167,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[privileges](../README.md#privileges), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
 
 ### HTTP request headers
 

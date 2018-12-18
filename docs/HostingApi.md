@@ -14,8 +14,9 @@ Used hosting system info
 
 Used hosting system info
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
@@ -24,12 +25,12 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = liveagent_api.HostingApi()
 
-try: 
+try:
     # Used hosting system info
     api_response = api_instance.get_info()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling HostingApi->get_info: %s\n" % e
+    print("Exception when calling HostingApi->get_info: %s\n" % e)
 ```
 
 ### Parameters
