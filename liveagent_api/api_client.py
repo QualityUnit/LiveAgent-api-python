@@ -598,6 +598,8 @@ class ApiClient(object):
         :param klass: class literal.
         :return: model object.
         """
+        if not data:                                                                   # Temporary fix for
+            return None                                                                # LA#7928
 
         if not klass.swagger_types and not hasattr(klass,
                                                    'get_real_child_model'):
