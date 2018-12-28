@@ -139,6 +139,12 @@ class RESTClientObject(object):
         post_params = post_params or {}
         headers = headers or {}
 
+        # We set the Content-Length header for these methods because otherwise some                            MODIFIED
+        # servers will respond with a 400/411 and Python < 2.7.5 not add it for empty body
+        methods_expecting_body = {'PATCH', 'POST', 'PUT'}
+        if not body and not post_params and method in methods_expecting_body:
+            headers['Content-length'] = 0
+
         timeout = urllib3.Timeout(total=30)                                                                  # MODIFIED
         if _request_timeout:
             if isinstance(_request_timeout, (int, ) if six.PY3 else (int, long)):  # noqa: E501,F821
