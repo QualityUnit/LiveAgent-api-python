@@ -223,6 +223,9 @@ class ActiveTicket(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ActiveTicket, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

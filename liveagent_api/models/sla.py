@@ -170,6 +170,9 @@ class Sla(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Sla, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -393,6 +393,9 @@ class MessageGroup(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MessageGroup, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

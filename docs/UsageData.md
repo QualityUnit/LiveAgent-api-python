@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date** | **datetime** |  | [optional] 
+**_date** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
 

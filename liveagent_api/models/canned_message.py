@@ -194,6 +194,9 @@ class CannedMessage(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CannedMessage, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

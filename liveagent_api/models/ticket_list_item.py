@@ -548,6 +548,9 @@ class TicketListItem(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TicketListItem, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

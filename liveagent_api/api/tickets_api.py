@@ -38,18 +38,18 @@ class TicketsApi(object):
 
         Create new ticket  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_ticket(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_ticket(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param TicketListItem ticket:
         :return: TicketInformation
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_ticket_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_ticket_with_http_info(**kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class TicketsApi(object):
 
         Create new ticket  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_ticket_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_ticket_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param TicketListItem ticket:
         :return: TicketInformation
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -122,7 +122,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='TicketInformation',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -132,18 +132,18 @@ class TicketsApi(object):
         """Deletes ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_ticket(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_ticket(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_ticket_with_http_info(ticket_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_ticket_with_http_info(ticket_id, **kwargs)  # noqa: E501
@@ -153,11 +153,11 @@ class TicketsApi(object):
         """Deletes ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_ticket_with_http_info(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_ticket_with_http_info(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :return: OkResponse
                  If the method is called asynchronously,
@@ -165,7 +165,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -219,7 +219,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -229,18 +229,18 @@ class TicketsApi(object):
         """Gets ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :return: Ticket
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_ticket_with_http_info(ticket_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_ticket_with_http_info(ticket_id, **kwargs)  # noqa: E501
@@ -250,11 +250,11 @@ class TicketsApi(object):
         """Gets ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_with_http_info(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_with_http_info(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :return: Ticket
                  If the method is called asynchronously,
@@ -262,7 +262,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -316,7 +316,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='Ticket',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -326,11 +326,11 @@ class TicketsApi(object):
         """Gets ticket attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_attribute(ticket_id, attribute_name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_attribute(ticket_id, attribute_name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param str attribute_name: (required)
         :return: TicketAttribute
@@ -338,7 +338,7 @@ class TicketsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_ticket_attribute_with_http_info(ticket_id, attribute_name, **kwargs)  # noqa: E501
         else:
             (data) = self.get_ticket_attribute_with_http_info(ticket_id, attribute_name, **kwargs)  # noqa: E501
@@ -348,11 +348,11 @@ class TicketsApi(object):
         """Gets ticket attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_attribute_with_http_info(ticket_id, attribute_name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_attribute_with_http_info(ticket_id, attribute_name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param str attribute_name: (required)
         :return: TicketAttribute
@@ -361,7 +361,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket_id', 'attribute_name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -421,7 +421,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='TicketAttribute',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -431,11 +431,11 @@ class TicketsApi(object):
         """Gets ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_history(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_history(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -448,7 +448,7 @@ class TicketsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_ticket_history_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_ticket_history_with_http_info(**kwargs)  # noqa: E501
@@ -458,11 +458,11 @@ class TicketsApi(object):
         """Gets ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_history_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_history_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -476,7 +476,7 @@ class TicketsApi(object):
         """
 
         all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -538,7 +538,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='list[TicketHistory]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -548,18 +548,18 @@ class TicketsApi(object):
         """Gets ticket history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_history_0(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_history_0(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :return: list[TicketHistory]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_ticket_history_0_with_http_info(ticket_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_ticket_history_0_with_http_info(ticket_id, **kwargs)  # noqa: E501
@@ -569,11 +569,11 @@ class TicketsApi(object):
         """Gets ticket history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_history_0_with_http_info(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_history_0_with_http_info(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :return: list[TicketHistory]
                  If the method is called asynchronously,
@@ -581,7 +581,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -635,7 +635,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='list[TicketHistory]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -645,11 +645,11 @@ class TicketsApi(object):
         """Gets ticket message groups and messages  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_message_groups(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_message_groups(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param bool include_quoted_messages: If set, response will include quoted messages context, otherwise - only metadata.
         :param int page: Page to display. Not used if _from is defined.
@@ -664,7 +664,7 @@ class TicketsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_ticket_message_groups_with_http_info(ticket_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_ticket_message_groups_with_http_info(ticket_id, **kwargs)  # noqa: E501
@@ -674,11 +674,11 @@ class TicketsApi(object):
         """Gets ticket message groups and messages  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_message_groups_with_http_info(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_message_groups_with_http_info(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param bool include_quoted_messages: If set, response will include quoted messages context, otherwise - only metadata.
         :param int page: Page to display. Not used if _from is defined.
@@ -694,7 +694,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket_id', 'include_quoted_messages', 'page', 'per_page', 'sort_dir', 'sort_field', 'filters', '_from', 'to']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -764,7 +764,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='list[MessageGroup]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -774,18 +774,18 @@ class TicketsApi(object):
         """Gets ticket Sla  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_sla(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_sla(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :return: TicketSla
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_ticket_sla_with_http_info(ticket_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_ticket_sla_with_http_info(ticket_id, **kwargs)  # noqa: E501
@@ -795,11 +795,11 @@ class TicketsApi(object):
         """Gets ticket Sla  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ticket_sla_with_http_info(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ticket_sla_with_http_info(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :return: TicketSla
                  If the method is called asynchronously,
@@ -807,7 +807,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -861,7 +861,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='TicketSla',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -871,11 +871,11 @@ class TicketsApi(object):
         """Gets list of tickets  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tickets_list(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_tickets_list(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -888,7 +888,7 @@ class TicketsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_tickets_list_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_tickets_list_with_http_info(**kwargs)  # noqa: E501
@@ -898,11 +898,11 @@ class TicketsApi(object):
         """Gets list of tickets  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tickets_list_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_tickets_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -916,7 +916,7 @@ class TicketsApi(object):
         """
 
         all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -978,7 +978,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='list[Ticket]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -988,11 +988,11 @@ class TicketsApi(object):
         """Sets ticket attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_ticket_attribute(ticket_id, attribute_name, value, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_ticket_attribute(ticket_id, attribute_name, value, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param str attribute_name: (required)
         :param str value: New attribute value (required)
@@ -1001,7 +1001,7 @@ class TicketsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.set_ticket_attribute_with_http_info(ticket_id, attribute_name, value, **kwargs)  # noqa: E501
         else:
             (data) = self.set_ticket_attribute_with_http_info(ticket_id, attribute_name, value, **kwargs)  # noqa: E501
@@ -1011,11 +1011,11 @@ class TicketsApi(object):
         """Sets ticket attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_ticket_attribute_with_http_info(ticket_id, attribute_name, value, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_ticket_attribute_with_http_info(ticket_id, attribute_name, value, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param str attribute_name: (required)
         :param str value: New attribute value (required)
@@ -1025,7 +1025,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket_id', 'attribute_name', 'value']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1091,7 +1091,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1101,11 +1101,11 @@ class TicketsApi(object):
         """Sets postpone status to ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_ticket_postpone(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_ticket_postpone(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param TicketPostpone postpone_data:
         :return: OkResponse
@@ -1113,7 +1113,7 @@ class TicketsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.set_ticket_postpone_with_http_info(ticket_id, **kwargs)  # noqa: E501
         else:
             (data) = self.set_ticket_postpone_with_http_info(ticket_id, **kwargs)  # noqa: E501
@@ -1123,11 +1123,11 @@ class TicketsApi(object):
         """Sets postpone status to ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_ticket_postpone_with_http_info(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_ticket_postpone_with_http_info(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param TicketPostpone postpone_data:
         :return: OkResponse
@@ -1136,7 +1136,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket_id', 'postpone_data']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1192,7 +1192,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1202,11 +1202,11 @@ class TicketsApi(object):
         """Updates ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_ticket(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_ticket(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param TicketUpdatable ticket:
         :return: Ticket
@@ -1214,7 +1214,7 @@ class TicketsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.update_ticket_with_http_info(ticket_id, **kwargs)  # noqa: E501
         else:
             (data) = self.update_ticket_with_http_info(ticket_id, **kwargs)  # noqa: E501
@@ -1224,11 +1224,11 @@ class TicketsApi(object):
         """Updates ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_ticket_with_http_info(ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_ticket_with_http_info(ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ticket_id: (required)
         :param TicketUpdatable ticket:
         :return: Ticket
@@ -1237,7 +1237,7 @@ class TicketsApi(object):
         """
 
         all_params = ['ticket_id', 'ticket']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1293,7 +1293,7 @@ class TicketsApi(object):
             files=local_var_files,
             response_type='Ticket',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

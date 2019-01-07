@@ -167,6 +167,9 @@ class Domain(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Domain, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

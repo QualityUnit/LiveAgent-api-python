@@ -219,6 +219,9 @@ class TicketSla(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TicketSla, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

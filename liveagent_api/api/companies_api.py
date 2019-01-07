@@ -37,18 +37,18 @@ class CompaniesApi(object):
         """Create new company  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_company(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_company(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Company company:
         :return: Company
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_company_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_company_with_http_info(**kwargs)  # noqa: E501
@@ -58,11 +58,11 @@ class CompaniesApi(object):
         """Create new company  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_company_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_company_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Company company:
         :return: Company
                  If the method is called asynchronously,
@@ -70,7 +70,7 @@ class CompaniesApi(object):
         """
 
         all_params = ['company']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -120,7 +120,7 @@ class CompaniesApi(object):
             files=local_var_files,
             response_type='Company',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -131,11 +131,11 @@ class CompaniesApi(object):
 
         Deletes a company  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_company(company_id, delete_tickets, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_company(company_id, delete_tickets, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str company_id: (required)
         :param bool delete_tickets: <u>true</u>: Delete company from all lists and also delete all its tickets.<br> <u>false</u>: Delete company from all lists but leave its tickets intact. (required)
         :return: OkResponse
@@ -143,7 +143,7 @@ class CompaniesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_company_with_http_info(company_id, delete_tickets, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_company_with_http_info(company_id, delete_tickets, **kwargs)  # noqa: E501
@@ -154,11 +154,11 @@ class CompaniesApi(object):
 
         Deletes a company  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_company_with_http_info(company_id, delete_tickets, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_company_with_http_info(company_id, delete_tickets, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str company_id: (required)
         :param bool delete_tickets: <u>true</u>: Delete company from all lists and also delete all its tickets.<br> <u>false</u>: Delete company from all lists but leave its tickets intact. (required)
         :return: OkResponse
@@ -167,7 +167,7 @@ class CompaniesApi(object):
         """
 
         all_params = ['company_id', 'delete_tickets']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -227,7 +227,7 @@ class CompaniesApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -237,11 +237,11 @@ class CompaniesApi(object):
         """Gets list of companies  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_companies_list(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_companies_list(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -254,7 +254,7 @@ class CompaniesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_companies_list_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_companies_list_with_http_info(**kwargs)  # noqa: E501
@@ -264,11 +264,11 @@ class CompaniesApi(object):
         """Gets list of companies  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_companies_list_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_companies_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -282,7 +282,7 @@ class CompaniesApi(object):
         """
 
         all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -344,7 +344,7 @@ class CompaniesApi(object):
             files=local_var_files,
             response_type='list[CompanyListItem]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -354,18 +354,18 @@ class CompaniesApi(object):
         """Get company by specific id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_specific_company(company_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_specific_company(company_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str company_id: (required)
         :return: Company
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_specific_company_with_http_info(company_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_specific_company_with_http_info(company_id, **kwargs)  # noqa: E501
@@ -375,11 +375,11 @@ class CompaniesApi(object):
         """Get company by specific id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_specific_company_with_http_info(company_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_specific_company_with_http_info(company_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str company_id: (required)
         :return: Company
                  If the method is called asynchronously,
@@ -387,7 +387,7 @@ class CompaniesApi(object):
         """
 
         all_params = ['company_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -441,7 +441,7 @@ class CompaniesApi(object):
             files=local_var_files,
             response_type='Company',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -451,11 +451,11 @@ class CompaniesApi(object):
         """Update company  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_company(company_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_company(company_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str company_id: (required)
         :param Company company:
         :return: Company
@@ -463,7 +463,7 @@ class CompaniesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.update_company_with_http_info(company_id, **kwargs)  # noqa: E501
         else:
             (data) = self.update_company_with_http_info(company_id, **kwargs)  # noqa: E501
@@ -473,11 +473,11 @@ class CompaniesApi(object):
         """Update company  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_company_with_http_info(company_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_company_with_http_info(company_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str company_id: (required)
         :param Company company:
         :return: Company
@@ -486,7 +486,7 @@ class CompaniesApi(object):
         """
 
         all_params = ['company_id', 'company']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -542,7 +542,7 @@ class CompaniesApi(object):
             files=local_var_files,
             response_type='Company',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

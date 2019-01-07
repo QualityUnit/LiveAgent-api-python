@@ -433,6 +433,9 @@ class BillingInfo(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(BillingInfo, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

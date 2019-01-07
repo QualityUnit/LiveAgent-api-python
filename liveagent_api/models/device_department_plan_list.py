@@ -91,6 +91,9 @@ class DeviceDepartmentPlanList(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(DeviceDepartmentPlanList, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

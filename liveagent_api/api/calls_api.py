@@ -37,11 +37,11 @@ class CallsApi(object):
         """Adds a message to the call group in corresponfing ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_add_message(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_add_message(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param CallMessage body:
         :return: OkResponse
@@ -49,7 +49,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_add_message_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_add_message_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -59,11 +59,11 @@ class CallsApi(object):
         """Adds a message to the call group in corresponfing ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_add_message_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_add_message_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param CallMessage body:
         :return: OkResponse
@@ -72,7 +72,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -128,7 +128,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -138,11 +138,11 @@ class CallsApi(object):
         """Adds a recording to the call group in corresponfing ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_add_recording(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_add_recording(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param file file:
         :return: OkResponse
@@ -150,7 +150,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_add_recording_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_add_recording_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -160,11 +160,11 @@ class CallsApi(object):
         """Adds a recording to the call group in corresponfing ticket  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_add_recording_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_add_recording_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param file file:
         :return: OkResponse
@@ -173,7 +173,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'file']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -229,7 +229,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -239,11 +239,11 @@ class CallsApi(object):
         """Set call as answered by agent  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_answer(call_id, to_number, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_answer(call_id, to_number, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str to_number: callee number (required)
         :param str channel_id: Channel ID
@@ -252,7 +252,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_answer_with_http_info(call_id, to_number, **kwargs)  # noqa: E501
         else:
             (data) = self.call_answer_with_http_info(call_id, to_number, **kwargs)  # noqa: E501
@@ -262,11 +262,11 @@ class CallsApi(object):
         """Set call as answered by agent  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_answer_with_http_info(call_id, to_number, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_answer_with_http_info(call_id, to_number, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str to_number: callee number (required)
         :param str channel_id: Channel ID
@@ -276,7 +276,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'to_number', 'channel_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -338,7 +338,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -348,11 +348,11 @@ class CallsApi(object):
         """Change channel status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_change_channel_status(call_id, channel_id, status, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_change_channel_status(call_id, channel_id, status, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :param str status: run (\"R\" - default), hold (\"H\") (required)
@@ -361,7 +361,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_change_channel_status_with_http_info(call_id, channel_id, status, **kwargs)  # noqa: E501
         else:
             (data) = self.call_change_channel_status_with_http_info(call_id, channel_id, status, **kwargs)  # noqa: E501
@@ -371,11 +371,11 @@ class CallsApi(object):
         """Change channel status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_change_channel_status_with_http_info(call_id, channel_id, status, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_change_channel_status_with_http_info(call_id, channel_id, status, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :param str status: run (\"R\" - default), hold (\"H\") (required)
@@ -385,7 +385,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'channel_id', 'status']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -451,7 +451,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -462,11 +462,11 @@ class CallsApi(object):
 
         Creates new call (ingoing / outcoming / internal). Does not initiate the outgoing call  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_create(call_id, to_number, from_number, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_create(call_id, to_number, from_number, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str to_number: callee number (required)
         :param str from_number: caller number (required)
@@ -479,7 +479,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_create_with_http_info(call_id, to_number, from_number, **kwargs)  # noqa: E501
         else:
             (data) = self.call_create_with_http_info(call_id, to_number, from_number, **kwargs)  # noqa: E501
@@ -490,11 +490,11 @@ class CallsApi(object):
 
         Creates new call (ingoing / outcoming / internal). Does not initiate the outgoing call  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_create_with_http_info(call_id, to_number, from_number, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_create_with_http_info(call_id, to_number, from_number, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str to_number: callee number (required)
         :param str from_number: caller number (required)
@@ -508,7 +508,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'to_number', 'from_number', 'channel_id', 'via_number', 'ticket_id', 'direction']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -582,7 +582,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='Call',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -592,11 +592,11 @@ class CallsApi(object):
         """Fetches IVR for the call from external URL  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_fetch_ivr(call_id, fetch, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_fetch_ivr(call_id, fetch, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param IvrFetch fetch: (required)
         :return: list[Ivr]
@@ -604,7 +604,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_fetch_ivr_with_http_info(call_id, fetch, **kwargs)  # noqa: E501
         else:
             (data) = self.call_fetch_ivr_with_http_info(call_id, fetch, **kwargs)  # noqa: E501
@@ -614,11 +614,11 @@ class CallsApi(object):
         """Fetches IVR for the call from external URL  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_fetch_ivr_with_http_info(call_id, fetch, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_fetch_ivr_with_http_info(call_id, fetch, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param IvrFetch fetch: (required)
         :return: list[Ivr]
@@ -627,7 +627,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'fetch']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -687,7 +687,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='list[Ivr]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -697,11 +697,11 @@ class CallsApi(object):
         """Return the status of call  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_get_status(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_get_status(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param list[str] unreachable_agents: Identifiers of unreachable agents that should be excluded from routing
         :return: CallStatus
@@ -709,7 +709,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_get_status_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_get_status_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -719,11 +719,11 @@ class CallsApi(object):
         """Return the status of call  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_get_status_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_get_status_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param list[str] unreachable_agents: Identifiers of unreachable agents that should be excluded from routing
         :return: CallStatus
@@ -732,7 +732,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'unreachable_agents']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -789,7 +789,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='CallStatus',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -799,11 +799,11 @@ class CallsApi(object):
         """Moves existing channel to target call  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_move_channel(call_id, channel_id, to_call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_move_channel(call_id, channel_id, to_call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :param str to_call_id: Target call (required)
@@ -812,7 +812,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_move_channel_with_http_info(call_id, channel_id, to_call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_move_channel_with_http_info(call_id, channel_id, to_call_id, **kwargs)  # noqa: E501
@@ -822,11 +822,11 @@ class CallsApi(object):
         """Moves existing channel to target call  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_move_channel_with_http_info(call_id, channel_id, to_call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_move_channel_with_http_info(call_id, channel_id, to_call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :param str to_call_id: Target call (required)
@@ -836,7 +836,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'channel_id', 'to_call_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -902,7 +902,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -912,11 +912,11 @@ class CallsApi(object):
         """Removes channel from the call  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_remove_channel(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_remove_channel(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -924,7 +924,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_remove_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_remove_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
@@ -934,11 +934,11 @@ class CallsApi(object):
         """Removes channel from the call  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_remove_channel_with_http_info(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_remove_channel_with_http_info(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -947,7 +947,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'channel_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1007,7 +1007,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1018,11 +1018,11 @@ class CallsApi(object):
 
         Lets the call ring to an another agent if available  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_reroute(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_reroute(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str reason: T - timeout, D - decline, DNR - device not registered
         :param list[str] unreachable_agents: Identifiers of unreachable agents that should be excluded from routing
@@ -1031,7 +1031,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_reroute_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_reroute_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -1042,11 +1042,11 @@ class CallsApi(object):
 
         Lets the call ring to an another agent if available  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_reroute_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_reroute_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str reason: T - timeout, D - decline, DNR - device not registered
         :param list[str] unreachable_agents: Identifiers of unreachable agents that should be excluded from routing
@@ -1056,7 +1056,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'reason', 'unreachable_agents']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1115,7 +1115,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='CallStatus',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1126,11 +1126,11 @@ class CallsApi(object):
 
         Lets the call ring to an agent or adds it to queue if all agents are busy  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_ring(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_ring(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str department_id: Department ID
         :param str to_number: callee number
@@ -1139,7 +1139,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_ring_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_ring_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -1150,11 +1150,11 @@ class CallsApi(object):
 
         Lets the call ring to an agent or adds it to queue if all agents are busy  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_ring_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_ring_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str department_id: Department ID
         :param str to_number: callee number
@@ -1164,7 +1164,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'department_id', 'to_number']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1222,7 +1222,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='CallStatus',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1233,11 +1233,11 @@ class CallsApi(object):
 
         Starts new call by ringing agent device and the dialing customer after agent has picked up his phone   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_start(to_number, from_number, ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_start(to_number, from_number, ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str to_number: callee number (required)
         :param str from_number: caller number (required)
         :param str ticket_id: ticket id or code (required)
@@ -1247,7 +1247,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_start_with_http_info(to_number, from_number, ticket_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_start_with_http_info(to_number, from_number, ticket_id, **kwargs)  # noqa: E501
@@ -1258,11 +1258,11 @@ class CallsApi(object):
 
         Starts new call by ringing agent device and the dialing customer after agent has picked up his phone   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_start_with_http_info(to_number, from_number, ticket_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_start_with_http_info(to_number, from_number, ticket_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str to_number: callee number (required)
         :param str from_number: caller number (required)
         :param str ticket_id: ticket id or code (required)
@@ -1273,7 +1273,7 @@ class CallsApi(object):
         """
 
         all_params = ['to_number', 'from_number', 'ticket_id', 'via_number']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1341,7 +1341,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1352,18 +1352,18 @@ class CallsApi(object):
 
         Callback is delivered only of HW phones  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_start_canceled(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_start_canceled(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: Call ID (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_start_canceled_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_start_canceled_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -1374,11 +1374,11 @@ class CallsApi(object):
 
         Callback is delivered only of HW phones  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_start_canceled_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_start_canceled_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: Call ID (required)
         :return: OkResponse
                  If the method is called asynchronously,
@@ -1386,7 +1386,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1440,7 +1440,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1451,18 +1451,18 @@ class CallsApi(object):
 
         Callback is delivered only of HW phones  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_start_failed(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_start_failed(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: Call ID (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_start_failed_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_start_failed_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -1473,11 +1473,11 @@ class CallsApi(object):
 
         Callback is delivered only of HW phones  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_start_failed_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_start_failed_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: Call ID (required)
         :return: OkResponse
                  If the method is called asynchronously,
@@ -1485,7 +1485,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1539,7 +1539,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1549,11 +1549,11 @@ class CallsApi(object):
         """Stops the call  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_stop(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_stop(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str from_number: from number
         :return: OkResponse
@@ -1561,7 +1561,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_stop_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_stop_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -1571,11 +1571,11 @@ class CallsApi(object):
         """Stops the call  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_stop_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_stop_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str from_number: from number
         :return: OkResponse
@@ -1584,7 +1584,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'from_number']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1640,7 +1640,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1651,11 +1651,11 @@ class CallsApi(object):
 
         Transfer can be called on incoming calls before they start ringing to agents  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_transfer(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_transfer(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str to: Department ID or extension
         :return: CallTransferResult
@@ -1663,7 +1663,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.call_transfer_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.call_transfer_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -1674,11 +1674,11 @@ class CallsApi(object):
 
         Transfer can be called on incoming calls before they start ringing to agents  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.call_transfer_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_transfer_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str to: Department ID or extension
         :return: CallTransferResult
@@ -1687,7 +1687,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'to']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1743,7 +1743,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='CallTransferResult',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1754,11 +1754,11 @@ class CallsApi(object):
 
         Confirms that the call is ringing to an agent  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.confirm_ring(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.confirm_ring(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str to_number: callee number
         :param str channel_id: Channel ID
@@ -1767,7 +1767,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.confirm_ring_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.confirm_ring_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -1778,11 +1778,11 @@ class CallsApi(object):
 
         Confirms that the call is ringing to an agent  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.confirm_ring_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.confirm_ring_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str to_number: callee number
         :param str channel_id: Channel ID
@@ -1792,7 +1792,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'to_number', 'channel_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1850,7 +1850,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1860,11 +1860,11 @@ class CallsApi(object):
         """Send provided DTMF to channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.dtmf_channel(call_id, channel_id, dtmf, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dtmf_channel(call_id, channel_id, dtmf, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :param str dtmf: DTMF To send (required)
@@ -1873,7 +1873,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.dtmf_channel_with_http_info(call_id, channel_id, dtmf, **kwargs)  # noqa: E501
         else:
             (data) = self.dtmf_channel_with_http_info(call_id, channel_id, dtmf, **kwargs)  # noqa: E501
@@ -1883,11 +1883,11 @@ class CallsApi(object):
         """Send provided DTMF to channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.dtmf_channel_with_http_info(call_id, channel_id, dtmf, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dtmf_channel_with_http_info(call_id, channel_id, dtmf, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :param str dtmf: DTMF To send (required)
@@ -1897,7 +1897,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'channel_id', 'dtmf']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1963,7 +1963,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1973,11 +1973,11 @@ class CallsApi(object):
         """End channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.end_channel(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.end_channel(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -1985,7 +1985,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.end_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
         else:
             (data) = self.end_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
@@ -1995,11 +1995,11 @@ class CallsApi(object):
         """End channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.end_channel_with_http_info(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.end_channel_with_http_info(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -2008,7 +2008,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'channel_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2068,7 +2068,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2078,11 +2078,11 @@ class CallsApi(object):
         """Gets list of calls  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_calls_list(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_calls_list(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -2095,7 +2095,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_calls_list_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_calls_list_with_http_info(**kwargs)  # noqa: E501
@@ -2105,11 +2105,11 @@ class CallsApi(object):
         """Gets list of calls  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_calls_list_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_calls_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -2123,7 +2123,7 @@ class CallsApi(object):
         """
 
         all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2185,7 +2185,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='list[CallListItem]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2195,11 +2195,11 @@ class CallsApi(object):
         """Hold channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.hold_channel(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.hold_channel(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -2207,7 +2207,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.hold_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
         else:
             (data) = self.hold_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
@@ -2217,11 +2217,11 @@ class CallsApi(object):
         """Hold channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.hold_channel_with_http_info(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.hold_channel_with_http_info(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -2230,7 +2230,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'channel_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2290,7 +2290,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2301,11 +2301,11 @@ class CallsApi(object):
 
         Merge secondary call into main call  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.merge(call_id, sec_call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge(call_id, sec_call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str sec_call_id: Secondary call ID (required)
         :param str agent_id: Agent ID for removing from the call
@@ -2314,7 +2314,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.merge_with_http_info(call_id, sec_call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.merge_with_http_info(call_id, sec_call_id, **kwargs)  # noqa: E501
@@ -2325,11 +2325,11 @@ class CallsApi(object):
 
         Merge secondary call into main call  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.merge_with_http_info(call_id, sec_call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.merge_with_http_info(call_id, sec_call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str sec_call_id: Secondary call ID (required)
         :param str agent_id: Agent ID for removing from the call
@@ -2339,7 +2339,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'sec_call_id', 'agent_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2401,7 +2401,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2411,11 +2411,11 @@ class CallsApi(object):
         """Mute channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.mute_channel(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.mute_channel(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -2423,7 +2423,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.mute_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
         else:
             (data) = self.mute_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
@@ -2433,11 +2433,11 @@ class CallsApi(object):
         """Mute channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.mute_channel_with_http_info(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.mute_channel_with_http_info(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -2446,7 +2446,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'channel_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2506,7 +2506,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2517,18 +2517,18 @@ class CallsApi(object):
 
         Call goes to offline state after this  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.stop_ring(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.stop_ring(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.stop_ring_with_http_info(call_id, **kwargs)  # noqa: E501
         else:
             (data) = self.stop_ring_with_http_info(call_id, **kwargs)  # noqa: E501
@@ -2539,11 +2539,11 @@ class CallsApi(object):
 
         Call goes to offline state after this  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.stop_ring_with_http_info(call_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.stop_ring_with_http_info(call_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :return: OkResponse
                  If the method is called asynchronously,
@@ -2551,7 +2551,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2605,7 +2605,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2615,11 +2615,11 @@ class CallsApi(object):
         """Unhold channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.unhol_channel(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.unhol_channel(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -2627,7 +2627,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.unhol_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
         else:
             (data) = self.unhol_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
@@ -2637,11 +2637,11 @@ class CallsApi(object):
         """Unhold channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.unhol_channel_with_http_info(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.unhol_channel_with_http_info(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -2650,7 +2650,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'channel_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2710,7 +2710,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2720,11 +2720,11 @@ class CallsApi(object):
         """Unmute channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.unmute_channel(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.unmute_channel(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -2732,7 +2732,7 @@ class CallsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.unmute_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
         else:
             (data) = self.unmute_channel_with_http_info(call_id, channel_id, **kwargs)  # noqa: E501
@@ -2742,11 +2742,11 @@ class CallsApi(object):
         """Unmute channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.unmute_channel_with_http_info(call_id, channel_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.unmute_channel_with_http_info(call_id, channel_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
         :return: OkResponse
@@ -2755,7 +2755,7 @@ class CallsApi(object):
         """
 
         all_params = ['call_id', 'channel_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2815,7 +2815,7 @@ class CallsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -297,6 +297,9 @@ class Ban(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Ban, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

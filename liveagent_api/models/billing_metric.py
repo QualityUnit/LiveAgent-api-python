@@ -193,6 +193,9 @@ class BillingMetric(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(BillingMetric, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -115,6 +115,9 @@ class AttributeSimple(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(AttributeSimple, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

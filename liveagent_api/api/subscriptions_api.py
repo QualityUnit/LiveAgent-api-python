@@ -38,11 +38,11 @@ class SubscriptionsApi(object):
 
         Change active subscription addons  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.change_addons(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.change_addons(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param AddonList body:
         :return: list[Addon]
@@ -50,7 +50,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.change_addons_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.change_addons_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -61,11 +61,11 @@ class SubscriptionsApi(object):
 
         Change active subscription addons  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.change_addons_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.change_addons_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param AddonList body:
         :return: list[Addon]
@@ -74,7 +74,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -130,7 +130,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='list[Addon]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -141,11 +141,11 @@ class SubscriptionsApi(object):
 
         Upgrade subscription to another variation. In case of upgrade from paid to paid, it's possible to change country without changing payment method. If change is between EU and not EU, different payment rules might apply.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.change_plan(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.change_plan(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param Upgrade body:
         :return: OkResponse
@@ -153,7 +153,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.change_plan_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.change_plan_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -164,11 +164,11 @@ class SubscriptionsApi(object):
 
         Upgrade subscription to another variation. In case of upgrade from paid to paid, it's possible to change country without changing payment method. If change is between EU and not EU, different payment rules might apply.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.change_plan_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.change_plan_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param Upgrade body:
         :return: OkResponse
@@ -177,7 +177,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -233,7 +233,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -244,18 +244,18 @@ class SubscriptionsApi(object):
 
         Active subscription addons  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_active_addons(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_active_addons(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: list[Addon]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_active_addons_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_active_addons_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -266,11 +266,11 @@ class SubscriptionsApi(object):
 
         Active subscription addons  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_active_addons_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_active_addons_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: list[Addon]
                  If the method is called asynchronously,
@@ -278,7 +278,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -332,7 +332,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='list[Addon]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -343,18 +343,18 @@ class SubscriptionsApi(object):
 
         Get billing info  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_billing_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_billing_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: Customer
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_billing_info_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_billing_info_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -365,11 +365,11 @@ class SubscriptionsApi(object):
 
         Get billing info  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_billing_info_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_billing_info_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: Customer
                  If the method is called asynchronously,
@@ -377,7 +377,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -431,7 +431,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='Customer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -442,18 +442,18 @@ class SubscriptionsApi(object):
 
         Get billing metrics  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_billing_metrics(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_billing_metrics(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: list[BillingMetric]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_billing_metrics_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_billing_metrics_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -464,11 +464,11 @@ class SubscriptionsApi(object):
 
         Get billing metrics  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_billing_metrics_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_billing_metrics_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: list[BillingMetric]
                  If the method is called asynchronously,
@@ -476,7 +476,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -530,7 +530,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='list[BillingMetric]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -541,18 +541,18 @@ class SubscriptionsApi(object):
 
         Get billing status  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_billing_status(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_billing_status(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: BillingStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_billing_status_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_billing_status_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -563,11 +563,11 @@ class SubscriptionsApi(object):
 
         Get billing status  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_billing_status_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_billing_status_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: BillingStatus
                  If the method is called asynchronously,
@@ -575,7 +575,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -629,7 +629,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='BillingStatus',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -640,18 +640,18 @@ class SubscriptionsApi(object):
 
         Get domain info  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_domain_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_domain_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: Domain
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_domain_info_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_domain_info_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -662,11 +662,11 @@ class SubscriptionsApi(object):
 
         Get domain info  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_domain_info_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_domain_info_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: Domain
                  If the method is called asynchronously,
@@ -674,7 +674,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -728,7 +728,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='Domain',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -739,18 +739,18 @@ class SubscriptionsApi(object):
 
         Get payment method  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_method(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payment_method(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: PaymentInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_payment_method_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_payment_method_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -761,11 +761,11 @@ class SubscriptionsApi(object):
 
         Get payment method  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_method_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payment_method_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: PaymentInfo
                  If the method is called asynchronously,
@@ -773,7 +773,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -827,7 +827,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='PaymentInfo',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -838,11 +838,11 @@ class SubscriptionsApi(object):
 
         Get payment processor to generate token for when updating payment method  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_processor(subscription_id, payment_type, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payment_processor(subscription_id, payment_type, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param str payment_type: (required)
         :param str country:
@@ -851,7 +851,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_payment_processor_with_http_info(subscription_id, payment_type, **kwargs)  # noqa: E501
         else:
             (data) = self.get_payment_processor_with_http_info(subscription_id, payment_type, **kwargs)  # noqa: E501
@@ -862,11 +862,11 @@ class SubscriptionsApi(object):
 
         Get payment processor to generate token for when updating payment method  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_processor_with_http_info(subscription_id, payment_type, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payment_processor_with_http_info(subscription_id, payment_type, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param str payment_type: (required)
         :param str country:
@@ -876,7 +876,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'payment_type', 'country']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -938,7 +938,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='PaymentProcessorType',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -949,18 +949,18 @@ class SubscriptionsApi(object):
 
         Get subscription  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscription(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscription(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: Subscription
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_subscription_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_subscription_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -971,11 +971,11 @@ class SubscriptionsApi(object):
 
         Get subscription  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscription_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscription_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: Subscription
                  If the method is called asynchronously,
@@ -983,7 +983,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1037,7 +1037,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='Subscription',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1048,18 +1048,18 @@ class SubscriptionsApi(object):
 
         Subscription attributes list  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscription_attributes(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscription_attributes(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: list[AttributeSimple]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_subscription_attributes_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_subscription_attributes_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -1070,11 +1070,11 @@ class SubscriptionsApi(object):
 
         Subscription attributes list  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscription_attributes_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscription_attributes_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: list[AttributeSimple]
                  If the method is called asynchronously,
@@ -1082,7 +1082,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1136,7 +1136,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='list[AttributeSimple]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1147,18 +1147,18 @@ class SubscriptionsApi(object):
 
         Returns all active discounts for specified subscription  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscription_discounts(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscription_discounts(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: list[DiscountValue]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_subscription_discounts_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_subscription_discounts_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -1169,11 +1169,11 @@ class SubscriptionsApi(object):
 
         Returns all active discounts for specified subscription  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscription_discounts_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscription_discounts_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: list[DiscountValue]
                  If the method is called asynchronously,
@@ -1181,7 +1181,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1235,7 +1235,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='list[DiscountValue]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1246,11 +1246,11 @@ class SubscriptionsApi(object):
 
         Subscription invoices list  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscription_invoices(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscription_invoices(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
@@ -1264,7 +1264,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_subscription_invoices_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_subscription_invoices_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -1275,11 +1275,11 @@ class SubscriptionsApi(object):
 
         Subscription invoices list  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subscription_invoices_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscription_invoices_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
@@ -1294,7 +1294,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'page', 'per_page', 'sort_dir', 'sort_field', 'filters', '_from', 'to']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1362,7 +1362,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='InvoiceList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1373,11 +1373,11 @@ class SubscriptionsApi(object):
 
         List of variations user can upgrade to and their current variation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_upgrade_variations(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_upgrade_variations(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param str country:
         :param str vat_id:
@@ -1386,7 +1386,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_upgrade_variations_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_upgrade_variations_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -1397,11 +1397,11 @@ class SubscriptionsApi(object):
 
         List of variations user can upgrade to and their current variation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_upgrade_variations_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_upgrade_variations_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param str country:
         :param str vat_id:
@@ -1411,7 +1411,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'country', 'vat_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1469,7 +1469,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='VariationUpgrades',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1480,18 +1480,18 @@ class SubscriptionsApi(object):
 
         If account billing is stopped, restart it.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.resume_billing(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.resume_billing(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.resume_billing_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.resume_billing_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -1502,11 +1502,11 @@ class SubscriptionsApi(object):
 
         If account billing is stopped, restart it.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.resume_billing_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.resume_billing_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: OkResponse
                  If the method is called asynchronously,
@@ -1514,7 +1514,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1568,7 +1568,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1579,11 +1579,11 @@ class SubscriptionsApi(object):
 
         Update billing info  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_billing_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_billing_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param BillingInfo body:
         :return: OkResponse
@@ -1591,7 +1591,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.set_billing_info_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.set_billing_info_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -1602,11 +1602,11 @@ class SubscriptionsApi(object):
 
         Update billing info  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_billing_info_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_billing_info_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param BillingInfo body:
         :return: OkResponse
@@ -1615,7 +1615,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1671,7 +1671,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1682,11 +1682,11 @@ class SubscriptionsApi(object):
 
         Park custom domain on an account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_custom_domain(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_custom_domain(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param Domain body: Domain can be sent anytime. Custom domain can be sent by itself or along with both certificate and key.
         :return: OkResponse
@@ -1694,7 +1694,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.set_custom_domain_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.set_custom_domain_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -1705,11 +1705,11 @@ class SubscriptionsApi(object):
 
         Park custom domain on an account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_custom_domain_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_custom_domain_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param Domain body: Domain can be sent anytime. Custom domain can be sent by itself or along with both certificate and key.
         :return: OkResponse
@@ -1718,7 +1718,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1774,7 +1774,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1785,11 +1785,11 @@ class SubscriptionsApi(object):
 
         Update payment method  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_payment_method(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_payment_method(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param PaymentMethod body:
         :return: PaymentInfo
@@ -1797,7 +1797,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.set_payment_method_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.set_payment_method_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -1808,11 +1808,11 @@ class SubscriptionsApi(object):
 
         Update payment method  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_payment_method_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_payment_method_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param PaymentMethod body:
         :return: PaymentInfo
@@ -1821,7 +1821,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1877,7 +1877,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='PaymentInfo',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1888,11 +1888,11 @@ class SubscriptionsApi(object):
 
         Get subscription invoices  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_subscription_usage(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_subscription_usage(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param UsageData body:
         :return: OkResponse
@@ -1900,7 +1900,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.set_subscription_usage_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.set_subscription_usage_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -1911,11 +1911,11 @@ class SubscriptionsApi(object):
 
         Get subscription invoices  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_subscription_usage_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_subscription_usage_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param UsageData body:
         :return: OkResponse
@@ -1924,7 +1924,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1980,7 +1980,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1991,11 +1991,11 @@ class SubscriptionsApi(object):
 
         Stop account. Account won't be billed anymore and will continue to work till next billing date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.stop_billing(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.stop_billing(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param StopReason reason: Reason for stopping
         :return: OkResponse
@@ -2003,7 +2003,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.stop_billing_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.stop_billing_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -2014,11 +2014,11 @@ class SubscriptionsApi(object):
 
         Stop account. Account won't be billed anymore and will continue to work till next billing date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.stop_billing_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.stop_billing_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param StopReason reason: Reason for stopping
         :return: OkResponse
@@ -2027,7 +2027,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'reason']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2083,7 +2083,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2094,18 +2094,18 @@ class SubscriptionsApi(object):
 
         Update subscription to latest version  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_application(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_application(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.update_application_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.update_application_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -2116,11 +2116,11 @@ class SubscriptionsApi(object):
 
         Update subscription to latest version  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_application_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_application_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :return: OkResponse
                  If the method is called asynchronously,
@@ -2128,7 +2128,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2182,7 +2182,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2193,11 +2193,11 @@ class SubscriptionsApi(object):
 
         Checks if billing info can be updated without issues. Field 'force' in BillingInfo is ignored in this call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.validate_billing_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_billing_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param BillingInfo body:
         :return: OkResponse
@@ -2205,7 +2205,7 @@ class SubscriptionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.validate_billing_info_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
             (data) = self.validate_billing_info_with_http_info(subscription_id, **kwargs)  # noqa: E501
@@ -2216,11 +2216,11 @@ class SubscriptionsApi(object):
 
         Checks if billing info can be updated without issues. Field 'force' in BillingInfo is ignored in this call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.validate_billing_info_with_http_info(subscription_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_billing_info_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str subscription_id: (required)
         :param BillingInfo body:
         :return: OkResponse
@@ -2229,7 +2229,7 @@ class SubscriptionsApi(object):
         """
 
         all_params = ['subscription_id', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2285,7 +2285,7 @@ class SubscriptionsApi(object):
             files=local_var_files,
             response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

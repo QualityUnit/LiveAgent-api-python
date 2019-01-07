@@ -37,11 +37,11 @@ class PlansApi(object):
         """Get device department plan  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_device_department_plan(device_id, department_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_device_department_plan(device_id, department_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int device_id: (required)
         :param str department_id: (required)
         :return: list[DeviceDepartmentPlan]
@@ -49,7 +49,7 @@ class PlansApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_device_department_plan_with_http_info(device_id, department_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_device_department_plan_with_http_info(device_id, department_id, **kwargs)  # noqa: E501
@@ -59,11 +59,11 @@ class PlansApi(object):
         """Get device department plan  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_device_department_plan_with_http_info(device_id, department_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_device_department_plan_with_http_info(device_id, department_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int device_id: (required)
         :param str department_id: (required)
         :return: list[DeviceDepartmentPlan]
@@ -72,7 +72,7 @@ class PlansApi(object):
         """
 
         all_params = ['device_id', 'department_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -132,7 +132,7 @@ class PlansApi(object):
             files=local_var_files,
             response_type='list[DeviceDepartmentPlan]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

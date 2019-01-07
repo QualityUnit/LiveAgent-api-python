@@ -52,13 +52,16 @@ from liveagent_api.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: apikey
-liveagent_api.configuration.api_key['apikey'] = 'YOUR_API_KEY'
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# liveagent_api.configuration.api_key_prefix['apikey'] = 'Bearer'
+# configuration.api_key_prefix['apikey'] = 'Bearer'
 # Configure OAuth2 access token for authorization: privileges
-liveagent_api.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = liveagent_api.AgentPhoneApi()
+api_instance = liveagent_api.AgentPhoneApi(liveagent_api.ApiClient(configuration))
 agent_id = 'agent_id_example' # str | 
 type = 'I' # str | API (I - default), SIP (S) (optional) (default to I)
 

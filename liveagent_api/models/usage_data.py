@@ -31,52 +31,52 @@ class UsageData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'date': 'datetime',
+        '_date': 'datetime',
         'name': 'str',
         'value': 'str'
     }
 
     attribute_map = {
-        'date': 'date',
+        '_date': 'date',
         'name': 'name',
         'value': 'value'
     }
 
-    def __init__(self, date=None, name=None, value=None):  # noqa: E501
+    def __init__(self, _date=None, name=None, value=None):  # noqa: E501
         """UsageData - a model defined in Swagger"""  # noqa: E501
 
-        self._date = None
+        self.__date = None
         self._name = None
         self._value = None
         self.discriminator = None
 
-        if date is not None:
-            self.date = date
+        if _date is not None:
+            self._date = _date
         if name is not None:
             self.name = name
         if value is not None:
             self.value = value
 
     @property
-    def date(self):
-        """Gets the date of this UsageData.  # noqa: E501
+    def _date(self):
+        """Gets the _date of this UsageData.  # noqa: E501
 
 
-        :return: The date of this UsageData.  # noqa: E501
+        :return: The _date of this UsageData.  # noqa: E501
         :rtype: datetime
         """
-        return self._date
+        return self.__date
 
-    @date.setter
-    def date(self, date):
-        """Sets the date of this UsageData.
+    @_date.setter
+    def _date(self, _date):
+        """Sets the _date of this UsageData.
 
 
-        :param date: The date of this UsageData.  # noqa: E501
+        :param _date: The _date of this UsageData.  # noqa: E501
         :type: datetime
         """
 
-        self._date = date
+        self.__date = _date
 
     @property
     def name(self):
@@ -141,6 +141,9 @@ class UsageData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UsageData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

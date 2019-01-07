@@ -38,18 +38,18 @@ class BansApi(object):
 
         Create new ban record  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_ban(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_ban(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Ban ban:
         :return: Ban
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_ban_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_ban_with_http_info(**kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class BansApi(object):
 
         Create new ban record  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_ban_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_ban_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param Ban ban:
         :return: Ban
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class BansApi(object):
         """
 
         all_params = ['ban']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -122,7 +122,7 @@ class BansApi(object):
             files=local_var_files,
             response_type='Ban',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -133,18 +133,18 @@ class BansApi(object):
 
         Expire ban  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.expire_ban(ban_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.expire_ban(ban_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int ban_id: (required)
         :return: Ban
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.expire_ban_with_http_info(ban_id, **kwargs)  # noqa: E501
         else:
             (data) = self.expire_ban_with_http_info(ban_id, **kwargs)  # noqa: E501
@@ -155,11 +155,11 @@ class BansApi(object):
 
         Expire ban  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.expire_ban_with_http_info(ban_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.expire_ban_with_http_info(ban_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int ban_id: (required)
         :return: Ban
                  If the method is called asynchronously,
@@ -167,7 +167,7 @@ class BansApi(object):
         """
 
         all_params = ['ban_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -221,7 +221,7 @@ class BansApi(object):
             files=local_var_files,
             response_type='Ban',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -232,18 +232,18 @@ class BansApi(object):
 
         Ban item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ban(ban_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ban(ban_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int ban_id: (required)
         :return: Ban
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_ban_with_http_info(ban_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_ban_with_http_info(ban_id, **kwargs)  # noqa: E501
@@ -254,11 +254,11 @@ class BansApi(object):
 
         Ban item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_ban_with_http_info(ban_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_ban_with_http_info(ban_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int ban_id: (required)
         :return: Ban
                  If the method is called asynchronously,
@@ -266,7 +266,7 @@ class BansApi(object):
         """
 
         all_params = ['ban_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -320,7 +320,7 @@ class BansApi(object):
             files=local_var_files,
             response_type='Ban',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -331,11 +331,11 @@ class BansApi(object):
 
         List of bans  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_bans(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_bans(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param str sort_dir: Sorting direction ASC or DESC
@@ -348,7 +348,7 @@ class BansApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_bans_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_bans_with_http_info(**kwargs)  # noqa: E501
@@ -359,11 +359,11 @@ class BansApi(object):
 
         List of bans  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_bans_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_bans_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param str sort_dir: Sorting direction ASC or DESC
@@ -377,7 +377,7 @@ class BansApi(object):
         """
 
         all_params = ['page', 'per_page', 'sort_dir', 'sort_field', 'filters', '_from', 'to']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -439,7 +439,7 @@ class BansApi(object):
             files=local_var_files,
             response_type='list[BanListItem]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -450,11 +450,11 @@ class BansApi(object):
 
         Update ban  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_ban(ban_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_ban(ban_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int ban_id: (required)
         :param Ban ban:
         :return: Ban
@@ -462,7 +462,7 @@ class BansApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.update_ban_with_http_info(ban_id, **kwargs)  # noqa: E501
         else:
             (data) = self.update_ban_with_http_info(ban_id, **kwargs)  # noqa: E501
@@ -473,11 +473,11 @@ class BansApi(object):
 
         Update ban  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_ban_with_http_info(ban_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_ban_with_http_info(ban_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int ban_id: (required)
         :param Ban ban:
         :return: Ban
@@ -486,7 +486,7 @@ class BansApi(object):
         """
 
         all_params = ['ban_id', 'ban']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -542,7 +542,7 @@ class BansApi(object):
             files=local_var_files,
             response_type='Ban',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

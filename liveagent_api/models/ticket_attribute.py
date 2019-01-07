@@ -142,6 +142,9 @@ class TicketAttribute(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TicketAttribute, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

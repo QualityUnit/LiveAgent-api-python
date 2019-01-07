@@ -38,18 +38,18 @@ class MailAccountApi(object):
 
         Gets mail account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_mail_account(mail_account_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_mail_account(mail_account_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mail_account_id: (required)
         :return: MailAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_mail_account_with_http_info(mail_account_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_mail_account_with_http_info(mail_account_id, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class MailAccountApi(object):
 
         Gets mail account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_mail_account_with_http_info(mail_account_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_mail_account_with_http_info(mail_account_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mail_account_id: (required)
         :return: MailAccount
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class MailAccountApi(object):
         """
 
         all_params = ['mail_account_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class MailAccountApi(object):
             files=local_var_files,
             response_type='MailAccount',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -136,11 +136,11 @@ class MailAccountApi(object):
         """Gets list of mail accounts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_mail_account_list(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_mail_account_list(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -153,7 +153,7 @@ class MailAccountApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_mail_account_list_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_mail_account_list_with_http_info(**kwargs)  # noqa: E501
@@ -163,11 +163,11 @@ class MailAccountApi(object):
         """Gets list of mail accounts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_mail_account_list_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_mail_account_list_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
         :param int _from: Result set start. Takes precedence over _page.
@@ -181,7 +181,7 @@ class MailAccountApi(object):
         """
 
         all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -243,7 +243,7 @@ class MailAccountApi(object):
             files=local_var_files,
             response_type='list[MailAccount]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

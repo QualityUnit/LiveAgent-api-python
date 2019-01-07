@@ -196,6 +196,9 @@ class IvrFetch(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(IvrFetch, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

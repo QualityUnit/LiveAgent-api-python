@@ -386,6 +386,9 @@ class Invoice(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Invoice, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -117,6 +117,9 @@ class ContactPhone(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ContactPhone, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

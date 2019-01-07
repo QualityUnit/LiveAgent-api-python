@@ -118,6 +118,9 @@ class TicketPostpone(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TicketPostpone, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

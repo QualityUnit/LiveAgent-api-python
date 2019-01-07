@@ -91,6 +91,9 @@ class AgentStatuses(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(AgentStatuses, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

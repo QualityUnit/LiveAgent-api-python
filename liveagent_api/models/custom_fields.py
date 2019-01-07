@@ -115,6 +115,9 @@ class CustomFields(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CustomFields, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

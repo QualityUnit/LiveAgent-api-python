@@ -248,6 +248,9 @@ class Variation(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Variation, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

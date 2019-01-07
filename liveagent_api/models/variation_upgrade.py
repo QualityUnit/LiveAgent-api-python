@@ -198,6 +198,9 @@ class VariationUpgrade(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(VariationUpgrade, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

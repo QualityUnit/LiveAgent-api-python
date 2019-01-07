@@ -403,6 +403,9 @@ class Customer(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Customer, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

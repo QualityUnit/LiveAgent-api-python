@@ -154,6 +154,9 @@ class CallTransferResult(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CallTransferResult, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

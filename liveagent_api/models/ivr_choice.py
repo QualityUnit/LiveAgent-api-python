@@ -183,6 +183,9 @@ class IvrChoice(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(IvrChoice, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
