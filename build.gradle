@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+group 'com.qualityunit'
+version '1.0-SNAPSHOT'
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile "io.swagger:swagger-codegen:2.4.0"
+    runtime "io.swagger:swagger-codegen-cli:2.4.0"
+}
+apply from: "apigen.gradle"

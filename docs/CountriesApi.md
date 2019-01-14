@@ -14,8 +14,9 @@ Country list
 
 List of available countries
 
-### Example 
+### Example
 ```python
+from __future__ import print_function
 import time
 import liveagent_api
 from liveagent_api.rest import ApiException
@@ -24,12 +25,12 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = liveagent_api.CountriesApi()
 
-try: 
+try:
     # Country list
     api_response = api_instance.get_countries()
     pprint(api_response)
 except ApiException as e:
-    print "Exception when calling CountriesApi->get_countries: %s\n" % e
+    print("Exception when calling CountriesApi->get_countries: %s\n" % e)
 ```
 
 ### Parameters
