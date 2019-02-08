@@ -22,6 +22,7 @@
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
 
-liveagent_api/rest.py
 liveagent_api/api_client.py
+liveagent_api/configuration.py
+liveagent_api/rest.py
 .gitignore
