@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **departmentid** | **str** |  | 
 **recipient** | **str** |  | 
 **message** | **str** |  | 
-**date_created** | **str** |  date and time with valid format: YYYY-MM-DD HH:MM:SS | [optional] 
 **recipient_name** | **str** |  | [optional] 
 **carbon_copy** | **str** |  | [optional] 
 **blind_carbon_copy** | **str** |  | [optional] 

@@ -22,6 +22,7 @@ from liveagent_api.api.devices_api import DevicesApi
 from liveagent_api.api.extensions_api import ExtensionsApi
 from liveagent_api.api.files_api import FilesApi
 from liveagent_api.api.filters_api import FiltersApi
+from liveagent_api.api.grid_api import GridApi
 from liveagent_api.api.groups_api import GroupsApi
 from liveagent_api.api.hosting_api import HostingApi
 from liveagent_api.api.invoices_api import InvoicesApi

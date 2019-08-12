@@ -4,7 +4,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -27,6 +27,7 @@ from liveagent_api.models.api_key import ApiKey
 from liveagent_api.models.api_key_login import ApiKeyLogin
 from liveagent_api.models.api_privilege import ApiPrivilege
 from liveagent_api.models.attribute_simple import AttributeSimple
+from liveagent_api.models.available_prefix import AvailablePrefix
 from liveagent_api.models.ban import Ban
 from liveagent_api.models.batch import Batch
 from liveagent_api.models.billing_info import BillingInfo
@@ -40,9 +41,13 @@ from liveagent_api.models.call_status import CallStatus
 from liveagent_api.models.call_transfer_result import CallTransferResult
 from liveagent_api.models.canned_message import CannedMessage
 from liveagent_api.models.chat_information import ChatInformation
+from liveagent_api.models.chat_row import ChatRow
 from liveagent_api.models.company_list_item import CompanyListItem
+from liveagent_api.models.company_request import CompanyRequest
 from liveagent_api.models.contact_list_item import ContactListItem
 from liveagent_api.models.contact_phone import ContactPhone
+from liveagent_api.models.contact_request import ContactRequest
+from liveagent_api.models.count import Count
 from liveagent_api.models.country import Country
 from liveagent_api.models.coupon import Coupon
 from liveagent_api.models.custom_button import CustomButton
@@ -58,6 +63,7 @@ from liveagent_api.models.device_department_plan_list import DeviceDepartmentPla
 from liveagent_api.models.discount_value import DiscountValue
 from liveagent_api.models.domain import Domain
 from liveagent_api.models.error_response import ErrorResponse
+from liveagent_api.models.event_log_row import EventLogRow
 from liveagent_api.models.extension import Extension
 from liveagent_api.models.filter import Filter
 from liveagent_api.models.filter_condition import FilterCondition
@@ -86,6 +92,7 @@ from liveagent_api.models.setting import Setting
 from liveagent_api.models.sla import Sla
 from liveagent_api.models.sla_business_hours import SlaBusinessHours
 from liveagent_api.models.sla_history import SlaHistory
+from liveagent_api.models.sla_log_row import SlaLogRow
 from liveagent_api.models.sla_values import SlaValues
 from liveagent_api.models.stop_reason import StopReason
 from liveagent_api.models.stored_file import StoredFile
@@ -97,8 +104,10 @@ from liveagent_api.models.ticket_history import TicketHistory
 from liveagent_api.models.ticket_information import TicketInformation
 from liveagent_api.models.ticket_list_item import TicketListItem
 from liveagent_api.models.ticket_postpone import TicketPostpone
+from liveagent_api.models.ticket_row import TicketRow
 from liveagent_api.models.ticket_sla import TicketSla
 from liveagent_api.models.ticket_updatable import TicketUpdatable
+from liveagent_api.models.time_report_row import TimeReportRow
 from liveagent_api.models.token import Token
 from liveagent_api.models.upgrade import Upgrade
 from liveagent_api.models.usage_data import UsageData

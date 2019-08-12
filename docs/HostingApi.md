@@ -1,6 +1,6 @@
 # liveagent_api.HostingApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

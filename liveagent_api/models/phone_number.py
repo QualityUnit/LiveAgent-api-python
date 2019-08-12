@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -35,7 +35,8 @@ class PhoneNumber(object):
     swagger_types = {
         'id': 'str',
         'type': 'str',
-        'dial_out_prefix': 'str',
+        'dial_out_prefix': 'int',
+        'dial_out_prefix_formatted': 'str',
         'record_call': 'bool',
         'number': 'str',
         'name': 'str',
@@ -56,6 +57,7 @@ class PhoneNumber(object):
         'id': 'id',
         'type': 'type',
         'dial_out_prefix': 'dial_out_prefix',
+        'dial_out_prefix_formatted': 'dial_out_prefix_formatted',
         'record_call': 'record_call',
         'number': 'number',
         'name': 'name',
@@ -72,12 +74,13 @@ class PhoneNumber(object):
         'ivr': 'ivr'
     }
 
-    def __init__(self, id=None, type=None, dial_out_prefix=None, record_call=None, number=None, name=None, departmentid=None, department=None, status=None, status_message=None, host_settings=None, host=None, port=None, user=None, password=None, providerid=None, ivr=None):  # noqa: E501
+    def __init__(self, id=None, type=None, dial_out_prefix=None, dial_out_prefix_formatted=None, record_call=None, number=None, name=None, departmentid=None, department=None, status=None, status_message=None, host_settings=None, host=None, port=None, user=None, password=None, providerid=None, ivr=None):  # noqa: E501
         """PhoneNumber - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._type = None
         self._dial_out_prefix = None
+        self._dial_out_prefix_formatted = None
         self._record_call = None
         self._number = None
         self._name = None
@@ -99,6 +102,8 @@ class PhoneNumber(object):
             self.type = type
         if dial_out_prefix is not None:
             self.dial_out_prefix = dial_out_prefix
+        if dial_out_prefix_formatted is not None:
+            self.dial_out_prefix_formatted = dial_out_prefix_formatted
         if record_call is not None:
             self.record_call = record_call
         self.number = number
@@ -183,10 +188,10 @@ class PhoneNumber(object):
     def dial_out_prefix(self):
         """Gets the dial_out_prefix of this PhoneNumber.  # noqa: E501
 
-        Prefix needed to orifinate call using this number  # noqa: E501
+        Prefix needed to originate call using this number  # noqa: E501
 
         :return: The dial_out_prefix of this PhoneNumber.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._dial_out_prefix
 
@@ -194,13 +199,40 @@ class PhoneNumber(object):
     def dial_out_prefix(self, dial_out_prefix):
         """Sets the dial_out_prefix of this PhoneNumber.
 
-        Prefix needed to orifinate call using this number  # noqa: E501
+        Prefix needed to originate call using this number  # noqa: E501
 
         :param dial_out_prefix: The dial_out_prefix of this PhoneNumber.  # noqa: E501
+        :type: int
+        """
+        if dial_out_prefix is not None and dial_out_prefix > 999:  # noqa: E501
+            raise ValueError("Invalid value for `dial_out_prefix`, must be a value less than or equal to `999`")  # noqa: E501
+        if dial_out_prefix is not None and dial_out_prefix < 1:  # noqa: E501
+            raise ValueError("Invalid value for `dial_out_prefix`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._dial_out_prefix = dial_out_prefix
+
+    @property
+    def dial_out_prefix_formatted(self):
+        """Gets the dial_out_prefix_formatted of this PhoneNumber.  # noqa: E501
+
+        Dial out prefix in 2 or 3 digits string format according to application settings  # noqa: E501
+
+        :return: The dial_out_prefix_formatted of this PhoneNumber.  # noqa: E501
+        :rtype: str
+        """
+        return self._dial_out_prefix_formatted
+
+    @dial_out_prefix_formatted.setter
+    def dial_out_prefix_formatted(self, dial_out_prefix_formatted):
+        """Sets the dial_out_prefix_formatted of this PhoneNumber.
+
+        Dial out prefix in 2 or 3 digits string format according to application settings  # noqa: E501
+
+        :param dial_out_prefix_formatted: The dial_out_prefix_formatted of this PhoneNumber.  # noqa: E501
         :type: str
         """
 
-        self._dial_out_prefix = dial_out_prefix
+        self._dial_out_prefix_formatted = dial_out_prefix_formatted
 
     @property
     def record_call(self):

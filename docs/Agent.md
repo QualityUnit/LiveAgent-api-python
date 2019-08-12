@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **email** | **str** |  | 
 **role** | **str** |  | [optional] [default to 'agent']
 **avatar_url** | **str** |  | [optional] 
-**online_status** | **str** | F - offline, N - online  | [optional] 
+**online_status** | **str** | F - offline, N - online, P - paused, C - mobile  | [optional] 
 **status** | **str** | A - active, X - deleted  | [optional] 
 **gender** | **str** | M - male, F - female, X - unspecified  | [optional] [default to 'X']
 

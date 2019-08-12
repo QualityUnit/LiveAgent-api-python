@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -38,7 +38,6 @@ class TicketListItem(object):
         'departmentid': 'str',
         'recipient': 'str',
         'message': 'str',
-        'date_created': 'str',
         'recipient_name': 'str',
         'carbon_copy': 'str',
         'blind_carbon_copy': 'str',
@@ -58,7 +57,6 @@ class TicketListItem(object):
         'departmentid': 'departmentid',
         'recipient': 'recipient',
         'message': 'message',
-        'date_created': 'date_created',
         'recipient_name': 'recipient_name',
         'carbon_copy': 'carbon_copy',
         'blind_carbon_copy': 'blind_carbon_copy',
@@ -72,7 +70,7 @@ class TicketListItem(object):
         'attachments': 'attachments'
     }
 
-    def __init__(self, useridentifier=None, subject=None, departmentid=None, recipient=None, message=None, date_created=None, recipient_name=None, carbon_copy=None, blind_carbon_copy=None, status='N', mail_message_id=None, do_not_send_mail='N', use_template='Y', is_html_message='N', custom_fields=None, tags=None, attachments=None):  # noqa: E501
+    def __init__(self, useridentifier=None, subject=None, departmentid=None, recipient=None, message=None, recipient_name=None, carbon_copy=None, blind_carbon_copy=None, status='N', mail_message_id=None, do_not_send_mail='N', use_template='Y', is_html_message='N', custom_fields=None, tags=None, attachments=None):  # noqa: E501
         """TicketListItem - a model defined in Swagger"""  # noqa: E501
 
         self._useridentifier = None
@@ -80,7 +78,6 @@ class TicketListItem(object):
         self._departmentid = None
         self._recipient = None
         self._message = None
-        self._date_created = None
         self._recipient_name = None
         self._carbon_copy = None
         self._blind_carbon_copy = None
@@ -99,8 +96,6 @@ class TicketListItem(object):
         self.departmentid = departmentid
         self.recipient = recipient
         self.message = message
-        if date_created is not None:
-            self.date_created = date_created
         if recipient_name is not None:
             self.recipient_name = recipient_name
         if carbon_copy is not None:
@@ -238,29 +233,6 @@ class TicketListItem(object):
             raise ValueError("Invalid value for `message`, must not be `None`")  # noqa: E501
 
         self._message = message
-
-    @property
-    def date_created(self):
-        """Gets the date_created of this TicketListItem.  # noqa: E501
-
-         date and time with valid format: YYYY-MM-DD HH:MM:SS  # noqa: E501
-
-        :return: The date_created of this TicketListItem.  # noqa: E501
-        :rtype: str
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """Sets the date_created of this TicketListItem.
-
-         date and time with valid format: YYYY-MM-DD HH:MM:SS  # noqa: E501
-
-        :param date_created: The date_created of this TicketListItem.  # noqa: E501
-        :type: str
-        """
-
-        self._date_created = date_created
 
     @property
     def recipient_name(self):

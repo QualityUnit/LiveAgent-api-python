@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -139,13 +139,11 @@ class ContactPhonesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
-        :param int _from: Result set start. Takes precedence over _page.
-        :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
-        :param str sort_field: Sorting field
-        :param str filters: Filters (json object {column:value, ...})
+        :param str sort_field:
+        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str cursor: used for iteration throght resultset. Cursor identifies specific page in resultset.
         :return: list[ContactPhone]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -166,19 +164,17 @@ class ContactPhonesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int page: Page to display. Not used if _from is defined.
         :param int per_page: Results per page. Used only if _page is used.
-        :param int _from: Result set start. Takes precedence over _page.
-        :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
-        :param str sort_field: Sorting field
-        :param str filters: Filters (json object {column:value, ...})
+        :param str sort_field:
+        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str cursor: used for iteration throght resultset. Cursor identifies specific page in resultset.
         :return: list[ContactPhone]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters']  # noqa: E501
+        all_params = ['per_page', 'sort_dir', 'sort_field', 'filters', 'cursor']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -199,20 +195,16 @@ class ContactPhonesApi(object):
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('_page', params['page']))  # noqa: E501
         if 'per_page' in params:
             query_params.append(('_perPage', params['per_page']))  # noqa: E501
-        if '_from' in params:
-            query_params.append(('_from', params['_from']))  # noqa: E501
-        if 'to' in params:
-            query_params.append(('_to', params['to']))  # noqa: E501
         if 'sort_dir' in params:
             query_params.append(('_sortDir', params['sort_dir']))  # noqa: E501
         if 'sort_field' in params:
             query_params.append(('_sortField', params['sort_field']))  # noqa: E501
         if 'filters' in params:
             query_params.append(('_filters', params['filters']))  # noqa: E501
+        if 'cursor' in params:
+            query_params.append(('_cursor', params['cursor']))  # noqa: E501
 
         header_params = {}
 

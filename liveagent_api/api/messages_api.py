@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -43,6 +43,8 @@ class MessagesApi(object):
 
         :param async_req bool
         :param int message_id: (required)
+        :param int _from: Result set start. Takes precedence over _page.
+        :param int to: Result set end. Used only if _from is used.
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -64,12 +66,14 @@ class MessagesApi(object):
 
         :param async_req bool
         :param int message_id: (required)
+        :param int _from: Result set start. Takes precedence over _page.
+        :param int to: Result set end. Used only if _from is used.
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['message_id']  # noqa: E501
+        all_params = ['message_id', '_from', 'to']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -96,6 +100,10 @@ class MessagesApi(object):
             path_params['messageId'] = params['message_id']  # noqa: E501
 
         query_params = []
+        if '_from' in params:
+            query_params.append(('_from', params['_from']))  # noqa: E501
+        if 'to' in params:
+            query_params.append(('_to', params['to']))  # noqa: E501
 
         header_params = {}
 

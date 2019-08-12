@@ -1,6 +1,6 @@
 # liveagent_api.MessagesApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_message**
-> Message get_message(message_id)
+> Message get_message(message_id, _from=_from, to=to)
 
 Get message
 
@@ -32,10 +32,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.MessagesApi(liveagent_api.ApiClient(configuration))
 message_id = 56 # int | 
+_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
+to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
 try:
     # Get message
-    api_response = api_instance.get_message(message_id)
+    api_response = api_instance.get_message(message_id, _from=_from, to=to)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessagesApi->get_message: %s\n" % e)
@@ -46,6 +48,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **int**|  | 
+ **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
+ **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
 
 ### Return type
 

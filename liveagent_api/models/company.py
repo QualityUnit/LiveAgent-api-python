@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from liveagent_api.models.company_list_item import CompanyListItem  # noqa: F401,E501
+from liveagent_api.models.company_request import CompanyRequest  # noqa: F401,E501
 from liveagent_api.models.custom_fields import CustomFields  # noqa: F401,E501
 
 
@@ -40,7 +40,6 @@ class Company(object):
         'description': 'str',
         'avatar_url': 'str',
         'type': 'str',
-        'date_created': 'datetime',
         'language': 'str',
         'city': 'str',
         'countrycode': 'str',
@@ -54,7 +53,9 @@ class Company(object):
         'time_offset': 'float',
         'latitude': 'float',
         'longitude': 'float',
-        'custom_fields': 'list[CustomFields]'
+        'custom_fields': 'list[CustomFields]',
+        'date_created': 'datetime',
+        'date_changed': 'datetime'
     }
 
     attribute_map = {
@@ -64,7 +65,6 @@ class Company(object):
         'description': 'description',
         'avatar_url': 'avatar_url',
         'type': 'type',
-        'date_created': 'date_created',
         'language': 'language',
         'city': 'city',
         'countrycode': 'countrycode',
@@ -78,10 +78,12 @@ class Company(object):
         'time_offset': 'time_offset',
         'latitude': 'latitude',
         'longitude': 'longitude',
-        'custom_fields': 'custom_fields'
+        'custom_fields': 'custom_fields',
+        'date_created': 'date_created',
+        'date_changed': 'date_changed'
     }
 
-    def __init__(self, id=None, name=None, system_name=None, description=None, avatar_url=None, type='V', date_created=None, language=None, city=None, countrycode=None, ip=None, emails=None, phones=None, groups=None, note=None, useragent=None, screen=None, time_offset=None, latitude=None, longitude=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, name=None, system_name=None, description=None, avatar_url=None, type='V', language=None, city=None, countrycode=None, ip=None, emails=None, phones=None, groups=None, note=None, useragent=None, screen=None, time_offset=None, latitude=None, longitude=None, custom_fields=None, date_created=None, date_changed=None):  # noqa: E501
         """Company - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -90,7 +92,6 @@ class Company(object):
         self._description = None
         self._avatar_url = None
         self._type = None
-        self._date_created = None
         self._language = None
         self._city = None
         self._countrycode = None
@@ -105,6 +106,8 @@ class Company(object):
         self._latitude = None
         self._longitude = None
         self._custom_fields = None
+        self._date_created = None
+        self._date_changed = None
         self.discriminator = None
 
         if id is not None:
@@ -119,8 +122,6 @@ class Company(object):
             self.avatar_url = avatar_url
         if type is not None:
             self.type = type
-        if date_created is not None:
-            self.date_created = date_created
         if language is not None:
             self.language = language
         if city is not None:
@@ -149,6 +150,10 @@ class Company(object):
             self.longitude = longitude
         if custom_fields is not None:
             self.custom_fields = custom_fields
+        if date_created is not None:
+            self.date_created = date_created
+        if date_changed is not None:
+            self.date_changed = date_changed
 
     @property
     def id(self):
@@ -283,27 +288,6 @@ class Company(object):
             )
 
         self._type = type
-
-    @property
-    def date_created(self):
-        """Gets the date_created of this Company.  # noqa: E501
-
-
-        :return: The date_created of this Company.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """Sets the date_created of this Company.
-
-
-        :param date_created: The date_created of this Company.  # noqa: E501
-        :type: datetime
-        """
-
-        self._date_created = date_created
 
     @property
     def language(self):
@@ -598,6 +582,50 @@ class Company(object):
         """
 
         self._custom_fields = custom_fields
+
+    @property
+    def date_created(self):
+        """Gets the date_created of this Company.  # noqa: E501
+
+
+        :return: The date_created of this Company.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """Sets the date_created of this Company.
+
+
+        :param date_created: The date_created of this Company.  # noqa: E501
+        :type: datetime
+        """
+
+        self._date_created = date_created
+
+    @property
+    def date_changed(self):
+        """Gets the date_changed of this Company.  # noqa: E501
+
+        Set automatically  # noqa: E501
+
+        :return: The date_changed of this Company.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_changed
+
+    @date_changed.setter
+    def date_changed(self, date_changed):
+        """Sets the date_changed of this Company.
+
+        Set automatically  # noqa: E501
+
+        :param date_changed: The date_changed of this Company.  # noqa: E501
+        :type: datetime
+        """
+
+        self._date_changed = date_changed
 
     def to_dict(self):
         """Returns the model properties as a dict"""

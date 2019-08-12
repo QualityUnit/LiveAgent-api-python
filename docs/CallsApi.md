@@ -1,6 +1,6 @@
 # liveagent_api.CallsApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -590,7 +590,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
 call_id = 'call_id_example' # str | 
-reason = 'reason_example' # str | T - timeout, D - decline, DNR - device not registered (optional)
+reason = 'reason_example' # str | T - timeout, D - decline, DNR - device not registered, CHE - channel error (optional)
 unreachable_agents = ['unreachable_agents_example'] # list[str] | Identifiers of unreachable agents that should be excluded from routing (optional)
 
 try:
@@ -606,7 +606,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
- **reason** | **str**| T - timeout, D - decline, DNR - device not registered | [optional] 
+ **reason** | **str**| T - timeout, D - decline, DNR - device not registered, CHE - channel error | [optional] 
  **unreachable_agents** | [**list[str]**](str.md)| Identifiers of unreachable agents that should be excluded from routing | [optional] 
 
 ### Return type
@@ -1185,7 +1185,7 @@ _from = 0 # int | Result set start. Takes precedence over _page. (optional) (def
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
 
 try:
     # Gets list of calls
@@ -1205,7 +1205,7 @@ Name | Type | Description  | Notes
  **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
 
 ### Return type
 

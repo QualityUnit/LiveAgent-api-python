@@ -1,6 +1,6 @@
 # liveagent_api.DevicesApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -570,7 +570,7 @@ to = 0 # int | Result set end. Used only if _from is used. (optional) (default t
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 sort_fields = 'sort_fields_example' # str | 'Sort fields (json object {column:direction, ...}).'<br> Direction can be:<br> - \"ASC\" (ascending)<br> - \"DESC\" (descending) If _sortFields is defined, _sortField and _sortDir is ignored. (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
 
 try:
     # Get device departments
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
  **sort_fields** | **str**| &#39;Sort fields (json object {column:direction, ...}).&#39;&lt;br&gt; Direction can be:&lt;br&gt; - \&quot;ASC\&quot; (ascending)&lt;br&gt; - \&quot;DESC\&quot; (descending) If _sortFields is defined, _sortField and _sortDir is ignored. | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
 
 ### Return type
 
@@ -694,7 +694,7 @@ _from = 0 # int | Result set start. Takes precedence over _page. (optional) (def
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
 
 try:
     # Gets list of devices
@@ -714,7 +714,7 @@ Name | Type | Description  | Notes
  **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
 
 ### Return type
 

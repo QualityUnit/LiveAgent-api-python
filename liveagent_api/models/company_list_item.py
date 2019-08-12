@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -38,6 +38,7 @@ class CompanyListItem(object):
         'avatar_url': 'str',
         'type': 'str',
         'date_created': 'datetime',
+        'date_changed': 'datetime',
         'language': 'str',
         'city': 'str',
         'countrycode': 'str',
@@ -55,6 +56,7 @@ class CompanyListItem(object):
         'avatar_url': 'avatar_url',
         'type': 'type',
         'date_created': 'date_created',
+        'date_changed': 'date_changed',
         'language': 'language',
         'city': 'city',
         'countrycode': 'countrycode',
@@ -64,7 +66,7 @@ class CompanyListItem(object):
         'groups': 'groups'
     }
 
-    def __init__(self, id=None, name=None, system_name=None, description=None, avatar_url=None, type='V', date_created=None, language=None, city=None, countrycode=None, ip=None, emails=None, phones=None, groups=None):  # noqa: E501
+    def __init__(self, id=None, name=None, system_name=None, description=None, avatar_url=None, type='V', date_created=None, date_changed=None, language=None, city=None, countrycode=None, ip=None, emails=None, phones=None, groups=None):  # noqa: E501
         """CompanyListItem - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -74,6 +76,7 @@ class CompanyListItem(object):
         self._avatar_url = None
         self._type = None
         self._date_created = None
+        self._date_changed = None
         self._language = None
         self._city = None
         self._countrycode = None
@@ -97,6 +100,8 @@ class CompanyListItem(object):
             self.type = type
         if date_created is not None:
             self.date_created = date_created
+        if date_changed is not None:
+            self.date_changed = date_changed
         if language is not None:
             self.language = language
         if city is not None:
@@ -266,6 +271,29 @@ class CompanyListItem(object):
         """
 
         self._date_created = date_created
+
+    @property
+    def date_changed(self):
+        """Gets the date_changed of this CompanyListItem.  # noqa: E501
+
+        Set automatically  # noqa: E501
+
+        :return: The date_changed of this CompanyListItem.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_changed
+
+    @date_changed.setter
+    def date_changed(self, date_changed):
+        """Sets the date_changed of this CompanyListItem.
+
+        Set automatically  # noqa: E501
+
+        :param date_changed: The date_changed of this CompanyListItem.  # noqa: E501
+        :type: datetime
+        """
+
+        self._date_changed = date_changed
 
     @property
     def language(self):
