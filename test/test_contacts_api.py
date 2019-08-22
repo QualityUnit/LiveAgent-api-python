@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -57,10 +57,24 @@ class TestContactsApi(unittest.TestCase):
         """
         pass
 
+    def test_patch_contact(self):
+        """Test case for patch_contact
+
+        Update contact partially  # noqa: E501
+        """
+        pass
+
+    def test_register_contact(self):
+        """Test case for register_contact
+
+        Register contact  # noqa: E501
+        """
+        pass
+
     def test_update_contact(self):
         """Test case for update_contact
 
-        Update contact  # noqa: E501
+        Update whole contact  # noqa: E501
         """
         pass
 

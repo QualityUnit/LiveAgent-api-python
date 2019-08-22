@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -48,6 +48,8 @@ class Ticket(object):
         'date_resolved': 'str',
         'date_due': 'str',
         'date_deleted': 'str',
+        'last_activity': 'str',
+        'last_activity_public': 'str',
         'public_access_urlcode': 'str',
         'subject': 'str',
         'custom_fields': 'list[CustomFields]'
@@ -69,12 +71,14 @@ class Ticket(object):
         'date_resolved': 'date_resolved',
         'date_due': 'date_due',
         'date_deleted': 'date_deleted',
+        'last_activity': 'last_activity',
+        'last_activity_public': 'last_activity_public',
         'public_access_urlcode': 'public_access_urlcode',
         'subject': 'subject',
         'custom_fields': 'custom_fields'
     }
 
-    def __init__(self, id=None, owner_contactid=None, owner_email=None, owner_name=None, departmentid=None, agentid=None, status=None, tags=None, code=None, channel_type=None, date_created=None, date_changed=None, date_resolved=None, date_due=None, date_deleted=None, public_access_urlcode=None, subject=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, owner_contactid=None, owner_email=None, owner_name=None, departmentid=None, agentid=None, status=None, tags=None, code=None, channel_type=None, date_created=None, date_changed=None, date_resolved=None, date_due=None, date_deleted=None, last_activity=None, last_activity_public=None, public_access_urlcode=None, subject=None, custom_fields=None):  # noqa: E501
         """Ticket - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -92,6 +96,8 @@ class Ticket(object):
         self._date_resolved = None
         self._date_due = None
         self._date_deleted = None
+        self._last_activity = None
+        self._last_activity_public = None
         self._public_access_urlcode = None
         self._subject = None
         self._custom_fields = None
@@ -127,6 +133,10 @@ class Ticket(object):
             self.date_due = date_due
         if date_deleted is not None:
             self.date_deleted = date_deleted
+        if last_activity is not None:
+            self.last_activity = last_activity
+        if last_activity_public is not None:
+            self.last_activity_public = last_activity_public
         if public_access_urlcode is not None:
             self.public_access_urlcode = public_access_urlcode
         if subject is not None:
@@ -458,6 +468,48 @@ class Ticket(object):
         """
 
         self._date_deleted = date_deleted
+
+    @property
+    def last_activity(self):
+        """Gets the last_activity of this Ticket.  # noqa: E501
+
+
+        :return: The last_activity of this Ticket.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_activity
+
+    @last_activity.setter
+    def last_activity(self, last_activity):
+        """Sets the last_activity of this Ticket.
+
+
+        :param last_activity: The last_activity of this Ticket.  # noqa: E501
+        :type: str
+        """
+
+        self._last_activity = last_activity
+
+    @property
+    def last_activity_public(self):
+        """Gets the last_activity_public of this Ticket.  # noqa: E501
+
+
+        :return: The last_activity_public of this Ticket.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_activity_public
+
+    @last_activity_public.setter
+    def last_activity_public(self, last_activity_public):
+        """Sets the last_activity_public of this Ticket.
+
+
+        :param last_activity_public: The last_activity_public of this Ticket.  # noqa: E501
+        :type: str
+        """
+
+        self._last_activity_public = last_activity_public
 
     @property
     def public_access_urlcode(self):

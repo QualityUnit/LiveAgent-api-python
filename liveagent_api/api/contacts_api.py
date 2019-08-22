@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -42,7 +42,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Contact contact:
+        :param ContactRequest contact:
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -63,7 +63,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Contact contact:
+        :param ContactRequest contact:
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -248,7 +248,7 @@ class ContactsApi(object):
         :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
-        :param str filters: Filters (json object {column:value, ...})
+        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
         :return: list[ContactListItem]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -275,7 +275,7 @@ class ContactsApi(object):
         :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
-        :param str filters: Filters (json object {column:value, ...})
+        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
         :return: list[ContactListItem]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -447,8 +447,218 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def patch_contact(self, contact_id, **kwargs):  # noqa: E501
+        """Update contact partially  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.patch_contact(contact_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str contact_id: (required)
+        :param ContactRequest contact:
+        :return: Contact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.patch_contact_with_http_info(contact_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.patch_contact_with_http_info(contact_id, **kwargs)  # noqa: E501
+            return data
+
+    def patch_contact_with_http_info(self, contact_id, **kwargs):  # noqa: E501
+        """Update contact partially  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.patch_contact_with_http_info(contact_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str contact_id: (required)
+        :param ContactRequest contact:
+        :return: Contact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_id', 'contact']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_contact" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'contact_id' is set
+        if ('contact_id' not in params or
+                params['contact_id'] is None):
+            raise ValueError("Missing the required parameter `contact_id` when calling `patch_contact`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'contact_id' in params:
+            path_params['contactId'] = params['contact_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'contact' in params:
+            body_params = params['contact']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/contacts/{contactId}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Contact',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def register_contact(self, contact_id, registration_email, **kwargs):  # noqa: E501
+        """Register contact  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.register_contact(contact_id, registration_email, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str contact_id: (required)
+        :param str registration_email: (required)
+        :param bool send_registration_mail: If this parameter is false, the registration mail will not be sent
+        :return: Contact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.register_contact_with_http_info(contact_id, registration_email, **kwargs)  # noqa: E501
+        else:
+            (data) = self.register_contact_with_http_info(contact_id, registration_email, **kwargs)  # noqa: E501
+            return data
+
+    def register_contact_with_http_info(self, contact_id, registration_email, **kwargs):  # noqa: E501
+        """Register contact  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.register_contact_with_http_info(contact_id, registration_email, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str contact_id: (required)
+        :param str registration_email: (required)
+        :param bool send_registration_mail: If this parameter is false, the registration mail will not be sent
+        :return: Contact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_id', 'registration_email', 'send_registration_mail']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method register_contact" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'contact_id' is set
+        if ('contact_id' not in params or
+                params['contact_id'] is None):
+            raise ValueError("Missing the required parameter `contact_id` when calling `register_contact`")  # noqa: E501
+        # verify the required parameter 'registration_email' is set
+        if ('registration_email' not in params or
+                params['registration_email'] is None):
+            raise ValueError("Missing the required parameter `registration_email` when calling `register_contact`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'contact_id' in params:
+            path_params['contactId'] = params['contact_id']  # noqa: E501
+
+        query_params = []
+        if 'registration_email' in params:
+            query_params.append(('registration_email', params['registration_email']))  # noqa: E501
+        if 'send_registration_mail' in params:
+            query_params.append(('sendRegistrationMail', params['send_registration_mail']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/contacts/{contactId}/_register', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Contact',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_contact(self, contact_id, **kwargs):  # noqa: E501
-        """Update contact  # noqa: E501
+        """Update whole contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -457,7 +667,7 @@ class ContactsApi(object):
 
         :param async_req bool
         :param str contact_id: (required)
-        :param Contact contact:
+        :param ContactRequest contact:
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -470,7 +680,7 @@ class ContactsApi(object):
             return data
 
     def update_contact_with_http_info(self, contact_id, **kwargs):  # noqa: E501
-        """Update contact  # noqa: E501
+        """Update whole contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -479,7 +689,7 @@ class ContactsApi(object):
 
         :param async_req bool
         :param str contact_id: (required)
-        :param Contact contact:
+        :param ContactRequest contact:
         :return: Contact
                  If the method is called asynchronously,
                  returns the request thread.

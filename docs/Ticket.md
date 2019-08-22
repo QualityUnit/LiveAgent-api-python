@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **date_resolved** | **str** |  | [optional] 
 **date_due** | **str** |  | [optional] 
 **date_deleted** | **str** |  | [optional] 
+**last_activity** | **str** |  | [optional] 
+**last_activity_public** | **str** |  | [optional] 
 **public_access_urlcode** | **str** |  | [optional] 
 **subject** | **str** |  | [optional] 
 **custom_fields** | [**list[CustomFields]**](CustomFields.md) |  | [optional] 

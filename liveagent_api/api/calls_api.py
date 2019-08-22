@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -1024,7 +1024,7 @@ class CallsApi(object):
 
         :param async_req bool
         :param str call_id: (required)
-        :param str reason: T - timeout, D - decline, DNR - device not registered
+        :param str reason: T - timeout, D - decline, DNR - device not registered, CHE - channel error
         :param list[str] unreachable_agents: Identifiers of unreachable agents that should be excluded from routing
         :return: CallStatus
                  If the method is called asynchronously,
@@ -1048,7 +1048,7 @@ class CallsApi(object):
 
         :param async_req bool
         :param str call_id: (required)
-        :param str reason: T - timeout, D - decline, DNR - device not registered
+        :param str reason: T - timeout, D - decline, DNR - device not registered, CHE - channel error
         :param list[str] unreachable_agents: Identifiers of unreachable agents that should be excluded from routing
         :return: CallStatus
                  If the method is called asynchronously,
@@ -2089,7 +2089,7 @@ class CallsApi(object):
         :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
-        :param str filters: Filters (json object {column:value, ...})
+        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
         :return: list[CallListItem]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2116,7 +2116,7 @@ class CallsApi(object):
         :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
-        :param str filters: Filters (json object {column:value, ...})
+        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
         :return: list[CallListItem]
                  If the method is called asynchronously,
                  returns the request thread.

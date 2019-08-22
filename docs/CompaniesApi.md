@@ -1,6 +1,6 @@
 # liveagent_api.CompaniesApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,7 +35,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.CompaniesApi(liveagent_api.ApiClient(configuration))
-company = liveagent_api.Company() # Company |  (optional)
+company = liveagent_api.CompanyRequest() # CompanyRequest |  (optional)
 
 try:
     # Create new company
@@ -49,7 +49,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company** | [**Company**](Company.md)|  | [optional] 
+ **company** | [**CompanyRequest**](CompanyRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -155,7 +155,7 @@ _from = 0 # int | Result set start. Takes precedence over _page. (optional) (def
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
 
 try:
     # Gets list of companies
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
  **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
 
 ### Return type
 
@@ -272,7 +272,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.CompaniesApi(liveagent_api.ApiClient(configuration))
 company_id = 'company_id_example' # str | 
-company = liveagent_api.Company() # Company |  (optional)
+company = liveagent_api.CompanyRequest() # CompanyRequest |  (optional)
 
 try:
     # Update company
@@ -287,7 +287,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **str**|  | 
- **company** | [**Company**](Company.md)|  | [optional] 
+ **company** | [**CompanyRequest**](CompanyRequest.md)|  | [optional] 
 
 ### Return type
 

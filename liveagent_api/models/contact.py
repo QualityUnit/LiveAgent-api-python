@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from liveagent_api.models.contact_list_item import ContactListItem  # noqa: F401,E501
+from liveagent_api.models.contact_request import ContactRequest  # noqa: F401,E501
 from liveagent_api.models.custom_fields import CustomFields  # noqa: F401,E501
 
 
@@ -43,11 +43,11 @@ class Contact(object):
         'avatar_url': 'str',
         'type': 'str',
         'gender': 'str',
-        'date_created': 'datetime',
         'language': 'str',
         'city': 'str',
         'countrycode': 'str',
         'ip': 'str',
+        'registration_email': 'str',
         'emails': 'list[str]',
         'phones': 'list[str]',
         'groups': 'list[str]',
@@ -58,7 +58,9 @@ class Contact(object):
         'time_offset': 'float',
         'latitude': 'float',
         'longitude': 'float',
-        'custom_fields': 'list[CustomFields]'
+        'custom_fields': 'list[CustomFields]',
+        'date_created': 'datetime',
+        'date_changed': 'datetime'
     }
 
     attribute_map = {
@@ -71,11 +73,11 @@ class Contact(object):
         'avatar_url': 'avatar_url',
         'type': 'type',
         'gender': 'gender',
-        'date_created': 'date_created',
         'language': 'language',
         'city': 'city',
         'countrycode': 'countrycode',
         'ip': 'ip',
+        'registration_email': 'registration_email',
         'emails': 'emails',
         'phones': 'phones',
         'groups': 'groups',
@@ -86,10 +88,12 @@ class Contact(object):
         'time_offset': 'time_offset',
         'latitude': 'latitude',
         'longitude': 'longitude',
-        'custom_fields': 'custom_fields'
+        'custom_fields': 'custom_fields',
+        'date_created': 'date_created',
+        'date_changed': 'date_changed'
     }
 
-    def __init__(self, id=None, company_id=None, firstname=None, lastname=None, system_name=None, description=None, avatar_url=None, type='V', gender=None, date_created=None, language=None, city=None, countrycode=None, ip=None, emails=None, phones=None, groups=None, job_position=None, note=None, useragent=None, screen=None, time_offset=None, latitude=None, longitude=None, custom_fields=None):  # noqa: E501
+    def __init__(self, id=None, company_id=None, firstname=None, lastname=None, system_name=None, description=None, avatar_url=None, type='V', gender=None, language=None, city=None, countrycode=None, ip=None, registration_email=None, emails=None, phones=None, groups=None, job_position=None, note=None, useragent=None, screen=None, time_offset=None, latitude=None, longitude=None, custom_fields=None, date_created=None, date_changed=None):  # noqa: E501
         """Contact - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -101,11 +105,11 @@ class Contact(object):
         self._avatar_url = None
         self._type = None
         self._gender = None
-        self._date_created = None
         self._language = None
         self._city = None
         self._countrycode = None
         self._ip = None
+        self._registration_email = None
         self._emails = None
         self._phones = None
         self._groups = None
@@ -117,6 +121,8 @@ class Contact(object):
         self._latitude = None
         self._longitude = None
         self._custom_fields = None
+        self._date_created = None
+        self._date_changed = None
         self.discriminator = None
 
         if id is not None:
@@ -137,8 +143,6 @@ class Contact(object):
             self.type = type
         if gender is not None:
             self.gender = gender
-        if date_created is not None:
-            self.date_created = date_created
         if language is not None:
             self.language = language
         if city is not None:
@@ -147,6 +151,8 @@ class Contact(object):
             self.countrycode = countrycode
         if ip is not None:
             self.ip = ip
+        if registration_email is not None:
+            self.registration_email = registration_email
         if emails is not None:
             self.emails = emails
         if phones is not None:
@@ -169,6 +175,10 @@ class Contact(object):
             self.longitude = longitude
         if custom_fields is not None:
             self.custom_fields = custom_fields
+        if date_created is not None:
+            self.date_created = date_created
+        if date_changed is not None:
+            self.date_changed = date_changed
 
     @property
     def id(self):
@@ -370,27 +380,6 @@ class Contact(object):
         self._gender = gender
 
     @property
-    def date_created(self):
-        """Gets the date_created of this Contact.  # noqa: E501
-
-
-        :return: The date_created of this Contact.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """Sets the date_created of this Contact.
-
-
-        :param date_created: The date_created of this Contact.  # noqa: E501
-        :type: datetime
-        """
-
-        self._date_created = date_created
-
-    @property
     def language(self):
         """Gets the language of this Contact.  # noqa: E501
 
@@ -473,6 +462,27 @@ class Contact(object):
         """
 
         self._ip = ip
+
+    @property
+    def registration_email(self):
+        """Gets the registration_email of this Contact.  # noqa: E501
+
+
+        :return: The registration_email of this Contact.  # noqa: E501
+        :rtype: str
+        """
+        return self._registration_email
+
+    @registration_email.setter
+    def registration_email(self, registration_email):
+        """Sets the registration_email of this Contact.
+
+
+        :param registration_email: The registration_email of this Contact.  # noqa: E501
+        :type: str
+        """
+
+        self._registration_email = registration_email
 
     @property
     def emails(self):
@@ -704,6 +714,52 @@ class Contact(object):
         """
 
         self._custom_fields = custom_fields
+
+    @property
+    def date_created(self):
+        """Gets the date_created of this Contact.  # noqa: E501
+
+        Set automatically  # noqa: E501
+
+        :return: The date_created of this Contact.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """Sets the date_created of this Contact.
+
+        Set automatically  # noqa: E501
+
+        :param date_created: The date_created of this Contact.  # noqa: E501
+        :type: datetime
+        """
+
+        self._date_created = date_created
+
+    @property
+    def date_changed(self):
+        """Gets the date_changed of this Contact.  # noqa: E501
+
+        Set automatically  # noqa: E501
+
+        :return: The date_changed of this Contact.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_changed
+
+    @date_changed.setter
+    def date_changed(self, date_changed):
+        """Sets the date_changed of this Contact.
+
+        Set automatically  # noqa: E501
+
+        :param date_changed: The date_changed of this Contact.  # noqa: E501
+        :type: datetime
+        """
+
+        self._date_changed = date_changed
 
     def to_dict(self):
         """Returns the model properties as a dict"""

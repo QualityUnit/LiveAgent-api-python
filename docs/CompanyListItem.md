@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **avatar_url** | **str** |  | [optional] 
 **type** | **str** | V - visitor, R - registered visitor | [optional] [default to 'V']
 **date_created** | **datetime** |  | [optional] 
+**date_changed** | **datetime** | Set automatically | [optional] 
 **language** | **str** |  | [optional] 
 **city** | **str** |  | [optional] 
 **countrycode** | **str** |  | [optional] 

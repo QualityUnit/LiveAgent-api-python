@@ -1,6 +1,6 @@
 # liveagent_api.ContactPhonesApi
 
-All URIs are relative to *http://localhost/api/v3*
+All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_contact_phones_list**
-> list[ContactPhone] get_contact_phones_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+> list[ContactPhone] get_contact_phones_list(per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, cursor=cursor)
 
 Gets list of contact phones
 
@@ -87,17 +87,15 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.ContactPhonesApi(liveagent_api.ApiClient(configuration))
-page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
-_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
-to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...}) (optional)
+sort_field = 'sort_field_example' # str |  (optional)
+filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+cursor = 'cursor_example' # str | used for iteration throght resultset. Cursor identifies specific page in resultset. (optional)
 
 try:
     # Gets list of contact phones
-    api_response = api_instance.get_contact_phones_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+    api_response = api_instance.get_contact_phones_list(per_page=per_page, sort_dir=sort_dir, sort_field=sort_field, filters=filters, cursor=cursor)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactPhonesApi->get_contact_phones_list: %s\n" % e)
@@ -107,13 +105,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
  **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
- **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
- **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...}) | [optional] 
+ **sort_field** | **str**|  | [optional] 
+ **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **cursor** | **str**| used for iteration throght resultset. Cursor identifies specific page in resultset. | [optional] 
 
 ### Return type
 

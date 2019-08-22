@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **type** | **str** | V - visitor, R - registered visitor | [optional] [default to 'V']
-**date_created** | **datetime** |  | [optional] 
 **language** | **str** |  | [optional] 
 **city** | **str** |  | [optional] 
 **countrycode** | **str** |  | [optional] 
@@ -24,6 +23,8 @@ Name | Type | Description | Notes
 **latitude** | **float** |  | [optional] 
 **longitude** | **float** |  | [optional] 
 **custom_fields** | [**list[CustomFields]**](CustomFields.md) |  | [optional] 
+**date_created** | **datetime** |  | [optional] 
+**date_changed** | **datetime** | Set automatically | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
