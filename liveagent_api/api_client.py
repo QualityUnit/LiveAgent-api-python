@@ -2,7 +2,7 @@
 """
     LiveAgent API
 
-    LiveAgent API  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -66,7 +66,8 @@ class ApiClient(object):
             configuration = Configuration()
         self.configuration = configuration
 
-        self.pool = ThreadPool()
+        # Use the pool property to lazily initialize the ThreadPool.
+        self._pool = None
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
@@ -76,8 +77,15 @@ class ApiClient(object):
         self.user_agent = 'Swagger-Codegen/1.0.0/python'
 
     def __del__(self):
-        self.pool.close()
-        self.pool.join()
+        if self._pool is not None:
+            self._pool.close()
+            self._pool.join()
+
+    @property
+    def pool(self):
+        if self._pool is None:
+            self._pool = ThreadPool()
+        return self._pool
 
     @property
     def user_agent(self):
@@ -591,6 +599,9 @@ class ApiClient(object):
                 )
             )
 
+    def __hasattr(self, object, name):
+        return name in object.__class__.__dict__
+
     def __deserialize_model(self, data, klass):
         """Deserializes list or dict to model.
 
@@ -601,8 +612,8 @@ class ApiClient(object):
         if not data:                                                                   # Temporary fix for
             return None                                                                # LA#7928
 
-        if not klass.swagger_types and not hasattr(klass,
-                                                   'get_real_child_model'):
+        if (not klass.swagger_types and
+                not self.__hasattr(klass, 'get_real_child_model')):
             return data
 
         kwargs = {}
@@ -622,7 +633,7 @@ class ApiClient(object):
             for key, value in data.items():
                 if key not in klass.swagger_types:
                     instance[key] = value
-        if hasattr(instance, 'get_real_child_model'):
+        if self.__hasattr(instance, 'get_real_child_model'):
             klass_name = instance.get_real_child_model(data)
             if klass_name:
                 instance = self.__deserialize(data, klass_name)
