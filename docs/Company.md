@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **system_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
-**type** | **str** | V - visitor, R - registered visitor | [optional] [default to 'V']
 **language** | **str** |  | [optional] 
 **city** | **str** |  | [optional] 
 **countrycode** | **str** |  | [optional] 
@@ -23,6 +22,7 @@ Name | Type | Description | Notes
 **latitude** | **float** |  | [optional] 
 **longitude** | **float** |  | [optional] 
 **custom_fields** | [**list[CustomFields]**](CustomFields.md) |  | [optional] 
+**type** | **str** | V - visitor, R - registered visitor | [optional] [default to 'V']
 **date_created** | **datetime** |  | [optional] 
 **date_changed** | **datetime** | Set automatically | [optional] 
 

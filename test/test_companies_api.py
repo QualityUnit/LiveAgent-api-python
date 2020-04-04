@@ -57,6 +57,20 @@ class TestCompaniesApi(unittest.TestCase):
         """
         pass
 
+    def test_register_company(self):
+        """Test case for register_company
+
+        Register company  # noqa: E501
+        """
+        pass
+
+    def test_unregister_company(self):
+        """Test case for unregister_company
+
+        Unregister company  # noqa: E501
+        """
+        pass
+
     def test_update_company(self):
         """Test case for update_company
 

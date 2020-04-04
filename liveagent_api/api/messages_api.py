@@ -43,8 +43,8 @@ class MessagesApi(object):
 
         :param async_req bool
         :param int message_id: (required)
-        :param int _from: Result set start. Takes precedence over _page.
-        :param int to: Result set end. Used only if _from is used.
+        :param int sub_string_start: Set start of message.
+        :param int sub_string_length: Set length of message.
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,14 +66,14 @@ class MessagesApi(object):
 
         :param async_req bool
         :param int message_id: (required)
-        :param int _from: Result set start. Takes precedence over _page.
-        :param int to: Result set end. Used only if _from is used.
+        :param int sub_string_start: Set start of message.
+        :param int sub_string_length: Set length of message.
         :return: Message
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['message_id', '_from', 'to']  # noqa: E501
+        all_params = ['message_id', 'sub_string_start', 'sub_string_length']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -100,10 +100,10 @@ class MessagesApi(object):
             path_params['messageId'] = params['message_id']  # noqa: E501
 
         query_params = []
-        if '_from' in params:
-            query_params.append(('_from', params['_from']))  # noqa: E501
-        if 'to' in params:
-            query_params.append(('_to', params['to']))  # noqa: E501
+        if 'sub_string_start' in params:
+            query_params.append(('subString_Start', params['sub_string_start']))  # noqa: E501
+        if 'sub_string_length' in params:
+            query_params.append(('subString_Length', params['sub_string_length']))  # noqa: E501
 
         header_params = {}
 

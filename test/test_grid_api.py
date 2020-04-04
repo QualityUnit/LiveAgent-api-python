@@ -29,6 +29,20 @@ class TestGridApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_get_agents_grid_list(self):
+        """Test case for get_agents_grid_list
+
+        Gets list of agents for grid  # noqa: E501
+        """
+        pass
+
+    def test_get_agents_grid_list_count(self):
+        """Test case for get_agents_grid_list_count
+
+        Gets count of agents for agents grid  # noqa: E501
+        """
+        pass
+
     def test_get_calls_sla_log_grid_list(self):
         """Test case for get_calls_sla_log_grid_list
 
@@ -71,6 +85,20 @@ class TestGridApi(unittest.TestCase):
         """
         pass
 
+    def test_get_departmens_grid_list_count(self):
+        """Test case for get_departmens_grid_list_count
+
+        Gets count of departments for department grid  # noqa: E501
+        """
+        pass
+
+    def test_get_departments_grid_list(self):
+        """Test case for get_departments_grid_list
+
+        Gets list of departments for grid  # noqa: E501
+        """
+        pass
+
     def test_get_event_logs_grid_list(self):
         """Test case for get_event_logs_grid_list
 
@@ -82,6 +110,34 @@ class TestGridApi(unittest.TestCase):
         """Test case for get_event_logs_grid_list_count
 
         Gets count of logs for event logs grid  # noqa: E501
+        """
+        pass
+
+    def test_get_languages_grid_list(self):
+        """Test case for get_languages_grid_list
+
+        Gets list of languages for grid  # noqa: E501
+        """
+        pass
+
+    def test_get_languages_grid_list_count(self):
+        """Test case for get_languages_grid_list_count
+
+        Gets count of languages for languages grid  # noqa: E501
+        """
+        pass
+
+    def test_get_tags_grid_list(self):
+        """Test case for get_tags_grid_list
+
+        Gets list of tags for grid  # noqa: E501
+        """
+        pass
+
+    def test_get_tags_grid_list_count(self):
+        """Test case for get_tags_grid_list_count
+
+        Gets count of tags for tags grid  # noqa: E501
         """
         pass
 

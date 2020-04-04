@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_message**
-> Message get_message(message_id, _from=_from, to=to)
+> Message get_message(message_id, sub_string_start=sub_string_start, sub_string_length=sub_string_length)
 
 Get message
 
@@ -32,12 +32,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.MessagesApi(liveagent_api.ApiClient(configuration))
 message_id = 56 # int | 
-_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
-to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
+sub_string_start = 56 # int | Set start of message. (optional)
+sub_string_length = 56 # int | Set length of message. (optional)
 
 try:
     # Get message
-    api_response = api_instance.get_message(message_id, _from=_from, to=to)
+    api_response = api_instance.get_message(message_id, sub_string_start=sub_string_start, sub_string_length=sub_string_length)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MessagesApi->get_message: %s\n" % e)
@@ -48,8 +48,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **int**|  | 
- **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
- **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
+ **sub_string_start** | **int**| Set start of message. | [optional] 
+ **sub_string_length** | **int**| Set length of message. | [optional] 
 
 ### Return type
 

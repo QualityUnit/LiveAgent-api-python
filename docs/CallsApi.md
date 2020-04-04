@@ -4,8 +4,8 @@ All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponfing ticket
-[**call_add_recording**](CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponfing ticket
+[**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket
+[**call_add_recording**](CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket
 [**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
 [**call_change_channel_status**](CallsApi.md#call_change_channel_status) | **PUT** /calls/{callId}/channels/{channelId}/_status | Change channel status
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
@@ -23,19 +23,20 @@ Method | HTTP request | Description
 [**confirm_ring**](CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
 [**dtmf_channel**](CallsApi.md#dtmf_channel) | **POST** /calls/{callId}/channels/{channelId}/_dtmf | Send provided DTMF to channel
 [**end_channel**](CallsApi.md#end_channel) | **POST** /calls/{callId}/channels/{channelId}/_end | End channel
+[**get_calls_count**](CallsApi.md#get_calls_count) | **GET** /calls/count | Gets count for calls history
 [**get_calls_list**](CallsApi.md#get_calls_list) | **GET** /calls | Gets list of calls
 [**hold_channel**](CallsApi.md#hold_channel) | **POST** /calls/{callId}/channels/{channelId}/_hold | Hold channel
 [**merge**](CallsApi.md#merge) | **POST** /calls/{callId}/_merge | Merge two calls
 [**mute_channel**](CallsApi.md#mute_channel) | **POST** /calls/{callId}/channels/{channelId}/_mute | Mute channel
 [**stop_ring**](CallsApi.md#stop_ring) | **POST** /calls/{callId}/_stopRing | Stop ringing of call
-[**unhol_channel**](CallsApi.md#unhol_channel) | **POST** /calls/{callId}/channels/{channelId}/_unhold | Unhold channel
+[**unhold_channel**](CallsApi.md#unhold_channel) | **POST** /calls/{callId}/channels/{channelId}/_unhold | Unhold channel
 [**unmute_channel**](CallsApi.md#unmute_channel) | **POST** /calls/{callId}/channels/{channelId}/_unmute | Unmute channel
 
 
 # **call_add_message**
 > OkResponse call_add_message(call_id, body=body)
 
-Adds a message to the call group in corresponfing ticket
+Adds a message to the call group in corresponding ticket
 
 ### Example
 ```python
@@ -60,7 +61,7 @@ call_id = 'call_id_example' # str |
 body = liveagent_api.CallMessage() # CallMessage |  (optional)
 
 try:
-    # Adds a message to the call group in corresponfing ticket
+    # Adds a message to the call group in corresponding ticket
     api_response = api_instance.call_add_message(call_id, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -92,7 +93,7 @@ Name | Type | Description  | Notes
 # **call_add_recording**
 > OkResponse call_add_recording(call_id, file=file)
 
-Adds a recording to the call group in corresponfing ticket
+Adds a recording to the call group in corresponding ticket
 
 ### Example
 ```python
@@ -117,7 +118,7 @@ call_id = 'call_id_example' # str |
 file = '/path/to/file.txt' # file |  (optional)
 
 try:
-    # Adds a recording to the call group in corresponfing ticket
+    # Adds a recording to the call group in corresponding ticket
     api_response = api_instance.call_add_recording(call_id, file=file)
     pprint(api_response)
 except ApiException as e:
@@ -269,7 +270,7 @@ Name | Type | Description  | Notes
 
 Create new call
 
-Creates new call (ingoing / outcoming / internal). Does not initiate the outgoing call
+Creates new call (incoming / outgoing / internal). Does not initiate the outgoing call
 
 ### Example
 ```python
@@ -1155,8 +1156,63 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_calls_count**
+> Count get_calls_count(filters=filters)
+
+Gets count for calls history
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+
+try:
+    # Gets count for calls history
+    api_response = api_instance.get_calls_count(filters=filters)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CallsApi->get_calls_count: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+
+### Return type
+
+[**Count**](Count.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_calls_list**
-> list[CallListItem] get_calls_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+> list[CallListItem] get_calls_list(per_page=per_page, filters=filters, cursor=cursor, sort_field=sort_field, sort_dir=sort_dir, timezone_offset=timezone_offset)
 
 Gets list of calls
 
@@ -1179,17 +1235,16 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
-page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
-per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
-_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
-to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
-sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+per_page = 10 # int | Results per page. (optional) (default to 10)
 filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
+sort_field = 'dateFinished' # str |  (optional) (default to dateFinished)
+sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
+timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of calls
-    api_response = api_instance.get_calls_list(page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, filters=filters)
+    api_response = api_instance.get_calls_list(per_page=per_page, filters=filters, cursor=cursor, sort_field=sort_field, sort_dir=sort_dir, timezone_offset=timezone_offset)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CallsApi->get_calls_list: %s\n" % e)
@@ -1199,13 +1254,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
- **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
- **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
- **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
- **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **sort_field** | **str**| Sorting field | [optional] 
+ **per_page** | **int**| Results per page. | [optional] [default to 10]
  **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
+ **sort_field** | **str**|  | [optional] [default to dateFinished]
+ **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
+ **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 
@@ -1454,8 +1508,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unhol_channel**
-> OkResponse unhol_channel(call_id, channel_id)
+# **unhold_channel**
+> OkResponse unhold_channel(call_id, channel_id)
 
 Unhold channel
 
@@ -1483,10 +1537,10 @@ channel_id = 'channel_id_example' # str |
 
 try:
     # Unhold channel
-    api_response = api_instance.unhol_channel(call_id, channel_id)
+    api_response = api_instance.unhold_channel(call_id, channel_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CallsApi->unhol_channel: %s\n" % e)
+    print("Exception when calling CallsApi->unhold_channel: %s\n" % e)
 ```
 
 ### Parameters

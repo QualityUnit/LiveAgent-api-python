@@ -71,6 +71,13 @@ class TestContactsApi(unittest.TestCase):
         """
         pass
 
+    def test_unregister_contact(self):
+        """Test case for unregister_contact
+
+        Unregister contact  # noqa: E501
+        """
+        pass
+
     def test_update_contact(self):
         """Test case for update_contact
 

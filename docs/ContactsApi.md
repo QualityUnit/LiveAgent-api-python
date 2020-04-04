@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_specific_contact**](ContactsApi.md#get_specific_contact) | **GET** /contacts/{contactId} | Get contact by specific id
 [**patch_contact**](ContactsApi.md#patch_contact) | **PATCH** /contacts/{contactId} | Update contact partially
 [**register_contact**](ContactsApi.md#register_contact) | **PUT** /contacts/{contactId}/_register | Register contact
+[**unregister_contact**](ContactsApi.md#unregister_contact) | **DELETE** /contacts/{contactId}/_unregister | Unregister contact
 [**update_contact**](ContactsApi.md#update_contact) | **PUT** /contacts/{contactId} | Update whole contact
 
 
@@ -349,6 +350,61 @@ Name | Type | Description  | Notes
  **contact_id** | **str**|  | 
  **registration_email** | **str**|  | 
  **send_registration_mail** | **bool**| If this parameter is false, the registration mail will not be sent | [optional] [default to true]
+
+### Return type
+
+[**Contact**](Contact.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unregister_contact**
+> Contact unregister_contact(contact_id)
+
+Unregister contact
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.ContactsApi(liveagent_api.ApiClient(configuration))
+contact_id = 'contact_id_example' # str | 
+
+try:
+    # Unregister contact
+    api_response = api_instance.unregister_contact(contact_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ContactsApi->unregister_contact: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contact_id** | **str**|  | 
 
 ### Return type
 

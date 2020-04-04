@@ -267,10 +267,10 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.TicketsApi(liveagent_api.ApiClient(configuration))
-per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
-cursor = 'cursor_example' # str | used for iteration throght resultset. Cursor identifies specific page in resultset. (optional)
+cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 sort_field = 'sort_field_example' # str |  (optional)
 timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
@@ -286,10 +286,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
- **cursor** | **str**| used for iteration throght resultset. Cursor identifies specific page in resultset. | [optional] 
+ **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **sort_field** | **str**|  | [optional] 
  **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 

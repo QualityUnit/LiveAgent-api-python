@@ -32,6 +32,7 @@ from liveagent_api.api.custom_buttons_api import CustomButtonsApi
 from liveagent_api.api.default_api import DefaultApi
 from liveagent_api.api.departments_api import DepartmentsApi
 from liveagent_api.api.devices_api import DevicesApi
+from liveagent_api.api.elastic_api import ElasticApi
 from liveagent_api.api.extensions_api import ExtensionsApi
 from liveagent_api.api.files_api import FilesApi
 from liveagent_api.api.filters_api import FiltersApi
@@ -44,10 +45,10 @@ from liveagent_api.api.messages_api import MessagesApi
 from liveagent_api.api.page_visits_api import PageVisitsApi
 from liveagent_api.api.phone_numbers_api import PhoneNumbersApi
 from liveagent_api.api.phones_api import PhonesApi
-from liveagent_api.api.plans_api import PlansApi
 from liveagent_api.api.predefined_answers_api import PredefinedAnswersApi
 from liveagent_api.api.queue_api import QueueApi
 from liveagent_api.api.settings_api import SettingsApi
+from liveagent_api.api.slack_api import SlackApi
 from liveagent_api.api.slas_api import SlasApi
 from liveagent_api.api.subscriptions_api import SubscriptionsApi
 from liveagent_api.api.tags_api import TagsApi
@@ -55,6 +56,7 @@ from liveagent_api.api.tickets_api import TicketsApi
 from liveagent_api.api.token_api import TokenApi
 from liveagent_api.api.user_api import UserApi
 from liveagent_api.api.variations_api import VariationsApi
+from liveagent_api.api.viber_api import ViberApi
 
 # import ApiClient
 from liveagent_api.api_client import ApiClient
@@ -65,6 +67,7 @@ from liveagent_api.models.addon import Addon
 from liveagent_api.models.addon_list import AddonList
 from liveagent_api.models.agent import Agent
 from liveagent_api.models.agent_activity import AgentActivity
+from liveagent_api.models.agent_row import AgentRow
 from liveagent_api.models.agent_status import AgentStatus
 from liveagent_api.models.agent_statuses import AgentStatuses
 from liveagent_api.models.api_info import ApiInfo
@@ -100,6 +103,7 @@ from liveagent_api.models.custom_fields import CustomFields
 from liveagent_api.models.customer import Customer
 from liveagent_api.models.day_interval import DayInterval
 from liveagent_api.models.department import Department
+from liveagent_api.models.department_row import DepartmentRow
 from liveagent_api.models.device import Device
 from liveagent_api.models.device_department import DeviceDepartment
 from liveagent_api.models.device_department_list import DeviceDepartmentList
@@ -107,6 +111,7 @@ from liveagent_api.models.device_department_plan import DeviceDepartmentPlan
 from liveagent_api.models.device_department_plan_list import DeviceDepartmentPlanList
 from liveagent_api.models.discount_value import DiscountValue
 from liveagent_api.models.domain import Domain
+from liveagent_api.models.elastic_message import ElasticMessage
 from liveagent_api.models.error_response import ErrorResponse
 from liveagent_api.models.event_log_row import EventLogRow
 from liveagent_api.models.extension import Extension
@@ -114,6 +119,8 @@ from liveagent_api.models.filter import Filter
 from liveagent_api.models.filter_condition import FilterCondition
 from liveagent_api.models.group import Group
 from liveagent_api.models.hosting_info import HostingInfo
+from liveagent_api.models.index_status import IndexStatus
+from liveagent_api.models.index_status_data import IndexStatusData
 from liveagent_api.models.invoice import Invoice
 from liveagent_api.models.invoice_item import InvoiceItem
 from liveagent_api.models.invoice_list import InvoiceList
@@ -122,6 +129,7 @@ from liveagent_api.models.ivr_choice import IvrChoice
 from liveagent_api.models.ivr_fetch import IvrFetch
 from liveagent_api.models.ivr_fetch_param import IvrFetchParam
 from liveagent_api.models.ivr_step import IvrStep
+from liveagent_api.models.language_row import LanguageRow
 from liveagent_api.models.mail_account import MailAccount
 from liveagent_api.models.message import Message
 from liveagent_api.models.message_group import MessageGroup
@@ -133,16 +141,22 @@ from liveagent_api.models.payment_processor_type import PaymentProcessorType
 from liveagent_api.models.phone_device import PhoneDevice
 from liveagent_api.models.phone_number import PhoneNumber
 from liveagent_api.models.predefined_answer import PredefinedAnswer
+from liveagent_api.models.reindex_data import ReindexData
+from liveagent_api.models.sso_key import SSOKey
 from liveagent_api.models.setting import Setting
 from liveagent_api.models.sla import Sla
 from liveagent_api.models.sla_business_hours import SlaBusinessHours
 from liveagent_api.models.sla_history import SlaHistory
 from liveagent_api.models.sla_log_row import SlaLogRow
 from liveagent_api.models.sla_values import SlaValues
+from liveagent_api.models.slack_conversation import SlackConversation
+from liveagent_api.models.slack_template import SlackTemplate
+from liveagent_api.models.slack_user import SlackUser
 from liveagent_api.models.stop_reason import StopReason
 from liveagent_api.models.stored_file import StoredFile
 from liveagent_api.models.subscription import Subscription
 from liveagent_api.models.tag import Tag
+from liveagent_api.models.tag_row import TagRow
 from liveagent_api.models.ticket import Ticket
 from liveagent_api.models.ticket_attribute import TicketAttribute
 from liveagent_api.models.ticket_history import TicketHistory
@@ -160,7 +174,9 @@ from liveagent_api.models.user import User
 from liveagent_api.models.variation import Variation
 from liveagent_api.models.variation_upgrade import VariationUpgrade
 from liveagent_api.models.variation_upgrades import VariationUpgrades
+from liveagent_api.models.viber_account import ViberAccount
 from liveagent_api.models.api_key_with_privileges import ApiKeyWithPrivileges
 from liveagent_api.models.ban_list_item import BanListItem
 from liveagent_api.models.company import Company
 from liveagent_api.models.contact import Contact
+from liveagent_api.models.viber_account_list_item import ViberAccountListItem

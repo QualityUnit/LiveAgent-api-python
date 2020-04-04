@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**get_phones_list**](PhonesApi.md#get_phones_list) | **GET** /phones | Gets list of available phone devices. Special filters (userId - filter phones available for specified user only) 
 [**remove_phone**](PhonesApi.md#remove_phone) | **DELETE** /phones/{phoneId} | Remove phone
 [**update_phone**](PhonesApi.md#update_phone) | **PUT** /phones/{phoneId} | Update phone
-[**update_phone_params**](PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone paramas
+[**update_phone_params**](PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone params
 
 
 # **create_phone**
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 # **update_phone_params**
 > OkResponse update_phone_params(phone_id, params)
 
-Update phone paramas
+Update phone params
 
 ### Example
 ```python
@@ -333,7 +333,7 @@ phone_id = 'phone_id_example' # str |
 params = 'params_example' # str | New params
 
 try:
-    # Update phone paramas
+    # Update phone params
     api_response = api_instance.update_phone_params(phone_id, params)
     pprint(api_response)
 except ApiException as e:

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **timezone** | **str** |  | [optional] 
 **monday** | [**DayInterval**](DayInterval.md) |  | [optional] 
-**thuesday** | [**DayInterval**](DayInterval.md) |  | [optional] 
+**tuesday** | [**DayInterval**](DayInterval.md) |  | [optional] 
 **wednesday** | [**DayInterval**](DayInterval.md) |  | [optional] 
 **thursday** | [**DayInterval**](DayInterval.md) |  | [optional] 
 **friday** | [**DayInterval**](DayInterval.md) |  | [optional] 

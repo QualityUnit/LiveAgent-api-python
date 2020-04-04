@@ -5,6 +5,7 @@ All URIs are relative to *https://localhost/api/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_ban**](BansApi.md#create_ban) | **POST** /bans/ | Create ban
+[**exclude_ip_ban**](BansApi.md#exclude_ip_ban) | **PUT** /bans/_exclude | Exclude banned IP address
 [**expire_ban**](BansApi.md#expire_ban) | **POST** /bans/{banId}/_expire | Expire ban
 [**get_ban**](BansApi.md#get_ban) | **GET** /bans/{banId} | Get ban item
 [**get_bans**](BansApi.md#get_bans) | **GET** /bans/ | Bans list
@@ -56,6 +57,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Ban**](Ban.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **exclude_ip_ban**
+> OkResponse exclude_ip_ban(ip_address)
+
+Exclude banned IP address
+
+Exclude IP from banned IP ranges
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.BansApi(liveagent_api.ApiClient(configuration))
+ip_address = 'ip_address_example' # str | IP address you want exclude form IP Ban
+
+try:
+    # Exclude banned IP address
+    api_response = api_instance.exclude_ip_ban(ip_address)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BansApi->exclude_ip_ban: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ip_address** | **str**| IP address you want exclude form IP Ban | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
 
 ### Authorization
 

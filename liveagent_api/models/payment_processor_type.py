@@ -32,25 +32,30 @@ class PaymentProcessorType(object):
     """
     swagger_types = {
         'processor_type': 'str',
-        'token': 'str'
+        'token': 'str',
+        'init_token': 'str'
     }
 
     attribute_map = {
         'processor_type': 'processor_type',
-        'token': 'token'
+        'token': 'token',
+        'init_token': 'init_token'
     }
 
-    def __init__(self, processor_type=None, token=None):  # noqa: E501
+    def __init__(self, processor_type=None, token=None, init_token=None):  # noqa: E501
         """PaymentProcessorType - a model defined in Swagger"""  # noqa: E501
 
         self._processor_type = None
         self._token = None
+        self._init_token = None
         self.discriminator = None
 
         if processor_type is not None:
             self.processor_type = processor_type
         if token is not None:
             self.token = token
+        if init_token is not None:
+            self.init_token = init_token
 
     @property
     def processor_type(self):
@@ -99,6 +104,27 @@ class PaymentProcessorType(object):
         """
 
         self._token = token
+
+    @property
+    def init_token(self):
+        """Gets the init_token of this PaymentProcessorType.  # noqa: E501
+
+
+        :return: The init_token of this PaymentProcessorType.  # noqa: E501
+        :rtype: str
+        """
+        return self._init_token
+
+    @init_token.setter
+    def init_token(self, init_token):
+        """Sets the init_token of this PaymentProcessorType.
+
+
+        :param init_token: The init_token of this PaymentProcessorType.  # noqa: E501
+        :type: str
+        """
+
+        self._init_token = init_token
 
     def to_dict(self):
         """Returns the model properties as a dict"""
