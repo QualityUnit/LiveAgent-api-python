@@ -34,23 +34,26 @@ class Tag(object):
         'id': 'str',
         'name': 'str',
         'color': 'str',
-        'background_color': 'str'
+        'background_color': 'str',
+        'is_public': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
         'color': 'color',
-        'background_color': 'background_color'
+        'background_color': 'background_color',
+        'is_public': 'is_public'
     }
 
-    def __init__(self, id=None, name=None, color=None, background_color=None):  # noqa: E501
+    def __init__(self, id=None, name=None, color=None, background_color=None, is_public=None):  # noqa: E501
         """Tag - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._color = None
         self._background_color = None
+        self._is_public = None
         self.discriminator = None
 
         if id is not None:
@@ -61,6 +64,8 @@ class Tag(object):
             self.color = color
         if background_color is not None:
             self.background_color = background_color
+        if is_public is not None:
+            self.is_public = is_public
 
     @property
     def id(self):
@@ -145,6 +150,35 @@ class Tag(object):
         """
 
         self._background_color = background_color
+
+    @property
+    def is_public(self):
+        """Gets the is_public of this Tag.  # noqa: E501
+
+        - Y - Public tag - N - Private tag  # noqa: E501
+
+        :return: The is_public of this Tag.  # noqa: E501
+        :rtype: str
+        """
+        return self._is_public
+
+    @is_public.setter
+    def is_public(self, is_public):
+        """Sets the is_public of this Tag.
+
+        - Y - Public tag - N - Private tag  # noqa: E501
+
+        :param is_public: The is_public of this Tag.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Y", "N", ""]  # noqa: E501
+        if is_public not in allowed_values:
+            raise ValueError(
+                "Invalid value for `is_public` ({0}), must be one of {1}"  # noqa: E501
+                .format(is_public, allowed_values)
+            )
+
+        self._is_public = is_public
 
     def to_dict(self):
         """Returns the model properties as a dict"""

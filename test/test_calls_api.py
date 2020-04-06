@@ -32,14 +32,14 @@ class TestCallsApi(unittest.TestCase):
     def test_call_add_message(self):
         """Test case for call_add_message
 
-        Adds a message to the call group in corresponfing ticket  # noqa: E501
+        Adds a message to the call group in corresponding ticket  # noqa: E501
         """
         pass
 
     def test_call_add_recording(self):
         """Test case for call_add_recording
 
-        Adds a recording to the call group in corresponfing ticket  # noqa: E501
+        Adds a recording to the call group in corresponding ticket  # noqa: E501
         """
         pass
 
@@ -162,6 +162,13 @@ class TestCallsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_calls_count(self):
+        """Test case for get_calls_count
+
+        Gets count for calls history  # noqa: E501
+        """
+        pass
+
     def test_get_calls_list(self):
         """Test case for get_calls_list
 
@@ -197,8 +204,8 @@ class TestCallsApi(unittest.TestCase):
         """
         pass
 
-    def test_unhol_channel(self):
-        """Test case for unhol_channel
+    def test_unhold_channel(self):
+        """Test case for unhold_channel
 
         Unhold channel  # noqa: E501
         """

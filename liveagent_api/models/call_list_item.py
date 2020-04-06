@@ -41,7 +41,8 @@ class CallListItem(object):
         'via_number': 'str',
         'date_created': 'datetime',
         'date_answered': 'datetime',
-        'date_finished': 'datetime'
+        'date_finished': 'datetime',
+        'call_duration': 'str'
     }
 
     attribute_map = {
@@ -55,10 +56,11 @@ class CallListItem(object):
         'via_number': 'viaNumber',
         'date_created': 'dateCreated',
         'date_answered': 'dateAnswered',
-        'date_finished': 'dateFinished'
+        'date_finished': 'dateFinished',
+        'call_duration': 'callDuration'
     }
 
-    def __init__(self, id=None, ticket_id=None, type=None, from_number=None, from_name=None, to_number=None, to_name=None, via_number=None, date_created=None, date_answered=None, date_finished=None):  # noqa: E501
+    def __init__(self, id=None, ticket_id=None, type=None, from_number=None, from_name=None, to_number=None, to_name=None, via_number=None, date_created=None, date_answered=None, date_finished=None, call_duration=None):  # noqa: E501
         """CallListItem - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -72,6 +74,7 @@ class CallListItem(object):
         self._date_created = None
         self._date_answered = None
         self._date_finished = None
+        self._call_duration = None
         self.discriminator = None
 
         if id is not None:
@@ -96,6 +99,8 @@ class CallListItem(object):
             self.date_answered = date_answered
         if date_finished is not None:
             self.date_finished = date_finished
+        if call_duration is not None:
+            self.call_duration = call_duration
 
     @property
     def id(self):
@@ -335,6 +340,27 @@ class CallListItem(object):
         """
 
         self._date_finished = date_finished
+
+    @property
+    def call_duration(self):
+        """Gets the call_duration of this CallListItem.  # noqa: E501
+
+
+        :return: The call_duration of this CallListItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._call_duration
+
+    @call_duration.setter
+    def call_duration(self, call_duration):
+        """Sets the call_duration of this CallListItem.
+
+
+        :param call_duration: The call_duration of this CallListItem.  # noqa: E501
+        :type: str
+        """
+
+        self._call_duration = call_duration
 
     def to_dict(self):
         """Returns the model properties as a dict"""

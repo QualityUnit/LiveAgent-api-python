@@ -19,6 +19,7 @@ from liveagent_api.api.custom_buttons_api import CustomButtonsApi
 from liveagent_api.api.default_api import DefaultApi
 from liveagent_api.api.departments_api import DepartmentsApi
 from liveagent_api.api.devices_api import DevicesApi
+from liveagent_api.api.elastic_api import ElasticApi
 from liveagent_api.api.extensions_api import ExtensionsApi
 from liveagent_api.api.files_api import FilesApi
 from liveagent_api.api.filters_api import FiltersApi
@@ -31,10 +32,10 @@ from liveagent_api.api.messages_api import MessagesApi
 from liveagent_api.api.page_visits_api import PageVisitsApi
 from liveagent_api.api.phone_numbers_api import PhoneNumbersApi
 from liveagent_api.api.phones_api import PhonesApi
-from liveagent_api.api.plans_api import PlansApi
 from liveagent_api.api.predefined_answers_api import PredefinedAnswersApi
 from liveagent_api.api.queue_api import QueueApi
 from liveagent_api.api.settings_api import SettingsApi
+from liveagent_api.api.slack_api import SlackApi
 from liveagent_api.api.slas_api import SlasApi
 from liveagent_api.api.subscriptions_api import SubscriptionsApi
 from liveagent_api.api.tags_api import TagsApi
@@ -42,3 +43,4 @@ from liveagent_api.api.tickets_api import TicketsApi
 from liveagent_api.api.token_api import TokenApi
 from liveagent_api.api.user_api import UserApi
 from liveagent_api.api.variations_api import VariationsApi
+from liveagent_api.api.viber_api import ViberApi

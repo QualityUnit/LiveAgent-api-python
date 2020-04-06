@@ -551,7 +551,7 @@ class PhonesApi(object):
             collection_formats=collection_formats)
 
     def update_phone_params(self, phone_id, params, **kwargs):  # noqa: E501
-        """Update phone paramas  # noqa: E501
+        """Update phone params  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -573,7 +573,7 @@ class PhonesApi(object):
             return data
 
     def update_phone_params_with_http_info(self, phone_id, params, **kwargs):  # noqa: E501
-        """Update phone paramas  # noqa: E501
+        """Update phone params  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

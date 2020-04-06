@@ -35,10 +35,12 @@ class PhoneDevice(object):
         'type': 'str',
         'number': 'str',
         'name': 'str',
-        'status_message': 'str',
+        'reg_status': 'str',
         'connection_host': 'str',
         'connection_user': 'str',
         'connection_pass': 'str',
+        'last_modified': 'str',
+        'user_agent': 'str',
         'agent_id': 'str',
         'params': 'str'
     }
@@ -48,25 +50,29 @@ class PhoneDevice(object):
         'type': 'type',
         'number': 'number',
         'name': 'name',
-        'status_message': 'status_message',
+        'reg_status': 'reg_status',
         'connection_host': 'connection_host',
         'connection_user': 'connection_user',
         'connection_pass': 'connection_pass',
+        'last_modified': 'last_modified',
+        'user_agent': 'user_agent',
         'agent_id': 'agent_id',
         'params': 'params'
     }
 
-    def __init__(self, id=None, type=None, number=None, name=None, status_message=None, connection_host=None, connection_user=None, connection_pass=None, agent_id=None, params=None):  # noqa: E501
+    def __init__(self, id=None, type=None, number=None, name=None, reg_status=None, connection_host=None, connection_user=None, connection_pass=None, last_modified=None, user_agent=None, agent_id=None, params=None):  # noqa: E501
         """PhoneDevice - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._type = None
         self._number = None
         self._name = None
-        self._status_message = None
+        self._reg_status = None
         self._connection_host = None
         self._connection_user = None
         self._connection_pass = None
+        self._last_modified = None
+        self._user_agent = None
         self._agent_id = None
         self._params = None
         self.discriminator = None
@@ -77,14 +83,18 @@ class PhoneDevice(object):
             self.number = number
         if name is not None:
             self.name = name
-        if status_message is not None:
-            self.status_message = status_message
+        if reg_status is not None:
+            self.reg_status = reg_status
         if connection_host is not None:
             self.connection_host = connection_host
         if connection_user is not None:
             self.connection_user = connection_user
         if connection_pass is not None:
             self.connection_pass = connection_pass
+        if last_modified is not None:
+            self.last_modified = last_modified
+        if user_agent is not None:
+            self.user_agent = user_agent
         if agent_id is not None:
             self.agent_id = agent_id
         if params is not None:
@@ -187,25 +197,25 @@ class PhoneDevice(object):
         self._name = name
 
     @property
-    def status_message(self):
-        """Gets the status_message of this PhoneDevice.  # noqa: E501
+    def reg_status(self):
+        """Gets the reg_status of this PhoneDevice.  # noqa: E501
 
 
-        :return: The status_message of this PhoneDevice.  # noqa: E501
+        :return: The reg_status of this PhoneDevice.  # noqa: E501
         :rtype: str
         """
-        return self._status_message
+        return self._reg_status
 
-    @status_message.setter
-    def status_message(self, status_message):
-        """Sets the status_message of this PhoneDevice.
+    @reg_status.setter
+    def reg_status(self, reg_status):
+        """Sets the reg_status of this PhoneDevice.
 
 
-        :param status_message: The status_message of this PhoneDevice.  # noqa: E501
+        :param reg_status: The reg_status of this PhoneDevice.  # noqa: E501
         :type: str
         """
 
-        self._status_message = status_message
+        self._reg_status = reg_status
 
     @property
     def connection_host(self):
@@ -271,6 +281,48 @@ class PhoneDevice(object):
         self._connection_pass = connection_pass
 
     @property
+    def last_modified(self):
+        """Gets the last_modified of this PhoneDevice.  # noqa: E501
+
+
+        :return: The last_modified of this PhoneDevice.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified
+
+    @last_modified.setter
+    def last_modified(self, last_modified):
+        """Sets the last_modified of this PhoneDevice.
+
+
+        :param last_modified: The last_modified of this PhoneDevice.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified = last_modified
+
+    @property
+    def user_agent(self):
+        """Gets the user_agent of this PhoneDevice.  # noqa: E501
+
+
+        :return: The user_agent of this PhoneDevice.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_agent
+
+    @user_agent.setter
+    def user_agent(self, user_agent):
+        """Sets the user_agent of this PhoneDevice.
+
+
+        :param user_agent: The user_agent of this PhoneDevice.  # noqa: E501
+        :type: str
+        """
+
+        self._user_agent = user_agent
+
+    @property
     def agent_id(self):
         """Gets the agent_id of this PhoneDevice.  # noqa: E501
 
@@ -295,7 +347,7 @@ class PhoneDevice(object):
     def params(self):
         """Gets the params of this PhoneDevice.  # noqa: E501
 
-        Addtional params column with no specific meaning  # noqa: E501
+        Additional params column with no specific meaning  # noqa: E501
 
         :return: The params of this PhoneDevice.  # noqa: E501
         :rtype: str
@@ -306,7 +358,7 @@ class PhoneDevice(object):
     def params(self, params):
         """Sets the params of this PhoneDevice.
 
-        Addtional params column with no specific meaning  # noqa: E501
+        Additional params column with no specific meaning  # noqa: E501
 
         :param params: The params of this PhoneDevice.  # noqa: E501
         :type: str

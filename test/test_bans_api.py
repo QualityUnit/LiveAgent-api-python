@@ -36,6 +36,13 @@ class TestBansApi(unittest.TestCase):
         """
         pass
 
+    def test_exclude_ip_ban(self):
+        """Test case for exclude_ip_ban
+
+        Exclude banned IP address  # noqa: E501
+        """
+        pass
+
     def test_expire_ban(self):
         """Test case for expire_ban
 

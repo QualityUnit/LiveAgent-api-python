@@ -232,11 +232,11 @@ class ExtensionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int per_page: Results per page. Used only if _page is used.
+        :param int per_page: Results per page.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
         :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
-        :param str cursor: used for iteration throght resultset. Cursor identifies specific page in resultset.
+        :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :return: list[Extension]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -257,11 +257,11 @@ class ExtensionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param int per_page: Results per page. Used only if _page is used.
+        :param int per_page: Results per page.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
         :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
-        :param str cursor: used for iteration throght resultset. Cursor identifies specific page in resultset.
+        :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :return: list[Extension]
                  If the method is called asynchronously,
                  returns the request thread.

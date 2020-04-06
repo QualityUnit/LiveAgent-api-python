@@ -16,24 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import liveagent_api
-from liveagent_api.api.plans_api import PlansApi  # noqa: E501
+from liveagent_api.models.elastic_message import ElasticMessage  # noqa: E501
 from liveagent_api.rest import ApiException
 
 
-class TestPlansApi(unittest.TestCase):
-    """PlansApi unit test stubs"""
+class TestElasticMessage(unittest.TestCase):
+    """ElasticMessage unit test stubs"""
 
     def setUp(self):
-        self.api = liveagent_api.api.plans_api.PlansApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_device_department_plan(self):
-        """Test case for get_device_department_plan
-
-        Get device department plan  # noqa: E501
-        """
+    def testElasticMessage(self):
+        """Test ElasticMessage"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = liveagent_api.models.elastic_message.ElasticMessage()  # noqa: E501
         pass
 
 

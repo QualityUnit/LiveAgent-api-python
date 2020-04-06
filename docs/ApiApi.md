@@ -7,11 +7,13 @@ Method | HTTP request | Description
 [**create_api_keys**](ApiApi.md#create_api_keys) | **POST** /apikeys | Creates api key
 [**delete_api_key**](ApiApi.md#delete_api_key) | **DELETE** /apikeys/{apikeyId} | Deletes api key
 [**generate_api_key**](ApiApi.md#generate_api_key) | **POST** /apikeys/_generate | Gets new api keys
+[**generate_sso_key**](ApiApi.md#generate_sso_key) | **POST** /sso | Generate SSO key
 [**get_api_info**](ApiApi.md#get_api_info) | **GET** /api/info/{apiVersion} | Gets api info
 [**get_api_key**](ApiApi.md#get_api_key) | **GET** /apikeys/{apikeyId} | Gets api keys
 [**get_api_keys**](ApiApi.md#get_api_keys) | **GET** /apikeys | Gets api keys
 [**get_api_privileges**](ApiApi.md#get_api_privileges) | **GET** /api/privileges | Gets api privileges
 [**get_api_v3_keys_count**](ApiApi.md#get_api_v3_keys_count) | **GET** /api/v3/count | Gets count for api v3 keys
+[**get_sso_key**](ApiApi.md#get_sso_key) | **GET** /sso | Get SSO key
 [**login**](ApiApi.md#login) | **POST** /apikeys/_login | Creates or returns API key from login.
 [**update_api_key**](ApiApi.md#update_api_key) | **PUT** /apikeys/{apikeyId} | Updates api key
 
@@ -183,6 +185,59 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **generate_sso_key**
+> SSOKey generate_sso_key()
+
+Generate SSO key
+
+Generate Single Sign On key
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.ApiApi(liveagent_api.ApiClient(configuration))
+
+try:
+    # Generate SSO key
+    api_response = api_instance.generate_sso_key()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->generate_sso_key: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SSOKey**](SSOKey.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_api_info**
 > ApiInfo get_api_info(api_version)
 
@@ -323,10 +378,10 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.ApiApi(liveagent_api.ApiClient(configuration))
-per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
+per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
-cursor = 'cursor_example' # str | used for iteration throght resultset. Cursor identifies specific page in resultset. (optional)
+cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 sort_field = 'sort_field_example' # str |  (optional)
 
 try:
@@ -341,10 +396,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
+ **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
- **cursor** | **str**| used for iteration throght resultset. Cursor identifies specific page in resultset. | [optional] 
+ **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **sort_field** | **str**|  | [optional] 
 
 ### Return type
@@ -458,6 +513,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Count**](Count.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_sso_key**
+> SSOKey get_sso_key()
+
+Get SSO key
+
+Get Single Sign On key
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.ApiApi(liveagent_api.ApiClient(configuration))
+
+try:
+    # Get SSO key
+    api_response = api_instance.get_sso_key()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->get_sso_key: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SSOKey**](SSOKey.md)
 
 ### Authorization
 
