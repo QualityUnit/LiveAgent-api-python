@@ -247,6 +247,7 @@ class CallsApi(object):
         :param str call_id: (required)
         :param str to_number: callee number (required)
         :param str channel_id: Channel ID
+        :param str type: F - incoming call forwarded to external number
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -270,12 +271,13 @@ class CallsApi(object):
         :param str call_id: (required)
         :param str to_number: callee number (required)
         :param str channel_id: Channel ID
+        :param str type: F - incoming call forwarded to external number
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'to_number', 'channel_id']  # noqa: E501
+        all_params = ['call_id', 'to_number', 'channel_id', 'type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -310,6 +312,8 @@ class CallsApi(object):
             query_params.append(('to_number', params['to_number']))  # noqa: E501
         if 'channel_id' in params:
             query_params.append(('channelId', params['channel_id']))  # noqa: E501
+        if 'type' in params:
+            query_params.append(('type', params['type']))  # noqa: E501
 
         header_params = {}
 

@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_answer**
-> OkResponse call_answer(call_id, to_number, channel_id=channel_id)
+> OkResponse call_answer(call_id, to_number, channel_id=channel_id, type=type)
 
 Set call as answered by agent
 
@@ -174,10 +174,11 @@ api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
 call_id = 'call_id_example' # str | 
 to_number = 'to_number_example' # str | callee number
 channel_id = 'channel_id_example' # str | Channel ID (optional)
+type = 'type_example' # str | F - incoming call forwarded to external number (optional)
 
 try:
     # Set call as answered by agent
-    api_response = api_instance.call_answer(call_id, to_number, channel_id=channel_id)
+    api_response = api_instance.call_answer(call_id, to_number, channel_id=channel_id, type=type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CallsApi->call_answer: %s\n" % e)
@@ -190,6 +191,7 @@ Name | Type | Description  | Notes
  **call_id** | **str**|  | 
  **to_number** | **str**| callee number | 
  **channel_id** | **str**| Channel ID | [optional] 
+ **type** | **str**| F - incoming call forwarded to external number | [optional] 
 
 ### Return type
 
