@@ -60,7 +60,7 @@ class IvrStep(object):
     def type(self):
         """Gets the type of this IvrStep.  # noqa: E501
 
-        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params, I - wait for DTMF input and then fetch next IVR steps from URL in params, C - request Callback  # noqa: E501
+        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params, I - wait for DTMF input and then fetch next IVR steps from URL in params, C - request Callback, E - forward to external number  # noqa: E501
 
         :return: The type of this IvrStep.  # noqa: E501
         :rtype: str
@@ -71,14 +71,14 @@ class IvrStep(object):
     def type(self, type):
         """Sets the type of this IvrStep.
 
-        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params, I - wait for DTMF input and then fetch next IVR steps from URL in params, C - request Callback  # noqa: E501
+        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params, I - wait for DTMF input and then fetch next IVR steps from URL in params, C - request Callback, E - forward to external number  # noqa: E501
 
         :param type: The type of this IvrStep.  # noqa: E501
         :type: str
         """
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["P", "R", "V", "D", "G", "T", "F", "I", "C"]  # noqa: E501
+        allowed_values = ["P", "R", "V", "D", "G", "T", "F", "I", "C", "E"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

@@ -388,6 +388,7 @@ Class | Method | HTTP request | Description
  - [IvrChoice](docs/IvrChoice.md)
  - [IvrFetch](docs/IvrFetch.md)
  - [IvrFetchParam](docs/IvrFetchParam.md)
+ - [IvrForward](docs/IvrForward.md)
  - [IvrStep](docs/IvrStep.md)
  - [LanguageRow](docs/LanguageRow.md)
  - [MailAccount](docs/MailAccount.md)
@@ -493,7 +494,7 @@ Class | Method | HTTP request | Description
  - **api.write**: Modify api
  - **api.write_own**: Modify own apikeys
  - **api.delete**: Delete api keys
- - **report.read**: Read reports
+ - **time_report.read**: Read time reports
  - **ticket.read**: Ticket read
  - **ticket.write**: Ticket write
  - **device.read**: Device read
