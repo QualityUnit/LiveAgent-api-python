@@ -41,7 +41,8 @@ class AgentRow(object):
         'roleid': 'str',
         'rolename': 'str',
         'departmentid': 'str',
-        'twofa': 'str'
+        'twofa': 'str',
+        'last_pswd_change': 'datetime'
     }
 
     attribute_map = {
@@ -55,10 +56,11 @@ class AgentRow(object):
         'roleid': 'roleid',
         'rolename': 'rolename',
         'departmentid': 'departmentid',
-        'twofa': 'twofa'
+        'twofa': 'twofa',
+        'last_pswd_change': 'last_pswd_change'
     }
 
-    def __init__(self, agentid=None, firstname=None, lastname=None, system_name=None, username=None, countrycode=None, avatar_url=None, roleid=None, rolename=None, departmentid=None, twofa=None):  # noqa: E501
+    def __init__(self, agentid=None, firstname=None, lastname=None, system_name=None, username=None, countrycode=None, avatar_url=None, roleid=None, rolename=None, departmentid=None, twofa=None, last_pswd_change=None):  # noqa: E501
         """AgentRow - a model defined in Swagger"""  # noqa: E501
 
         self._agentid = None
@@ -72,6 +74,7 @@ class AgentRow(object):
         self._rolename = None
         self._departmentid = None
         self._twofa = None
+        self._last_pswd_change = None
         self.discriminator = None
 
         if agentid is not None:
@@ -96,6 +99,8 @@ class AgentRow(object):
             self.departmentid = departmentid
         if twofa is not None:
             self.twofa = twofa
+        if last_pswd_change is not None:
+            self.last_pswd_change = last_pswd_change
 
     @property
     def agentid(self):
@@ -333,6 +338,27 @@ class AgentRow(object):
             )
 
         self._twofa = twofa
+
+    @property
+    def last_pswd_change(self):
+        """Gets the last_pswd_change of this AgentRow.  # noqa: E501
+
+
+        :return: The last_pswd_change of this AgentRow.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_pswd_change
+
+    @last_pswd_change.setter
+    def last_pswd_change(self, last_pswd_change):
+        """Sets the last_pswd_change of this AgentRow.
+
+
+        :param last_pswd_change: The last_pswd_change of this AgentRow.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_pswd_change = last_pswd_change
 
     def to_dict(self):
         """Returns the model properties as a dict"""

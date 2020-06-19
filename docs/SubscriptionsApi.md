@@ -4,9 +4,9 @@ All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**change_addons**](SubscriptionsApi.md#change_addons) | **PUT** /subscriptions/{subscriptionId}/addons/ | Addon change
+[**change_addons**](SubscriptionsApi.md#change_addons) | **PUT** /subscriptions/{subscriptionId}/addons | Addon change
 [**change_plan**](SubscriptionsApi.md#change_plan) | **POST** /subscriptions/{subscriptionId}/_upgrade | Change plan
-[**get_active_addons**](SubscriptionsApi.md#get_active_addons) | **GET** /subscriptions/{subscriptionId}/addons/ | Addon list
+[**get_active_addons**](SubscriptionsApi.md#get_active_addons) | **GET** /subscriptions/{subscriptionId}/addons | Addon list
 [**get_billing_info**](SubscriptionsApi.md#get_billing_info) | **GET** /subscriptions/{subscriptionId}/billingInfo | Billing info
 [**get_billing_metrics**](SubscriptionsApi.md#get_billing_metrics) | **GET** /subscriptions/{subscriptionId}/billingMetrics | Billing metrics
 [**get_billing_status**](SubscriptionsApi.md#get_billing_status) | **GET** /subscriptions/{subscriptionId}/billingStatus | Billing status
@@ -14,9 +14,9 @@ Method | HTTP request | Description
 [**get_payment_method**](SubscriptionsApi.md#get_payment_method) | **GET** /subscriptions/{subscriptionId}/paymentMethod | Payment method
 [**get_payment_processor**](SubscriptionsApi.md#get_payment_processor) | **GET** /subscriptions/{subscriptionId}/paymentProcessor | Payment processor
 [**get_subscription**](SubscriptionsApi.md#get_subscription) | **GET** /subscriptions/{subscriptionId} | Subscription
-[**get_subscription_attributes**](SubscriptionsApi.md#get_subscription_attributes) | **GET** /subscriptions/{subscriptionId}/attributes/ | Subscription attribute list
+[**get_subscription_attributes**](SubscriptionsApi.md#get_subscription_attributes) | **GET** /subscriptions/{subscriptionId}/attributes | Subscription attribute list
 [**get_subscription_discounts**](SubscriptionsApi.md#get_subscription_discounts) | **GET** /subscriptions/{subscriptionId}/discounts | Subscription discounts
-[**get_subscription_invoices**](SubscriptionsApi.md#get_subscription_invoices) | **GET** /subscriptions/{subscriptionId}/invoices/ | Subscription invoice list
+[**get_subscription_invoices**](SubscriptionsApi.md#get_subscription_invoices) | **GET** /subscriptions/{subscriptionId}/invoices | Subscription invoice list
 [**get_upgrade_variations**](SubscriptionsApi.md#get_upgrade_variations) | **GET** /subscriptions/{subscriptionId}/upgradeVariations | Upgrade variation list
 [**resume_billing**](SubscriptionsApi.md#resume_billing) | **POST** /subscriptions/{subscriptionId}/_cancelStop | Restart billing
 [**set_billing_info**](SubscriptionsApi.md#set_billing_info) | **PUT** /subscriptions/{subscriptionId}/billingInfo | Billing info

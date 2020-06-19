@@ -42,6 +42,7 @@ class PhoneDevice(object):
         'last_modified': 'str',
         'user_agent': 'str',
         'agent_id': 'str',
+        'trunk_id': 'float',
         'params': 'str'
     }
 
@@ -57,10 +58,11 @@ class PhoneDevice(object):
         'last_modified': 'last_modified',
         'user_agent': 'user_agent',
         'agent_id': 'agent_id',
+        'trunk_id': 'trunk_id',
         'params': 'params'
     }
 
-    def __init__(self, id=None, type=None, number=None, name=None, reg_status=None, connection_host=None, connection_user=None, connection_pass=None, last_modified=None, user_agent=None, agent_id=None, params=None):  # noqa: E501
+    def __init__(self, id=None, type=None, number=None, name=None, reg_status=None, connection_host=None, connection_user=None, connection_pass=None, last_modified=None, user_agent=None, agent_id=None, trunk_id=None, params=None):  # noqa: E501
         """PhoneDevice - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -74,6 +76,7 @@ class PhoneDevice(object):
         self._last_modified = None
         self._user_agent = None
         self._agent_id = None
+        self._trunk_id = None
         self._params = None
         self.discriminator = None
 
@@ -97,6 +100,8 @@ class PhoneDevice(object):
             self.user_agent = user_agent
         if agent_id is not None:
             self.agent_id = agent_id
+        if trunk_id is not None:
+            self.trunk_id = trunk_id
         if params is not None:
             self.params = params
 
@@ -342,6 +347,27 @@ class PhoneDevice(object):
         """
 
         self._agent_id = agent_id
+
+    @property
+    def trunk_id(self):
+        """Gets the trunk_id of this PhoneDevice.  # noqa: E501
+
+
+        :return: The trunk_id of this PhoneDevice.  # noqa: E501
+        :rtype: float
+        """
+        return self._trunk_id
+
+    @trunk_id.setter
+    def trunk_id(self, trunk_id):
+        """Sets the trunk_id of this PhoneDevice.
+
+
+        :param trunk_id: The trunk_id of this PhoneDevice.  # noqa: E501
+        :type: float
+        """
+
+        self._trunk_id = trunk_id
 
     @property
     def params(self):

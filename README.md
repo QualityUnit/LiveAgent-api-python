@@ -86,7 +86,7 @@ Class | Method | HTTP request | Description
 *AgentsApi* | [**delete_agent**](docs/AgentsApi.md#delete_agent) | **DELETE** /agents/{userId} | Agent
 *AgentsApi* | [**get_agent**](docs/AgentsApi.md#get_agent) | **GET** /agents/{userId} | Agent
 *AgentsApi* | [**get_agent_statuses**](docs/AgentsApi.md#get_agent_statuses) | **GET** /agents/{userId}/status | Get agent statuses in departments
-*AgentsApi* | [**get_agents**](docs/AgentsApi.md#get_agents) | **GET** /agents/ | Agent list
+*AgentsApi* | [**get_agents**](docs/AgentsApi.md#get_agents) | **GET** /agents | Agent list
 *AgentsApi* | [**get_agents_activity**](docs/AgentsApi.md#get_agents_activity) | **GET** /agents/activity | Agent Activity list
 *AgentsApi* | [**login_agent**](docs/AgentsApi.md#login_agent) | **POST** /agents/{userId}/_login | Login agent
 *AgentsApi* | [**logout_agent**](docs/AgentsApi.md#logout_agent) | **POST** /agents/{userId}/_logout | Logout agent
@@ -105,11 +105,11 @@ Class | Method | HTTP request | Description
 *ApiApi* | [**get_sso_key**](docs/ApiApi.md#get_sso_key) | **GET** /sso | Get SSO key
 *ApiApi* | [**login**](docs/ApiApi.md#login) | **POST** /apikeys/_login | Creates or returns API key from login.
 *ApiApi* | [**update_api_key**](docs/ApiApi.md#update_api_key) | **PUT** /apikeys/{apikeyId} | Updates api key
-*BansApi* | [**create_ban**](docs/BansApi.md#create_ban) | **POST** /bans/ | Create ban
+*BansApi* | [**create_ban**](docs/BansApi.md#create_ban) | **POST** /bans | Create ban
 *BansApi* | [**exclude_ip_ban**](docs/BansApi.md#exclude_ip_ban) | **PUT** /bans/_exclude | Exclude banned IP address
 *BansApi* | [**expire_ban**](docs/BansApi.md#expire_ban) | **POST** /bans/{banId}/_expire | Expire ban
 *BansApi* | [**get_ban**](docs/BansApi.md#get_ban) | **GET** /bans/{banId} | Get ban item
-*BansApi* | [**get_bans**](docs/BansApi.md#get_bans) | **GET** /bans/ | Bans list
+*BansApi* | [**get_bans**](docs/BansApi.md#get_bans) | **GET** /bans | Bans list
 *BansApi* | [**update_ban**](docs/BansApi.md#update_ban) | **PUT** /bans/{banId} | Update ban
 *BillingApi* | [**check_vat**](docs/BillingApi.md#check_vat) | **POST** /billing/_check_vat | Vat validity
 *BillingApi* | [**get_coupon**](docs/BillingApi.md#get_coupon) | **GET** /coupons/{couponCode} | Coupon
@@ -163,7 +163,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**register_contact**](docs/ContactsApi.md#register_contact) | **PUT** /contacts/{contactId}/_register | Register contact
 *ContactsApi* | [**unregister_contact**](docs/ContactsApi.md#unregister_contact) | **DELETE** /contacts/{contactId}/_unregister | Unregister contact
 *ContactsApi* | [**update_contact**](docs/ContactsApi.md#update_contact) | **PUT** /contacts/{contactId} | Update whole contact
-*CountriesApi* | [**get_countries**](docs/CountriesApi.md#get_countries) | **GET** /countries/ | Country list
+*CountriesApi* | [**get_countries**](docs/CountriesApi.md#get_countries) | **GET** /countries | Country list
 *CustomButtonsApi* | [**create_custom_button**](docs/CustomButtonsApi.md#create_custom_button) | **POST** /custom_buttons | Create new custom button
 *CustomButtonsApi* | [**delete_custom_button**](docs/CustomButtonsApi.md#delete_custom_button) | **DELETE** /custom_buttons/{customButtonId} | Delete custom button
 *CustomButtonsApi* | [**get_custom_button**](docs/CustomButtonsApi.md#get_custom_button) | **GET** /custom_buttons/{customButtonId} | Get custom button by id
@@ -186,7 +186,7 @@ Class | Method | HTTP request | Description
 *DevicesApi* | [**get_device_departments**](docs/DevicesApi.md#get_device_departments) | **GET** /devices/{deviceId}/departments | Get device departments
 *DevicesApi* | [**get_device_departments_by_department_id**](docs/DevicesApi.md#get_device_departments_by_department_id) | **GET** /devices/departments/{departmentId} | Get device departments by department id
 *DevicesApi* | [**get_devices_list**](docs/DevicesApi.md#get_devices_list) | **GET** /devices | Gets list of devices
-*DevicesApi* | [**get_my_mobile_devices_list**](docs/DevicesApi.md#get_my_mobile_devices_list) | **GET** /devices/_app_/ | Gets list of current agent&#39;s mobile devices. Creates new one if there are no devices.
+*DevicesApi* | [**get_my_mobile_devices_list**](docs/DevicesApi.md#get_my_mobile_devices_list) | **GET** /devices/_app_ | Gets list of current agent&#39;s mobile devices. Creates new one if there are no devices.
 *DevicesApi* | [**update_device**](docs/DevicesApi.md#update_device) | **PUT** /devices/{deviceId} | Update device
 *DevicesApi* | [**update_device_department**](docs/DevicesApi.md#update_device_department) | **PUT** /devices/{deviceId}/departments/{departmentId} | Update device department
 *DevicesApi* | [**update_device_department_plan**](docs/DevicesApi.md#update_device_department_plan) | **PUT** /devices/{deviceId}/departments/{departmentId}/plans | Update device department plan
@@ -199,10 +199,10 @@ Class | Method | HTTP request | Description
 *ExtensionsApi* | [**get_extensions_list**](docs/ExtensionsApi.md#get_extensions_list) | **GET** /extensions | Gets list of extensions
 *ExtensionsApi* | [**set_extension**](docs/ExtensionsApi.md#set_extension) | **PUT** /extensions/{extensionId} | Set extension
 *FilesApi* | [**upload_file**](docs/FilesApi.md#upload_file) | **POST** /files | Upload new file to the system
-*FiltersApi* | [**create_filter**](docs/FiltersApi.md#create_filter) | **POST** /filters/ | Create filter
+*FiltersApi* | [**create_filter**](docs/FiltersApi.md#create_filter) | **POST** /filters | Create filter
 *FiltersApi* | [**delete_filter**](docs/FiltersApi.md#delete_filter) | **DELETE** /filters/{filterId} | Delete filter
 *FiltersApi* | [**get_filter**](docs/FiltersApi.md#get_filter) | **GET** /filters/{filterId} | Get filter
-*FiltersApi* | [**get_filters**](docs/FiltersApi.md#get_filters) | **GET** /filters/ | Filters list
+*FiltersApi* | [**get_filters**](docs/FiltersApi.md#get_filters) | **GET** /filters | Filters list
 *FiltersApi* | [**update_filter**](docs/FiltersApi.md#update_filter) | **PUT** /filters/{filterId} | Update filter
 *GridApi* | [**get_agents_grid_list**](docs/GridApi.md#get_agents_grid_list) | **GET** /grid/agents | Gets list of agents for grid
 *GridApi* | [**get_agents_grid_list_count**](docs/GridApi.md#get_agents_grid_list_count) | **GET** /grid/agents/count | Gets count of agents for agents grid
@@ -233,7 +233,7 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**update_group**](docs/GroupsApi.md#update_group) | **PUT** /groups/{groupId} | Update contact group
 *HostingApi* | [**get_info**](docs/HostingApi.md#get_info) | **GET** /hosting/info | Used hosting system info
 *InvoicesApi* | [**dowload_invoice**](docs/InvoicesApi.md#dowload_invoice) | **POST** /invoices/{invoiceNumber}/_download | Download invoice
-*InvoicesApi* | [**get_invoices**](docs/InvoicesApi.md#get_invoices) | **GET** /invoices/ | Invoice list
+*InvoicesApi* | [**get_invoices**](docs/InvoicesApi.md#get_invoices) | **GET** /invoices | Invoice list
 *MailAccountApi* | [**get_mail_account**](docs/MailAccountApi.md#get_mail_account) | **GET** /mail_accounts/{mailAccountId} | Gets mail account
 *MailAccountApi* | [**get_mail_account_list**](docs/MailAccountApi.md#get_mail_account_list) | **GET** /mail_accounts | Gets list of mail accounts
 *MessagesApi* | [**get_message**](docs/MessagesApi.md#get_message) | **GET** /messages/{messageId} | Get message
@@ -262,15 +262,15 @@ Class | Method | HTTP request | Description
 *SlackApi* | [**slack_conversations_get**](docs/SlackApi.md#slack_conversations_get) | **GET** /slack/conversations | Gets Slack workspace channels
 *SlackApi* | [**slack_template_id_get**](docs/SlackApi.md#slack_template_id_get) | **GET** /slack/template/{id} | Get Slack template
 *SlackApi* | [**slack_template_id_put**](docs/SlackApi.md#slack_template_id_put) | **PUT** /slack/template/{id} | Save Slack template
-*SlackApi* | [**slack_templates_get**](docs/SlackApi.md#slack_templates_get) | **GET** /slack/templates/ | Gets Slack notification templates
+*SlackApi* | [**slack_templates_get**](docs/SlackApi.md#slack_templates_get) | **GET** /slack/templates | Gets Slack notification templates
 *SlackApi* | [**slack_user_id_get**](docs/SlackApi.md#slack_user_id_get) | **GET** /slack/user/{id} | Gets info about Slack user
 *SlackApi* | [**slack_users_get**](docs/SlackApi.md#slack_users_get) | **GET** /slack/users | Gets Slack users in workspace
 *SlasApi* | [**get_sla**](docs/SlasApi.md#get_sla) | **GET** /slas/{levelId} | Gets sla
 *SlasApi* | [**get_sla_ticket_history**](docs/SlasApi.md#get_sla_ticket_history) | **GET** /slas/{ticketId}/history | Gets ticket sla history
 *SlasApi* | [**get_slas_list**](docs/SlasApi.md#get_slas_list) | **GET** /slas | Gets list of slas
-*SubscriptionsApi* | [**change_addons**](docs/SubscriptionsApi.md#change_addons) | **PUT** /subscriptions/{subscriptionId}/addons/ | Addon change
+*SubscriptionsApi* | [**change_addons**](docs/SubscriptionsApi.md#change_addons) | **PUT** /subscriptions/{subscriptionId}/addons | Addon change
 *SubscriptionsApi* | [**change_plan**](docs/SubscriptionsApi.md#change_plan) | **POST** /subscriptions/{subscriptionId}/_upgrade | Change plan
-*SubscriptionsApi* | [**get_active_addons**](docs/SubscriptionsApi.md#get_active_addons) | **GET** /subscriptions/{subscriptionId}/addons/ | Addon list
+*SubscriptionsApi* | [**get_active_addons**](docs/SubscriptionsApi.md#get_active_addons) | **GET** /subscriptions/{subscriptionId}/addons | Addon list
 *SubscriptionsApi* | [**get_billing_info**](docs/SubscriptionsApi.md#get_billing_info) | **GET** /subscriptions/{subscriptionId}/billingInfo | Billing info
 *SubscriptionsApi* | [**get_billing_metrics**](docs/SubscriptionsApi.md#get_billing_metrics) | **GET** /subscriptions/{subscriptionId}/billingMetrics | Billing metrics
 *SubscriptionsApi* | [**get_billing_status**](docs/SubscriptionsApi.md#get_billing_status) | **GET** /subscriptions/{subscriptionId}/billingStatus | Billing status
@@ -278,9 +278,9 @@ Class | Method | HTTP request | Description
 *SubscriptionsApi* | [**get_payment_method**](docs/SubscriptionsApi.md#get_payment_method) | **GET** /subscriptions/{subscriptionId}/paymentMethod | Payment method
 *SubscriptionsApi* | [**get_payment_processor**](docs/SubscriptionsApi.md#get_payment_processor) | **GET** /subscriptions/{subscriptionId}/paymentProcessor | Payment processor
 *SubscriptionsApi* | [**get_subscription**](docs/SubscriptionsApi.md#get_subscription) | **GET** /subscriptions/{subscriptionId} | Subscription
-*SubscriptionsApi* | [**get_subscription_attributes**](docs/SubscriptionsApi.md#get_subscription_attributes) | **GET** /subscriptions/{subscriptionId}/attributes/ | Subscription attribute list
+*SubscriptionsApi* | [**get_subscription_attributes**](docs/SubscriptionsApi.md#get_subscription_attributes) | **GET** /subscriptions/{subscriptionId}/attributes | Subscription attribute list
 *SubscriptionsApi* | [**get_subscription_discounts**](docs/SubscriptionsApi.md#get_subscription_discounts) | **GET** /subscriptions/{subscriptionId}/discounts | Subscription discounts
-*SubscriptionsApi* | [**get_subscription_invoices**](docs/SubscriptionsApi.md#get_subscription_invoices) | **GET** /subscriptions/{subscriptionId}/invoices/ | Subscription invoice list
+*SubscriptionsApi* | [**get_subscription_invoices**](docs/SubscriptionsApi.md#get_subscription_invoices) | **GET** /subscriptions/{subscriptionId}/invoices | Subscription invoice list
 *SubscriptionsApi* | [**get_upgrade_variations**](docs/SubscriptionsApi.md#get_upgrade_variations) | **GET** /subscriptions/{subscriptionId}/upgradeVariations | Upgrade variation list
 *SubscriptionsApi* | [**resume_billing**](docs/SubscriptionsApi.md#resume_billing) | **POST** /subscriptions/{subscriptionId}/_cancelStop | Restart billing
 *SubscriptionsApi* | [**set_billing_info**](docs/SubscriptionsApi.md#set_billing_info) | **PUT** /subscriptions/{subscriptionId}/billingInfo | Billing info

@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ban**](BansApi.md#create_ban) | **POST** /bans/ | Create ban
+[**create_ban**](BansApi.md#create_ban) | **POST** /bans | Create ban
 [**exclude_ip_ban**](BansApi.md#exclude_ip_ban) | **PUT** /bans/_exclude | Exclude banned IP address
 [**expire_ban**](BansApi.md#expire_ban) | **POST** /bans/{banId}/_expire | Expire ban
 [**get_ban**](BansApi.md#get_ban) | **GET** /bans/{banId} | Get ban item
-[**get_bans**](BansApi.md#get_bans) | **GET** /bans/ | Bans list
+[**get_bans**](BansApi.md#get_bans) | **GET** /bans | Bans list
 [**update_ban**](BansApi.md#update_ban) | **PUT** /bans/{banId} | Update ban
 
 

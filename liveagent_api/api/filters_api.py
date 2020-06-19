@@ -113,7 +113,7 @@ class FiltersApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/filters/', 'POST',
+            '/filters', 'POST',
             path_params,
             query_params,
             header_params,
@@ -430,7 +430,7 @@ class FiltersApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/filters/', 'GET',
+            '/filters', 'GET',
             path_params,
             query_params,
             header_params,

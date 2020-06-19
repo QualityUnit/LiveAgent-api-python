@@ -4,10 +4,10 @@ All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_filter**](FiltersApi.md#create_filter) | **POST** /filters/ | Create filter
+[**create_filter**](FiltersApi.md#create_filter) | **POST** /filters | Create filter
 [**delete_filter**](FiltersApi.md#delete_filter) | **DELETE** /filters/{filterId} | Delete filter
 [**get_filter**](FiltersApi.md#get_filter) | **GET** /filters/{filterId} | Get filter
-[**get_filters**](FiltersApi.md#get_filters) | **GET** /filters/ | Filters list
+[**get_filters**](FiltersApi.md#get_filters) | **GET** /filters | Filters list
 [**update_filter**](FiltersApi.md#update_filter) | **PUT** /filters/{filterId} | Update filter
 
 

@@ -38,7 +38,9 @@ class Agent(object):
         'avatar_url': 'str',
         'online_status': 'str',
         'status': 'str',
-        'gender': 'str'
+        'gender': 'str',
+        'last_pswd_change': 'datetime',
+        'twofactor_auth': 'str'
     }
 
     attribute_map = {
@@ -49,10 +51,12 @@ class Agent(object):
         'avatar_url': 'avatar_url',
         'online_status': 'online_status',
         'status': 'status',
-        'gender': 'gender'
+        'gender': 'gender',
+        'last_pswd_change': 'last_pswd_change',
+        'twofactor_auth': 'twofactor_auth'
     }
 
-    def __init__(self, id=None, name=None, email=None, role='agent', avatar_url=None, online_status=None, status=None, gender='X'):  # noqa: E501
+    def __init__(self, id=None, name=None, email=None, role='agent', avatar_url=None, online_status=None, status=None, gender='X', last_pswd_change=None, twofactor_auth='N'):  # noqa: E501
         """Agent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -63,6 +67,8 @@ class Agent(object):
         self._online_status = None
         self._status = None
         self._gender = None
+        self._last_pswd_change = None
+        self._twofactor_auth = None
         self.discriminator = None
 
         if id is not None:
@@ -79,6 +85,10 @@ class Agent(object):
             self.status = status
         if gender is not None:
             self.gender = gender
+        if last_pswd_change is not None:
+            self.last_pswd_change = last_pswd_change
+        if twofactor_auth is not None:
+            self.twofactor_auth = twofactor_auth
 
     @property
     def id(self):
@@ -269,6 +279,50 @@ class Agent(object):
             )
 
         self._gender = gender
+
+    @property
+    def last_pswd_change(self):
+        """Gets the last_pswd_change of this Agent.  # noqa: E501
+
+
+        :return: The last_pswd_change of this Agent.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_pswd_change
+
+    @last_pswd_change.setter
+    def last_pswd_change(self, last_pswd_change):
+        """Sets the last_pswd_change of this Agent.
+
+
+        :param last_pswd_change: The last_pswd_change of this Agent.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_pswd_change = last_pswd_change
+
+    @property
+    def twofactor_auth(self):
+        """Gets the twofactor_auth of this Agent.  # noqa: E501
+
+        Y - active, N - not active   # noqa: E501
+
+        :return: The twofactor_auth of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._twofactor_auth
+
+    @twofactor_auth.setter
+    def twofactor_auth(self, twofactor_auth):
+        """Sets the twofactor_auth of this Agent.
+
+        Y - active, N - not active   # noqa: E501
+
+        :param twofactor_auth: The twofactor_auth of this Agent.  # noqa: E501
+        :type: str
+        """
+
+        self._twofactor_auth = twofactor_auth
 
     def to_dict(self):
         """Returns the model properties as a dict"""

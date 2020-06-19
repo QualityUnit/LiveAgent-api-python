@@ -1373,7 +1373,7 @@ class DevicesApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/devices/_app_/', 'GET',
+            '/devices/_app_', 'GET',
             path_params,
             query_params,
             header_params,
