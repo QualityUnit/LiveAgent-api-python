@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost/api/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**dowload_invoice**](InvoicesApi.md#dowload_invoice) | **POST** /invoices/{invoiceNumber}/_download | Download invoice
-[**get_invoices**](InvoicesApi.md#get_invoices) | **GET** /invoices/ | Invoice list
+[**get_invoices**](InvoicesApi.md#get_invoices) | **GET** /invoices | Invoice list
 
 
 # **dowload_invoice**

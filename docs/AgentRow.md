@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **rolename** | **str** |  | [optional] 
 **departmentid** | **str** |  | [optional] 
 **twofa** | **str** |  | [optional] 
+**last_pswd_change** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**get_device_departments**](DevicesApi.md#get_device_departments) | **GET** /devices/{deviceId}/departments | Get device departments
 [**get_device_departments_by_department_id**](DevicesApi.md#get_device_departments_by_department_id) | **GET** /devices/departments/{departmentId} | Get device departments by department id
 [**get_devices_list**](DevicesApi.md#get_devices_list) | **GET** /devices | Gets list of devices
-[**get_my_mobile_devices_list**](DevicesApi.md#get_my_mobile_devices_list) | **GET** /devices/_app_/ | Gets list of current agent&#39;s mobile devices. Creates new one if there are no devices.
+[**get_my_mobile_devices_list**](DevicesApi.md#get_my_mobile_devices_list) | **GET** /devices/_app_ | Gets list of current agent&#39;s mobile devices. Creates new one if there are no devices.
 [**update_device**](DevicesApi.md#update_device) | **PUT** /devices/{deviceId} | Update device
 [**update_device_department**](DevicesApi.md#update_device_department) | **PUT** /devices/{deviceId}/departments/{departmentId} | Update device department
 [**update_device_department_plan**](DevicesApi.md#update_device_department_plan) | **PUT** /devices/{deviceId}/departments/{departmentId}/plans | Update device department plan

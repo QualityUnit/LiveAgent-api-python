@@ -4,7 +4,7 @@ All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_countries**](CountriesApi.md#get_countries) | **GET** /countries/ | Country list
+[**get_countries**](CountriesApi.md#get_countries) | **GET** /countries | Country list
 
 
 # **get_countries**

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**slack_conversations_get**](SlackApi.md#slack_conversations_get) | **GET** /slack/conversations | Gets Slack workspace channels
 [**slack_template_id_get**](SlackApi.md#slack_template_id_get) | **GET** /slack/template/{id} | Get Slack template
 [**slack_template_id_put**](SlackApi.md#slack_template_id_put) | **PUT** /slack/template/{id} | Save Slack template
-[**slack_templates_get**](SlackApi.md#slack_templates_get) | **GET** /slack/templates/ | Gets Slack notification templates
+[**slack_templates_get**](SlackApi.md#slack_templates_get) | **GET** /slack/templates | Gets Slack notification templates
 [**slack_user_id_get**](SlackApi.md#slack_user_id_get) | **GET** /slack/user/{id} | Gets info about Slack user
 [**slack_users_get**](SlackApi.md#slack_users_get) | **GET** /slack/users | Gets Slack users in workspace
 

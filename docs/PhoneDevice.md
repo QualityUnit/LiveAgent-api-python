@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **last_modified** | **str** |  | [optional] 
 **user_agent** | **str** |  | [optional] 
 **agent_id** | **str** |  | [optional] 
+**trunk_id** | **float** |  | [optional] 
 **params** | **str** | Additional params column with no specific meaning | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

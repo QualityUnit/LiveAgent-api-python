@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**delete_agent**](AgentsApi.md#delete_agent) | **DELETE** /agents/{userId} | Agent
 [**get_agent**](AgentsApi.md#get_agent) | **GET** /agents/{userId} | Agent
 [**get_agent_statuses**](AgentsApi.md#get_agent_statuses) | **GET** /agents/{userId}/status | Get agent statuses in departments
-[**get_agents**](AgentsApi.md#get_agents) | **GET** /agents/ | Agent list
+[**get_agents**](AgentsApi.md#get_agents) | **GET** /agents | Agent list
 [**get_agents_activity**](AgentsApi.md#get_agents_activity) | **GET** /agents/activity | Agent Activity list
 [**login_agent**](AgentsApi.md#login_agent) | **POST** /agents/{userId}/_login | Login agent
 [**logout_agent**](AgentsApi.md#logout_agent) | **POST** /agents/{userId}/_logout | Logout agent

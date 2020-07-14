@@ -113,7 +113,7 @@ class BansApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/bans/', 'POST',
+            '/bans', 'POST',
             path_params,
             query_params,
             header_params,
@@ -529,7 +529,7 @@ class BansApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/bans/', 'GET',
+            '/bans', 'GET',
             path_params,
             query_params,
             header_params,

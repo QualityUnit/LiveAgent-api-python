@@ -121,7 +121,7 @@ class SubscriptionsApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/subscriptions/{subscriptionId}/addons/', 'PUT',
+            '/subscriptions/{subscriptionId}/addons', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -323,7 +323,7 @@ class SubscriptionsApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/subscriptions/{subscriptionId}/addons/', 'GET',
+            '/subscriptions/{subscriptionId}/addons', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1127,7 +1127,7 @@ class SubscriptionsApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/subscriptions/{subscriptionId}/attributes/', 'GET',
+            '/subscriptions/{subscriptionId}/attributes', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1353,7 +1353,7 @@ class SubscriptionsApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/subscriptions/{subscriptionId}/invoices/', 'GET',
+            '/subscriptions/{subscriptionId}/invoices', 'GET',
             path_params,
             query_params,
             header_params,

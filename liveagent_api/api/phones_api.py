@@ -45,6 +45,8 @@ class PhonesApi(object):
         :param str number: (required)
         :param str type: S - SIP phone, E - PSTN phone
         :param str name:
+        :param float trunk_id:
+        :param str agent_id:
         :return: PhoneDevice
                  If the method is called asynchronously,
                  returns the request thread.
@@ -68,12 +70,14 @@ class PhonesApi(object):
         :param str number: (required)
         :param str type: S - SIP phone, E - PSTN phone
         :param str name:
+        :param float trunk_id:
+        :param str agent_id:
         :return: PhoneDevice
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['number', 'type', 'name']  # noqa: E501
+        all_params = ['number', 'type', 'name', 'trunk_id', 'agent_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -104,6 +108,10 @@ class PhonesApi(object):
             query_params.append(('type', params['type']))  # noqa: E501
         if 'name' in params:
             query_params.append(('name', params['name']))  # noqa: E501
+        if 'trunk_id' in params:
+            query_params.append(('trunk_id', params['trunk_id']))  # noqa: E501
+        if 'agent_id' in params:
+            query_params.append(('agent_id', params['agent_id']))  # noqa: E501
 
         header_params = {}
 
@@ -459,7 +467,9 @@ class PhonesApi(object):
 
         :param async_req bool
         :param str phone_id: (required)
+        :param str number:
         :param str name:
+        :param int trunk_id:
         :return: PhoneDevice
                  If the method is called asynchronously,
                  returns the request thread.
@@ -481,13 +491,15 @@ class PhonesApi(object):
 
         :param async_req bool
         :param str phone_id: (required)
+        :param str number:
         :param str name:
+        :param int trunk_id:
         :return: PhoneDevice
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['phone_id', 'name']  # noqa: E501
+        all_params = ['phone_id', 'number', 'name', 'trunk_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -519,8 +531,12 @@ class PhonesApi(object):
 
         form_params = []
         local_var_files = {}
+        if 'number' in params:
+            form_params.append(('number', params['number']))  # noqa: E501
         if 'name' in params:
             form_params.append(('name', params['name']))  # noqa: E501
+        if 'trunk_id' in params:
+            form_params.append(('trunk_id', params['trunk_id']))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`

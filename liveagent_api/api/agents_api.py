@@ -529,7 +529,7 @@ class AgentsApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/agents/', 'GET',
+            '/agents', 'GET',
             path_params,
             query_params,
             header_params,
