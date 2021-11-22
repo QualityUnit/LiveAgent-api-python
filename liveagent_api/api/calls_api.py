@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -912,6 +912,95 @@ class CallsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def call_pickup(self, **kwargs):  # noqa: E501
+        """Pick up call from queue  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_pickup(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.call_pickup_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.call_pickup_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def call_pickup_with_http_info(self, **kwargs):  # noqa: E501
+        """Pick up call from queue  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.call_pickup_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method call_pickup" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/calls/_pickup', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OkResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def call_remove_channel(self, call_id, channel_id, **kwargs):  # noqa: E501
         """Removes channel from the call  # noqa: E501
 
@@ -1235,7 +1324,7 @@ class CallsApi(object):
     def call_start(self, to_number, from_number, ticket_id, **kwargs):  # noqa: E501
         """Starts new outcoming / internal call  # noqa: E501
 
-        Starts new call by ringing agent device and the dialing customer after agent has picked up his phone   # noqa: E501
+        Starts a new call by ringing the agent and dialing the customer after the agent has picked up the call   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.call_start(to_number, from_number, ticket_id, async_req=True)
@@ -1260,7 +1349,7 @@ class CallsApi(object):
     def call_start_with_http_info(self, to_number, from_number, ticket_id, **kwargs):  # noqa: E501
         """Starts new outcoming / internal call  # noqa: E501
 
-        Starts new call by ringing agent device and the dialing customer after agent has picked up his phone   # noqa: E501
+        Starts a new call by ringing the agent and dialing the customer after the agent has picked up the call   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.call_start_with_http_info(to_number, from_number, ticket_id, async_req=True)
@@ -2087,7 +2176,7 @@ class CallsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: Count
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2108,7 +2197,7 @@ class CallsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: Count
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2181,7 +2270,7 @@ class CallsApi(object):
 
         :param async_req bool
         :param int per_page: Results per page.
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
         :param str sort_dir: Sorting direction ASC or DESC
@@ -2207,7 +2296,7 @@ class CallsApi(object):
 
         :param async_req bool
         :param int per_page: Results per page.
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
         :param str sort_dir: Sorting direction ASC or DESC

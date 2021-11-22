@@ -7,9 +7,7 @@ Method | HTTP request | Description
 [**create_device**](DevicesApi.md#create_device) | **POST** /devices | Create new device
 [**create_device_department_plans**](DevicesApi.md#create_device_department_plans) | **POST** /devices/{deviceId}/departments/{departmentId}/plans | Create device department plans
 [**delete_device**](DevicesApi.md#delete_device) | **DELETE** /devices/{deviceId} | Delete device
-[**delete_device_department**](DevicesApi.md#delete_device_department) | **DELETE** /devices/{deviceId}/departments/{departmentId} | Delete device department
 [**delete_device_department_plans**](DevicesApi.md#delete_device_department_plans) | **DELETE** /devices/{deviceId}/departments/{departmentId}/plans | Delete device department plans
-[**delete_device_departments**](DevicesApi.md#delete_device_departments) | **DELETE** /devices/{deviceId}/departments | Delete device departments
 [**get_device**](DevicesApi.md#get_device) | **GET** /devices/{deviceId} | Get device by id
 [**get_device_department**](DevicesApi.md#get_device_department) | **GET** /devices/{deviceId}/departments/{departmentId} | Get device department by id
 [**get_device_department_plan**](DevicesApi.md#get_device_department_plan) | **GET** /devices/{deviceId}/departments/{departmentId}/plans | Get device department plan
@@ -192,65 +190,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_device_department**
-> OkResponse delete_device_department(device_id, department_id)
-
-Delete device department
-
-Deletes a device department
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
-device_id = 56 # int | 
-department_id = 'department_id_example' # str | 
-
-try:
-    # Delete device department
-    api_response = api_instance.delete_device_department(device_id, department_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DevicesApi->delete_device_department: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device_id** | **int**|  | 
- **department_id** | **str**|  | 
-
-### Return type
-
-[**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **delete_device_department_plans**
 > OkResponse delete_device_department_plans(device_id, department_id)
 
@@ -294,65 +233,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **device_id** | **int**|  | 
  **department_id** | **str**|  | 
-
-### Return type
-
-[**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_device_departments**
-> OkResponse delete_device_departments(device_id, device=device)
-
-Delete device departments
-
-Deletes a device departments
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
-device_id = 56 # int | 
-device = liveagent_api.DeviceDepartmentList() # DeviceDepartmentList |  (optional)
-
-try:
-    # Delete device departments
-    api_response = api_instance.delete_device_departments(device_id, device=device)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DevicesApi->delete_device_departments: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device_id** | **int**|  | 
- **device** | [**DeviceDepartmentList**](DeviceDepartmentList.md)|  | [optional] 
 
 ### Return type
 
@@ -570,7 +450,7 @@ to = 0 # int | Result set end. Used only if _from is used. (optional) (default t
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
 sort_fields = 'sort_fields_example' # str | 'Sort fields (json object {column:direction, ...}).'<br> Direction can be:<br> - \"ASC\" (ascending)<br> - \"DESC\" (descending) If _sortFields is defined, _sortField and _sortDir is ignored. (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Get device departments
@@ -592,7 +472,7 @@ Name | Type | Description  | Notes
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
  **sort_fields** | **str**| &#39;Sort fields (json object {column:direction, ...}).&#39;&lt;br&gt; Direction can be:&lt;br&gt; - \&quot;ASC\&quot; (ascending)&lt;br&gt; - \&quot;DESC\&quot; (descending) If _sortFields is defined, _sortField and _sortDir is ignored. | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -694,7 +574,7 @@ _from = 0 # int | Result set start. Takes precedence over _page. (optional) (def
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets list of devices
@@ -714,7 +594,7 @@ Name | Type | Description  | Notes
  **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 

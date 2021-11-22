@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **type** | **str** | V - visitor, R - registered visitor | [optional] [default to 'V']
-**gender** | **str** | M - Male, F - Female, X - Unspecified | [optional] 
+**gender** | **str** | M - Male, F - Female, O - Other, X - Unspecified | [optional] 
 **date_created** | **datetime** | Set automatically | [optional] 
 **date_changed** | **datetime** | Set automatically | [optional] 
 **language** | **str** |  | [optional] 

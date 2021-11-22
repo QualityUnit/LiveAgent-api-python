@@ -12,9 +12,10 @@ Name | Type | Description | Notes
 **avatar_url** | **str** |  | [optional] 
 **roleid** | **str** |  | [optional] 
 **rolename** | **str** |  | [optional] 
-**departmentid** | **str** |  | [optional] 
+**departments_statuses** | [**list[AgentStatus]**](AgentStatus.md) |  | [optional] 
 **twofa** | **str** |  | [optional] 
 **last_pswd_change** | **datetime** |  | [optional] 
+**userstatus** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

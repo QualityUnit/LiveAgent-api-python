@@ -1,10 +1,10 @@
-# liveagent_api.DefaultApi
+# liveagent_api.PingApi
 
 All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ping**](DefaultApi.md#ping) | **GET** /ping | Check that API is responding
+[**ping**](PingApi.md#ping) | **GET** /ping | Check that API is responding
 
 
 # **ping**
@@ -30,14 +30,14 @@ configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.DefaultApi(liveagent_api.ApiClient(configuration))
+api_instance = liveagent_api.PingApi(liveagent_api.ApiClient(configuration))
 
 try:
     # Check that API is responding
     api_response = api_instance.ping()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DefaultApi->ping: %s\n" % e)
+    print("Exception when calling PingApi->ping: %s\n" % e)
 ```
 
 ### Parameters

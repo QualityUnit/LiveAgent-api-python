@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **system_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
-**gender** | **str** | M - Male, F - Female, X - Unspecified | [optional] 
+**gender** | **str** | M - Male, F - Female, O - Other, X - Unspecified | [optional] 
 **language** | **str** |  | [optional] 
 **city** | **str** |  | [optional] 
 **countrycode** | **str** |  | [optional] 

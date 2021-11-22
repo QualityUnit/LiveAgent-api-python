@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -31,57 +31,36 @@ class Domain(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'domain': 'str',
         'custom_domain': 'str',
         'ssl_key': 'str',
-        'ssl_crt': 'str'
+        'ssl_crt': 'str',
+        'domain': 'str'
     }
 
     attribute_map = {
-        'domain': 'domain',
         'custom_domain': 'custom_domain',
         'ssl_key': 'ssl_key',
-        'ssl_crt': 'ssl_crt'
+        'ssl_crt': 'ssl_crt',
+        'domain': 'domain'
     }
 
-    def __init__(self, domain=None, custom_domain=None, ssl_key=None, ssl_crt=None):  # noqa: E501
+    def __init__(self, custom_domain=None, ssl_key=None, ssl_crt=None, domain=None):  # noqa: E501
         """Domain - a model defined in Swagger"""  # noqa: E501
 
-        self._domain = None
         self._custom_domain = None
         self._ssl_key = None
         self._ssl_crt = None
+        self._domain = None
         self.discriminator = None
 
-        if domain is not None:
-            self.domain = domain
         if custom_domain is not None:
             self.custom_domain = custom_domain
         if ssl_key is not None:
             self.ssl_key = ssl_key
         if ssl_crt is not None:
             self.ssl_crt = ssl_crt
-
-    @property
-    def domain(self):
-        """Gets the domain of this Domain.  # noqa: E501
-
-
-        :return: The domain of this Domain.  # noqa: E501
-        :rtype: str
-        """
-        return self._domain
-
-    @domain.setter
-    def domain(self, domain):
-        """Sets the domain of this Domain.
-
-
-        :param domain: The domain of this Domain.  # noqa: E501
-        :type: str
-        """
-
-        self._domain = domain
+        if domain is not None:
+            self.domain = domain
 
     @property
     def custom_domain(self):
@@ -145,6 +124,27 @@ class Domain(object):
         """
 
         self._ssl_crt = ssl_crt
+
+    @property
+    def domain(self):
+        """Gets the domain of this Domain.  # noqa: E501
+
+
+        :return: The domain of this Domain.  # noqa: E501
+        :rtype: str
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """Sets the domain of this Domain.
+
+
+        :param domain: The domain of this Domain.  # noqa: E501
+        :type: str
+        """
+
+        self._domain = domain
 
     def to_dict(self):
         """Returns the model properties as a dict"""

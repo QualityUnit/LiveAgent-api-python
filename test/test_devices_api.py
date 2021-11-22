@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -50,24 +50,10 @@ class TestDevicesApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_device_department(self):
-        """Test case for delete_device_department
-
-        Delete device department  # noqa: E501
-        """
-        pass
-
     def test_delete_device_department_plans(self):
         """Test case for delete_device_department_plans
 
         Delete device department plans  # noqa: E501
-        """
-        pass
-
-    def test_delete_device_departments(self):
-        """Test case for delete_device_departments
-
-        Delete device departments  # noqa: E501
         """
         pass
 

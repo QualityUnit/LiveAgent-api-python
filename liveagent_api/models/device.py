@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -34,7 +34,6 @@ class Device(object):
         'id': 'float',
         'agent_id': 'str',
         'phone_id': 'str',
-        'api_phone_id': 'str',
         'type': 'str',
         'service_type': 'str',
         'online_status': 'str',
@@ -45,20 +44,18 @@ class Device(object):
         'id': 'id',
         'agent_id': 'agent_id',
         'phone_id': 'phone_id',
-        'api_phone_id': 'api_phone_id',
         'type': 'type',
         'service_type': 'service_type',
         'online_status': 'online_status',
         'preset_status': 'preset_status'
     }
 
-    def __init__(self, id=None, agent_id=None, phone_id=None, api_phone_id=None, type=None, service_type=None, online_status=None, preset_status=None):  # noqa: E501
+    def __init__(self, id=None, agent_id=None, phone_id=None, type=None, service_type=None, online_status=None, preset_status=None):  # noqa: E501
         """Device - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._agent_id = None
         self._phone_id = None
-        self._api_phone_id = None
         self._type = None
         self._service_type = None
         self._online_status = None
@@ -71,8 +68,6 @@ class Device(object):
             self.agent_id = agent_id
         if phone_id is not None:
             self.phone_id = phone_id
-        if api_phone_id is not None:
-            self.api_phone_id = api_phone_id
         if type is not None:
             self.type = type
         if service_type is not None:
@@ -144,27 +139,6 @@ class Device(object):
         """
 
         self._phone_id = phone_id
-
-    @property
-    def api_phone_id(self):
-        """Gets the api_phone_id of this Device.  # noqa: E501
-
-
-        :return: The api_phone_id of this Device.  # noqa: E501
-        :rtype: str
-        """
-        return self._api_phone_id
-
-    @api_phone_id.setter
-    def api_phone_id(self, api_phone_id):
-        """Sets the api_phone_id of this Device.
-
-
-        :param api_phone_id: The api_phone_id of this Device.  # noqa: E501
-        :type: str
-        """
-
-        self._api_phone_id = api_phone_id
 
     @property
     def type(self):

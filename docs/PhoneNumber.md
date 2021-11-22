@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **type** | **str** | A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk | [optional] 
 **dial_out_prefix** | **int** | Prefix needed to originate call using this number | [optional] 
 **dial_out_prefix_formatted** | **str** | Dial out prefix in 2 or 3 digits string format according to application settings | [optional] 
-**record_call** | **bool** |  | [optional] 
+**record_in_call** | **bool** |  | [optional] 
+**record_out_call** | **bool** |  | [optional] 
 **number** | **str** |  | 
 **name** | **str** |  | [optional] 
 **departmentid** | **str** |  | [optional] 

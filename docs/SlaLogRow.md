@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **req_firstname** | **str** |  | [optional] 
 **req_lastname** | **str** |  | [optional] 
 **req_systemname** | **str** |  | [optional] 
+**req_contact_name** | **str** |  | [optional] 
 **req_avatar_url** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

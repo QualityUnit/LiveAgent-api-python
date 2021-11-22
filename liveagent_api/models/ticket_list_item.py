@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -37,8 +37,8 @@ class TicketListItem(object):
         'recipient': 'str',
         'message': 'str',
         'recipient_name': 'str',
-        'carbon_copy': 'str',
-        'blind_carbon_copy': 'str',
+        'carbon_copies': 'str',
+        'blind_carbon_copies': 'str',
         'status': 'str',
         'mail_message_id': 'str',
         'do_not_send_mail': 'str',
@@ -56,8 +56,8 @@ class TicketListItem(object):
         'recipient': 'recipient',
         'message': 'message',
         'recipient_name': 'recipient_name',
-        'carbon_copy': 'carbon_copy',
-        'blind_carbon_copy': 'blind_carbon_copy',
+        'carbon_copies': 'carbon_copies',
+        'blind_carbon_copies': 'blind_carbon_copies',
         'status': 'status',
         'mail_message_id': 'mail_message_id',
         'do_not_send_mail': 'do_not_send_mail',
@@ -68,7 +68,7 @@ class TicketListItem(object):
         'attachments': 'attachments'
     }
 
-    def __init__(self, useridentifier=None, subject=None, departmentid=None, recipient=None, message=None, recipient_name=None, carbon_copy=None, blind_carbon_copy=None, status='N', mail_message_id=None, do_not_send_mail='N', use_template='Y', is_html_message='N', custom_fields=None, tags=None, attachments=None):  # noqa: E501
+    def __init__(self, useridentifier=None, subject=None, departmentid=None, recipient=None, message=None, recipient_name=None, carbon_copies=None, blind_carbon_copies=None, status='N', mail_message_id=None, do_not_send_mail='N', use_template='Y', is_html_message='N', custom_fields=None, tags=None, attachments=None):  # noqa: E501
         """TicketListItem - a model defined in Swagger"""  # noqa: E501
 
         self._useridentifier = None
@@ -77,8 +77,8 @@ class TicketListItem(object):
         self._recipient = None
         self._message = None
         self._recipient_name = None
-        self._carbon_copy = None
-        self._blind_carbon_copy = None
+        self._carbon_copies = None
+        self._blind_carbon_copies = None
         self._status = None
         self._mail_message_id = None
         self._do_not_send_mail = None
@@ -96,10 +96,10 @@ class TicketListItem(object):
         self.message = message
         if recipient_name is not None:
             self.recipient_name = recipient_name
-        if carbon_copy is not None:
-            self.carbon_copy = carbon_copy
-        if blind_carbon_copy is not None:
-            self.blind_carbon_copy = blind_carbon_copy
+        if carbon_copies is not None:
+            self.carbon_copies = carbon_copies
+        if blind_carbon_copies is not None:
+            self.blind_carbon_copies = blind_carbon_copies
         if status is not None:
             self.status = status
         if mail_message_id is not None:
@@ -254,46 +254,46 @@ class TicketListItem(object):
         self._recipient_name = recipient_name
 
     @property
-    def carbon_copy(self):
-        """Gets the carbon_copy of this TicketListItem.  # noqa: E501
+    def carbon_copies(self):
+        """Gets the carbon_copies of this TicketListItem.  # noqa: E501
 
 
-        :return: The carbon_copy of this TicketListItem.  # noqa: E501
+        :return: The carbon_copies of this TicketListItem.  # noqa: E501
         :rtype: str
         """
-        return self._carbon_copy
+        return self._carbon_copies
 
-    @carbon_copy.setter
-    def carbon_copy(self, carbon_copy):
-        """Sets the carbon_copy of this TicketListItem.
+    @carbon_copies.setter
+    def carbon_copies(self, carbon_copies):
+        """Sets the carbon_copies of this TicketListItem.
 
 
-        :param carbon_copy: The carbon_copy of this TicketListItem.  # noqa: E501
+        :param carbon_copies: The carbon_copies of this TicketListItem.  # noqa: E501
         :type: str
         """
 
-        self._carbon_copy = carbon_copy
+        self._carbon_copies = carbon_copies
 
     @property
-    def blind_carbon_copy(self):
-        """Gets the blind_carbon_copy of this TicketListItem.  # noqa: E501
+    def blind_carbon_copies(self):
+        """Gets the blind_carbon_copies of this TicketListItem.  # noqa: E501
 
 
-        :return: The blind_carbon_copy of this TicketListItem.  # noqa: E501
+        :return: The blind_carbon_copies of this TicketListItem.  # noqa: E501
         :rtype: str
         """
-        return self._blind_carbon_copy
+        return self._blind_carbon_copies
 
-    @blind_carbon_copy.setter
-    def blind_carbon_copy(self, blind_carbon_copy):
-        """Sets the blind_carbon_copy of this TicketListItem.
+    @blind_carbon_copies.setter
+    def blind_carbon_copies(self, blind_carbon_copies):
+        """Sets the blind_carbon_copies of this TicketListItem.
 
 
-        :param blind_carbon_copy: The blind_carbon_copy of this TicketListItem.  # noqa: E501
+        :param blind_carbon_copies: The blind_carbon_copies of this TicketListItem.  # noqa: E501
         :type: str
         """
 
-        self._blind_carbon_copy = blind_carbon_copy
+        self._blind_carbon_copies = blind_carbon_copies
 
     @property
     def status(self):

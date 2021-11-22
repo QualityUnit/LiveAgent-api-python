@@ -160,7 +160,7 @@ _from = 0 # int | Result set start. Takes precedence over _page. (optional) (def
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets list of available phone devices. Special filters (userId - filter phones available for specified user only) 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
  **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 

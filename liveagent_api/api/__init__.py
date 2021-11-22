@@ -16,7 +16,6 @@ from liveagent_api.api.contact_phones_api import ContactPhonesApi
 from liveagent_api.api.contacts_api import ContactsApi
 from liveagent_api.api.countries_api import CountriesApi
 from liveagent_api.api.custom_buttons_api import CustomButtonsApi
-from liveagent_api.api.default_api import DefaultApi
 from liveagent_api.api.departments_api import DepartmentsApi
 from liveagent_api.api.devices_api import DevicesApi
 from liveagent_api.api.elastic_api import ElasticApi
@@ -27,11 +26,11 @@ from liveagent_api.api.grid_api import GridApi
 from liveagent_api.api.groups_api import GroupsApi
 from liveagent_api.api.hosting_api import HostingApi
 from liveagent_api.api.invoices_api import InvoicesApi
-from liveagent_api.api.mail_account_api import MailAccountApi
 from liveagent_api.api.messages_api import MessagesApi
 from liveagent_api.api.page_visits_api import PageVisitsApi
 from liveagent_api.api.phone_numbers_api import PhoneNumbersApi
 from liveagent_api.api.phones_api import PhonesApi
+from liveagent_api.api.ping_api import PingApi
 from liveagent_api.api.predefined_answers_api import PredefinedAnswersApi
 from liveagent_api.api.queue_api import QueueApi
 from liveagent_api.api.settings_api import SettingsApi

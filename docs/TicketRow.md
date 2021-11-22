@@ -49,6 +49,7 @@ Name | Type | Description | Notes
 **accountuserstatus** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **note** | **str** |  | [optional] 
+**last_activity** | **datetime** |  | [optional] 
 **tagnames** | **list[str]** |  | [optional] 
 **groupnames** | **list[str]** |  | [optional] 
 

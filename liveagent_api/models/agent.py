@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -40,7 +40,10 @@ class Agent(object):
         'status': 'str',
         'gender': 'str',
         'last_pswd_change': 'datetime',
-        'twofactor_auth': 'str'
+        'twofactor_auth': 'str',
+        'voice_status': 'str',
+        'sip_phone_id': 'str',
+        'api_phone_id': 'str'
     }
 
     attribute_map = {
@@ -53,10 +56,13 @@ class Agent(object):
         'status': 'status',
         'gender': 'gender',
         'last_pswd_change': 'last_pswd_change',
-        'twofactor_auth': 'twofactor_auth'
+        'twofactor_auth': 'twofactor_auth',
+        'voice_status': 'voice_status',
+        'sip_phone_id': 'sip_phone_id',
+        'api_phone_id': 'api_phone_id'
     }
 
-    def __init__(self, id=None, name=None, email=None, role='agent', avatar_url=None, online_status=None, status=None, gender='X', last_pswd_change=None, twofactor_auth='N'):  # noqa: E501
+    def __init__(self, id=None, name=None, email=None, role='agent', avatar_url=None, online_status=None, status=None, gender='X', last_pswd_change=None, twofactor_auth='N', voice_status=None, sip_phone_id=None, api_phone_id=None):  # noqa: E501
         """Agent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -69,6 +75,9 @@ class Agent(object):
         self._gender = None
         self._last_pswd_change = None
         self._twofactor_auth = None
+        self._voice_status = None
+        self._sip_phone_id = None
+        self._api_phone_id = None
         self.discriminator = None
 
         if id is not None:
@@ -89,6 +98,12 @@ class Agent(object):
             self.last_pswd_change = last_pswd_change
         if twofactor_auth is not None:
             self.twofactor_auth = twofactor_auth
+        if voice_status is not None:
+            self.voice_status = voice_status
+        if sip_phone_id is not None:
+            self.sip_phone_id = sip_phone_id
+        if api_phone_id is not None:
+            self.api_phone_id = api_phone_id
 
     @property
     def id(self):
@@ -323,6 +338,77 @@ class Agent(object):
         """
 
         self._twofactor_auth = twofactor_auth
+
+    @property
+    def voice_status(self):
+        """Gets the voice_status of this Agent.  # noqa: E501
+
+        F - Agents are unable to receive calls, however, are able to make calls. N - Agents are able to make and receive calls.   # noqa: E501
+
+        :return: The voice_status of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._voice_status
+
+    @voice_status.setter
+    def voice_status(self, voice_status):
+        """Sets the voice_status of this Agent.
+
+        F - Agents are unable to receive calls, however, are able to make calls. N - Agents are able to make and receive calls.   # noqa: E501
+
+        :param voice_status: The voice_status of this Agent.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["F", "N"]  # noqa: E501
+        if voice_status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `voice_status` ({0}), must be one of {1}"  # noqa: E501
+                .format(voice_status, allowed_values)
+            )
+
+        self._voice_status = voice_status
+
+    @property
+    def sip_phone_id(self):
+        """Gets the sip_phone_id of this Agent.  # noqa: E501
+
+
+        :return: The sip_phone_id of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._sip_phone_id
+
+    @sip_phone_id.setter
+    def sip_phone_id(self, sip_phone_id):
+        """Sets the sip_phone_id of this Agent.
+
+
+        :param sip_phone_id: The sip_phone_id of this Agent.  # noqa: E501
+        :type: str
+        """
+
+        self._sip_phone_id = sip_phone_id
+
+    @property
+    def api_phone_id(self):
+        """Gets the api_phone_id of this Agent.  # noqa: E501
+
+
+        :return: The api_phone_id of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_phone_id
+
+    @api_phone_id.setter
+    def api_phone_id(self, api_phone_id):
+        """Sets the api_phone_id of this Agent.
+
+
+        :param api_phone_id: The api_phone_id of this Agent.  # noqa: E501
+        :type: str
+        """
+
+        self._api_phone_id = api_phone_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

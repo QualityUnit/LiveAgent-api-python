@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **add_number**
-> PhoneNumber add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_call=record_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
+> PhoneNumber add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_in_call=record_in_call, record_out_call=record_out_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
 
 Add new number
 
@@ -41,7 +41,8 @@ type = 'type_example' # str | A - API controlled number, T - Twilio number, T-O 
 number = 'number_example' # str | 
 status = 'status_example' # str | A - Active, I - Inactive
 dial_out_prefix = 56 # int | Prefix needed to originate call using this number (optional)
-record_call = true # bool |  (optional)
+record_in_call = true # bool |  (optional)
+record_out_call = true # bool |  (optional)
 name = 'name_example' # str |  (optional)
 departmentid = 'departmentid_example' # str |  (optional)
 host_settings = 'host_settings_example' # str | json encoded host settings (optional)
@@ -54,7 +55,7 @@ ivr = 'ivr_example' # str |  (optional)
 
 try:
     # Add new number
-    api_response = api_instance.add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_call=record_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
+    api_response = api_instance.add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_in_call=record_in_call, record_out_call=record_out_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PhoneNumbersApi->add_number: %s\n" % e)
@@ -68,7 +69,8 @@ Name | Type | Description  | Notes
  **number** | **str**|  | 
  **status** | **str**| A - Active, I - Inactive | 
  **dial_out_prefix** | **int**| Prefix needed to originate call using this number | [optional] 
- **record_call** | **bool**|  | [optional] 
+ **record_in_call** | **bool**|  | [optional] 
+ **record_out_call** | **bool**|  | [optional] 
  **name** | **str**|  | [optional] 
  **departmentid** | **str**|  | [optional] 
  **host_settings** | **str**| json encoded host settings | [optional] 
@@ -227,7 +229,7 @@ api_instance = liveagent_api.PhoneNumbersApi(liveagent_api.ApiClient(configurati
 per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str |  (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 additional_objects = ['additional_objects_example'] # list[str] | Additional objects (optional)
 
@@ -246,7 +248,7 @@ Name | Type | Description  | Notes
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**|  | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **additional_objects** | [**list[str]**](str.md)| Additional objects | [optional] 
 

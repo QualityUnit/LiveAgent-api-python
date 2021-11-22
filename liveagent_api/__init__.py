@@ -5,7 +5,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -29,7 +29,6 @@ from liveagent_api.api.contact_phones_api import ContactPhonesApi
 from liveagent_api.api.contacts_api import ContactsApi
 from liveagent_api.api.countries_api import CountriesApi
 from liveagent_api.api.custom_buttons_api import CustomButtonsApi
-from liveagent_api.api.default_api import DefaultApi
 from liveagent_api.api.departments_api import DepartmentsApi
 from liveagent_api.api.devices_api import DevicesApi
 from liveagent_api.api.elastic_api import ElasticApi
@@ -40,11 +39,11 @@ from liveagent_api.api.grid_api import GridApi
 from liveagent_api.api.groups_api import GroupsApi
 from liveagent_api.api.hosting_api import HostingApi
 from liveagent_api.api.invoices_api import InvoicesApi
-from liveagent_api.api.mail_account_api import MailAccountApi
 from liveagent_api.api.messages_api import MessagesApi
 from liveagent_api.api.page_visits_api import PageVisitsApi
 from liveagent_api.api.phone_numbers_api import PhoneNumbersApi
 from liveagent_api.api.phones_api import PhonesApi
+from liveagent_api.api.ping_api import PingApi
 from liveagent_api.api.predefined_answers_api import PredefinedAnswersApi
 from liveagent_api.api.queue_api import QueueApi
 from liveagent_api.api.settings_api import SettingsApi
@@ -69,7 +68,6 @@ from liveagent_api.models.agent import Agent
 from liveagent_api.models.agent_activity import AgentActivity
 from liveagent_api.models.agent_row import AgentRow
 from liveagent_api.models.agent_status import AgentStatus
-from liveagent_api.models.agent_statuses import AgentStatuses
 from liveagent_api.models.api_info import ApiInfo
 from liveagent_api.models.api_key import ApiKey
 from liveagent_api.models.api_key_login import ApiKeyLogin
@@ -99,6 +97,7 @@ from liveagent_api.models.count import Count
 from liveagent_api.models.country import Country
 from liveagent_api.models.coupon import Coupon
 from liveagent_api.models.custom_button import CustomButton
+from liveagent_api.models.custom_domain import CustomDomain
 from liveagent_api.models.custom_fields import CustomFields
 from liveagent_api.models.customer import Customer
 from liveagent_api.models.day_interval import DayInterval
@@ -110,7 +109,6 @@ from liveagent_api.models.device_department_list import DeviceDepartmentList
 from liveagent_api.models.device_department_plan import DeviceDepartmentPlan
 from liveagent_api.models.device_department_plan_list import DeviceDepartmentPlanList
 from liveagent_api.models.discount_value import DiscountValue
-from liveagent_api.models.domain import Domain
 from liveagent_api.models.elastic_message import ElasticMessage
 from liveagent_api.models.error_response import ErrorResponse
 from liveagent_api.models.event_log_row import EventLogRow
@@ -128,10 +126,9 @@ from liveagent_api.models.ivr import Ivr
 from liveagent_api.models.ivr_choice import IvrChoice
 from liveagent_api.models.ivr_fetch import IvrFetch
 from liveagent_api.models.ivr_fetch_param import IvrFetchParam
-from liveagent_api.models.ivr_forward import IvrForward
 from liveagent_api.models.ivr_step import IvrStep
 from liveagent_api.models.language_row import LanguageRow
-from liveagent_api.models.mail_account import MailAccount
+from liveagent_api.models.login_key import LoginKey
 from liveagent_api.models.message import Message
 from liveagent_api.models.message_group import MessageGroup
 from liveagent_api.models.ok_response import OkResponse
@@ -141,6 +138,7 @@ from liveagent_api.models.payment_method import PaymentMethod
 from liveagent_api.models.payment_processor_type import PaymentProcessorType
 from liveagent_api.models.phone_device import PhoneDevice
 from liveagent_api.models.phone_number import PhoneNumber
+from liveagent_api.models.plugin_row import PluginRow
 from liveagent_api.models.predefined_answer import PredefinedAnswer
 from liveagent_api.models.reindex_data import ReindexData
 from liveagent_api.models.sso_key import SSOKey
@@ -170,6 +168,7 @@ from liveagent_api.models.ticket_updatable import TicketUpdatable
 from liveagent_api.models.time_report_row import TimeReportRow
 from liveagent_api.models.token import Token
 from liveagent_api.models.upgrade import Upgrade
+from liveagent_api.models.upgrade_url import UpgradeUrl
 from liveagent_api.models.usage_data import UsageData
 from liveagent_api.models.user import User
 from liveagent_api.models.variation import Variation
@@ -180,4 +179,5 @@ from liveagent_api.models.api_key_with_privileges import ApiKeyWithPrivileges
 from liveagent_api.models.ban_list_item import BanListItem
 from liveagent_api.models.company import Company
 from liveagent_api.models.contact import Contact
+from liveagent_api.models.domain import Domain
 from liveagent_api.models.viber_account_list_item import ViberAccountListItem
