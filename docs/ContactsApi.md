@@ -96,7 +96,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.ContactsApi(liveagent_api.ApiClient(configuration))
 contact_id = 'contact_id_example' # str | 
-delete_tickets = true # bool | <u>true</u>: Delete customer from all lists and also delete all his tickets.<br> <u>false</u>: Delete customer from all lists but leave his tickets intact.
+delete_tickets = true # bool | <u>true</u>: Delete the customer from all lists and also delete all their tickets.<br> <u>false</u>: Delete the customer from all lists but leave their tickets intact.
 
 try:
     # Delete contact
@@ -111,7 +111,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contact_id** | **str**|  | 
- **delete_tickets** | **bool**| &lt;u&gt;true&lt;/u&gt;: Delete customer from all lists and also delete all his tickets.&lt;br&gt; &lt;u&gt;false&lt;/u&gt;: Delete customer from all lists but leave his tickets intact. | 
+ **delete_tickets** | **bool**| &lt;u&gt;true&lt;/u&gt;: Delete the customer from all lists and also delete all their tickets.&lt;br&gt; &lt;u&gt;false&lt;/u&gt;: Delete the customer from all lists but leave their tickets intact. | 
 
 ### Return type
 
@@ -158,7 +158,7 @@ _from = 0 # int | Result set start. Takes precedence over _page. (optional) (def
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets list of contacts
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
  **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 

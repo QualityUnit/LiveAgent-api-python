@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -53,6 +53,7 @@ class SlaLogRow(object):
         'req_firstname': 'str',
         'req_lastname': 'str',
         'req_systemname': 'str',
+        'req_contact_name': 'str',
         'req_avatar_url': 'str'
     }
 
@@ -79,10 +80,11 @@ class SlaLogRow(object):
         'req_firstname': 'req_firstname',
         'req_lastname': 'req_lastname',
         'req_systemname': 'req_systemname',
+        'req_contact_name': 'req_contactName',
         'req_avatar_url': 'req_avatar_url'
     }
 
-    def __init__(self, id=None, conversationid=None, code=None, sla_ticket_id=None, departmentid=None, department_name=None, levelid=None, sla_level_name=None, sla=None, date_created=None, date_closed=None, date_due=None, sla_level_id=None, sla_type=None, agentid=None, agent_firstname=None, agent_lastname=None, agent_avatar_url=None, req_contactid=None, req_firstname=None, req_lastname=None, req_systemname=None, req_avatar_url=None):  # noqa: E501
+    def __init__(self, id=None, conversationid=None, code=None, sla_ticket_id=None, departmentid=None, department_name=None, levelid=None, sla_level_name=None, sla=None, date_created=None, date_closed=None, date_due=None, sla_level_id=None, sla_type=None, agentid=None, agent_firstname=None, agent_lastname=None, agent_avatar_url=None, req_contactid=None, req_firstname=None, req_lastname=None, req_systemname=None, req_contact_name=None, req_avatar_url=None):  # noqa: E501
         """SlaLogRow - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -107,6 +109,7 @@ class SlaLogRow(object):
         self._req_firstname = None
         self._req_lastname = None
         self._req_systemname = None
+        self._req_contact_name = None
         self._req_avatar_url = None
         self.discriminator = None
 
@@ -154,6 +157,8 @@ class SlaLogRow(object):
             self.req_lastname = req_lastname
         if req_systemname is not None:
             self.req_systemname = req_systemname
+        if req_contact_name is not None:
+            self.req_contact_name = req_contact_name
         if req_avatar_url is not None:
             self.req_avatar_url = req_avatar_url
 
@@ -618,6 +623,27 @@ class SlaLogRow(object):
         """
 
         self._req_systemname = req_systemname
+
+    @property
+    def req_contact_name(self):
+        """Gets the req_contact_name of this SlaLogRow.  # noqa: E501
+
+
+        :return: The req_contact_name of this SlaLogRow.  # noqa: E501
+        :rtype: str
+        """
+        return self._req_contact_name
+
+    @req_contact_name.setter
+    def req_contact_name(self, req_contact_name):
+        """Sets the req_contact_name of this SlaLogRow.
+
+
+        :param req_contact_name: The req_contact_name of this SlaLogRow.  # noqa: E501
+        :type: str
+        """
+
+        self._req_contact_name = req_contact_name
 
     @property
     def req_avatar_url(self):

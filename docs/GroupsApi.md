@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_groups_list**
-> list[Group] get_groups_list(page=page, per_page=per_page, _from=_from, to=to)
+> list[Group] get_groups_list()
 
 Gets list of contact groups
 
@@ -204,27 +204,17 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GroupsApi(liveagent_api.ApiClient(configuration))
-page = 1 # int | Page to display. Not used if _from is defined. (optional) (default to 1)
-per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
-_from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
-to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
 try:
     # Gets list of contact groups
-    api_response = api_instance.get_groups_list(page=page, per_page=per_page, _from=_from, to=to)
+    api_response = api_instance.get_groups_list()
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GroupsApi->get_groups_list: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int**| Page to display. Not used if _from is defined. | [optional] [default to 1]
- **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
- **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
- **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
+This endpoint does not need any parameter.
 
 ### Return type
 

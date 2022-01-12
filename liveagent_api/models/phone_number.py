@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -35,7 +35,8 @@ class PhoneNumber(object):
         'type': 'str',
         'dial_out_prefix': 'int',
         'dial_out_prefix_formatted': 'str',
-        'record_call': 'bool',
+        'record_in_call': 'bool',
+        'record_out_call': 'bool',
         'number': 'str',
         'name': 'str',
         'departmentid': 'str',
@@ -56,7 +57,8 @@ class PhoneNumber(object):
         'type': 'type',
         'dial_out_prefix': 'dial_out_prefix',
         'dial_out_prefix_formatted': 'dial_out_prefix_formatted',
-        'record_call': 'record_call',
+        'record_in_call': 'record_in_call',
+        'record_out_call': 'record_out_call',
         'number': 'number',
         'name': 'name',
         'departmentid': 'departmentid',
@@ -72,14 +74,15 @@ class PhoneNumber(object):
         'ivr': 'ivr'
     }
 
-    def __init__(self, id=None, type=None, dial_out_prefix=None, dial_out_prefix_formatted=None, record_call=None, number=None, name=None, departmentid=None, department=None, status=None, status_message=None, host_settings=None, host=None, port=None, user=None, password=None, providerid=None, ivr=None):  # noqa: E501
+    def __init__(self, id=None, type=None, dial_out_prefix=None, dial_out_prefix_formatted=None, record_in_call=None, record_out_call=None, number=None, name=None, departmentid=None, department=None, status=None, status_message=None, host_settings=None, host=None, port=None, user=None, password=None, providerid=None, ivr=None):  # noqa: E501
         """PhoneNumber - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._type = None
         self._dial_out_prefix = None
         self._dial_out_prefix_formatted = None
-        self._record_call = None
+        self._record_in_call = None
+        self._record_out_call = None
         self._number = None
         self._name = None
         self._departmentid = None
@@ -102,8 +105,10 @@ class PhoneNumber(object):
             self.dial_out_prefix = dial_out_prefix
         if dial_out_prefix_formatted is not None:
             self.dial_out_prefix_formatted = dial_out_prefix_formatted
-        if record_call is not None:
-            self.record_call = record_call
+        if record_in_call is not None:
+            self.record_in_call = record_in_call
+        if record_out_call is not None:
+            self.record_out_call = record_out_call
         self.number = number
         if name is not None:
             self.name = name
@@ -233,25 +238,46 @@ class PhoneNumber(object):
         self._dial_out_prefix_formatted = dial_out_prefix_formatted
 
     @property
-    def record_call(self):
-        """Gets the record_call of this PhoneNumber.  # noqa: E501
+    def record_in_call(self):
+        """Gets the record_in_call of this PhoneNumber.  # noqa: E501
 
 
-        :return: The record_call of this PhoneNumber.  # noqa: E501
+        :return: The record_in_call of this PhoneNumber.  # noqa: E501
         :rtype: bool
         """
-        return self._record_call
+        return self._record_in_call
 
-    @record_call.setter
-    def record_call(self, record_call):
-        """Sets the record_call of this PhoneNumber.
+    @record_in_call.setter
+    def record_in_call(self, record_in_call):
+        """Sets the record_in_call of this PhoneNumber.
 
 
-        :param record_call: The record_call of this PhoneNumber.  # noqa: E501
+        :param record_in_call: The record_in_call of this PhoneNumber.  # noqa: E501
         :type: bool
         """
 
-        self._record_call = record_call
+        self._record_in_call = record_in_call
+
+    @property
+    def record_out_call(self):
+        """Gets the record_out_call of this PhoneNumber.  # noqa: E501
+
+
+        :return: The record_out_call of this PhoneNumber.  # noqa: E501
+        :rtype: bool
+        """
+        return self._record_out_call
+
+    @record_out_call.setter
+    def record_out_call(self, record_out_call):
+        """Sets the record_out_call of this PhoneNumber.
+
+
+        :param record_out_call: The record_out_call of this PhoneNumber.  # noqa: E501
+        :type: bool
+        """
+
+        self._record_out_call = record_out_call
 
     @property
     def number(self):

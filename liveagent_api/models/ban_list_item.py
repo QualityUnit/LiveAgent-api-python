@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -34,8 +34,8 @@ class BanListItem(object):
         'id': 'int',
         'date_created': 'datetime',
         'agent_id': 'str',
-        'start_ip': 'float',
-        'end_ip': 'float',
+        'start_ip': 'str',
+        'end_ip': 'str',
         'date_valid': 'datetime',
         'contact_id': 'str',
         'conversation_id': 'str',
@@ -171,7 +171,7 @@ class BanListItem(object):
 
 
         :return: The start_ip of this BanListItem.  # noqa: E501
-        :rtype: float
+        :rtype: str
         """
         return self._start_ip
 
@@ -181,7 +181,7 @@ class BanListItem(object):
 
 
         :param start_ip: The start_ip of this BanListItem.  # noqa: E501
-        :type: float
+        :type: str
         """
 
         self._start_ip = start_ip
@@ -192,7 +192,7 @@ class BanListItem(object):
 
 
         :return: The end_ip of this BanListItem.  # noqa: E501
-        :rtype: float
+        :rtype: str
         """
         return self._end_ip
 
@@ -202,7 +202,7 @@ class BanListItem(object):
 
 
         :param end_ip: The end_ip of this BanListItem.  # noqa: E501
-        :type: float
+        :type: str
         """
 
         self._end_ip = end_ip

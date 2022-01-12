@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -40,9 +40,10 @@ class AgentRow(object):
         'avatar_url': 'str',
         'roleid': 'str',
         'rolename': 'str',
-        'departmentid': 'str',
+        'departments_statuses': 'list[AgentStatus]',
         'twofa': 'str',
-        'last_pswd_change': 'datetime'
+        'last_pswd_change': 'datetime',
+        'userstatus': 'str'
     }
 
     attribute_map = {
@@ -55,12 +56,13 @@ class AgentRow(object):
         'avatar_url': 'avatar_url',
         'roleid': 'roleid',
         'rolename': 'rolename',
-        'departmentid': 'departmentid',
+        'departments_statuses': 'departments_statuses',
         'twofa': 'twofa',
-        'last_pswd_change': 'last_pswd_change'
+        'last_pswd_change': 'last_pswd_change',
+        'userstatus': 'userstatus'
     }
 
-    def __init__(self, agentid=None, firstname=None, lastname=None, system_name=None, username=None, countrycode=None, avatar_url=None, roleid=None, rolename=None, departmentid=None, twofa=None, last_pswd_change=None):  # noqa: E501
+    def __init__(self, agentid=None, firstname=None, lastname=None, system_name=None, username=None, countrycode=None, avatar_url=None, roleid=None, rolename=None, departments_statuses=None, twofa=None, last_pswd_change=None, userstatus=None):  # noqa: E501
         """AgentRow - a model defined in Swagger"""  # noqa: E501
 
         self._agentid = None
@@ -72,9 +74,10 @@ class AgentRow(object):
         self._avatar_url = None
         self._roleid = None
         self._rolename = None
-        self._departmentid = None
+        self._departments_statuses = None
         self._twofa = None
         self._last_pswd_change = None
+        self._userstatus = None
         self.discriminator = None
 
         if agentid is not None:
@@ -95,12 +98,14 @@ class AgentRow(object):
             self.roleid = roleid
         if rolename is not None:
             self.rolename = rolename
-        if departmentid is not None:
-            self.departmentid = departmentid
+        if departments_statuses is not None:
+            self.departments_statuses = departments_statuses
         if twofa is not None:
             self.twofa = twofa
         if last_pswd_change is not None:
             self.last_pswd_change = last_pswd_change
+        if userstatus is not None:
+            self.userstatus = userstatus
 
     @property
     def agentid(self):
@@ -292,25 +297,25 @@ class AgentRow(object):
         self._rolename = rolename
 
     @property
-    def departmentid(self):
-        """Gets the departmentid of this AgentRow.  # noqa: E501
+    def departments_statuses(self):
+        """Gets the departments_statuses of this AgentRow.  # noqa: E501
 
 
-        :return: The departmentid of this AgentRow.  # noqa: E501
-        :rtype: str
+        :return: The departments_statuses of this AgentRow.  # noqa: E501
+        :rtype: list[AgentStatus]
         """
-        return self._departmentid
+        return self._departments_statuses
 
-    @departmentid.setter
-    def departmentid(self, departmentid):
-        """Sets the departmentid of this AgentRow.
+    @departments_statuses.setter
+    def departments_statuses(self, departments_statuses):
+        """Sets the departments_statuses of this AgentRow.
 
 
-        :param departmentid: The departmentid of this AgentRow.  # noqa: E501
-        :type: str
+        :param departments_statuses: The departments_statuses of this AgentRow.  # noqa: E501
+        :type: list[AgentStatus]
         """
 
-        self._departmentid = departmentid
+        self._departments_statuses = departments_statuses
 
     @property
     def twofa(self):
@@ -359,6 +364,27 @@ class AgentRow(object):
         """
 
         self._last_pswd_change = last_pswd_change
+
+    @property
+    def userstatus(self):
+        """Gets the userstatus of this AgentRow.  # noqa: E501
+
+
+        :return: The userstatus of this AgentRow.  # noqa: E501
+        :rtype: str
+        """
+        return self._userstatus
+
+    @userstatus.setter
+    def userstatus(self, userstatus):
+        """Sets the userstatus of this AgentRow.
+
+
+        :param userstatus: The userstatus of this AgentRow.  # noqa: E501
+        :type: str
+        """
+
+        self._userstatus = userstatus
 
     def to_dict(self):
         """Returns the model properties as a dict"""

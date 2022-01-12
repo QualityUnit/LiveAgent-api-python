@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_billing_info**](SubscriptionsApi.md#get_billing_info) | **GET** /subscriptions/{subscriptionId}/billingInfo | Billing info
 [**get_billing_metrics**](SubscriptionsApi.md#get_billing_metrics) | **GET** /subscriptions/{subscriptionId}/billingMetrics | Billing metrics
 [**get_billing_status**](SubscriptionsApi.md#get_billing_status) | **GET** /subscriptions/{subscriptionId}/billingStatus | Billing status
+[**get_custom_reseller_upgrade_url**](SubscriptionsApi.md#get_custom_reseller_upgrade_url) | **GET** /subscriptions/{subscriptionId}/upgrade_url | Upgrade Url
 [**get_domain_info**](SubscriptionsApi.md#get_domain_info) | **GET** /subscriptions/{subscriptionId}/domain | Domain info
 [**get_payment_method**](SubscriptionsApi.md#get_payment_method) | **GET** /subscriptions/{subscriptionId}/paymentMethod | Payment method
 [**get_payment_processor**](SubscriptionsApi.md#get_payment_processor) | **GET** /subscriptions/{subscriptionId}/paymentProcessor | Payment processor
@@ -20,7 +21,7 @@ Method | HTTP request | Description
 [**get_upgrade_variations**](SubscriptionsApi.md#get_upgrade_variations) | **GET** /subscriptions/{subscriptionId}/upgradeVariations | Upgrade variation list
 [**resume_billing**](SubscriptionsApi.md#resume_billing) | **POST** /subscriptions/{subscriptionId}/_cancelStop | Restart billing
 [**set_billing_info**](SubscriptionsApi.md#set_billing_info) | **PUT** /subscriptions/{subscriptionId}/billingInfo | Billing info
-[**set_custom_domain**](SubscriptionsApi.md#set_custom_domain) | **PUT** /subscriptions/{subscriptionId}/domain | Custom domain
+[**set_custom_domain**](SubscriptionsApi.md#set_custom_domain) | **PUT** /subscriptions/{subscriptionId}/custom_domain | Custom domain
 [**set_payment_method**](SubscriptionsApi.md#set_payment_method) | **PUT** /subscriptions/{subscriptionId}/paymentMethod | Payment method
 [**set_subscription_usage**](SubscriptionsApi.md#set_subscription_usage) | **PUT** /subscriptions/{subscriptionId}/usage | Subscription usage
 [**stop_billing**](SubscriptionsApi.md#stop_billing) | **POST** /subscriptions/{subscriptionId}/_stop | Stop billing
@@ -362,6 +363,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BillingStatus**](BillingStatus.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_custom_reseller_upgrade_url**
+> UpgradeUrl get_custom_reseller_upgrade_url(subscription_id)
+
+Upgrade Url
+
+Return upgrade Url
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
+subscription_id = 'subscription_id_example' # str | 
+
+try:
+    # Upgrade Url
+    api_response = api_instance.get_custom_reseller_upgrade_url(subscription_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SubscriptionsApi->get_custom_reseller_upgrade_url: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscription_id** | **str**|  | 
+
+### Return type
+
+[**UpgradeUrl**](UpgradeUrl.md)
 
 ### Authorization
 
@@ -751,7 +809,7 @@ page = 1 # int | Page to display. Not used if _from is defined. (optional) (defa
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 _from = 0 # int | Result set start. Takes precedence over _page. (optional) (default to 0)
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 
@@ -772,7 +830,7 @@ Name | Type | Description  | Notes
  **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **_from** | **int**| Result set start. Takes precedence over _page. | [optional] [default to 0]
  **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
 
@@ -995,7 +1053,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
 subscription_id = 'subscription_id_example' # str | 
-body = liveagent_api.Domain() # Domain | Domain can be sent anytime. Custom domain can be sent by itself or along with both certificate and key. (optional)
+body = liveagent_api.CustomDomain() # CustomDomain | Custom domain can be set only with both key and certificate present, or empty domain to reset. (optional)
 
 try:
     # Custom domain
@@ -1010,7 +1068,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**|  | 
- **body** | [**Domain**](Domain.md)| Domain can be sent anytime. Custom domain can be sent by itself or along with both certificate and key. | [optional] 
+ **body** | [**CustomDomain**](CustomDomain.md)| Custom domain can be set only with both key and certificate present, or empty domain to reset. | [optional] 
 
 ### Return type
 

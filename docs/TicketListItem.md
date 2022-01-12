@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **recipient** | **str** |  | 
 **message** | **str** |  | 
 **recipient_name** | **str** |  | [optional] 
-**carbon_copy** | **str** |  | [optional] 
-**blind_carbon_copy** | **str** |  | [optional] 
+**carbon_copies** | **str** |  | [optional] 
+**blind_carbon_copies** | **str** |  | [optional] 
 **status** | **str** | &lt;br&gt; N - new&lt;br&gt; T - chatting&lt;br&gt; P - calling&lt;br&gt; R - resolved&lt;br&gt; X - deleted&lt;br&gt; B - spam&lt;br&gt; A - answered&lt;br&gt; C - open&lt;br&gt; W - postponed | [optional] [default to 'N']
 **mail_message_id** | **str** |  | [optional] 
 **do_not_send_mail** | **str** | Y - yes, N - no | [optional] [default to 'N']

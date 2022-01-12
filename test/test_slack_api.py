@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -29,52 +29,52 @@ class TestSlackApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_slack_conversation_id_get(self):
-        """Test case for slack_conversation_id_get
+    def test_get_conversation(self):
+        """Test case for get_conversation
 
         Gets info about Slack workspace channel  # noqa: E501
         """
         pass
 
-    def test_slack_conversations_get(self):
-        """Test case for slack_conversations_get
+    def test_get_conversations(self):
+        """Test case for get_conversations
 
         Gets Slack workspace channels  # noqa: E501
         """
         pass
 
-    def test_slack_template_id_get(self):
-        """Test case for slack_template_id_get
-
-        Get Slack template  # noqa: E501
-        """
-        pass
-
-    def test_slack_template_id_put(self):
-        """Test case for slack_template_id_put
-
-        Save Slack template  # noqa: E501
-        """
-        pass
-
-    def test_slack_templates_get(self):
-        """Test case for slack_templates_get
-
-        Gets Slack notification templates  # noqa: E501
-        """
-        pass
-
-    def test_slack_user_id_get(self):
-        """Test case for slack_user_id_get
+    def test_get_slack_user(self):
+        """Test case for get_slack_user
 
         Gets info about Slack user  # noqa: E501
         """
         pass
 
-    def test_slack_users_get(self):
-        """Test case for slack_users_get
+    def test_get_template(self):
+        """Test case for get_template
+
+        Get Slack template  # noqa: E501
+        """
+        pass
+
+    def test_get_templates(self):
+        """Test case for get_templates
+
+        Gets Slack notification templates  # noqa: E501
+        """
+        pass
+
+    def test_get_users(self):
+        """Test case for get_users
 
         Gets Slack users in workspace  # noqa: E501
+        """
+        pass
+
+    def test_save_template(self):
+        """Test case for save_template
+
+        Save Slack template  # noqa: E501
         """
         pass
 

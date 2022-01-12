@@ -12,14 +12,15 @@ Method | HTTP request | Description
 [**get_chats_grid_list_count**](GridApi.md#get_chats_grid_list_count) | **GET** /grid/chats/count | Gets count of chats for chats grid
 [**get_chats_sla_log_grid_list**](GridApi.md#get_chats_sla_log_grid_list) | **GET** /grid/chats/sla | Gets list of chat slas for grid
 [**get_chats_sla_log_grid_list_count**](GridApi.md#get_chats_sla_log_grid_list_count) | **GET** /grid/chats/sla/count | Gets count of chats for chats sla grid
+[**get_customer_groups_grid_list**](GridApi.md#get_customer_groups_grid_list) | **GET** /grid/customer_groups | Gets list of customer groups for grid
 [**get_departmens_grid_list_count**](GridApi.md#get_departmens_grid_list_count) | **GET** /grid/departments/count | Gets count of departments for department grid
 [**get_departments_grid_list**](GridApi.md#get_departments_grid_list) | **GET** /grid/departments | Gets list of departments for grid
 [**get_event_logs_grid_list**](GridApi.md#get_event_logs_grid_list) | **GET** /grid/eventlogs | Gets list of event logs for grid
 [**get_event_logs_grid_list_count**](GridApi.md#get_event_logs_grid_list_count) | **GET** /grid/eventlogs/count | Gets count of logs for event logs grid
 [**get_languages_grid_list**](GridApi.md#get_languages_grid_list) | **GET** /grid/languages | Gets list of languages for grid
 [**get_languages_grid_list_count**](GridApi.md#get_languages_grid_list_count) | **GET** /grid/languages/count | Gets count of languages for languages grid
+[**get_plugind_grid_list**](GridApi.md#get_plugind_grid_list) | **GET** /grid/plugins | Gets plugins  for grid
 [**get_tags_grid_list**](GridApi.md#get_tags_grid_list) | **GET** /grid/tags | Gets list of tags for grid
-[**get_tags_grid_list_count**](GridApi.md#get_tags_grid_list_count) | **GET** /grid/tags/count | Gets count of tags for tags grid
 [**get_tickets_grid_list**](GridApi.md#get_tickets_grid_list) | **GET** /grid/tickets | Gets list of tickets for tickets grid
 [**get_tickets_grid_list_count**](GridApi.md#get_tickets_grid_list_count) | **GET** /grid/tickets/count | Gets count of tickets for tickets grid
 [**get_tickets_sla_log_grid_list**](GridApi.md#get_tickets_sla_log_grid_list) | **GET** /grid/tickets/sla | Gets list of ticket slas for grid
@@ -54,9 +55,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+sort_field = 'sort_field_example' # str |  (optional)
 
 try:
     # Gets list of agents for grid
@@ -72,9 +73,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **sort_field** | **str**| Sorting field | [optional] 
+ **sort_field** | **str**|  | [optional] 
 
 ### Return type
 
@@ -115,7 +116,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets count of agents for agents grid
@@ -129,7 +130,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -172,9 +173,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+sort_field = 'sort_field_example' # str |  (optional)
 timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
@@ -191,9 +192,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **sort_field** | **str**| Sorting field | [optional] 
+ **sort_field** | **str**|  | [optional] 
  **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
@@ -235,7 +236,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets count of calls for tickets sla grid
@@ -249,7 +250,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -267,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_chats_grid_list**
-> list[ChatRow] get_chats_grid_list(per_page=per_page, filters=filters, cursor=cursor)
+> list[ChatRow] get_chats_grid_list(per_page=per_page, filters=filters, cursor=cursor, timezone_offset=timezone_offset)
 
 Gets list of chats for chats grid
 
@@ -291,12 +292,13 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
+timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of chats for chats grid
-    api_response = api_instance.get_chats_grid_list(per_page=per_page, filters=filters, cursor=cursor)
+    api_response = api_instance.get_chats_grid_list(per_page=per_page, filters=filters, cursor=cursor, timezone_offset=timezone_offset)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_chats_grid_list: %s\n" % e)
@@ -307,8 +309,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **per_page** | **int**| Results per page. | [optional] [default to 10]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
+ **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 
@@ -349,7 +352,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets count of chats for chats grid
@@ -363,7 +366,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -406,9 +409,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+sort_field = 'sort_field_example' # str |  (optional)
 timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
@@ -425,9 +428,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **sort_field** | **str**| Sorting field | [optional] 
+ **sort_field** | **str**|  | [optional] 
  **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
@@ -469,7 +472,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets count of chats for chats sla grid
@@ -483,11 +486,68 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
 [**Count**](Count.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_customer_groups_grid_list**
+> list[TagRow] get_customer_groups_grid_list(sort_dir=sort_dir, filters=filters)
+
+Gets list of customer groups for grid
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
+sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
+
+try:
+    # Gets list of customer groups for grid
+    api_response = api_instance.get_customer_groups_grid_list(sort_dir=sort_dir, filters=filters)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GridApi->get_customer_groups_grid_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
+
+### Return type
+
+[**list[TagRow]**](TagRow.md)
 
 ### Authorization
 
@@ -524,7 +584,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets count of departments for department grid
@@ -538,7 +598,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -581,9 +641,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+sort_field = 'sort_field_example' # str |  (optional)
 
 try:
     # Gets list of departments for grid
@@ -599,9 +659,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **sort_field** | **str**| Sorting field | [optional] 
+ **sort_field** | **str**|  | [optional] 
 
 ### Return type
 
@@ -644,9 +704,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+sort_field = 'sort_field_example' # str |  (optional)
 timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
@@ -663,9 +723,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **sort_field** | **str**| Sorting field | [optional] 
+ **sort_field** | **str**|  | [optional] 
  **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
@@ -707,7 +767,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets count of logs for event logs grid
@@ -721,7 +781,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -761,9 +821,9 @@ configuration.api_key['apikey'] = 'YOUR_API_KEY'
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. Used only if _page is used. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+sort_field = 'sort_field_example' # str |  (optional)
 
 try:
     # Gets list of languages for grid
@@ -779,9 +839,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **per_page** | **int**| Results per page. Used only if _page is used. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **sort_field** | **str**| Sorting field | [optional] 
+ **sort_field** | **str**|  | [optional] 
 
 ### Return type
 
@@ -819,7 +879,7 @@ configuration.api_key['apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets count of languages for languages grid
@@ -833,7 +893,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -850,8 +910,65 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_plugind_grid_list**
+> list[PluginRow] get_plugind_grid_list(sort_dir=sort_dir, filters=filters)
+
+Gets plugins  for grid
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
+sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
+
+try:
+    # Gets plugins  for grid
+    api_response = api_instance.get_plugind_grid_list(sort_dir=sort_dir, filters=filters)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GridApi->get_plugind_grid_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
+
+### Return type
+
+[**list[PluginRow]**](PluginRow.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_tags_grid_list**
-> list[TagRow] get_tags_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
+> list[TagRow] get_tags_grid_list(sort_dir=sort_dir, filters=filters)
 
 Gets list of tags for grid
 
@@ -874,15 +991,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
-cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets list of tags for grid
-    api_response = api_instance.get_tags_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
+    api_response = api_instance.get_tags_grid_list(sort_dir=sort_dir, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_tags_grid_list: %s\n" % e)
@@ -892,70 +1006,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
- **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **sort_field** | **str**| Sorting field | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
 [**list[TagRow]**](TagRow.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_tags_grid_list_count**
-> Count get_tags_grid_list_count(filters=filters)
-
-Gets count of tags for tags grid
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
-
-try:
-    # Gets count of tags for tags grid
-    api_response = api_instance.get_tags_grid_list_count(filters=filters)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling GridApi->get_tags_grid_list_count: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
-
-### Return type
-
-[**Count**](Count.md)
 
 ### Authorization
 
@@ -994,9 +1050,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+sort_field = 'sort_field_example' # str |  (optional)
 timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
@@ -1013,9 +1069,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **sort_field** | **str**| Sorting field | [optional] 
+ **sort_field** | **str**|  | [optional] 
  **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
@@ -1057,7 +1113,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
@@ -1072,7 +1128,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
@@ -1116,9 +1172,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-sort_field = 'sort_field_example' # str | Sorting field (optional)
+sort_field = 'sort_field_example' # str |  (optional)
 timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
@@ -1135,9 +1191,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **sort_field** | **str**| Sorting field | [optional] 
+ **sort_field** | **str**|  | [optional] 
  **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
@@ -1179,7 +1235,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets count of tickets for tickets sla grid
@@ -1193,7 +1249,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -1237,7 +1293,7 @@ api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 
 try:
@@ -1255,7 +1311,7 @@ Name | Type | Description  | Notes
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
 
 ### Return type
@@ -1297,7 +1353,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets count of time reporst grid
@@ -1311,7 +1367,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 

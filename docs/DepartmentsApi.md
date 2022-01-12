@@ -6,8 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_department_list**](DepartmentsApi.md#get_department_list) | **GET** /departments | Gets list of departments
 [**get_specific_department**](DepartmentsApi.md#get_specific_department) | **GET** /departments/{departmentId} | Get department by specific id
-[**if_agent_is_in_department**](DepartmentsApi.md#if_agent_is_in_department) | **GET** /departments/{departmentId}/{agentId} | Is agent is department
-[**update_department_mail_account**](DepartmentsApi.md#update_department_mail_account) | **PUT** /departments/{departmentId}/mailAccount/{mailAccountId} | Update department mail account
+[**if_agent_is_in_department**](DepartmentsApi.md#if_agent_is_in_department) | **GET** /departments/{departmentId}/{agentId} | Is the agent in the department
 
 
 # **get_department_list**
@@ -40,7 +39,7 @@ _from = 0 # int | Result set start. Takes precedence over _page. (optional) (def
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets list of departments
@@ -60,7 +59,7 @@ Name | Type | Description  | Notes
  **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -135,7 +134,7 @@ Name | Type | Description  | Notes
 # **if_agent_is_in_department**
 > OkResponse if_agent_is_in_department(department_id, agent_id)
 
-Is agent is department
+Is the agent in the department
 
 ### Example
 ```python
@@ -160,7 +159,7 @@ department_id = 'department_id_example' # str |
 agent_id = 'agent_id_example' # str | 
 
 try:
-    # Is agent is department
+    # Is the agent in the department
     api_response = api_instance.if_agent_is_in_department(department_id, agent_id)
     pprint(api_response)
 except ApiException as e:
@@ -177,65 +176,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_department_mail_account**
-> Department update_department_mail_account(department_id, mail_account_id)
-
-Update department mail account
-
-Update department mail account
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.DepartmentsApi(liveagent_api.ApiClient(configuration))
-department_id = 'department_id_example' # str | 
-mail_account_id = 'mail_account_id_example' # str | 
-
-try:
-    # Update department mail account
-    api_response = api_instance.update_department_mail_account(department_id, mail_account_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DepartmentsApi->update_department_mail_account: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **department_id** | **str**|  | 
- **mail_account_id** | **str**|  | 
-
-### Return type
-
-[**Department**](Department.md)
 
 ### Authorization
 

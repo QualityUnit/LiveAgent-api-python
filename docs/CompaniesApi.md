@@ -157,7 +157,7 @@ _from = 0 # int | Result set start. Takes precedence over _page. (optional) (def
 to = 0 # int | Result set end. Used only if _from is used. (optional) (default to 0)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 sort_field = 'sort_field_example' # str | Sorting field (optional)
-filters = 'filters_example' # str | Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) (optional)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets list of companies
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
  **to** | **int**| Result set end. Used only if _from is used. | [optional] [default to 0]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **sort_field** | **str**| Sorting field | [optional] 
- **filters** | **str**| Filters (json object {column:value, ...} or json array [[column,operator,value], ...]) | [optional] 
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 
 ### Return type
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_company**
-> Company register_company(company_id, registration_email)
+> Company register_company(company_id, registration_email, send_registration_mail=send_registration_mail)
 
 Register company
 
@@ -275,10 +275,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.CompaniesApi(liveagent_api.ApiClient(configuration))
 company_id = 'company_id_example' # str | 
 registration_email = 'registration_email_example' # str | 
+send_registration_mail = true # bool | If this parameter is false, the registration mail will not be sent (optional) (default to true)
 
 try:
     # Register company
-    api_response = api_instance.register_company(company_id, registration_email)
+    api_response = api_instance.register_company(company_id, registration_email, send_registration_mail=send_registration_mail)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompaniesApi->register_company: %s\n" % e)
@@ -290,6 +291,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **str**|  | 
  **registration_email** | **str**|  | 
+ **send_registration_mail** | **bool**| If this parameter is false, the registration mail will not be sent | [optional] [default to true]
 
 ### Return type
 

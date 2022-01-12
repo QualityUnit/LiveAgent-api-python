@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -46,7 +46,7 @@ class Ticket(object):
         'date_resolved': 'str',
         'date_due': 'str',
         'date_deleted': 'str',
-        'last_activity': 'str',
+        'last_activity': 'datetime',
         'last_activity_public': 'str',
         'public_access_urlcode': 'str',
         'subject': 'str',
@@ -343,7 +343,7 @@ class Ticket(object):
     def channel_type(self):
         """Gets the channel_type of this Ticket.  # noqa: E501
 
-        <br> E - email<br> B - contact button<br> M - contact form<br> I - invitation<br> C - call<br> W - call button<br> F - facebook<br> A - facebook message<br> T - twitter<br> H - weibo<br> J - weibo private<br> D - tencent<br> N - tencent private<br> Q - forum<br> S - suggestion  # noqa: E501
+        <br> E - email<br> B - contact button<br> M - contact form<br> I - invitation<br> C - call<br> W - call button<br> F - facebook<br> A - facebook message<br> T - twitter<br> Q - forum<br> S - suggestion  # noqa: E501
 
         :return: The channel_type of this Ticket.  # noqa: E501
         :rtype: str
@@ -354,7 +354,7 @@ class Ticket(object):
     def channel_type(self, channel_type):
         """Sets the channel_type of this Ticket.
 
-        <br> E - email<br> B - contact button<br> M - contact form<br> I - invitation<br> C - call<br> W - call button<br> F - facebook<br> A - facebook message<br> T - twitter<br> H - weibo<br> J - weibo private<br> D - tencent<br> N - tencent private<br> Q - forum<br> S - suggestion  # noqa: E501
+        <br> E - email<br> B - contact button<br> M - contact form<br> I - invitation<br> C - call<br> W - call button<br> F - facebook<br> A - facebook message<br> T - twitter<br> Q - forum<br> S - suggestion  # noqa: E501
 
         :param channel_type: The channel_type of this Ticket.  # noqa: E501
         :type: str
@@ -473,7 +473,7 @@ class Ticket(object):
 
 
         :return: The last_activity of this Ticket.  # noqa: E501
-        :rtype: str
+        :rtype: datetime
         """
         return self._last_activity
 
@@ -483,7 +483,7 @@ class Ticket(object):
 
 
         :param last_activity: The last_activity of this Ticket.  # noqa: E501
-        :type: str
+        :type: datetime
         """
 
         self._last_activity = last_activity

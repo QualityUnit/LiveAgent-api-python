@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -332,113 +332,6 @@ class DevicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_device_department(self, device_id, department_id, **kwargs):  # noqa: E501
-        """Delete device department  # noqa: E501
-
-        Deletes a device department  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_device_department(device_id, department_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int device_id: (required)
-        :param str department_id: (required)
-        :return: OkResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_device_department_with_http_info(device_id, department_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_device_department_with_http_info(device_id, department_id, **kwargs)  # noqa: E501
-            return data
-
-    def delete_device_department_with_http_info(self, device_id, department_id, **kwargs):  # noqa: E501
-        """Delete device department  # noqa: E501
-
-        Deletes a device department  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_device_department_with_http_info(device_id, department_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int device_id: (required)
-        :param str department_id: (required)
-        :return: OkResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['device_id', 'department_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_device_department" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
-            raise ValueError("Missing the required parameter `device_id` when calling `delete_device_department`")  # noqa: E501
-        # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
-            raise ValueError("Missing the required parameter `department_id` when calling `delete_device_department`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
-        if 'department_id' in params:
-            path_params['departmentId'] = params['department_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['apikey', 'privileges']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/devices/{deviceId}/departments/{departmentId}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='OkResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def delete_device_department_plans(self, device_id, department_id, **kwargs):  # noqa: E501
         """Delete device department plans  # noqa: E501
 
@@ -532,109 +425,6 @@ class DevicesApi(object):
 
         return self.api_client.call_api(
             '/devices/{deviceId}/departments/{departmentId}/plans', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='OkResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def delete_device_departments(self, device_id, **kwargs):  # noqa: E501
-        """Delete device departments  # noqa: E501
-
-        Deletes a device departments  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_device_departments(device_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int device_id: (required)
-        :param DeviceDepartmentList device:
-        :return: OkResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_device_departments_with_http_info(device_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_device_departments_with_http_info(device_id, **kwargs)  # noqa: E501
-            return data
-
-    def delete_device_departments_with_http_info(self, device_id, **kwargs):  # noqa: E501
-        """Delete device departments  # noqa: E501
-
-        Deletes a device departments  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_device_departments_with_http_info(device_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int device_id: (required)
-        :param DeviceDepartmentList device:
-        :return: OkResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['device_id', 'device']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_device_departments" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
-            raise ValueError("Missing the required parameter `device_id` when calling `delete_device_departments`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'device_id' in params:
-            path_params['deviceId'] = params['device_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'device' in params:
-            body_params = params['device']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['apikey', 'privileges']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/devices/{deviceId}/departments', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -973,7 +763,7 @@ class DevicesApi(object):
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
         :param str sort_fields: 'Sort fields (json object {column:direction, ...}).'<br> Direction can be:<br> - \"ASC\" (ascending)<br> - \"DESC\" (descending) If _sortFields is defined, _sortField and _sortDir is ignored.
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[DeviceDepartment]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1002,7 +792,7 @@ class DevicesApi(object):
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
         :param str sort_fields: 'Sort fields (json object {column:direction, ...}).'<br> Direction can be:<br> - \"ASC\" (ascending)<br> - \"DESC\" (descending) If _sortFields is defined, _sortField and _sortDir is ignored.
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[DeviceDepartment]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1197,7 +987,7 @@ class DevicesApi(object):
         :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[Device]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1224,7 +1014,7 @@ class DevicesApi(object):
         :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field: Sorting field
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[Device]
                  If the method is called asynchronously,
                  returns the request thread.

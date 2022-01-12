@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -46,7 +46,8 @@ class PhoneNumbersApi(object):
         :param str number: (required)
         :param str status: A - Active, I - Inactive (required)
         :param int dial_out_prefix: Prefix needed to originate call using this number
-        :param bool record_call:
+        :param bool record_in_call:
+        :param bool record_out_call:
         :param str name:
         :param str departmentid:
         :param str host_settings: json encoded host settings
@@ -80,7 +81,8 @@ class PhoneNumbersApi(object):
         :param str number: (required)
         :param str status: A - Active, I - Inactive (required)
         :param int dial_out_prefix: Prefix needed to originate call using this number
-        :param bool record_call:
+        :param bool record_in_call:
+        :param bool record_out_call:
         :param str name:
         :param str departmentid:
         :param str host_settings: json encoded host settings
@@ -95,7 +97,7 @@ class PhoneNumbersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'record_call', 'name', 'departmentid', 'host_settings', 'host', 'port', 'user', 'password', 'providerid', 'ivr']  # noqa: E501
+        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'record_in_call', 'record_out_call', 'name', 'departmentid', 'host_settings', 'host', 'port', 'user', 'password', 'providerid', 'ivr']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -141,8 +143,10 @@ class PhoneNumbersApi(object):
             form_params.append(('type', params['type']))  # noqa: E501
         if 'dial_out_prefix' in params:
             form_params.append(('dial_out_prefix', params['dial_out_prefix']))  # noqa: E501
-        if 'record_call' in params:
-            form_params.append(('record_call', params['record_call']))  # noqa: E501
+        if 'record_in_call' in params:
+            form_params.append(('record_in_call', params['record_in_call']))  # noqa: E501
+        if 'record_out_call' in params:
+            form_params.append(('record_out_call', params['record_out_call']))  # noqa: E501
         if 'number' in params:
             form_params.append(('number', params['number']))  # noqa: E501
         if 'status' in params:
@@ -392,7 +396,7 @@ class PhoneNumbersApi(object):
         :param int per_page: Results per page.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field:
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param list[str] additional_objects: Additional objects
         :return: list[PhoneNumber]
@@ -418,7 +422,7 @@ class PhoneNumbersApi(object):
         :param int per_page: Results per page.
         :param str sort_dir: Sorting direction ASC or DESC
         :param str sort_field:
-        :param str filters: Filters (json object {column:value, ...} or json array [[column,operator,value], ...])
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param list[str] additional_objects: Additional objects
         :return: list[PhoneNumber]

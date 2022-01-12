@@ -3,7 +3,7 @@
 """
     LiveAgent API
 
-    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.ladesk.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.ladesk.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
+    This page contains complete API documentation for LiveAgent software. To display additional info and examples for specific API method, just click on the method name in the list below.<br/><br/>To be able to make API requests you need to generate an API key in your admin panel first. [See this article for detailed info.](https://support.liveagent.com/741982-API-key)<br/><br/>Additional info about more advanced agent, contact or ticket API filters can be found [in this article](https://support.liveagent.com/513528-APIv3-advanced-filter-examples).<br/><br/>If you have any question or doubts regarding this API, please do not hesitate to contact our support team.  # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: support@qualityunit.com
@@ -77,6 +77,7 @@ class TicketRow(object):
         'accountuserstatus': 'str',
         'description': 'str',
         'note': 'str',
+        'last_activity': 'datetime',
         'tagnames': 'list[str]',
         'groupnames': 'list[str]'
     }
@@ -128,11 +129,12 @@ class TicketRow(object):
         'accountuserstatus': 'accountuserstatus',
         'description': 'description',
         'note': 'note',
+        'last_activity': 'last_activity',
         'tagnames': 'tagnames',
         'groupnames': 'groupnames'
     }
 
-    def __init__(self, conversationid=None, code=None, datecreated=None, datechanged=None, dateresolved=None, statuschanged=None, rorder=None, datedue=None, datereopen=None, status=None, channel_type=None, departmentid=None, agentid=None, preview=None, subject=None, departmentname=None, agentname=None, tags=None, messagegroups_in=None, messagegroups_out=None, contactid=None, parent_contactid=None, firstname=None, lastname=None, system_name=None, emails=None, phones=None, job_position=None, contact_type=None, city=None, countrycode=None, time_offset=None, gender=None, levelid=None, groups=None, contact_status=None, company=None, avatar_url=None, userid=None, roleid=None, role_name=None, roletype=None, userstatus=None, accountuserstatus=None, description=None, note=None, tagnames=None, groupnames=None):  # noqa: E501
+    def __init__(self, conversationid=None, code=None, datecreated=None, datechanged=None, dateresolved=None, statuschanged=None, rorder=None, datedue=None, datereopen=None, status=None, channel_type=None, departmentid=None, agentid=None, preview=None, subject=None, departmentname=None, agentname=None, tags=None, messagegroups_in=None, messagegroups_out=None, contactid=None, parent_contactid=None, firstname=None, lastname=None, system_name=None, emails=None, phones=None, job_position=None, contact_type=None, city=None, countrycode=None, time_offset=None, gender=None, levelid=None, groups=None, contact_status=None, company=None, avatar_url=None, userid=None, roleid=None, role_name=None, roletype=None, userstatus=None, accountuserstatus=None, description=None, note=None, last_activity=None, tagnames=None, groupnames=None):  # noqa: E501
         """TicketRow - a model defined in Swagger"""  # noqa: E501
 
         self._conversationid = None
@@ -181,6 +183,7 @@ class TicketRow(object):
         self._accountuserstatus = None
         self._description = None
         self._note = None
+        self._last_activity = None
         self._tagnames = None
         self._groupnames = None
         self.discriminator = None
@@ -277,6 +280,8 @@ class TicketRow(object):
             self.description = description
         if note is not None:
             self.note = note
+        if last_activity is not None:
+            self.last_activity = last_activity
         if tagnames is not None:
             self.tagnames = tagnames
         if groupnames is not None:
@@ -1247,6 +1252,27 @@ class TicketRow(object):
         """
 
         self._note = note
+
+    @property
+    def last_activity(self):
+        """Gets the last_activity of this TicketRow.  # noqa: E501
+
+
+        :return: The last_activity of this TicketRow.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_activity
+
+    @last_activity.setter
+    def last_activity(self, last_activity):
+        """Sets the last_activity of this TicketRow.
+
+
+        :param last_activity: The last_activity of this TicketRow.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_activity = last_activity
 
     @property
     def tagnames(self):
