@@ -1321,18 +1321,17 @@ class CallsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def call_start(self, to_number, from_number, ticket_id, **kwargs):  # noqa: E501
+    def call_start(self, to_number, ticket_id, **kwargs):  # noqa: E501
         """Starts new outcoming / internal call  # noqa: E501
 
         Starts a new call by ringing the agent and dialing the customer after the agent has picked up the call   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.call_start(to_number, from_number, ticket_id, async_req=True)
+        >>> thread = api.call_start(to_number, ticket_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str to_number: callee number (required)
-        :param str from_number: caller number (required)
         :param str ticket_id: ticket id or code (required)
         :param str via_number: trunk number via which call was made
         :return: OkResponse
@@ -1341,23 +1340,22 @@ class CallsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.call_start_with_http_info(to_number, from_number, ticket_id, **kwargs)  # noqa: E501
+            return self.call_start_with_http_info(to_number, ticket_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.call_start_with_http_info(to_number, from_number, ticket_id, **kwargs)  # noqa: E501
+            (data) = self.call_start_with_http_info(to_number, ticket_id, **kwargs)  # noqa: E501
             return data
 
-    def call_start_with_http_info(self, to_number, from_number, ticket_id, **kwargs):  # noqa: E501
+    def call_start_with_http_info(self, to_number, ticket_id, **kwargs):  # noqa: E501
         """Starts new outcoming / internal call  # noqa: E501
 
         Starts a new call by ringing the agent and dialing the customer after the agent has picked up the call   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.call_start_with_http_info(to_number, from_number, ticket_id, async_req=True)
+        >>> thread = api.call_start_with_http_info(to_number, ticket_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str to_number: callee number (required)
-        :param str from_number: caller number (required)
         :param str ticket_id: ticket id or code (required)
         :param str via_number: trunk number via which call was made
         :return: OkResponse
@@ -1365,7 +1363,7 @@ class CallsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['to_number', 'from_number', 'ticket_id', 'via_number']  # noqa: E501
+        all_params = ['to_number', 'ticket_id', 'via_number']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1384,10 +1382,6 @@ class CallsApi(object):
         if ('to_number' not in params or
                 params['to_number'] is None):
             raise ValueError("Missing the required parameter `to_number` when calling `call_start`")  # noqa: E501
-        # verify the required parameter 'from_number' is set
-        if ('from_number' not in params or
-                params['from_number'] is None):
-            raise ValueError("Missing the required parameter `from_number` when calling `call_start`")  # noqa: E501
         # verify the required parameter 'ticket_id' is set
         if ('ticket_id' not in params or
                 params['ticket_id'] is None):
@@ -1400,8 +1394,6 @@ class CallsApi(object):
         query_params = []
         if 'to_number' in params:
             query_params.append(('to_number', params['to_number']))  # noqa: E501
-        if 'from_number' in params:
-            query_params.append(('from_number', params['from_number']))  # noqa: E501
         if 'via_number' in params:
             query_params.append(('via_number', params['via_number']))  # noqa: E501
         if 'ticket_id' in params:
