@@ -388,6 +388,7 @@ Class | Method | HTTP request | Description
  - [IvrChoice](docs/IvrChoice.md)
  - [IvrFetch](docs/IvrFetch.md)
  - [IvrFetchParam](docs/IvrFetchParam.md)
+ - [IvrForward](docs/IvrForward.md)
  - [IvrStep](docs/IvrStep.md)
  - [LanguageRow](docs/LanguageRow.md)
  - [LoginKey](docs/LoginKey.md)

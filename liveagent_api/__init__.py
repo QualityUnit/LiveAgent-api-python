@@ -126,6 +126,7 @@ from liveagent_api.models.ivr import Ivr
 from liveagent_api.models.ivr_choice import IvrChoice
 from liveagent_api.models.ivr_fetch import IvrFetch
 from liveagent_api.models.ivr_fetch_param import IvrFetchParam
+from liveagent_api.models.ivr_forward import IvrForward
 from liveagent_api.models.ivr_step import IvrStep
 from liveagent_api.models.language_row import LanguageRow
 from liveagent_api.models.login_key import LoginKey

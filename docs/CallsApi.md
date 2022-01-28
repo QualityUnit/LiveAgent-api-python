@@ -741,7 +741,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_start**
-> OkResponse call_start(to_number, from_number, ticket_id, via_number=via_number)
+> OkResponse call_start(to_number, ticket_id, via_number=via_number)
 
 Starts new outcoming / internal call
 
@@ -767,13 +767,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
 to_number = 'to_number_example' # str | callee number
-from_number = 'from_number_example' # str | caller number
 ticket_id = 'ticket_id_example' # str | ticket id or code
 via_number = 'via_number_example' # str | trunk number via which call was made (optional)
 
 try:
     # Starts new outcoming / internal call
-    api_response = api_instance.call_start(to_number, from_number, ticket_id, via_number=via_number)
+    api_response = api_instance.call_start(to_number, ticket_id, via_number=via_number)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CallsApi->call_start: %s\n" % e)
@@ -784,7 +783,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **to_number** | **str**| callee number | 
- **from_number** | **str**| caller number | 
  **ticket_id** | **str**| ticket id or code | 
  **via_number** | **str**| trunk number via which call was made | [optional] 
 
