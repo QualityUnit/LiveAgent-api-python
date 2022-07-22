@@ -33,11 +33,12 @@ class DeviceDepartmentPlan(object):
     swagger_types = {
         'device_id': 'float',
         'department_id': 'str',
-        'plan_id_start': 'float',
-        'plan_id_end': 'float',
+        'plan_id_start': 'str',
+        'plan_id_end': 'str',
         'day': 'float',
         'start': 'str',
-        'end': 'str'
+        'end': 'str',
+        'title': 'str'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class DeviceDepartmentPlan(object):
         'plan_id_end': 'plan_id_end',
         'day': 'day',
         'start': 'start',
-        'end': 'end'
+        'end': 'end',
+        'title': 'title'
     }
 
-    def __init__(self, device_id=None, department_id=None, plan_id_start=None, plan_id_end=None, day=None, start=None, end=None):  # noqa: E501
+    def __init__(self, device_id=None, department_id=None, plan_id_start=None, plan_id_end=None, day=None, start=None, end=None, title=None):  # noqa: E501
         """DeviceDepartmentPlan - a model defined in Swagger"""  # noqa: E501
 
         self._device_id = None
@@ -60,6 +62,7 @@ class DeviceDepartmentPlan(object):
         self._day = None
         self._start = None
         self._end = None
+        self._title = None
         self.discriminator = None
 
         if device_id is not None:
@@ -76,6 +79,8 @@ class DeviceDepartmentPlan(object):
             self.start = start
         if end is not None:
             self.end = end
+        if title is not None:
+            self.title = title
 
     @property
     def device_id(self):
@@ -125,7 +130,7 @@ class DeviceDepartmentPlan(object):
 
 
         :return: The plan_id_start of this DeviceDepartmentPlan.  # noqa: E501
-        :rtype: float
+        :rtype: str
         """
         return self._plan_id_start
 
@@ -135,7 +140,7 @@ class DeviceDepartmentPlan(object):
 
 
         :param plan_id_start: The plan_id_start of this DeviceDepartmentPlan.  # noqa: E501
-        :type: float
+        :type: str
         """
 
         self._plan_id_start = plan_id_start
@@ -146,7 +151,7 @@ class DeviceDepartmentPlan(object):
 
 
         :return: The plan_id_end of this DeviceDepartmentPlan.  # noqa: E501
-        :rtype: float
+        :rtype: str
         """
         return self._plan_id_end
 
@@ -156,7 +161,7 @@ class DeviceDepartmentPlan(object):
 
 
         :param plan_id_end: The plan_id_end of this DeviceDepartmentPlan.  # noqa: E501
-        :type: float
+        :type: str
         """
 
         self._plan_id_end = plan_id_end
@@ -223,6 +228,27 @@ class DeviceDepartmentPlan(object):
         """
 
         self._end = end
+
+    @property
+    def title(self):
+        """Gets the title of this DeviceDepartmentPlan.  # noqa: E501
+
+
+        :return: The title of this DeviceDepartmentPlan.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this DeviceDepartmentPlan.
+
+
+        :param title: The title of this DeviceDepartmentPlan.  # noqa: E501
+        :type: str
+        """
+
+        self._title = title
 
     def to_dict(self):
         """Returns the model properties as a dict"""

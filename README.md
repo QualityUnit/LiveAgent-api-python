@@ -181,14 +181,13 @@ Class | Method | HTTP request | Description
 *DevicesApi* | [**delete_device_department_plans**](docs/DevicesApi.md#delete_device_department_plans) | **DELETE** /devices/{deviceId}/departments/{departmentId}/plans | Delete device department plans
 *DevicesApi* | [**get_device**](docs/DevicesApi.md#get_device) | **GET** /devices/{deviceId} | Get device by id
 *DevicesApi* | [**get_device_department**](docs/DevicesApi.md#get_device_department) | **GET** /devices/{deviceId}/departments/{departmentId} | Get device department by id
-*DevicesApi* | [**get_device_department_plan**](docs/DevicesApi.md#get_device_department_plan) | **GET** /devices/{deviceId}/departments/{departmentId}/plans | Get device department plan
 *DevicesApi* | [**get_device_departments**](docs/DevicesApi.md#get_device_departments) | **GET** /devices/{deviceId}/departments | Get device departments
 *DevicesApi* | [**get_device_departments_by_department_id**](docs/DevicesApi.md#get_device_departments_by_department_id) | **GET** /devices/departments/{departmentId} | Get device departments by department id
+*DevicesApi* | [**get_device_plans**](docs/DevicesApi.md#get_device_plans) | **GET** /devices/{deviceId}/plans | Get device plans
 *DevicesApi* | [**get_devices_list**](docs/DevicesApi.md#get_devices_list) | **GET** /devices | Gets list of devices
 *DevicesApi* | [**get_my_mobile_devices_list**](docs/DevicesApi.md#get_my_mobile_devices_list) | **GET** /devices/_app_ | Gets list of current agent&#39;s mobile devices. Creates new one if there are no devices.
 *DevicesApi* | [**update_device**](docs/DevicesApi.md#update_device) | **PUT** /devices/{deviceId} | Update device
 *DevicesApi* | [**update_device_department**](docs/DevicesApi.md#update_device_department) | **PUT** /devices/{deviceId}/departments/{departmentId} | Update device department
-*DevicesApi* | [**update_device_department_plan**](docs/DevicesApi.md#update_device_department_plan) | **PUT** /devices/{deviceId}/departments/{departmentId}/plans | Update device department plan
 *DevicesApi* | [**update_device_departments**](docs/DevicesApi.md#update_device_departments) | **PUT** /devices/departments/update | Update device departments
 *ElasticApi* | [**get_index_status**](docs/ElasticApi.md#get_index_status) | **GET** /elastic/status | Get reindex status
 *ElasticApi* | [**reindex**](docs/ElasticApi.md#reindex) | **POST** /elastic/reindex | Reindex selected fields
@@ -216,6 +215,7 @@ Class | Method | HTTP request | Description
 *GridApi* | [**get_departments_grid_list**](docs/GridApi.md#get_departments_grid_list) | **GET** /grid/departments | Gets list of departments for grid
 *GridApi* | [**get_event_logs_grid_list**](docs/GridApi.md#get_event_logs_grid_list) | **GET** /grid/eventlogs | Gets list of event logs for grid
 *GridApi* | [**get_event_logs_grid_list_count**](docs/GridApi.md#get_event_logs_grid_list_count) | **GET** /grid/eventlogs/count | Gets count of logs for event logs grid
+*GridApi* | [**get_invite_agents_grid_list**](docs/GridApi.md#get_invite_agents_grid_list) | **GET** /grid/{departmentId}/invite/agents | Gets list of invite agents for grid
 *GridApi* | [**get_languages_grid_list**](docs/GridApi.md#get_languages_grid_list) | **GET** /grid/languages | Gets list of languages for grid
 *GridApi* | [**get_languages_grid_list_count**](docs/GridApi.md#get_languages_grid_list_count) | **GET** /grid/languages/count | Gets count of languages for languages grid
 *GridApi* | [**get_plugind_grid_list**](docs/GridApi.md#get_plugind_grid_list) | **GET** /grid/plugins | Gets plugins  for grid
@@ -309,9 +309,11 @@ Class | Method | HTTP request | Description
 *TicketsApi* | [**set_ticket_attribute**](docs/TicketsApi.md#set_ticket_attribute) | **PUT** /tickets/{ticketId}/attributes/{attributeName} | Sets ticket attribute
 *TicketsApi* | [**set_ticket_postpone**](docs/TicketsApi.md#set_ticket_postpone) | **PUT** /tickets/{ticketId}/postpone | Sets postpone status to ticket
 *TicketsApi* | [**update_ticket**](docs/TicketsApi.md#update_ticket) | **PUT** /tickets/{ticketId} | Updates ticket
+*TimeZonesApi* | [**get_timezones_list**](docs/TimeZonesApi.md#get_timezones_list) | **GET** /time_zones | Gets list of timezones
 *TokenApi* | [**get_access_token**](docs/TokenApi.md#get_access_token) | **GET** /token | Access token
 *UserApi* | [**get_user**](docs/UserApi.md#get_user) | **GET** /users/{userId} | User
 *VariationsApi* | [**get_variation**](docs/VariationsApi.md#get_variation) | **GET** /variations/{variationId} | Variation
+*VariationsApi* | [**validate_limits**](docs/VariationsApi.md#validate_limits) | **GET** /variations/{variationId}/validate-limits | Validate Limits
 *ViberApi* | [**change_status**](docs/ViberApi.md#change_status) | **PUT** /viber_accounts/{accountId}/status | Update Viber account status
 *ViberApi* | [**connect_account**](docs/ViberApi.md#connect_account) | **POST** /viber_accounts | Connect Viber account
 *ViberApi* | [**disconnect**](docs/ViberApi.md#disconnect) | **DELETE** /viber_accounts/{accountId} | Disconnect Viber account
@@ -381,6 +383,8 @@ Class | Method | HTTP request | Description
  - [HostingInfo](docs/HostingInfo.md)
  - [IndexStatus](docs/IndexStatus.md)
  - [IndexStatusData](docs/IndexStatusData.md)
+ - [IndexedDeviceDepartmentPlans](docs/IndexedDeviceDepartmentPlans.md)
+ - [InviteAgentRow](docs/InviteAgentRow.md)
  - [Invoice](docs/Invoice.md)
  - [InvoiceItem](docs/InvoiceItem.md)
  - [InvoiceList](docs/InvoiceList.md)
@@ -391,6 +395,7 @@ Class | Method | HTTP request | Description
  - [IvrForward](docs/IvrForward.md)
  - [IvrStep](docs/IvrStep.md)
  - [LanguageRow](docs/LanguageRow.md)
+ - [LimitValidationFail](docs/LimitValidationFail.md)
  - [LoginKey](docs/LoginKey.md)
  - [Message](docs/Message.md)
  - [MessageGroup](docs/MessageGroup.md)
@@ -429,6 +434,7 @@ Class | Method | HTTP request | Description
  - [TicketSla](docs/TicketSla.md)
  - [TicketUpdatable](docs/TicketUpdatable.md)
  - [TimeReportRow](docs/TimeReportRow.md)
+ - [TimeZones](docs/TimeZones.md)
  - [Token](docs/Token.md)
  - [Upgrade](docs/Upgrade.md)
  - [UpgradeUrl](docs/UpgradeUrl.md)
@@ -469,44 +475,38 @@ Class | Method | HTTP request | Description
  - **hosted_account.write**: Hosted account write
  - **call.write**: Call write
  - **call.read**: Call read
- - **agent.read**: Agent read
  - **agent.own**: Read/write me
- - **agent.write**: Agent write
- - **agent_status.read**: Agent status read
+ - **agent.read**: Agent read
+ - **agent.manage**: Agent manage
+ - **agent_status.read**: Read agent status
+ - **agent_status.own**: Manage own status
+ - **agent_status.manage**: Manage agent status
  - **phone.read**: Read all phones
  - **phone.write**: Write all phones
  - **phone.own**: Read/write phones available to me
- - **phone_number.read**: Read all phone numbers
- - **phone_number.own**: Read phone numbers available to me
- - **phone_number.write**: Write all phone numbers
  - **user.read**: Read all contacts
  - **user.write**: Write contact
  - **file.add**: Upload files
  - **hosting.login**: agent login
  - **tag.read**: Read tags
- - **tag.write**: Modify tags
+ - **tag.manage**: Manage tags
  - **canned_message.read**: Read canned messages
- - **canned_message.write**: Modify canned messages
+ - **canned_message.manage**: Manege canned messages
  - **predefined_answer.read**: Read predefined answer
- - **predefined_answer.write**: Modify predefined answer
- - **agent_phone.read**: Read agent phone device assignments
- - **agent_phone.write**: Change agent phone device assignments
- - **agent_phone.own**: Change my own phone device assignments
- - **conversation.create**: Create new conversation
+ - **predefined_answer.manage**: Manage predefined answer
  - **api.read**: Read api
  - **api.read_own**: Read own apikeys
  - **api.write**: Modify api
  - **api.write_own**: Modify own apikeys
  - **api.delete**: Delete api keys
  - **time_report.read**: Read time reports
+ - **ticket.create**: Create new conversation
  - **ticket.read**: Ticket read
- - **ticket.write**: Ticket write
- - **device.read**: Device read
- - **device.write**: Device write
+ - **ticket.operate**: Operations with ticket(update, delete)
+ - **ticket.mass**: Ticket mass action (status and remaining items to process)
+ - **device.own**: Read/write devices available to me
+ - **device.manage**: Manage agent devices
  - **sla.read**: Read sla
- - **extension.own**: Read/Write own extensions
- - **extension.write**: Write extension
- - **extension.read**: Read extension
  - **contact_phone.read**: Read contact phone
  - **chats.read**: Read chats
  - **settings.read**: Read ban
@@ -524,7 +524,11 @@ Class | Method | HTTP request | Description
  - **sso.write**: Write SSO
  - **sso.write_own**: Write own SSO
  - **eventlogs.read**: Read event logs
- - **plugin.read**: Read plugins
+ - **plugin_settings.read**: Read plugins
+ - **contact.create**: Create contact
+ - **contact.read**: Read contact
+ - **contact.edit**: Edit contact
+ - **contact.delete**: Delete contact
 
 
 ## Author

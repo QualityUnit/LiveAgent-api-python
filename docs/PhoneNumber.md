@@ -19,7 +19,11 @@ Name | Type | Description | Notes
 **host** | **str** |  | [optional] 
 **port** | **str** |  | [optional] 
 **user** | **str** |  | [optional] 
+**auth_user** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 
+**proxy_host** | **str** |  | [optional] 
+**proxy_port** | **str** |  | [optional] 
+**proxy_user** | **str** |  | [optional] 
 **providerid** | **str** |  | [optional] 
 **ivr** | **str** |  | [optional] 
 

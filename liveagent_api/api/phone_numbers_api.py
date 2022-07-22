@@ -54,7 +54,11 @@ class PhoneNumbersApi(object):
         :param str host:
         :param str port:
         :param str user:
+        :param str auth_user:
         :param str password:
+        :param str proxy_host:
+        :param str proxy_port:
+        :param str proxy_user:
         :param str providerid:
         :param str ivr:
         :return: PhoneNumber
@@ -89,7 +93,11 @@ class PhoneNumbersApi(object):
         :param str host:
         :param str port:
         :param str user:
+        :param str auth_user:
         :param str password:
+        :param str proxy_host:
+        :param str proxy_port:
+        :param str proxy_user:
         :param str providerid:
         :param str ivr:
         :return: PhoneNumber
@@ -97,7 +105,7 @@ class PhoneNumbersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'record_in_call', 'record_out_call', 'name', 'departmentid', 'host_settings', 'host', 'port', 'user', 'password', 'providerid', 'ivr']  # noqa: E501
+        all_params = ['type', 'number', 'status', 'dial_out_prefix', 'record_in_call', 'record_out_call', 'name', 'departmentid', 'host_settings', 'host', 'port', 'user', 'auth_user', 'password', 'proxy_host', 'proxy_port', 'proxy_user', 'providerid', 'ivr']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -163,8 +171,16 @@ class PhoneNumbersApi(object):
             form_params.append(('port', params['port']))  # noqa: E501
         if 'user' in params:
             form_params.append(('user', params['user']))  # noqa: E501
+        if 'auth_user' in params:
+            form_params.append(('auth_user', params['auth_user']))  # noqa: E501
         if 'password' in params:
             form_params.append(('password', params['password']))  # noqa: E501
+        if 'proxy_host' in params:
+            form_params.append(('proxy_host', params['proxy_host']))  # noqa: E501
+        if 'proxy_port' in params:
+            form_params.append(('proxy_port', params['proxy_port']))  # noqa: E501
+        if 'proxy_user' in params:
+            form_params.append(('proxy_user', params['proxy_user']))  # noqa: E501
         if 'providerid' in params:
             form_params.append(('providerid', params['providerid']))  # noqa: E501
         if 'ivr' in params:

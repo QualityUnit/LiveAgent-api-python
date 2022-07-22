@@ -43,8 +43,6 @@ Name | Type | Description | Notes
 **avatar_url** | **str** |  | [optional] 
 **userid** | **str** |  | [optional] 
 **roleid** | **str** |  | [optional] 
-**role_name** | **str** |  | [optional] 
-**roletype** | **str** |  | [optional] 
 **userstatus** | **str** |  | [optional] 
 **accountuserstatus** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 

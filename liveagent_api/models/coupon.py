@@ -33,8 +33,10 @@ class Coupon(object):
     swagger_types = {
         'code': 'str',
         'subscription_id': 'str',
+        'discount_type': 'str',
+        'discount_value_type': 'str',
         'discount': 'int',
-        'credit': 'int',
+        'discount_name': 'str',
         'reusable': 'bool',
         'date_valid': 'str',
         'note': 'str',
@@ -47,8 +49,10 @@ class Coupon(object):
     attribute_map = {
         'code': 'code',
         'subscription_id': 'subscription_id',
+        'discount_type': 'discount_type',
+        'discount_value_type': 'discount_value_type',
         'discount': 'discount',
-        'credit': 'credit',
+        'discount_name': 'discount_name',
         'reusable': 'reusable',
         'date_valid': 'date_valid',
         'note': 'note',
@@ -58,13 +62,15 @@ class Coupon(object):
         'date_expired': 'date_expired'
     }
 
-    def __init__(self, code=None, subscription_id=None, discount=None, credit=None, reusable=None, date_valid=None, note=None, created_by=None, date_created=None, ended_by=None, date_expired=None):  # noqa: E501
+    def __init__(self, code=None, subscription_id=None, discount_type=None, discount_value_type=None, discount=None, discount_name=None, reusable=None, date_valid=None, note=None, created_by=None, date_created=None, ended_by=None, date_expired=None):  # noqa: E501
         """Coupon - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
         self._subscription_id = None
+        self._discount_type = None
+        self._discount_value_type = None
         self._discount = None
-        self._credit = None
+        self._discount_name = None
         self._reusable = None
         self._date_valid = None
         self._note = None
@@ -78,9 +84,11 @@ class Coupon(object):
             self.code = code
         if subscription_id is not None:
             self.subscription_id = subscription_id
+        self.discount_type = discount_type
+        self.discount_value_type = discount_value_type
         self.discount = discount
-        if credit is not None:
-            self.credit = credit
+        if discount_name is not None:
+            self.discount_name = discount_name
         if reusable is not None:
             self.reusable = reusable
         if date_valid is not None:
@@ -139,6 +147,64 @@ class Coupon(object):
         self._subscription_id = subscription_id
 
     @property
+    def discount_type(self):
+        """Gets the discount_type of this Coupon.  # noqa: E501
+
+
+        :return: The discount_type of this Coupon.  # noqa: E501
+        :rtype: str
+        """
+        return self._discount_type
+
+    @discount_type.setter
+    def discount_type(self, discount_type):
+        """Sets the discount_type of this Coupon.
+
+
+        :param discount_type: The discount_type of this Coupon.  # noqa: E501
+        :type: str
+        """
+        if discount_type is None:
+            raise ValueError("Invalid value for `discount_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["one_time", "current_plan", "permanent"]  # noqa: E501
+        if discount_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `discount_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(discount_type, allowed_values)
+            )
+
+        self._discount_type = discount_type
+
+    @property
+    def discount_value_type(self):
+        """Gets the discount_value_type of this Coupon.  # noqa: E501
+
+
+        :return: The discount_value_type of this Coupon.  # noqa: E501
+        :rtype: str
+        """
+        return self._discount_value_type
+
+    @discount_value_type.setter
+    def discount_value_type(self, discount_value_type):
+        """Sets the discount_value_type of this Coupon.
+
+
+        :param discount_value_type: The discount_value_type of this Coupon.  # noqa: E501
+        :type: str
+        """
+        if discount_value_type is None:
+            raise ValueError("Invalid value for `discount_value_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["constant", "per_cent"]  # noqa: E501
+        if discount_value_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `discount_value_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(discount_value_type, allowed_values)
+            )
+
+        self._discount_value_type = discount_value_type
+
+    @property
     def discount(self):
         """Gets the discount of this Coupon.  # noqa: E501
 
@@ -162,25 +228,25 @@ class Coupon(object):
         self._discount = discount
 
     @property
-    def credit(self):
-        """Gets the credit of this Coupon.  # noqa: E501
+    def discount_name(self):
+        """Gets the discount_name of this Coupon.  # noqa: E501
 
 
-        :return: The credit of this Coupon.  # noqa: E501
-        :rtype: int
+        :return: The discount_name of this Coupon.  # noqa: E501
+        :rtype: str
         """
-        return self._credit
+        return self._discount_name
 
-    @credit.setter
-    def credit(self, credit):
-        """Sets the credit of this Coupon.
+    @discount_name.setter
+    def discount_name(self, discount_name):
+        """Sets the discount_name of this Coupon.
 
 
-        :param credit: The credit of this Coupon.  # noqa: E501
-        :type: int
+        :param discount_name: The discount_name of this Coupon.  # noqa: E501
+        :type: str
         """
 
-        self._credit = credit
+        self._discount_name = discount_name
 
     @property
     def reusable(self):

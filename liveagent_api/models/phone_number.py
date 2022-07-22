@@ -47,7 +47,11 @@ class PhoneNumber(object):
         'host': 'str',
         'port': 'str',
         'user': 'str',
+        'auth_user': 'str',
         'password': 'str',
+        'proxy_host': 'str',
+        'proxy_port': 'str',
+        'proxy_user': 'str',
         'providerid': 'str',
         'ivr': 'str'
     }
@@ -69,12 +73,16 @@ class PhoneNumber(object):
         'host': 'host',
         'port': 'port',
         'user': 'user',
+        'auth_user': 'auth_user',
         'password': 'password',
+        'proxy_host': 'proxy_host',
+        'proxy_port': 'proxy_port',
+        'proxy_user': 'proxy_user',
         'providerid': 'providerid',
         'ivr': 'ivr'
     }
 
-    def __init__(self, id=None, type=None, dial_out_prefix=None, dial_out_prefix_formatted=None, record_in_call=None, record_out_call=None, number=None, name=None, departmentid=None, department=None, status=None, status_message=None, host_settings=None, host=None, port=None, user=None, password=None, providerid=None, ivr=None):  # noqa: E501
+    def __init__(self, id=None, type=None, dial_out_prefix=None, dial_out_prefix_formatted=None, record_in_call=None, record_out_call=None, number=None, name=None, departmentid=None, department=None, status=None, status_message=None, host_settings=None, host=None, port=None, user=None, auth_user=None, password=None, proxy_host=None, proxy_port=None, proxy_user=None, providerid=None, ivr=None):  # noqa: E501
         """PhoneNumber - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -93,7 +101,11 @@ class PhoneNumber(object):
         self._host = None
         self._port = None
         self._user = None
+        self._auth_user = None
         self._password = None
+        self._proxy_host = None
+        self._proxy_port = None
+        self._proxy_user = None
         self._providerid = None
         self._ivr = None
         self.discriminator = None
@@ -128,8 +140,16 @@ class PhoneNumber(object):
             self.port = port
         if user is not None:
             self.user = user
+        if auth_user is not None:
+            self.auth_user = auth_user
         if password is not None:
             self.password = password
+        if proxy_host is not None:
+            self.proxy_host = proxy_host
+        if proxy_port is not None:
+            self.proxy_port = proxy_port
+        if proxy_user is not None:
+            self.proxy_user = proxy_user
         if providerid is not None:
             self.providerid = providerid
         if ivr is not None:
@@ -502,6 +522,27 @@ class PhoneNumber(object):
         self._user = user
 
     @property
+    def auth_user(self):
+        """Gets the auth_user of this PhoneNumber.  # noqa: E501
+
+
+        :return: The auth_user of this PhoneNumber.  # noqa: E501
+        :rtype: str
+        """
+        return self._auth_user
+
+    @auth_user.setter
+    def auth_user(self, auth_user):
+        """Sets the auth_user of this PhoneNumber.
+
+
+        :param auth_user: The auth_user of this PhoneNumber.  # noqa: E501
+        :type: str
+        """
+
+        self._auth_user = auth_user
+
+    @property
     def password(self):
         """Gets the password of this PhoneNumber.  # noqa: E501
 
@@ -521,6 +562,69 @@ class PhoneNumber(object):
         """
 
         self._password = password
+
+    @property
+    def proxy_host(self):
+        """Gets the proxy_host of this PhoneNumber.  # noqa: E501
+
+
+        :return: The proxy_host of this PhoneNumber.  # noqa: E501
+        :rtype: str
+        """
+        return self._proxy_host
+
+    @proxy_host.setter
+    def proxy_host(self, proxy_host):
+        """Sets the proxy_host of this PhoneNumber.
+
+
+        :param proxy_host: The proxy_host of this PhoneNumber.  # noqa: E501
+        :type: str
+        """
+
+        self._proxy_host = proxy_host
+
+    @property
+    def proxy_port(self):
+        """Gets the proxy_port of this PhoneNumber.  # noqa: E501
+
+
+        :return: The proxy_port of this PhoneNumber.  # noqa: E501
+        :rtype: str
+        """
+        return self._proxy_port
+
+    @proxy_port.setter
+    def proxy_port(self, proxy_port):
+        """Sets the proxy_port of this PhoneNumber.
+
+
+        :param proxy_port: The proxy_port of this PhoneNumber.  # noqa: E501
+        :type: str
+        """
+
+        self._proxy_port = proxy_port
+
+    @property
+    def proxy_user(self):
+        """Gets the proxy_user of this PhoneNumber.  # noqa: E501
+
+
+        :return: The proxy_user of this PhoneNumber.  # noqa: E501
+        :rtype: str
+        """
+        return self._proxy_user
+
+    @proxy_user.setter
+    def proxy_user(self, proxy_user):
+        """Sets the proxy_user of this PhoneNumber.
+
+
+        :param proxy_user: The proxy_user of this PhoneNumber.  # noqa: E501
+        :type: str
+        """
+
+        self._proxy_user = proxy_user
 
     @property
     def providerid(self):

@@ -4,12 +4,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  | [optional] 
-**agent_id** | **str** |  | [optional] 
+**agent_id** | **str** |  | 
 **phone_id** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
-**service_type** | **str** |  | [optional] 
-**online_status** | **str** |  | [optional] 
-**preset_status** | **str** |  | [optional] 
+**type** | **str** | W - WEB A - MOBILE APP S - SIP E - EXTERNAL I - API | 
+**service_type** | **str** | M - MESSAGE T - CHAT P - PHONE | 
+**online_status** | **str** | N - ONLINE F - OFFLINE | 
+**preset_status** | **str** | N - ONLINE F - OFFLINE | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

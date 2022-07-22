@@ -73,6 +73,8 @@ from liveagent_api.models.group import Group
 from liveagent_api.models.hosting_info import HostingInfo
 from liveagent_api.models.index_status import IndexStatus
 from liveagent_api.models.index_status_data import IndexStatusData
+from liveagent_api.models.indexed_device_department_plans import IndexedDeviceDepartmentPlans
+from liveagent_api.models.invite_agent_row import InviteAgentRow
 from liveagent_api.models.invoice import Invoice
 from liveagent_api.models.invoice_item import InvoiceItem
 from liveagent_api.models.invoice_list import InvoiceList
@@ -83,6 +85,7 @@ from liveagent_api.models.ivr_fetch_param import IvrFetchParam
 from liveagent_api.models.ivr_forward import IvrForward
 from liveagent_api.models.ivr_step import IvrStep
 from liveagent_api.models.language_row import LanguageRow
+from liveagent_api.models.limit_validation_fail import LimitValidationFail
 from liveagent_api.models.login_key import LoginKey
 from liveagent_api.models.message import Message
 from liveagent_api.models.message_group import MessageGroup
@@ -121,6 +124,7 @@ from liveagent_api.models.ticket_row import TicketRow
 from liveagent_api.models.ticket_sla import TicketSla
 from liveagent_api.models.ticket_updatable import TicketUpdatable
 from liveagent_api.models.time_report_row import TimeReportRow
+from liveagent_api.models.time_zones import TimeZones
 from liveagent_api.models.token import Token
 from liveagent_api.models.upgrade import Upgrade
 from liveagent_api.models.upgrade_url import UpgradeUrl

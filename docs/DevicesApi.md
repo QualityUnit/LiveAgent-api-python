@@ -10,14 +10,13 @@ Method | HTTP request | Description
 [**delete_device_department_plans**](DevicesApi.md#delete_device_department_plans) | **DELETE** /devices/{deviceId}/departments/{departmentId}/plans | Delete device department plans
 [**get_device**](DevicesApi.md#get_device) | **GET** /devices/{deviceId} | Get device by id
 [**get_device_department**](DevicesApi.md#get_device_department) | **GET** /devices/{deviceId}/departments/{departmentId} | Get device department by id
-[**get_device_department_plan**](DevicesApi.md#get_device_department_plan) | **GET** /devices/{deviceId}/departments/{departmentId}/plans | Get device department plan
 [**get_device_departments**](DevicesApi.md#get_device_departments) | **GET** /devices/{deviceId}/departments | Get device departments
 [**get_device_departments_by_department_id**](DevicesApi.md#get_device_departments_by_department_id) | **GET** /devices/departments/{departmentId} | Get device departments by department id
+[**get_device_plans**](DevicesApi.md#get_device_plans) | **GET** /devices/{deviceId}/plans | Get device plans
 [**get_devices_list**](DevicesApi.md#get_devices_list) | **GET** /devices | Gets list of devices
 [**get_my_mobile_devices_list**](DevicesApi.md#get_my_mobile_devices_list) | **GET** /devices/_app_ | Gets list of current agent&#39;s mobile devices. Creates new one if there are no devices.
 [**update_device**](DevicesApi.md#update_device) | **PUT** /devices/{deviceId} | Update device
 [**update_device_department**](DevicesApi.md#update_device_department) | **PUT** /devices/{deviceId}/departments/{departmentId} | Update device department
-[**update_device_department_plan**](DevicesApi.md#update_device_department_plan) | **PUT** /devices/{deviceId}/departments/{departmentId}/plans | Update device department plan
 [**update_device_departments**](DevicesApi.md#update_device_departments) | **PUT** /devices/departments/update | Update device departments
 
 
@@ -361,63 +360,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_device_department_plan**
-> list[DeviceDepartmentPlan] get_device_department_plan(device_id, department_id)
-
-Get device department plan
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
-device_id = 56 # int | 
-department_id = 'department_id_example' # str | 
-
-try:
-    # Get device department plan
-    api_response = api_instance.get_device_department_plan(device_id, department_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DevicesApi->get_device_department_plan: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device_id** | **int**|  | 
- **department_id** | **str**|  | 
-
-### Return type
-
-[**list[DeviceDepartmentPlan]**](DeviceDepartmentPlan.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_device_departments**
 > list[DeviceDepartment] get_device_departments(device_id, page=page, per_page=per_page, _from=_from, to=to, sort_dir=sort_dir, sort_field=sort_field, sort_fields=sort_fields, filters=filters)
 
@@ -532,6 +474,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[DeviceDepartment]**](DeviceDepartment.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_device_plans**
+> list[IndexedDeviceDepartmentPlans] get_device_plans(device_id)
+
+Get device plans
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
+device_id = 56 # int | 
+
+try:
+    # Get device plans
+    api_response = api_instance.get_device_plans(device_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DevicesApi->get_device_plans: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_id** | **int**|  | 
+
+### Return type
+
+[**list[IndexedDeviceDepartmentPlans]**](IndexedDeviceDepartmentPlans.md)
 
 ### Authorization
 
@@ -766,65 +763,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeviceDepartment**](DeviceDepartment.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_device_department_plan**
-> DeviceDepartmentPlan update_device_department_plan(device_id, department_id, device_department_plan=device_department_plan)
-
-Update device department plan
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
-device_id = 56 # int | 
-department_id = 'department_id_example' # str | 
-device_department_plan = liveagent_api.DeviceDepartmentPlan() # DeviceDepartmentPlan |  (optional)
-
-try:
-    # Update device department plan
-    api_response = api_instance.update_device_department_plan(device_id, department_id, device_department_plan=device_department_plan)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DevicesApi->update_device_department_plan: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device_id** | **int**|  | 
- **department_id** | **str**|  | 
- **device_department_plan** | [**DeviceDepartmentPlan**](DeviceDepartmentPlan.md)|  | [optional] 
-
-### Return type
-
-[**DeviceDepartmentPlan**](DeviceDepartmentPlan.md)
 
 ### Authorization
 

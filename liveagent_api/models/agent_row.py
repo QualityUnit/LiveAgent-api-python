@@ -39,7 +39,6 @@ class AgentRow(object):
         'countrycode': 'str',
         'avatar_url': 'str',
         'roleid': 'str',
-        'rolename': 'str',
         'departments_statuses': 'list[AgentStatus]',
         'twofa': 'str',
         'last_pswd_change': 'datetime',
@@ -55,14 +54,13 @@ class AgentRow(object):
         'countrycode': 'countrycode',
         'avatar_url': 'avatar_url',
         'roleid': 'roleid',
-        'rolename': 'rolename',
         'departments_statuses': 'departments_statuses',
         'twofa': 'twofa',
         'last_pswd_change': 'last_pswd_change',
         'userstatus': 'userstatus'
     }
 
-    def __init__(self, agentid=None, firstname=None, lastname=None, system_name=None, username=None, countrycode=None, avatar_url=None, roleid=None, rolename=None, departments_statuses=None, twofa=None, last_pswd_change=None, userstatus=None):  # noqa: E501
+    def __init__(self, agentid=None, firstname=None, lastname=None, system_name=None, username=None, countrycode=None, avatar_url=None, roleid=None, departments_statuses=None, twofa=None, last_pswd_change=None, userstatus=None):  # noqa: E501
         """AgentRow - a model defined in Swagger"""  # noqa: E501
 
         self._agentid = None
@@ -73,7 +71,6 @@ class AgentRow(object):
         self._countrycode = None
         self._avatar_url = None
         self._roleid = None
-        self._rolename = None
         self._departments_statuses = None
         self._twofa = None
         self._last_pswd_change = None
@@ -96,8 +93,6 @@ class AgentRow(object):
             self.avatar_url = avatar_url
         if roleid is not None:
             self.roleid = roleid
-        if rolename is not None:
-            self.rolename = rolename
         if departments_statuses is not None:
             self.departments_statuses = departments_statuses
         if twofa is not None:
@@ -274,27 +269,6 @@ class AgentRow(object):
         """
 
         self._roleid = roleid
-
-    @property
-    def rolename(self):
-        """Gets the rolename of this AgentRow.  # noqa: E501
-
-
-        :return: The rolename of this AgentRow.  # noqa: E501
-        :rtype: str
-        """
-        return self._rolename
-
-    @rolename.setter
-    def rolename(self, rolename):
-        """Sets the rolename of this AgentRow.
-
-
-        :param rolename: The rolename of this AgentRow.  # noqa: E501
-        :type: str
-        """
-
-        self._rolename = rolename
 
     @property
     def departments_statuses(self):

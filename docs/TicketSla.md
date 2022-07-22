@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **conversationid** | **str** |  | [optional] 
 **sla_level_id** | **str** |  | [optional] 
+**sla_level_name** | **str** |  | [optional] 
 **first_answer** | **datetime** |  | [optional] 
 **first_assign** | **datetime** |  | [optional] 
 **first_resolve** | **datetime** |  | [optional] 
