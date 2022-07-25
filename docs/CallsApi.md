@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 [**call_fetch_ivr**](CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL
 [**call_get_status**](CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
+[**call_id**](CallsApi.md#call_id) | **GET** /calls/channels/{channelId}/call_id | Return the call ID
 [**call_move_channel**](CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels/{channelId}/_move | Moves existing channel to target call
 [**call_pickup**](CallsApi.md#call_pickup) | **POST** /calls/_pickup | Pick up call from queue
 [**call_remove_channel**](CallsApi.md#call_remove_channel) | **DELETE** /calls/{callId}/channels/{channelId} | Removes channel from the call
@@ -439,6 +440,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CallStatus**](CallStatus.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_id**
+> CallId call_id(channel_id)
+
+Return the call ID
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+channel_id = 'channel_id_example' # str | 
+
+try:
+    # Return the call ID
+    api_response = api_instance.call_id(channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CallsApi->call_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **channel_id** | **str**|  | 
+
+### Return type
+
+[**CallId**](CallId.md)
 
 ### Authorization
 

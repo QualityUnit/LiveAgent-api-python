@@ -122,6 +122,7 @@ Class | Method | HTTP request | Description
 *CallsApi* | [**call_create**](docs/CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 *CallsApi* | [**call_fetch_ivr**](docs/CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL
 *CallsApi* | [**call_get_status**](docs/CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
+*CallsApi* | [**call_id**](docs/CallsApi.md#call_id) | **GET** /calls/channels/{channelId}/call_id | Return the call ID
 *CallsApi* | [**call_move_channel**](docs/CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels/{channelId}/_move | Moves existing channel to target call
 *CallsApi* | [**call_pickup**](docs/CallsApi.md#call_pickup) | **POST** /calls/_pickup | Pick up call from queue
 *CallsApi* | [**call_remove_channel**](docs/CallsApi.md#call_remove_channel) | **DELETE** /calls/{callId}/channels/{channelId} | Removes channel from the call
@@ -345,6 +346,7 @@ Class | Method | HTTP request | Description
  - [BillingStatus](docs/BillingStatus.md)
  - [Call](docs/Call.md)
  - [CallAgent](docs/CallAgent.md)
+ - [CallId](docs/CallId.md)
  - [CallListItem](docs/CallListItem.md)
  - [CallMessage](docs/CallMessage.md)
  - [CallStatus](docs/CallStatus.md)

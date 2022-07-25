@@ -82,6 +82,7 @@ from liveagent_api.models.billing_metric import BillingMetric
 from liveagent_api.models.billing_status import BillingStatus
 from liveagent_api.models.call import Call
 from liveagent_api.models.call_agent import CallAgent
+from liveagent_api.models.call_id import CallId
 from liveagent_api.models.call_list_item import CallListItem
 from liveagent_api.models.call_message import CallMessage
 from liveagent_api.models.call_status import CallStatus
