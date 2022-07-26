@@ -16,31 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import liveagent_api
-from liveagent_api.api.variations_api import VariationsApi  # noqa: E501
+from liveagent_api.models.time_zones import TimeZones  # noqa: E501
 from liveagent_api.rest import ApiException
 
 
-class TestVariationsApi(unittest.TestCase):
-    """VariationsApi unit test stubs"""
+class TestTimeZones(unittest.TestCase):
+    """TimeZones unit test stubs"""
 
     def setUp(self):
-        self.api = liveagent_api.api.variations_api.VariationsApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_variation(self):
-        """Test case for get_variation
-
-        Variation  # noqa: E501
-        """
-        pass
-
-    def test_validate_limits(self):
-        """Test case for validate_limits
-
-        Validate Limits  # noqa: E501
-        """
+    def testTimeZones(self):
+        """Test TimeZones"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = liveagent_api.models.time_zones.TimeZones()  # noqa: E501
         pass
 
 

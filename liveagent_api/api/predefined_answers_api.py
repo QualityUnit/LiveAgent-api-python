@@ -452,7 +452,7 @@ class PredefinedAnswersApi(object):
 
         :param async_req bool
         :param str predefined_answer_id: (required)
-        :param PredefinedAnswer canned_message:
+        :param PredefinedAnswer predefined_answer:
         :return: PredefinedAnswer
                  If the method is called asynchronously,
                  returns the request thread.
@@ -475,13 +475,13 @@ class PredefinedAnswersApi(object):
 
         :param async_req bool
         :param str predefined_answer_id: (required)
-        :param PredefinedAnswer canned_message:
+        :param PredefinedAnswer predefined_answer:
         :return: PredefinedAnswer
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['predefined_answer_id', 'canned_message']  # noqa: E501
+        all_params = ['predefined_answer_id', 'predefined_answer']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -515,8 +515,8 @@ class PredefinedAnswersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'canned_message' in params:
-            body_params = params['canned_message']
+        if 'predefined_answer' in params:
+            body_params = params['predefined_answer']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501

@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**get_departments_grid_list**](GridApi.md#get_departments_grid_list) | **GET** /grid/departments | Gets list of departments for grid
 [**get_event_logs_grid_list**](GridApi.md#get_event_logs_grid_list) | **GET** /grid/eventlogs | Gets list of event logs for grid
 [**get_event_logs_grid_list_count**](GridApi.md#get_event_logs_grid_list_count) | **GET** /grid/eventlogs/count | Gets count of logs for event logs grid
+[**get_invite_agents_grid_list**](GridApi.md#get_invite_agents_grid_list) | **GET** /grid/{departmentId}/invite/agents | Gets list of invite agents for grid
 [**get_languages_grid_list**](GridApi.md#get_languages_grid_list) | **GET** /grid/languages | Gets list of languages for grid
 [**get_languages_grid_list_count**](GridApi.md#get_languages_grid_list_count) | **GET** /grid/languages/count | Gets count of languages for languages grid
 [**get_plugind_grid_list**](GridApi.md#get_plugind_grid_list) | **GET** /grid/plugins | Gets plugins  for grid
@@ -786,6 +787,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Count**](Count.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_invite_agents_grid_list**
+> list[InviteAgentRow] get_invite_agents_grid_list(department_id, per_page=per_page, filters=filters)
+
+Gets list of invite agents for grid
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
+department_id = 'department_id_example' # str | 
+per_page = 10 # int | Results per page. (optional) (default to 10)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
+
+try:
+    # Gets list of invite agents for grid
+    api_response = api_instance.get_invite_agents_grid_list(department_id, per_page=per_page, filters=filters)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GridApi->get_invite_agents_grid_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **department_id** | **str**|  | 
+ **per_page** | **int**| Results per page. | [optional] [default to 10]
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
+
+### Return type
+
+[**list[InviteAgentRow]**](InviteAgentRow.md)
 
 ### Authorization
 

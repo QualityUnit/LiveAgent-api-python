@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_predefined_answer**
-> PredefinedAnswer update_predefined_answer(predefined_answer_id, canned_message=canned_message)
+> PredefinedAnswer update_predefined_answer(predefined_answer_id, predefined_answer=predefined_answer)
 
 Update predefined answer
 
@@ -274,11 +274,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.PredefinedAnswersApi(liveagent_api.ApiClient(configuration))
 predefined_answer_id = 'predefined_answer_id_example' # str | 
-canned_message = liveagent_api.PredefinedAnswer() # PredefinedAnswer |  (optional)
+predefined_answer = liveagent_api.PredefinedAnswer() # PredefinedAnswer |  (optional)
 
 try:
     # Update predefined answer
-    api_response = api_instance.update_predefined_answer(predefined_answer_id, canned_message=canned_message)
+    api_response = api_instance.update_predefined_answer(predefined_answer_id, predefined_answer=predefined_answer)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PredefinedAnswersApi->update_predefined_answer: %s\n" % e)
@@ -289,7 +289,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **predefined_answer_id** | **str**|  | 
- **canned_message** | [**PredefinedAnswer**](PredefinedAnswer.md)|  | [optional] 
+ **predefined_answer** | [**PredefinedAnswer**](PredefinedAnswer.md)|  | [optional] 
 
 ### Return type
 

@@ -71,8 +71,6 @@ class TicketRow(object):
         'avatar_url': 'str',
         'userid': 'str',
         'roleid': 'str',
-        'role_name': 'str',
-        'roletype': 'str',
         'userstatus': 'str',
         'accountuserstatus': 'str',
         'description': 'str',
@@ -123,8 +121,6 @@ class TicketRow(object):
         'avatar_url': 'avatar_url',
         'userid': 'userid',
         'roleid': 'roleid',
-        'role_name': 'roleName',
-        'roletype': 'roletype',
         'userstatus': 'userstatus',
         'accountuserstatus': 'accountuserstatus',
         'description': 'description',
@@ -134,7 +130,7 @@ class TicketRow(object):
         'groupnames': 'groupnames'
     }
 
-    def __init__(self, conversationid=None, code=None, datecreated=None, datechanged=None, dateresolved=None, statuschanged=None, rorder=None, datedue=None, datereopen=None, status=None, channel_type=None, departmentid=None, agentid=None, preview=None, subject=None, departmentname=None, agentname=None, tags=None, messagegroups_in=None, messagegroups_out=None, contactid=None, parent_contactid=None, firstname=None, lastname=None, system_name=None, emails=None, phones=None, job_position=None, contact_type=None, city=None, countrycode=None, time_offset=None, gender=None, levelid=None, groups=None, contact_status=None, company=None, avatar_url=None, userid=None, roleid=None, role_name=None, roletype=None, userstatus=None, accountuserstatus=None, description=None, note=None, last_activity=None, tagnames=None, groupnames=None):  # noqa: E501
+    def __init__(self, conversationid=None, code=None, datecreated=None, datechanged=None, dateresolved=None, statuschanged=None, rorder=None, datedue=None, datereopen=None, status=None, channel_type=None, departmentid=None, agentid=None, preview=None, subject=None, departmentname=None, agentname=None, tags=None, messagegroups_in=None, messagegroups_out=None, contactid=None, parent_contactid=None, firstname=None, lastname=None, system_name=None, emails=None, phones=None, job_position=None, contact_type=None, city=None, countrycode=None, time_offset=None, gender=None, levelid=None, groups=None, contact_status=None, company=None, avatar_url=None, userid=None, roleid=None, userstatus=None, accountuserstatus=None, description=None, note=None, last_activity=None, tagnames=None, groupnames=None):  # noqa: E501
         """TicketRow - a model defined in Swagger"""  # noqa: E501
 
         self._conversationid = None
@@ -177,8 +173,6 @@ class TicketRow(object):
         self._avatar_url = None
         self._userid = None
         self._roleid = None
-        self._role_name = None
-        self._roletype = None
         self._userstatus = None
         self._accountuserstatus = None
         self._description = None
@@ -268,10 +262,6 @@ class TicketRow(object):
             self.userid = userid
         if roleid is not None:
             self.roleid = roleid
-        if role_name is not None:
-            self.role_name = role_name
-        if roletype is not None:
-            self.roletype = roletype
         if userstatus is not None:
             self.userstatus = userstatus
         if accountuserstatus is not None:
@@ -1126,48 +1116,6 @@ class TicketRow(object):
         """
 
         self._roleid = roleid
-
-    @property
-    def role_name(self):
-        """Gets the role_name of this TicketRow.  # noqa: E501
-
-
-        :return: The role_name of this TicketRow.  # noqa: E501
-        :rtype: str
-        """
-        return self._role_name
-
-    @role_name.setter
-    def role_name(self, role_name):
-        """Sets the role_name of this TicketRow.
-
-
-        :param role_name: The role_name of this TicketRow.  # noqa: E501
-        :type: str
-        """
-
-        self._role_name = role_name
-
-    @property
-    def roletype(self):
-        """Gets the roletype of this TicketRow.  # noqa: E501
-
-
-        :return: The roletype of this TicketRow.  # noqa: E501
-        :rtype: str
-        """
-        return self._roletype
-
-    @roletype.setter
-    def roletype(self, roletype):
-        """Sets the roletype of this TicketRow.
-
-
-        :param roletype: The roletype of this TicketRow.  # noqa: E501
-        :type: str
-        """
-
-        self._roletype = roletype
 
     @property
     def userstatus(self):

@@ -33,6 +33,7 @@ class TicketSla(object):
     swagger_types = {
         'conversationid': 'str',
         'sla_level_id': 'str',
+        'sla_level_name': 'str',
         'first_answer': 'datetime',
         'first_assign': 'datetime',
         'first_resolve': 'datetime',
@@ -42,17 +43,19 @@ class TicketSla(object):
     attribute_map = {
         'conversationid': 'conversationid',
         'sla_level_id': 'sla_level_id',
+        'sla_level_name': 'sla_level_name',
         'first_answer': 'first_answer',
         'first_assign': 'first_assign',
         'first_resolve': 'first_resolve',
         'next_answer': 'next_answer'
     }
 
-    def __init__(self, conversationid=None, sla_level_id=None, first_answer=None, first_assign=None, first_resolve=None, next_answer=None):  # noqa: E501
+    def __init__(self, conversationid=None, sla_level_id=None, sla_level_name=None, first_answer=None, first_assign=None, first_resolve=None, next_answer=None):  # noqa: E501
         """TicketSla - a model defined in Swagger"""  # noqa: E501
 
         self._conversationid = None
         self._sla_level_id = None
+        self._sla_level_name = None
         self._first_answer = None
         self._first_assign = None
         self._first_resolve = None
@@ -63,6 +66,8 @@ class TicketSla(object):
             self.conversationid = conversationid
         if sla_level_id is not None:
             self.sla_level_id = sla_level_id
+        if sla_level_name is not None:
+            self.sla_level_name = sla_level_name
         if first_answer is not None:
             self.first_answer = first_answer
         if first_assign is not None:
@@ -113,6 +118,27 @@ class TicketSla(object):
         """
 
         self._sla_level_id = sla_level_id
+
+    @property
+    def sla_level_name(self):
+        """Gets the sla_level_name of this TicketSla.  # noqa: E501
+
+
+        :return: The sla_level_name of this TicketSla.  # noqa: E501
+        :rtype: str
+        """
+        return self._sla_level_name
+
+    @sla_level_name.setter
+    def sla_level_name(self, sla_level_name):
+        """Sets the sla_level_name of this TicketSla.
+
+
+        :param sla_level_name: The sla_level_name of this TicketSla.  # noqa: E501
+        :type: str
+        """
+
+        self._sla_level_name = sla_level_name
 
     @property
     def first_answer(self):

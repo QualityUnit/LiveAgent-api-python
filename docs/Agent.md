@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **email** | **str** |  | 
 **role** | **str** |  | [optional] [default to 'agent']
+**role_id** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **online_status** | **str** | F - offline, N - online, P - paused, C - mobile  | [optional] 
 **status** | **str** | A - active, X - deleted  | [optional] 

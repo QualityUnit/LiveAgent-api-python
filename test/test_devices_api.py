@@ -71,13 +71,6 @@ class TestDevicesApi(unittest.TestCase):
         """
         pass
 
-    def test_get_device_department_plan(self):
-        """Test case for get_device_department_plan
-
-        Get device department plan  # noqa: E501
-        """
-        pass
-
     def test_get_device_departments(self):
         """Test case for get_device_departments
 
@@ -89,6 +82,13 @@ class TestDevicesApi(unittest.TestCase):
         """Test case for get_device_departments_by_department_id
 
         Get device departments by department id  # noqa: E501
+        """
+        pass
+
+    def test_get_device_plans(self):
+        """Test case for get_device_plans
+
+        Get device plans  # noqa: E501
         """
         pass
 
@@ -117,13 +117,6 @@ class TestDevicesApi(unittest.TestCase):
         """Test case for update_device_department
 
         Update device department  # noqa: E501
-        """
-        pass
-
-    def test_update_device_department_plan(self):
-        """Test case for update_device_department_plan
-
-        Update device department plan  # noqa: E501
         """
         pass
 

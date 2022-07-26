@@ -64,18 +64,13 @@ class Device(object):
 
         if id is not None:
             self.id = id
-        if agent_id is not None:
-            self.agent_id = agent_id
+        self.agent_id = agent_id
         if phone_id is not None:
             self.phone_id = phone_id
-        if type is not None:
-            self.type = type
-        if service_type is not None:
-            self.service_type = service_type
-        if online_status is not None:
-            self.online_status = online_status
-        if preset_status is not None:
-            self.preset_status = preset_status
+        self.type = type
+        self.service_type = service_type
+        self.online_status = online_status
+        self.preset_status = preset_status
 
     @property
     def id(self):
@@ -116,6 +111,8 @@ class Device(object):
         :param agent_id: The agent_id of this Device.  # noqa: E501
         :type: str
         """
+        if agent_id is None:
+            raise ValueError("Invalid value for `agent_id`, must not be `None`")  # noqa: E501
 
         self._agent_id = agent_id
 
@@ -144,6 +141,7 @@ class Device(object):
     def type(self):
         """Gets the type of this Device.  # noqa: E501
 
+        W - WEB A - MOBILE APP S - SIP E - EXTERNAL I - API  # noqa: E501
 
         :return: The type of this Device.  # noqa: E501
         :rtype: str
@@ -154,10 +152,19 @@ class Device(object):
     def type(self, type):
         """Sets the type of this Device.
 
+        W - WEB A - MOBILE APP S - SIP E - EXTERNAL I - API  # noqa: E501
 
         :param type: The type of this Device.  # noqa: E501
         :type: str
         """
+        if type is None:
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+        allowed_values = ["W", "A", "S", "E", "I"]  # noqa: E501
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
 
         self._type = type
 
@@ -165,6 +172,7 @@ class Device(object):
     def service_type(self):
         """Gets the service_type of this Device.  # noqa: E501
 
+        M - MESSAGE T - CHAT P - PHONE  # noqa: E501
 
         :return: The service_type of this Device.  # noqa: E501
         :rtype: str
@@ -175,10 +183,19 @@ class Device(object):
     def service_type(self, service_type):
         """Sets the service_type of this Device.
 
+        M - MESSAGE T - CHAT P - PHONE  # noqa: E501
 
         :param service_type: The service_type of this Device.  # noqa: E501
         :type: str
         """
+        if service_type is None:
+            raise ValueError("Invalid value for `service_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["M", "T", "P"]  # noqa: E501
+        if service_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `service_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(service_type, allowed_values)
+            )
 
         self._service_type = service_type
 
@@ -186,6 +203,7 @@ class Device(object):
     def online_status(self):
         """Gets the online_status of this Device.  # noqa: E501
 
+        N - ONLINE F - OFFLINE  # noqa: E501
 
         :return: The online_status of this Device.  # noqa: E501
         :rtype: str
@@ -196,10 +214,19 @@ class Device(object):
     def online_status(self, online_status):
         """Sets the online_status of this Device.
 
+        N - ONLINE F - OFFLINE  # noqa: E501
 
         :param online_status: The online_status of this Device.  # noqa: E501
         :type: str
         """
+        if online_status is None:
+            raise ValueError("Invalid value for `online_status`, must not be `None`")  # noqa: E501
+        allowed_values = ["N", "F"]  # noqa: E501
+        if online_status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `online_status` ({0}), must be one of {1}"  # noqa: E501
+                .format(online_status, allowed_values)
+            )
 
         self._online_status = online_status
 
@@ -207,6 +234,7 @@ class Device(object):
     def preset_status(self):
         """Gets the preset_status of this Device.  # noqa: E501
 
+        N - ONLINE F - OFFLINE  # noqa: E501
 
         :return: The preset_status of this Device.  # noqa: E501
         :rtype: str
@@ -217,10 +245,19 @@ class Device(object):
     def preset_status(self, preset_status):
         """Sets the preset_status of this Device.
 
+        N - ONLINE F - OFFLINE  # noqa: E501
 
         :param preset_status: The preset_status of this Device.  # noqa: E501
         :type: str
         """
+        if preset_status is None:
+            raise ValueError("Invalid value for `preset_status`, must not be `None`")  # noqa: E501
+        allowed_values = ["N", "F"]  # noqa: E501
+        if preset_status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `preset_status` ({0}), must be one of {1}"  # noqa: E501
+                .format(preset_status, allowed_values)
+            )
 
         self._preset_status = preset_status
 

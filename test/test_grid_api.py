@@ -120,6 +120,13 @@ class TestGridApi(unittest.TestCase):
         """
         pass
 
+    def test_get_invite_agents_grid_list(self):
+        """Test case for get_invite_agents_grid_list
+
+        Gets list of invite agents for grid  # noqa: E501
+        """
+        pass
+
     def test_get_languages_grid_list(self):
         """Test case for get_languages_grid_list
 

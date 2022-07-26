@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **add_number**
-> PhoneNumber add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_in_call=record_in_call, record_out_call=record_out_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
+> PhoneNumber add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_in_call=record_in_call, record_out_call=record_out_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, auth_user=auth_user, password=password, proxy_host=proxy_host, proxy_port=proxy_port, proxy_user=proxy_user, providerid=providerid, ivr=ivr)
 
 Add new number
 
@@ -49,13 +49,17 @@ host_settings = 'host_settings_example' # str | json encoded host settings (opti
 host = 'host_example' # str |  (optional)
 port = 'port_example' # str |  (optional)
 user = 'user_example' # str |  (optional)
+auth_user = 'auth_user_example' # str |  (optional)
 password = 'password_example' # str |  (optional)
+proxy_host = 'proxy_host_example' # str |  (optional)
+proxy_port = 'proxy_port_example' # str |  (optional)
+proxy_user = 'proxy_user_example' # str |  (optional)
 providerid = 'providerid_example' # str |  (optional)
 ivr = 'ivr_example' # str |  (optional)
 
 try:
     # Add new number
-    api_response = api_instance.add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_in_call=record_in_call, record_out_call=record_out_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, password=password, providerid=providerid, ivr=ivr)
+    api_response = api_instance.add_number(type, number, status, dial_out_prefix=dial_out_prefix, record_in_call=record_in_call, record_out_call=record_out_call, name=name, departmentid=departmentid, host_settings=host_settings, host=host, port=port, user=user, auth_user=auth_user, password=password, proxy_host=proxy_host, proxy_port=proxy_port, proxy_user=proxy_user, providerid=providerid, ivr=ivr)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PhoneNumbersApi->add_number: %s\n" % e)
@@ -77,7 +81,11 @@ Name | Type | Description  | Notes
  **host** | **str**|  | [optional] 
  **port** | **str**|  | [optional] 
  **user** | **str**|  | [optional] 
+ **auth_user** | **str**|  | [optional] 
  **password** | **str**|  | [optional] 
+ **proxy_host** | **str**|  | [optional] 
+ **proxy_port** | **str**|  | [optional] 
+ **proxy_user** | **str**|  | [optional] 
  **providerid** | **str**|  | [optional] 
  **ivr** | **str**|  | [optional] 
 

@@ -78,6 +78,13 @@ class TestCallsApi(unittest.TestCase):
         """
         pass
 
+    def test_call_id(self):
+        """Test case for call_id
+
+        Return the call ID  # noqa: E501
+        """
+        pass
+
     def test_call_move_channel(self):
         """Test case for call_move_channel
 

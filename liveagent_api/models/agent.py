@@ -35,6 +35,7 @@ class Agent(object):
         'name': 'str',
         'email': 'str',
         'role': 'str',
+        'role_id': 'str',
         'avatar_url': 'str',
         'online_status': 'str',
         'status': 'str',
@@ -51,6 +52,7 @@ class Agent(object):
         'name': 'name',
         'email': 'email',
         'role': 'role',
+        'role_id': 'roleId',
         'avatar_url': 'avatar_url',
         'online_status': 'online_status',
         'status': 'status',
@@ -62,13 +64,14 @@ class Agent(object):
         'api_phone_id': 'api_phone_id'
     }
 
-    def __init__(self, id=None, name=None, email=None, role='agent', avatar_url=None, online_status=None, status=None, gender='X', last_pswd_change=None, twofactor_auth='N', voice_status=None, sip_phone_id=None, api_phone_id=None):  # noqa: E501
+    def __init__(self, id=None, name=None, email=None, role='agent', role_id=None, avatar_url=None, online_status=None, status=None, gender='X', last_pswd_change=None, twofactor_auth='N', voice_status=None, sip_phone_id=None, api_phone_id=None):  # noqa: E501
         """Agent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._email = None
         self._role = None
+        self._role_id = None
         self._avatar_url = None
         self._online_status = None
         self._status = None
@@ -86,6 +89,8 @@ class Agent(object):
         self.email = email
         if role is not None:
             self.role = role
+        if role_id is not None:
+            self.role_id = role_id
         if avatar_url is not None:
             self.avatar_url = avatar_url
         if online_status is not None:
@@ -198,6 +203,27 @@ class Agent(object):
             )
 
         self._role = role
+
+    @property
+    def role_id(self):
+        """Gets the role_id of this Agent.  # noqa: E501
+
+
+        :return: The role_id of this Agent.  # noqa: E501
+        :rtype: str
+        """
+        return self._role_id
+
+    @role_id.setter
+    def role_id(self, role_id):
+        """Sets the role_id of this Agent.
+
+
+        :param role_id: The role_id of this Agent.  # noqa: E501
+        :type: str
+        """
+
+        self._role_id = role_id
 
     @property
     def avatar_url(self):
