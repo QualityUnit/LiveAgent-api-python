@@ -11,6 +11,7 @@ from liveagent_api.api.billing_api import BillingApi
 from liveagent_api.api.calls_api import CallsApi
 from liveagent_api.api.canned_messages_api import CannedMessagesApi
 from liveagent_api.api.chats_api import ChatsApi
+from liveagent_api.api.checkout_token_api import CheckoutTokenApi
 from liveagent_api.api.companies_api import CompaniesApi
 from liveagent_api.api.contact_phones_api import ContactPhonesApi
 from liveagent_api.api.contacts_api import ContactsApi

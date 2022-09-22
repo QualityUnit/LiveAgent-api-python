@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import liveagent_api
-from liveagent_api.models.billing_info import BillingInfo  # noqa: E501
+from liveagent_api.models.checkout_parameters import CheckoutParameters  # noqa: E501
 from liveagent_api.rest import ApiException
 
 
-class TestBillingInfo(unittest.TestCase):
-    """BillingInfo unit test stubs"""
+class TestCheckoutParameters(unittest.TestCase):
+    """CheckoutParameters unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestBillingInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testBillingInfo(self):
-        """Test BillingInfo"""
+    def testCheckoutParameters(self):
+        """Test CheckoutParameters"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = liveagent_api.models.billing_info.BillingInfo()  # noqa: E501
+        # model = liveagent_api.models.checkout_parameters.CheckoutParameters()  # noqa: E501
         pass
 
 

@@ -1657,15 +1657,16 @@ class GridApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_plugind_grid_list(self, **kwargs):  # noqa: E501
+    def get_plugind_grid_list(self, plugin_purpose, **kwargs):  # noqa: E501
         """Gets plugins  for grid  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_plugind_grid_list(async_req=True)
+        >>> thread = api.get_plugind_grid_list(plugin_purpose, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str plugin_purpose: (required)
         :param str sort_dir: Sorting direction ASC or DESC
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[PluginRow]
@@ -1674,20 +1675,21 @@ class GridApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_plugind_grid_list_with_http_info(**kwargs)  # noqa: E501
+            return self.get_plugind_grid_list_with_http_info(plugin_purpose, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_plugind_grid_list_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_plugind_grid_list_with_http_info(plugin_purpose, **kwargs)  # noqa: E501
             return data
 
-    def get_plugind_grid_list_with_http_info(self, **kwargs):  # noqa: E501
+    def get_plugind_grid_list_with_http_info(self, plugin_purpose, **kwargs):  # noqa: E501
         """Gets plugins  for grid  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_plugind_grid_list_with_http_info(async_req=True)
+        >>> thread = api.get_plugind_grid_list_with_http_info(plugin_purpose, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str plugin_purpose: (required)
         :param str sort_dir: Sorting direction ASC or DESC
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[PluginRow]
@@ -1695,7 +1697,7 @@ class GridApi(object):
                  returns the request thread.
         """
 
-        all_params = ['sort_dir', 'filters']  # noqa: E501
+        all_params = ['plugin_purpose', 'sort_dir', 'filters']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1710,6 +1712,10 @@ class GridApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'plugin_purpose' is set
+        if ('plugin_purpose' not in params or
+                params['plugin_purpose'] is None):
+            raise ValueError("Missing the required parameter `plugin_purpose` when calling `get_plugind_grid_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1720,6 +1726,8 @@ class GridApi(object):
             query_params.append(('_sortDir', params['sort_dir']))  # noqa: E501
         if 'filters' in params:
             query_params.append(('_filters', params['filters']))  # noqa: E501
+        if 'plugin_purpose' in params:
+            query_params.append(('pluginPurpose', params['plugin_purpose']))  # noqa: E501
 
         header_params = {}
 
