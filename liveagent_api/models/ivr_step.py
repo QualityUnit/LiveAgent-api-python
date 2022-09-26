@@ -34,23 +34,26 @@ class IvrStep(object):
         'type': 'str',
         'params': 'str',
         'choices': 'list[IvrChoice]',
-        'forward': 'IvrForward'
+        'forward': 'IvrForward',
+        'fetch': 'IvrFetch'
     }
 
     attribute_map = {
         'type': 'type',
         'params': 'params',
         'choices': 'choices',
-        'forward': 'forward'
+        'forward': 'forward',
+        'fetch': 'fetch'
     }
 
-    def __init__(self, type=None, params=None, choices=None, forward=None):  # noqa: E501
+    def __init__(self, type=None, params=None, choices=None, forward=None, fetch=None):  # noqa: E501
         """IvrStep - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
         self._params = None
         self._choices = None
         self._forward = None
+        self._fetch = None
         self.discriminator = None
 
         self.type = type
@@ -60,6 +63,8 @@ class IvrStep(object):
             self.choices = choices
         if forward is not None:
             self.forward = forward
+        if fetch is not None:
+            self.fetch = fetch
 
     @property
     def type(self):
@@ -154,6 +159,27 @@ class IvrStep(object):
         """
 
         self._forward = forward
+
+    @property
+    def fetch(self):
+        """Gets the fetch of this IvrStep.  # noqa: E501
+
+
+        :return: The fetch of this IvrStep.  # noqa: E501
+        :rtype: IvrFetch
+        """
+        return self._fetch
+
+    @fetch.setter
+    def fetch(self, fetch):
+        """Sets the fetch of this IvrStep.
+
+
+        :param fetch: The fetch of this IvrStep.  # noqa: E501
+        :type: IvrFetch
+        """
+
+        self._fetch = fetch
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **params** | **str** |  | [optional] 
 **choices** | [**list[IvrChoice]**](IvrChoice.md) |  | [optional] 
 **forward** | [**IvrForward**](IvrForward.md) |  | [optional] 
+**fetch** | [**IvrFetch**](IvrFetch.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
