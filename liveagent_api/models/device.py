@@ -37,7 +37,8 @@ class Device(object):
         'type': 'str',
         'service_type': 'str',
         'online_status': 'str',
-        'preset_status': 'str'
+        'preset_status': 'str',
+        'route_if_offline': 'str'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class Device(object):
         'type': 'type',
         'service_type': 'service_type',
         'online_status': 'online_status',
-        'preset_status': 'preset_status'
+        'preset_status': 'preset_status',
+        'route_if_offline': 'route_if_offline'
     }
 
-    def __init__(self, id=None, agent_id=None, phone_id=None, type=None, service_type=None, online_status=None, preset_status=None):  # noqa: E501
+    def __init__(self, id=None, agent_id=None, phone_id=None, type=None, service_type=None, online_status='N', preset_status=None, route_if_offline='Y'):  # noqa: E501
         """Device - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -60,6 +62,7 @@ class Device(object):
         self._service_type = None
         self._online_status = None
         self._preset_status = None
+        self._route_if_offline = None
         self.discriminator = None
 
         if id is not None:
@@ -69,8 +72,11 @@ class Device(object):
             self.phone_id = phone_id
         self.type = type
         self.service_type = service_type
-        self.online_status = online_status
+        if online_status is not None:
+            self.online_status = online_status
         self.preset_status = preset_status
+        if route_if_offline is not None:
+            self.route_if_offline = route_if_offline
 
     @property
     def id(self):
@@ -219,8 +225,6 @@ class Device(object):
         :param online_status: The online_status of this Device.  # noqa: E501
         :type: str
         """
-        if online_status is None:
-            raise ValueError("Invalid value for `online_status`, must not be `None`")  # noqa: E501
         allowed_values = ["N", "F"]  # noqa: E501
         if online_status not in allowed_values:
             raise ValueError(
@@ -260,6 +264,35 @@ class Device(object):
             )
 
         self._preset_status = preset_status
+
+    @property
+    def route_if_offline(self):
+        """Gets the route_if_offline of this Device.  # noqa: E501
+
+        Y - Yes N - No  # noqa: E501
+
+        :return: The route_if_offline of this Device.  # noqa: E501
+        :rtype: str
+        """
+        return self._route_if_offline
+
+    @route_if_offline.setter
+    def route_if_offline(self, route_if_offline):
+        """Sets the route_if_offline of this Device.
+
+        Y - Yes N - No  # noqa: E501
+
+        :param route_if_offline: The route_if_offline of this Device.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Y", "N"]  # noqa: E501
+        if route_if_offline not in allowed_values:
+            raise ValueError(
+                "Invalid value for `route_if_offline` ({0}), must be one of {1}"  # noqa: E501
+                .format(route_if_offline, allowed_values)
+            )
+
+        self._route_if_offline = route_if_offline
 
     def to_dict(self):
         """Returns the model properties as a dict"""

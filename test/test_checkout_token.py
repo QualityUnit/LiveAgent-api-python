@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import liveagent_api
-from liveagent_api.models.coupon import Coupon  # noqa: E501
+from liveagent_api.models.checkout_token import CheckoutToken  # noqa: E501
 from liveagent_api.rest import ApiException
 
 
-class TestCoupon(unittest.TestCase):
-    """Coupon unit test stubs"""
+class TestCheckoutToken(unittest.TestCase):
+    """CheckoutToken unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoupon(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoupon(self):
-        """Test Coupon"""
+    def testCheckoutToken(self):
+        """Test CheckoutToken"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = liveagent_api.models.coupon.Coupon()  # noqa: E501
+        # model = liveagent_api.models.checkout_token.CheckoutToken()  # noqa: E501
         pass
 
 

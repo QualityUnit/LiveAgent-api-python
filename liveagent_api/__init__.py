@@ -24,6 +24,7 @@ from liveagent_api.api.billing_api import BillingApi
 from liveagent_api.api.calls_api import CallsApi
 from liveagent_api.api.canned_messages_api import CannedMessagesApi
 from liveagent_api.api.chats_api import ChatsApi
+from liveagent_api.api.checkout_token_api import CheckoutTokenApi
 from liveagent_api.api.companies_api import CompaniesApi
 from liveagent_api.api.contact_phones_api import ContactPhonesApi
 from liveagent_api.api.contacts_api import ContactsApi
@@ -77,7 +78,6 @@ from liveagent_api.models.attribute_simple import AttributeSimple
 from liveagent_api.models.available_prefix import AvailablePrefix
 from liveagent_api.models.ban import Ban
 from liveagent_api.models.batch import Batch
-from liveagent_api.models.billing_info import BillingInfo
 from liveagent_api.models.billing_metric import BillingMetric
 from liveagent_api.models.billing_status import BillingStatus
 from liveagent_api.models.call import Call
@@ -90,6 +90,8 @@ from liveagent_api.models.call_transfer_result import CallTransferResult
 from liveagent_api.models.canned_message import CannedMessage
 from liveagent_api.models.chat_information import ChatInformation
 from liveagent_api.models.chat_row import ChatRow
+from liveagent_api.models.checkout_parameters import CheckoutParameters
+from liveagent_api.models.checkout_token import CheckoutToken
 from liveagent_api.models.company_list_item import CompanyListItem
 from liveagent_api.models.company_request import CompanyRequest
 from liveagent_api.models.contact_list_item import ContactListItem
@@ -97,7 +99,6 @@ from liveagent_api.models.contact_phone import ContactPhone
 from liveagent_api.models.contact_request import ContactRequest
 from liveagent_api.models.count import Count
 from liveagent_api.models.country import Country
-from liveagent_api.models.coupon import Coupon
 from liveagent_api.models.custom_button import CustomButton
 from liveagent_api.models.custom_domain import CustomDomain
 from liveagent_api.models.custom_fields import CustomFields
@@ -139,9 +140,7 @@ from liveagent_api.models.message import Message
 from liveagent_api.models.message_group import MessageGroup
 from liveagent_api.models.ok_response import OkResponse
 from liveagent_api.models.page_visit import PageVisit
-from liveagent_api.models.payment_info import PaymentInfo
 from liveagent_api.models.payment_method import PaymentMethod
-from liveagent_api.models.payment_processor_type import PaymentProcessorType
 from liveagent_api.models.phone_device import PhoneDevice
 from liveagent_api.models.phone_number import PhoneNumber
 from liveagent_api.models.plugin_row import PluginRow

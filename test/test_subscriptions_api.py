@@ -50,20 +50,6 @@ class TestSubscriptionsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_billing_info(self):
-        """Test case for get_billing_info
-
-        Billing info  # noqa: E501
-        """
-        pass
-
-    def test_get_billing_metrics(self):
-        """Test case for get_billing_metrics
-
-        Billing metrics  # noqa: E501
-        """
-        pass
-
     def test_get_billing_status(self):
         """Test case for get_billing_status
 
@@ -82,20 +68,6 @@ class TestSubscriptionsApi(unittest.TestCase):
         """Test case for get_domain_info
 
         Domain info  # noqa: E501
-        """
-        pass
-
-    def test_get_payment_method(self):
-        """Test case for get_payment_method
-
-        Payment method  # noqa: E501
-        """
-        pass
-
-    def test_get_payment_processor(self):
-        """Test case for get_payment_processor
-
-        Payment processor  # noqa: E501
         """
         pass
 
@@ -141,24 +113,10 @@ class TestSubscriptionsApi(unittest.TestCase):
         """
         pass
 
-    def test_set_billing_info(self):
-        """Test case for set_billing_info
-
-        Billing info  # noqa: E501
-        """
-        pass
-
     def test_set_custom_domain(self):
         """Test case for set_custom_domain
 
         Custom domain  # noqa: E501
-        """
-        pass
-
-    def test_set_payment_method(self):
-        """Test case for set_payment_method
-
-        Payment method  # noqa: E501
         """
         pass
 
@@ -180,13 +138,6 @@ class TestSubscriptionsApi(unittest.TestCase):
         """Test case for update_application
 
         Update subscription  # noqa: E501
-        """
-        pass
-
-    def test_validate_billing_info(self):
-        """Test case for validate_billing_info
-
-        Test Billing info  # noqa: E501
         """
         pass
 

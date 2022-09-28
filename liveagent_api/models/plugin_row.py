@@ -38,7 +38,8 @@ class PluginRow(object):
         'help': 'str',
         'multiple': 'bool',
         'config_file': 'str',
-        'price': 'float'
+        'price': 'float',
+        'legacy_integration': 'bool'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class PluginRow(object):
         'help': 'help',
         'multiple': 'multiple',
         'config_file': 'config_file',
-        'price': 'price'
+        'price': 'price',
+        'legacy_integration': 'legacy_integration'
     }
 
-    def __init__(self, code_name=None, name=None, description=None, active=None, help=None, multiple=None, config_file=None, price=None):  # noqa: E501
+    def __init__(self, code_name=None, name=None, description=None, active=None, help=None, multiple=None, config_file=None, price=None, legacy_integration=None):  # noqa: E501
         """PluginRow - a model defined in Swagger"""  # noqa: E501
 
         self._code_name = None
@@ -63,6 +65,7 @@ class PluginRow(object):
         self._multiple = None
         self._config_file = None
         self._price = None
+        self._legacy_integration = None
         self.discriminator = None
 
         if code_name is not None:
@@ -81,6 +84,8 @@ class PluginRow(object):
             self.config_file = config_file
         if price is not None:
             self.price = price
+        if legacy_integration is not None:
+            self.legacy_integration = legacy_integration
 
     @property
     def code_name(self):
@@ -249,6 +254,27 @@ class PluginRow(object):
         """
 
         self._price = price
+
+    @property
+    def legacy_integration(self):
+        """Gets the legacy_integration of this PluginRow.  # noqa: E501
+
+
+        :return: The legacy_integration of this PluginRow.  # noqa: E501
+        :rtype: bool
+        """
+        return self._legacy_integration
+
+    @legacy_integration.setter
+    def legacy_integration(self, legacy_integration):
+        """Sets the legacy_integration of this PluginRow.
+
+
+        :param legacy_integration: The legacy_integration of this PluginRow.  # noqa: E501
+        :type: bool
+        """
+
+        self._legacy_integration = legacy_integration
 
     def to_dict(self):
         """Returns the model properties as a dict"""

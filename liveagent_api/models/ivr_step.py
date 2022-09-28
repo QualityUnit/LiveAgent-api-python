@@ -33,21 +33,27 @@ class IvrStep(object):
     swagger_types = {
         'type': 'str',
         'params': 'str',
-        'choices': 'list[IvrChoice]'
+        'choices': 'list[IvrChoice]',
+        'forward': 'IvrForward',
+        'fetch': 'IvrFetch'
     }
 
     attribute_map = {
         'type': 'type',
         'params': 'params',
-        'choices': 'choices'
+        'choices': 'choices',
+        'forward': 'forward',
+        'fetch': 'fetch'
     }
 
-    def __init__(self, type=None, params=None, choices=None):  # noqa: E501
+    def __init__(self, type=None, params=None, choices=None, forward=None, fetch=None):  # noqa: E501
         """IvrStep - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
         self._params = None
         self._choices = None
+        self._forward = None
+        self._fetch = None
         self.discriminator = None
 
         self.type = type
@@ -55,6 +61,10 @@ class IvrStep(object):
             self.params = params
         if choices is not None:
             self.choices = choices
+        if forward is not None:
+            self.forward = forward
+        if fetch is not None:
+            self.fetch = fetch
 
     @property
     def type(self):
@@ -128,6 +138,48 @@ class IvrStep(object):
         """
 
         self._choices = choices
+
+    @property
+    def forward(self):
+        """Gets the forward of this IvrStep.  # noqa: E501
+
+
+        :return: The forward of this IvrStep.  # noqa: E501
+        :rtype: IvrForward
+        """
+        return self._forward
+
+    @forward.setter
+    def forward(self, forward):
+        """Sets the forward of this IvrStep.
+
+
+        :param forward: The forward of this IvrStep.  # noqa: E501
+        :type: IvrForward
+        """
+
+        self._forward = forward
+
+    @property
+    def fetch(self):
+        """Gets the fetch of this IvrStep.  # noqa: E501
+
+
+        :return: The fetch of this IvrStep.  # noqa: E501
+        :rtype: IvrFetch
+        """
+        return self._fetch
+
+    @fetch.setter
+    def fetch(self, fetch):
+        """Sets the fetch of this IvrStep.
+
+
+        :param fetch: The fetch of this IvrStep.  # noqa: E501
+        :type: IvrFetch
+        """
+
+        self._fetch = fetch
 
     def to_dict(self):
         """Returns the model properties as a dict"""

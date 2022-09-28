@@ -971,7 +971,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_plugind_grid_list**
-> list[PluginRow] get_plugind_grid_list(sort_dir=sort_dir, filters=filters)
+> list[PluginRow] get_plugind_grid_list(plugin_purpose, sort_dir=sort_dir, filters=filters)
 
 Gets plugins  for grid
 
@@ -994,12 +994,13 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
+plugin_purpose = 'plugin_purpose_example' # str | 
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
 filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 
 try:
     # Gets plugins  for grid
-    api_response = api_instance.get_plugind_grid_list(sort_dir=sort_dir, filters=filters)
+    api_response = api_instance.get_plugind_grid_list(plugin_purpose, sort_dir=sort_dir, filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_plugind_grid_list: %s\n" % e)
@@ -1009,6 +1010,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **plugin_purpose** | **str**|  | 
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
  **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
 

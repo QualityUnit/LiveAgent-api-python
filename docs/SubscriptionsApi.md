@@ -7,26 +7,19 @@ Method | HTTP request | Description
 [**change_addons**](SubscriptionsApi.md#change_addons) | **PUT** /subscriptions/{subscriptionId}/addons | Addon change
 [**change_plan**](SubscriptionsApi.md#change_plan) | **POST** /subscriptions/{subscriptionId}/_upgrade | Change plan
 [**get_active_addons**](SubscriptionsApi.md#get_active_addons) | **GET** /subscriptions/{subscriptionId}/addons | Addon list
-[**get_billing_info**](SubscriptionsApi.md#get_billing_info) | **GET** /subscriptions/{subscriptionId}/billingInfo | Billing info
-[**get_billing_metrics**](SubscriptionsApi.md#get_billing_metrics) | **GET** /subscriptions/{subscriptionId}/billingMetrics | Billing metrics
 [**get_billing_status**](SubscriptionsApi.md#get_billing_status) | **GET** /subscriptions/{subscriptionId}/billingStatus | Billing status
 [**get_custom_reseller_upgrade_url**](SubscriptionsApi.md#get_custom_reseller_upgrade_url) | **GET** /subscriptions/{subscriptionId}/upgrade_url | Upgrade Url
 [**get_domain_info**](SubscriptionsApi.md#get_domain_info) | **GET** /subscriptions/{subscriptionId}/domain | Domain info
-[**get_payment_method**](SubscriptionsApi.md#get_payment_method) | **GET** /subscriptions/{subscriptionId}/paymentMethod | Payment method
-[**get_payment_processor**](SubscriptionsApi.md#get_payment_processor) | **GET** /subscriptions/{subscriptionId}/paymentProcessor | Payment processor
 [**get_subscription**](SubscriptionsApi.md#get_subscription) | **GET** /subscriptions/{subscriptionId} | Subscription
 [**get_subscription_attributes**](SubscriptionsApi.md#get_subscription_attributes) | **GET** /subscriptions/{subscriptionId}/attributes | Subscription attribute list
 [**get_subscription_discounts**](SubscriptionsApi.md#get_subscription_discounts) | **GET** /subscriptions/{subscriptionId}/discounts | Subscription discounts
 [**get_subscription_invoices**](SubscriptionsApi.md#get_subscription_invoices) | **GET** /subscriptions/{subscriptionId}/invoices | Subscription invoice list
 [**get_upgrade_variations**](SubscriptionsApi.md#get_upgrade_variations) | **GET** /subscriptions/{subscriptionId}/upgradeVariations | Upgrade variation list
 [**resume_billing**](SubscriptionsApi.md#resume_billing) | **POST** /subscriptions/{subscriptionId}/_cancelStop | Restart billing
-[**set_billing_info**](SubscriptionsApi.md#set_billing_info) | **PUT** /subscriptions/{subscriptionId}/billingInfo | Billing info
 [**set_custom_domain**](SubscriptionsApi.md#set_custom_domain) | **PUT** /subscriptions/{subscriptionId}/custom_domain | Custom domain
-[**set_payment_method**](SubscriptionsApi.md#set_payment_method) | **PUT** /subscriptions/{subscriptionId}/paymentMethod | Payment method
 [**set_subscription_usage**](SubscriptionsApi.md#set_subscription_usage) | **PUT** /subscriptions/{subscriptionId}/usage | Subscription usage
 [**stop_billing**](SubscriptionsApi.md#stop_billing) | **POST** /subscriptions/{subscriptionId}/_stop | Stop billing
 [**update_application**](SubscriptionsApi.md#update_application) | **POST** /subscriptions/{subscriptionId}/_update | Update subscription
-[**validate_billing_info**](SubscriptionsApi.md#validate_billing_info) | **POST** /subscriptions/{subscriptionId}/_validateBillingInfo | Test Billing info
 
 
 # **change_addons**
@@ -204,120 +197,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_billing_info**
-> Customer get_billing_info(subscription_id)
-
-Billing info
-
-Get billing info
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
-subscription_id = 'subscription_id_example' # str | 
-
-try:
-    # Billing info
-    api_response = api_instance.get_billing_info(subscription_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_billing_info: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**|  | 
-
-### Return type
-
-[**Customer**](Customer.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_billing_metrics**
-> list[BillingMetric] get_billing_metrics(subscription_id)
-
-Billing metrics
-
-Get billing metrics
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
-subscription_id = 'subscription_id_example' # str | 
-
-try:
-    # Billing metrics
-    api_response = api_instance.get_billing_metrics(subscription_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_billing_metrics: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**|  | 
-
-### Return type
-
-[**list[BillingMetric]**](BillingMetric.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_billing_status**
 > BillingStatus get_billing_status(subscription_id)
 
@@ -477,124 +356,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Domain**](Domain.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_payment_method**
-> PaymentInfo get_payment_method(subscription_id)
-
-Payment method
-
-Get payment method
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
-subscription_id = 'subscription_id_example' # str | 
-
-try:
-    # Payment method
-    api_response = api_instance.get_payment_method(subscription_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_payment_method: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**|  | 
-
-### Return type
-
-[**PaymentInfo**](PaymentInfo.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_payment_processor**
-> PaymentProcessorType get_payment_processor(subscription_id, payment_type, country=country)
-
-Payment processor
-
-Get payment processor to generate token for when updating payment method
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
-subscription_id = 'subscription_id_example' # str | 
-payment_type = 'payment_type_example' # str | 
-country = 'country_example' # str |  (optional)
-
-try:
-    # Payment processor
-    api_response = api_instance.get_payment_processor(subscription_id, payment_type, country=country)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SubscriptionsApi->get_payment_processor: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**|  | 
- **payment_type** | **str**|  | 
- **country** | **str**|  | [optional] 
-
-### Return type
-
-[**PaymentProcessorType**](PaymentProcessorType.md)
 
 ### Authorization
 
@@ -967,65 +728,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_billing_info**
-> OkResponse set_billing_info(subscription_id, body=body)
-
-Billing info
-
-Update billing info
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
-subscription_id = 'subscription_id_example' # str | 
-body = liveagent_api.BillingInfo() # BillingInfo |  (optional)
-
-try:
-    # Billing info
-    api_response = api_instance.set_billing_info(subscription_id, body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SubscriptionsApi->set_billing_info: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**|  | 
- **body** | [**BillingInfo**](BillingInfo.md)|  | [optional] 
-
-### Return type
-
-[**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **set_custom_domain**
 > OkResponse set_custom_domain(subscription_id, body=body)
 
@@ -1073,65 +775,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **set_payment_method**
-> PaymentInfo set_payment_method(subscription_id, body=body)
-
-Payment method
-
-Update payment method
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
-subscription_id = 'subscription_id_example' # str | 
-body = liveagent_api.PaymentMethod() # PaymentMethod |  (optional)
-
-try:
-    # Payment method
-    api_response = api_instance.set_payment_method(subscription_id, body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SubscriptionsApi->set_payment_method: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**|  | 
- **body** | [**PaymentMethod**](PaymentMethod.md)|  | [optional] 
-
-### Return type
-
-[**PaymentInfo**](PaymentInfo.md)
 
 ### Authorization
 
@@ -1303,65 +946,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**|  | 
-
-### Return type
-
-[**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **validate_billing_info**
-> OkResponse validate_billing_info(subscription_id, body=body)
-
-Test Billing info
-
-Checks if billing info can be updated without issues. Field 'force' in BillingInfo is ignored in this call.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.SubscriptionsApi(liveagent_api.ApiClient(configuration))
-subscription_id = 'subscription_id_example' # str | 
-body = liveagent_api.BillingInfo() # BillingInfo |  (optional)
-
-try:
-    # Test Billing info
-    api_response = api_instance.validate_billing_info(subscription_id, body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SubscriptionsApi->validate_billing_info: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**|  | 
- **body** | [**BillingInfo**](BillingInfo.md)|  | [optional] 
 
 ### Return type
 

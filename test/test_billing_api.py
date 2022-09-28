@@ -36,13 +36,6 @@ class TestBillingApi(unittest.TestCase):
         """
         pass
 
-    def test_get_coupon(self):
-        """Test case for get_coupon
-
-        Coupon  # noqa: E501
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

@@ -114,7 +114,6 @@ Class | Method | HTTP request | Description
 *BansApi* | [**get_bans**](docs/BansApi.md#get_bans) | **GET** /bans | Bans list
 *BansApi* | [**update_ban**](docs/BansApi.md#update_ban) | **PUT** /bans/{banId} | Update ban
 *BillingApi* | [**check_vat**](docs/BillingApi.md#check_vat) | **POST** /billing/_check_vat | Vat validity
-*BillingApi* | [**get_coupon**](docs/BillingApi.md#get_coupon) | **GET** /coupons/{couponCode} | Coupon
 *CallsApi* | [**call_add_message**](docs/CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket
 *CallsApi* | [**call_add_recording**](docs/CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket
 *CallsApi* | [**call_answer**](docs/CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
@@ -150,6 +149,7 @@ Class | Method | HTTP request | Description
 *CannedMessagesApi* | [**get_canned_messages_list**](docs/CannedMessagesApi.md#get_canned_messages_list) | **GET** /canned_messages | Gets list of canned messages
 *CannedMessagesApi* | [**update_canned_message**](docs/CannedMessagesApi.md#update_canned_message) | **PUT** /canned_messages/{cannedMessageId} | Update canned message
 *ChatsApi* | [**get_chats_list**](docs/ChatsApi.md#get_chats_list) | **GET** /chats | Gets list of chats
+*CheckoutTokenApi* | [**get_checkout_token**](docs/CheckoutTokenApi.md#get_checkout_token) | **POST** /checkout/_authorize | Checkout token
 *CompaniesApi* | [**create_company**](docs/CompaniesApi.md#create_company) | **POST** /companies | Create new company
 *CompaniesApi* | [**delete_company**](docs/CompaniesApi.md#delete_company) | **DELETE** /companies/{companyId} | Delete company
 *CompaniesApi* | [**get_companies_list**](docs/CompaniesApi.md#get_companies_list) | **GET** /companies | Gets list of companies
@@ -272,26 +272,19 @@ Class | Method | HTTP request | Description
 *SubscriptionsApi* | [**change_addons**](docs/SubscriptionsApi.md#change_addons) | **PUT** /subscriptions/{subscriptionId}/addons | Addon change
 *SubscriptionsApi* | [**change_plan**](docs/SubscriptionsApi.md#change_plan) | **POST** /subscriptions/{subscriptionId}/_upgrade | Change plan
 *SubscriptionsApi* | [**get_active_addons**](docs/SubscriptionsApi.md#get_active_addons) | **GET** /subscriptions/{subscriptionId}/addons | Addon list
-*SubscriptionsApi* | [**get_billing_info**](docs/SubscriptionsApi.md#get_billing_info) | **GET** /subscriptions/{subscriptionId}/billingInfo | Billing info
-*SubscriptionsApi* | [**get_billing_metrics**](docs/SubscriptionsApi.md#get_billing_metrics) | **GET** /subscriptions/{subscriptionId}/billingMetrics | Billing metrics
 *SubscriptionsApi* | [**get_billing_status**](docs/SubscriptionsApi.md#get_billing_status) | **GET** /subscriptions/{subscriptionId}/billingStatus | Billing status
 *SubscriptionsApi* | [**get_custom_reseller_upgrade_url**](docs/SubscriptionsApi.md#get_custom_reseller_upgrade_url) | **GET** /subscriptions/{subscriptionId}/upgrade_url | Upgrade Url
 *SubscriptionsApi* | [**get_domain_info**](docs/SubscriptionsApi.md#get_domain_info) | **GET** /subscriptions/{subscriptionId}/domain | Domain info
-*SubscriptionsApi* | [**get_payment_method**](docs/SubscriptionsApi.md#get_payment_method) | **GET** /subscriptions/{subscriptionId}/paymentMethod | Payment method
-*SubscriptionsApi* | [**get_payment_processor**](docs/SubscriptionsApi.md#get_payment_processor) | **GET** /subscriptions/{subscriptionId}/paymentProcessor | Payment processor
 *SubscriptionsApi* | [**get_subscription**](docs/SubscriptionsApi.md#get_subscription) | **GET** /subscriptions/{subscriptionId} | Subscription
 *SubscriptionsApi* | [**get_subscription_attributes**](docs/SubscriptionsApi.md#get_subscription_attributes) | **GET** /subscriptions/{subscriptionId}/attributes | Subscription attribute list
 *SubscriptionsApi* | [**get_subscription_discounts**](docs/SubscriptionsApi.md#get_subscription_discounts) | **GET** /subscriptions/{subscriptionId}/discounts | Subscription discounts
 *SubscriptionsApi* | [**get_subscription_invoices**](docs/SubscriptionsApi.md#get_subscription_invoices) | **GET** /subscriptions/{subscriptionId}/invoices | Subscription invoice list
 *SubscriptionsApi* | [**get_upgrade_variations**](docs/SubscriptionsApi.md#get_upgrade_variations) | **GET** /subscriptions/{subscriptionId}/upgradeVariations | Upgrade variation list
 *SubscriptionsApi* | [**resume_billing**](docs/SubscriptionsApi.md#resume_billing) | **POST** /subscriptions/{subscriptionId}/_cancelStop | Restart billing
-*SubscriptionsApi* | [**set_billing_info**](docs/SubscriptionsApi.md#set_billing_info) | **PUT** /subscriptions/{subscriptionId}/billingInfo | Billing info
 *SubscriptionsApi* | [**set_custom_domain**](docs/SubscriptionsApi.md#set_custom_domain) | **PUT** /subscriptions/{subscriptionId}/custom_domain | Custom domain
-*SubscriptionsApi* | [**set_payment_method**](docs/SubscriptionsApi.md#set_payment_method) | **PUT** /subscriptions/{subscriptionId}/paymentMethod | Payment method
 *SubscriptionsApi* | [**set_subscription_usage**](docs/SubscriptionsApi.md#set_subscription_usage) | **PUT** /subscriptions/{subscriptionId}/usage | Subscription usage
 *SubscriptionsApi* | [**stop_billing**](docs/SubscriptionsApi.md#stop_billing) | **POST** /subscriptions/{subscriptionId}/_stop | Stop billing
 *SubscriptionsApi* | [**update_application**](docs/SubscriptionsApi.md#update_application) | **POST** /subscriptions/{subscriptionId}/_update | Update subscription
-*SubscriptionsApi* | [**validate_billing_info**](docs/SubscriptionsApi.md#validate_billing_info) | **POST** /subscriptions/{subscriptionId}/_validateBillingInfo | Test Billing info
 *TagsApi* | [**create_tag**](docs/TagsApi.md#create_tag) | **POST** /tags | Create tag
 *TagsApi* | [**delete_tag**](docs/TagsApi.md#delete_tag) | **DELETE** /tags/{tagId} | Delete tag
 *TagsApi* | [**get_tag_by_id**](docs/TagsApi.md#get_tag_by_id) | **GET** /tags/{tagId} | Get tag by tag id
@@ -341,7 +334,6 @@ Class | Method | HTTP request | Description
  - [AvailablePrefix](docs/AvailablePrefix.md)
  - [Ban](docs/Ban.md)
  - [Batch](docs/Batch.md)
- - [BillingInfo](docs/BillingInfo.md)
  - [BillingMetric](docs/BillingMetric.md)
  - [BillingStatus](docs/BillingStatus.md)
  - [Call](docs/Call.md)
@@ -354,6 +346,8 @@ Class | Method | HTTP request | Description
  - [CannedMessage](docs/CannedMessage.md)
  - [ChatInformation](docs/ChatInformation.md)
  - [ChatRow](docs/ChatRow.md)
+ - [CheckoutParameters](docs/CheckoutParameters.md)
+ - [CheckoutToken](docs/CheckoutToken.md)
  - [CompanyListItem](docs/CompanyListItem.md)
  - [CompanyRequest](docs/CompanyRequest.md)
  - [ContactListItem](docs/ContactListItem.md)
@@ -361,7 +355,6 @@ Class | Method | HTTP request | Description
  - [ContactRequest](docs/ContactRequest.md)
  - [Count](docs/Count.md)
  - [Country](docs/Country.md)
- - [Coupon](docs/Coupon.md)
  - [CustomButton](docs/CustomButton.md)
  - [CustomDomain](docs/CustomDomain.md)
  - [CustomFields](docs/CustomFields.md)
@@ -403,9 +396,7 @@ Class | Method | HTTP request | Description
  - [MessageGroup](docs/MessageGroup.md)
  - [OkResponse](docs/OkResponse.md)
  - [PageVisit](docs/PageVisit.md)
- - [PaymentInfo](docs/PaymentInfo.md)
  - [PaymentMethod](docs/PaymentMethod.md)
- - [PaymentProcessorType](docs/PaymentProcessorType.md)
  - [PhoneDevice](docs/PhoneDevice.md)
  - [PhoneNumber](docs/PhoneNumber.md)
  - [PluginRow](docs/PluginRow.md)
