@@ -12,6 +12,8 @@ Method | HTTP request | Description
 [**get_chats_grid_list_count**](GridApi.md#get_chats_grid_list_count) | **GET** /grid/chats/count | Gets count of chats for chats grid
 [**get_chats_sla_log_grid_list**](GridApi.md#get_chats_sla_log_grid_list) | **GET** /grid/chats/sla | Gets list of chat slas for grid
 [**get_chats_sla_log_grid_list_count**](GridApi.md#get_chats_sla_log_grid_list_count) | **GET** /grid/chats/sla/count | Gets count of chats for chats sla grid
+[**get_contact_widgets_count**](GridApi.md#get_contact_widgets_count) | **GET** /grid/contact-widgets/count | Gets count for contact widgets
+[**get_contact_widgets_list**](GridApi.md#get_contact_widgets_list) | **GET** /grid/contact-widgets | Gets contact widget for grid
 [**get_customer_groups_grid_list**](GridApi.md#get_customer_groups_grid_list) | **GET** /grid/customer_groups | Gets list of customer groups for grid
 [**get_departmens_grid_list_count**](GridApi.md#get_departmens_grid_list_count) | **GET** /grid/departments/count | Gets count of departments for department grid
 [**get_departments_grid_list**](GridApi.md#get_departments_grid_list) | **GET** /grid/departments | Gets list of departments for grid
@@ -492,6 +494,120 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Count**](Count.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_contact_widgets_count**
+> Count get_contact_widgets_count(filters=filters)
+
+Gets count for contact widgets
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
+
+try:
+    # Gets count for contact widgets
+    api_response = api_instance.get_contact_widgets_count(filters=filters)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GridApi->get_contact_widgets_count: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
+
+### Return type
+
+[**Count**](Count.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_contact_widgets_list**
+> list[ContactWidgetRow] get_contact_widgets_list(per_page=per_page, filters=filters, cursor=cursor)
+
+Gets contact widget for grid
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
+per_page = 10 # int | Results per page. (optional) (default to 10)
+filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
+cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
+
+try:
+    # Gets contact widget for grid
+    api_response = api_instance.get_contact_widgets_list(per_page=per_page, filters=filters, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GridApi->get_contact_widgets_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **per_page** | **int**| Results per page. | [optional] [default to 10]
+ **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
+ **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
+
+### Return type
+
+[**list[ContactWidgetRow]**](ContactWidgetRow.md)
 
 ### Authorization
 

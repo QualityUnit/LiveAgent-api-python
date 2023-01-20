@@ -211,6 +211,8 @@ Class | Method | HTTP request | Description
 *GridApi* | [**get_chats_grid_list_count**](docs/GridApi.md#get_chats_grid_list_count) | **GET** /grid/chats/count | Gets count of chats for chats grid
 *GridApi* | [**get_chats_sla_log_grid_list**](docs/GridApi.md#get_chats_sla_log_grid_list) | **GET** /grid/chats/sla | Gets list of chat slas for grid
 *GridApi* | [**get_chats_sla_log_grid_list_count**](docs/GridApi.md#get_chats_sla_log_grid_list_count) | **GET** /grid/chats/sla/count | Gets count of chats for chats sla grid
+*GridApi* | [**get_contact_widgets_count**](docs/GridApi.md#get_contact_widgets_count) | **GET** /grid/contact-widgets/count | Gets count for contact widgets
+*GridApi* | [**get_contact_widgets_list**](docs/GridApi.md#get_contact_widgets_list) | **GET** /grid/contact-widgets | Gets contact widget for grid
 *GridApi* | [**get_customer_groups_grid_list**](docs/GridApi.md#get_customer_groups_grid_list) | **GET** /grid/customer_groups | Gets list of customer groups for grid
 *GridApi* | [**get_departmens_grid_list_count**](docs/GridApi.md#get_departmens_grid_list_count) | **GET** /grid/departments/count | Gets count of departments for department grid
 *GridApi* | [**get_departments_grid_list**](docs/GridApi.md#get_departments_grid_list) | **GET** /grid/departments | Gets list of departments for grid
@@ -353,6 +355,7 @@ Class | Method | HTTP request | Description
  - [ContactListItem](docs/ContactListItem.md)
  - [ContactPhone](docs/ContactPhone.md)
  - [ContactRequest](docs/ContactRequest.md)
+ - [ContactWidgetRow](docs/ContactWidgetRow.md)
  - [Count](docs/Count.md)
  - [Country](docs/Country.md)
  - [CustomButton](docs/CustomButton.md)
@@ -522,6 +525,7 @@ Class | Method | HTTP request | Description
  - **contact.read**: Read contact
  - **contact.edit**: Edit contact
  - **contact.delete**: Delete contact
+ - **button.read**: Read chat buttons
 
 
 ## Author
