@@ -33,27 +33,32 @@ class IvrForward(object):
     swagger_types = {
         'number': 'str',
         'prefix': 'str',
-        'on_error': 'str'
+        'on_error': 'str',
+        'pass_original_caller_id': 'bool'
     }
 
     attribute_map = {
         'number': 'number',
         'prefix': 'prefix',
-        'on_error': 'onError'
+        'on_error': 'onError',
+        'pass_original_caller_id': 'passOriginalCallerId'
     }
 
-    def __init__(self, number=None, prefix=None, on_error=None):  # noqa: E501
+    def __init__(self, number=None, prefix=None, on_error=None, pass_original_caller_id=False):  # noqa: E501
         """IvrForward - a model defined in Swagger"""  # noqa: E501
 
         self._number = None
         self._prefix = None
         self._on_error = None
+        self._pass_original_caller_id = None
         self.discriminator = None
 
         self.number = number
         self.prefix = prefix
         if on_error is not None:
             self.on_error = on_error
+        if pass_original_caller_id is not None:
+            self.pass_original_caller_id = pass_original_caller_id
 
     @property
     def number(self):
@@ -121,6 +126,27 @@ class IvrForward(object):
         """
 
         self._on_error = on_error
+
+    @property
+    def pass_original_caller_id(self):
+        """Gets the pass_original_caller_id of this IvrForward.  # noqa: E501
+
+
+        :return: The pass_original_caller_id of this IvrForward.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pass_original_caller_id
+
+    @pass_original_caller_id.setter
+    def pass_original_caller_id(self, pass_original_caller_id):
+        """Sets the pass_original_caller_id of this IvrForward.
+
+
+        :param pass_original_caller_id: The pass_original_caller_id of this IvrForward.  # noqa: E501
+        :type: bool
+        """
+
+        self._pass_original_caller_id = pass_original_caller_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
