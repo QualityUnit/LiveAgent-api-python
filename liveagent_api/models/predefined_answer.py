@@ -62,17 +62,16 @@ class PredefinedAnswer(object):
         self._format = None
         self.discriminator = None
 
-        self.id = id
+        if id is not None:
+            self.id = id
         if userid is not None:
             self.userid = userid
         if departmentid is not None:
             self.departmentid = departmentid
-        if name is not None:
-            self.name = name
+        self.name = name
         if subject is not None:
             self.subject = subject
-        if body is not None:
-            self.body = body
+        self.body = body
         if format is not None:
             self.format = format
 
@@ -94,8 +93,6 @@ class PredefinedAnswer(object):
         :param id: The id of this PredefinedAnswer.  # noqa: E501
         :type: str
         """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
 
@@ -159,6 +156,10 @@ class PredefinedAnswer(object):
         :param name: The name of this PredefinedAnswer.  # noqa: E501
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+        if name is not None and len(name) < 1:
+            raise ValueError("Invalid value for `name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._name = name
 
@@ -201,6 +202,10 @@ class PredefinedAnswer(object):
         :param body: The body of this PredefinedAnswer.  # noqa: E501
         :type: str
         """
+        if body is None:
+            raise ValueError("Invalid value for `body`, must not be `None`")  # noqa: E501
+        if body is not None and len(body) < 1:
+            raise ValueError("Invalid value for `body`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._body = body
 

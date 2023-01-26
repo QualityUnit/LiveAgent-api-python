@@ -56,13 +56,13 @@ class CannedMessage(object):
         self._keywords = None
         self.discriminator = None
 
-        self.id = id
+        if id is not None:
+            self.id = id
         if userid is not None:
             self.userid = userid
         if departmentid is not None:
             self.departmentid = departmentid
-        if messagetext is not None:
-            self.messagetext = messagetext
+        self.messagetext = messagetext
         if keywords is not None:
             self.keywords = keywords
 
@@ -84,8 +84,6 @@ class CannedMessage(object):
         :param id: The id of this CannedMessage.  # noqa: E501
         :type: str
         """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
 
@@ -149,6 +147,10 @@ class CannedMessage(object):
         :param messagetext: The messagetext of this CannedMessage.  # noqa: E501
         :type: str
         """
+        if messagetext is None:
+            raise ValueError("Invalid value for `messagetext`, must not be `None`")  # noqa: E501
+        if messagetext is not None and len(messagetext) < 1:
+            raise ValueError("Invalid value for `messagetext`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._messagetext = messagetext
 

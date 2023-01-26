@@ -97,6 +97,7 @@ from liveagent_api.models.company_request import CompanyRequest
 from liveagent_api.models.contact_list_item import ContactListItem
 from liveagent_api.models.contact_phone import ContactPhone
 from liveagent_api.models.contact_request import ContactRequest
+from liveagent_api.models.contact_widget_row import ContactWidgetRow
 from liveagent_api.models.count import Count
 from liveagent_api.models.country import Country
 from liveagent_api.models.custom_button import CustomButton

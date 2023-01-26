@@ -31,45 +31,40 @@ class LanguageRow(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'languageid': 'str',
         'name': 'str',
         'code': 'str',
         'eng_name': 'str',
         'translated': 'str',
         'is_default': 'str',
         'active': 'str',
-        'imported': 'str',
-        'is_custom': 'str'
+        'is_custom': 'str',
+        'is_built_in': 'bool'
     }
 
     attribute_map = {
-        'languageid': 'languageid',
         'name': 'name',
         'code': 'code',
         'eng_name': 'eng_name',
         'translated': 'translated',
         'is_default': 'is_default',
         'active': 'active',
-        'imported': 'imported',
-        'is_custom': 'is_custom'
+        'is_custom': 'is_custom',
+        'is_built_in': 'is_builtIn'
     }
 
-    def __init__(self, languageid=None, name=None, code=None, eng_name=None, translated=None, is_default=None, active=None, imported=None, is_custom=None):  # noqa: E501
+    def __init__(self, name=None, code=None, eng_name=None, translated=None, is_default=None, active=None, is_custom=None, is_built_in=None):  # noqa: E501
         """LanguageRow - a model defined in Swagger"""  # noqa: E501
 
-        self._languageid = None
         self._name = None
         self._code = None
         self._eng_name = None
         self._translated = None
         self._is_default = None
         self._active = None
-        self._imported = None
         self._is_custom = None
+        self._is_built_in = None
         self.discriminator = None
 
-        if languageid is not None:
-            self.languageid = languageid
         if name is not None:
             self.name = name
         if code is not None:
@@ -82,31 +77,10 @@ class LanguageRow(object):
             self.is_default = is_default
         if active is not None:
             self.active = active
-        if imported is not None:
-            self.imported = imported
         if is_custom is not None:
             self.is_custom = is_custom
-
-    @property
-    def languageid(self):
-        """Gets the languageid of this LanguageRow.  # noqa: E501
-
-
-        :return: The languageid of this LanguageRow.  # noqa: E501
-        :rtype: str
-        """
-        return self._languageid
-
-    @languageid.setter
-    def languageid(self, languageid):
-        """Sets the languageid of this LanguageRow.
-
-
-        :param languageid: The languageid of this LanguageRow.  # noqa: E501
-        :type: str
-        """
-
-        self._languageid = languageid
+        if is_built_in is not None:
+            self.is_built_in = is_built_in
 
     @property
     def name(self):
@@ -235,27 +209,6 @@ class LanguageRow(object):
         self._active = active
 
     @property
-    def imported(self):
-        """Gets the imported of this LanguageRow.  # noqa: E501
-
-
-        :return: The imported of this LanguageRow.  # noqa: E501
-        :rtype: str
-        """
-        return self._imported
-
-    @imported.setter
-    def imported(self, imported):
-        """Sets the imported of this LanguageRow.
-
-
-        :param imported: The imported of this LanguageRow.  # noqa: E501
-        :type: str
-        """
-
-        self._imported = imported
-
-    @property
     def is_custom(self):
         """Gets the is_custom of this LanguageRow.  # noqa: E501
 
@@ -275,6 +228,27 @@ class LanguageRow(object):
         """
 
         self._is_custom = is_custom
+
+    @property
+    def is_built_in(self):
+        """Gets the is_built_in of this LanguageRow.  # noqa: E501
+
+
+        :return: The is_built_in of this LanguageRow.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_built_in
+
+    @is_built_in.setter
+    def is_built_in(self, is_built_in):
+        """Sets the is_built_in of this LanguageRow.
+
+
+        :param is_built_in: The is_built_in of this LanguageRow.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_built_in = is_built_in
 
     def to_dict(self):
         """Returns the model properties as a dict"""

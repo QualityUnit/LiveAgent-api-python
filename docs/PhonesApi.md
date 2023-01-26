@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_phone**
-> PhoneDevice create_phone(number, type=type, name=name, trunk_id=trunk_id, agent_id=agent_id)
+> PhoneDevice create_phone(number, type=type, name=name, trunk_id=trunk_id, agent_id=agent_id, pass_original_caller_id=pass_original_caller_id)
 
 Creates external phone
 
@@ -41,10 +41,11 @@ type = 'S' # str | S - SIP phone, E - PSTN phone (optional) (default to S)
 name = 'name_example' # str |  (optional)
 trunk_id = 8.14 # float |  (optional)
 agent_id = 'agent_id_example' # str |  (optional)
+pass_original_caller_id = 'pass_original_caller_id_example' # str |  (optional)
 
 try:
     # Creates external phone
-    api_response = api_instance.create_phone(number, type=type, name=name, trunk_id=trunk_id, agent_id=agent_id)
+    api_response = api_instance.create_phone(number, type=type, name=name, trunk_id=trunk_id, agent_id=agent_id, pass_original_caller_id=pass_original_caller_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PhonesApi->create_phone: %s\n" % e)
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
  **name** | **str**|  | [optional] 
  **trunk_id** | **float**|  | [optional] 
  **agent_id** | **str**|  | [optional] 
+ **pass_original_caller_id** | **str**|  | [optional] 
 
 ### Return type
 
@@ -253,7 +255,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_phone**
-> PhoneDevice update_phone(phone_id, number=number, name=name, trunk_id=trunk_id)
+> PhoneDevice update_phone(phone_id, number=number, name=name, trunk_id=trunk_id, pass_original_caller_id=pass_original_caller_id)
 
 Update phone
 
@@ -280,10 +282,11 @@ phone_id = 'phone_id_example' # str |
 number = 'number_example' # str |  (optional)
 name = 'name_example' # str |  (optional)
 trunk_id = 56 # int |  (optional)
+pass_original_caller_id = 'pass_original_caller_id_example' # str |  (optional)
 
 try:
     # Update phone
-    api_response = api_instance.update_phone(phone_id, number=number, name=name, trunk_id=trunk_id)
+    api_response = api_instance.update_phone(phone_id, number=number, name=name, trunk_id=trunk_id, pass_original_caller_id=pass_original_caller_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PhonesApi->update_phone: %s\n" % e)
@@ -297,6 +300,7 @@ Name | Type | Description  | Notes
  **number** | **str**|  | [optional] 
  **name** | **str**|  | [optional] 
  **trunk_id** | **int**|  | [optional] 
+ **pass_original_caller_id** | **str**|  | [optional] 
 
 ### Return type
 

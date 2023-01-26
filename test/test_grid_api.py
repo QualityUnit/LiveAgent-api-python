@@ -85,6 +85,20 @@ class TestGridApi(unittest.TestCase):
         """
         pass
 
+    def test_get_contact_widgets_count(self):
+        """Test case for get_contact_widgets_count
+
+        Gets count for contact widgets  # noqa: E501
+        """
+        pass
+
+    def test_get_contact_widgets_list(self):
+        """Test case for get_contact_widgets_list
+
+        Gets contact widget for grid  # noqa: E501
+        """
+        pass
+
     def test_get_customer_groups_grid_list(self):
         """Test case for get_customer_groups_grid_list
 

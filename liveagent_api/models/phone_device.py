@@ -43,6 +43,7 @@ class PhoneDevice(object):
         'user_agent': 'str',
         'agent_id': 'str',
         'trunk_id': 'float',
+        'pass_original_caller_id': 'str',
         'params': 'str'
     }
 
@@ -59,10 +60,11 @@ class PhoneDevice(object):
         'user_agent': 'user_agent',
         'agent_id': 'agent_id',
         'trunk_id': 'trunk_id',
+        'pass_original_caller_id': 'pass_original_caller_id',
         'params': 'params'
     }
 
-    def __init__(self, id=None, type=None, number=None, name=None, reg_status=None, connection_host=None, connection_user=None, connection_pass=None, last_modified=None, user_agent=None, agent_id=None, trunk_id=None, params=None):  # noqa: E501
+    def __init__(self, id=None, type=None, number=None, name=None, reg_status=None, connection_host=None, connection_user=None, connection_pass=None, last_modified=None, user_agent=None, agent_id=None, trunk_id=None, pass_original_caller_id=None, params=None):  # noqa: E501
         """PhoneDevice - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -77,6 +79,7 @@ class PhoneDevice(object):
         self._user_agent = None
         self._agent_id = None
         self._trunk_id = None
+        self._pass_original_caller_id = None
         self._params = None
         self.discriminator = None
 
@@ -102,6 +105,8 @@ class PhoneDevice(object):
             self.agent_id = agent_id
         if trunk_id is not None:
             self.trunk_id = trunk_id
+        if pass_original_caller_id is not None:
+            self.pass_original_caller_id = pass_original_caller_id
         if params is not None:
             self.params = params
 
@@ -368,6 +373,27 @@ class PhoneDevice(object):
         """
 
         self._trunk_id = trunk_id
+
+    @property
+    def pass_original_caller_id(self):
+        """Gets the pass_original_caller_id of this PhoneDevice.  # noqa: E501
+
+
+        :return: The pass_original_caller_id of this PhoneDevice.  # noqa: E501
+        :rtype: str
+        """
+        return self._pass_original_caller_id
+
+    @pass_original_caller_id.setter
+    def pass_original_caller_id(self, pass_original_caller_id):
+        """Sets the pass_original_caller_id of this PhoneDevice.
+
+
+        :param pass_original_caller_id: The pass_original_caller_id of this PhoneDevice.  # noqa: E501
+        :type: str
+        """
+
+        self._pass_original_caller_id = pass_original_caller_id
 
     @property
     def params(self):
