@@ -7,7 +7,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    compile "io.swagger:swagger-codegen:2.4.13"
-    runtime "io.swagger:swagger-codegen-cli:2.4.13"
+    compile "io.swagger:swagger-codegen:2.4.31"
+    runtime "io.swagger:swagger-codegen-cli:2.4.31"
 }
 apply from: "apigen.gradle"
