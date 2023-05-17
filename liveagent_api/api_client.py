@@ -65,6 +65,7 @@ class ApiClient(object):
         if configuration is None:
             configuration = Configuration()
         self.configuration = configuration
+        self.client_side_validation = configuration.client_side_validation
 
         # Use the pool property to lazily initialize the ThreadPool.
         self._pool = None
