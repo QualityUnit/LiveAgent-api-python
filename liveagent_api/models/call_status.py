@@ -32,25 +32,30 @@ class CallStatus(object):
     """
     swagger_types = {
         'status': 'str',
+        'manually_picked_up': 'bool',
         'agent': 'CallAgent',
         'queue_position': 'float'
     }
 
     attribute_map = {
         'status': 'status',
+        'manually_picked_up': 'manually_picked_up',
         'agent': 'agent',
         'queue_position': 'queue_position'
     }
 
-    def __init__(self, status=None, agent=None, queue_position=None):  # noqa: E501
+    def __init__(self, status=None, manually_picked_up=False, agent=None, queue_position=None):  # noqa: E501
         """CallStatus - a model defined in Swagger"""  # noqa: E501
 
         self._status = None
+        self._manually_picked_up = None
         self._agent = None
         self._queue_position = None
         self.discriminator = None
 
         self.status = status
+        if manually_picked_up is not None:
+            self.manually_picked_up = manually_picked_up
         if agent is not None:
             self.agent = agent
         if queue_position is not None:
@@ -86,6 +91,29 @@ class CallStatus(object):
             )
 
         self._status = status
+
+    @property
+    def manually_picked_up(self):
+        """Gets the manually_picked_up of this CallStatus.  # noqa: E501
+
+        If the call was picked up from the call queue manually by agent.  # noqa: E501
+
+        :return: The manually_picked_up of this CallStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._manually_picked_up
+
+    @manually_picked_up.setter
+    def manually_picked_up(self, manually_picked_up):
+        """Sets the manually_picked_up of this CallStatus.
+
+        If the call was picked up from the call queue manually by agent.  # noqa: E501
+
+        :param manually_picked_up: The manually_picked_up of this CallStatus.  # noqa: E501
+        :type: bool
+        """
+
+        self._manually_picked_up = manually_picked_up
 
     @property
     def agent(self):
