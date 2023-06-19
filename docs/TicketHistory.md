@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **conversation_id** | **str** |  | [optional] 
 **conversation_code** | **str** |  | [optional] 
 **department_id** | **str** |  | [optional] 
+**department_name** | **str** |  | [optional] 
 **agent_id** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **date_from** | **str** |  | [optional] 

@@ -1,18 +1,18 @@
-# liveagent_api.CheckoutTokenApi
+# liveagent_api.MyAccountApi
 
 All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_checkout_token**](CheckoutTokenApi.md#get_checkout_token) | **POST** /checkout/_authorize | Checkout token
+[**get_my_account_link**](MyAccountApi.md#get_my_account_link) | **GET** /my_account/_link | Link to &#39;My account&#39;
 
 
-# **get_checkout_token**
-> CheckoutToken get_checkout_token(parameters=parameters)
+# **get_my_account_link**
+> MyAccountLink get_my_account_link()
 
-Checkout token
+Link to 'My account'
 
-Returns generated checkout token
+Returns the created link to 'My account'
 
 ### Example
 ```python
@@ -32,26 +32,22 @@ configuration = liveagent_api.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
-api_instance = liveagent_api.CheckoutTokenApi(liveagent_api.ApiClient(configuration))
-parameters = liveagent_api.CheckoutParameters() # CheckoutParameters |  (optional)
+api_instance = liveagent_api.MyAccountApi(liveagent_api.ApiClient(configuration))
 
 try:
-    # Checkout token
-    api_response = api_instance.get_checkout_token(parameters=parameters)
+    # Link to 'My account'
+    api_response = api_instance.get_my_account_link()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CheckoutTokenApi->get_checkout_token: %s\n" % e)
+    print("Exception when calling MyAccountApi->get_my_account_link: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **parameters** | [**CheckoutParameters**](CheckoutParameters.md)|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**CheckoutToken**](CheckoutToken.md)
+[**MyAccountLink**](MyAccountLink.md)
 
 ### Authorization
 

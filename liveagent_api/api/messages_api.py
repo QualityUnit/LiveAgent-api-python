@@ -133,6 +133,7 @@ class MessagesApi(object):
     def get_message(self, message_id, **kwargs):  # noqa: E501
         """Get message  # noqa: E501
 
+        Only for legacy messages that can be loaded from qu_la_messages  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_message(message_id, async_req=True)
@@ -156,6 +157,7 @@ class MessagesApi(object):
     def get_message_with_http_info(self, message_id, **kwargs):  # noqa: E501
         """Get message  # noqa: E501
 
+        Only for legacy messages that can be loaded from qu_la_messages  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_message_with_http_info(message_id, async_req=True)

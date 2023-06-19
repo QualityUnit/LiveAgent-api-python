@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import liveagent_api
-from liveagent_api.models.invoice_list import InvoiceList  # noqa: E501
+from liveagent_api.models.my_account_link import MyAccountLink  # noqa: E501
 from liveagent_api.rest import ApiException
 
 
-class TestInvoiceList(unittest.TestCase):
-    """InvoiceList unit test stubs"""
+class TestMyAccountLink(unittest.TestCase):
+    """MyAccountLink unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestInvoiceList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInvoiceList(self):
-        """Test InvoiceList"""
+    def testMyAccountLink(self):
+        """Test MyAccountLink"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = liveagent_api.models.invoice_list.InvoiceList()  # noqa: E501
+        # model = liveagent_api.models.my_account_link.MyAccountLink()  # noqa: E501
         pass
 
 

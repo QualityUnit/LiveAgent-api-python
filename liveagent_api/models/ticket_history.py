@@ -35,6 +35,7 @@ class TicketHistory(object):
         'conversation_id': 'str',
         'conversation_code': 'str',
         'department_id': 'str',
+        'department_name': 'str',
         'agent_id': 'str',
         'status': 'str',
         'date_from': 'str',
@@ -47,6 +48,7 @@ class TicketHistory(object):
         'conversation_id': 'conversation_id',
         'conversation_code': 'conversation_code',
         'department_id': 'department_id',
+        'department_name': 'department_name',
         'agent_id': 'agent_id',
         'status': 'status',
         'date_from': 'date_from',
@@ -54,13 +56,14 @@ class TicketHistory(object):
         'elapsed_time': 'elapsed_time'
     }
 
-    def __init__(self, id=None, conversation_id=None, conversation_code=None, department_id=None, agent_id=None, status=None, date_from=None, date_to=None, elapsed_time=None):  # noqa: E501
+    def __init__(self, id=None, conversation_id=None, conversation_code=None, department_id=None, department_name=None, agent_id=None, status=None, date_from=None, date_to=None, elapsed_time=None):  # noqa: E501
         """TicketHistory - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._conversation_id = None
         self._conversation_code = None
         self._department_id = None
+        self._department_name = None
         self._agent_id = None
         self._status = None
         self._date_from = None
@@ -76,6 +79,8 @@ class TicketHistory(object):
             self.conversation_code = conversation_code
         if department_id is not None:
             self.department_id = department_id
+        if department_name is not None:
+            self.department_name = department_name
         if agent_id is not None:
             self.agent_id = agent_id
         if status is not None:
@@ -170,6 +175,27 @@ class TicketHistory(object):
         """
 
         self._department_id = department_id
+
+    @property
+    def department_name(self):
+        """Gets the department_name of this TicketHistory.  # noqa: E501
+
+
+        :return: The department_name of this TicketHistory.  # noqa: E501
+        :rtype: str
+        """
+        return self._department_name
+
+    @department_name.setter
+    def department_name(self, department_name):
+        """Sets the department_name of this TicketHistory.
+
+
+        :param department_name: The department_name of this TicketHistory.  # noqa: E501
+        :type: str
+        """
+
+        self._department_name = department_name
 
     @property
     def agent_id(self):
