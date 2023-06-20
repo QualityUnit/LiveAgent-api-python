@@ -113,7 +113,6 @@ Class | Method | HTTP request | Description
 *BansApi* | [**get_ban**](docs/BansApi.md#get_ban) | **GET** /bans/{banId} | Get ban item
 *BansApi* | [**get_bans**](docs/BansApi.md#get_bans) | **GET** /bans | Bans list
 *BansApi* | [**update_ban**](docs/BansApi.md#update_ban) | **PUT** /bans/{banId} | Update ban
-*BillingApi* | [**check_vat**](docs/BillingApi.md#check_vat) | **POST** /billing/_check_vat | Vat validity
 *CallsApi* | [**call_add_message**](docs/CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket
 *CallsApi* | [**call_add_recording**](docs/CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket
 *CallsApi* | [**call_answer**](docs/CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
@@ -149,7 +148,6 @@ Class | Method | HTTP request | Description
 *CannedMessagesApi* | [**get_canned_messages_list**](docs/CannedMessagesApi.md#get_canned_messages_list) | **GET** /canned_messages | Gets list of canned messages
 *CannedMessagesApi* | [**update_canned_message**](docs/CannedMessagesApi.md#update_canned_message) | **PUT** /canned_messages/{cannedMessageId} | Update canned message
 *ChatsApi* | [**get_chats_list**](docs/ChatsApi.md#get_chats_list) | **GET** /chats | Gets list of chats
-*CheckoutTokenApi* | [**get_checkout_token**](docs/CheckoutTokenApi.md#get_checkout_token) | **POST** /checkout/_authorize | Checkout token
 *CompaniesApi* | [**create_company**](docs/CompaniesApi.md#create_company) | **POST** /companies | Create new company
 *CompaniesApi* | [**delete_company**](docs/CompaniesApi.md#delete_company) | **DELETE** /companies/{companyId} | Delete company
 *CompaniesApi* | [**get_companies_list**](docs/CompaniesApi.md#get_companies_list) | **GET** /companies | Gets list of companies
@@ -167,7 +165,6 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**register_contact**](docs/ContactsApi.md#register_contact) | **PUT** /contacts/{contactId}/_register | Register contact
 *ContactsApi* | [**unregister_contact**](docs/ContactsApi.md#unregister_contact) | **DELETE** /contacts/{contactId}/_unregister | Unregister contact
 *ContactsApi* | [**update_contact**](docs/ContactsApi.md#update_contact) | **PUT** /contacts/{contactId} | Update whole contact
-*CountriesApi* | [**get_countries**](docs/CountriesApi.md#get_countries) | **GET** /countries | Country list
 *CustomButtonsApi* | [**create_custom_button**](docs/CustomButtonsApi.md#create_custom_button) | **POST** /custom_buttons | Create new custom button
 *CustomButtonsApi* | [**delete_custom_button**](docs/CustomButtonsApi.md#delete_custom_button) | **DELETE** /custom_buttons/{customButtonId} | Delete custom button
 *CustomButtonsApi* | [**get_custom_button**](docs/CustomButtonsApi.md#get_custom_button) | **GET** /custom_buttons/{customButtonId} | Get custom button by id
@@ -235,10 +232,9 @@ Class | Method | HTTP request | Description
 *GroupsApi* | [**get_groups_list**](docs/GroupsApi.md#get_groups_list) | **GET** /groups | Gets list of contact groups
 *GroupsApi* | [**update_group**](docs/GroupsApi.md#update_group) | **PUT** /groups/{groupId} | Update contact group
 *HostingApi* | [**get_info**](docs/HostingApi.md#get_info) | **GET** /hosting/info | Used hosting system info
-*InvoicesApi* | [**dowload_invoice**](docs/InvoicesApi.md#dowload_invoice) | **POST** /invoices/{invoiceNumber}/_download | Download invoice
-*InvoicesApi* | [**get_invoices**](docs/InvoicesApi.md#get_invoices) | **GET** /invoices | Invoice list
 *MessagesApi* | [**delete_message**](docs/MessagesApi.md#delete_message) | **DELETE** /messages/{messageId} | Delete message
 *MessagesApi* | [**get_message**](docs/MessagesApi.md#get_message) | **GET** /messages/{messageId} | Get message
+*MyAccountApi* | [**get_my_account_link**](docs/MyAccountApi.md#get_my_account_link) | **GET** /my_account/_link | Link to &#39;My account&#39;
 *PageVisitsApi* | [**get_page_visit_by_contact_id**](docs/PageVisitsApi.md#get_page_visit_by_contact_id) | **GET** /page_visits/{contactId}/contact | Gets a page visits
 *PhoneNumbersApi* | [**add_number**](docs/PhoneNumbersApi.md#add_number) | **POST** /phone_numbers | Add new number
 *PhoneNumbersApi* | [**get_available_prefix**](docs/PhoneNumbersApi.md#get_available_prefix) | **GET** /phone_numbers/availablePrefix | Gets available dial out prefix
@@ -271,22 +267,11 @@ Class | Method | HTTP request | Description
 *SlasApi* | [**get_sla**](docs/SlasApi.md#get_sla) | **GET** /slas/{levelId} | Gets sla
 *SlasApi* | [**get_sla_ticket_history**](docs/SlasApi.md#get_sla_ticket_history) | **GET** /slas/{ticketId}/history | Gets ticket sla history
 *SlasApi* | [**get_slas_list**](docs/SlasApi.md#get_slas_list) | **GET** /slas | Gets list of slas
-*SubscriptionsApi* | [**change_addons**](docs/SubscriptionsApi.md#change_addons) | **PUT** /subscriptions/{subscriptionId}/addons | Addon change
-*SubscriptionsApi* | [**change_plan**](docs/SubscriptionsApi.md#change_plan) | **POST** /subscriptions/{subscriptionId}/_upgrade | Change plan
-*SubscriptionsApi* | [**get_active_addons**](docs/SubscriptionsApi.md#get_active_addons) | **GET** /subscriptions/{subscriptionId}/addons | Addon list
 *SubscriptionsApi* | [**get_billing_status**](docs/SubscriptionsApi.md#get_billing_status) | **GET** /subscriptions/{subscriptionId}/billingStatus | Billing status
 *SubscriptionsApi* | [**get_custom_reseller_upgrade_url**](docs/SubscriptionsApi.md#get_custom_reseller_upgrade_url) | **GET** /subscriptions/{subscriptionId}/upgrade_url | Upgrade Url
 *SubscriptionsApi* | [**get_domain_info**](docs/SubscriptionsApi.md#get_domain_info) | **GET** /subscriptions/{subscriptionId}/domain | Domain info
-*SubscriptionsApi* | [**get_subscription**](docs/SubscriptionsApi.md#get_subscription) | **GET** /subscriptions/{subscriptionId} | Subscription
-*SubscriptionsApi* | [**get_subscription_attributes**](docs/SubscriptionsApi.md#get_subscription_attributes) | **GET** /subscriptions/{subscriptionId}/attributes | Subscription attribute list
 *SubscriptionsApi* | [**get_subscription_discounts**](docs/SubscriptionsApi.md#get_subscription_discounts) | **GET** /subscriptions/{subscriptionId}/discounts | Subscription discounts
-*SubscriptionsApi* | [**get_subscription_invoices**](docs/SubscriptionsApi.md#get_subscription_invoices) | **GET** /subscriptions/{subscriptionId}/invoices | Subscription invoice list
-*SubscriptionsApi* | [**get_upgrade_variations**](docs/SubscriptionsApi.md#get_upgrade_variations) | **GET** /subscriptions/{subscriptionId}/upgradeVariations | Upgrade variation list
-*SubscriptionsApi* | [**resume_billing**](docs/SubscriptionsApi.md#resume_billing) | **POST** /subscriptions/{subscriptionId}/_cancelStop | Restart billing
 *SubscriptionsApi* | [**set_custom_domain**](docs/SubscriptionsApi.md#set_custom_domain) | **PUT** /subscriptions/{subscriptionId}/custom_domain | Custom domain
-*SubscriptionsApi* | [**set_subscription_usage**](docs/SubscriptionsApi.md#set_subscription_usage) | **PUT** /subscriptions/{subscriptionId}/usage | Subscription usage
-*SubscriptionsApi* | [**stop_billing**](docs/SubscriptionsApi.md#stop_billing) | **POST** /subscriptions/{subscriptionId}/_stop | Stop billing
-*SubscriptionsApi* | [**update_application**](docs/SubscriptionsApi.md#update_application) | **POST** /subscriptions/{subscriptionId}/_update | Update subscription
 *TagsApi* | [**create_tag**](docs/TagsApi.md#create_tag) | **POST** /tags | Create tag
 *TagsApi* | [**delete_tag**](docs/TagsApi.md#delete_tag) | **DELETE** /tags/{tagId} | Delete tag
 *TagsApi* | [**get_tag_by_id**](docs/TagsApi.md#get_tag_by_id) | **GET** /tags/{tagId} | Get tag by tag id
@@ -309,7 +294,6 @@ Class | Method | HTTP request | Description
 *TokenApi* | [**get_access_token**](docs/TokenApi.md#get_access_token) | **GET** /token | Access token
 *UserApi* | [**get_user**](docs/UserApi.md#get_user) | **GET** /users/{userId} | User
 *VariationsApi* | [**get_variation**](docs/VariationsApi.md#get_variation) | **GET** /variations/{variationId} | Variation
-*VariationsApi* | [**validate_limits**](docs/VariationsApi.md#validate_limits) | **GET** /variations/{variationId}/validate-limits | Validate Limits
 *ViberApi* | [**change_status**](docs/ViberApi.md#change_status) | **PUT** /viber_accounts/{accountId}/status | Update Viber account status
 *ViberApi* | [**connect_account**](docs/ViberApi.md#connect_account) | **POST** /viber_accounts | Connect Viber account
 *ViberApi* | [**disconnect**](docs/ViberApi.md#disconnect) | **DELETE** /viber_accounts/{accountId} | Disconnect Viber account
@@ -322,8 +306,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ActiveTicket](docs/ActiveTicket.md)
- - [Addon](docs/Addon.md)
- - [AddonList](docs/AddonList.md)
  - [Agent](docs/Agent.md)
  - [AgentActivity](docs/AgentActivity.md)
  - [AgentRow](docs/AgentRow.md)
@@ -332,11 +314,9 @@ Class | Method | HTTP request | Description
  - [ApiKey](docs/ApiKey.md)
  - [ApiKeyLogin](docs/ApiKeyLogin.md)
  - [ApiPrivilege](docs/ApiPrivilege.md)
- - [AttributeSimple](docs/AttributeSimple.md)
  - [AvailablePrefix](docs/AvailablePrefix.md)
  - [Ban](docs/Ban.md)
  - [Batch](docs/Batch.md)
- - [BillingMetric](docs/BillingMetric.md)
  - [BillingStatus](docs/BillingStatus.md)
  - [Call](docs/Call.md)
  - [CallAgent](docs/CallAgent.md)
@@ -348,8 +328,6 @@ Class | Method | HTTP request | Description
  - [CannedMessage](docs/CannedMessage.md)
  - [ChatInformation](docs/ChatInformation.md)
  - [ChatRow](docs/ChatRow.md)
- - [CheckoutParameters](docs/CheckoutParameters.md)
- - [CheckoutToken](docs/CheckoutToken.md)
  - [CompanyListItem](docs/CompanyListItem.md)
  - [CompanyRequest](docs/CompanyRequest.md)
  - [ContactListItem](docs/ContactListItem.md)
@@ -357,7 +335,6 @@ Class | Method | HTTP request | Description
  - [ContactRequest](docs/ContactRequest.md)
  - [ContactWidgetRow](docs/ContactWidgetRow.md)
  - [Count](docs/Count.md)
- - [Country](docs/Country.md)
  - [CustomButton](docs/CustomButton.md)
  - [CustomDomain](docs/CustomDomain.md)
  - [CustomFields](docs/CustomFields.md)
@@ -383,9 +360,6 @@ Class | Method | HTTP request | Description
  - [IndexStatusData](docs/IndexStatusData.md)
  - [IndexedDeviceDepartmentPlans](docs/IndexedDeviceDepartmentPlans.md)
  - [InviteAgentRow](docs/InviteAgentRow.md)
- - [Invoice](docs/Invoice.md)
- - [InvoiceItem](docs/InvoiceItem.md)
- - [InvoiceList](docs/InvoiceList.md)
  - [Ivr](docs/Ivr.md)
  - [IvrChoice](docs/IvrChoice.md)
  - [IvrFetch](docs/IvrFetch.md)
@@ -393,13 +367,12 @@ Class | Method | HTTP request | Description
  - [IvrForward](docs/IvrForward.md)
  - [IvrStep](docs/IvrStep.md)
  - [LanguageRow](docs/LanguageRow.md)
- - [LimitValidationFail](docs/LimitValidationFail.md)
  - [LoginKey](docs/LoginKey.md)
  - [Message](docs/Message.md)
  - [MessageGroup](docs/MessageGroup.md)
+ - [MyAccountLink](docs/MyAccountLink.md)
  - [OkResponse](docs/OkResponse.md)
  - [PageVisit](docs/PageVisit.md)
- - [PaymentMethod](docs/PaymentMethod.md)
  - [PhoneDevice](docs/PhoneDevice.md)
  - [PhoneNumber](docs/PhoneNumber.md)
  - [PluginRow](docs/PluginRow.md)
@@ -415,9 +388,7 @@ Class | Method | HTTP request | Description
  - [SlackConversation](docs/SlackConversation.md)
  - [SlackTemplate](docs/SlackTemplate.md)
  - [SlackUser](docs/SlackUser.md)
- - [StopReason](docs/StopReason.md)
  - [StoredFile](docs/StoredFile.md)
- - [Subscription](docs/Subscription.md)
  - [Tag](docs/Tag.md)
  - [TagRow](docs/TagRow.md)
  - [Ticket](docs/Ticket.md)
@@ -432,13 +403,9 @@ Class | Method | HTTP request | Description
  - [TimeReportRow](docs/TimeReportRow.md)
  - [TimeZones](docs/TimeZones.md)
  - [Token](docs/Token.md)
- - [Upgrade](docs/Upgrade.md)
  - [UpgradeUrl](docs/UpgradeUrl.md)
- - [UsageData](docs/UsageData.md)
  - [User](docs/User.md)
  - [Variation](docs/Variation.md)
- - [VariationUpgrade](docs/VariationUpgrade.md)
- - [VariationUpgrades](docs/VariationUpgrades.md)
  - [ViberAccount](docs/ViberAccount.md)
  - [ApiKeyWithPrivileges](docs/ApiKeyWithPrivileges.md)
  - [BanListItem](docs/BanListItem.md)

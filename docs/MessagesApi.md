@@ -68,6 +68,8 @@ Name | Type | Description  | Notes
 
 Get message
 
+Only for legacy messages that can be loaded from qu_la_messages
+
 ### Example
 ```python
 from __future__ import print_function

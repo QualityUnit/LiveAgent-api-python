@@ -241,6 +241,13 @@ class SlasApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param int page: Page to display. Not used if _from is defined.
+        :param int per_page: Results per page. Used only if _page is used.
+        :param int _from: Result set start. Takes precedence over _page.
+        :param int to: Result set end. Used only if _from is used.
+        :param str sort_dir: Sorting direction ASC or DESC
+        :param str sort_field: Sorting field
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[Sla]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -262,12 +269,19 @@ class SlasApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param int page: Page to display. Not used if _from is defined.
+        :param int per_page: Results per page. Used only if _page is used.
+        :param int _from: Result set start. Takes precedence over _page.
+        :param int to: Result set end. Used only if _from is used.
+        :param str sort_dir: Sorting direction ASC or DESC
+        :param str sort_field: Sorting field
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[Sla]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['page', 'per_page', '_from', 'to', 'sort_dir', 'sort_field', 'filters']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -288,6 +302,20 @@ class SlasApi(object):
         path_params = {}
 
         query_params = []
+        if 'page' in params:
+            query_params.append(('_page', params['page']))  # noqa: E501
+        if 'per_page' in params:
+            query_params.append(('_perPage', params['per_page']))  # noqa: E501
+        if '_from' in params:
+            query_params.append(('_from', params['_from']))  # noqa: E501
+        if 'to' in params:
+            query_params.append(('_to', params['to']))  # noqa: E501
+        if 'sort_dir' in params:
+            query_params.append(('_sortDir', params['sort_dir']))  # noqa: E501
+        if 'sort_field' in params:
+            query_params.append(('_sortField', params['sort_field']))  # noqa: E501
+        if 'filters' in params:
+            query_params.append(('_filters', params['filters']))  # noqa: E501
 
         header_params = {}
 

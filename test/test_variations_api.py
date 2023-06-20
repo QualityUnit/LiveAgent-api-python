@@ -36,13 +36,6 @@ class TestVariationsApi(unittest.TestCase):
         """
         pass
 
-    def test_validate_limits(self):
-        """Test case for validate_limits
-
-        Validate Limits  # noqa: E501
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()
