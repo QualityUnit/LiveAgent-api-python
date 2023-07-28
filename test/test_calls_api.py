@@ -211,6 +211,13 @@ class TestCallsApi(unittest.TestCase):
         """
         pass
 
+    def test_request_callback(self):
+        """Test case for request_callback
+
+        Requests callback on the call  # noqa: E501
+        """
+        pass
+
     def test_stop_ring(self):
         """Test case for stop_ring
 

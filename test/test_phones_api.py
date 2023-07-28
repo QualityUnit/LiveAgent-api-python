@@ -71,6 +71,13 @@ class TestPhonesApi(unittest.TestCase):
         """
         pass
 
+    def test_update_reg_status(self):
+        """Test case for update_reg_status
+
+        Update registration status  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -139,6 +139,7 @@ Class | Method | HTTP request | Description
 *CallsApi* | [**hold_channel**](docs/CallsApi.md#hold_channel) | **POST** /calls/{callId}/channels/{channelId}/_hold | Hold channel
 *CallsApi* | [**merge**](docs/CallsApi.md#merge) | **POST** /calls/{callId}/_merge | Merge two calls
 *CallsApi* | [**mute_channel**](docs/CallsApi.md#mute_channel) | **POST** /calls/{callId}/channels/{channelId}/_mute | Mute channel
+*CallsApi* | [**request_callback**](docs/CallsApi.md#request_callback) | **POST** /calls/{callId}/_request_callback | Requests callback on the call
 *CallsApi* | [**stop_ring**](docs/CallsApi.md#stop_ring) | **POST** /calls/{callId}/_stopRing | Stop ringing of call
 *CallsApi* | [**unhold_channel**](docs/CallsApi.md#unhold_channel) | **POST** /calls/{callId}/channels/{channelId}/_unhold | Unhold channel
 *CallsApi* | [**unmute_channel**](docs/CallsApi.md#unmute_channel) | **POST** /calls/{callId}/channels/{channelId}/_unmute | Unmute channel
@@ -249,6 +250,7 @@ Class | Method | HTTP request | Description
 *PhonesApi* | [**remove_phone**](docs/PhonesApi.md#remove_phone) | **DELETE** /phones/{phoneId} | Remove phone
 *PhonesApi* | [**update_phone**](docs/PhonesApi.md#update_phone) | **PUT** /phones/{phoneId} | Update phone
 *PhonesApi* | [**update_phone_params**](docs/PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone params
+*PhonesApi* | [**update_reg_status**](docs/PhonesApi.md#update_reg_status) | **PUT** /phones/{phoneId}/_updateRegStatus | Update registration status
 *PingApi* | [**ping**](docs/PingApi.md#ping) | **GET** /ping | Check that API is responding
 *PredefinedAnswersApi* | [**create_predefined_answer**](docs/PredefinedAnswersApi.md#create_predefined_answer) | **POST** /predefined_answers | Create predefined answer
 *PredefinedAnswersApi* | [**delete_predefined_answer**](docs/PredefinedAnswersApi.md#delete_predefined_answer) | **DELETE** /predefined_answers/{predefinedAnswerId} | Predefined answer

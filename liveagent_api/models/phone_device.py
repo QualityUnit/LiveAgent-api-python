@@ -224,6 +224,12 @@ class PhoneDevice(object):
         :param reg_status: The reg_status of this PhoneDevice.  # noqa: E501
         :type: str
         """
+        allowed_values = ["F", "N"]  # noqa: E501
+        if reg_status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `reg_status` ({0}), must be one of {1}"  # noqa: E501
+                .format(reg_status, allowed_values)
+            )
 
         self._reg_status = reg_status
 
