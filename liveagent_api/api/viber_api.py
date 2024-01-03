@@ -87,12 +87,12 @@ class ViberApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'account_id' is set
-        if ('account_id' not in params or
-                params['account_id'] is None):
+        if self.api_client.client_side_validation and ('account_id' not in params or
+                                                       params['account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `account_id` when calling `change_status`")  # noqa: E501
         # verify the required parameter 'status' is set
-        if ('status' not in params or
-                params['status'] is None):
+        if self.api_client.client_side_validation and ('status' not in params or
+                                                       params['status'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `status` when calling `change_status`")  # noqa: E501
 
         collection_formats = {}
@@ -192,12 +192,12 @@ class ViberApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'token' is set
-        if ('token' not in params or
-                params['token'] is None):
+        if self.api_client.client_side_validation and ('token' not in params or
+                                                       params['token'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `token` when calling `connect_account`")  # noqa: E501
         # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
+        if self.api_client.client_side_validation and ('department_id' not in params or
+                                                       params['department_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `department_id` when calling `connect_account`")  # noqa: E501
 
         collection_formats = {}
@@ -295,8 +295,8 @@ class ViberApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'account_id' is set
-        if ('account_id' not in params or
-                params['account_id'] is None):
+        if self.api_client.client_side_validation and ('account_id' not in params or
+                                                       params['account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `account_id` when calling `disconnect`")  # noqa: E501
 
         collection_formats = {}
@@ -392,8 +392,8 @@ class ViberApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'account_id' is set
-        if ('account_id' not in params or
-                params['account_id'] is None):
+        if self.api_client.client_side_validation and ('account_id' not in params or
+                                                       params['account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `account_id` when calling `get`")  # noqa: E501
 
         collection_formats = {}
@@ -693,8 +693,8 @@ class ViberApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'account_id' is set
-        if ('account_id' not in params or
-                params['account_id'] is None):
+        if self.api_client.client_side_validation and ('account_id' not in params or
+                                                       params['account_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `account_id` when calling `update`")  # noqa: E501
 
         collection_formats = {}

@@ -85,8 +85,8 @@ class ContactPhonesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'phone' is set
-        if ('phone' not in params or
-                params['phone'] is None):
+        if self.api_client.client_side_validation and ('phone' not in params or
+                                                       params['phone'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `phone` when calling `get_contact_phone`")  # noqa: E501
 
         collection_formats = {}

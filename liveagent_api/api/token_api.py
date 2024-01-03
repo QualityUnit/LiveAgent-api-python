@@ -89,12 +89,12 @@ class TokenApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'username' is set
-        if ('username' not in params or
-                params['username'] is None):
+        if self.api_client.client_side_validation and ('username' not in params or
+                                                       params['username'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `username` when calling `get_access_token`")  # noqa: E501
         # verify the required parameter 'password' is set
-        if ('password' not in params or
-                params['password'] is None):
+        if self.api_client.client_side_validation and ('password' not in params or
+                                                       params['password'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `password` when calling `get_access_token`")  # noqa: E501
 
         collection_formats = {}

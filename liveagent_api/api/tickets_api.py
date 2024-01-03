@@ -180,8 +180,8 @@ class TicketsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `delete_ticket`")  # noqa: E501
 
         collection_formats = {}
@@ -277,8 +277,8 @@ class TicketsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `get_ticket`")  # noqa: E501
 
         collection_formats = {}
@@ -376,12 +376,12 @@ class TicketsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `get_ticket_attribute`")  # noqa: E501
         # verify the required parameter 'attribute_name' is set
-        if ('attribute_name' not in params or
-                params['attribute_name'] is None):
+        if self.api_client.client_side_validation and ('attribute_name' not in params or
+                                                       params['attribute_name'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `attribute_name` when calling `get_ticket_attribute`")  # noqa: E501
 
         collection_formats = {}
@@ -592,8 +592,8 @@ class TicketsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `get_ticket_history_0`")  # noqa: E501
 
         collection_formats = {}
@@ -798,8 +798,8 @@ class TicketsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `get_ticket_message_groups`")  # noqa: E501
 
         collection_formats = {}
@@ -911,8 +911,8 @@ class TicketsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `get_ticket_sla`")  # noqa: E501
 
         collection_formats = {}
@@ -1129,16 +1129,16 @@ class TicketsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `set_ticket_attribute`")  # noqa: E501
         # verify the required parameter 'attribute_name' is set
-        if ('attribute_name' not in params or
-                params['attribute_name'] is None):
+        if self.api_client.client_side_validation and ('attribute_name' not in params or
+                                                       params['attribute_name'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `attribute_name` when calling `set_ticket_attribute`")  # noqa: E501
         # verify the required parameter 'value' is set
-        if ('value' not in params or
-                params['value'] is None):
+        if self.api_client.client_side_validation and ('value' not in params or
+                                                       params['value'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `value` when calling `set_ticket_attribute`")  # noqa: E501
 
         collection_formats = {}
@@ -1240,8 +1240,8 @@ class TicketsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `set_ticket_postpone`")  # noqa: E501
 
         collection_formats = {}
@@ -1341,8 +1341,8 @@ class TicketsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `update_ticket`")  # noqa: E501
 
         collection_formats = {}

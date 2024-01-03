@@ -87,8 +87,8 @@ class SubscriptionsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'subscription_id' is set
-        if ('subscription_id' not in params or
-                params['subscription_id'] is None):
+        if self.api_client.client_side_validation and ('subscription_id' not in params or
+                                                       params['subscription_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `subscription_id` when calling `get_billing_status`")  # noqa: E501
 
         collection_formats = {}
@@ -186,8 +186,8 @@ class SubscriptionsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'subscription_id' is set
-        if ('subscription_id' not in params or
-                params['subscription_id'] is None):
+        if self.api_client.client_side_validation and ('subscription_id' not in params or
+                                                       params['subscription_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `subscription_id` when calling `get_custom_reseller_upgrade_url`")  # noqa: E501
 
         collection_formats = {}
@@ -285,8 +285,8 @@ class SubscriptionsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'subscription_id' is set
-        if ('subscription_id' not in params or
-                params['subscription_id'] is None):
+        if self.api_client.client_side_validation and ('subscription_id' not in params or
+                                                       params['subscription_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `subscription_id` when calling `get_domain_info`")  # noqa: E501
 
         collection_formats = {}
@@ -384,8 +384,8 @@ class SubscriptionsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'subscription_id' is set
-        if ('subscription_id' not in params or
-                params['subscription_id'] is None):
+        if self.api_client.client_side_validation and ('subscription_id' not in params or
+                                                       params['subscription_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `subscription_id` when calling `get_subscription_discounts`")  # noqa: E501
 
         collection_formats = {}
@@ -485,8 +485,8 @@ class SubscriptionsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'subscription_id' is set
-        if ('subscription_id' not in params or
-                params['subscription_id'] is None):
+        if self.api_client.client_side_validation and ('subscription_id' not in params or
+                                                       params['subscription_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `subscription_id` when calling `set_custom_domain`")  # noqa: E501
 
         collection_formats = {}

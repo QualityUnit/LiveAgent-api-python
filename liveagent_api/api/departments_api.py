@@ -202,8 +202,8 @@ class DepartmentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
+        if self.api_client.client_side_validation and ('department_id' not in params or
+                                                       params['department_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `department_id` when calling `get_specific_department`")  # noqa: E501
 
         collection_formats = {}
@@ -301,12 +301,12 @@ class DepartmentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
+        if self.api_client.client_side_validation and ('department_id' not in params or
+                                                       params['department_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `department_id` when calling `if_agent_is_in_department`")  # noqa: E501
         # verify the required parameter 'agent_id' is set
-        if ('agent_id' not in params or
-                params['agent_id'] is None):
+        if self.api_client.client_side_validation and ('agent_id' not in params or
+                                                       params['agent_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `agent_id` when calling `if_agent_is_in_department`")  # noqa: E501
 
         collection_formats = {}

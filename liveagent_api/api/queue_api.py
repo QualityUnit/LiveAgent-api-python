@@ -87,8 +87,8 @@ class QueueApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'batch_id' is set
-        if ('batch_id' not in params or
-                params['batch_id'] is None):
+        if self.api_client.client_side_validation and ('batch_id' not in params or
+                                                       params['batch_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `batch_id` when calling `get_queue_batch`")  # noqa: E501
 
         collection_formats = {}

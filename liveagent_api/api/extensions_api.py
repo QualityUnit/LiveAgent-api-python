@@ -85,8 +85,8 @@ class ExtensionsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'extension_id' is set
-        if ('extension_id' not in params or
-                params['extension_id'] is None):
+        if self.api_client.client_side_validation and ('extension_id' not in params or
+                                                       params['extension_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `extension_id` when calling `get_extension`")  # noqa: E501
 
         collection_formats = {}
@@ -390,8 +390,8 @@ class ExtensionsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'extension_id' is set
-        if ('extension_id' not in params or
-                params['extension_id'] is None):
+        if self.api_client.client_side_validation and ('extension_id' not in params or
+                                                       params['extension_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `extension_id` when calling `set_extension`")  # noqa: E501
 
         collection_formats = {}

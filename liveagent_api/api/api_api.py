@@ -182,8 +182,8 @@ class ApiApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'apikey_id' is set
-        if ('apikey_id' not in params or
-                params['apikey_id'] is None):
+        if self.api_client.client_side_validation and ('apikey_id' not in params or
+                                                       params['apikey_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `apikey_id` when calling `delete_api_key`")  # noqa: E501
 
         collection_formats = {}
@@ -463,8 +463,8 @@ class ApiApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'api_version' is set
-        if ('api_version' not in params or
-                params['api_version'] is None):
+        if self.api_client.client_side_validation and ('api_version' not in params or
+                                                       params['api_version'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `api_version` when calling `get_api_info`")  # noqa: E501
 
         collection_formats = {}
@@ -562,8 +562,8 @@ class ApiApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'apikey_id' is set
-        if ('apikey_id' not in params or
-                params['apikey_id'] is None):
+        if self.api_client.client_side_validation and ('apikey_id' not in params or
+                                                       params['apikey_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `apikey_id` when calling `get_api_key`")  # noqa: E501
 
         collection_formats = {}
@@ -1144,8 +1144,8 @@ class ApiApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'apikey_id' is set
-        if ('apikey_id' not in params or
-                params['apikey_id'] is None):
+        if self.api_client.client_side_validation and ('apikey_id' not in params or
+                                                       params['apikey_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `apikey_id` when calling `update_api_key`")  # noqa: E501
 
         collection_formats = {}

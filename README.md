@@ -249,6 +249,7 @@ Class | Method | HTTP request | Description
 *PhonesApi* | [**remove_phone**](docs/PhonesApi.md#remove_phone) | **DELETE** /phones/{phoneId} | Remove phone
 *PhonesApi* | [**update_phone**](docs/PhonesApi.md#update_phone) | **PUT** /phones/{phoneId} | Update phone
 *PhonesApi* | [**update_phone_params**](docs/PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone params
+*PhonesApi* | [**update_reg_status**](docs/PhonesApi.md#update_reg_status) | **PUT** /phones/{phoneId}/_updateRegStatus | Update registration status
 *PingApi* | [**ping**](docs/PingApi.md#ping) | **GET** /ping | Check that API is responding
 *PredefinedAnswersApi* | [**create_predefined_answer**](docs/PredefinedAnswersApi.md#create_predefined_answer) | **POST** /predefined_answers | Create predefined answer
 *PredefinedAnswersApi* | [**delete_predefined_answer**](docs/PredefinedAnswersApi.md#delete_predefined_answer) | **DELETE** /predefined_answers/{predefinedAnswerId} | Predefined answer
@@ -313,9 +314,11 @@ Class | Method | HTTP request | Description
  - [ApiInfo](docs/ApiInfo.md)
  - [ApiKey](docs/ApiKey.md)
  - [ApiKeyLogin](docs/ApiKeyLogin.md)
+ - [ApiKeyWithPrivileges](docs/ApiKeyWithPrivileges.md)
  - [ApiPrivilege](docs/ApiPrivilege.md)
  - [AvailablePrefix](docs/AvailablePrefix.md)
  - [Ban](docs/Ban.md)
+ - [BanListItem](docs/BanListItem.md)
  - [Batch](docs/Batch.md)
  - [BillingStatus](docs/BillingStatus.md)
  - [Call](docs/Call.md)
@@ -328,8 +331,10 @@ Class | Method | HTTP request | Description
  - [CannedMessage](docs/CannedMessage.md)
  - [ChatInformation](docs/ChatInformation.md)
  - [ChatRow](docs/ChatRow.md)
+ - [Company](docs/Company.md)
  - [CompanyListItem](docs/CompanyListItem.md)
  - [CompanyRequest](docs/CompanyRequest.md)
+ - [Contact](docs/Contact.md)
  - [ContactListItem](docs/ContactListItem.md)
  - [ContactPhone](docs/ContactPhone.md)
  - [ContactRequest](docs/ContactRequest.md)
@@ -348,6 +353,7 @@ Class | Method | HTTP request | Description
  - [DeviceDepartmentPlan](docs/DeviceDepartmentPlan.md)
  - [DeviceDepartmentPlanList](docs/DeviceDepartmentPlanList.md)
  - [DiscountValue](docs/DiscountValue.md)
+ - [Domain](docs/Domain.md)
  - [ElasticMessage](docs/ElasticMessage.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [EventLogRow](docs/EventLogRow.md)
@@ -407,11 +413,6 @@ Class | Method | HTTP request | Description
  - [User](docs/User.md)
  - [Variation](docs/Variation.md)
  - [ViberAccount](docs/ViberAccount.md)
- - [ApiKeyWithPrivileges](docs/ApiKeyWithPrivileges.md)
- - [BanListItem](docs/BanListItem.md)
- - [Company](docs/Company.md)
- - [Contact](docs/Contact.md)
- - [Domain](docs/Domain.md)
  - [ViberAccountListItem](docs/ViberAccountListItem.md)
 
 
@@ -465,6 +466,7 @@ Class | Method | HTTP request | Description
  - **time_report.read**: Read time reports
  - **ticket.create**: Create new conversation
  - **ticket.read**: Ticket read
+ - **ticket.read_all**: Ticket read all
  - **ticket.operate**: Operations with ticket(update, delete)
  - **ticket.mass**: Ticket mass action (status and remaining items to process)
  - **device.own**: Read/write devices available to me

@@ -182,12 +182,12 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
+        if self.api_client.client_side_validation and ('device_id' not in params or
+                                                       params['device_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `create_device_department_plans`")  # noqa: E501
         # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
+        if self.api_client.client_side_validation and ('department_id' not in params or
+                                                       params['department_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `department_id` when calling `create_device_department_plans`")  # noqa: E501
 
         collection_formats = {}
@@ -287,8 +287,8 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
+        if self.api_client.client_side_validation and ('device_id' not in params or
+                                                       params['device_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `delete_device`")  # noqa: E501
 
         collection_formats = {}
@@ -388,12 +388,12 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
+        if self.api_client.client_side_validation and ('device_id' not in params or
+                                                       params['device_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `delete_device_department_plans`")  # noqa: E501
         # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
+        if self.api_client.client_side_validation and ('department_id' not in params or
+                                                       params['department_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `department_id` when calling `delete_device_department_plans`")  # noqa: E501
 
         collection_formats = {}
@@ -491,8 +491,8 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
+        if self.api_client.client_side_validation and ('device_id' not in params or
+                                                       params['device_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `get_device`")  # noqa: E501
 
         collection_formats = {}
@@ -590,12 +590,12 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
+        if self.api_client.client_side_validation and ('device_id' not in params or
+                                                       params['device_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `get_device_department`")  # noqa: E501
         # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
+        if self.api_client.client_side_validation and ('department_id' not in params or
+                                                       params['department_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `department_id` when calling `get_device_department`")  # noqa: E501
 
         collection_formats = {}
@@ -709,8 +709,8 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
+        if self.api_client.client_side_validation and ('device_id' not in params or
+                                                       params['device_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `get_device_departments`")  # noqa: E501
 
         collection_formats = {}
@@ -822,8 +822,8 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
+        if self.api_client.client_side_validation and ('department_id' not in params or
+                                                       params['department_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `department_id` when calling `get_device_departments_by_department_id`")  # noqa: E501
 
         collection_formats = {}
@@ -919,8 +919,8 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
+        if self.api_client.client_side_validation and ('device_id' not in params or
+                                                       params['device_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `get_device_plans`")  # noqa: E501
 
         collection_formats = {}
@@ -1224,8 +1224,8 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
+        if self.api_client.client_side_validation and ('device_id' not in params or
+                                                       params['device_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `update_device`")  # noqa: E501
 
         collection_formats = {}
@@ -1327,12 +1327,12 @@ class DevicesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_id' is set
-        if ('device_id' not in params or
-                params['device_id'] is None):
+        if self.api_client.client_side_validation and ('device_id' not in params or
+                                                       params['device_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `device_id` when calling `update_device_department`")  # noqa: E501
         # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
+        if self.api_client.client_side_validation and ('department_id' not in params or
+                                                       params['department_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `department_id` when calling `update_device_department`")  # noqa: E501
 
         collection_formats = {}

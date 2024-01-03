@@ -182,8 +182,8 @@ class FiltersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'filter_id' is set
-        if ('filter_id' not in params or
-                params['filter_id'] is None):
+        if self.api_client.client_side_validation and ('filter_id' not in params or
+                                                       params['filter_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `filter_id` when calling `delete_filter`")  # noqa: E501
 
         collection_formats = {}
@@ -281,8 +281,8 @@ class FiltersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'filter_id' is set
-        if ('filter_id' not in params or
-                params['filter_id'] is None):
+        if self.api_client.client_side_validation and ('filter_id' not in params or
+                                                       params['filter_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `filter_id` when calling `get_filter`")  # noqa: E501
 
         collection_formats = {}
@@ -501,8 +501,8 @@ class FiltersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'filter_id' is set
-        if ('filter_id' not in params or
-                params['filter_id'] is None):
+        if self.api_client.client_side_validation and ('filter_id' not in params or
+                                                       params['filter_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `filter_id` when calling `update_filter`")  # noqa: E501
 
         collection_formats = {}

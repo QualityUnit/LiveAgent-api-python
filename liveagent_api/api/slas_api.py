@@ -87,8 +87,8 @@ class SlasApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'level_id' is set
-        if ('level_id' not in params or
-                params['level_id'] is None):
+        if self.api_client.client_side_validation and ('level_id' not in params or
+                                                       params['level_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `level_id` when calling `get_sla`")  # noqa: E501
 
         collection_formats = {}
@@ -186,8 +186,8 @@ class SlasApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `get_sla_ticket_history`")  # noqa: E501
 
         collection_formats = {}

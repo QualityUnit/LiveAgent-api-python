@@ -87,8 +87,8 @@ class UserApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `get_user`")  # noqa: E501
 
         collection_formats = {}

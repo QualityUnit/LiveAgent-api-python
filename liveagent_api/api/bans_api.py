@@ -182,8 +182,8 @@ class BansApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ip_address' is set
-        if ('ip_address' not in params or
-                params['ip_address'] is None):
+        if self.api_client.client_side_validation and ('ip_address' not in params or
+                                                       params['ip_address'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ip_address` when calling `exclude_ip_ban`")  # noqa: E501
 
         collection_formats = {}
@@ -281,8 +281,8 @@ class BansApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ban_id' is set
-        if ('ban_id' not in params or
-                params['ban_id'] is None):
+        if self.api_client.client_side_validation and ('ban_id' not in params or
+                                                       params['ban_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ban_id` when calling `expire_ban`")  # noqa: E501
 
         collection_formats = {}
@@ -380,8 +380,8 @@ class BansApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ban_id' is set
-        if ('ban_id' not in params or
-                params['ban_id'] is None):
+        if self.api_client.client_side_validation and ('ban_id' not in params or
+                                                       params['ban_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ban_id` when calling `get_ban`")  # noqa: E501
 
         collection_formats = {}
@@ -600,8 +600,8 @@ class BansApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'ban_id' is set
-        if ('ban_id' not in params or
-                params['ban_id'] is None):
+        if self.api_client.client_side_validation and ('ban_id' not in params or
+                                                       params['ban_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ban_id` when calling `update_ban`")  # noqa: E501
 
         collection_formats = {}

@@ -182,8 +182,8 @@ class CannedMessagesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'canned_message_id' is set
-        if ('canned_message_id' not in params or
-                params['canned_message_id'] is None):
+        if self.api_client.client_side_validation and ('canned_message_id' not in params or
+                                                       params['canned_message_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `canned_message_id` when calling `delete_canned_message`")  # noqa: E501
 
         collection_formats = {}
@@ -279,8 +279,8 @@ class CannedMessagesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'canned_message_id' is set
-        if ('canned_message_id' not in params or
-                params['canned_message_id'] is None):
+        if self.api_client.client_side_validation and ('canned_message_id' not in params or
+                                                       params['canned_message_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `canned_message_id` when calling `get_canned_message`")  # noqa: E501
 
         collection_formats = {}
@@ -497,8 +497,8 @@ class CannedMessagesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'canned_message_id' is set
-        if ('canned_message_id' not in params or
-                params['canned_message_id'] is None):
+        if self.api_client.client_side_validation and ('canned_message_id' not in params or
+                                                       params['canned_message_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `canned_message_id` when calling `update_canned_message`")  # noqa: E501
 
         collection_formats = {}

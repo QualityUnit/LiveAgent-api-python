@@ -87,8 +87,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_add_message`")  # noqa: E501
 
         collection_formats = {}
@@ -188,8 +188,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_add_recording`")  # noqa: E501
 
         collection_formats = {}
@@ -293,12 +293,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_answer`")  # noqa: E501
         # verify the required parameter 'to_number' is set
-        if ('to_number' not in params or
-                params['to_number'] is None):
+        if self.api_client.client_side_validation and ('to_number' not in params or
+                                                       params['to_number'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `to_number` when calling `call_answer`")  # noqa: E501
 
         collection_formats = {}
@@ -404,16 +404,16 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_change_channel_status`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `call_change_channel_status`")  # noqa: E501
         # verify the required parameter 'status' is set
-        if ('status' not in params or
-                params['status'] is None):
+        if self.api_client.client_side_validation and ('status' not in params or
+                                                       params['status'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `status` when calling `call_change_channel_status`")  # noqa: E501
 
         collection_formats = {}
@@ -527,16 +527,16 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_create`")  # noqa: E501
         # verify the required parameter 'to_number' is set
-        if ('to_number' not in params or
-                params['to_number'] is None):
+        if self.api_client.client_side_validation and ('to_number' not in params or
+                                                       params['to_number'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `to_number` when calling `call_create`")  # noqa: E501
         # verify the required parameter 'from_number' is set
-        if ('from_number' not in params or
-                params['from_number'] is None):
+        if self.api_client.client_side_validation and ('from_number' not in params or
+                                                       params['from_number'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `from_number` when calling `call_create`")  # noqa: E501
 
         collection_formats = {}
@@ -646,12 +646,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_fetch_ivr`")  # noqa: E501
         # verify the required parameter 'fetch' is set
-        if ('fetch' not in params or
-                params['fetch'] is None):
+        if self.api_client.client_side_validation and ('fetch' not in params or
+                                                       params['fetch'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `fetch` when calling `call_fetch_ivr`")  # noqa: E501
 
         collection_formats = {}
@@ -751,8 +751,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_get_status`")  # noqa: E501
 
         collection_formats = {}
@@ -851,8 +851,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `call_id`")  # noqa: E501
 
         collection_formats = {}
@@ -952,16 +952,16 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_move_channel`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `call_move_channel`")  # noqa: E501
         # verify the required parameter 'to_call_id' is set
-        if ('to_call_id' not in params or
-                params['to_call_id'] is None):
+        if self.api_client.client_side_validation and ('to_call_id' not in params or
+                                                       params['to_call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `to_call_id` when calling `call_move_channel`")  # noqa: E501
 
         collection_formats = {}
@@ -1152,12 +1152,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_remove_channel`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `call_remove_channel`")  # noqa: E501
 
         collection_formats = {}
@@ -1261,8 +1261,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_reroute`")  # noqa: E501
 
         collection_formats = {}
@@ -1369,8 +1369,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_ring`")  # noqa: E501
 
         collection_formats = {}
@@ -1476,12 +1476,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'to_number' is set
-        if ('to_number' not in params or
-                params['to_number'] is None):
+        if self.api_client.client_side_validation and ('to_number' not in params or
+                                                       params['to_number'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `to_number` when calling `call_start`")  # noqa: E501
         # verify the required parameter 'ticket_id' is set
-        if ('ticket_id' not in params or
-                params['ticket_id'] is None):
+        if self.api_client.client_side_validation and ('ticket_id' not in params or
+                                                       params['ticket_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `ticket_id` when calling `call_start`")  # noqa: E501
 
         collection_formats = {}
@@ -1583,8 +1583,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_start_canceled`")  # noqa: E501
 
         collection_formats = {}
@@ -1682,8 +1682,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_start_failed`")  # noqa: E501
 
         collection_formats = {}
@@ -1781,8 +1781,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_stop`")  # noqa: E501
 
         collection_formats = {}
@@ -1884,8 +1884,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `call_transfer`")  # noqa: E501
 
         collection_formats = {}
@@ -1989,8 +1989,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `confirm_ring`")  # noqa: E501
 
         collection_formats = {}
@@ -2094,16 +2094,16 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `dtmf_channel`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `dtmf_channel`")  # noqa: E501
         # verify the required parameter 'dtmf' is set
-        if ('dtmf' not in params or
-                params['dtmf'] is None):
+        if self.api_client.client_side_validation and ('dtmf' not in params or
+                                                       params['dtmf'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `dtmf` when calling `dtmf_channel`")  # noqa: E501
 
         collection_formats = {}
@@ -2205,12 +2205,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `end_channel`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `end_channel`")  # noqa: E501
 
         collection_formats = {}
@@ -2516,12 +2516,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `hold_channel`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `hold_channel`")  # noqa: E501
 
         collection_formats = {}
@@ -2625,12 +2625,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `merge`")  # noqa: E501
         # verify the required parameter 'sec_call_id' is set
-        if ('sec_call_id' not in params or
-                params['sec_call_id'] is None):
+        if self.api_client.client_side_validation and ('sec_call_id' not in params or
+                                                       params['sec_call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `sec_call_id` when calling `merge`")  # noqa: E501
 
         collection_formats = {}
@@ -2732,12 +2732,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `mute_channel`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `mute_channel`")  # noqa: E501
 
         collection_formats = {}
@@ -2837,8 +2837,8 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `stop_ring`")  # noqa: E501
 
         collection_formats = {}
@@ -2936,12 +2936,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `unhold_channel`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `unhold_channel`")  # noqa: E501
 
         collection_formats = {}
@@ -3041,12 +3041,12 @@ class CallsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'call_id' is set
-        if ('call_id' not in params or
-                params['call_id'] is None):
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `call_id` when calling `unmute_channel`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
-        if ('channel_id' not in params or
-                params['channel_id'] is None):
+        if self.api_client.client_side_validation and ('channel_id' not in params or
+                                                       params['channel_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `channel_id` when calling `unmute_channel`")  # noqa: E501
 
         collection_formats = {}
