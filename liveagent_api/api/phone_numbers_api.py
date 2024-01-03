@@ -121,21 +121,21 @@ class PhoneNumbersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'type' is set
-        if ('type' not in params or
-                params['type'] is None):
+        if self.api_client.client_side_validation and ('type' not in params or
+                                                       params['type'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `type` when calling `add_number`")  # noqa: E501
         # verify the required parameter 'number' is set
-        if ('number' not in params or
-                params['number'] is None):
+        if self.api_client.client_side_validation and ('number' not in params or
+                                                       params['number'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `number` when calling `add_number`")  # noqa: E501
         # verify the required parameter 'status' is set
-        if ('status' not in params or
-                params['status'] is None):
+        if self.api_client.client_side_validation and ('status' not in params or
+                                                       params['status'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `status` when calling `add_number`")  # noqa: E501
 
-        if 'dial_out_prefix' in params and params['dial_out_prefix'] > 999:  # noqa: E501
+        if self.api_client.client_side_validation and ('dial_out_prefix' in params and params['dial_out_prefix'] > 999):  # noqa: E501
             raise ValueError("Invalid value for parameter `dial_out_prefix` when calling `add_number`, must be a value less than or equal to `999`")  # noqa: E501
-        if 'dial_out_prefix' in params and params['dial_out_prefix'] < 1:  # noqa: E501
+        if self.api_client.client_side_validation and ('dial_out_prefix' in params and params['dial_out_prefix'] < 1):  # noqa: E501
             raise ValueError("Invalid value for parameter `dial_out_prefix` when calling `add_number`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
@@ -355,8 +355,8 @@ class PhoneNumbersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'phone_number_id' is set
-        if ('phone_number_id' not in params or
-                params['phone_number_id'] is None):
+        if self.api_client.client_side_validation and ('phone_number_id' not in params or
+                                                       params['phone_number_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `phone_number_id` when calling `get_phone_number`")  # noqa: E501
 
         collection_formats = {}
@@ -566,8 +566,8 @@ class PhoneNumbersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'phone_number_id' is set
-        if ('phone_number_id' not in params or
-                params['phone_number_id'] is None):
+        if self.api_client.client_side_validation and ('phone_number_id' not in params or
+                                                       params['phone_number_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `phone_number_id` when calling `remove_phone_number`")  # noqa: E501
 
         collection_formats = {}
@@ -665,12 +665,12 @@ class PhoneNumbersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'phone_number_id' is set
-        if ('phone_number_id' not in params or
-                params['phone_number_id'] is None):
+        if self.api_client.client_side_validation and ('phone_number_id' not in params or
+                                                       params['phone_number_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `phone_number_id` when calling `update_phone_number`")  # noqa: E501
         # verify the required parameter 'phone_number' is set
-        if ('phone_number' not in params or
-                params['phone_number'] is None):
+        if self.api_client.client_side_validation and ('phone_number' not in params or
+                                                       params['phone_number'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `phone_number` when calling `update_phone_number`")  # noqa: E501
 
         collection_formats = {}
@@ -770,12 +770,12 @@ class PhoneNumbersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'phone_number_id' is set
-        if ('phone_number_id' not in params or
-                params['phone_number_id'] is None):
+        if self.api_client.client_side_validation and ('phone_number_id' not in params or
+                                                       params['phone_number_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `phone_number_id` when calling `update_phone_number_status`")  # noqa: E501
         # verify the required parameter 'status' is set
-        if ('status' not in params or
-                params['status'] is None):
+        if self.api_client.client_side_validation and ('status' not in params or
+                                                       params['status'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `status` when calling `update_phone_number_status`")  # noqa: E501
 
         collection_formats = {}

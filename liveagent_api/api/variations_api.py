@@ -87,8 +87,8 @@ class VariationsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'variation_id' is set
-        if ('variation_id' not in params or
-                params['variation_id'] is None):
+        if self.api_client.client_side_validation and ('variation_id' not in params or
+                                                       params['variation_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `variation_id` when calling `get_variation`")  # noqa: E501
 
         collection_formats = {}

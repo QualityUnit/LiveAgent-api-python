@@ -1600,8 +1600,8 @@ class GridApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'department_id' is set
-        if ('department_id' not in params or
-                params['department_id'] is None):
+        if self.api_client.client_side_validation and ('department_id' not in params or
+                                                       params['department_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `department_id` when calling `get_invite_agents_grid_list`")  # noqa: E501
 
         collection_formats = {}
@@ -1907,8 +1907,8 @@ class GridApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'plugin_purpose' is set
-        if ('plugin_purpose' not in params or
-                params['plugin_purpose'] is None):
+        if self.api_client.client_side_validation and ('plugin_purpose' not in params or
+                                                       params['plugin_purpose'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `plugin_purpose` when calling `get_plugind_grid_list`")  # noqa: E501
 
         collection_formats = {}

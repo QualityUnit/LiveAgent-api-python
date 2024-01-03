@@ -23,9 +23,11 @@ from liveagent_api.models.agent_status import AgentStatus
 from liveagent_api.models.api_info import ApiInfo
 from liveagent_api.models.api_key import ApiKey
 from liveagent_api.models.api_key_login import ApiKeyLogin
+from liveagent_api.models.api_key_with_privileges import ApiKeyWithPrivileges
 from liveagent_api.models.api_privilege import ApiPrivilege
 from liveagent_api.models.available_prefix import AvailablePrefix
 from liveagent_api.models.ban import Ban
+from liveagent_api.models.ban_list_item import BanListItem
 from liveagent_api.models.batch import Batch
 from liveagent_api.models.billing_status import BillingStatus
 from liveagent_api.models.call import Call
@@ -38,8 +40,10 @@ from liveagent_api.models.call_transfer_result import CallTransferResult
 from liveagent_api.models.canned_message import CannedMessage
 from liveagent_api.models.chat_information import ChatInformation
 from liveagent_api.models.chat_row import ChatRow
+from liveagent_api.models.company import Company
 from liveagent_api.models.company_list_item import CompanyListItem
 from liveagent_api.models.company_request import CompanyRequest
+from liveagent_api.models.contact import Contact
 from liveagent_api.models.contact_list_item import ContactListItem
 from liveagent_api.models.contact_phone import ContactPhone
 from liveagent_api.models.contact_request import ContactRequest
@@ -58,6 +62,7 @@ from liveagent_api.models.device_department_list import DeviceDepartmentList
 from liveagent_api.models.device_department_plan import DeviceDepartmentPlan
 from liveagent_api.models.device_department_plan_list import DeviceDepartmentPlanList
 from liveagent_api.models.discount_value import DiscountValue
+from liveagent_api.models.domain import Domain
 from liveagent_api.models.elastic_message import ElasticMessage
 from liveagent_api.models.error_response import ErrorResponse
 from liveagent_api.models.event_log_row import EventLogRow
@@ -117,9 +122,4 @@ from liveagent_api.models.upgrade_url import UpgradeUrl
 from liveagent_api.models.user import User
 from liveagent_api.models.variation import Variation
 from liveagent_api.models.viber_account import ViberAccount
-from liveagent_api.models.api_key_with_privileges import ApiKeyWithPrivileges
-from liveagent_api.models.ban_list_item import BanListItem
-from liveagent_api.models.company import Company
-from liveagent_api.models.contact import Contact
-from liveagent_api.models.domain import Domain
 from liveagent_api.models.viber_account_list_item import ViberAccountListItem

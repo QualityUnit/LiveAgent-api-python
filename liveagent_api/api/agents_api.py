@@ -182,8 +182,8 @@ class AgentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `delete_agent`")  # noqa: E501
 
         collection_formats = {}
@@ -281,8 +281,8 @@ class AgentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `get_agent`")  # noqa: E501
 
         collection_formats = {}
@@ -380,8 +380,8 @@ class AgentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `get_agent_statuses`")  # noqa: E501
 
         collection_formats = {}
@@ -717,8 +717,8 @@ class AgentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `login_agent`")  # noqa: E501
 
         collection_formats = {}
@@ -816,8 +816,8 @@ class AgentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `login_key`")  # noqa: E501
 
         collection_formats = {}
@@ -915,8 +915,8 @@ class AgentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `logout_agent`")  # noqa: E501
 
         collection_formats = {}
@@ -1014,8 +1014,8 @@ class AgentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `pause_agent`")  # noqa: E501
 
         collection_formats = {}
@@ -1210,8 +1210,8 @@ class AgentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `update_agent`")  # noqa: E501
 
         collection_formats = {}
@@ -1313,12 +1313,12 @@ class AgentsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
+        if self.api_client.client_side_validation and ('user_id' not in params or
+                                                       params['user_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `user_id` when calling `update_call_settings`")  # noqa: E501
         # verify the required parameter 'voice_status' is set
-        if ('voice_status' not in params or
-                params['voice_status'] is None):
+        if self.api_client.client_side_validation and ('voice_status' not in params or
+                                                       params['voice_status'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `voice_status` when calling `update_call_settings`")  # noqa: E501
 
         collection_formats = {}

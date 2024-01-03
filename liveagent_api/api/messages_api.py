@@ -85,8 +85,8 @@ class MessagesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'message_id' is set
-        if ('message_id' not in params or
-                params['message_id'] is None):
+        if self.api_client.client_side_validation and ('message_id' not in params or
+                                                       params['message_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `message_id` when calling `delete_message`")  # noqa: E501
 
         collection_formats = {}
@@ -188,8 +188,8 @@ class MessagesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'message_id' is set
-        if ('message_id' not in params or
-                params['message_id'] is None):
+        if self.api_client.client_side_validation and ('message_id' not in params or
+                                                       params['message_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `message_id` when calling `get_message`")  # noqa: E501
 
         collection_formats = {}

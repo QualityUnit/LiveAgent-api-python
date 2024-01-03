@@ -182,8 +182,8 @@ class GroupsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'group_id' is set
-        if ('group_id' not in params or
-                params['group_id'] is None):
+        if self.api_client.client_side_validation and ('group_id' not in params or
+                                                       params['group_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `group_id` when calling `delete_group`")  # noqa: E501
 
         collection_formats = {}
@@ -279,8 +279,8 @@ class GroupsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'group_id' is set
-        if ('group_id' not in params or
-                params['group_id'] is None):
+        if self.api_client.client_side_validation and ('group_id' not in params or
+                                                       params['group_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `group_id` when calling `get_group_by_id`")  # noqa: E501
 
         collection_formats = {}
@@ -467,8 +467,8 @@ class GroupsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'group_id' is set
-        if ('group_id' not in params or
-                params['group_id'] is None):
+        if self.api_client.client_side_validation and ('group_id' not in params or
+                                                       params['group_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `group_id` when calling `update_group`")  # noqa: E501
 
         collection_formats = {}

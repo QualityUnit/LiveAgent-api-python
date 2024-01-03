@@ -178,8 +178,8 @@ class CustomButtonsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'custom_button_id' is set
-        if ('custom_button_id' not in params or
-                params['custom_button_id'] is None):
+        if self.api_client.client_side_validation and ('custom_button_id' not in params or
+                                                       params['custom_button_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `custom_button_id` when calling `delete_custom_button`")  # noqa: E501
 
         collection_formats = {}
@@ -275,8 +275,8 @@ class CustomButtonsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'custom_button_id' is set
-        if ('custom_button_id' not in params or
-                params['custom_button_id'] is None):
+        if self.api_client.client_side_validation and ('custom_button_id' not in params or
+                                                       params['custom_button_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `custom_button_id` when calling `get_custom_button`")  # noqa: E501
 
         collection_formats = {}
@@ -491,8 +491,8 @@ class CustomButtonsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'custom_button_id' is set
-        if ('custom_button_id' not in params or
-                params['custom_button_id'] is None):
+        if self.api_client.client_side_validation and ('custom_button_id' not in params or
+                                                       params['custom_button_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `custom_button_id` when calling `update_custom_button`")  # noqa: E501
 
         collection_formats = {}

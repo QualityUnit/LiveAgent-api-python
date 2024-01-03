@@ -182,8 +182,8 @@ class TagsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'tag_id' is set
-        if ('tag_id' not in params or
-                params['tag_id'] is None):
+        if self.api_client.client_side_validation and ('tag_id' not in params or
+                                                       params['tag_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `tag_id` when calling `delete_tag`")  # noqa: E501
 
         collection_formats = {}
@@ -279,8 +279,8 @@ class TagsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'tag_id' is set
-        if ('tag_id' not in params or
-                params['tag_id'] is None):
+        if self.api_client.client_side_validation and ('tag_id' not in params or
+                                                       params['tag_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `tag_id` when calling `get_tag_by_id`")  # noqa: E501
 
         collection_formats = {}
@@ -467,8 +467,8 @@ class TagsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'tag_id' is set
-        if ('tag_id' not in params or
-                params['tag_id'] is None):
+        if self.api_client.client_side_validation and ('tag_id' not in params or
+                                                       params['tag_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `tag_id` when calling `update_tag`")  # noqa: E501
 
         collection_formats = {}

@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**remove_phone**](PhonesApi.md#remove_phone) | **DELETE** /phones/{phoneId} | Remove phone
 [**update_phone**](PhonesApi.md#update_phone) | **PUT** /phones/{phoneId} | Update phone
 [**update_phone_params**](PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone params
+[**update_reg_status**](PhonesApi.md#update_reg_status) | **PUT** /phones/{phoneId}/_updateRegStatus | Update registration status
 
 
 # **create_phone**
@@ -358,6 +359,63 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **phone_id** | **str**|  | 
  **params** | **str**| New params | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_reg_status**
+> OkResponse update_reg_status(phone_id, reg_status)
+
+Update registration status
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.PhonesApi(liveagent_api.ApiClient(configuration))
+phone_id = 'phone_id_example' # str | 
+reg_status = 'reg_status_example' # str | F - Phone is not registered (offline). N - Phone is registered (online). 
+
+try:
+    # Update registration status
+    api_response = api_instance.update_reg_status(phone_id, reg_status)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PhonesApi->update_reg_status: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phone_id** | **str**|  | 
+ **reg_status** | **str**| F - Phone is not registered (offline). N - Phone is registered (online).  | 
 
 ### Return type
 

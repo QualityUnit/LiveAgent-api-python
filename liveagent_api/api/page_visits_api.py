@@ -99,8 +99,8 @@ class PageVisitsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'contact_id' is set
-        if ('contact_id' not in params or
-                params['contact_id'] is None):
+        if self.api_client.client_side_validation and ('contact_id' not in params or
+                                                       params['contact_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `contact_id` when calling `get_page_visit_by_contact_id`")  # noqa: E501
 
         collection_formats = {}

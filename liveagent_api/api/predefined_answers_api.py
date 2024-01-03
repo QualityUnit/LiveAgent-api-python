@@ -182,8 +182,8 @@ class PredefinedAnswersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'predefined_answer_id' is set
-        if ('predefined_answer_id' not in params or
-                params['predefined_answer_id'] is None):
+        if self.api_client.client_side_validation and ('predefined_answer_id' not in params or
+                                                       params['predefined_answer_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `predefined_answer_id` when calling `delete_predefined_answer`")  # noqa: E501
 
         collection_formats = {}
@@ -279,8 +279,8 @@ class PredefinedAnswersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'predefined_answer_id' is set
-        if ('predefined_answer_id' not in params or
-                params['predefined_answer_id'] is None):
+        if self.api_client.client_side_validation and ('predefined_answer_id' not in params or
+                                                       params['predefined_answer_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `predefined_answer_id` when calling `get_predefined_answer`")  # noqa: E501
 
         collection_formats = {}
@@ -497,8 +497,8 @@ class PredefinedAnswersApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'predefined_answer_id' is set
-        if ('predefined_answer_id' not in params or
-                params['predefined_answer_id'] is None):
+        if self.api_client.client_side_validation and ('predefined_answer_id' not in params or
+                                                       params['predefined_answer_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `predefined_answer_id` when calling `update_predefined_answer`")  # noqa: E501
 
         collection_formats = {}

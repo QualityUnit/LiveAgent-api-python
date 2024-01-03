@@ -182,12 +182,12 @@ class CompaniesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'company_id' is set
-        if ('company_id' not in params or
-                params['company_id'] is None):
+        if self.api_client.client_side_validation and ('company_id' not in params or
+                                                       params['company_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `company_id` when calling `delete_company`")  # noqa: E501
         # verify the required parameter 'delete_tickets' is set
-        if ('delete_tickets' not in params or
-                params['delete_tickets'] is None):
+        if self.api_client.client_side_validation and ('delete_tickets' not in params or
+                                                       params['delete_tickets'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `delete_tickets` when calling `delete_company`")  # noqa: E501
 
         collection_formats = {}
@@ -402,8 +402,8 @@ class CompaniesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'company_id' is set
-        if ('company_id' not in params or
-                params['company_id'] is None):
+        if self.api_client.client_side_validation and ('company_id' not in params or
+                                                       params['company_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `company_id` when calling `get_specific_company`")  # noqa: E501
 
         collection_formats = {}
@@ -503,12 +503,12 @@ class CompaniesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'company_id' is set
-        if ('company_id' not in params or
-                params['company_id'] is None):
+        if self.api_client.client_side_validation and ('company_id' not in params or
+                                                       params['company_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `company_id` when calling `register_company`")  # noqa: E501
         # verify the required parameter 'registration_email' is set
-        if ('registration_email' not in params or
-                params['registration_email'] is None):
+        if self.api_client.client_side_validation and ('registration_email' not in params or
+                                                       params['registration_email'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `registration_email` when calling `register_company`")  # noqa: E501
 
         collection_formats = {}
@@ -608,8 +608,8 @@ class CompaniesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'company_id' is set
-        if ('company_id' not in params or
-                params['company_id'] is None):
+        if self.api_client.client_side_validation and ('company_id' not in params or
+                                                       params['company_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `company_id` when calling `unregister_company`")  # noqa: E501
 
         collection_formats = {}
@@ -707,8 +707,8 @@ class CompaniesApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'company_id' is set
-        if ('company_id' not in params or
-                params['company_id'] is None):
+        if self.api_client.client_side_validation and ('company_id' not in params or
+                                                       params['company_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `company_id` when calling `update_company`")  # noqa: E501
 
         collection_formats = {}

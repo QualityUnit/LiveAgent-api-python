@@ -87,8 +87,8 @@ class AgentPhoneApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'agent_id' is set
-        if ('agent_id' not in params or
-                params['agent_id'] is None):
+        if self.api_client.client_side_validation and ('agent_id' not in params or
+                                                       params['agent_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `agent_id` when calling `get_agent_phone`")  # noqa: E501
 
         collection_formats = {}
@@ -188,12 +188,12 @@ class AgentPhoneApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'agent_id' is set
-        if ('agent_id' not in params or
-                params['agent_id'] is None):
+        if self.api_client.client_side_validation and ('agent_id' not in params or
+                                                       params['agent_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `agent_id` when calling `set_agent_phone`")  # noqa: E501
         # verify the required parameter 'phone_id' is set
-        if ('phone_id' not in params or
-                params['phone_id'] is None):
+        if self.api_client.client_side_validation and ('phone_id' not in params or
+                                                       params['phone_id'] is None):  # noqa: E501
             raise ValueError("Missing the required parameter `phone_id` when calling `set_agent_phone`")  # noqa: E501
 
         collection_formats = {}
