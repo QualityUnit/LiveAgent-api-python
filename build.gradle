@@ -8,6 +8,6 @@ repositories {
 }
 dependencies {
     compile "io.swagger:swagger-codegen:2.4.39"
-    runtime "io.swagger:swagger-codegen-cli:2.4.39"
+    runtime "io.swagger:swagger-codegen-cli:2.4.41"
 }
 apply from: "apigen.gradle"
