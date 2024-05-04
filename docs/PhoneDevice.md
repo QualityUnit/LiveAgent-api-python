@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**type** | **str** | A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone | 
+**type** | **str** | A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone, R - Provider extension | 
 **number** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **reg_status** | **str** |  | [optional] 
