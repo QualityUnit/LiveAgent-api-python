@@ -142,7 +142,7 @@ class PhoneDevice(object):
     def type(self):
         """Gets the type of this PhoneDevice.  # noqa: E501
 
-        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone  # noqa: E501
+        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone, R - Provider extension  # noqa: E501
 
         :return: The type of this PhoneDevice.  # noqa: E501
         :rtype: str
@@ -153,14 +153,14 @@ class PhoneDevice(object):
     def type(self, type):
         """Sets the type of this PhoneDevice.
 
-        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone  # noqa: E501
+        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone, R - Provider extension  # noqa: E501
 
         :param type: The type of this PhoneDevice.  # noqa: E501
         :type: str
         """
         if self._configuration.client_side_validation and type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["A", "S", "E", "W", "I"]  # noqa: E501
+        allowed_values = ["A", "S", "E", "W", "I", "R"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 type not in allowed_values):
             raise ValueError(
