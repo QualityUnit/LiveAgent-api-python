@@ -202,7 +202,8 @@ class RESTClientObject(object):
                         body=request_body,
                         preload_content=_preload_content,
                         timeout=timeout,
-                        headers=headers)
+                        headers=headers,
+                        retries=0)                                                                          # MODIFIED
                 else:
                     # Cannot generate the request from given parameters
                     msg = """Cannot prepare a request message for provided
