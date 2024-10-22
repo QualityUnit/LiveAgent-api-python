@@ -202,7 +202,8 @@ class RESTClientObject(object):
                         body=request_body,
                         preload_content=_preload_content,
                         timeout=timeout,
-                        headers=headers)
+                        headers=headers,
+                        retries=0)                                                                          # MODIFIED
                 else:
                     # Cannot generate the request from given parameters
                     msg = """Cannot prepare a request message for provided
@@ -215,7 +216,8 @@ class RESTClientObject(object):
                                               fields=query_params,
                                               preload_content=_preload_content,
                                               timeout=timeout,
-                                              headers=headers)
+                                              headers=headers,
+                                              retries=0)                                                    # MODIFIED
         except urllib3.exceptions.HTTPError as e:                                                            # MODIFIED
             msg = "{0}\n{1}".format(type(e).__name__, str(e))
             raise ApiException(status=0, reason=msg)
