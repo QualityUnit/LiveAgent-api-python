@@ -15,3 +15,12 @@ task generateApi(type: JavaExec) {
             '-c', "./client.json"
     ]
 }
+
+task getConfigOptions(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "io.swagger.codegen.SwaggerCodegen"
+    args = [
+            'config-help',
+            '-l', 'python'
+    ]
+}
