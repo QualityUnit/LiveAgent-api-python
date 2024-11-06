@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **city** | **str** |  | [optional] 
 **department_id** | **str** |  | [optional] 
 **agent_id** | **str** |  | [optional] 
-**status** | **str** | &lt;br&gt; C, T - Chatting&lt;br&gt; R - Ringing&lt;br&gt; Q - In queue | [optional] 
+**status** | **str** | &lt;br&gt; C - Chatting&lt;br&gt; T - Finished&lt;br&gt; R - Ringing&lt;br&gt; Q - In queue | [optional] 
 **emails** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

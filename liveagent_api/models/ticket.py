@@ -277,7 +277,7 @@ class Ticket(object):
     def status(self):
         """Gets the status of this Ticket.  # noqa: E501
 
-        <br> I - init<br> N - new<br> T - chatting<br> P - calling<br> R - resolved<br> X - deleted<br> B - spam<br> A - answered<br> C - open<br> W - postponed  # noqa: E501
+        <br> I - init<br> N - new<br> T - chatting<br> P - calling<br> R - resolved<br> X - deleted<br> B - spam<br> A - answered<br> C - open<br> W - postponed<br> L - closed  # noqa: E501
 
         :return: The status of this Ticket.  # noqa: E501
         :rtype: str
@@ -288,12 +288,12 @@ class Ticket(object):
     def status(self, status):
         """Sets the status of this Ticket.
 
-        <br> I - init<br> N - new<br> T - chatting<br> P - calling<br> R - resolved<br> X - deleted<br> B - spam<br> A - answered<br> C - open<br> W - postponed  # noqa: E501
+        <br> I - init<br> N - new<br> T - chatting<br> P - calling<br> R - resolved<br> X - deleted<br> B - spam<br> A - answered<br> C - open<br> W - postponed<br> L - closed  # noqa: E501
 
         :param status: The status of this Ticket.  # noqa: E501
         :type: str
         """
-        allowed_values = ["I", "N", "T", "P", "R", "X", "B", "A", "C", "W"]  # noqa: E501
+        allowed_values = ["I", "N", "T", "P", "R", "X", "B", "A", "C", "W", "L"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 status not in allowed_values):
             raise ValueError(

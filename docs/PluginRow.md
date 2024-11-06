@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **help** | **str** |  | [optional] 
 **multiple** | **bool** |  | [optional] 
 **config_file** | **str** |  | [optional] 
-**price** | **float** |  | [optional] 
 **legacy_integration** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

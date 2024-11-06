@@ -40,7 +40,6 @@ class PluginRow(object):
         'help': 'str',
         'multiple': 'bool',
         'config_file': 'str',
-        'price': 'float',
         'legacy_integration': 'bool'
     }
 
@@ -52,11 +51,10 @@ class PluginRow(object):
         'help': 'help',
         'multiple': 'multiple',
         'config_file': 'config_file',
-        'price': 'price',
         'legacy_integration': 'legacy_integration'
     }
 
-    def __init__(self, code_name=None, name=None, description=None, active=None, help=None, multiple=None, config_file=None, price=None, legacy_integration=None, _configuration=None):  # noqa: E501
+    def __init__(self, code_name=None, name=None, description=None, active=None, help=None, multiple=None, config_file=None, legacy_integration=None, _configuration=None):  # noqa: E501
         """PluginRow - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -69,7 +67,6 @@ class PluginRow(object):
         self._help = None
         self._multiple = None
         self._config_file = None
-        self._price = None
         self._legacy_integration = None
         self.discriminator = None
 
@@ -87,8 +84,6 @@ class PluginRow(object):
             self.multiple = multiple
         if config_file is not None:
             self.config_file = config_file
-        if price is not None:
-            self.price = price
         if legacy_integration is not None:
             self.legacy_integration = legacy_integration
 
@@ -238,27 +233,6 @@ class PluginRow(object):
         """
 
         self._config_file = config_file
-
-    @property
-    def price(self):
-        """Gets the price of this PluginRow.  # noqa: E501
-
-
-        :return: The price of this PluginRow.  # noqa: E501
-        :rtype: float
-        """
-        return self._price
-
-    @price.setter
-    def price(self, price):
-        """Sets the price of this PluginRow.
-
-
-        :param price: The price of this PluginRow.  # noqa: E501
-        :type: float
-        """
-
-        self._price = price
 
     @property
     def legacy_integration(self):

@@ -32,6 +32,7 @@ from liveagent_api.api.ping_api import PingApi
 from liveagent_api.api.predefined_answers_api import PredefinedAnswersApi
 from liveagent_api.api.queue_api import QueueApi
 from liveagent_api.api.settings_api import SettingsApi
+from liveagent_api.api.sip_configuration_api import SipConfigurationApi
 from liveagent_api.api.slack_api import SlackApi
 from liveagent_api.api.slas_api import SlasApi
 from liveagent_api.api.subscriptions_api import SubscriptionsApi

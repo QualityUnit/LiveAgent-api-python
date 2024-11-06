@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 **id** | **float** |  | [optional] 
 **agent_id** | **str** |  | 
 **phone_id** | **str** |  | [optional] 
-**type** | **str** | W - WEB A - MOBILE APP S - SIP E - EXTERNAL I - API | 
+**phone** | [**PhoneDevice**](PhoneDevice.md) |  | [optional] 
+**type** | **str** | W - WEB A - MOBILE APP E - EXTERNAL (Corresponds to the phone types: SIP, API, PSTN, SIP Provider Extension) | 
 **service_type** | **str** | M - MESSAGE T - CHAT P - PHONE | 
 **online_status** | **str** | N - ONLINE F - OFFLINE | [optional] [default to 'N']
 **preset_status** | **str** | N - ONLINE F - OFFLINE | 

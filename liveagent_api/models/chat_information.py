@@ -479,7 +479,7 @@ class ChatInformation(object):
     def status(self):
         """Gets the status of this ChatInformation.  # noqa: E501
 
-        <br> C, T - Chatting<br> R - Ringing<br> Q - In queue  # noqa: E501
+        <br> C - Chatting<br> T - Finished<br> R - Ringing<br> Q - In queue  # noqa: E501
 
         :return: The status of this ChatInformation.  # noqa: E501
         :rtype: str
@@ -490,7 +490,7 @@ class ChatInformation(object):
     def status(self, status):
         """Sets the status of this ChatInformation.
 
-        <br> C, T - Chatting<br> R - Ringing<br> Q - In queue  # noqa: E501
+        <br> C - Chatting<br> T - Finished<br> R - Ringing<br> Q - In queue  # noqa: E501
 
         :param status: The status of this ChatInformation.  # noqa: E501
         :type: str

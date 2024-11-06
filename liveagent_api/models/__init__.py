@@ -113,6 +113,7 @@ from liveagent_api.models.ticket_information import TicketInformation
 from liveagent_api.models.ticket_list_item import TicketListItem
 from liveagent_api.models.ticket_postpone import TicketPostpone
 from liveagent_api.models.ticket_row import TicketRow
+from liveagent_api.models.ticket_rows_with_cursor import TicketRowsWithCursor
 from liveagent_api.models.ticket_sla import TicketSla
 from liveagent_api.models.ticket_updatable import TicketUpdatable
 from liveagent_api.models.time_report_row import TimeReportRow

@@ -50,6 +50,13 @@ class TestApiApi(unittest.TestCase):
         """
         pass
 
+    def test_generate_api_v1_key(self):
+        """Test case for generate_api_v1_key
+
+        Gets new api keys  # noqa: E501
+        """
+        pass
+
     def test_generate_sso_key(self):
         """Test case for generate_sso_key
 
