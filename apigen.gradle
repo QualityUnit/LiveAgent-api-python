@@ -1,6 +1,6 @@
 task cleanApi(type: Delete) {
     delete 'docs', 'test'
-    delete fileTree(dir: 'liveagent_api', exclude: {'rest.py'; 'api_client.py'})
+    delete fileTree(dir: 'liveagent_api', excludes: ['**/rest.py', '**/api_client.py', '**/configuration.py'])
 }
 
 task generateApi(type: JavaExec) {
