@@ -33,6 +33,103 @@ class ElasticApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def clean_tickets(self, type, **kwargs):  # noqa: E501
+        """Remove all es-documents that dont exist in primary db  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.clean_tickets(type, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str type: Type of index (required)
+        :return: ElasticMessage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.clean_tickets_with_http_info(type, **kwargs)  # noqa: E501
+        else:
+            (data) = self.clean_tickets_with_http_info(type, **kwargs)  # noqa: E501
+            return data
+
+    def clean_tickets_with_http_info(self, type, **kwargs):  # noqa: E501
+        """Remove all es-documents that dont exist in primary db  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.clean_tickets_with_http_info(type, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str type: Type of index (required)
+        :return: ElasticMessage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['type']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method clean_tickets" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'type' is set
+        if self.api_client.client_side_validation and ('type' not in params or
+                                                       params['type'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `type` when calling `clean_tickets`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'type' in params:
+            form_params.append(('type', params['type']))  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/elastic/cleanDeletedData', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ElasticMessage',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_index_status(self, **kwargs):  # noqa: E501
         """Get reindex status  # noqa: E501
 
@@ -297,6 +394,103 @@ class ElasticApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='ElasticMessage',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_ticket_check_task(self, date_from, **kwargs):  # noqa: E501
+        """Update ticket check task  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_ticket_check_task(date_from, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param datetime date_from: Y-m-d H:i:s (required)
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_ticket_check_task_with_http_info(date_from, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_ticket_check_task_with_http_info(date_from, **kwargs)  # noqa: E501
+            return data
+
+    def update_ticket_check_task_with_http_info(self, date_from, **kwargs):  # noqa: E501
+        """Update ticket check task  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_ticket_check_task_with_http_info(date_from, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param datetime date_from: Y-m-d H:i:s (required)
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['date_from']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_ticket_check_task" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'date_from' is set
+        if self.api_client.client_side_validation and ('date_from' not in params or
+                                                       params['date_from'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `date_from` when calling `update_ticket_check_task`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'date_from' in params:
+            query_params.append(('dateFrom', params['date_from']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/elastic/updateTicketCheckTask', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

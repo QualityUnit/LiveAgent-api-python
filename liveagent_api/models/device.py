@@ -36,6 +36,7 @@ class Device(object):
         'id': 'float',
         'agent_id': 'str',
         'phone_id': 'str',
+        'phone': 'PhoneDevice',
         'type': 'str',
         'service_type': 'str',
         'online_status': 'str',
@@ -47,6 +48,7 @@ class Device(object):
         'id': 'id',
         'agent_id': 'agent_id',
         'phone_id': 'phone_id',
+        'phone': 'phone',
         'type': 'type',
         'service_type': 'service_type',
         'online_status': 'online_status',
@@ -54,7 +56,7 @@ class Device(object):
         'route_if_offline': 'route_if_offline'
     }
 
-    def __init__(self, id=None, agent_id=None, phone_id=None, type=None, service_type=None, online_status='N', preset_status=None, route_if_offline='Y', _configuration=None):  # noqa: E501
+    def __init__(self, id=None, agent_id=None, phone_id=None, phone=None, type=None, service_type=None, online_status='N', preset_status=None, route_if_offline='Y', _configuration=None):  # noqa: E501
         """Device - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -63,6 +65,7 @@ class Device(object):
         self._id = None
         self._agent_id = None
         self._phone_id = None
+        self._phone = None
         self._type = None
         self._service_type = None
         self._online_status = None
@@ -75,6 +78,8 @@ class Device(object):
         self.agent_id = agent_id
         if phone_id is not None:
             self.phone_id = phone_id
+        if phone is not None:
+            self.phone = phone
         self.type = type
         self.service_type = service_type
         if online_status is not None:
@@ -149,10 +154,31 @@ class Device(object):
         self._phone_id = phone_id
 
     @property
+    def phone(self):
+        """Gets the phone of this Device.  # noqa: E501
+
+
+        :return: The phone of this Device.  # noqa: E501
+        :rtype: PhoneDevice
+        """
+        return self._phone
+
+    @phone.setter
+    def phone(self, phone):
+        """Sets the phone of this Device.
+
+
+        :param phone: The phone of this Device.  # noqa: E501
+        :type: PhoneDevice
+        """
+
+        self._phone = phone
+
+    @property
     def type(self):
         """Gets the type of this Device.  # noqa: E501
 
-        W - WEB A - MOBILE APP S - SIP E - EXTERNAL I - API  # noqa: E501
+        W - WEB A - MOBILE APP E - EXTERNAL (Corresponds to the phone types: SIP, API, PSTN, SIP Provider Extension)  # noqa: E501
 
         :return: The type of this Device.  # noqa: E501
         :rtype: str
@@ -163,14 +189,14 @@ class Device(object):
     def type(self, type):
         """Sets the type of this Device.
 
-        W - WEB A - MOBILE APP S - SIP E - EXTERNAL I - API  # noqa: E501
+        W - WEB A - MOBILE APP E - EXTERNAL (Corresponds to the phone types: SIP, API, PSTN, SIP Provider Extension)  # noqa: E501
 
         :param type: The type of this Device.  # noqa: E501
         :type: str
         """
         if self._configuration.client_side_validation and type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["W", "A", "S", "E", "I"]  # noqa: E501
+        allowed_values = ["W", "A", "E"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 type not in allowed_values):
             raise ValueError(

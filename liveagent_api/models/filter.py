@@ -58,7 +58,7 @@ class Filter(object):
         'conditions': 'conditions'
     }
 
-    def __init__(self, filter_id=None, name=None, description=None, filter_type=None, user_id=None, rtype=None, is_public=False, user_ids=None, department_ids=None, conditions=None, _configuration=None):  # noqa: E501
+    def __init__(self, filter_id=None, name=None, description=None, filter_type=None, user_id=None, rtype=None, is_public=None, user_ids=None, department_ids=None, conditions=None, _configuration=None):  # noqa: E501
         """Filter - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -206,7 +206,7 @@ class Filter(object):
     def rtype(self):
         """Gets the rtype of this Filter.  # noqa: E501
 
-        C - Custom, S - System, P - Preset  # noqa: E501
+        C - Custom, P - Preset  # noqa: E501
 
         :return: The rtype of this Filter.  # noqa: E501
         :rtype: str
@@ -217,18 +217,11 @@ class Filter(object):
     def rtype(self, rtype):
         """Sets the rtype of this Filter.
 
-        C - Custom, S - System, P - Preset  # noqa: E501
+        C - Custom, P - Preset  # noqa: E501
 
         :param rtype: The rtype of this Filter.  # noqa: E501
         :type: str
         """
-        allowed_values = ["C", "S", "P"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                rtype not in allowed_values):
-            raise ValueError(
-                "Invalid value for `rtype` ({0}), must be one of {1}"  # noqa: E501
-                .format(rtype, allowed_values)
-            )
 
         self._rtype = rtype
 

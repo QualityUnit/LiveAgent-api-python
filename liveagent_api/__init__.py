@@ -45,6 +45,7 @@ from liveagent_api.api.ping_api import PingApi
 from liveagent_api.api.predefined_answers_api import PredefinedAnswersApi
 from liveagent_api.api.queue_api import QueueApi
 from liveagent_api.api.settings_api import SettingsApi
+from liveagent_api.api.sip_configuration_api import SipConfigurationApi
 from liveagent_api.api.slack_api import SlackApi
 from liveagent_api.api.slas_api import SlasApi
 from liveagent_api.api.subscriptions_api import SubscriptionsApi
@@ -158,6 +159,7 @@ from liveagent_api.models.ticket_information import TicketInformation
 from liveagent_api.models.ticket_list_item import TicketListItem
 from liveagent_api.models.ticket_postpone import TicketPostpone
 from liveagent_api.models.ticket_row import TicketRow
+from liveagent_api.models.ticket_rows_with_cursor import TicketRowsWithCursor
 from liveagent_api.models.ticket_sla import TicketSla
 from liveagent_api.models.ticket_updatable import TicketUpdatable
 from liveagent_api.models.time_report_row import TimeReportRow

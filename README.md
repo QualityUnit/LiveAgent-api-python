@@ -97,7 +97,8 @@ Class | Method | HTTP request | Description
 *AgentsApi* | [**update_call_settings**](docs/AgentsApi.md#update_call_settings) | **POST** /agents/{userId}/updateVoiceStatus | Update general voice status
 *ApiApi* | [**create_api_keys**](docs/ApiApi.md#create_api_keys) | **POST** /apikeys | Creates api key
 *ApiApi* | [**delete_api_key**](docs/ApiApi.md#delete_api_key) | **DELETE** /apikeys/{apikeyId} | Deletes api key
-*ApiApi* | [**generate_api_key**](docs/ApiApi.md#generate_api_key) | **POST** /apikeys/_generate | Gets new api keys
+*ApiApi* | [**generate_api_key**](docs/ApiApi.md#generate_api_key) | **POST** /apikeys/regenerateApiV3/{apikeyId} | Gets new api keys
+*ApiApi* | [**generate_api_v1_key**](docs/ApiApi.md#generate_api_v1_key) | **POST** /apikeys/regenerateApiV1 | Gets new api keys
 *ApiApi* | [**generate_sso_key**](docs/ApiApi.md#generate_sso_key) | **POST** /sso | Generate SSO key
 *ApiApi* | [**get_api_info**](docs/ApiApi.md#get_api_info) | **GET** /api/info/{apiVersion} | Gets api info
 *ApiApi* | [**get_api_key**](docs/ApiApi.md#get_api_key) | **GET** /apikeys/{apikeyId} | Gets api keys
@@ -187,9 +188,11 @@ Class | Method | HTTP request | Description
 *DevicesApi* | [**update_device**](docs/DevicesApi.md#update_device) | **PUT** /devices/{deviceId} | Update device
 *DevicesApi* | [**update_device_department**](docs/DevicesApi.md#update_device_department) | **PUT** /devices/{deviceId}/departments/{departmentId} | Update device department
 *DevicesApi* | [**update_device_departments**](docs/DevicesApi.md#update_device_departments) | **PUT** /devices/departments/update | Update device departments
+*ElasticApi* | [**clean_tickets**](docs/ElasticApi.md#clean_tickets) | **POST** /elastic/cleanDeletedData | Remove all es-documents that dont exist in primary db
 *ElasticApi* | [**get_index_status**](docs/ElasticApi.md#get_index_status) | **GET** /elastic/status | Get reindex status
 *ElasticApi* | [**reindex**](docs/ElasticApi.md#reindex) | **POST** /elastic/reindex | Reindex selected fields
 *ElasticApi* | [**reindex_all**](docs/ElasticApi.md#reindex_all) | **POST** /elastic/reindexAll | Reindex all fields
+*ElasticApi* | [**update_ticket_check_task**](docs/ElasticApi.md#update_ticket_check_task) | **POST** /elastic/updateTicketCheckTask | Update ticket check task
 *ExtensionsApi* | [**get_extension**](docs/ExtensionsApi.md#get_extension) | **GET** /extensions/{extensionId} | Gets Extension
 *ExtensionsApi* | [**get_extensions_count**](docs/ExtensionsApi.md#get_extensions_count) | **GET** /extensions/count | Gets count for extensions
 *ExtensionsApi* | [**get_extensions_list**](docs/ExtensionsApi.md#get_extensions_list) | **GET** /extensions | Gets list of extensions
@@ -220,6 +223,7 @@ Class | Method | HTTP request | Description
 *GridApi* | [**get_languages_grid_list_count**](docs/GridApi.md#get_languages_grid_list_count) | **GET** /grid/languages/count | Gets count of languages for languages grid
 *GridApi* | [**get_plugind_grid_list**](docs/GridApi.md#get_plugind_grid_list) | **GET** /grid/plugins | Gets plugins  for grid
 *GridApi* | [**get_tags_grid_list**](docs/GridApi.md#get_tags_grid_list) | **GET** /grid/tags | Gets list of tags for grid
+*GridApi* | [**get_tickets_grid_dataset**](docs/GridApi.md#get_tickets_grid_dataset) | **GET** /grid/tickets_new | Gets list of tickets for tickets grid
 *GridApi* | [**get_tickets_grid_list**](docs/GridApi.md#get_tickets_grid_list) | **GET** /grid/tickets | Gets list of tickets for tickets grid
 *GridApi* | [**get_tickets_grid_list_count**](docs/GridApi.md#get_tickets_grid_list_count) | **GET** /grid/tickets/count | Gets count of tickets for tickets grid
 *GridApi* | [**get_tickets_sla_log_grid_list**](docs/GridApi.md#get_tickets_sla_log_grid_list) | **GET** /grid/tickets/sla | Gets list of ticket slas for grid
@@ -258,6 +262,7 @@ Class | Method | HTTP request | Description
 *PredefinedAnswersApi* | [**update_predefined_answer**](docs/PredefinedAnswersApi.md#update_predefined_answer) | **PUT** /predefined_answers/{predefinedAnswerId} | Update predefined answer
 *QueueApi* | [**get_queue_batch**](docs/QueueApi.md#get_queue_batch) | **GET** /queue/batch/{batchId} | Retrieves the batch status and remaining items to process
 *SettingsApi* | [**get_settings**](docs/SettingsApi.md#get_settings) | **GET** /settings | Gets settings list
+*SipConfigurationApi* | [**update_entities**](docs/SipConfigurationApi.md#update_entities) | **POST** /sip_configuration/restore | Restore all data in VoIP DB
 *SlackApi* | [**get_conversation**](docs/SlackApi.md#get_conversation) | **GET** /slack/conversation/{id} | Gets info about Slack workspace channel
 *SlackApi* | [**get_conversations**](docs/SlackApi.md#get_conversations) | **GET** /slack/conversations | Gets Slack workspace channels
 *SlackApi* | [**get_slack_user**](docs/SlackApi.md#get_slack_user) | **GET** /slack/user/{id} | Gets info about Slack user
@@ -404,6 +409,7 @@ Class | Method | HTTP request | Description
  - [TicketListItem](docs/TicketListItem.md)
  - [TicketPostpone](docs/TicketPostpone.md)
  - [TicketRow](docs/TicketRow.md)
+ - [TicketRowsWithCursor](docs/TicketRowsWithCursor.md)
  - [TicketSla](docs/TicketSla.md)
  - [TicketUpdatable](docs/TicketUpdatable.md)
  - [TimeReportRow](docs/TimeReportRow.md)
@@ -464,10 +470,13 @@ Class | Method | HTTP request | Description
  - **api.write_own**: Modify own apikeys
  - **api.delete**: Delete api keys
  - **time_report.read**: Read time reports
+ - **ticket.answer**: Ticket answer
  - **ticket.create**: Create new conversation
+ - **ticket.close**: Close ticket
  - **ticket.read**: Ticket read
  - **ticket.read_all**: Ticket read all
- - **ticket.operate**: Operations with ticket(update, delete)
+ - **ticket.operate**: Operations with ticket(update)
+ - **ticket.change_state**: Operations with ticket(change state, delete)
  - **ticket.mass**: Ticket mass action (status and remaining items to process)
  - **device.own**: Read/write devices available to me
  - **device.manage**: Manage agent devices
@@ -484,6 +493,7 @@ Class | Method | HTTP request | Description
  - **reindex.write**: Write reindex
  - **custom_button.read**: Read custom buttons
  - **custom_button.write**: Modify custom buttons
+ - **sip_configuration.manage**: Manage SIP entities
  - **sso.read**: Read SSO
  - **sso.read_own**: Read own SSO
  - **sso.write**: Write SSO
@@ -495,6 +505,8 @@ Class | Method | HTTP request | Description
  - **contact.edit**: Edit contact
  - **contact.delete**: Delete contact
  - **button.read**: Read chat buttons
+ - **filter.read**: Read filters
+ - **filter.write**: Write tickets filters
 
 
 ## Author

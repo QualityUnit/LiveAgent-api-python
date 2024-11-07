@@ -38,7 +38,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.PhonesApi(liveagent_api.ApiClient(configuration))
 number = 'number_example' # str | 
-type = 'S' # str | S - SIP phone, E - PSTN phone (optional) (default to S)
+type = 'S' # str | S - SIP phone, E - PSTN phone, R - SIP provider extension (optional) (default to S)
 name = 'name_example' # str |  (optional)
 trunk_id = 8.14 # float |  (optional)
 agent_id = 'agent_id_example' # str |  (optional)
@@ -57,7 +57,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **number** | **str**|  | 
- **type** | **str**| S - SIP phone, E - PSTN phone | [optional] [default to S]
+ **type** | **str**| S - SIP phone, E - PSTN phone, R - SIP provider extension | [optional] [default to S]
  **name** | **str**|  | [optional] 
  **trunk_id** | **float**|  | [optional] 
  **agent_id** | **str**|  | [optional] 

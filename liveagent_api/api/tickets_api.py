@@ -970,7 +970,7 @@ class TicketsApi(object):
         :param int _from: Result set start. Takes precedence over _page.
         :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
-        :param str sort_field: Sorting field
+        :param str sort_field:
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[Ticket]
                  If the method is called asynchronously,
@@ -997,7 +997,7 @@ class TicketsApi(object):
         :param int _from: Result set start. Takes precedence over _page.
         :param int to: Result set end. Used only if _from is used.
         :param str sort_dir: Sorting direction ASC or DESC
-        :param str sort_field: Sorting field
+        :param str sort_field:
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :return: list[Ticket]
                  If the method is called asynchronously,

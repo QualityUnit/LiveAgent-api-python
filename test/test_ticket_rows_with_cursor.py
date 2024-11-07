@@ -16,52 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import liveagent_api
-from liveagent_api.api.elastic_api import ElasticApi  # noqa: E501
+from liveagent_api.models.ticket_rows_with_cursor import TicketRowsWithCursor  # noqa: E501
 from liveagent_api.rest import ApiException
 
 
-class TestElasticApi(unittest.TestCase):
-    """ElasticApi unit test stubs"""
+class TestTicketRowsWithCursor(unittest.TestCase):
+    """TicketRowsWithCursor unit test stubs"""
 
     def setUp(self):
-        self.api = liveagent_api.api.elastic_api.ElasticApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_clean_tickets(self):
-        """Test case for clean_tickets
-
-        Remove all es-documents that dont exist in primary db  # noqa: E501
-        """
-        pass
-
-    def test_get_index_status(self):
-        """Test case for get_index_status
-
-        Get reindex status  # noqa: E501
-        """
-        pass
-
-    def test_reindex(self):
-        """Test case for reindex
-
-        Reindex selected fields  # noqa: E501
-        """
-        pass
-
-    def test_reindex_all(self):
-        """Test case for reindex_all
-
-        Reindex all fields  # noqa: E501
-        """
-        pass
-
-    def test_update_ticket_check_task(self):
-        """Test case for update_ticket_check_task
-
-        Update ticket check task  # noqa: E501
-        """
+    def testTicketRowsWithCursor(self):
+        """Test TicketRowsWithCursor"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = liveagent_api.models.ticket_rows_with_cursor.TicketRowsWithCursor()  # noqa: E501
         pass
 
 

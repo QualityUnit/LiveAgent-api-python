@@ -1,6 +1,6 @@
 task cleanApi(type: Delete) {
     delete 'docs', 'test'
-    delete fileTree(dir: 'liveagent_api', exclude: {'rest.py'; 'api_client.py'})
+    delete fileTree(dir: 'liveagent_api', excludes: ['**/rest.py', '**/api_client.py', '**/configuration.py'])
 }
 
 task generateApi(type: JavaExec) {
@@ -13,5 +13,14 @@ task generateApi(type: JavaExec) {
             '-i', "../LiveAgent/codegen/descriptor/liveagent.yaml",
             '-o', ".",
             '-c', "./client.json"
+    ]
+}
+
+task getConfigOptions(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "io.swagger.codegen.SwaggerCodegen"
+    args = [
+            'config-help',
+            '-l', 'python'
     ]
 }

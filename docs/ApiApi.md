@@ -6,7 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_api_keys**](ApiApi.md#create_api_keys) | **POST** /apikeys | Creates api key
 [**delete_api_key**](ApiApi.md#delete_api_key) | **DELETE** /apikeys/{apikeyId} | Deletes api key
-[**generate_api_key**](ApiApi.md#generate_api_key) | **POST** /apikeys/_generate | Gets new api keys
+[**generate_api_key**](ApiApi.md#generate_api_key) | **POST** /apikeys/regenerateApiV3/{apikeyId} | Gets new api keys
+[**generate_api_v1_key**](ApiApi.md#generate_api_v1_key) | **POST** /apikeys/regenerateApiV1 | Gets new api keys
 [**generate_sso_key**](ApiApi.md#generate_sso_key) | **POST** /sso | Generate SSO key
 [**get_api_info**](ApiApi.md#get_api_info) | **GET** /api/info/{apiVersion} | Gets api info
 [**get_api_key**](ApiApi.md#get_api_key) | **GET** /apikeys/{apikeyId} | Gets api keys
@@ -133,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_api_key**
-> ApiKey generate_api_key()
+> OkResponse generate_api_key(apikey_id)
 
 Gets new api keys
 
@@ -158,13 +159,70 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.ApiApi(liveagent_api.ApiClient(configuration))
+apikey_id = 8.14 # float | 
 
 try:
     # Gets new api keys
-    api_response = api_instance.generate_api_key()
+    api_response = api_instance.generate_api_key(apikey_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiApi->generate_api_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **apikey_id** | **float**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_api_v1_key**
+> ApiKeyWithPrivileges generate_api_v1_key()
+
+Gets new api keys
+
+Get new api v1 key
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.ApiApi(liveagent_api.ApiClient(configuration))
+
+try:
+    # Gets new api keys
+    api_response = api_instance.generate_api_v1_key()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApiApi->generate_api_v1_key: %s\n" % e)
 ```
 
 ### Parameters
@@ -172,7 +230,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApiKey**](ApiKey.md)
+[**ApiKeyWithPrivileges**](ApiKeyWithPrivileges.md)
 
 ### Authorization
 

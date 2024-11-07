@@ -16,51 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import liveagent_api
-from liveagent_api.api.elastic_api import ElasticApi  # noqa: E501
+from liveagent_api.api.sip_configuration_api import SipConfigurationApi  # noqa: E501
 from liveagent_api.rest import ApiException
 
 
-class TestElasticApi(unittest.TestCase):
-    """ElasticApi unit test stubs"""
+class TestSipConfigurationApi(unittest.TestCase):
+    """SipConfigurationApi unit test stubs"""
 
     def setUp(self):
-        self.api = liveagent_api.api.elastic_api.ElasticApi()  # noqa: E501
+        self.api = liveagent_api.api.sip_configuration_api.SipConfigurationApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def test_clean_tickets(self):
-        """Test case for clean_tickets
+    def test_update_entities(self):
+        """Test case for update_entities
 
-        Remove all es-documents that dont exist in primary db  # noqa: E501
-        """
-        pass
-
-    def test_get_index_status(self):
-        """Test case for get_index_status
-
-        Get reindex status  # noqa: E501
-        """
-        pass
-
-    def test_reindex(self):
-        """Test case for reindex
-
-        Reindex selected fields  # noqa: E501
-        """
-        pass
-
-    def test_reindex_all(self):
-        """Test case for reindex_all
-
-        Reindex all fields  # noqa: E501
-        """
-        pass
-
-    def test_update_ticket_check_task(self):
-        """Test case for update_ticket_check_task
-
-        Update ticket check task  # noqa: E501
+        Restore all data in VoIP DB  # noqa: E501
         """
         pass
 

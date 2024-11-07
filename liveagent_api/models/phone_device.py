@@ -142,7 +142,7 @@ class PhoneDevice(object):
     def type(self):
         """Gets the type of this PhoneDevice.  # noqa: E501
 
-        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone, R - Provider extension  # noqa: E501
+        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone, R - SIP provider extension  # noqa: E501
 
         :return: The type of this PhoneDevice.  # noqa: E501
         :rtype: str
@@ -153,7 +153,7 @@ class PhoneDevice(object):
     def type(self, type):
         """Sets the type of this PhoneDevice.
 
-        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone, R - Provider extension  # noqa: E501
+        A - LiveAgent phone app, S - SIP phone, E - PSTN phone, W - In panel web phone, I - Api phone, R - SIP provider extension  # noqa: E501
 
         :param type: The type of this PhoneDevice.  # noqa: E501
         :type: str

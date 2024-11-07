@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **owner_name** | **str** |  | [optional] 
 **departmentid** | **str** |  | [optional] 
 **agentid** | **str** |  | [optional] 
-**status** | **str** | &lt;br&gt; I - init&lt;br&gt; N - new&lt;br&gt; T - chatting&lt;br&gt; P - calling&lt;br&gt; R - resolved&lt;br&gt; X - deleted&lt;br&gt; B - spam&lt;br&gt; A - answered&lt;br&gt; C - open&lt;br&gt; W - postponed | [optional] 
+**status** | **str** | &lt;br&gt; I - init&lt;br&gt; N - new&lt;br&gt; T - chatting&lt;br&gt; P - calling&lt;br&gt; R - resolved&lt;br&gt; X - deleted&lt;br&gt; B - spam&lt;br&gt; A - answered&lt;br&gt; C - open&lt;br&gt; W - postponed&lt;br&gt; L - closed | [optional] 
 **tags** | **list[str]** |  | [optional] 
 **code** | **str** |  | [optional] 
 **channel_type** | **str** | &lt;br&gt; E - email&lt;br&gt; B - contact button&lt;br&gt; M - contact form&lt;br&gt; I - invitation&lt;br&gt; C - call&lt;br&gt; W - call button&lt;br&gt; F - facebook&lt;br&gt; A - facebook message&lt;br&gt; T - twitter&lt;br&gt; Q - forum&lt;br&gt; S - suggestion | [optional] 

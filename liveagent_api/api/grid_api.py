@@ -2053,6 +2053,119 @@ class GridApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_tickets_grid_dataset(self, **kwargs):  # noqa: E501
+        """Gets list of tickets for tickets grid  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_tickets_grid_dataset(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int per_page: Results per page.
+        :param str sort_dir: Sorting direction ASC or DESC
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
+        :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
+        :param str sort_field:
+        :param int timezone_offset: difference between client and server time in seconds
+        :return: TicketRowsWithCursor
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_tickets_grid_dataset_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_tickets_grid_dataset_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_tickets_grid_dataset_with_http_info(self, **kwargs):  # noqa: E501
+        """Gets list of tickets for tickets grid  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_tickets_grid_dataset_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int per_page: Results per page.
+        :param str sort_dir: Sorting direction ASC or DESC
+        :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
+        :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
+        :param str sort_field:
+        :param int timezone_offset: difference between client and server time in seconds
+        :return: TicketRowsWithCursor
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field', 'timezone_offset']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_tickets_grid_dataset" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'per_page' in params:
+            query_params.append(('_perPage', params['per_page']))  # noqa: E501
+        if 'sort_dir' in params:
+            query_params.append(('_sortDir', params['sort_dir']))  # noqa: E501
+        if 'filters' in params:
+            query_params.append(('_filters', params['filters']))  # noqa: E501
+        if 'cursor' in params:
+            query_params.append(('_cursor', params['cursor']))  # noqa: E501
+        if 'sort_field' in params:
+            query_params.append(('_sortField', params['sort_field']))  # noqa: E501
+
+        header_params = {}
+        if 'timezone_offset' in params:
+            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/grid/tickets_new', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TicketRowsWithCursor',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_tickets_grid_list(self, **kwargs):  # noqa: E501
         """Gets list of tickets for tickets grid  # noqa: E501
 

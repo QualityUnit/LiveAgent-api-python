@@ -33,28 +33,23 @@ class TicketPostpone(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'date_time': 'str',
-        'userid': 'str'
+        'date_time': 'str'
     }
 
     attribute_map = {
-        'date_time': 'date_time',
-        'userid': 'userid'
+        'date_time': 'date_time'
     }
 
-    def __init__(self, date_time=None, userid=None, _configuration=None):  # noqa: E501
+    def __init__(self, date_time=None, _configuration=None):  # noqa: E501
         """TicketPostpone - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._date_time = None
-        self._userid = None
         self.discriminator = None
 
         self.date_time = date_time
-        if userid is not None:
-            self.userid = userid
 
     @property
     def date_time(self):
@@ -80,27 +75,6 @@ class TicketPostpone(object):
             raise ValueError("Invalid value for `date_time`, must not be `None`")  # noqa: E501
 
         self._date_time = date_time
-
-    @property
-    def userid(self):
-        """Gets the userid of this TicketPostpone.  # noqa: E501
-
-
-        :return: The userid of this TicketPostpone.  # noqa: E501
-        :rtype: str
-        """
-        return self._userid
-
-    @userid.setter
-    def userid(self, userid):
-        """Sets the userid of this TicketPostpone.
-
-
-        :param userid: The userid of this TicketPostpone.  # noqa: E501
-        :type: str
-        """
-
-        self._userid = userid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

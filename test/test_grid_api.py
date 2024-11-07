@@ -169,6 +169,13 @@ class TestGridApi(unittest.TestCase):
         """
         pass
 
+    def test_get_tickets_grid_dataset(self):
+        """Test case for get_tickets_grid_dataset
+
+        Gets list of tickets for tickets grid  # noqa: E501
+        """
+        pass
+
     def test_get_tickets_grid_list(self):
         """Test case for get_tickets_grid_list
 

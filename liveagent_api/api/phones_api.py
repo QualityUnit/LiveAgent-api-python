@@ -43,7 +43,7 @@ class PhonesApi(object):
 
         :param async_req bool
         :param str number: (required)
-        :param str type: S - SIP phone, E - PSTN phone
+        :param str type: S - SIP phone, E - PSTN phone, R - SIP provider extension
         :param str name:
         :param float trunk_id:
         :param str agent_id:
@@ -69,7 +69,7 @@ class PhonesApi(object):
 
         :param async_req bool
         :param str number: (required)
-        :param str type: S - SIP phone, E - PSTN phone
+        :param str type: S - SIP phone, E - PSTN phone, R - SIP provider extension
         :param str name:
         :param float trunk_id:
         :param str agent_id:
