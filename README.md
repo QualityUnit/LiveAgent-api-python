@@ -114,6 +114,7 @@ Class | Method | HTTP request | Description
 *BansApi* | [**get_ban**](docs/BansApi.md#get_ban) | **GET** /bans/{banId} | Get ban item
 *BansApi* | [**get_bans**](docs/BansApi.md#get_bans) | **GET** /bans | Bans list
 *BansApi* | [**update_ban**](docs/BansApi.md#update_ban) | **PUT** /bans/{banId} | Update ban
+*CallsApi* | [**blind_call_transfer**](docs/CallsApi.md#blind_call_transfer) | **POST** /calls/{callId}/_blind_transfer | Transfers call to different department / agent
 *CallsApi* | [**call_add_message**](docs/CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket
 *CallsApi* | [**call_add_recording**](docs/CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket
 *CallsApi* | [**call_answer**](docs/CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
@@ -121,6 +122,7 @@ Class | Method | HTTP request | Description
 *CallsApi* | [**call_create**](docs/CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 *CallsApi* | [**call_fetch_ivr**](docs/CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL
 *CallsApi* | [**call_get_status**](docs/CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
+*CallsApi* | [**call_get_transfer_status**](docs/CallsApi.md#call_get_transfer_status) | **GET** /calls/{callId}/transfer_status | Return the status of call
 *CallsApi* | [**call_id**](docs/CallsApi.md#call_id) | **GET** /calls/channels/{channelId}/call_id | Return the call ID
 *CallsApi* | [**call_move_channel**](docs/CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels/{channelId}/_move | Moves existing channel to target call
 *CallsApi* | [**call_pickup**](docs/CallsApi.md#call_pickup) | **POST** /calls/_pickup | Pick up call from queue
@@ -251,9 +253,9 @@ Class | Method | HTTP request | Description
 *PhonesApi* | [**get_phone**](docs/PhonesApi.md#get_phone) | **GET** /phones/{phoneId} | Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
 *PhonesApi* | [**get_phones_list**](docs/PhonesApi.md#get_phones_list) | **GET** /phones | Gets list of available phone devices. Special filters (userId - filter phones available for specified user only) 
 *PhonesApi* | [**remove_phone**](docs/PhonesApi.md#remove_phone) | **DELETE** /phones/{phoneId} | Remove phone
+*PhonesApi* | [**update_browser_registration**](docs/PhonesApi.md#update_browser_registration) | **PUT** /phones/{phoneId}/_updateBrowserRegistration | Update browser registration status
 *PhonesApi* | [**update_phone**](docs/PhonesApi.md#update_phone) | **PUT** /phones/{phoneId} | Update phone
 *PhonesApi* | [**update_phone_params**](docs/PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone params
-*PhonesApi* | [**update_reg_status**](docs/PhonesApi.md#update_reg_status) | **PUT** /phones/{phoneId}/_updateRegStatus | Update registration status
 *PingApi* | [**ping**](docs/PingApi.md#ping) | **GET** /ping | Check that API is responding
 *PredefinedAnswersApi* | [**create_predefined_answer**](docs/PredefinedAnswersApi.md#create_predefined_answer) | **POST** /predefined_answers | Create predefined answer
 *PredefinedAnswersApi* | [**delete_predefined_answer**](docs/PredefinedAnswersApi.md#delete_predefined_answer) | **DELETE** /predefined_answers/{predefinedAnswerId} | Predefined answer

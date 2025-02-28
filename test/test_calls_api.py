@@ -29,6 +29,13 @@ class TestCallsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_blind_call_transfer(self):
+        """Test case for blind_call_transfer
+
+        Transfers call to different department / agent  # noqa: E501
+        """
+        pass
+
     def test_call_add_message(self):
         """Test case for call_add_message
 
@@ -73,6 +80,13 @@ class TestCallsApi(unittest.TestCase):
 
     def test_call_get_status(self):
         """Test case for call_get_status
+
+        Return the status of call  # noqa: E501
+        """
+        pass
+
+    def test_call_get_transfer_status(self):
+        """Test case for call_get_transfer_status
 
         Return the status of call  # noqa: E501
         """

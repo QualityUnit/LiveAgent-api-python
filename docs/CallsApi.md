@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**blind_call_transfer**](CallsApi.md#blind_call_transfer) | **POST** /calls/{callId}/_blind_transfer | Transfers call to different department / agent
 [**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket
 [**call_add_recording**](CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket
 [**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
@@ -11,6 +12,7 @@ Method | HTTP request | Description
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 [**call_fetch_ivr**](CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL
 [**call_get_status**](CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
+[**call_get_transfer_status**](CallsApi.md#call_get_transfer_status) | **GET** /calls/{callId}/transfer_status | Return the status of call
 [**call_id**](CallsApi.md#call_id) | **GET** /calls/channels/{channelId}/call_id | Return the call ID
 [**call_move_channel**](CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels/{channelId}/_move | Moves existing channel to target call
 [**call_pickup**](CallsApi.md#call_pickup) | **POST** /calls/_pickup | Pick up call from queue
@@ -34,6 +36,65 @@ Method | HTTP request | Description
 [**unhold_channel**](CallsApi.md#unhold_channel) | **POST** /calls/{callId}/channels/{channelId}/_unhold | Unhold channel
 [**unmute_channel**](CallsApi.md#unmute_channel) | **POST** /calls/{callId}/channels/{channelId}/_unmute | Unmute channel
 
+
+# **blind_call_transfer**
+> CallTransferResult blind_call_transfer(call_id, to=to)
+
+Transfers call to different department / agent
+
+Blind transfer can be called on active calls to transfer them to another department / agent
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+call_id = 'call_id_example' # str | 
+to = 'to_example' # str | Pnone device or extension number (optional)
+
+try:
+    # Transfers call to different department / agent
+    api_response = api_instance.blind_call_transfer(call_id, to=to)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CallsApi->blind_call_transfer: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **to** | **str**| Pnone device or extension number | [optional] 
+
+### Return type
+
+[**CallTransferResult**](CallTransferResult.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_add_message**
 > OkResponse call_add_message(call_id, body=body)
@@ -428,6 +489,63 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CallsApi->call_get_status: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **unreachable_agents** | [**list[str]**](str.md)| Identifiers of unreachable agents that should be excluded from routing | [optional] 
+
+### Return type
+
+[**CallStatus**](CallStatus.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_get_transfer_status**
+> CallStatus call_get_transfer_status(call_id, unreachable_agents=unreachable_agents)
+
+Return the status of call
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+call_id = 'call_id_example' # str | 
+unreachable_agents = ['unreachable_agents_example'] # list[str] | Identifiers of unreachable agents that should be excluded from routing (optional)
+
+try:
+    # Return the status of call
+    api_response = api_instance.call_get_transfer_status(call_id, unreachable_agents=unreachable_agents)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CallsApi->call_get_transfer_status: %s\n" % e)
 ```
 
 ### Parameters
