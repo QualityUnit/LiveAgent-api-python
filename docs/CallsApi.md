@@ -38,7 +38,7 @@ Method | HTTP request | Description
 
 
 # **blind_call_transfer**
-> CallTransferResult blind_call_transfer(call_id, to=to)
+> CallStatus blind_call_transfer(call_id, to=to)
 
 Transfers call to different department / agent
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CallTransferResult**](CallTransferResult.md)
+[**CallStatus**](CallStatus.md)
 
 ### Authorization
 
