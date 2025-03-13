@@ -187,7 +187,7 @@ class PhoneNumber(object):
     def type(self):
         """Gets the type of this PhoneNumber.  # noqa: E501
 
-        A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk  # noqa: E501
+        A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, S - Asterisk  # noqa: E501
 
         :return: The type of this PhoneNumber.  # noqa: E501
         :rtype: str
@@ -198,12 +198,12 @@ class PhoneNumber(object):
     def type(self, type):
         """Sets the type of this PhoneNumber.
 
-        A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk  # noqa: E501
+        A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, S - Asterisk  # noqa: E501
 
         :param type: The type of this PhoneNumber.  # noqa: E501
         :type: str
         """
-        allowed_values = ["A", "C", "T", "T-O", "D", "S"]  # noqa: E501
+        allowed_values = ["A", "C", "T", "T-O", "S"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 type not in allowed_values):
             raise ValueError(

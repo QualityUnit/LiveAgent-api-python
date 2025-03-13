@@ -38,7 +38,8 @@ class DeviceDepartment(object):
         'user_id': 'str',
         'department_name': 'str',
         'online_status': 'str',
-        'preset_status': 'str'
+        'preset_status': 'str',
+        'work_allocation_allowed': 'bool'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class DeviceDepartment(object):
         'user_id': 'user_id',
         'department_name': 'department_name',
         'online_status': 'online_status',
-        'preset_status': 'preset_status'
+        'preset_status': 'preset_status',
+        'work_allocation_allowed': 'work_allocation_allowed'
     }
 
-    def __init__(self, device_id=None, department_id=None, user_id=None, department_name=None, online_status=None, preset_status=None, _configuration=None):  # noqa: E501
+    def __init__(self, device_id=None, department_id=None, user_id=None, department_name=None, online_status=None, preset_status=None, work_allocation_allowed=None, _configuration=None):  # noqa: E501
         """DeviceDepartment - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -62,6 +64,7 @@ class DeviceDepartment(object):
         self._department_name = None
         self._online_status = None
         self._preset_status = None
+        self._work_allocation_allowed = None
         self.discriminator = None
 
         if device_id is not None:
@@ -76,6 +79,8 @@ class DeviceDepartment(object):
             self.online_status = online_status
         if preset_status is not None:
             self.preset_status = preset_status
+        if work_allocation_allowed is not None:
+            self.work_allocation_allowed = work_allocation_allowed
 
     @property
     def device_id(self):
@@ -202,6 +207,27 @@ class DeviceDepartment(object):
         """
 
         self._preset_status = preset_status
+
+    @property
+    def work_allocation_allowed(self):
+        """Gets the work_allocation_allowed of this DeviceDepartment.  # noqa: E501
+
+
+        :return: The work_allocation_allowed of this DeviceDepartment.  # noqa: E501
+        :rtype: bool
+        """
+        return self._work_allocation_allowed
+
+    @work_allocation_allowed.setter
+    def work_allocation_allowed(self, work_allocation_allowed):
+        """Sets the work_allocation_allowed of this DeviceDepartment.
+
+
+        :param work_allocation_allowed: The work_allocation_allowed of this DeviceDepartment.  # noqa: E501
+        :type: bool
+        """
+
+        self._work_allocation_allowed = work_allocation_allowed
 
     def to_dict(self):
         """Returns the model properties as a dict"""

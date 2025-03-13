@@ -35,16 +35,18 @@ class AgentStatus(object):
     swagger_types = {
         'departmentid': 'str',
         'online_status': 'str',
-        'preset_status': 'str'
+        'preset_status': 'str',
+        'work_allocation_allowed': 'bool'
     }
 
     attribute_map = {
         'departmentid': 'departmentid',
         'online_status': 'online_status',
-        'preset_status': 'preset_status'
+        'preset_status': 'preset_status',
+        'work_allocation_allowed': 'work_allocation_allowed'
     }
 
-    def __init__(self, departmentid=None, online_status=None, preset_status=None, _configuration=None):  # noqa: E501
+    def __init__(self, departmentid=None, online_status=None, preset_status=None, work_allocation_allowed=None, _configuration=None):  # noqa: E501
         """AgentStatus - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -53,6 +55,7 @@ class AgentStatus(object):
         self._departmentid = None
         self._online_status = None
         self._preset_status = None
+        self._work_allocation_allowed = None
         self.discriminator = None
 
         if departmentid is not None:
@@ -61,6 +64,8 @@ class AgentStatus(object):
             self.online_status = online_status
         if preset_status is not None:
             self.preset_status = preset_status
+        if work_allocation_allowed is not None:
+            self.work_allocation_allowed = work_allocation_allowed
 
     @property
     def departmentid(self):
@@ -128,6 +133,27 @@ class AgentStatus(object):
         """
 
         self._preset_status = preset_status
+
+    @property
+    def work_allocation_allowed(self):
+        """Gets the work_allocation_allowed of this AgentStatus.  # noqa: E501
+
+
+        :return: The work_allocation_allowed of this AgentStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._work_allocation_allowed
+
+    @work_allocation_allowed.setter
+    def work_allocation_allowed(self, work_allocation_allowed):
+        """Sets the work_allocation_allowed of this AgentStatus.
+
+
+        :param work_allocation_allowed: The work_allocation_allowed of this AgentStatus.  # noqa: E501
+        :type: bool
+        """
+
+        self._work_allocation_allowed = work_allocation_allowed
 
     def to_dict(self):
         """Returns the model properties as a dict"""

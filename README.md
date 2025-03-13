@@ -117,6 +117,7 @@ Class | Method | HTTP request | Description
 *CallsApi* | [**call_add_message**](docs/CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket
 *CallsApi* | [**call_add_recording**](docs/CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket
 *CallsApi* | [**call_answer**](docs/CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
+*CallsApi* | [**call_blind_transfer**](docs/CallsApi.md#call_blind_transfer) | **POST** /calls/{callId}_blind_transfer | Transfers call to different department / agent
 *CallsApi* | [**call_change_channel_status**](docs/CallsApi.md#call_change_channel_status) | **PUT** /calls/{callId}/channels/{channelId}/_status | Change channel status
 *CallsApi* | [**call_create**](docs/CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 *CallsApi* | [**call_fetch_ivr**](docs/CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL
@@ -251,9 +252,9 @@ Class | Method | HTTP request | Description
 *PhonesApi* | [**get_phone**](docs/PhonesApi.md#get_phone) | **GET** /phones/{phoneId} | Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
 *PhonesApi* | [**get_phones_list**](docs/PhonesApi.md#get_phones_list) | **GET** /phones | Gets list of available phone devices. Special filters (userId - filter phones available for specified user only) 
 *PhonesApi* | [**remove_phone**](docs/PhonesApi.md#remove_phone) | **DELETE** /phones/{phoneId} | Remove phone
+*PhonesApi* | [**update_browser_registration**](docs/PhonesApi.md#update_browser_registration) | **PUT** /phones/{phoneId}/_updateBrowserRegistration | Update browser registration status
 *PhonesApi* | [**update_phone**](docs/PhonesApi.md#update_phone) | **PUT** /phones/{phoneId} | Update phone
 *PhonesApi* | [**update_phone_params**](docs/PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone params
-*PhonesApi* | [**update_reg_status**](docs/PhonesApi.md#update_reg_status) | **PUT** /phones/{phoneId}/_updateRegStatus | Update registration status
 *PingApi* | [**ping**](docs/PingApi.md#ping) | **GET** /ping | Check that API is responding
 *PredefinedAnswersApi* | [**create_predefined_answer**](docs/PredefinedAnswersApi.md#create_predefined_answer) | **POST** /predefined_answers | Create predefined answer
 *PredefinedAnswersApi* | [**delete_predefined_answer**](docs/PredefinedAnswersApi.md#delete_predefined_answer) | **DELETE** /predefined_answers/{predefinedAnswerId} | Predefined answer
@@ -274,7 +275,6 @@ Class | Method | HTTP request | Description
 *SlasApi* | [**get_sla_ticket_history**](docs/SlasApi.md#get_sla_ticket_history) | **GET** /slas/{ticketId}/history | Gets ticket sla history
 *SlasApi* | [**get_slas_list**](docs/SlasApi.md#get_slas_list) | **GET** /slas | Gets list of slas
 *SubscriptionsApi* | [**get_billing_status**](docs/SubscriptionsApi.md#get_billing_status) | **GET** /subscriptions/{subscriptionId}/billingStatus | Billing status
-*SubscriptionsApi* | [**get_custom_reseller_upgrade_url**](docs/SubscriptionsApi.md#get_custom_reseller_upgrade_url) | **GET** /subscriptions/{subscriptionId}/upgrade_url | Upgrade Url
 *SubscriptionsApi* | [**get_domain_info**](docs/SubscriptionsApi.md#get_domain_info) | **GET** /subscriptions/{subscriptionId}/domain | Domain info
 *SubscriptionsApi* | [**get_subscription_discounts**](docs/SubscriptionsApi.md#get_subscription_discounts) | **GET** /subscriptions/{subscriptionId}/discounts | Subscription discounts
 *SubscriptionsApi* | [**set_custom_domain**](docs/SubscriptionsApi.md#set_custom_domain) | **PUT** /subscriptions/{subscriptionId}/custom_domain | Custom domain

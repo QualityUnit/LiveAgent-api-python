@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket
 [**call_add_recording**](CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket
 [**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
+[**call_blind_transfer**](CallsApi.md#call_blind_transfer) | **POST** /calls/{callId}_blind_transfer | Transfers call to different department / agent
 [**call_change_channel_status**](CallsApi.md#call_change_channel_status) | **PUT** /calls/{callId}/channels/{channelId}/_status | Change channel status
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 [**call_fetch_ivr**](CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL
@@ -198,6 +199,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_blind_transfer**
+> Call call_blind_transfer(call_id, to_number, channel_id)
+
+Transfers call to different department / agent
+
+Blind transfer can be called on active calls to transfer them to another pnone device or extension number
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+call_id = 'call_id_example' # str | 
+to_number = 'to_number_example' # str | Phone device or extension number
+channel_id = 'channel_id_example' # str | Channel ID that initiated the transfer
+
+try:
+    # Transfers call to different department / agent
+    api_response = api_instance.call_blind_transfer(call_id, to_number, channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CallsApi->call_blind_transfer: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **to_number** | **str**| Phone device or extension number | 
+ **channel_id** | **str**| Channel ID that initiated the transfer | 
+
+### Return type
+
+[**Call**](Call.md)
 
 ### Authorization
 
