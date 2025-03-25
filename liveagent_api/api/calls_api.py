@@ -361,7 +361,7 @@ class CallsApi(object):
         :param str call_id: (required)
         :param str to_number: Phone device or extension number (required)
         :param str channel_id: Channel ID that initiated the transfer (required)
-        :return: Call
+        :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -385,7 +385,7 @@ class CallsApi(object):
         :param str call_id: (required)
         :param str to_number: Phone device or extension number (required)
         :param str channel_id: Channel ID that initiated the transfer (required)
-        :return: Call
+        :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -455,7 +455,7 @@ class CallsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Call',  # noqa: E501
+            response_type='OkResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

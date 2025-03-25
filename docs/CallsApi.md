@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_blind_transfer**
-> Call call_blind_transfer(call_id, to_number, channel_id)
+> OkResponse call_blind_transfer(call_id, to_number, channel_id)
 
 Transfers call to different department / agent
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Call**](Call.md)
+[**OkResponse**](OkResponse.md)
 
 ### Authorization
 
