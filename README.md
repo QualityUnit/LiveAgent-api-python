@@ -117,7 +117,7 @@ Class | Method | HTTP request | Description
 *CallsApi* | [**call_add_message**](docs/CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket
 *CallsApi* | [**call_add_recording**](docs/CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket
 *CallsApi* | [**call_answer**](docs/CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
-*CallsApi* | [**call_blind_transfer**](docs/CallsApi.md#call_blind_transfer) | **POST** /calls/{callId}_blind_transfer | Transfers call to different department / agent
+*CallsApi* | [**call_blind_transfer**](docs/CallsApi.md#call_blind_transfer) | **POST** /calls/{callId}/_blind_transfer | Transfers call to different department / agent
 *CallsApi* | [**call_change_channel_status**](docs/CallsApi.md#call_change_channel_status) | **PUT** /calls/{callId}/channels/{channelId}/_status | Change channel status
 *CallsApi* | [**call_create**](docs/CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 *CallsApi* | [**call_fetch_ivr**](docs/CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL

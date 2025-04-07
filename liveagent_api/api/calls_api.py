@@ -448,7 +448,7 @@ class CallsApi(object):
         auth_settings = ['apikey', 'privileges']  # noqa: E501
 
         return self.api_client.call_api(
-            '/calls/{callId}_blind_transfer', 'POST',
+            '/calls/{callId}/_blind_transfer', 'POST',
             path_params,
             query_params,
             header_params,

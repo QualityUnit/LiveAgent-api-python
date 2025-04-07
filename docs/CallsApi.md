@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**call_add_message**](CallsApi.md#call_add_message) | **POST** /calls/{callId}/messages | Adds a message to the call group in corresponding ticket
 [**call_add_recording**](CallsApi.md#call_add_recording) | **POST** /calls/{callId}/recordings | Adds a recording to the call group in corresponding ticket
 [**call_answer**](CallsApi.md#call_answer) | **POST** /calls/{callId}/_answer | Set call as answered by agent
-[**call_blind_transfer**](CallsApi.md#call_blind_transfer) | **POST** /calls/{callId}_blind_transfer | Transfers call to different department / agent
+[**call_blind_transfer**](CallsApi.md#call_blind_transfer) | **POST** /calls/{callId}/_blind_transfer | Transfers call to different department / agent
 [**call_change_channel_status**](CallsApi.md#call_change_channel_status) | **PUT** /calls/{callId}/channels/{channelId}/_status | Change channel status
 [**call_create**](CallsApi.md#call_create) | **POST** /calls/{callId} | Create new call
 [**call_fetch_ivr**](CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL
