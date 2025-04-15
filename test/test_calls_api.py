@@ -50,6 +50,13 @@ class TestCallsApi(unittest.TestCase):
         """
         pass
 
+    def test_call_blind_transfer(self):
+        """Test case for call_blind_transfer
+
+        Transfers call to different department / agent  # noqa: E501
+        """
+        pass
+
     def test_call_change_channel_status(self):
         """Test case for call_change_channel_status
 

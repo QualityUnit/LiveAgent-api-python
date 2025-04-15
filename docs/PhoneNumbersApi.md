@@ -37,7 +37,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.PhoneNumbersApi(liveagent_api.ApiClient(configuration))
-type = 'type_example' # str | A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk
+type = 'type_example' # str | A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, S - Asterisk
 number = 'number_example' # str | 
 status = 'status_example' # str | A - Active, I - Inactive
 dial_out_prefix = 56 # int | Prefix needed to originate call using this number (optional)
@@ -69,7 +69,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **str**| A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk | 
+ **type** | **str**| A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, S - Asterisk | 
  **number** | **str**|  | 
  **status** | **str**| A - Active, I - Inactive | 
  **dial_out_prefix** | **int**| Prefix needed to originate call using this number | [optional] 

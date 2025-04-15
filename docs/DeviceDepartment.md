@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **department_name** | **str** |  | [optional] 
 **online_status** | **str** |  | [optional] 
 **preset_status** | **str** |  | [optional] 
+**work_allocation_allowed** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

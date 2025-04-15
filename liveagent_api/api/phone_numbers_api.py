@@ -42,7 +42,7 @@ class PhoneNumbersApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str type: A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk (required)
+        :param str type: A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, S - Asterisk (required)
         :param str number: (required)
         :param str status: A - Active, I - Inactive (required)
         :param int dial_out_prefix: Prefix needed to originate call using this number
@@ -81,7 +81,7 @@ class PhoneNumbersApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str type: A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, D - Digitale, S - Asterisk (required)
+        :param str type: A - API controlled number, T - Twilio number, T-O - Twilio outgoing number, S - Asterisk (required)
         :param str number: (required)
         :param str status: A - Active, I - Inactive (required)
         :param int dial_out_prefix: Prefix needed to originate call using this number

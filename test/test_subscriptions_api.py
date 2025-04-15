@@ -36,13 +36,6 @@ class TestSubscriptionsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_custom_reseller_upgrade_url(self):
-        """Test case for get_custom_reseller_upgrade_url
-
-        Upgrade Url  # noqa: E501
-        """
-        pass
-
     def test_get_domain_info(self):
         """Test case for get_domain_info
 

@@ -57,6 +57,13 @@ class TestPhonesApi(unittest.TestCase):
         """
         pass
 
+    def test_update_browser_registration(self):
+        """Test case for update_browser_registration
+
+        Update browser registration status  # noqa: E501
+        """
+        pass
+
     def test_update_phone(self):
         """Test case for update_phone
 
@@ -68,13 +75,6 @@ class TestPhonesApi(unittest.TestCase):
         """Test case for update_phone_params
 
         Update phone params  # noqa: E501
-        """
-        pass
-
-    def test_update_reg_status(self):
-        """Test case for update_reg_status
-
-        Update registration status  # noqa: E501
         """
         pass
 
