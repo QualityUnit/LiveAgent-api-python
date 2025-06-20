@@ -71,13 +71,6 @@ class TestAgentsApi(unittest.TestCase):
         """
         pass
 
-    def test_login_agent(self):
-        """Test case for login_agent
-
-        Login agent  # noqa: E501
-        """
-        pass
-
     def test_login_key(self):
         """Test case for login_key
 

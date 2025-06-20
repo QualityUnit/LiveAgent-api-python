@@ -1853,6 +1853,7 @@ class CallsApi(object):
         :param async_req bool
         :param str call_id: (required)
         :param str from_number: from number
+        :param str channel_id: channel hung up the call
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1875,12 +1876,13 @@ class CallsApi(object):
         :param async_req bool
         :param str call_id: (required)
         :param str from_number: from number
+        :param str channel_id: channel hung up the call
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['call_id', 'from_number']  # noqa: E501
+        all_params = ['call_id', 'from_number', 'channel_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1909,6 +1911,8 @@ class CallsApi(object):
         query_params = []
         if 'from_number' in params:
             query_params.append(('from_number', params['from_number']))  # noqa: E501
+        if 'channel_id' in params:
+            query_params.append(('channelId', params['channel_id']))  # noqa: E501
 
         header_params = {}
 

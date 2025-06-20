@@ -88,7 +88,6 @@ Class | Method | HTTP request | Description
 *AgentsApi* | [**get_agent_statuses**](docs/AgentsApi.md#get_agent_statuses) | **GET** /agents/{userId}/status | Get agent statuses in departments
 *AgentsApi* | [**get_agents**](docs/AgentsApi.md#get_agents) | **GET** /agents | Agent list
 *AgentsApi* | [**get_agents_activity**](docs/AgentsApi.md#get_agents_activity) | **GET** /agents/activity | Agent Activity list
-*AgentsApi* | [**login_agent**](docs/AgentsApi.md#login_agent) | **POST** /agents/{userId}/_login | Login agent
 *AgentsApi* | [**login_key**](docs/AgentsApi.md#login_key) | **GET** /agents/{userId}/login_key | Get login key
 *AgentsApi* | [**logout_agent**](docs/AgentsApi.md#logout_agent) | **POST** /agents/{userId}/_logout | Logout agent
 *AgentsApi* | [**pause_agent**](docs/AgentsApi.md#pause_agent) | **POST** /agents/{userId}/_pause | Pause agent
@@ -248,13 +247,9 @@ Class | Method | HTTP request | Description
 *PhoneNumbersApi* | [**remove_phone_number**](docs/PhoneNumbersApi.md#remove_phone_number) | **DELETE** /phone_numbers/{phoneNumberId} | Remove phone number
 *PhoneNumbersApi* | [**update_phone_number**](docs/PhoneNumbersApi.md#update_phone_number) | **PUT** /phone_numbers/{phoneNumberId} | Update phone number
 *PhoneNumbersApi* | [**update_phone_number_status**](docs/PhoneNumbersApi.md#update_phone_number_status) | **PUT** /phone_numbers/{phoneNumberId}/status | Update phone number status
-*PhonesApi* | [**create_phone**](docs/PhonesApi.md#create_phone) | **POST** /phones | Creates external phone
 *PhonesApi* | [**get_phone**](docs/PhonesApi.md#get_phone) | **GET** /phones/{phoneId} | Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
 *PhonesApi* | [**get_phones_list**](docs/PhonesApi.md#get_phones_list) | **GET** /phones | Gets list of available phone devices. Special filters (userId - filter phones available for specified user only) 
-*PhonesApi* | [**remove_phone**](docs/PhonesApi.md#remove_phone) | **DELETE** /phones/{phoneId} | Remove phone
-*PhonesApi* | [**update_browser_registration**](docs/PhonesApi.md#update_browser_registration) | **PUT** /phones/{phoneId}/_updateBrowserRegistration | Update browser registration status
-*PhonesApi* | [**update_phone**](docs/PhonesApi.md#update_phone) | **PUT** /phones/{phoneId} | Update phone
-*PhonesApi* | [**update_phone_params**](docs/PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update phone params
+*PhonesApi* | [**update_phone_params**](docs/PhonesApi.md#update_phone_params) | **PUT** /phones/{phoneId}/_updateParams | Update mobile app phone params
 *PingApi* | [**ping**](docs/PingApi.md#ping) | **GET** /ping | Check that API is responding
 *PredefinedAnswersApi* | [**create_predefined_answer**](docs/PredefinedAnswersApi.md#create_predefined_answer) | **POST** /predefined_answers | Create predefined answer
 *PredefinedAnswersApi* | [**delete_predefined_answer**](docs/PredefinedAnswersApi.md#delete_predefined_answer) | **DELETE** /predefined_answers/{predefinedAnswerId} | Predefined answer
