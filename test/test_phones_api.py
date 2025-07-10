@@ -29,13 +29,6 @@ class TestPhonesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_phone(self):
-        """Test case for create_phone
-
-        Creates external phone  # noqa: E501
-        """
-        pass
-
     def test_get_phone(self):
         """Test case for get_phone
 
@@ -50,31 +43,10 @@ class TestPhonesApi(unittest.TestCase):
         """
         pass
 
-    def test_remove_phone(self):
-        """Test case for remove_phone
-
-        Remove phone  # noqa: E501
-        """
-        pass
-
-    def test_update_browser_registration(self):
-        """Test case for update_browser_registration
-
-        Update browser registration status  # noqa: E501
-        """
-        pass
-
-    def test_update_phone(self):
-        """Test case for update_phone
-
-        Update phone  # noqa: E501
-        """
-        pass
-
     def test_update_phone_params(self):
         """Test case for update_phone_params
 
-        Update phone params  # noqa: E501
+        Update mobile app phone params  # noqa: E501
         """
         pass
 

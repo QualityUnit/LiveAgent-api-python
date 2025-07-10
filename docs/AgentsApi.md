@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**get_agent_statuses**](AgentsApi.md#get_agent_statuses) | **GET** /agents/{userId}/status | Get agent statuses in departments
 [**get_agents**](AgentsApi.md#get_agents) | **GET** /agents | Agent list
 [**get_agents_activity**](AgentsApi.md#get_agents_activity) | **GET** /agents/activity | Agent Activity list
-[**login_agent**](AgentsApi.md#login_agent) | **POST** /agents/{userId}/_login | Login agent
 [**login_key**](AgentsApi.md#login_key) | **GET** /agents/{userId}/login_key | Get login key
 [**logout_agent**](AgentsApi.md#logout_agent) | **POST** /agents/{userId}/_logout | Logout agent
 [**pause_agent**](AgentsApi.md#pause_agent) | **POST** /agents/{userId}/_pause | Pause agent
@@ -373,63 +372,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[AgentActivity]**](AgentActivity.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **login_agent**
-> ErrorResponse login_agent(user_id)
-
-Login agent
-
-Login agent
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.AgentsApi(liveagent_api.ApiClient(configuration))
-user_id = 'user_id_example' # str | 
-
-try:
-    # Login agent
-    api_response = api_instance.login_agent(user_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AgentsApi->login_agent: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
-
-### Return type
-
-[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 

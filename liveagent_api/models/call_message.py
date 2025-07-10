@@ -34,17 +34,15 @@ class CallMessage(object):
     """
     swagger_types = {
         'type': 'str',
-        'message': 'str',
-        'from_number': 'str'
+        'message': 'str'
     }
 
     attribute_map = {
         'type': 'type',
-        'message': 'message',
-        'from_number': 'from_number'
+        'message': 'message'
     }
 
-    def __init__(self, type=None, message=None, from_number=None, _configuration=None):  # noqa: E501
+    def __init__(self, type=None, message=None, _configuration=None):  # noqa: E501
         """CallMessage - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -52,13 +50,10 @@ class CallMessage(object):
 
         self._type = None
         self._message = None
-        self._from_number = None
         self.discriminator = None
 
         self.type = type
         self.message = message
-        if from_number is not None:
-            self.from_number = from_number
 
     @property
     def type(self):
@@ -114,27 +109,6 @@ class CallMessage(object):
             raise ValueError("Invalid value for `message`, must not be `None`")  # noqa: E501
 
         self._message = message
-
-    @property
-    def from_number(self):
-        """Gets the from_number of this CallMessage.  # noqa: E501
-
-
-        :return: The from_number of this CallMessage.  # noqa: E501
-        :rtype: str
-        """
-        return self._from_number
-
-    @from_number.setter
-    def from_number(self, from_number):
-        """Sets the from_number of this CallMessage.
-
-
-        :param from_number: The from_number of this CallMessage.  # noqa: E501
-        :type: str
-        """
-
-        self._from_number = from_number
 
     def to_dict(self):
         """Returns the model properties as a dict"""

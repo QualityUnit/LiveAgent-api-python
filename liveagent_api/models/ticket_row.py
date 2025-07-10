@@ -35,13 +35,14 @@ class TicketRow(object):
     swagger_types = {
         'conversationid': 'str',
         'code': 'str',
-        'datecreated': 'datetime',
-        'datechanged': 'datetime',
-        'dateresolved': 'datetime',
-        'statuschanged': 'datetime',
+        'datecreated': 'int',
+        'enqueued_at': 'int',
+        'datechanged': 'int',
+        'dateresolved': 'int',
+        'statuschanged': 'int',
         'rorder': 'float',
-        'datedue': 'datetime',
-        'datereopen': 'datetime',
+        'datedue': 'int',
+        'datereopen': 'int',
         'status': 'str',
         'channel_type': 'str',
         'departmentid': 'str',
@@ -77,7 +78,7 @@ class TicketRow(object):
         'accountuserstatus': 'str',
         'description': 'str',
         'note': 'str',
-        'last_activity': 'datetime',
+        'last_activity': 'int',
         'tagnames': 'list[str]',
         'groupnames': 'list[str]'
     }
@@ -86,6 +87,7 @@ class TicketRow(object):
         'conversationid': 'conversationid',
         'code': 'code',
         'datecreated': 'datecreated',
+        'enqueued_at': 'enqueuedAt',
         'datechanged': 'datechanged',
         'dateresolved': 'dateresolved',
         'statuschanged': 'statuschanged',
@@ -132,7 +134,7 @@ class TicketRow(object):
         'groupnames': 'groupnames'
     }
 
-    def __init__(self, conversationid=None, code=None, datecreated=None, datechanged=None, dateresolved=None, statuschanged=None, rorder=None, datedue=None, datereopen=None, status=None, channel_type=None, departmentid=None, agentid=None, preview=None, subject=None, departmentname=None, agentname=None, tags=None, messagegroups_in=None, messagegroups_out=None, contactid=None, parent_contactid=None, firstname=None, lastname=None, system_name=None, emails=None, phones=None, job_position=None, contact_type=None, city=None, countrycode=None, time_offset=None, gender=None, levelid=None, groups=None, contact_status=None, company=None, avatar_url=None, userid=None, roleid=None, userstatus=None, accountuserstatus=None, description=None, note=None, last_activity=None, tagnames=None, groupnames=None, _configuration=None):  # noqa: E501
+    def __init__(self, conversationid=None, code=None, datecreated=None, enqueued_at=None, datechanged=None, dateresolved=None, statuschanged=None, rorder=None, datedue=None, datereopen=None, status=None, channel_type=None, departmentid=None, agentid=None, preview=None, subject=None, departmentname=None, agentname=None, tags=None, messagegroups_in=None, messagegroups_out=None, contactid=None, parent_contactid=None, firstname=None, lastname=None, system_name=None, emails=None, phones=None, job_position=None, contact_type=None, city=None, countrycode=None, time_offset=None, gender=None, levelid=None, groups=None, contact_status=None, company=None, avatar_url=None, userid=None, roleid=None, userstatus=None, accountuserstatus=None, description=None, note=None, last_activity=None, tagnames=None, groupnames=None, _configuration=None):  # noqa: E501
         """TicketRow - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -141,6 +143,7 @@ class TicketRow(object):
         self._conversationid = None
         self._code = None
         self._datecreated = None
+        self._enqueued_at = None
         self._datechanged = None
         self._dateresolved = None
         self._statuschanged = None
@@ -193,6 +196,8 @@ class TicketRow(object):
             self.code = code
         if datecreated is not None:
             self.datecreated = datecreated
+        if enqueued_at is not None:
+            self.enqueued_at = enqueued_at
         if datechanged is not None:
             self.datechanged = datechanged
         if dateresolved is not None:
@@ -330,7 +335,7 @@ class TicketRow(object):
 
 
         :return: The datecreated of this TicketRow.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._datecreated
 
@@ -340,10 +345,31 @@ class TicketRow(object):
 
 
         :param datecreated: The datecreated of this TicketRow.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._datecreated = datecreated
+
+    @property
+    def enqueued_at(self):
+        """Gets the enqueued_at of this TicketRow.  # noqa: E501
+
+
+        :return: The enqueued_at of this TicketRow.  # noqa: E501
+        :rtype: int
+        """
+        return self._enqueued_at
+
+    @enqueued_at.setter
+    def enqueued_at(self, enqueued_at):
+        """Sets the enqueued_at of this TicketRow.
+
+
+        :param enqueued_at: The enqueued_at of this TicketRow.  # noqa: E501
+        :type: int
+        """
+
+        self._enqueued_at = enqueued_at
 
     @property
     def datechanged(self):
@@ -351,7 +377,7 @@ class TicketRow(object):
 
 
         :return: The datechanged of this TicketRow.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._datechanged
 
@@ -361,7 +387,7 @@ class TicketRow(object):
 
 
         :param datechanged: The datechanged of this TicketRow.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._datechanged = datechanged
@@ -372,7 +398,7 @@ class TicketRow(object):
 
 
         :return: The dateresolved of this TicketRow.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._dateresolved
 
@@ -382,7 +408,7 @@ class TicketRow(object):
 
 
         :param dateresolved: The dateresolved of this TicketRow.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._dateresolved = dateresolved
@@ -393,7 +419,7 @@ class TicketRow(object):
 
 
         :return: The statuschanged of this TicketRow.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._statuschanged
 
@@ -403,7 +429,7 @@ class TicketRow(object):
 
 
         :param statuschanged: The statuschanged of this TicketRow.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._statuschanged = statuschanged
@@ -435,7 +461,7 @@ class TicketRow(object):
 
 
         :return: The datedue of this TicketRow.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._datedue
 
@@ -445,7 +471,7 @@ class TicketRow(object):
 
 
         :param datedue: The datedue of this TicketRow.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._datedue = datedue
@@ -456,7 +482,7 @@ class TicketRow(object):
 
 
         :return: The datereopen of this TicketRow.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._datereopen
 
@@ -466,7 +492,7 @@ class TicketRow(object):
 
 
         :param datereopen: The datereopen of this TicketRow.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._datereopen = datereopen
@@ -1212,7 +1238,7 @@ class TicketRow(object):
 
 
         :return: The last_activity of this TicketRow.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._last_activity
 
@@ -1222,7 +1248,7 @@ class TicketRow(object):
 
 
         :param last_activity: The last_activity of this TicketRow.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._last_activity = last_activity

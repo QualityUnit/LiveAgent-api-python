@@ -60,8 +60,7 @@ class Group(object):
 
         if id is not None:
             self.id = id
-        if name is not None:
-            self.name = name
+        self.name = name
         if color is not None:
             self.color = color
         if background_color is not None:
@@ -106,6 +105,8 @@ class Group(object):
         :param name: The name of this Group.  # noqa: E501
         :type: str
         """
+        if self._configuration.client_side_validation and name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 

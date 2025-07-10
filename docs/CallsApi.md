@@ -1034,7 +1034,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **call_stop**
-> OkResponse call_stop(call_id, from_number=from_number)
+> OkResponse call_stop(call_id, from_number=from_number, channel_id=channel_id)
 
 Stops the call
 
@@ -1059,10 +1059,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
 call_id = 'call_id_example' # str | 
 from_number = 'from_number_example' # str | from number (optional)
+channel_id = 'channel_id_example' # str | channel hung up the call (optional)
 
 try:
     # Stops the call
-    api_response = api_instance.call_stop(call_id, from_number=from_number)
+    api_response = api_instance.call_stop(call_id, from_number=from_number, channel_id=channel_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CallsApi->call_stop: %s\n" % e)
@@ -1074,6 +1075,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
  **from_number** | **str**| from number | [optional] 
+ **channel_id** | **str**| channel hung up the call | [optional] 
 
 ### Return type
 
