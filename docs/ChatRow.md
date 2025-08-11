@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **conversationid** | **str** |  | [optional] 
-**datechanged** | **datetime** |  | [optional] 
+**datechanged** | **int** |  | [optional] 
 **status** | **str** |  | [optional] 
 **preview** | **str** |  | [optional] 
 **subject** | **str** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **countrycode** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
 **rstatus** | **str** |  | [optional] 
-**statusdatestarted** | **datetime** |  | [optional] 
+**statusdatestarted** | **int** |  | [optional] 
 **chat_order** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

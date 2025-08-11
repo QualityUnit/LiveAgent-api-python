@@ -95,7 +95,7 @@ class TestCallsApi(unittest.TestCase):
     def test_call_move_channel(self):
         """Test case for call_move_channel
 
-        Moves existing channel to target call  # noqa: E501
+        Completes attended transfer  # noqa: E501
         """
         pass
 
@@ -158,7 +158,7 @@ class TestCallsApi(unittest.TestCase):
     def test_call_transfer(self):
         """Test case for call_transfer
 
-        Transfers call to different department / agent  # noqa: E501
+        Transfers a call to a different department during IVR processing  # noqa: E501
         """
         pass
 
@@ -201,13 +201,6 @@ class TestCallsApi(unittest.TestCase):
         """Test case for hold_channel
 
         Hold channel  # noqa: E501
-        """
-        pass
-
-    def test_merge(self):
-        """Test case for merge
-
-        Merge two calls  # noqa: E501
         """
         pass
 

@@ -47,10 +47,14 @@ class SlaLogRow(object):
         'date_due': 'str',
         'sla_level_id': 'str',
         'sla_type': 'datetime',
-        'agentid': 'str',
-        'agent_firstname': 'str',
-        'agent_lastname': 'str',
-        'agent_avatar_url': 'str',
+        'responsible_agent_id': 'str',
+        'responsible_agent_firstname': 'str',
+        'responsible_agent_lastname': 'str',
+        'responsible_agent_avatar_url': 'str',
+        'resolving_agent_id': 'str',
+        'resolving_agent_firstname': 'str',
+        'resolving_agent_lastname': 'str',
+        'resolving_agent_avatar_url': 'str',
         'req_contactid': 'str',
         'req_firstname': 'str',
         'req_lastname': 'str',
@@ -74,10 +78,14 @@ class SlaLogRow(object):
         'date_due': 'date_due',
         'sla_level_id': 'sla_level_id',
         'sla_type': 'sla_type',
-        'agentid': 'agentid',
-        'agent_firstname': 'agent_firstname',
-        'agent_lastname': 'agent_lastname',
-        'agent_avatar_url': 'agent_avatar_url',
+        'responsible_agent_id': 'responsible_agent_id',
+        'responsible_agent_firstname': 'responsible_agent_firstname',
+        'responsible_agent_lastname': 'responsible_agent_lastname',
+        'responsible_agent_avatar_url': 'responsible_agent_avatar_url',
+        'resolving_agent_id': 'resolving_agent_id',
+        'resolving_agent_firstname': 'resolving_agent_firstname',
+        'resolving_agent_lastname': 'resolving_agent_lastname',
+        'resolving_agent_avatar_url': 'resolving_agent_avatar_url',
         'req_contactid': 'req_contactid',
         'req_firstname': 'req_firstname',
         'req_lastname': 'req_lastname',
@@ -86,7 +94,7 @@ class SlaLogRow(object):
         'req_avatar_url': 'req_avatar_url'
     }
 
-    def __init__(self, id=None, conversationid=None, code=None, sla_ticket_id=None, departmentid=None, department_name=None, levelid=None, sla_level_name=None, sla=None, date_created=None, date_closed=None, date_due=None, sla_level_id=None, sla_type=None, agentid=None, agent_firstname=None, agent_lastname=None, agent_avatar_url=None, req_contactid=None, req_firstname=None, req_lastname=None, req_systemname=None, req_contact_name=None, req_avatar_url=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, conversationid=None, code=None, sla_ticket_id=None, departmentid=None, department_name=None, levelid=None, sla_level_name=None, sla=None, date_created=None, date_closed=None, date_due=None, sla_level_id=None, sla_type=None, responsible_agent_id=None, responsible_agent_firstname=None, responsible_agent_lastname=None, responsible_agent_avatar_url=None, resolving_agent_id=None, resolving_agent_firstname=None, resolving_agent_lastname=None, resolving_agent_avatar_url=None, req_contactid=None, req_firstname=None, req_lastname=None, req_systemname=None, req_contact_name=None, req_avatar_url=None, _configuration=None):  # noqa: E501
         """SlaLogRow - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -106,10 +114,14 @@ class SlaLogRow(object):
         self._date_due = None
         self._sla_level_id = None
         self._sla_type = None
-        self._agentid = None
-        self._agent_firstname = None
-        self._agent_lastname = None
-        self._agent_avatar_url = None
+        self._responsible_agent_id = None
+        self._responsible_agent_firstname = None
+        self._responsible_agent_lastname = None
+        self._responsible_agent_avatar_url = None
+        self._resolving_agent_id = None
+        self._resolving_agent_firstname = None
+        self._resolving_agent_lastname = None
+        self._resolving_agent_avatar_url = None
         self._req_contactid = None
         self._req_firstname = None
         self._req_lastname = None
@@ -146,14 +158,22 @@ class SlaLogRow(object):
             self.sla_level_id = sla_level_id
         if sla_type is not None:
             self.sla_type = sla_type
-        if agentid is not None:
-            self.agentid = agentid
-        if agent_firstname is not None:
-            self.agent_firstname = agent_firstname
-        if agent_lastname is not None:
-            self.agent_lastname = agent_lastname
-        if agent_avatar_url is not None:
-            self.agent_avatar_url = agent_avatar_url
+        if responsible_agent_id is not None:
+            self.responsible_agent_id = responsible_agent_id
+        if responsible_agent_firstname is not None:
+            self.responsible_agent_firstname = responsible_agent_firstname
+        if responsible_agent_lastname is not None:
+            self.responsible_agent_lastname = responsible_agent_lastname
+        if responsible_agent_avatar_url is not None:
+            self.responsible_agent_avatar_url = responsible_agent_avatar_url
+        if resolving_agent_id is not None:
+            self.resolving_agent_id = resolving_agent_id
+        if resolving_agent_firstname is not None:
+            self.resolving_agent_firstname = resolving_agent_firstname
+        if resolving_agent_lastname is not None:
+            self.resolving_agent_lastname = resolving_agent_lastname
+        if resolving_agent_avatar_url is not None:
+            self.resolving_agent_avatar_url = resolving_agent_avatar_url
         if req_contactid is not None:
             self.req_contactid = req_contactid
         if req_firstname is not None:
@@ -462,88 +482,172 @@ class SlaLogRow(object):
         self._sla_type = sla_type
 
     @property
-    def agentid(self):
-        """Gets the agentid of this SlaLogRow.  # noqa: E501
+    def responsible_agent_id(self):
+        """Gets the responsible_agent_id of this SlaLogRow.  # noqa: E501
 
 
-        :return: The agentid of this SlaLogRow.  # noqa: E501
+        :return: The responsible_agent_id of this SlaLogRow.  # noqa: E501
         :rtype: str
         """
-        return self._agentid
+        return self._responsible_agent_id
 
-    @agentid.setter
-    def agentid(self, agentid):
-        """Sets the agentid of this SlaLogRow.
+    @responsible_agent_id.setter
+    def responsible_agent_id(self, responsible_agent_id):
+        """Sets the responsible_agent_id of this SlaLogRow.
 
 
-        :param agentid: The agentid of this SlaLogRow.  # noqa: E501
+        :param responsible_agent_id: The responsible_agent_id of this SlaLogRow.  # noqa: E501
         :type: str
         """
 
-        self._agentid = agentid
+        self._responsible_agent_id = responsible_agent_id
 
     @property
-    def agent_firstname(self):
-        """Gets the agent_firstname of this SlaLogRow.  # noqa: E501
+    def responsible_agent_firstname(self):
+        """Gets the responsible_agent_firstname of this SlaLogRow.  # noqa: E501
 
 
-        :return: The agent_firstname of this SlaLogRow.  # noqa: E501
+        :return: The responsible_agent_firstname of this SlaLogRow.  # noqa: E501
         :rtype: str
         """
-        return self._agent_firstname
+        return self._responsible_agent_firstname
 
-    @agent_firstname.setter
-    def agent_firstname(self, agent_firstname):
-        """Sets the agent_firstname of this SlaLogRow.
+    @responsible_agent_firstname.setter
+    def responsible_agent_firstname(self, responsible_agent_firstname):
+        """Sets the responsible_agent_firstname of this SlaLogRow.
 
 
-        :param agent_firstname: The agent_firstname of this SlaLogRow.  # noqa: E501
+        :param responsible_agent_firstname: The responsible_agent_firstname of this SlaLogRow.  # noqa: E501
         :type: str
         """
 
-        self._agent_firstname = agent_firstname
+        self._responsible_agent_firstname = responsible_agent_firstname
 
     @property
-    def agent_lastname(self):
-        """Gets the agent_lastname of this SlaLogRow.  # noqa: E501
+    def responsible_agent_lastname(self):
+        """Gets the responsible_agent_lastname of this SlaLogRow.  # noqa: E501
 
 
-        :return: The agent_lastname of this SlaLogRow.  # noqa: E501
+        :return: The responsible_agent_lastname of this SlaLogRow.  # noqa: E501
         :rtype: str
         """
-        return self._agent_lastname
+        return self._responsible_agent_lastname
 
-    @agent_lastname.setter
-    def agent_lastname(self, agent_lastname):
-        """Sets the agent_lastname of this SlaLogRow.
+    @responsible_agent_lastname.setter
+    def responsible_agent_lastname(self, responsible_agent_lastname):
+        """Sets the responsible_agent_lastname of this SlaLogRow.
 
 
-        :param agent_lastname: The agent_lastname of this SlaLogRow.  # noqa: E501
+        :param responsible_agent_lastname: The responsible_agent_lastname of this SlaLogRow.  # noqa: E501
         :type: str
         """
 
-        self._agent_lastname = agent_lastname
+        self._responsible_agent_lastname = responsible_agent_lastname
 
     @property
-    def agent_avatar_url(self):
-        """Gets the agent_avatar_url of this SlaLogRow.  # noqa: E501
+    def responsible_agent_avatar_url(self):
+        """Gets the responsible_agent_avatar_url of this SlaLogRow.  # noqa: E501
 
 
-        :return: The agent_avatar_url of this SlaLogRow.  # noqa: E501
+        :return: The responsible_agent_avatar_url of this SlaLogRow.  # noqa: E501
         :rtype: str
         """
-        return self._agent_avatar_url
+        return self._responsible_agent_avatar_url
 
-    @agent_avatar_url.setter
-    def agent_avatar_url(self, agent_avatar_url):
-        """Sets the agent_avatar_url of this SlaLogRow.
+    @responsible_agent_avatar_url.setter
+    def responsible_agent_avatar_url(self, responsible_agent_avatar_url):
+        """Sets the responsible_agent_avatar_url of this SlaLogRow.
 
 
-        :param agent_avatar_url: The agent_avatar_url of this SlaLogRow.  # noqa: E501
+        :param responsible_agent_avatar_url: The responsible_agent_avatar_url of this SlaLogRow.  # noqa: E501
         :type: str
         """
 
-        self._agent_avatar_url = agent_avatar_url
+        self._responsible_agent_avatar_url = responsible_agent_avatar_url
+
+    @property
+    def resolving_agent_id(self):
+        """Gets the resolving_agent_id of this SlaLogRow.  # noqa: E501
+
+
+        :return: The resolving_agent_id of this SlaLogRow.  # noqa: E501
+        :rtype: str
+        """
+        return self._resolving_agent_id
+
+    @resolving_agent_id.setter
+    def resolving_agent_id(self, resolving_agent_id):
+        """Sets the resolving_agent_id of this SlaLogRow.
+
+
+        :param resolving_agent_id: The resolving_agent_id of this SlaLogRow.  # noqa: E501
+        :type: str
+        """
+
+        self._resolving_agent_id = resolving_agent_id
+
+    @property
+    def resolving_agent_firstname(self):
+        """Gets the resolving_agent_firstname of this SlaLogRow.  # noqa: E501
+
+
+        :return: The resolving_agent_firstname of this SlaLogRow.  # noqa: E501
+        :rtype: str
+        """
+        return self._resolving_agent_firstname
+
+    @resolving_agent_firstname.setter
+    def resolving_agent_firstname(self, resolving_agent_firstname):
+        """Sets the resolving_agent_firstname of this SlaLogRow.
+
+
+        :param resolving_agent_firstname: The resolving_agent_firstname of this SlaLogRow.  # noqa: E501
+        :type: str
+        """
+
+        self._resolving_agent_firstname = resolving_agent_firstname
+
+    @property
+    def resolving_agent_lastname(self):
+        """Gets the resolving_agent_lastname of this SlaLogRow.  # noqa: E501
+
+
+        :return: The resolving_agent_lastname of this SlaLogRow.  # noqa: E501
+        :rtype: str
+        """
+        return self._resolving_agent_lastname
+
+    @resolving_agent_lastname.setter
+    def resolving_agent_lastname(self, resolving_agent_lastname):
+        """Sets the resolving_agent_lastname of this SlaLogRow.
+
+
+        :param resolving_agent_lastname: The resolving_agent_lastname of this SlaLogRow.  # noqa: E501
+        :type: str
+        """
+
+        self._resolving_agent_lastname = resolving_agent_lastname
+
+    @property
+    def resolving_agent_avatar_url(self):
+        """Gets the resolving_agent_avatar_url of this SlaLogRow.  # noqa: E501
+
+
+        :return: The resolving_agent_avatar_url of this SlaLogRow.  # noqa: E501
+        :rtype: str
+        """
+        return self._resolving_agent_avatar_url
+
+    @resolving_agent_avatar_url.setter
+    def resolving_agent_avatar_url(self, resolving_agent_avatar_url):
+        """Sets the resolving_agent_avatar_url of this SlaLogRow.
+
+
+        :param resolving_agent_avatar_url: The resolving_agent_avatar_url of this SlaLogRow.  # noqa: E501
+        :type: str
+        """
+
+        self._resolving_agent_avatar_url = resolving_agent_avatar_url
 
     @property
     def req_contactid(self):

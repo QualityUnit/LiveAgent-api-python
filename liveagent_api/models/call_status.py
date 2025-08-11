@@ -35,18 +35,16 @@ class CallStatus(object):
     swagger_types = {
         'status': 'str',
         'manually_picked_up': 'bool',
-        'agent': 'CallAgent',
-        'queue_position': 'float'
+        'agent': 'CallAgent'
     }
 
     attribute_map = {
         'status': 'status',
         'manually_picked_up': 'manually_picked_up',
-        'agent': 'agent',
-        'queue_position': 'queue_position'
+        'agent': 'agent'
     }
 
-    def __init__(self, status=None, manually_picked_up=False, agent=None, queue_position=None, _configuration=None):  # noqa: E501
+    def __init__(self, status=None, manually_picked_up=False, agent=None, _configuration=None):  # noqa: E501
         """CallStatus - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -55,7 +53,6 @@ class CallStatus(object):
         self._status = None
         self._manually_picked_up = None
         self._agent = None
-        self._queue_position = None
         self.discriminator = None
 
         self.status = status
@@ -63,8 +60,6 @@ class CallStatus(object):
             self.manually_picked_up = manually_picked_up
         if agent is not None:
             self.agent = agent
-        if queue_position is not None:
-            self.queue_position = queue_position
 
     @property
     def status(self):
@@ -141,27 +136,6 @@ class CallStatus(object):
         """
 
         self._agent = agent
-
-    @property
-    def queue_position(self):
-        """Gets the queue_position of this CallStatus.  # noqa: E501
-
-
-        :return: The queue_position of this CallStatus.  # noqa: E501
-        :rtype: float
-        """
-        return self._queue_position
-
-    @queue_position.setter
-    def queue_position(self, queue_position):
-        """Sets the queue_position of this CallStatus.
-
-
-        :param queue_position: The queue_position of this CallStatus.  # noqa: E501
-        :type: float
-        """
-
-        self._queue_position = queue_position
 
     def to_dict(self):
         """Returns the model properties as a dict"""

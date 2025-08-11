@@ -1012,7 +1012,7 @@ class CallsApi(object):
             collection_formats=collection_formats)
 
     def call_move_channel(self, call_id, channel_id, to_call_id, **kwargs):  # noqa: E501
-        """Moves existing channel to target call  # noqa: E501
+        """Completes attended transfer  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1022,7 +1022,7 @@ class CallsApi(object):
         :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
-        :param str to_call_id: Target call (required)
+        :param str to_call_id: Transfer to call ID (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1035,7 +1035,7 @@ class CallsApi(object):
             return data
 
     def call_move_channel_with_http_info(self, call_id, channel_id, to_call_id, **kwargs):  # noqa: E501
-        """Moves existing channel to target call  # noqa: E501
+        """Completes attended transfer  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1045,7 +1045,7 @@ class CallsApi(object):
         :param async_req bool
         :param str call_id: (required)
         :param str channel_id: (required)
-        :param str to_call_id: Target call (required)
+        :param str to_call_id: Transfer to call ID (required)
         :return: OkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1948,9 +1948,9 @@ class CallsApi(object):
             collection_formats=collection_formats)
 
     def call_transfer(self, call_id, **kwargs):  # noqa: E501
-        """Transfers call to different department / agent  # noqa: E501
+        """Transfers a call to a different department during IVR processing  # noqa: E501
 
-        Transfer can be called on incoming calls before they start ringing to agents  # noqa: E501
+        Transfer can be called on incoming call during IVR processing before it starts ringing to agents  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.call_transfer(call_id, async_req=True)
@@ -1958,7 +1958,7 @@ class CallsApi(object):
 
         :param async_req bool
         :param str call_id: (required)
-        :param str to: Department ID or extension
+        :param str to: Department ID
         :return: CallTransferResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1971,9 +1971,9 @@ class CallsApi(object):
             return data
 
     def call_transfer_with_http_info(self, call_id, **kwargs):  # noqa: E501
-        """Transfers call to different department / agent  # noqa: E501
+        """Transfers a call to a different department during IVR processing  # noqa: E501
 
-        Transfer can be called on incoming calls before they start ringing to agents  # noqa: E501
+        Transfer can be called on incoming call during IVR processing before it starts ringing to agents  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.call_transfer_with_http_info(call_id, async_req=True)
@@ -1981,7 +1981,7 @@ class CallsApi(object):
 
         :param async_req bool
         :param str call_id: (required)
-        :param str to: Department ID or extension
+        :param str to: Department ID
         :return: CallTransferResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2672,117 +2672,6 @@ class CallsApi(object):
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_hold', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='OkResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def merge(self, call_id, sec_call_id, **kwargs):  # noqa: E501
-        """Merge two calls  # noqa: E501
-
-        Merge secondary call into main call  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.merge(call_id, sec_call_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str call_id: (required)
-        :param str sec_call_id: Secondary call ID (required)
-        :param str agent_id: Agent ID for removing from the call
-        :return: OkResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.merge_with_http_info(call_id, sec_call_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.merge_with_http_info(call_id, sec_call_id, **kwargs)  # noqa: E501
-            return data
-
-    def merge_with_http_info(self, call_id, sec_call_id, **kwargs):  # noqa: E501
-        """Merge two calls  # noqa: E501
-
-        Merge secondary call into main call  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.merge_with_http_info(call_id, sec_call_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str call_id: (required)
-        :param str sec_call_id: Secondary call ID (required)
-        :param str agent_id: Agent ID for removing from the call
-        :return: OkResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['call_id', 'sec_call_id', 'agent_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method merge" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'call_id' is set
-        if self.api_client.client_side_validation and ('call_id' not in params or
-                                                       params['call_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `call_id` when calling `merge`")  # noqa: E501
-        # verify the required parameter 'sec_call_id' is set
-        if self.api_client.client_side_validation and ('sec_call_id' not in params or
-                                                       params['sec_call_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `sec_call_id` when calling `merge`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'call_id' in params:
-            path_params['callId'] = params['call_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-        if 'sec_call_id' in params:
-            form_params.append(('secCallId', params['sec_call_id']))  # noqa: E501
-        if 'agent_id' in params:
-            form_params.append(('agentId', params['agent_id']))  # noqa: E501
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['apikey', 'privileges']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/calls/{callId}/_merge', 'POST',
             path_params,
             query_params,
             header_params,

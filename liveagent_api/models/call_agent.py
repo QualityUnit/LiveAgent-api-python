@@ -34,28 +34,33 @@ class CallAgent(object):
     """
     swagger_types = {
         'id': 'str',
+        'devices': 'list[PhoneDevice]',
         'device': 'PhoneDevice',
         'alternative_devices': 'list[PhoneDevice]'
     }
 
     attribute_map = {
         'id': 'id',
+        'devices': 'devices',
         'device': 'device',
         'alternative_devices': 'alternative_devices'
     }
 
-    def __init__(self, id=None, device=None, alternative_devices=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, devices=None, device=None, alternative_devices=None, _configuration=None):  # noqa: E501
         """CallAgent - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._id = None
+        self._devices = None
         self._device = None
         self._alternative_devices = None
         self.discriminator = None
 
         self.id = id
+        if devices is not None:
+            self.devices = devices
         if device is not None:
             self.device = device
         if alternative_devices is not None:
@@ -83,6 +88,29 @@ class CallAgent(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
+
+    @property
+    def devices(self):
+        """Gets the devices of this CallAgent.  # noqa: E501
+
+        List of devices that can be used for ringing to an agent  # noqa: E501
+
+        :return: The devices of this CallAgent.  # noqa: E501
+        :rtype: list[PhoneDevice]
+        """
+        return self._devices
+
+    @devices.setter
+    def devices(self, devices):
+        """Sets the devices of this CallAgent.
+
+        List of devices that can be used for ringing to an agent  # noqa: E501
+
+        :param devices: The devices of this CallAgent.  # noqa: E501
+        :type: list[PhoneDevice]
+        """
+
+        self._devices = devices
 
     @property
     def device(self):

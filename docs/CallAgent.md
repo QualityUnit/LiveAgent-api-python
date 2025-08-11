@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
+**devices** | [**list[PhoneDevice]**](PhoneDevice.md) | List of devices that can be used for ringing to an agent | [optional] 
 **device** | [**PhoneDevice**](PhoneDevice.md) |  | [optional] 
 **alternative_devices** | [**list[PhoneDevice]**](PhoneDevice.md) | Alternative devices for an agent | [optional] 
 
