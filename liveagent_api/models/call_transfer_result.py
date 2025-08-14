@@ -33,33 +33,23 @@ class CallTransferResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'callee_status': 'str',
-        'to_number': 'str',
-        'via_number': 'str'
+        'callee_status': 'str'
     }
 
     attribute_map = {
-        'callee_status': 'callee_status',
-        'to_number': 'to_number',
-        'via_number': 'via_number'
+        'callee_status': 'callee_status'
     }
 
-    def __init__(self, callee_status=None, to_number=None, via_number=None, _configuration=None):  # noqa: E501
+    def __init__(self, callee_status=None, _configuration=None):  # noqa: E501
         """CallTransferResult - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._callee_status = None
-        self._to_number = None
-        self._via_number = None
         self.discriminator = None
 
         self.callee_status = callee_status
-        if to_number is not None:
-            self.to_number = to_number
-        if via_number is not None:
-            self.via_number = via_number
 
     @property
     def callee_status(self):
@@ -92,52 +82,6 @@ class CallTransferResult(object):
             )
 
         self._callee_status = callee_status
-
-    @property
-    def to_number(self):
-        """Gets the to_number of this CallTransferResult.  # noqa: E501
-
-        Callee number  # noqa: E501
-
-        :return: The to_number of this CallTransferResult.  # noqa: E501
-        :rtype: str
-        """
-        return self._to_number
-
-    @to_number.setter
-    def to_number(self, to_number):
-        """Sets the to_number of this CallTransferResult.
-
-        Callee number  # noqa: E501
-
-        :param to_number: The to_number of this CallTransferResult.  # noqa: E501
-        :type: str
-        """
-
-        self._to_number = to_number
-
-    @property
-    def via_number(self):
-        """Gets the via_number of this CallTransferResult.  # noqa: E501
-
-        trunk number via which call was made / received (if applicable)  # noqa: E501
-
-        :return: The via_number of this CallTransferResult.  # noqa: E501
-        :rtype: str
-        """
-        return self._via_number
-
-    @via_number.setter
-    def via_number(self, via_number):
-        """Sets the via_number of this CallTransferResult.
-
-        trunk number via which call was made / received (if applicable)  # noqa: E501
-
-        :param via_number: The via_number of this CallTransferResult.  # noqa: E501
-        :type: str
-        """
-
-        self._via_number = via_number
 
     def to_dict(self):
         """Returns the model properties as a dict"""

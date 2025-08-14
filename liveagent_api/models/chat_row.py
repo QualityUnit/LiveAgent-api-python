@@ -34,7 +34,7 @@ class ChatRow(object):
     """
     swagger_types = {
         'conversationid': 'str',
-        'datechanged': 'datetime',
+        'datechanged': 'int',
         'status': 'str',
         'preview': 'str',
         'subject': 'str',
@@ -49,7 +49,7 @@ class ChatRow(object):
         'countrycode': 'str',
         'avatar_url': 'str',
         'rstatus': 'str',
-        'statusdatestarted': 'datetime',
+        'statusdatestarted': 'int',
         'chat_order': 'int'
     }
 
@@ -164,7 +164,7 @@ class ChatRow(object):
 
 
         :return: The datechanged of this ChatRow.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._datechanged
 
@@ -174,7 +174,7 @@ class ChatRow(object):
 
 
         :param datechanged: The datechanged of this ChatRow.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._datechanged = datechanged
@@ -479,7 +479,7 @@ class ChatRow(object):
 
 
         :return: The statusdatestarted of this ChatRow.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._statusdatestarted
 
@@ -489,7 +489,7 @@ class ChatRow(object):
 
 
         :param statusdatestarted: The statusdatestarted of this ChatRow.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._statusdatestarted = statusdatestarted

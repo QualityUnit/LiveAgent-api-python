@@ -122,7 +122,7 @@ Class | Method | HTTP request | Description
 *CallsApi* | [**call_fetch_ivr**](docs/CallsApi.md#call_fetch_ivr) | **POST** /calls/{callId}/_fetchIvr | Fetches IVR for the call from external URL
 *CallsApi* | [**call_get_status**](docs/CallsApi.md#call_get_status) | **GET** /calls/{callId}/status | Return the status of call
 *CallsApi* | [**call_id**](docs/CallsApi.md#call_id) | **GET** /calls/channels/{channelId}/call_id | Return the call ID
-*CallsApi* | [**call_move_channel**](docs/CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels/{channelId}/_move | Moves existing channel to target call
+*CallsApi* | [**call_move_channel**](docs/CallsApi.md#call_move_channel) | **POST** /calls/{callId}/channels/{channelId}/_move | Completes attended transfer
 *CallsApi* | [**call_pickup**](docs/CallsApi.md#call_pickup) | **POST** /calls/_pickup | Pick up call from queue
 *CallsApi* | [**call_remove_channel**](docs/CallsApi.md#call_remove_channel) | **DELETE** /calls/{callId}/channels/{channelId} | Removes channel from the call
 *CallsApi* | [**call_reroute**](docs/CallsApi.md#call_reroute) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
@@ -131,14 +131,13 @@ Class | Method | HTTP request | Description
 *CallsApi* | [**call_start_canceled**](docs/CallsApi.md#call_start_canceled) | **POST** /call/_startCanceled | Callback that starting call canceled
 *CallsApi* | [**call_start_failed**](docs/CallsApi.md#call_start_failed) | **POST** /call/_startFailed | Callback that starting call failed
 *CallsApi* | [**call_stop**](docs/CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
-*CallsApi* | [**call_transfer**](docs/CallsApi.md#call_transfer) | **POST** /calls/{callId}/_transfer | Transfers call to different department / agent
+*CallsApi* | [**call_transfer**](docs/CallsApi.md#call_transfer) | **POST** /calls/{callId}/_transfer | Transfers a call to a different department during IVR processing
 *CallsApi* | [**confirm_ring**](docs/CallsApi.md#confirm_ring) | **POST** /calls/{callId}/_confirmRing | Confirm that call is ringing
 *CallsApi* | [**dtmf_channel**](docs/CallsApi.md#dtmf_channel) | **POST** /calls/{callId}/channels/{channelId}/_dtmf | Send provided DTMF to channel
 *CallsApi* | [**end_channel**](docs/CallsApi.md#end_channel) | **POST** /calls/{callId}/channels/{channelId}/_end | End channel
 *CallsApi* | [**get_calls_count**](docs/CallsApi.md#get_calls_count) | **GET** /calls/count | Gets count for calls history
 *CallsApi* | [**get_calls_list**](docs/CallsApi.md#get_calls_list) | **GET** /calls | Gets list of calls
 *CallsApi* | [**hold_channel**](docs/CallsApi.md#hold_channel) | **POST** /calls/{callId}/channels/{channelId}/_hold | Hold channel
-*CallsApi* | [**merge**](docs/CallsApi.md#merge) | **POST** /calls/{callId}/_merge | Merge two calls
 *CallsApi* | [**mute_channel**](docs/CallsApi.md#mute_channel) | **POST** /calls/{callId}/channels/{channelId}/_mute | Mute channel
 *CallsApi* | [**stop_ring**](docs/CallsApi.md#stop_ring) | **POST** /calls/{callId}/_stopRing | Stop ringing of call
 *CallsApi* | [**unhold_channel**](docs/CallsApi.md#unhold_channel) | **POST** /calls/{callId}/channels/{channelId}/_unhold | Unhold channel
