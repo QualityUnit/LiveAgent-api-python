@@ -52,10 +52,8 @@ class CustomFields(object):
         self._value = None
         self.discriminator = None
 
-        if code is not None:
-            self.code = code
-        if value is not None:
-            self.value = value
+        self.code = code
+        self.value = value
 
     @property
     def code(self):
@@ -75,6 +73,8 @@ class CustomFields(object):
         :param code: The code of this CustomFields.  # noqa: E501
         :type: str
         """
+        if self._configuration.client_side_validation and code is None:
+            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
 
         self._code = code
 
@@ -96,6 +96,8 @@ class CustomFields(object):
         :param value: The value of this CustomFields.  # noqa: E501
         :type: str
         """
+        if self._configuration.client_side_validation and value is None:
+            raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
 
         self._value = value
 

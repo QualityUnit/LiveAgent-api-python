@@ -50,6 +50,7 @@ class TicketRow(object):
         'preview': 'str',
         'subject': 'str',
         'departmentname': 'str',
+        'is_department_archived': 'bool',
         'agentname': 'str',
         'tags': 'list[str]',
         'messagegroups_in': 'float',
@@ -101,6 +102,7 @@ class TicketRow(object):
         'preview': 'preview',
         'subject': 'subject',
         'departmentname': 'departmentname',
+        'is_department_archived': 'is_department_archived',
         'agentname': 'agentname',
         'tags': 'tags',
         'messagegroups_in': 'messagegroups_in',
@@ -134,7 +136,7 @@ class TicketRow(object):
         'groupnames': 'groupnames'
     }
 
-    def __init__(self, conversationid=None, code=None, datecreated=None, enqueued_at=None, datechanged=None, dateresolved=None, statuschanged=None, rorder=None, datedue=None, datereopen=None, status=None, channel_type=None, departmentid=None, agentid=None, preview=None, subject=None, departmentname=None, agentname=None, tags=None, messagegroups_in=None, messagegroups_out=None, contactid=None, parent_contactid=None, firstname=None, lastname=None, system_name=None, emails=None, phones=None, job_position=None, contact_type=None, city=None, countrycode=None, time_offset=None, gender=None, levelid=None, groups=None, contact_status=None, company=None, avatar_url=None, userid=None, roleid=None, userstatus=None, accountuserstatus=None, description=None, note=None, last_activity=None, tagnames=None, groupnames=None, _configuration=None):  # noqa: E501
+    def __init__(self, conversationid=None, code=None, datecreated=None, enqueued_at=None, datechanged=None, dateresolved=None, statuschanged=None, rorder=None, datedue=None, datereopen=None, status=None, channel_type=None, departmentid=None, agentid=None, preview=None, subject=None, departmentname=None, is_department_archived=None, agentname=None, tags=None, messagegroups_in=None, messagegroups_out=None, contactid=None, parent_contactid=None, firstname=None, lastname=None, system_name=None, emails=None, phones=None, job_position=None, contact_type=None, city=None, countrycode=None, time_offset=None, gender=None, levelid=None, groups=None, contact_status=None, company=None, avatar_url=None, userid=None, roleid=None, userstatus=None, accountuserstatus=None, description=None, note=None, last_activity=None, tagnames=None, groupnames=None, _configuration=None):  # noqa: E501
         """TicketRow - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -157,6 +159,7 @@ class TicketRow(object):
         self._preview = None
         self._subject = None
         self._departmentname = None
+        self._is_department_archived = None
         self._agentname = None
         self._tags = None
         self._messagegroups_in = None
@@ -224,6 +227,8 @@ class TicketRow(object):
             self.subject = subject
         if departmentname is not None:
             self.departmentname = departmentname
+        if is_department_archived is not None:
+            self.is_department_archived = is_department_archived
         if agentname is not None:
             self.agentname = agentname
         if tags is not None:
@@ -643,6 +648,27 @@ class TicketRow(object):
         """
 
         self._departmentname = departmentname
+
+    @property
+    def is_department_archived(self):
+        """Gets the is_department_archived of this TicketRow.  # noqa: E501
+
+
+        :return: The is_department_archived of this TicketRow.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_department_archived
+
+    @is_department_archived.setter
+    def is_department_archived(self, is_department_archived):
+        """Sets the is_department_archived of this TicketRow.
+
+
+        :param is_department_archived: The is_department_archived of this TicketRow.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_department_archived = is_department_archived
 
     @property
     def agentname(self):
