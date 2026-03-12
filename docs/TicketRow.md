@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **preview** | **str** |  | [optional] 
 **subject** | **str** |  | [optional] 
 **departmentname** | **str** |  | [optional] 
+**is_department_archived** | **bool** |  | [optional] 
 **agentname** | **str** |  | [optional] 
 **tags** | **list[str]** |  | [optional] 
 **messagegroups_in** | **float** |  | [optional] 

@@ -18,7 +18,6 @@ Method | HTTP request | Description
 [**call_remove_channel**](CallsApi.md#call_remove_channel) | **DELETE** /calls/{callId}/channels/{channelId} | Removes channel from the call
 [**call_reroute**](CallsApi.md#call_reroute) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
 [**call_ring**](CallsApi.md#call_ring) | **POST** /calls/{callId}/_ring | Let the call ring
-[**call_start**](CallsApi.md#call_start) | **POST** /call/_start | Starts new outcoming / internal call
 [**call_start_canceled**](CallsApi.md#call_start_canceled) | **POST** /call/_startCanceled | Callback that starting call canceled
 [**call_start_failed**](CallsApi.md#call_start_failed) | **POST** /call/_startFailed | Callback that starting call failed
 [**call_stop**](CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
@@ -30,6 +29,8 @@ Method | HTTP request | Description
 [**get_calls_list**](CallsApi.md#get_calls_list) | **GET** /calls | Gets list of calls
 [**hold_channel**](CallsApi.md#hold_channel) | **POST** /calls/{callId}/channels/{channelId}/_hold | Hold channel
 [**mute_channel**](CallsApi.md#mute_channel) | **POST** /calls/{callId}/channels/{channelId}/_mute | Mute channel
+[**start_call_listening**](CallsApi.md#start_call_listening) | **POST** /calls/{callId}/start_listen | Register agent started listening to the call
+[**stop_call_listening**](CallsApi.md#stop_call_listening) | **POST** /calls/{callId}/stop_listen | Register agent stopped listening to the call
 [**stop_ring**](CallsApi.md#stop_ring) | **POST** /calls/{callId}/_stopRing | Stop ringing of call
 [**unhold_channel**](CallsApi.md#unhold_channel) | **POST** /calls/{callId}/channels/{channelId}/_unhold | Unhold channel
 [**unmute_channel**](CallsApi.md#unmute_channel) | **POST** /calls/{callId}/channels/{channelId}/_unmute | Unmute channel
@@ -857,67 +858,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **call_start**
-> OkResponse call_start(to_number, ticket_id, via_number=via_number)
-
-Starts new outcoming / internal call
-
-Starts a new call by ringing the agent and dialing the customer after the agent has picked up the call 
-
-### Example
-```python
-from __future__ import print_function
-import time
-import liveagent_api
-from liveagent_api.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: apikey
-configuration = liveagent_api.Configuration()
-configuration.api_key['apikey'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
-to_number = 'to_number_example' # str | callee number
-ticket_id = 'ticket_id_example' # str | ticket id or code
-via_number = 'via_number_example' # str | trunk number via which call was made (optional)
-
-try:
-    # Starts new outcoming / internal call
-    api_response = api_instance.call_start(to_number, ticket_id, via_number=via_number)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CallsApi->call_start: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **to_number** | **str**| callee number | 
- **ticket_id** | **str**| ticket id or code | 
- **via_number** | **str**| trunk number via which call was made | [optional] 
-
-### Return type
-
-[**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
-
-### HTTP request headers
-
- - **Content-Type**: application/x-www-form-urlencoded
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **call_start_canceled**
 > OkResponse call_start_canceled(call_id)
 
@@ -1545,6 +1485,122 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **call_id** | **str**|  | 
  **channel_id** | **str**|  | 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **start_call_listening**
+> OkResponse start_call_listening(call_id, agent_id=agent_id, channel_id=channel_id)
+
+Register agent started listening to the call
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+call_id = 'call_id_example' # str | 
+agent_id = 'agent_id_example' # str | listening agent (optional)
+channel_id = 'channel_id_example' # str | listening channel (optional)
+
+try:
+    # Register agent started listening to the call
+    api_response = api_instance.start_call_listening(call_id, agent_id=agent_id, channel_id=channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CallsApi->start_call_listening: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **agent_id** | **str**| listening agent | [optional] 
+ **channel_id** | **str**| listening channel | [optional] 
+
+### Return type
+
+[**OkResponse**](OkResponse.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stop_call_listening**
+> OkResponse stop_call_listening(call_id, channel_id=channel_id)
+
+Register agent stopped listening to the call
+
+### Example
+```python
+from __future__ import print_function
+import time
+import liveagent_api
+from liveagent_api.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apikey
+configuration = liveagent_api.Configuration()
+configuration.api_key['apikey'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apikey'] = 'Bearer'
+# Configure OAuth2 access token for authorization: privileges
+configuration = liveagent_api.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = liveagent_api.CallsApi(liveagent_api.ApiClient(configuration))
+call_id = 'call_id_example' # str | 
+channel_id = 'channel_id_example' # str | listening channel (optional)
+
+try:
+    # Register agent stopped listening to the call
+    api_response = api_instance.stop_call_listening(call_id, channel_id=channel_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CallsApi->stop_call_listening: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **call_id** | **str**|  | 
+ **channel_id** | **str**| listening channel | [optional] 
 
 ### Return type
 

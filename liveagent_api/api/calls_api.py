@@ -1533,117 +1533,6 @@ class CallsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def call_start(self, to_number, ticket_id, **kwargs):  # noqa: E501
-        """Starts new outcoming / internal call  # noqa: E501
-
-        Starts a new call by ringing the agent and dialing the customer after the agent has picked up the call   # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.call_start(to_number, ticket_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str to_number: callee number (required)
-        :param str ticket_id: ticket id or code (required)
-        :param str via_number: trunk number via which call was made
-        :return: OkResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.call_start_with_http_info(to_number, ticket_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.call_start_with_http_info(to_number, ticket_id, **kwargs)  # noqa: E501
-            return data
-
-    def call_start_with_http_info(self, to_number, ticket_id, **kwargs):  # noqa: E501
-        """Starts new outcoming / internal call  # noqa: E501
-
-        Starts a new call by ringing the agent and dialing the customer after the agent has picked up the call   # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.call_start_with_http_info(to_number, ticket_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str to_number: callee number (required)
-        :param str ticket_id: ticket id or code (required)
-        :param str via_number: trunk number via which call was made
-        :return: OkResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['to_number', 'ticket_id', 'via_number']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method call_start" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'to_number' is set
-        if self.api_client.client_side_validation and ('to_number' not in params or
-                                                       params['to_number'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `to_number` when calling `call_start`")  # noqa: E501
-        # verify the required parameter 'ticket_id' is set
-        if self.api_client.client_side_validation and ('ticket_id' not in params or
-                                                       params['ticket_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `ticket_id` when calling `call_start`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'to_number' in params:
-            query_params.append(('to_number', params['to_number']))  # noqa: E501
-        if 'via_number' in params:
-            query_params.append(('via_number', params['via_number']))  # noqa: E501
-        if 'ticket_id' in params:
-            query_params.append(('ticketId', params['ticket_id']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['apikey', 'privileges']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/call/_start', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='OkResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def call_start_canceled(self, call_id, **kwargs):  # noqa: E501
         """Callback that starting call canceled  # noqa: E501
 
@@ -2777,6 +2666,212 @@ class CallsApi(object):
 
         return self.api_client.call_api(
             '/calls/{callId}/channels/{channelId}/_mute', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OkResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def start_call_listening(self, call_id, **kwargs):  # noqa: E501
+        """Register agent started listening to the call  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.start_call_listening(call_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str call_id: (required)
+        :param str agent_id: listening agent
+        :param str channel_id: listening channel
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.start_call_listening_with_http_info(call_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.start_call_listening_with_http_info(call_id, **kwargs)  # noqa: E501
+            return data
+
+    def start_call_listening_with_http_info(self, call_id, **kwargs):  # noqa: E501
+        """Register agent started listening to the call  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.start_call_listening_with_http_info(call_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str call_id: (required)
+        :param str agent_id: listening agent
+        :param str channel_id: listening channel
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['call_id', 'agent_id', 'channel_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method start_call_listening" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'call_id' is set
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `call_id` when calling `start_call_listening`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'call_id' in params:
+            path_params['callId'] = params['call_id']  # noqa: E501
+
+        query_params = []
+        if 'agent_id' in params:
+            query_params.append(('agentId', params['agent_id']))  # noqa: E501
+        if 'channel_id' in params:
+            query_params.append(('channelId', params['channel_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/calls/{callId}/start_listen', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OkResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def stop_call_listening(self, call_id, **kwargs):  # noqa: E501
+        """Register agent stopped listening to the call  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.stop_call_listening(call_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str call_id: (required)
+        :param str channel_id: listening channel
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.stop_call_listening_with_http_info(call_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.stop_call_listening_with_http_info(call_id, **kwargs)  # noqa: E501
+            return data
+
+    def stop_call_listening_with_http_info(self, call_id, **kwargs):  # noqa: E501
+        """Register agent stopped listening to the call  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.stop_call_listening_with_http_info(call_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str call_id: (required)
+        :param str channel_id: listening channel
+        :return: OkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['call_id', 'channel_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method stop_call_listening" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'call_id' is set
+        if self.api_client.client_side_validation and ('call_id' not in params or
+                                                       params['call_id'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `call_id` when calling `stop_call_listening`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'call_id' in params:
+            path_params['callId'] = params['call_id']  # noqa: E501
+
+        query_params = []
+        if 'channel_id' in params:
+            query_params.append(('channelId', params['channel_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apikey', 'privileges']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/calls/{callId}/stop_listen', 'POST',
             path_params,
             query_params,
             header_params,

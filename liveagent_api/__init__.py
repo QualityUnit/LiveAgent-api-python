@@ -151,6 +151,7 @@ from liveagent_api.models.slack_template import SlackTemplate
 from liveagent_api.models.slack_user import SlackUser
 from liveagent_api.models.stored_file import StoredFile
 from liveagent_api.models.tag import Tag
+from liveagent_api.models.tag_request import TagRequest
 from liveagent_api.models.tag_row import TagRow
 from liveagent_api.models.ticket import Ticket
 from liveagent_api.models.ticket_attribute import TicketAttribute

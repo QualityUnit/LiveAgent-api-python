@@ -127,13 +127,6 @@ class TestCallsApi(unittest.TestCase):
         """
         pass
 
-    def test_call_start(self):
-        """Test case for call_start
-
-        Starts new outcoming / internal call  # noqa: E501
-        """
-        pass
-
     def test_call_start_canceled(self):
         """Test case for call_start_canceled
 
@@ -208,6 +201,20 @@ class TestCallsApi(unittest.TestCase):
         """Test case for mute_channel
 
         Mute channel  # noqa: E501
+        """
+        pass
+
+    def test_start_call_listening(self):
+        """Test case for start_call_listening
+
+        Register agent started listening to the call  # noqa: E501
+        """
+        pass
+
+    def test_stop_call_listening(self):
+        """Test case for stop_call_listening
+
+        Register agent stopped listening to the call  # noqa: E501
         """
         pass
 

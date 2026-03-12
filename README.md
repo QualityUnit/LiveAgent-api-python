@@ -127,7 +127,6 @@ Class | Method | HTTP request | Description
 *CallsApi* | [**call_remove_channel**](docs/CallsApi.md#call_remove_channel) | **DELETE** /calls/{callId}/channels/{channelId} | Removes channel from the call
 *CallsApi* | [**call_reroute**](docs/CallsApi.md#call_reroute) | **POST** /calls/{callId}/_reroute | Let the call ring to another agent
 *CallsApi* | [**call_ring**](docs/CallsApi.md#call_ring) | **POST** /calls/{callId}/_ring | Let the call ring
-*CallsApi* | [**call_start**](docs/CallsApi.md#call_start) | **POST** /call/_start | Starts new outcoming / internal call
 *CallsApi* | [**call_start_canceled**](docs/CallsApi.md#call_start_canceled) | **POST** /call/_startCanceled | Callback that starting call canceled
 *CallsApi* | [**call_start_failed**](docs/CallsApi.md#call_start_failed) | **POST** /call/_startFailed | Callback that starting call failed
 *CallsApi* | [**call_stop**](docs/CallsApi.md#call_stop) | **POST** /calls/{callId}/_stop | Stops the call
@@ -139,6 +138,8 @@ Class | Method | HTTP request | Description
 *CallsApi* | [**get_calls_list**](docs/CallsApi.md#get_calls_list) | **GET** /calls | Gets list of calls
 *CallsApi* | [**hold_channel**](docs/CallsApi.md#hold_channel) | **POST** /calls/{callId}/channels/{channelId}/_hold | Hold channel
 *CallsApi* | [**mute_channel**](docs/CallsApi.md#mute_channel) | **POST** /calls/{callId}/channels/{channelId}/_mute | Mute channel
+*CallsApi* | [**start_call_listening**](docs/CallsApi.md#start_call_listening) | **POST** /calls/{callId}/start_listen | Register agent started listening to the call
+*CallsApi* | [**stop_call_listening**](docs/CallsApi.md#stop_call_listening) | **POST** /calls/{callId}/stop_listen | Register agent stopped listening to the call
 *CallsApi* | [**stop_ring**](docs/CallsApi.md#stop_ring) | **POST** /calls/{callId}/_stopRing | Stop ringing of call
 *CallsApi* | [**unhold_channel**](docs/CallsApi.md#unhold_channel) | **POST** /calls/{callId}/channels/{channelId}/_unhold | Unhold channel
 *CallsApi* | [**unmute_channel**](docs/CallsApi.md#unmute_channel) | **POST** /calls/{callId}/channels/{channelId}/_unmute | Unmute channel
@@ -395,6 +396,7 @@ Class | Method | HTTP request | Description
  - [SlackUser](docs/SlackUser.md)
  - [StoredFile](docs/StoredFile.md)
  - [Tag](docs/Tag.md)
+ - [TagRequest](docs/TagRequest.md)
  - [TagRow](docs/TagRow.md)
  - [Ticket](docs/Ticket.md)
  - [TicketAttribute](docs/TicketAttribute.md)

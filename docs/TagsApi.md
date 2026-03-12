@@ -37,7 +37,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.TagsApi(liveagent_api.ApiClient(configuration))
-tag = liveagent_api.Tag() # Tag |  (optional)
+tag = liveagent_api.TagRequest() # TagRequest |  (optional)
 
 try:
     # Create tag
@@ -51,7 +51,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | [**Tag**](Tag.md)|  | [optional] 
+ **tag** | [**TagRequest**](TagRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -256,7 +256,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.TagsApi(liveagent_api.ApiClient(configuration))
 tag_id = 'tag_id_example' # str | 
-tag = liveagent_api.Tag() # Tag |  (optional)
+tag = liveagent_api.TagRequest() # TagRequest |  (optional)
 
 try:
     # Update tag
@@ -271,7 +271,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tag_id** | **str**|  | 
- **tag** | [**Tag**](Tag.md)|  | [optional] 
+ **tag** | [**TagRequest**](TagRequest.md)|  | [optional] 
 
 ### Return type
 

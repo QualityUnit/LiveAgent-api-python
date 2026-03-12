@@ -43,7 +43,7 @@ class TagsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Tag tag:
+        :param TagRequest tag:
         :return: Tag
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class TagsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Tag tag:
+        :param TagRequest tag:
         :return: Tag
                  If the method is called asynchronously,
                  returns the request thread.
@@ -423,7 +423,7 @@ class TagsApi(object):
 
         :param async_req bool
         :param str tag_id: (required)
-        :param Tag tag:
+        :param TagRequest tag:
         :return: list[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -445,7 +445,7 @@ class TagsApi(object):
 
         :param async_req bool
         :param str tag_id: (required)
-        :param Tag tag:
+        :param TagRequest tag:
         :return: list[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
