@@ -52,14 +52,15 @@ class CallMessage(object):
         self._message = None
         self.discriminator = None
 
-        self.type = type
+        if type is not None:
+            self.type = type
         self.message = message
 
     @property
     def type(self):
         """Gets the type of this CallMessage.  # noqa: E501
 
-        T (text), H (html), A (audio - url to audio file or fileId), S (system), N (note), NF (note file)  # noqa: E501
+        Deprecated. The server treats every addMessage call as a system message regardless of this value. Recordings have a dedicated addRecording endpoint. Kept optional for backward compatibility with older clients that still set it.  # noqa: E501
 
         :return: The type of this CallMessage.  # noqa: E501
         :rtype: str
@@ -70,20 +71,11 @@ class CallMessage(object):
     def type(self, type):
         """Sets the type of this CallMessage.
 
-        T (text), H (html), A (audio - url to audio file or fileId), S (system), N (note), NF (note file)  # noqa: E501
+        Deprecated. The server treats every addMessage call as a system message regardless of this value. Recordings have a dedicated addRecording endpoint. Kept optional for backward compatibility with older clients that still set it.  # noqa: E501
 
         :param type: The type of this CallMessage.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["T", "H", "A", "S", "N", "NF"]  # noqa: E501
-        if (self._configuration.client_side_validation and
-                type not in allowed_values):
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
-            )
 
         self._type = type
 

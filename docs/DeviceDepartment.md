@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**device_id** | **float** |  | [optional] 
-**department_id** | **str** |  | [optional] 
-**user_id** | **str** |  | [optional] 
+**device_id** | **int** |  | 
+**department_id** | **str** |  | 
+**user_id** | **str** |  | 
 **department_name** | **str** |  | [optional] 
 **online_status** | **str** |  | [optional] 
 **preset_status** | **str** |  | [optional] 

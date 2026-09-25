@@ -25,7 +25,6 @@ from liveagent_api.models.api_key import ApiKey
 from liveagent_api.models.api_key_login import ApiKeyLogin
 from liveagent_api.models.api_key_with_privileges import ApiKeyWithPrivileges
 from liveagent_api.models.api_privilege import ApiPrivilege
-from liveagent_api.models.available_prefix import AvailablePrefix
 from liveagent_api.models.ban import Ban
 from liveagent_api.models.ban_list_item import BanListItem
 from liveagent_api.models.batch import Batch
@@ -85,6 +84,8 @@ from liveagent_api.models.language_row import LanguageRow
 from liveagent_api.models.login_key import LoginKey
 from liveagent_api.models.message import Message
 from liveagent_api.models.message_group import MessageGroup
+from liveagent_api.models.mobile_login_configuration import MobileLoginConfiguration
+from liveagent_api.models.mobile_sso_configuration import MobileSsoConfiguration
 from liveagent_api.models.my_account_link import MyAccountLink
 from liveagent_api.models.ok_response import OkResponse
 from liveagent_api.models.page_visit import PageVisit
@@ -119,7 +120,6 @@ from liveagent_api.models.ticket_sla import TicketSla
 from liveagent_api.models.ticket_updatable import TicketUpdatable
 from liveagent_api.models.time_report_row import TimeReportRow
 from liveagent_api.models.time_zones import TimeZones
-from liveagent_api.models.token import Token
 from liveagent_api.models.upgrade_url import UpgradeUrl
 from liveagent_api.models.user import User
 from liveagent_api.models.variation import Variation

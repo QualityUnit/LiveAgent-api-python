@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**get_device_departments_by_department_id**](DevicesApi.md#get_device_departments_by_department_id) | **GET** /devices/departments/{departmentId} | Get device departments by department id
 [**get_device_plans**](DevicesApi.md#get_device_plans) | **GET** /devices/{deviceId}/plans | Get device plans
 [**get_devices_list**](DevicesApi.md#get_devices_list) | **GET** /devices | Gets list of devices
-[**get_my_mobile_devices_list**](DevicesApi.md#get_my_mobile_devices_list) | **GET** /devices/_app_ | Gets list of current agent&#39;s mobile devices. Creates new one if there are no devices.
+[**get_mobile_login_configuration**](DevicesApi.md#get_mobile_login_configuration) | **GET** /mobile/login/configuration | Gets mobile app login configuration including SSO settings
 [**update_device**](DevicesApi.md#update_device) | **PUT** /devices/{deviceId} | Update device
 [**update_device_department**](DevicesApi.md#update_device_department) | **PUT** /devices/{deviceId}/departments/{departmentId} | Update device department
 [**update_device_departments**](DevicesApi.md#update_device_departments) | **PUT** /devices/departments/update | Update device departments
@@ -608,10 +608,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_my_mobile_devices_list**
-> list[Device] get_my_mobile_devices_list()
+# **get_mobile_login_configuration**
+> MobileLoginConfiguration get_mobile_login_configuration()
 
-Gets list of current agent's mobile devices. Creates new one if there are no devices.
+Gets mobile app login configuration including SSO settings
 
 ### Example
 ```python
@@ -626,19 +626,16 @@ configuration = liveagent_api.Configuration()
 configuration.api_key['apikey'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apikey'] = 'Bearer'
-# Configure OAuth2 access token for authorization: privileges
-configuration = liveagent_api.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = liveagent_api.DevicesApi(liveagent_api.ApiClient(configuration))
 
 try:
-    # Gets list of current agent's mobile devices. Creates new one if there are no devices.
-    api_response = api_instance.get_my_mobile_devices_list()
+    # Gets mobile app login configuration including SSO settings
+    api_response = api_instance.get_mobile_login_configuration()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevicesApi->get_my_mobile_devices_list: %s\n" % e)
+    print("Exception when calling DevicesApi->get_mobile_login_configuration: %s\n" % e)
 ```
 
 ### Parameters
@@ -646,11 +643,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[Device]**](Device.md)
+[**MobileLoginConfiguration**](MobileLoginConfiguration.md)
 
 ### Authorization
 
-[apikey](../README.md#apikey), [privileges](../README.md#privileges)
+[apikey](../README.md#apikey)
 
 ### HTTP request headers
 

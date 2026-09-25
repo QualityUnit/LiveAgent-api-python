@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_calls_sla_log_grid_list**
-> list[SlaLogRow] get_calls_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+> list[SlaLogRow] get_calls_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
 
 Gets list of call slas for grid
 
@@ -180,11 +180,10 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 sort_field = 'sort_field_example' # str |  (optional)
-timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of call slas for grid
-    api_response = api_instance.get_calls_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+    api_response = api_instance.get_calls_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_calls_sla_log_grid_list: %s\n" % e)
@@ -199,7 +198,6 @@ Name | Type | Description  | Notes
  **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 
@@ -272,7 +270,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_chats_grid_list**
-> list[ChatRow] get_chats_grid_list(per_page=per_page, filters=filters, cursor=cursor, timezone_offset=timezone_offset)
+> list[ChatRow] get_chats_grid_list(per_page=per_page, filters=filters, cursor=cursor)
 
 Gets list of chats for chats grid
 
@@ -298,11 +296,10 @@ api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 per_page = 10 # int | Results per page. (optional) (default to 10)
 filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
-timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of chats for chats grid
-    api_response = api_instance.get_chats_grid_list(per_page=per_page, filters=filters, cursor=cursor, timezone_offset=timezone_offset)
+    api_response = api_instance.get_chats_grid_list(per_page=per_page, filters=filters, cursor=cursor)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_chats_grid_list: %s\n" % e)
@@ -315,7 +312,6 @@ Name | Type | Description  | Notes
  **per_page** | **int**| Results per page. | [optional] [default to 10]
  **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
- **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 
@@ -388,7 +384,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_chats_sla_log_grid_list**
-> list[SlaLogRow] get_chats_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+> list[SlaLogRow] get_chats_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
 
 Gets list of chat slas for grid
 
@@ -416,11 +412,10 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 sort_field = 'sort_field_example' # str |  (optional)
-timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of chat slas for grid
-    api_response = api_instance.get_chats_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+    api_response = api_instance.get_chats_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_chats_sla_log_grid_list: %s\n" % e)
@@ -435,7 +430,6 @@ Name | Type | Description  | Notes
  **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 
@@ -797,7 +791,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_event_logs_grid_list**
-> list[EventLogRow] get_event_logs_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+> list[EventLogRow] get_event_logs_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
 
 Gets list of event logs for grid
 
@@ -825,11 +819,10 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 sort_field = 'sort_field_example' # str |  (optional)
-timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of event logs for grid
-    api_response = api_instance.get_event_logs_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+    api_response = api_instance.get_event_logs_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_event_logs_grid_list: %s\n" % e)
@@ -844,7 +837,6 @@ Name | Type | Description  | Notes
  **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 
@@ -1204,7 +1196,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tickets_grid_dataset**
-> TicketRowsWithCursor get_tickets_grid_dataset(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+> TicketRowsWithCursor get_tickets_grid_dataset(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
 
 Gets list of tickets for tickets grid
 
@@ -1232,11 +1224,10 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 sort_field = 'sort_field_example' # str |  (optional)
-timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of tickets for tickets grid
-    api_response = api_instance.get_tickets_grid_dataset(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+    api_response = api_instance.get_tickets_grid_dataset(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_tickets_grid_dataset: %s\n" % e)
@@ -1251,7 +1242,6 @@ Name | Type | Description  | Notes
  **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 
@@ -1269,7 +1259,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tickets_grid_list**
-> list[TicketRow] get_tickets_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+> list[TicketRow] get_tickets_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
 
 Gets list of tickets for tickets grid
 
@@ -1297,11 +1287,10 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 sort_field = 'sort_field_example' # str |  (optional)
-timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of tickets for tickets grid
-    api_response = api_instance.get_tickets_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+    api_response = api_instance.get_tickets_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_tickets_grid_list: %s\n" % e)
@@ -1316,7 +1305,6 @@ Name | Type | Description  | Notes
  **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 
@@ -1334,7 +1322,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tickets_grid_list_count**
-> Count get_tickets_grid_list_count(filters=filters, timezone_offset=timezone_offset)
+> Count get_tickets_grid_list_count(filters=filters)
 
 Gets count of tickets for tickets grid
 
@@ -1358,11 +1346,10 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.GridApi(liveagent_api.ApiClient(configuration))
 filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
-timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets count of tickets for tickets grid
-    api_response = api_instance.get_tickets_grid_list_count(filters=filters, timezone_offset=timezone_offset)
+    api_response = api_instance.get_tickets_grid_list_count(filters=filters)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_tickets_grid_list_count: %s\n" % e)
@@ -1373,7 +1360,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
- **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 
@@ -1391,7 +1377,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tickets_sla_log_grid_list**
-> list[SlaLogRow] get_tickets_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+> list[SlaLogRow] get_tickets_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
 
 Gets list of ticket slas for grid
 
@@ -1419,11 +1405,10 @@ sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to AS
 filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...] (optional)
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 sort_field = 'sort_field_example' # str |  (optional)
-timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of ticket slas for grid
-    api_response = api_instance.get_tickets_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field, timezone_offset=timezone_offset)
+    api_response = api_instance.get_tickets_sla_log_grid_list(per_page=per_page, sort_dir=sort_dir, filters=filters, cursor=cursor, sort_field=sort_field)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GridApi->get_tickets_sla_log_grid_list: %s\n" % e)
@@ -1438,7 +1423,6 @@ Name | Type | Description  | Notes
  **filters** | **str**| Filter as json object {\&quot;column1\&quot;:\&quot;value\&quot;, \&quot;column2\&quot;:\&quot;value\&quot;, ...} or list of filters as json array [[\&quot;column\&quot;,\&quot;operator\&quot;,\&quot;value\&quot;], ...] | [optional] 
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 

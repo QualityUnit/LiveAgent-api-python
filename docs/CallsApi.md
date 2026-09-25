@@ -1323,7 +1323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_calls_list**
-> list[CallListItem] get_calls_list(per_page=per_page, filters=filters, cursor=cursor, sort_field=sort_field, sort_dir=sort_dir, timezone_offset=timezone_offset)
+> list[CallListItem] get_calls_list(per_page=per_page, filters=filters, cursor=cursor, sort_field=sort_field, sort_dir=sort_dir)
 
 Gets list of calls
 
@@ -1351,11 +1351,10 @@ filters = 'filters_example' # str | Filter as json object {\"column1\":\"value\"
 cursor = 'cursor_example' # str | used for iteration through resultset. Cursor identifies specific page in resultset. (optional)
 sort_field = 'dateFinished' # str |  (optional) (default to dateFinished)
 sort_dir = 'ASC' # str | Sorting direction ASC or DESC (optional) (default to ASC)
-timezone_offset = 56 # int | difference between client and server time in seconds (optional)
 
 try:
     # Gets list of calls
-    api_response = api_instance.get_calls_list(per_page=per_page, filters=filters, cursor=cursor, sort_field=sort_field, sort_dir=sort_dir, timezone_offset=timezone_offset)
+    api_response = api_instance.get_calls_list(per_page=per_page, filters=filters, cursor=cursor, sort_field=sort_field, sort_dir=sort_dir)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CallsApi->get_calls_list: %s\n" % e)
@@ -1370,7 +1369,6 @@ Name | Type | Description  | Notes
  **cursor** | **str**| used for iteration through resultset. Cursor identifies specific page in resultset. | [optional] 
  **sort_field** | **str**|  | [optional] [default to dateFinished]
  **sort_dir** | **str**| Sorting direction ASC or DESC | [optional] [default to ASC]
- **timezone_offset** | **int**| difference between client and server time in seconds | [optional] 
 
 ### Return type
 

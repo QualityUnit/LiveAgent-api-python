@@ -99,10 +99,10 @@ class TestDevicesApi(unittest.TestCase):
         """
         pass
 
-    def test_get_my_mobile_devices_list(self):
-        """Test case for get_my_mobile_devices_list
+    def test_get_mobile_login_configuration(self):
+        """Test case for get_mobile_login_configuration
 
-        Gets list of current agent's mobile devices. Creates new one if there are no devices.  # noqa: E501
+        Gets mobile app login configuration including SSO settings  # noqa: E501
         """
         pass
 

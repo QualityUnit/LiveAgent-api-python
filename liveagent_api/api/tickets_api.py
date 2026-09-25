@@ -441,7 +441,6 @@ class TicketsApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[TicketHistory]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -467,13 +466,12 @@ class TicketsApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[TicketHistory]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field', 'timezone_offset']  # noqa: E501
+        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -506,8 +504,6 @@ class TicketsApi(object):
             query_params.append(('_sortField', params['sort_field']))  # noqa: E501
 
         header_params = {}
-        if 'timezone_offset' in params:
-            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
 
         form_params = []
         local_var_files = {}

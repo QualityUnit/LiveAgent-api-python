@@ -43,7 +43,6 @@ class AgentPhoneApi(object):
 
         :param async_req bool
         :param str agent_id: (required)
-        :param str type: API (I - default), SIP (S)
         :return: PhoneDevice
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,13 +64,12 @@ class AgentPhoneApi(object):
 
         :param async_req bool
         :param str agent_id: (required)
-        :param str type: API (I - default), SIP (S)
         :return: PhoneDevice
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['agent_id', 'type']  # noqa: E501
+        all_params = ['agent_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -98,8 +96,6 @@ class AgentPhoneApi(object):
             path_params['agentId'] = params['agent_id']  # noqa: E501
 
         query_params = []
-        if 'type' in params:
-            query_params.append(('type', params['type']))  # noqa: E501
 
         header_params = {}
 

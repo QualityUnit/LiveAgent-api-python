@@ -1081,36 +1081,36 @@ class DevicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_my_mobile_devices_list(self, **kwargs):  # noqa: E501
-        """Gets list of current agent's mobile devices. Creates new one if there are no devices.  # noqa: E501
+    def get_mobile_login_configuration(self, **kwargs):  # noqa: E501
+        """Gets mobile app login configuration including SSO settings  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_my_mobile_devices_list(async_req=True)
+        >>> thread = api.get_mobile_login_configuration(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Device]
+        :return: MobileLoginConfiguration
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_my_mobile_devices_list_with_http_info(**kwargs)  # noqa: E501
+            return self.get_mobile_login_configuration_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_my_mobile_devices_list_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_mobile_login_configuration_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_my_mobile_devices_list_with_http_info(self, **kwargs):  # noqa: E501
-        """Gets list of current agent's mobile devices. Creates new one if there are no devices.  # noqa: E501
+    def get_mobile_login_configuration_with_http_info(self, **kwargs):  # noqa: E501
+        """Gets mobile app login configuration including SSO settings  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_my_mobile_devices_list_with_http_info(async_req=True)
+        >>> thread = api.get_mobile_login_configuration_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Device]
+        :return: MobileLoginConfiguration
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1126,7 +1126,7 @@ class DevicesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_my_mobile_devices_list" % key
+                    " to method get_mobile_login_configuration" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1152,17 +1152,17 @@ class DevicesApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['apikey', 'privileges']  # noqa: E501
+        auth_settings = ['apikey']  # noqa: E501
 
         return self.api_client.call_api(
-            '/devices/_app_', 'GET',
+            '/mobile/login/configuration', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Device]',  # noqa: E501
+            response_type='MobileLoginConfiguration',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

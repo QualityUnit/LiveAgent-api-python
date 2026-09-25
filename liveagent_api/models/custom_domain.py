@@ -35,16 +35,18 @@ class CustomDomain(object):
     swagger_types = {
         'custom_domain': 'str',
         'ssl_key': 'str',
-        'ssl_crt': 'str'
+        'ssl_crt': 'str',
+        'is_managed_cert': 'bool'
     }
 
     attribute_map = {
         'custom_domain': 'custom_domain',
         'ssl_key': 'ssl_key',
-        'ssl_crt': 'ssl_crt'
+        'ssl_crt': 'ssl_crt',
+        'is_managed_cert': 'is_managed_cert'
     }
 
-    def __init__(self, custom_domain=None, ssl_key=None, ssl_crt=None, _configuration=None):  # noqa: E501
+    def __init__(self, custom_domain=None, ssl_key=None, ssl_crt=None, is_managed_cert=None, _configuration=None):  # noqa: E501
         """CustomDomain - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -53,6 +55,7 @@ class CustomDomain(object):
         self._custom_domain = None
         self._ssl_key = None
         self._ssl_crt = None
+        self._is_managed_cert = None
         self.discriminator = None
 
         if custom_domain is not None:
@@ -61,6 +64,8 @@ class CustomDomain(object):
             self.ssl_key = ssl_key
         if ssl_crt is not None:
             self.ssl_crt = ssl_crt
+        if is_managed_cert is not None:
+            self.is_managed_cert = is_managed_cert
 
     @property
     def custom_domain(self):
@@ -124,6 +129,27 @@ class CustomDomain(object):
         """
 
         self._ssl_crt = ssl_crt
+
+    @property
+    def is_managed_cert(self):
+        """Gets the is_managed_cert of this CustomDomain.  # noqa: E501
+
+
+        :return: The is_managed_cert of this CustomDomain.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_managed_cert
+
+    @is_managed_cert.setter
+    def is_managed_cert(self, is_managed_cert):
+        """Sets the is_managed_cert of this CustomDomain.
+
+
+        :param is_managed_cert: The is_managed_cert of this CustomDomain.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_managed_cert = is_managed_cert
 
     def to_dict(self):
         """Returns the model properties as a dict"""

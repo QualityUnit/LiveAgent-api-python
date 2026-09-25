@@ -29,20 +29,6 @@ class TestPhoneNumbersApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_add_number(self):
-        """Test case for add_number
-
-        Add new number  # noqa: E501
-        """
-        pass
-
-    def test_get_available_prefix(self):
-        """Test case for get_available_prefix
-
-        Gets available dial out prefix  # noqa: E501
-        """
-        pass
-
     def test_get_phone_number(self):
         """Test case for get_phone_number
 
@@ -54,13 +40,6 @@ class TestPhoneNumbersApi(unittest.TestCase):
         """Test case for get_phone_numbers_list
 
         Gets list of available phone numbers  # noqa: E501
-        """
-        pass
-
-    def test_remove_phone_number(self):
-        """Test case for remove_phone_number
-
-        Remove phone number  # noqa: E501
         """
         pass
 

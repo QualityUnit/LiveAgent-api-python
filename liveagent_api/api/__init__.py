@@ -39,7 +39,6 @@ from liveagent_api.api.subscriptions_api import SubscriptionsApi
 from liveagent_api.api.tags_api import TagsApi
 from liveagent_api.api.tickets_api import TicketsApi
 from liveagent_api.api.time_zones_api import TimeZonesApi
-from liveagent_api.api.token_api import TokenApi
 from liveagent_api.api.user_api import UserApi
 from liveagent_api.api.variations_api import VariationsApi
 from liveagent_api.api.viber_api import ViberApi
