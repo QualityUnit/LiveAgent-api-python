@@ -39,6 +39,7 @@ class Call(object):
         'callee_status': 'str',
         'ivrs': 'list[Ivr]',
         'record_call': 'bool',
+        'live_transcription': 'bool',
         'reroute_time': 'float',
         'max_queue_time': 'float',
         'max_ring_time': 'float',
@@ -58,6 +59,7 @@ class Call(object):
         'callee_status': 'callee_status',
         'ivrs': 'ivrs',
         'record_call': 'record_call',
+        'live_transcription': 'live_transcription',
         'reroute_time': 'reroute_time',
         'max_queue_time': 'max_queue_time',
         'max_ring_time': 'max_ring_time',
@@ -70,7 +72,7 @@ class Call(object):
         'via_number': 'via_number'
     }
 
-    def __init__(self, id=None, ticket_id=None, direction=None, callee_status=None, ivrs=None, record_call=False, reroute_time=None, max_queue_time=None, max_ring_time=None, online_ivr=None, offline_ivr=None, queue_ivr=None, from_number=None, caller_name=None, to_number=None, via_number=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, ticket_id=None, direction=None, callee_status=None, ivrs=None, record_call=False, live_transcription=False, reroute_time=None, max_queue_time=None, max_ring_time=None, online_ivr=None, offline_ivr=None, queue_ivr=None, from_number=None, caller_name=None, to_number=None, via_number=None, _configuration=None):  # noqa: E501
         """Call - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -82,6 +84,7 @@ class Call(object):
         self._callee_status = None
         self._ivrs = None
         self._record_call = None
+        self._live_transcription = None
         self._reroute_time = None
         self._max_queue_time = None
         self._max_ring_time = None
@@ -104,6 +107,8 @@ class Call(object):
             self.ivrs = ivrs
         if record_call is not None:
             self.record_call = record_call
+        if live_transcription is not None:
+            self.live_transcription = live_transcription
         if reroute_time is not None:
             self.reroute_time = reroute_time
         if max_queue_time is not None:
@@ -272,6 +277,29 @@ class Call(object):
         """
 
         self._record_call = record_call
+
+    @property
+    def live_transcription(self):
+        """Gets the live_transcription of this Call.  # noqa: E501
+
+        Whether the tenant runs live transcription, so the call's legs may be offered for it. Each leg is still admitted separately when its transcription session is requested.  # noqa: E501
+
+        :return: The live_transcription of this Call.  # noqa: E501
+        :rtype: bool
+        """
+        return self._live_transcription
+
+    @live_transcription.setter
+    def live_transcription(self, live_transcription):
+        """Sets the live_transcription of this Call.
+
+        Whether the tenant runs live transcription, so the call's legs may be offered for it. Each leg is still admitted separately when its transcription session is requested.  # noqa: E501
+
+        :param live_transcription: The live_transcription of this Call.  # noqa: E501
+        :type: bool
+        """
+
+        self._live_transcription = live_transcription
 
     @property
     def reroute_time(self):

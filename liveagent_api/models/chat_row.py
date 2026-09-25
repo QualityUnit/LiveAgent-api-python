@@ -49,8 +49,7 @@ class ChatRow(object):
         'countrycode': 'str',
         'avatar_url': 'str',
         'rstatus': 'str',
-        'statusdatestarted': 'int',
-        'chat_order': 'int'
+        'statusdatestarted': 'int'
     }
 
     attribute_map = {
@@ -70,11 +69,10 @@ class ChatRow(object):
         'countrycode': 'countrycode',
         'avatar_url': 'avatar_url',
         'rstatus': 'rstatus',
-        'statusdatestarted': 'statusdatestarted',
-        'chat_order': 'chat_order'
+        'statusdatestarted': 'statusdatestarted'
     }
 
-    def __init__(self, conversationid=None, datechanged=None, status=None, preview=None, subject=None, departmentname=None, agentname=None, tags=None, firstname=None, lastname=None, system_name=None, emails=None, city=None, countrycode=None, avatar_url=None, rstatus=None, statusdatestarted=None, chat_order=None, _configuration=None):  # noqa: E501
+    def __init__(self, conversationid=None, datechanged=None, status=None, preview=None, subject=None, departmentname=None, agentname=None, tags=None, firstname=None, lastname=None, system_name=None, emails=None, city=None, countrycode=None, avatar_url=None, rstatus=None, statusdatestarted=None, _configuration=None):  # noqa: E501
         """ChatRow - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -97,7 +95,6 @@ class ChatRow(object):
         self._avatar_url = None
         self._rstatus = None
         self._statusdatestarted = None
-        self._chat_order = None
         self.discriminator = None
 
         if conversationid is not None:
@@ -134,8 +131,6 @@ class ChatRow(object):
             self.rstatus = rstatus
         if statusdatestarted is not None:
             self.statusdatestarted = statusdatestarted
-        if chat_order is not None:
-            self.chat_order = chat_order
 
     @property
     def conversationid(self):
@@ -493,27 +488,6 @@ class ChatRow(object):
         """
 
         self._statusdatestarted = statusdatestarted
-
-    @property
-    def chat_order(self):
-        """Gets the chat_order of this ChatRow.  # noqa: E501
-
-
-        :return: The chat_order of this ChatRow.  # noqa: E501
-        :rtype: int
-        """
-        return self._chat_order
-
-    @chat_order.setter
-    def chat_order(self, chat_order):
-        """Sets the chat_order of this ChatRow.
-
-
-        :param chat_order: The chat_order of this ChatRow.  # noqa: E501
-        :type: int
-        """
-
-        self._chat_order = chat_order
 
     def to_dict(self):
         """Returns the model properties as a dict"""

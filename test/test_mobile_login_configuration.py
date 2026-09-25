@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import liveagent_api
-from liveagent_api.models.token import Token  # noqa: E501
+from liveagent_api.models.mobile_login_configuration import MobileLoginConfiguration  # noqa: E501
 from liveagent_api.rest import ApiException
 
 
-class TestToken(unittest.TestCase):
-    """Token unit test stubs"""
+class TestMobileLoginConfiguration(unittest.TestCase):
+    """MobileLoginConfiguration unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestToken(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testToken(self):
-        """Test Token"""
+    def testMobileLoginConfiguration(self):
+        """Test MobileLoginConfiguration"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = liveagent_api.models.token.Token()  # noqa: E501
+        # model = liveagent_api.models.mobile_login_configuration.MobileLoginConfiguration()  # noqa: E501
         pass
 
 

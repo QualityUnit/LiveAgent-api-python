@@ -33,7 +33,7 @@ class DeviceDepartment(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'device_id': 'float',
+        'device_id': 'int',
         'department_id': 'str',
         'user_id': 'str',
         'department_name': 'str',
@@ -67,12 +67,9 @@ class DeviceDepartment(object):
         self._work_allocation_allowed = None
         self.discriminator = None
 
-        if device_id is not None:
-            self.device_id = device_id
-        if department_id is not None:
-            self.department_id = department_id
-        if user_id is not None:
-            self.user_id = user_id
+        self.device_id = device_id
+        self.department_id = department_id
+        self.user_id = user_id
         if department_name is not None:
             self.department_name = department_name
         if online_status is not None:
@@ -88,7 +85,7 @@ class DeviceDepartment(object):
 
 
         :return: The device_id of this DeviceDepartment.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._device_id
 
@@ -98,8 +95,10 @@ class DeviceDepartment(object):
 
 
         :param device_id: The device_id of this DeviceDepartment.  # noqa: E501
-        :type: float
+        :type: int
         """
+        if self._configuration.client_side_validation and device_id is None:
+            raise ValueError("Invalid value for `device_id`, must not be `None`")  # noqa: E501
 
         self._device_id = device_id
 
@@ -121,6 +120,8 @@ class DeviceDepartment(object):
         :param department_id: The department_id of this DeviceDepartment.  # noqa: E501
         :type: str
         """
+        if self._configuration.client_side_validation and department_id is None:
+            raise ValueError("Invalid value for `department_id`, must not be `None`")  # noqa: E501
 
         self._department_id = department_id
 
@@ -142,6 +143,8 @@ class DeviceDepartment(object):
         :param user_id: The user_id of this DeviceDepartment.  # noqa: E501
         :type: str
         """
+        if self._configuration.client_side_validation and user_id is None:
+            raise ValueError("Invalid value for `user_id`, must not be `None`")  # noqa: E501
 
         self._user_id = user_id
 

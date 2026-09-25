@@ -249,7 +249,6 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[SlaLogRow]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -275,13 +274,12 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[SlaLogRow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field', 'timezone_offset']  # noqa: E501
+        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -314,8 +312,6 @@ class GridApi(object):
             query_params.append(('_sortField', params['sort_field']))  # noqa: E501
 
         header_params = {}
-        if 'timezone_offset' in params:
-            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -453,7 +449,6 @@ class GridApi(object):
         :param int per_page: Results per page.
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[ChatRow]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -477,13 +472,12 @@ class GridApi(object):
         :param int per_page: Results per page.
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[ChatRow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['per_page', 'filters', 'cursor', 'timezone_offset']  # noqa: E501
+        all_params = ['per_page', 'filters', 'cursor']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -512,8 +506,6 @@ class GridApi(object):
             query_params.append(('_cursor', params['cursor']))  # noqa: E501
 
         header_params = {}
-        if 'timezone_offset' in params:
-            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -653,7 +645,6 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[SlaLogRow]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -679,13 +670,12 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[SlaLogRow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field', 'timezone_offset']  # noqa: E501
+        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -718,8 +708,6 @@ class GridApi(object):
             query_params.append(('_sortField', params['sort_field']))  # noqa: E501
 
         header_params = {}
-        if 'timezone_offset' in params:
-            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1352,7 +1340,6 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[EventLogRow]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1378,13 +1365,12 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[EventLogRow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field', 'timezone_offset']  # noqa: E501
+        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1417,8 +1403,6 @@ class GridApi(object):
             query_params.append(('_sortField', params['sort_field']))  # noqa: E501
 
         header_params = {}
-        if 'timezone_offset' in params:
-            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2067,7 +2051,6 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: TicketRowsWithCursor
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2093,13 +2076,12 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: TicketRowsWithCursor
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field', 'timezone_offset']  # noqa: E501
+        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2132,8 +2114,6 @@ class GridApi(object):
             query_params.append(('_sortField', params['sort_field']))  # noqa: E501
 
         header_params = {}
-        if 'timezone_offset' in params:
-            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2180,7 +2160,6 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[TicketRow]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2206,13 +2185,12 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[TicketRow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field', 'timezone_offset']  # noqa: E501
+        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2245,8 +2223,6 @@ class GridApi(object):
             query_params.append(('_sortField', params['sort_field']))  # noqa: E501
 
         header_params = {}
-        if 'timezone_offset' in params:
-            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2289,7 +2265,6 @@ class GridApi(object):
 
         :param async_req bool
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
-        :param int timezone_offset: difference between client and server time in seconds
         :return: Count
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2311,13 +2286,12 @@ class GridApi(object):
 
         :param async_req bool
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
-        :param int timezone_offset: difference between client and server time in seconds
         :return: Count
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filters', 'timezone_offset']  # noqa: E501
+        all_params = ['filters']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2342,8 +2316,6 @@ class GridApi(object):
             query_params.append(('_filters', params['filters']))  # noqa: E501
 
         header_params = {}
-        if 'timezone_offset' in params:
-            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2390,7 +2362,6 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[SlaLogRow]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2416,13 +2387,12 @@ class GridApi(object):
         :param str filters: Filter as json object {\"column1\":\"value\", \"column2\":\"value\", ...} or list of filters as json array [[\"column\",\"operator\",\"value\"], ...]
         :param str cursor: used for iteration through resultset. Cursor identifies specific page in resultset.
         :param str sort_field:
-        :param int timezone_offset: difference between client and server time in seconds
         :return: list[SlaLogRow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field', 'timezone_offset']  # noqa: E501
+        all_params = ['per_page', 'sort_dir', 'filters', 'cursor', 'sort_field']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2455,8 +2425,6 @@ class GridApi(object):
             query_params.append(('_sortField', params['sort_field']))  # noqa: E501
 
         header_params = {}
-        if 'timezone_offset' in params:
-            header_params['Timezone-Offset'] = params['timezone_offset']  # noqa: E501
 
         form_params = []
         local_var_files = {}

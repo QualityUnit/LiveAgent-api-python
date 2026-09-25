@@ -16,24 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import liveagent_api
-from liveagent_api.api.token_api import TokenApi  # noqa: E501
+from liveagent_api.models.mobile_sso_configuration import MobileSsoConfiguration  # noqa: E501
 from liveagent_api.rest import ApiException
 
 
-class TestTokenApi(unittest.TestCase):
-    """TokenApi unit test stubs"""
+class TestMobileSsoConfiguration(unittest.TestCase):
+    """MobileSsoConfiguration unit test stubs"""
 
     def setUp(self):
-        self.api = liveagent_api.api.token_api.TokenApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_access_token(self):
-        """Test case for get_access_token
-
-        Access token  # noqa: E501
-        """
+    def testMobileSsoConfiguration(self):
+        """Test MobileSsoConfiguration"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = liveagent_api.models.mobile_sso_configuration.MobileSsoConfiguration()  # noqa: E501
         pass
 
 

@@ -63,11 +63,10 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = liveagent_api.AgentPhoneApi(liveagent_api.ApiClient(configuration))
 agent_id = 'agent_id_example' # str | 
-type = 'I' # str | API (I - default), SIP (S) (optional) (default to I)
 
 try:
     # Gets phone currently used by agent (use me as agentId for self)
-    api_response = api_instance.get_agent_phone(agent_id, type=type)
+    api_response = api_instance.get_agent_phone(agent_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentPhoneApi->get_agent_phone: %s\n" % e)
@@ -184,7 +183,7 @@ Class | Method | HTTP request | Description
 *DevicesApi* | [**get_device_departments_by_department_id**](docs/DevicesApi.md#get_device_departments_by_department_id) | **GET** /devices/departments/{departmentId} | Get device departments by department id
 *DevicesApi* | [**get_device_plans**](docs/DevicesApi.md#get_device_plans) | **GET** /devices/{deviceId}/plans | Get device plans
 *DevicesApi* | [**get_devices_list**](docs/DevicesApi.md#get_devices_list) | **GET** /devices | Gets list of devices
-*DevicesApi* | [**get_my_mobile_devices_list**](docs/DevicesApi.md#get_my_mobile_devices_list) | **GET** /devices/_app_ | Gets list of current agent&#39;s mobile devices. Creates new one if there are no devices.
+*DevicesApi* | [**get_mobile_login_configuration**](docs/DevicesApi.md#get_mobile_login_configuration) | **GET** /mobile/login/configuration | Gets mobile app login configuration including SSO settings
 *DevicesApi* | [**update_device**](docs/DevicesApi.md#update_device) | **PUT** /devices/{deviceId} | Update device
 *DevicesApi* | [**update_device_department**](docs/DevicesApi.md#update_device_department) | **PUT** /devices/{deviceId}/departments/{departmentId} | Update device department
 *DevicesApi* | [**update_device_departments**](docs/DevicesApi.md#update_device_departments) | **PUT** /devices/departments/update | Update device departments
@@ -240,11 +239,8 @@ Class | Method | HTTP request | Description
 *MessagesApi* | [**get_message**](docs/MessagesApi.md#get_message) | **GET** /messages/{messageId} | Get message
 *MyAccountApi* | [**get_my_account_link**](docs/MyAccountApi.md#get_my_account_link) | **GET** /my_account/_link | Link to &#39;My account&#39;
 *PageVisitsApi* | [**get_page_visit_by_contact_id**](docs/PageVisitsApi.md#get_page_visit_by_contact_id) | **GET** /page_visits/{contactId}/contact | Gets a page visits
-*PhoneNumbersApi* | [**add_number**](docs/PhoneNumbersApi.md#add_number) | **POST** /phone_numbers | Add new number
-*PhoneNumbersApi* | [**get_available_prefix**](docs/PhoneNumbersApi.md#get_available_prefix) | **GET** /phone_numbers/availablePrefix | Gets available dial out prefix
 *PhoneNumbersApi* | [**get_phone_number**](docs/PhoneNumbersApi.md#get_phone_number) | **GET** /phone_numbers/{phoneNumberId} | Gets phone number
 *PhoneNumbersApi* | [**get_phone_numbers_list**](docs/PhoneNumbersApi.md#get_phone_numbers_list) | **GET** /phone_numbers | Gets list of available phone numbers
-*PhoneNumbersApi* | [**remove_phone_number**](docs/PhoneNumbersApi.md#remove_phone_number) | **DELETE** /phone_numbers/{phoneNumberId} | Remove phone number
 *PhoneNumbersApi* | [**update_phone_number**](docs/PhoneNumbersApi.md#update_phone_number) | **PUT** /phone_numbers/{phoneNumberId} | Update phone number
 *PhoneNumbersApi* | [**update_phone_number_status**](docs/PhoneNumbersApi.md#update_phone_number_status) | **PUT** /phone_numbers/{phoneNumberId}/status | Update phone number status
 *PhonesApi* | [**get_phone**](docs/PhonesApi.md#get_phone) | **GET** /phones/{phoneId} | Gets phone device (use _app_ for LiveAgent Phone app device and _web_ for web device)
@@ -292,7 +288,6 @@ Class | Method | HTTP request | Description
 *TicketsApi* | [**set_ticket_postpone**](docs/TicketsApi.md#set_ticket_postpone) | **PUT** /tickets/{ticketId}/postpone | Sets postpone status to ticket
 *TicketsApi* | [**update_ticket**](docs/TicketsApi.md#update_ticket) | **PUT** /tickets/{ticketId} | Updates ticket
 *TimeZonesApi* | [**get_timezones_list**](docs/TimeZonesApi.md#get_timezones_list) | **GET** /time_zones | Gets list of timezones
-*TokenApi* | [**get_access_token**](docs/TokenApi.md#get_access_token) | **GET** /token | Access token
 *UserApi* | [**get_user**](docs/UserApi.md#get_user) | **GET** /users/{userId} | User
 *VariationsApi* | [**get_variation**](docs/VariationsApi.md#get_variation) | **GET** /variations/{variationId} | Variation
 *ViberApi* | [**change_status**](docs/ViberApi.md#change_status) | **PUT** /viber_accounts/{accountId}/status | Update Viber account status
@@ -316,7 +311,6 @@ Class | Method | HTTP request | Description
  - [ApiKeyLogin](docs/ApiKeyLogin.md)
  - [ApiKeyWithPrivileges](docs/ApiKeyWithPrivileges.md)
  - [ApiPrivilege](docs/ApiPrivilege.md)
- - [AvailablePrefix](docs/AvailablePrefix.md)
  - [Ban](docs/Ban.md)
  - [BanListItem](docs/BanListItem.md)
  - [Batch](docs/Batch.md)
@@ -376,6 +370,8 @@ Class | Method | HTTP request | Description
  - [LoginKey](docs/LoginKey.md)
  - [Message](docs/Message.md)
  - [MessageGroup](docs/MessageGroup.md)
+ - [MobileLoginConfiguration](docs/MobileLoginConfiguration.md)
+ - [MobileSsoConfiguration](docs/MobileSsoConfiguration.md)
  - [MyAccountLink](docs/MyAccountLink.md)
  - [OkResponse](docs/OkResponse.md)
  - [PageVisit](docs/PageVisit.md)
@@ -410,7 +406,6 @@ Class | Method | HTTP request | Description
  - [TicketUpdatable](docs/TicketUpdatable.md)
  - [TimeReportRow](docs/TimeReportRow.md)
  - [TimeZones](docs/TimeZones.md)
- - [Token](docs/Token.md)
  - [UpgradeUrl](docs/UpgradeUrl.md)
  - [User](docs/User.md)
  - [Variation](docs/Variation.md)
@@ -441,6 +436,7 @@ Class | Method | HTTP request | Description
  - **hosted_account.write**: Hosted account write
  - **call.write**: Call write
  - **call.read**: Call read
+ - **call.process**: Call process (Asterisk interaction)
  - **agent.own**: Read/write me
  - **agent.read**: Agent read
  - **agent.manage**: Agent manage
@@ -456,6 +452,8 @@ Class | Method | HTTP request | Description
  - **hosting.login**: agent login
  - **tag.read**: Read tags
  - **tag.manage**: Manage tags
+ - **contact_group.read**: Read contact groups
+ - **contact_group.manage**: Manage contact groups
  - **canned_message.read**: Read canned messages
  - **canned_message.manage**: Manege canned messages
  - **predefined_answer.read**: Read predefined answer
@@ -466,6 +464,7 @@ Class | Method | HTTP request | Description
  - **api.write_own**: Modify own apikeys
  - **api.delete**: Delete api keys
  - **time_report.read**: Read time reports
+ - **work_report.read**: Read work reports
  - **ticket.answer**: Ticket answer
  - **ticket.create**: Create new conversation
  - **ticket.close**: Close ticket
@@ -503,6 +502,7 @@ Class | Method | HTTP request | Description
  - **button.read**: Read chat buttons
  - **filter.read**: Read filters
  - **filter.write**: Write tickets filters
+ - **conversation_field.read**: Read ticket field definitions
 
 
 ## Author

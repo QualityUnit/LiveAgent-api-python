@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **callee_status** | **str** | O - online, F - offline, U - unknown | [optional] 
 **ivrs** | [**list[Ivr]**](Ivr.md) |  | [optional] 
 **record_call** | **bool** |  | [optional] [default to False]
+**live_transcription** | **bool** | Whether the tenant runs live transcription, so the call&#39;s legs may be offered for it. Each leg is still admitted separately when its transcription session is requested. | [optional] [default to False]
 **reroute_time** | **float** |  | [optional] 
 **max_queue_time** | **float** |  | [optional] 
 **max_ring_time** | **float** |  | [optional] 

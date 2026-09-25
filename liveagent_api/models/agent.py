@@ -45,8 +45,7 @@ class Agent(object):
         'last_pswd_change': 'datetime',
         'twofactor_auth': 'str',
         'voice_status': 'str',
-        'sip_phone_id': 'str',
-        'api_phone_id': 'str'
+        'sip_phone_id': 'str'
     }
 
     attribute_map = {
@@ -62,11 +61,10 @@ class Agent(object):
         'last_pswd_change': 'last_pswd_change',
         'twofactor_auth': 'twofactor_auth',
         'voice_status': 'voice_status',
-        'sip_phone_id': 'sip_phone_id',
-        'api_phone_id': 'api_phone_id'
+        'sip_phone_id': 'sip_phone_id'
     }
 
-    def __init__(self, id=None, name=None, email=None, role='agent', role_id=None, avatar_url=None, online_status=None, status=None, gender='X', last_pswd_change=None, twofactor_auth='N', voice_status=None, sip_phone_id=None, api_phone_id=None, _configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, email=None, role='agent', role_id=None, avatar_url=None, online_status=None, status=None, gender='X', last_pswd_change=None, twofactor_auth='N', voice_status=None, sip_phone_id=None, _configuration=None):  # noqa: E501
         """Agent - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -85,7 +83,6 @@ class Agent(object):
         self._twofactor_auth = None
         self._voice_status = None
         self._sip_phone_id = None
-        self._api_phone_id = None
         self.discriminator = None
 
         if id is not None:
@@ -112,8 +109,6 @@ class Agent(object):
             self.voice_status = voice_status
         if sip_phone_id is not None:
             self.sip_phone_id = sip_phone_id
-        if api_phone_id is not None:
-            self.api_phone_id = api_phone_id
 
     @property
     def id(self):
@@ -422,27 +417,6 @@ class Agent(object):
         """
 
         self._sip_phone_id = sip_phone_id
-
-    @property
-    def api_phone_id(self):
-        """Gets the api_phone_id of this Agent.  # noqa: E501
-
-
-        :return: The api_phone_id of this Agent.  # noqa: E501
-        :rtype: str
-        """
-        return self._api_phone_id
-
-    @api_phone_id.setter
-    def api_phone_id(self, api_phone_id):
-        """Sets the api_phone_id of this Agent.
-
-
-        :param api_phone_id: The api_phone_id of this Agent.  # noqa: E501
-        :type: str
-        """
-
-        self._api_phone_id = api_phone_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
