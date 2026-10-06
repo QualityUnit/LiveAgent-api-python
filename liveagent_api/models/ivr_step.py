@@ -37,7 +37,8 @@ class IvrStep(object):
         'params': 'str',
         'choices': 'list[IvrChoice]',
         'forward': 'IvrForward',
-        'fetch': 'IvrFetch'
+        'fetch': 'IvrFetch',
+        'voicebot': 'IvrVoicebot'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class IvrStep(object):
         'params': 'params',
         'choices': 'choices',
         'forward': 'forward',
-        'fetch': 'fetch'
+        'fetch': 'fetch',
+        'voicebot': 'voicebot'
     }
 
-    def __init__(self, type=None, params=None, choices=None, forward=None, fetch=None, _configuration=None):  # noqa: E501
+    def __init__(self, type=None, params=None, choices=None, forward=None, fetch=None, voicebot=None, _configuration=None):  # noqa: E501
         """IvrStep - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -59,6 +61,7 @@ class IvrStep(object):
         self._choices = None
         self._forward = None
         self._fetch = None
+        self._voicebot = None
         self.discriminator = None
 
         self.type = type
@@ -70,12 +73,14 @@ class IvrStep(object):
             self.forward = forward
         if fetch is not None:
             self.fetch = fetch
+        if voicebot is not None:
+            self.voicebot = voicebot
 
     @property
     def type(self):
         """Gets the type of this IvrStep.  # noqa: E501
 
-        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params, I - wait for DTMF input and then fetch next IVR steps from URL in params, C - request Callback, E - forward to external number, A - call recording turn on, B - call recording turn off  # noqa: E501
+        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params, I - wait for DTMF input and then fetch next IVR steps from URL in params, C - request Callback, E - forward to external number, A - call recording turn on, B - call recording turn off, K - talk to a voice AI agent (voicebot)  # noqa: E501
 
         :return: The type of this IvrStep.  # noqa: E501
         :rtype: str
@@ -86,14 +91,14 @@ class IvrStep(object):
     def type(self, type):
         """Sets the type of this IvrStep.
 
-        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params, I - wait for DTMF input and then fetch next IVR steps from URL in params, C - request Callback, E - forward to external number, A - call recording turn on, B - call recording turn off  # noqa: E501
+        P - play message (URL in params), R - ring to agent (optional departmentId in params), V - redirect to voicemail, D - choice (choices), G - goto (IVR name in params), T - transfer (optional ivr settings in choices {\"1\":\"online\",\"0\":\"offline\",\"9\":\"queue\"}), F - fetch next IVR steps from URL in params, I - wait for DTMF input and then fetch next IVR steps from URL in params, C - request Callback, E - forward to external number, A - call recording turn on, B - call recording turn off, K - talk to a voice AI agent (voicebot)  # noqa: E501
 
         :param type: The type of this IvrStep.  # noqa: E501
         :type: str
         """
         if self._configuration.client_side_validation and type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["P", "R", "V", "D", "G", "T", "F", "I", "C", "E", "A", "B"]  # noqa: E501
+        allowed_values = ["P", "R", "V", "D", "G", "T", "F", "I", "C", "E", "A", "B", "K"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 type not in allowed_values):
             raise ValueError(
@@ -186,6 +191,27 @@ class IvrStep(object):
         """
 
         self._fetch = fetch
+
+    @property
+    def voicebot(self):
+        """Gets the voicebot of this IvrStep.  # noqa: E501
+
+
+        :return: The voicebot of this IvrStep.  # noqa: E501
+        :rtype: IvrVoicebot
+        """
+        return self._voicebot
+
+    @voicebot.setter
+    def voicebot(self, voicebot):
+        """Sets the voicebot of this IvrStep.
+
+
+        :param voicebot: The voicebot of this IvrStep.  # noqa: E501
+        :type: IvrVoicebot
+        """
+
+        self._voicebot = voicebot
 
     def to_dict(self):
         """Returns the model properties as a dict"""
