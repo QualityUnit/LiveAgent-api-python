@@ -80,6 +80,8 @@ from liveagent_api.models.ivr_fetch import IvrFetch
 from liveagent_api.models.ivr_fetch_param import IvrFetchParam
 from liveagent_api.models.ivr_forward import IvrForward
 from liveagent_api.models.ivr_step import IvrStep
+from liveagent_api.models.ivr_voicebot import IvrVoicebot
+from liveagent_api.models.ivr_voicebot_handoff import IvrVoicebotHandoff
 from liveagent_api.models.language_row import LanguageRow
 from liveagent_api.models.login_key import LoginKey
 from liveagent_api.models.message import Message

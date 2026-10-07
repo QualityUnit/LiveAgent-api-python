@@ -366,6 +366,8 @@ Class | Method | HTTP request | Description
  - [IvrFetchParam](docs/IvrFetchParam.md)
  - [IvrForward](docs/IvrForward.md)
  - [IvrStep](docs/IvrStep.md)
+ - [IvrVoicebot](docs/IvrVoicebot.md)
+ - [IvrVoicebotHandoff](docs/IvrVoicebotHandoff.md)
  - [LanguageRow](docs/LanguageRow.md)
  - [LoginKey](docs/LoginKey.md)
  - [Message](docs/Message.md)
